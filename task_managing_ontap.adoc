@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_managing_ontap.html
 keywords: ontap, cluster, manage, fas, aff, active iq, update firmware
-summary: The Active IQ page in Cloud Manager can show you any undiscovered ONTAP clusters in your on-premises environment, whether any clusters require new firmware to be installed, and if they are using all the licenses that you have paid for. This information is provided to Cloud Manager from the Active IQ Digital Advisor.
+summary: The Active IQ page in Cloud Manager shows you any undiscovered ONTAP clusters in your on-premises environment, whether any clusters require new firmware to be installed, and if they are using all the licenses that you have paid for. This information is provided to Cloud Manager from the Active IQ Digital Advisor.
 ---
 
 = Monitoring ONTAP clusters
@@ -12,7 +12,7 @@ summary: The Active IQ page in Cloud Manager can show you any undiscovered ONTAP
 :linkattrs:
 :imagesdir: ./media/
 
-The Active IQ page in Cloud Manager can show you any undiscovered ONTAP clusters in your on-premises environment, whether any clusters require new firmware to be installed, and if they are using all the licenses that you have paid for. This information is provided to Cloud Manager from the link:https://docs.netapp.com/us-en/active-iq/index.html[Active IQ Digital Advisor^].
+The Active IQ page in Cloud Manager shows you any undiscovered ONTAP clusters in your on-premises environment, whether any clusters require new firmware to be installed, and if they are using all the licenses that you have paid for. This information is provided to Cloud Manager from the link:https://docs.netapp.com/us-en/active-iq/index.html[Active IQ Digital Advisor^].
 
 == Checking for on-premises clusters that have not been added to Cloud Manager
 
@@ -24,44 +24,72 @@ The Active IQ page shows a list of all the on-prem clusters you are able to mana
 +
 The clusters that have a valid support contract are displayed along with a status of whether they have been discovered in Cloud Manager.
 
-// . If you want to manage the clusters that are listed as "Undiscovered" in Cloud Manager, click *Discover* and follow the prompts to add them.
+. If you want to manage the clusters that are listed as "Undiscovered" in Cloud Manager, click *Discover Cluster* and follow the prompts to add them.
 //
-See link:task_discovering_ontap.html#discovering-clusters-from-the-working-environments-page[Discovering clusters].
+See link:task_discovering_ontap.html#discovering-clusters-from-the-active-iq-page[Discovering clusters].
 
-== Checking for new disk and shelf firmware
+== Viewing and using unused Cloud Volumes ONTAP licenses
 
-You can see whether any of your discovered ONTAP clusters need to have their shelf or disk firmware updated.
-// And you can download the zip file that you can use to update the firmware.
-//
-// *Note:* The ability to view and download new firmware is available only when you have subscribed to certain support plans.
+Many on-premises ONTAP cluster packages that you have purchased include a free Cloud Volumes ONTAP license so you can try the NetApp cloud storage offerings. The license can be used to create a new Cloud Volumes ONTAP instance or it can be applied to an existing Cloud Volumes ONTAP instance to extend the term of the license.
 
-.Steps
-
-. From the Active IQ page, click the *Firmware Updates* tab.
-// +
-// A *Download* button appears for the clusters that are not using the most recent firmware.
-//
-// . Click *Download* for each cluster that needs updated firmware and save the zip file.
-//
-
-. See the following instructions to link:https://aiq.netapp.com/assets/docs/Quick_Reference_Guide.pdf[update your storage system firmware].
-//
-// .Result
-//
-// Your firmware is updated. The next time your ONTAP system sends an AutoSupport message to Active IQ, the status in the _Firmware Updates_ page will be updated to show that updates are no longer needed.
-
-== Viewing unused Cloud Volumes ONTAP licenses
-
-You can see whether any of your Cloud Volumes ONTAP clusters have licenses that you are not using.
+You can see whether you have any unused Cloud Volumes ONTAP licenses based on your NetApp Support Site credentials.
 
 .Steps
 
 . From the Active IQ page, click the *Licenses* tab.
-// +
-// A *Use License* button appears for each node (based on serial number) where you have purchased a license, but are not using the license.
-//
-// . If you want to activate and start using the license, click *Use License*.
-//
-// .Result
-//
-// Your license is activated.
++
+image:screenshot_aiq_licenses.png[A screenshot of the used and unused Cloud Volumes ONTAP licenses.]
++
+A *Use License* button appears for each node (based on serial number) where you have an unused license.
++
+. If you want to activate and start using the license, click *Use License*.
++
+See the steps below the different ways you can use the license.
+
+=== Creating a new Cloud Volumes ONTAP system with the unused license
+
+You can choose to create a new Cloud Volumes ONTAP instance or whether you want to apply the license to an existing Cloud Volumes ONTAP instance to extend the term of the license.
+
+the timeframe for that instance for a period of time (defined by the "Expires" date). This free license can be used for a specific cloud provider, or for any cloud provided when listed as "Any Provider".
+
+You can see whether you have any unused Cloud Volumes ONTAP licenses based on your NetApp Support Site credentials, and use those licenses in your environment.
+
+.Steps
+
+. From the Active IQ page, click the *Licenses* tab.
++
+A *Use License* button appears for each node (based on serial number) where you have an unused license.
++
+image:screenshot_aiq_licenses.png[A screenshot of the used and unused Cloud Volumes ONTAP licenses.]
+
+. If you want to activate and start using the license, click *Use License*.
+
+.Result
+
+Your license is activated.
+
+=== Extending the license term for an existing Cloud Volumes ONTAP system
+
+sdfgdgsdfgdf
+
+
+== Checking for new disk and shelf firmware
+
+You can see whether any of your discovered ONTAP clusters need to have their shelf or disk firmware updated.
+And you can download the zip file that you can use to update the firmware.
+
+*Note:* The ability to view and download new firmware is available only when you have subscribed to certain support plans.
+
+.Steps
+
+. From the Active IQ page, click the *Firmware Updates* tab.
++
+A *Download* button appears for the clusters that are not using the most recent firmware.
+
+. Click *Download* for each cluster that needs updated firmware and save the zip file.
+
+. See the following instructions to link:https://aiq.netapp.com/assets/docs/Quick_Reference_Guide.pdf[update your storage system firmware].
+
+.Result
+
+Your firmware is updated. The next time your ONTAP system sends an AutoSupport message to Active IQ, the status in the _Firmware Updates_ page will be updated to show that updates are no longer needed.
