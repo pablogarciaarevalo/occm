@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: task_managing_ontap.html
-keywords: ontap, cluster, manage, fas, aff, active iq, update firmware
-summary: The Active IQ page in Cloud Manager shows you any undiscovered ONTAP clusters in your on-premises environment, whether any clusters require new firmware to be installed, and if they are using all the licenses that you have paid for. This information is provided to Cloud Manager from the Active IQ Digital Advisor.
+keywords: ontap, cluster, manage, fas, aff, active iq, shelf firmware, disk firmware, CVO licenses
+summary: The Active IQ page in Cloud Manager shows you any undiscovered ONTAP clusters in your on-premises environment, whether any clusters require updated disk or shelf firmware, and if you are using all the Cloud Volumes ONTAP licenses that you were granted when you purchased the on-prem systems. This information is provided to Cloud Manager from Active IQ Digital Advisor.
 ---
 
 = Monitoring ONTAP clusters
@@ -12,7 +12,7 @@ summary: The Active IQ page in Cloud Manager shows you any undiscovered ONTAP cl
 :linkattrs:
 :imagesdir: ./media/
 
-The Active IQ page in Cloud Manager shows you any undiscovered ONTAP clusters in your on-premises environment, whether any clusters require new firmware to be installed, and if they are using all the licenses that you have paid for. This information is provided to Cloud Manager from the link:https://docs.netapp.com/us-en/active-iq/index.html[Active IQ Digital Advisor^].
+The Active IQ page in Cloud Manager shows you any undiscovered ONTAP clusters in your on-premises environment, whether any clusters require updated disk or shelf firmware, and if you are using all the Cloud Volumes ONTAP licenses that you were granted when you purchased the on-prem systems. This information is provided to Cloud Manager from link:https://docs.netapp.com/us-en/active-iq/index.html[Active IQ Digital Advisor^].
 
 == Checking for on-premises clusters that have not been added to Cloud Manager
 
@@ -25,12 +25,12 @@ The Active IQ page shows a list of all the on-prem clusters you are able to mana
 The clusters that have a valid support contract are displayed along with a status of whether they have been discovered in Cloud Manager.
 
 . If you want to manage the clusters that are listed as "Undiscovered" in Cloud Manager, click *Discover Cluster* and follow the prompts to add them.
-//
-See link:task_discovering_ontap.html#discovering-clusters-from-the-active-iq-page[Discovering clusters].
 
-== Viewing and using unused Cloud Volumes ONTAP licenses
+See link:task_discovering_ontap.html#discovering-clusters-from-the-active-iq-page[Discovering clusters] for details.
 
-Many on-premises ONTAP cluster packages that you have purchased include a free Cloud Volumes ONTAP license so you can try the NetApp cloud storage offerings. The license can be used to create a new Cloud Volumes ONTAP instance or it can be applied to an existing Cloud Volumes ONTAP instance to extend the term of the license.
+== Viewing unused Cloud Volumes ONTAP licenses
+
+Many on-premises ONTAP storage system packages that you purchased included a free Cloud Volumes ONTAP license so you can try the NetApp cloud storage offerings in Cloud Manager. The license can be used to create a new Cloud Volumes ONTAP instance or it can be applied to an existing Cloud Volumes ONTAP instance to extend the term of the license.
 
 You can see whether you have any unused Cloud Volumes ONTAP licenses based on your NetApp Support Site credentials.
 
@@ -44,39 +44,87 @@ A *Use License* button appears for each node (based on serial number) where you 
 +
 . If you want to activate and start using the license, click *Use License*.
 +
-See the steps below the different ways you can use the license.
+image:screenshot_aiq_use_license.png[Screenshot of the two use license options.]
+
+See the tasks below to learn about the options for using the free license.
+
+== Using unused Cloud Volumes ONTAP licenses
+
+You can use unused licenses to create a new Cloud Volumes ONTAP instance or to extend the term of the license on an existing Cloud Volumes ONTAP instance. The capacity of the license is 368 TB.
+
+The _Expires_ column indicates the last day the license is active. When creating a new Cloud Volumes ONTAP system this is the date the license expires. When updating an existing Cloud Volumes ONTAP system this indicates the length of time the existing license is extended.
+
+The _Description_ column tells you what type of Cloud Volumes ONTAP license it is, for example *PAYGO | Single | Azure*. This sample license includes a "pay-as-you-go" license for a "single node" Cloud Volumes ONTAP system deployed in "Microsoft Azure". The values that can appear in this column are shown in the table.
+
+[cols=2*,options="header",width=60%,cols="25,25"]
+|===
+
+| Description fields
+| Values
+
+| License Type
+|
+PAYGO
+BYOL
+
+| Number of Nodes
+|
+Single
+HA
+
+| Cloud Provider
+|
+Azure
+AWS
+GCP
+All Providers
+
+|===
+
+When creating a new Cloud Volumes ONTAP system, this is the type of system you are deploying. For example, using the sample license (*PAYGO | Single | Azure*), you can create a single-node Cloud Volumes ONTAP system in Azure. This license cannot be used for an HA system or to deploy an instance in AWS.
+
+When updating an existing Cloud Volumes ONTAP system this indicates the type of system that can have its existing license is extended. Using the sample license again, you can extend the license for any single-node Cloud Volumes ONTAP system in Azure. This license cannot be used to extend the license for an HA system or for an instance in AWS.
 
 === Creating a new Cloud Volumes ONTAP system with the unused license
 
-You can choose to create a new Cloud Volumes ONTAP instance or whether you want to apply the license to an existing Cloud Volumes ONTAP instance to extend the term of the license.
-
-the timeframe for that instance for a period of time (defined by the "Expires" date). This free license can be used for a specific cloud provider, or for any cloud provided when listed as "Any Provider".
-
-You can see whether you have any unused Cloud Volumes ONTAP licenses based on your NetApp Support Site credentials, and use those licenses in your environment.
+Follow these steps to create a new Cloud Volumes ONTAP instance with the unused Cloud Volumes ONTAP license.
 
 .Steps
 
-. From the Active IQ page, click the *Licenses* tab.
+. Click *Use License* and select *Use License for a new Cloud Volumes ONTAP*.
 +
-A *Use License* button appears for each node (based on serial number) where you have an unused license.
+Typically you will be directed to the *Details & Credentials* page for creating the working environment for the Cloud Volumes ONTAP system because both the cloud provider and number of nodes is defined by the license.
 +
-image:screenshot_aiq_licenses.png[A screenshot of the used and unused Cloud Volumes ONTAP licenses.]
+If you are using a license defined as "All Providers", then you are directed to the *Choose a Location* page so you can pick the cloud provider first, before completing the *Details & Credentials* page.
 
-. If you want to activate and start using the license, click *Use License*.
+. Follow the steps to create the working environment and your first volume.
++
+See the following sections depending on the cloud provider on which you are deploying the Cloud Volumes ONTAP system.
++
 
-.Result
-
-Your license is activated.
+* link:task_deploying_otc_azure.html[Launching Cloud Volumes ONTAP in Azure^]
+* link:task_deploying_otc_aws.html[Launching Cloud Volumes ONTAP in AWS^]
+* link:task_deploying_gcp.html[Launching Cloud Volumes ONTAP in GCP^]
 
 === Extending the license term for an existing Cloud Volumes ONTAP system
 
-sdfgdgsdfgdf
+If you have a currently deployed Cloud Volumes ONTAP system that meets the license requirements (meaning the same cloud provider, number of nodes, etc.), you can follow these steps to extend the term of the license.
 
+.Steps
+
+. Click *Use License* and select *Add License to existing Cloud Volumes ONTAP*.
++
+image:screenshot_aiq_extend_license.png[]
+
+. In the "Add License..." page, select the Cloud Volumes ONTAP system where you want to extend the license and click *Add License*.
++
+A confirmation dialog is displayed.
+
+. You can click *Close* to close the window and return to the Active IQ page, or you can click the link to go to the Cloud Volumes ONTAP Licensing page to view more details about licensing.
 
 == Checking for new disk and shelf firmware
 
-You can see whether any of your discovered ONTAP clusters need to have their shelf or disk firmware updated.
-And you can download the zip file that you can use to update the firmware.
+You can see whether any of your discovered ONTAP clusters need to have their shelf or disk firmware updated. And you can download the Ansible playbook to upgrade the firmware.
 
 *Note:* The ability to view and download new firmware is available only when you have subscribed to certain support plans.
 
@@ -84,7 +132,9 @@ And you can download the zip file that you can use to update the firmware.
 
 . From the Active IQ page, click the *Firmware Updates* tab.
 +
-A *Download* button appears for the clusters that are not using the most recent firmware.
+image:screenshot_aiq_firmware.png[A screenshot of the Active IQ page showing nodes that need updated firmware.]
++
+A *Download* button appears for the clusters that are not using the recommended firmware.
 
 . Click *Download* for each cluster that needs updated firmware and save the zip file.
 

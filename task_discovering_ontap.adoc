@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_discovering_ontap.html
 keywords: ontap, cluster, discover, manage, discovering, fas, aff, discover onprem, discover aff cluster, discover cluster, add cluster, active iq
-summary: Cloud Manager can discover the ONTAP clusters in your on-premises environment, in a NetApp Private Storage configuration, and in the IBM Cloud. Discovering an ONTAP cluster enables you to provision storage, update shelf and disk firmware (if needed), replicate data, back up data, and tier cold data from an on-prem cluster to the cloud.
+summary: Cloud Manager can discover the ONTAP clusters in your on-premises environment, in a NetApp Private Storage configuration, and in the IBM Cloud. Adding on-prem clusters to the Cloud Manager Canvas enables you to manage these clusters using the same tools as your Cloud Volumes ONTAP and other cloud storage solutions.
 ---
 
 = Discovering ONTAP clusters
@@ -12,7 +12,9 @@ summary: Cloud Manager can discover the ONTAP clusters in your on-premises envir
 :linkattrs:
 :imagesdir: ./media/
 
-Cloud Manager can discover the ONTAP clusters in your on-premises environment, in a NetApp Private Storage configuration, and in the IBM Cloud. Discovering an ONTAP cluster enables you to provision storage, view whether shelf and disk firmware upgrade is recommended, replicate data, back up data, and tier cold data from an on-prem cluster to the cloud.
+Cloud Manager can discover the ONTAP clusters in your on-premises environment, in a NetApp Private Storage configuration, and in the IBM Cloud. Adding on-prem clusters to the Cloud Manager Canvas enables you to manage these clusters using the same tools as your Cloud Volumes ONTAP and other cloud storage solutions.
+
+In addition to being able to provision storage on those systems, adding these systems to Cloud Manager also makes it easy to configure critical cloud-based services for those clusters. This includes replicating data, backing up data, tiering cold data, and running compliance scans on that data.
 
 .What you'll need
 
@@ -40,9 +42,9 @@ The default "mgmt" firewall policy allows inbound HTTPS access from all IP addre
 
 == Discovering clusters from the Active IQ page
 
-You can use the Active IQ service in Cloud Manager to discover, view, and manage all your on-prem clusters in a single location.
+You can use the Active IQ service in Cloud Manager to discover, view, and manage your on-prem clusters that are under a support contract.
 
-*Note:* The Active IQ page shows systems with a valid support contract. If contracts expire, a grace period of 90 days is given in which systems continue to be visible. Thereafter, systems are not searchable or visible on the Active IQ page. See how to link:https://docs.netapp.com/us-en/active-iq/task_renew_support_contracts_for_your_systems.html[renew your support contract from Active IQ Digital Advisor^]. However, if you have already discovered on-prem clusters, you can continue to manage in their working environment using the Cloud Manager UI.
+NOTE: If your support contract expires, the systems are removed from the Active IQ page. However, you can continue to manage these systems in their working environment. See how to link:https://docs.netapp.com/us-en/active-iq/task_renew_support_contracts_for_your_systems.html[renew your support contract from Active IQ Digital Advisor^].
 
 .Steps
 
@@ -60,7 +62,7 @@ Refer to the links above for more details.
 
 . Click *Discover Cluster* for the cluster that you want to manage through Cloud Manager.
 
-. On the _Discover Cluster_ page, enter the user name and password for the admin user account and click *Discover*. The cluster management IP address is populated based on information from Active IQ.
+. On the _Discover Cluster_ page, enter the user name and password for the admin user account and click *Discover*. (The cluster management IP address is populated based on information from Active IQ.)
 +
 image:screenshot_aiq_discover_cluster.png[A screenshot that shows an example of the ONTAP Cluster Details page: the cluster management IP address, user name and password.]
 
@@ -68,7 +70,7 @@ image:screenshot_aiq_discover_cluster.png[A screenshot that shows an example of 
 
 Cloud Manager discovers the cluster and adds it to a working environment in the Canvas.
 
-You can enable services for this cluster in the right pane to replicate data to and from the cluster, set up data tiering to the cloud, back up volumes to the cloud, You can also create new volumes or launch System Manager to perform advanced tasks.
+You can enable services for this cluster in the right pane to replicate data to and from the cluster, set up data tiering to the cloud, back up volumes to the cloud, or run compliance scans on the volumes. You can also create new volumes or launch System Manager to perform advanced tasks.
 
 == Discovering clusters from the Canvas page
 
@@ -92,4 +94,4 @@ image:screenshot_discover_ontap.gif[A screenshot that shows an example of the ON
 
 Cloud Manager discovers the cluster and adds it to a working environment in the Canvas.
 
-You can enable services for this cluster in the right pane to replicate data to and from the cluster, set up data tiering to the cloud, back up volumes to the cloud, You can also create new volumes or launch System Manager to perform advanced tasks.
+You can enable services for this cluster in the right pane to replicate data to and from the cluster, set up data tiering to the cloud, back up volumes to the cloud, or run compliance scans on the volumes. You can also create new volumes or launch System Manager to perform advanced tasks.
