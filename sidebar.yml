@@ -219,7 +219,7 @@ entries:
     entries:
       - title: Discover ONTAP clusters
         url: /task_discovering_ontap.html
-      - title: Monitor ONTAP clusters
+      - title: Manage clusters using Active IQ
         url: /task_managing_ontap.html
       - title: Manage ONTAP volumes
         url: /task_provisioning_ontap.html
