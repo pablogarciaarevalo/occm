@@ -236,9 +236,7 @@ See <<Reviewing prerequisites,Reviewing prerequisites>> for the full list of req
 
 .Steps
 
-// . Download the Cloud Compliance software from the https://mysupport.netapp.com/site/products/all/details/cloud-compliance/downloads-tab[NetApp Support Site^].
-//
-. Send an email to mailto:ng-contact-cloud-compliance@netapp.com?subject=Request%20for%20Compliance%20On-Premises%20Installer[the NetApp Cloud Compliance team] and we’ll send you the link to download the installer file.
+. Download the Cloud Compliance software from the https://mysupport.netapp.com/site/products/all/details/cloud-compliance/downloads-tab/[NetApp Support Site^].
 
 . Copy the installer file to the Linux host you plan to use (using `scp` or some other method).
 

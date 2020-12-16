@@ -102,56 +102,7 @@ A Connector requires a network connection to the VPCs in which you want to deplo
 
 The Connector requires outbound internet access to manage resources and processes within your public cloud environment. A Connector contacts the following endpoints when managing resources in GCP:
 
-[cols="43,57",options="header"]
-|===
-| Endpoints
-| Purpose
-|
-\https://www.googleapis.com
-
-| Enables the Connector to contact Google APIs for deploying and managing Cloud Volumes ONTAP in GCP.
-
-| \https://api.services.cloud.netapp.com:443 | API requests to NetApp Cloud Central.
-
-| \https://cloud.support.netapp.com.s3.us-west-1.amazonaws.com	| Provides access to software images, manifests, and templates.
-
-| \https://repo.cloud.support.netapp.com | Used to download Cloud Manager dependencies.
-
-|
-\https://cognito-idp.us-east-1.amazonaws.com
-\https://cognito-identity.us-east-1.amazonaws.com
-\https://sts.amazonaws.com
-\https://cloud-support-netapp-com-accelerated.s3.amazonaws.com
-| Enables the Connector to access and download manifests, templates, and Cloud Volumes ONTAP upgrade images.
-
-| \https://cloudmanagerinfraprod.azurecr.io | Access to software images of container components for an infrastructure that's running Docker and provides a solution for service integrations with Cloud Manager.
-
-| \https://kinesis.us-east-1.amazonaws.com	| Enables NetApp to stream data from audit records.
-
-| \https://cloudmanager.cloud.netapp.com | Communication with the Cloud Manager service, which includes Cloud Central accounts.
-
-| \https://netapp-cloud-account.auth0.com | Communication with NetApp Cloud Central for centralized user authentication.
-
-| \https://mysupport.netapp.com | Communication with NetApp AutoSupport.
-|
-\https://support.netapp.com/svcgw
-\https://support.netapp.com/ServiceGW/entitlement
-\https://eval.lic.netapp.com.s3.us-west-1.amazonaws.com
-\https://cloud-support-netapp-com.s3.us-west-1.amazonaws.com
-| Communication with NetApp for system licensing and support registration.
-
-| \https://ipa-signer.cloudmanager.netapp.com | Enables Cloud Manager to generate licenses (for example, a FlexCache license for Cloud Volumes ONTAP)
-
-a| Various third-party locations, for example:
-
-* \https://repo1.maven.org/maven2
-* \https://oss.sonatype.org/content/repositories
-* \https://repo.typesafe.com
-
-Third-party locations are subject to change.
-
-| During upgrades, Cloud Manager downloads the latest packages for third-party dependencies.
-|===
+include::_include/connector_endpoints_gcp.adoc[]
 
 While you should perform almost all tasks from the SaaS user interface, a local user interface is still available on the Connector. The machine running the web browser must have connections to the following endpoints:
 

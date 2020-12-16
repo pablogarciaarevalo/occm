@@ -13,11 +13,11 @@ summary: The Cloud Sync capabilities that are available through the web UI are a
 :imagesdir: ./media/
 
 [.lead]
-The Cloud Sync capabilities that are available through the web UI are also available through RESTful APIs.
+The Cloud Sync capabilities that are available through the web UI are also available through the RESTful API.
 
 == Getting started
 
-To get started with the Cloud Sync APIs, you need to obtain a user token and your Cloud Central account ID. You'll need to add the token and account ID to the Authorization header when making API calls.
+To get started with the Cloud Sync API, you need to obtain a user token and your Cloud Central account ID. You'll need to add the token and account ID to the Authorization header when making API calls.
 
 .Steps
 
@@ -39,7 +39,7 @@ Body:
 . Obtain your Cloud Central account ID.
 +
 [source,http]
-GET https://cloudsync.netapp.com/api/accounts
+GET https://api.cloudsync.netapp.com/api/accounts
 Headers: Authorization: Bearer <user_token>
 Content-Type: application/json
 +
@@ -60,7 +60,7 @@ This API will return a response like the following:
 The following example shows an API call to create a data broker in Microsoft Azure. You would simply replace <user_token> and <accountId> with the token and ID that you obtained in the previous steps.
 +
 [source,http]
-POST https://cloudsync.netapp.com/api/data-brokers
+POST https://api.cloudsync.netapp.com/api/data-brokers
 Headers: Authorization: Bearer <user_token>
 Content-Type: application/json
 x-account-id: <accountId>
@@ -75,7 +75,7 @@ The API response includes an "expires_in" field that states when the token expir
 
 == API reference
 
-Documentation for each Cloud Sync API is available from https://cloudsync.netapp.com/docs/[NetApp Cloud Central^].
+Documentation for each Cloud Sync API is available from https://api.cloudsync.netapp.com/docs.
 
 == Using list APIs
 
@@ -85,7 +85,7 @@ List APIs are asynchronous APIs, so the result does not return immediately (for 
 
 . Call the list API that you want to use.
 . Use the `GET /messages/client` API to view the result of the operation.
-. Use the same API by appending it with the ID that you just received: `GET \http://cloudsync.netapp.com/api/messages/client?last=<id_from_step_2>`
+. Use the same API by appending it with the ID that you just received: `GET \http://api.cloudsync.netapp.com/api/messages/client?last=<id_from_step_2>`
 +
 Note that the ID changes each time that you call the `GET /messages/client` API.
 
@@ -94,7 +94,7 @@ Note that the ID changes each time that you call the `GET /messages/client` API.
 When you call the `list-s3-buckets` API, a result is not immediately returned:
 
 [source,http]
-GET http://cloudsync.netapp.com/api/data-brokers/<data-broker-id>/list-s3-buckets
+GET http://api.cloudsync.netapp.com/api/data-brokers/<data-broker-id>/list-s3-buckets
 Headers: Authorization: Bearer <user_token>
 Content-Type: application/json
 x-account-id: <accountId>
@@ -104,7 +104,7 @@ The result is HTTP status code 202, which means the message was accepted, but wa
 To get the result of the operation, you need to use the following API:
 
 [source,http]
-GET http://cloudsync.netapp.com/api/messages/client
+GET http://api.cloudsync.netapp.com/api/messages/client
 Headers: Authorization: Bearer <user_token>
 Content-Type: application/json
 x-account-id: <accountId>
@@ -129,7 +129,7 @@ The result is an array with one object that includes an ID field. The ID field r
 You would now make the following API call using the ID that you just received:
 
 [source,http]
-GET http://cloudsync.netapp.com/api/messages/client?last=<id_from_step_2>
+GET http://api.cloudsync.netapp.com/api/messages/client?last=<id_from_step_2>
 Headers: Authorization: Bearer <user_token>
 Content-Type: application/json
 x-account-id: <accountId>
