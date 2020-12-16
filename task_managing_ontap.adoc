@@ -16,7 +16,7 @@ The Active IQ page in Cloud Manager shows you any undiscovered ONTAP clusters in
 
 == Viewing unused Cloud Volumes ONTAP licenses
 
-Many on-premises ONTAP storage system packages that you purchased included a free Cloud Volumes ONTAP license so you can try the NetApp cloud storage offerings in Cloud Manager. You can use the license to create a new Cloud Volumes ONTAP instance, or you can apply the license to an existing Cloud Volumes ONTAP instance to extend the term of that license.
+Many on-premises ONTAP storage system packages that you purchased included a free Cloud Volumes ONTAP license so you can try the NetApp cloud storage offerings in Cloud Manager. You can use the license to create a new Cloud Volumes ONTAP instance, or you can apply the license to an existing Cloud Volumes ONTAP instance to expand the capacity by 368 TB.
 
 You can see whether you have any unused Cloud Volumes ONTAP licenses based on your NetApp Support Site credentials.
 
@@ -38,7 +38,7 @@ See the tasks below to learn about the options for using the free license.
 
 == Using unused Cloud Volumes ONTAP licenses
 
-You can use unused licenses to create a new Cloud Volumes ONTAP instance or to extend the term of the license on an existing Cloud Volumes ONTAP instance. The capacity of the license is 368 TB.
+You can use unused licenses to create a new Cloud Volumes ONTAP instance or to extend the capacity of the license on an existing Cloud Volumes ONTAP instance. The capacity of the license is 368 TB.
 
 The _Expires_ column indicates the last day the license is active. When creating a new Cloud Volumes ONTAP system this is the date the license expires. When updating an existing Cloud Volumes ONTAP system this indicates the length of time the existing license is extended.
 
@@ -69,9 +69,9 @@ All Providers
 
 |===
 
-When creating a new Cloud Volumes ONTAP system, this is the type of system you are deploying. For example, using the sample license (*PAYGO | Single | Azure*), you can create a single-node Cloud Volumes ONTAP system in Azure. This license can't be used to create an HA system or to deploy an instance in AWS.
+When creating a _new_ Cloud Volumes ONTAP system, this is the type of system you are deploying. For example, using the sample license (*PAYGO | Single | Azure*), you can create a single-node Cloud Volumes ONTAP system in Azure with 368 TB of space. This license can't be used to create an HA system or to deploy an instance in AWS.
 
-When updating an existing Cloud Volumes ONTAP system, this indicates the type of system that can have its existing license is extended. Using the sample license again, you can extend the license for any single-node Cloud Volumes ONTAP system in Azure. This license can't be used to extend the license for an HA system or for an instance deployed in AWS.
+When updating an _existing_ Cloud Volumes ONTAP system, this indicates the type of system that can have the capacity for its existing license extended. Using the sample license again, you can extend the license for any single-node Cloud Volumes ONTAP system in Azure. This license can't be used to extend the license for an HA system or for an instance deployed in AWS.
 
 === Creating a new Cloud Volumes ONTAP system with the unused license
 
@@ -81,7 +81,7 @@ Follow these steps to create a new Cloud Volumes ONTAP instance with the unused 
 
 . Click *Use License* and select *Use License for a new Cloud Volumes ONTAP*.
 +
-In most cases you will be directed to the *Details & Credentials* page for creating the working environment for the Cloud Volumes ONTAP system because both the cloud provider and number of nodes is defined by the license.
+In most cases you will be directed to the *Details & Credentials* page for creating the working environment for the Cloud Volumes ONTAP system because both the cloud provider and number of nodes are defined by the license.
 +
 If you are using a license defined as "All Providers", then you are directed to the *Choose a Location* page so you can pick the cloud provider first, before completing the *Details & Credentials* page.
 
@@ -96,7 +96,7 @@ See the following sections depending on the cloud provider on which you are depl
 
 === Extending the license term for an existing Cloud Volumes ONTAP system
 
-If you have a currently deployed Cloud Volumes ONTAP system that matches the license requirements of one of the free licenses (meaning the same cloud provider, number of nodes, etc.), you can follow these steps to extend the term of the license.
+If you have a currently deployed Cloud Volumes ONTAP system that matches the license requirements of one of the free licenses (meaning the same cloud provider, number of nodes, etc.), you can follow these steps to extend the capacity of the license by 368 TB.
 
 .Steps
 
