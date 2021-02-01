@@ -133,3 +133,11 @@ A *Download* button appears for the clusters that are not using the recommended 
 .Result
 
 Your firmware is updated. The next time your ONTAP system sends an AutoSupport message to Active IQ, the status in the _Firmware Updates_ page will be updated to show that updates are no longer needed.
+
+== Viewing on-prem workloads that are candidates for the cloud
+
+Certain workloads or volumes are ideal to move to a Cloud Volumes ONTAP system from your on-prem ONTAP clusters. Some of the advantages include reduced costs and improved performance and resiliency. The _Cloud-Ready Workloads_ tab provides a list of these workloads from your discovered ONTAP clusters.
+
+image:screenshot_aiq_workloads.png[A screenshot showing the workloads from your on-prem clusters that could be moved o the cloud.]
+
+Lift and shift is an approach for migrating your apps to the cloud. It means moving an application and its associated data to a cloud platform—without redesigning the app. See mmore information about link:https://www.netapp.com/knowledge-center/what-is-lift-and-shift/[lift and shift^].
