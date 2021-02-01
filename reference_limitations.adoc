@@ -37,10 +37,14 @@ It also means that the following services aren't available from Cloud Manager:
 
 The SaaS platform is required to use these services.
 
+== Cloud Manager doesn't support downgrades of Cloud Volumes ONTAP
+
+Cloud Manager doesn't support downgrading Cloud Volumes ONTAP to a previous version. Contact NetApp technical support for help with downgrades.
+
 == Shared Linux hosts are not supported
 
 The Connector isn't supported on a host that is shared with other applications. The host must be a dedicated host.
 
-== Cloud Manager does not support FlexGroup volumes
+== Cloud Manager doesn't support FlexGroup volumes
 
 While Cloud Volumes ONTAP supports FlexGroup volumes, Cloud Manager does not. If you create a FlexGroup volume from System Manager or from the CLI, then you should set Cloud Manager's Capacity Management mode to Manual. Automatic mode might not work properly with FlexGroup volumes.

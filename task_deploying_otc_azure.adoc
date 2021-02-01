@@ -81,7 +81,9 @@ video::video_subscribing_azure.mp4[width=848, height=480]
 * link:concept_cloud_compliance.html[Learn more about Cloud Compliance].
 * link:concept_backup_to_cloud.html[Learn more about Backup to Cloud].
 
-. *Location & Connectivity*: Select a location and security group and select the checkbox to confirm network connectivity between Cloud Manager and the target location.
+. *Location & Connectivity*: Select a location and security group, and select the checkbox to confirm network connectivity between the Connector and the target location.
++
+For single node systems, you can choose the Availability Zone in which you'd like to deploy Cloud Volumes ONTAP. If you don't select an AZ, Cloud Manager will select one for you.
 
 . *License and Support Site Account*: Specify whether you want to use pay-as-you-go or BYOL, and then specify a NetApp Support Site account.
 +

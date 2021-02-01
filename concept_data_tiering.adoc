@@ -85,6 +85,8 @@ To enable data tiering, you must select a volume tiering policy when you create,
 
 Some tiering policies have an associated minimum cooling period, which sets the time that user data in a volume must remain inactive for the data to be considered "cold" and moved to the capacity tier.
 
+TIP: You can change the minimum cooling period and default aggregate threshold of 50% (more on that below). http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mgng-stor-tier-fp/GUID-AD522711-01F9-4413-A254-929EAE871EBF.html[Learn how to change the cooling period^] and http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mgng-stor-tier-fp/GUID-8FC4BFD5-F258-4AA6-9FCB-663D42D92CAA.html[learn how to change the threshold^].
+
 Cloud Manager enables you to choose from the following volume tiering policies when you create or modify a volume:
 
 Snapshot Only:: After an aggregate has reached 50% capacity, Cloud Volumes ONTAP tiers cold user data of Snapshot copies that are not associated with the active file system to the capacity tier. The cooling period is approximately 2 days.
@@ -112,7 +114,7 @@ Data blocks are cooled by cooling scans. During this process, blocks that haven'
 * Auto: 31 days
 * Snapshot Only: 2 days
 
-Cloud Volumes ONTAP must be running for the cooling scan to work. If Cloud Volumes ONTAP is turned off, cooling will stop, as well. As a result, you might experience longer cooling times.
+Cloud Volumes ONTAP must be running for the cooling scan to work. If Cloud Volumes ONTAP is turned off, cooling will stop, as well. As a result, you can experience longer cooling times.
 
 == Setting up data tiering
 

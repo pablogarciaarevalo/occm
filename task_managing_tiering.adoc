@@ -91,9 +91,7 @@ You might want to see how much data is in the cloud tier and how much data is on
 
 . At the top of Cloud Manager, click *Tiering*.
 
-. From the *Cluster Dashboard*, click *More info* for a cluster.
-+
-image:https://docs.netapp.com/us-en/cloud-tiering/media/screenshot_more_info.gif["A screenshot that shows the More info button, which is available on the Cluster Dashboard for each cluster."]
+. From the *Cluster Dashboard*, click the menu icon for a cluster and select *Cluster info*.
 
 . Review details about the cluster.
 +

@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: task_controlling_private_data.html
-keywords: personal files, personal data, sensitive personal files, sensitive personal data, health data, ethnic origin, political opinions, gdpr, email address, credit card, ip address, iban, national ID, identifier, sex, criminal, compliance, privacy, filter data, csv file, highlight, data fusion
+keywords: personal files, personal data, sensitive personal files, sensitive personal data, health data, ethnic origin, political opinions, gdpr, email address, credit card, ip address, iban, national ID, identifier, sex, criminal, compliance, privacy, filter data, csv file, highlights
 summary: Gain control of your private data by viewing details about the personal data and sensitive personal data in your organization. You can also gain visibility by reviewing the categories and file types that Cloud Compliance found in your data.
 ---
 
-= Gaining visibility and control of private data
+= Viewing details about the private data stored in your organization
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -21,15 +21,15 @@ image:screenshot_compliance_dashboard.png[A screenshot of the Cloud Compliance d
 
 If you want to see data for only some of the working environments, <<Viewing Dashboard data for specific working environments,select those working environments>>.
 
-You can also filter the results from the Data Investigation page and download a report of the results. See <<Filtering data in the Data Investigation page,Filtering data in the Data Investigation page>> for details.
+You can also filter the results from the Data Investigation page and download a report of the results as a CSV file. See <<Filtering data in the Data Investigation page,Filtering data in the Data Investigation page>> for details.
 
 == Personal data
 
-Cloud Compliance automatically identifies specific words, strings, and patterns (Regex) inside the data. For example, Personal Identification Information (PII), credit card numbers, social security numbers, bank account numbers, and more. <<Types of personal data,See the full list>>.
+Cloud Compliance automatically identifies specific words, strings, and patterns (Regex) inside the data. For example, Personal Identification Information (PII), credit card numbers, social security numbers, bank account numbers, and more. link:reference_private_data_categories.html#types-of-personal-data[See the full list^].
 
-Additionally, if you have added a database server to be scanned, the _Data Fusion_ feature allows you to scan your files to identify whether unique identifiers from your databases are found in those files or other databases. See <<Creating custom personal data identifiers from your databases,Creating custom personal data identifiers from your databases>> for details.
+Additionally, if you have added a database server to be scanned, the _Data Fusion_ feature allows you to scan your files to identify whether unique identifiers from your databases are found in those files or other databases. See link:task_managing_data_fusion.html[Adding personal data identifiers using Data Fusion^] for details.
 
-For some types of personal data, Cloud Compliance uses _proximity validation_ to validate its findings. The validation occurs by looking for one or more predefined keywords in proximity to the personal data that was found. For example, Cloud Compliance identifies a U.S. social security number (SSN) as a SSN if it sees a proximity word next to it--for example, _SSN_ or _social security_. <<Types of personal data,The list below>> shows when Cloud Compliance uses proximity validation.
+For some types of personal data, Cloud Compliance uses _proximity validation_ to validate its findings. The validation occurs by looking for one or more predefined keywords in proximity to the personal data that was found. For example, Cloud Compliance identifies a U.S. social security number (SSN) as a SSN if it sees a proximity word next to it--for example, _SSN_ or _social security_. link:reference_private_data_categories.html#types-of-personal-data[The table of personal data^] shows when Cloud Compliance uses proximity validation.
 
 === Viewing files that contain personal data
 
@@ -49,56 +49,9 @@ image:screenshot_personal_files.gif[A screenshot of the personal files dialog bo
 +
 image:screenshot_compliance_investigation_page.gif[A screenshot of details information after clicking Investigate Results.]
 
-=== Types of personal data
-
-The personal data found in files can be general personal data or national identifiers. The third column identifies whether Cloud Compliance uses <<Personal data,proximity validation>> to validate its findings for the identifier.
-
-[cols="20,50,18",width=80%,options="header"]
-|===
-| Type
-| Identifier
-| Proximity validation?
-
-.3+| General | Email address | No
-| Credit card number | No
-| IBAN number (International Bank Account Number) | No
-
-.31+| National Identifiers | Belgian ID (Numero National) | Yes
-| Brazilian ID (CPF) | Yes
-| Bulgarian ID (UCN) | Yes
-| California Driver's License | Yes
-| Croatian ID (OIB) | Yes
-| Cyprus Tax Identification Number (TIC) | Yes
-| Czech/Slovak ID | Yes
-| Danish ID (CPR) | Yes
-| Dutch ID (BSN) | Yes
-| Estonian ID | Yes
-| Finnish ID (HETU) | Yes
-| French Tax Identification Number (SPI) | Yes
-| German Tax Identification Number (Steuerliche Identifikationsnummer) | Yes
-| Greek ID | Yes
-| Hungarian Tax Identification Number | Yes
-| Irish ID (PPS) | Yes
-| Israeli ID | Yes
-| Italian Tax Identification Number | Yes
-| Latvian ID | Yes
-| Lithuanian ID | Yes
-| Luxembourg ID | Yes
-| Maltese ID | Yes
-| Polish ID (PESEL) | Yes
-| Portuguese Tax Identification Number (NIF) | Yes
-| Romanian ID (CNP) | Yes
-| Slovenian ID (EMSO) | Yes
-| South African ID | Yes
-| Spanish Tax Identification Number | Yes
-| Swedish ID | Yes
-| U.K. ID (NINO) | Yes
-| USA Social Security Number (SSN) | Yes
-|===
-
 == Sensitive personal data
 
-Cloud Compliance automatically identifies special types of sensitive personal information, as defined by privacy regulations such as https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32016R0679&from=EN#d1e2051-1-1[articles 9 and 10 of the GDPR^]. For example, information regarding a person's health, ethnic origin, or sexual orientation. <<Types of sensitive personal data,See the full list>>.
+Cloud Compliance automatically identifies special types of sensitive personal information, as defined by privacy regulations such as https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32016R0679&from=EN#d1e2051-1-1[articles 9 and 10 of the GDPR^]. For example, information regarding a person's health, ethnic origin, or sexual orientation. link:reference_private_data_categories.html#types-of-sensitive-personal-data[See the full list^].
 
 Cloud Compliance uses artificial intelligence (AI), natural language processing (NLP), machine learning (ML), and cognitive computing (CC) to understand the meaning of the content that it scans in order to extract entities and categorize it accordingly.
 
@@ -122,24 +75,9 @@ image:screenshot_sensitive_personal_files.gif[A screenshot of the sensitive pers
 
 . Investigate the data by searching, sorting, expanding details for a specific file, clicking *Investigate Results* to see masked information, or by downloading the file list.
 
-=== Types of sensitive personal data
-
-The sensitive personal data that Cloud Compliance can find in files includes the following:
-
-Civil Law Reference:: Data concerning a natural person’s civil law suits, offences, and procedures.
-Criminal Procedures Reference::	Data concerning a natural person’s criminal convictions and offenses.
-Ethnicity Reference::	Data concerning a natural person’s racial or ethnic origin.
-Health Reference:: Data concerning a natural person’s health.
-ICD-9-CM Medical Codes:: Codes used in the medical and health industry.
-ICD-10-CM Medical Codes:: Codes used in the medical and health industry.
-Philosophical Beliefs Reference::	Data concerning a natural person’s philosophical beliefs.
-Political Opinions Reference:: Data concerning a natural person’s political opinions.
-Religious Beliefs Reference::	Data concerning a natural person’s religious beliefs.
-Sex Life or Orientation Reference::	Data concerning a natural person’s sex life or sexual orientation.
-
 == Categories
 
-Cloud Compliance takes the data that it scanned and divides it into different types of categories. Categories are topics based on AI analysis of the content and metadata of each file. <<Types of categories,See the list of categories>>.
+Cloud Compliance takes the data that it scanned and divides it into different types of categories. Categories are topics based on AI analysis of the content and metadata of each file. link:reference_private_data_categories.html#types-of-categories[See the list of categories^].
 
 Categories can help you understand what's happening with your data by showing you the types of information that you have. For example, a category like resumes or employee contracts can include sensitive data. When you investigate the results, you might find that employee contracts are stored in an insecure location. You can then correct that issue.
 
@@ -157,70 +95,9 @@ image:screenshot_categories.gif[A screenshot of the categories dialog box where 
 
 . Investigate the data by searching, sorting, expanding details for a specific file, clicking *Investigate Results* to see masked information, or by downloading the file list.
 
-=== Types of categories
-
-Cloud Compliance categorizes your data as follows:
-
-Finance::
-*	Balance Sheets
-*	Purchase Orders
-*	Invoices
-*	Quarterly Reports
-
-HR::
-*	Background Checks
-*	Compensation Plans
-*	Employee Contracts
-*	Employee Reviews
-*	Health
-*	Resumes
-
-Legal::
-*	NDAs
-*	Vendor-Customer contracts
-
-Marketing::
-*	Campaigns
-*	Conferences
-
-Operations::
-*	Audit Reports
-
-Sales::
-*	Sales Orders
-
-Services::
-*	RFI
-*	RFP
-* SOW
-*	Training
-
-Support::
-*	Complaints and Tickets
-
-Metadata categories::
-* Application Data
-* Archive Files
-* Audio
-* Business Application Data
-* CAD Files
-* Code
-* Database and index files
-* Design Files
-* Email Application Data
-* Executables
-* Financial Application Data
-* Health Application Data
-* Images
-* Logs
-* Miscellaneous Documents
-* Miscellaneous Presentations
-* Miscellaneous Spreadsheets
-* Videos
-
 == File types
 
-Cloud Compliance takes the data that it scanned and breaks it down by file type. Reviewing your file types can help you control your sensitive data because you might find that certain file types are not stored correctly. <<Types of files,See the list of file types>>.
+Cloud Compliance takes the data that it scanned and breaks it down by file type. Reviewing your file types can help you control your sensitive data because you might find that certain file types are not stored correctly. link:reference_private_data_categories.html#types-of-files[See the list of file types^].
 
 For example, you might be storing CAD files that include very sensitive information about your organization. If they are unsecured, you can take control of the sensitive data by restricting permissions or moving the files to another location.
 
@@ -235,55 +112,6 @@ For example, you might be storing CAD files that include very sensitive informat
 image:screenshot_file_types.gif[A screenshot of the file types dialog box where you can click the Investigate Results icon next to a file type.]
 
 . Investigate the data by searching, sorting, expanding details for a specific file, clicking *Investigate Results* to see masked information, or by downloading the file list.
-
-=== Types of files
-
-Cloud Compliance scans all files for category and metadata insights and displays all file types in the file types section of the dashboard.
-
-But when Cloud Compliance detects Personal Identifiable Information (PII), or when it performs a DSAR search, only the following file formats are supported:
-.PDF, .DOCX, .DOC, .PPTX, .XLS, .XLSX, .CSV, .TXT, .RTF, and .JSON.
-
-== Creating custom personal data identifiers from your databases
-
-A feature we call _Data Fusion_ allows you to scan your organizations' data to identify whether unique identifiers from your databases are found in files or other databases - basically making your own list of "personal data" that is identified in Cloud Compliance scans. This gives you the full picture about where potentially sensitive data resides in _all_ your files.
-
-You can choose the identifiers by selecting a specific column, or columns, in a database table. For example, the diagram below shows how data fusion is used to scan your volumes and buckets for occurrences of all your Customer IDs from your Oracle database.
-
-image:diagram_compliance_data_fusion.png[A diagram showing how content from your databases can be used as a source to identify files that contain the same data.]
-
-As you can see, two unique Customer IDs have been found in two volumes and in one S3 bucket. Any matches in database tables will also identified.
-
-.Steps
-
-You must have link:task_scanning_databases.html#adding-the-database-server[added at least one database server] to Cloud Compliance before you can add data fusion sources.
-
-. In the Scan Configuration page, click *Manage Data Fusion* in the database where the source data resides.
-+
-image:screenshot_compliance_manage_data_fusion.png[A screenshot of selecting the Manage Data Fusion button to add a source column.]
-
-. Click *Add Data Fusion source* on the next page.
-
-. In the _Add Data Fusion Source_ page:
-.. Select the Database Schema from the drop-down menu.
-.. Enter the Table name in that schema.
-.. Enter the Column, or Columns, that contain the unique identifiers you want to use.
-+
-When adding multiple columns, enter each column name, or table view name, on a separate line.
-+
-image:screenshot_compliance_add_data_fusion.png[A screenshot of identifying the schema, table, and column for the data fusion source.]
-
-. Click *Add Data Fusion Source*.
-+
-The Data Fusion inventory page displays the database source columns that you have configured for Cloud Compliance to scan.
-+
-image:screenshot_compliance_data_fusion_list.png[A screenshot of all the data source references you have configured with Data Fusion.]
-
-.Results
-After the next scan, the results will include this new information in the Dashboard under the "Personal" results section, and in the Investigation page in the "Personal Data" filter. Each source column you added appears in the filter list as "Table.Column", for example `Customers.Customer ID`.
-
-NOTE: If you later decide not to scan your files using a certain Data Fusion source, you can select the source row from the Data Fusion inventory page and click *Delete Data Fusion Source*.
-
-image:screenshot_compliance_delete_data_fusion.png[A screenshot showing how to remove a data fusion source.]
 
 == Viewing Dashboard data for specific working environments
 
@@ -309,36 +137,7 @@ image:screenshot_compliance_investigation_filtered.png[A screenshot of the filte
 
 * The left-pane filters enable you to refine the results by working environment, storage repository, category, private data, file type, file size, last modified date, whether the S3 object’s permissions are open to public access, etc...
 
-* The _Highlights_ filter at the top of the Filters pane lists the custom filters that provide commonly requested combinations of filters; like a saved database query or Favorites list.
-
-== Using Highlights to quickly view results in the Investigation page
-
-Highlights are like a Favorites list of custom filters that provide commonly requested combinations of filters. In addition to appearing in the list of Filters in the Investigation page, the Highlights tab lists all the Highlights available on this instance of Cloud Compliance.
-
-image:screenshot_compliance_highlights_tab.png[A screenshot of the Highlights tab in the Cloud Compliance dashboard.]
-
-Click the image:screenshot_gallery_options.gif[More button] button for a specific highlight, and then click *Investigate Results* to display the results from the highlight in the Investigation page.
-
-=== Predefined Highlights filters
-
-Cloud Compliance provides the following system-defined highlights:
-
-[cols="25,40,40",width=90%,options="header"]
-|===
-| Name
-| Description
-| Logic
-| S3 publicly-exposed private data | S3 Objects containing personal or sensitive personal information, with open Public read access. | (S3 Public) AND contains personal OR sensitive personal info)
-| PCI DSS – Stale data over 30 days | Files containing Credit Card information, last modified over 30 days ago. | Contains credit card AND last modified over 30 days
-| HIPAA – Stale data over 30 days | Files containing Health information, last modified over 30 days ago. | Contains health data (defined same way as in HIPAA report) AND last modified over 30 days
-| Private data – Stale over 7 years | Files containing personal or sensitive personal information, last modified over 7 years ago. | Files containing personal or sensitive personal information, last modified over 7 years ago
-| GDPR – European citizens | Files containing more than 5 identifiers of an EU country’s citizens or DB Tables containing identifiers of an EU country’s citizens. | Files containing over 5 identifiers of an (one) EU citizens or DB Tables containing rows with over 15% of columns with one country’s EU identifiers. (any one of the national identifiers of the European countries. Does not include Brazil, California, USA SSN, Israel, South Africa)
-| CCPA – California residents | Files containing over 10 California Driver’s License identifiers or DB Tables with this identifier. | Files containing over 10 California Driver’s License identifiers OR DB Tables containing California Driver’s license
-| Data Subject names – High risk | Files with over 50 Data Subject names. | Files with over 50 Data Subject names
-| Email Addresses – High risk | Files with over 50 Email Addresses, or DB Columns with over 50% of their rows containing Email Addresses | Files with over 50 Email Addresses, or DB Columns with over 50% of their rows containing Email Addresses
-| Personal data – High risk | Files with over 20 Personal data identifiers, or DB Columns with over 50% of their rows containing Personal data identifiers. | Files with over 20 personal, or DB Columns with over 50% of their rows containing personal
-| Sensitive Personal data – High risk | Files with over 20 Sensitive Personal data identifiers, or DB Columns with over 50% of their rows containing Sensitive Personal data. | Files with over 20 sensitive personal, or DB Columns with over 50% of their rows containing sensitive personal
-|===
+* The _Highlights_ filter at the top of the Filters pane lists the custom filters that provide commonly requested combinations of filters; like a saved database query or Favorites list. Go link:task_managing_highlights.html[here^] to view the list of predefined highlights and to see how you can create your own custom highlights.
 
 == What’s included in each file list report (CSV file)
 
@@ -360,27 +159,3 @@ Each file list includes the following information:
 * Deletion detection date
 +
 A deletion detection date identifies the date that the file was deleted or moved. This enables you to identify when sensitive files have been moved. Deleted files aren't part of the file number count that appears in the dashboard or on the Investigation page. The files only appear in the CSV reports.
-
-== Accuracy of information found
-
-NetApp can't guarantee 100% accuracy of the personal data and sensitive personal data that Cloud Compliance identifies. You should always validate the information by reviewing the data.
-
-Based on our testing, the table below shows the accuracy of the information that Cloud Compliance finds. We break it down by _precision_ and _recall_:
-
-Precision:: The probability that what Cloud Compliance finds has been identified correctly. For example, a precision rate of 90% for personal data means that 9 out of 10 files identified as containing personal information, actually contain personal information. 1 out of 10 files would be a false positive.
-
-Recall:: The probability for Cloud Compliance to find what it should. For example, a recall rate of 70% for personal data means that Cloud Compliance can identify 7 out of 10 files that actually contain personal information in your organization. Cloud Compliance would miss 30% of the data and it won’t appear in the dashboard.
-
-Cloud Compliance is in a Controlled Availability release and we are constantly improving the accuracy of our results. Those improvements will be automatically available in future Cloud Compliance releases.
-
-[cols="25,20,20",width=80%,options="header"]
-|===
-| Type
-| Precision
-| Recall
-
-| Personal data - General | 90%-95% | 60%-80%
-| Personal data - Country identifiers | 30%-60% | 40%-60%
-| Sensitive personal data | 80%-95% | 20%-30%
-| Categories | 90%-97% | 60%-80%
-|===

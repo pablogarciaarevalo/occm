@@ -137,23 +137,19 @@ After you prepare your Google Cloud environment, start tiering inactive data fro
 
 . Select an on-prem cluster.
 
-. Click *Setup Tiering*.
+. Click *Enable*.
 +
-image:screenshot_setup_tiering_onprem.gif[A screenshot that shows the Setup Tiering option that appears on the right side of the screen after you select an on-prem ONTAP working environment.]
-+
-You're now on the Tiering dashboard.
-
-. Click *Set up Tiering* next to the cluster.
+image:screenshot_setup_tiering_onprem.gif[A screenshot that shows the Enable option that appears on the right side of the screen after you select an on-prem ONTAP working environment.]
 
 . Complete the steps on the *Tiering Setup* page:
 
-.. *Bucket*: Add a new Google Cloud Storage bucket or select an existing bucket and click *Continue*.
+.. *Bucket*: Add a new Google Cloud Storage bucket or select an existing bucket.
 
-.. *Storage Class*: Select the storage class that you want to use for the tiered data and click *Continue*.
+.. *Storage Class*: Select the storage class that you want to use for the tiered data.
 
 .. *Credentials*: Enter the storage access key and secret key for a service account that has the Storage Admin role.
 
-.. *Cluster Network*: Select the IPspace that ONTAP should use to connect to object storage and click *Continue*.
+.. *Cluster Network*: Select the IPspace that ONTAP should use to connect to object storage.
 +
 Selecting the correct IPspace ensures that Cloud Tiering can set up a connection from ONTAP to your cloud provider's object storage.
 

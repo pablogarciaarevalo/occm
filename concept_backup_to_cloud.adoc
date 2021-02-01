@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept_backup_to_cloud.html
-keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, back up volumes, Backup to Cloud, restore volumes, billing, cost, on-premises ONTAP, onprem, restore files
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, back up volumes, Backup to Cloud, restore volumes, billing, cost, on-premises ONTAP, onprem, restore files
 summary: Backup to Cloud is an add-on service for Cloud Volumes ONTAP and on-premises ONTAP clusters that delivers backup and restore capabilities for protection, and long-term archive of your cloud data. Backups are stored in an object store in your cloud account, independent of volume Snapshot copies used for near-term recovery or cloning.
 ---
 
@@ -37,22 +37,80 @@ NOTE: You must use Cloud Manager for all backup and restore operations. Any acti
 
 == Supported working environments and object storage providers
 
-Backup to Cloud is supported with the following types of working environments:
+At this time, Backup to Cloud enables you to create volume backups from the following working environments:
 
-* Cloud Volumes ONTAP in AWS
-* Cloud Volumes ONTAP in Azure
-* Cloud Volumes ONTAP in Google Cloud (Only single-node systems are currently supported.)
-* On-premises ONTAP clusters
+[cols=2*,options="header",cols="50,40",width="90%"]
+|===
 
-Single File Restore is supported only in AWS at this time.
+| Source Working Environment
+| Backup File Destination
+
+| Cloud Volumes ONTAP in AWS
+| Amazon S3
+| Cloud Volumes ONTAP in Azure
+| Azure Blob
+| Cloud Volumes ONTAP in Google
+| Google Cloud Storage
+| On-premises ONTAP system
+| Amazon S3
+Azure Blob
+
+|===
+
+You can restore a volume, or individual files, from a backup file to the following working environments:
+
+[cols="<,^,<",options="header",cols="30,40,40",width="90%"]
+|===
+
+| Backup File Location
+2+| Restore Working Environment
+
+| | *Volume Restore* | *Single File Restore*
+| Amazon S3 | Cloud Volumes ONTAP in AWS | Cloud Volumes ONTAP in AWS
+ On-premises ONTAP system
+| Azure Blob | Cloud Volumes ONTAP in Azure | Cloud Volumes ONTAP in Azure
+On-premises ONTAP system
+| Google Cloud Storage | Cloud Volumes ONTAP in Google |
+
+|===
 
 == Cost
 
-Backup to Cloud is available in two pricing options: Bring Your Own License (BYOL) and Pay As You Go (PAYGO).
+There are two types of costs associated with using Backup to Cloud: resource charges and service charges.
 
-For BYOL you'll pay NetApp to use the service for a period of time, say 6 months, and for a maximum amount backup capacity, say 10 GB (before storage efficiencies), and you'll need to pay your cloud provider for object storage costs. You'll receive a serial number that you enter in the Cloud Manager Licensing page to enable the service. When either limit is reached you'll need to renew the license. See link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[Adding and updating your Backup BYOL license^]. The Backup BYOL license applies to all Cloud Volumes ONTAP systems associated with your link:concept_cloud_central_accounts.html[Cloud Central account^].
+*Resource charges*
 
-For PAYGO you'll need to pay your cloud provider for object storage costs and NetApp for backup licensing costs. The licensing costs are based on used capacity (before storage efficiencies):
+Resource charges are paid to the cloud provider for storage and for running a virtual machine/instance in the cloud.
+
+* For Backup, you pay your cloud provider for object storage costs.
++
+Since Backup to Cloud preserves the storage efficiencies of the source volume, you pay the cloud provider object storage costs for the data _after_ ONTAP efficiencies (for the smaller amount of data after deduplication and compression has been applied).
+
+* For Restore (single-file restore), you pay your cloud provider for compute costs only when the instance is running.
++
+The instance is used only to browse the backup snapshots when restoring individual files. The instance is turned off when not in use to save costs. And it is not deployed at all if you never attempt to restore individual files.
++
+See the link:task_restore_backups.html#details[type of virtual machine/instance that is deployed^] for each supported cloud provider.
+
+*Service charges*
+
+Backup service charges are paid to NetApp and cover both the cost to _create_ backups and to _restore_ volumes, or files, from those backups. You pay only for the data that you protect, calculated by the target backup capacity _before_ ONTAP efficiencies.
+
+There are two ways to pay for the Backup service. The first option is to subscribe from the service provider, which enables you to pay per month based on the amount of backed up data. The second option is to purchase licenses directly from NetApp. Read the <<Licensing,Licensing>> section for details.
+
+== Licensing
+
+Backup to Cloud is available in two licensing options: Bring Your Own License (BYOL) and Pay As You Go (PAYGO). A 30-day free trial is available if you don’t have a license.
+
+=== Free trial
+
+When using the 30-day free trial version, you are notified about the number of free trial days that remain. At the end of your free trial, backups stop being created. You must subscribe to the service or purchase a license to continue using the service.
+
+Backup are not deleted when the service is disabled. You'll continue to be charged by your cloud provider for object storage costs for the capacity that your backups use unless you delete the backups.
+
+=== Pay-as-you-go subscription
+
+For PAYGO you'll need to pay your cloud provider for object storage costs and NetApp for backup licensing costs. The licensing costs are based on target backup capacity (before ONTAP storage efficiencies):
 
 * AWS: https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Go to the Cloud Manager Marketplace offering for pricing details^].
 
@@ -60,15 +118,27 @@ For PAYGO you'll need to pay your cloud provider for object storage costs and Ne
 
 * GCP: https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[Go to the Cloud Manager Marketplace offering for pricing details^]
 
-The only cost for the Restore service (for the single file restore functionality) is the cost to your cloud provider for the deployed instance.
+=== Bring your own license
 
-* In AWS, the Restore instance runs on an m5n.xlarge instance with 4 CPUs, 16 GiB Memory, and EBS Only instance storage. In regions where m5n.xlarge instance isn’t available, Restore runs on an m5.xlarge instance instead.
+BYOL is term-based (1YR/2YR/3YR) and capacity-based in 1 TB increments, based on the logical (before ONTAP storage efficiencies) backed up capacity. You pay NetApp to use the service for a period of time, say 1 year, and for a maximum amount backup capacity, say 10 TB, and you'll need to pay your cloud provider for object storage costs. You'll receive a serial number that you enter in the Cloud Manager Licensing page to enable the service. When either limit is reached you'll need to renew the license. See link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[Adding and updating your Backup BYOL license^]. The Backup BYOL license applies to all Cloud Volumes ONTAP and on-premises systems associated with your link:concept_cloud_central_accounts.html[Cloud Central account^].
 
-=== Free trial
+==== BYOL license considerations
 
-A 30-day free trial is available. When using the trial version, you are notified about the number of free trial days that remain. At the end of your free trial, backups stop being created. You must subscribe to the service or purchase a license to continue using the service.
+When using a Backup to Cloud BYOL license, Cloud Manager notifies you when backups are nearing the capacity limit or nearing the license expiration date. You receive these notifications:
 
-Backup are not deleted when the service is disabled. You'll continue to be charged by your cloud provider for object storage costs for the capacity that your backups use unless you delete the backups.
+* When backups have reached 80% of licensed capacity, and again when you have reached the limit
+* 30 days before a license is due to expire, and again when the license expires
+
+Use the chat icon in the lower right of the Cloud Manager interface to renew your license when you receive these notifications.
+
+Two things can happen when your license expires:
+
+* If the account you are using for your ONTAP systems has a marketplace account, the backup service continues to run, but you are shifted over to a PAYGO licensing model. You are charged by your cloud provider for object storage costs, and by NetApp for backup licensing costs, for the capacity that your backups are using.
+* If the account you are using for your ONTAP systems does not have a marketplace account, the backup service continues to run, but you will continue to receive the expiration message.
+
+Once you renew your BYOL subscription, Cloud Manager automatically obtains the new license from NetApp and installs it. If Cloud Manager can't access the license file over the secure internet connection, you can obtain the file yourself and manually upload it to Cloud Manager. For instructions, see link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[Adding and updating your Backup BYOL license^].
+
+Systems that were shifted over to a PAYGO license are returned to the BYOL license automatically. And systems that were running without a license will stop receiving the warning message and will be charged for backups that occurred while the license was expired.
 
 == How Backup to Cloud works
 
@@ -94,9 +164,11 @@ Notes:
 
 * In Amazon S3, backups start in the _Standard_ storage class and transition to the _Standard-Infrequent Access_ storage class after 30 days.
 
-* In Azure, each backup is associated with the _cool_ access tier.
+* In Azure, backups are associated with the _cool_ access tier.
 
-* In GCP, backups are associated with the _Standard_ storage class.
+* In GCP, backups are associated with the _Standard_ storage class by default.
++
+You can also use the lower cost _Nearline_ storage class, or the _Coldline_ or _Archive_ storage classes. See the Google topic link:https://cloud.google.com/storage/docs/storage-classes[Storage classes^] for information about changing the storage class.
 
 === Backup settings are system wide
 
@@ -110,7 +182,7 @@ You can choose daily, or weekly, or monthly backups of all volumes. You can also
 
 [cols=5*,options="header",cols="30,20,20,20,30",width="80%"]
 |===
-| Policy Name
+| Backup Policy Name
 3+| Backups per interval...
 | Max. Backups
 
@@ -146,37 +218,15 @@ Backup copies are associated with the link:concept_cloud_central_accounts.html[C
 
 If you have multiple Cloud Manager systems in the same Cloud Central account, each Cloud Manager system will display the same list of backups. That includes the backups associated with Cloud Volumes ONTAP and on-premises ONTAP instances from other Cloud Manager systems.
 
-=== BYOL license considerations
-
-When using a Backup to Cloud BYOL license, Cloud Manager notifies you when backups are nearing the capacity limit or nearing the license expiration date. You receive these notifications:
-
-* when backups have reached 80% of licensed capacity, and again when you have reached the limit
-* 30 days before a license is due to expire, and again when the license expires
-
-Use the chat icon in the lower right of the Cloud Manager interface to renew your license when you receive these notifications.
-
-Two things can happen when your license expires:
-
-* If the account you are using for your ONTAP systems has a marketplace account, the backup service continues to run, but you are shifted over to a PAYGO licensing model. You are charged by your cloud provider for object storage costs, and by NetApp for backup licensing costs, for the capacity that your backups are using.
-* If the account you are using for your ONTAP systems does not have a marketplace account, the backup service continues to run, but you will continue to receive the expiration message.
-
-Once you renew your BYOL subscription, Cloud Manager automatically obtains the new license from NetApp and installs it. If Cloud Manager can't access the license file over the secure internet connection, you can obtain the file yourself and manually upload it to Cloud Manager. For instructions, see link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[Adding and updating your Backup BYOL license^].
-
-Systems that were shifted over to a PAYGO license are returned to the BYOL license automatically. And systems that were running without a license will stop receiving the warning message and will be charged for backups that occurred while the license was expired.
-
 == Supported volumes
 
 Backup to Cloud supports FlexVol read-write volumes and data protection (DP) volumes.
 
-FlexGroup volumes aren't currently supported.
+FlexGroup volumes and SnapLock volumes aren't currently supported.
 
 == Limitations
 
-* WORM storage (SnapLock) is not supported on a Cloud Volumes ONTAP or on-premises system when Backup to Cloud is enabled.
-
-* Backup to Cloud restrictions when making backups from on-premises ONTAP systems:
-** Cloud Manager must be deployed in the cloud (Azure or AWS). There is no support for on-premises Cloud Manager deployments.
-** At this time, backups can be restored only to Cloud Volumes ONTAP systems deployed on the same cloud provider. You can't restore a backup to an on-premises ONTAP system or to a Cloud Volumes ONTAP system that is using a different cloud provider.
+* When making backups from on-premises ONTAP systems, Cloud Manager must be deployed in the cloud (Azure or AWS). There is no support for on-premises Cloud Manager deployments.
 
 * When backing up data protection (DP) volumes, the rule that is defined for the SnapMirror policy on the source volume must use a label that matches the allowed Backup to Cloud policy names of *daily*, *weekly*, or *monthly*. Otherwise the backup will fail for that DP volume.
 
@@ -184,9 +234,11 @@ FlexGroup volumes aren't currently supported.
 
 * When backing up volumes from Cloud Volumes ONTAP systems, volumes that you create outside of Cloud Manager aren't automatically backed up. For example, if you create a volume from the ONTAP CLI, ONTAP API, or System Manager, then the volume won't be automatically backed up. If you want to back up these volumes, you would need to disable Backup to Cloud and then enable it again.
 
-* ILM (tiering) from the object storage, or direct write to Glacier or similar lower tier object storage, is not supported.
+* ILM (tiering) from the object storage, or direct write to AWS Glacier or similar lower tier object storage, is not supported.
 
-* MetroCluster (MCC) and SVM-DR configurations are not supported.
+* SVM-DR and SM-BC configurations are not supported.
+
+* MetroCluster (MCC) backup is supported from ONTAP secondary only: MCC -> SnapMirror -> ONTAP -> Cloud Backup Service -> object storage.
 
 * WORM/Compliance mode on an object store is not supported.
 
@@ -194,14 +246,12 @@ FlexGroup volumes aren't currently supported.
 
 * Single file restore can restore individual files. There is currently no support for restoring folders/directories.
 
-* Single File Restore is supported only with AWS at this time.
-
-* The ONTAP version must be 9.6 or greater in your Cloud Volumes ONTAP systems.
+* The ONTAP version must be 9.6 or greater in your Cloud Volumes ONTAP or on-premises systems.
 
 * Cross account restore requires manual action in the cloud provider console. See the AWS topic https://docs.aws.amazon.com/AmazonS3/latest/dev/example-walkthroughs-managing-access-example2.html[granting cross-account bucket permissions^] for details.
 
-* Non supported Configurations:
-** Gov Cloud is not supported.
+* Non supported configurations:
+** Gov Cloud is currently not supported.
 ** Same account with different Cloud Managers in different subnets.
 
-* We can browse a single directory with flat files up to a maximum of 30,000 files. Larger directories are not supported.
+* Restore can browse a single directory with flat files up to a maximum of 30,000 files. Larger directories are currently not supported.

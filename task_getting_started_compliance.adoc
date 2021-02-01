@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_getting_started_compliance.html
-keywords: cloud compliance, get started, enable cloud compliance, cifs credentials, smb credentials, cloud compliance access, privacy, compliance, dp volumes, data protection volumes, ANF, Azure NetApp Files, CVO, Cloud Volumes ONTAP
+keywords: cloud compliance, get started, enable cloud compliance, cifs credentials, smb credentials, cloud compliance access, privacy, compliance, dp volumes, data protection volumes, ANF, Azure NetApp Files, CVO, Cloud Volumes ONTAP, backup files
 summary: Complete a few steps to get started with Cloud Compliance for Cloud Volumes ONTAP, on-premises ONTAP, or Azure NetApp Files.
 ---
 
@@ -59,9 +59,9 @@ Select or deselect the volumes that you want to scan and Cloud Compliance will s
 
 == Discovering the data sources that you want to scan
 
-If the data sources you want to scan at not already in your Cloud Manager environment, you can add them to working environments at this time.
+If the data sources you want to scan are not already in your Cloud Manager environment, you can add them to the canvas at this time.
 
-Your Cloud Volumes ONTAP systems should already be available in working environments in Cloud Manager. For on-premises ONTAP systems you need to have link:task_discovering_ontap.html[Cloud Manager discover these clusters^]. And for Azure NetApp Files, link:task_manage_anf.html[Cloud Manager must be set up to discover the configuration^].
+Your Cloud Volumes ONTAP systems should already be available in the Canvas in Cloud Manager. For on-premises ONTAP systems you need to have link:task_discovering_ontap.html[Cloud Manager discover these clusters^]. And for Azure NetApp Files, link:task_manage_anf.html[Cloud Manager must be set up to discover the configuration^].
 
 == Deploying the Cloud Compliance instance
 
@@ -72,6 +72,10 @@ Cloud Compliance can be deployed in the cloud or in an on-premises location when
 Cloud Compliance must be deployed in the cloud when scanning Azure NetApp Files volumes, and it must be deployed in the same region as the volumes you wish to scan.
 
 == Enabling Cloud Compliance in your working environments
+
+You can enable Cloud Compliance on Cloud Volumes ONTAP systems (in AWS and Azure), on-premises ONTAP clusters, and Azure NetApp Files.
+
+NOTE: Following these steps for on-prem ONTAP systems scans the volumes directly on the on-prem ONTAP system. If you are already creating backup files from those on-prem systems using link:concept_backup_to_cloud.html[Backup to Cloud^], you can run compliance scans on the backup files in the cloud instead. Go to <<Scanning backup files from on-premises ONTAP systems,Scanning backup files from on-premises ONTAP systems>> to scan the volumes by scanning the backup files.
 
 . At the top of Cloud Manager, click *Compliance* and then select the *Configuration* tab.
 +
@@ -144,6 +148,38 @@ image:screenshot_volume_compliance_selection.png[A screenshot of the scan config
 |===
 
 TIP: New volumes added to the working environment are automatically scanned only when the *Activate Compliance for all Volumes* setting is enabled. When this setting is disabled, you'll need to activate scanning on each new volume you create in the working environment.
+
+== Scanning backup files from on-premises ONTAP systems
+
+If you don't want Cloud Compliance to scan volumes directly on your on-prem ONTAP systems, a new Beta feature released in January 2021 allows you to run compliance scans on backup files created from your on-prem ONTAP volumes. So if you are already creating backup files using link:concept_backup_to_cloud.html[Backup to Cloud^], you can use this new feature to run compliance scans on those backup files.
+
+NOTE: The Compliance scans you run on backup files are free - no Cloud Compliance subscription or license is needed.
+
+.Steps
+
+If you want to scan the backup files from on-prem ONTAP systems:
+
+. At the top of Cloud Manager, click *Compliance* and then select the *Configuration* tab.
+
+. From the list of working environments, click the *BACKUP* button from the list of filters.
++
+All the on-premises ONTAP working environments that have backup files are listed. If you don't have any backup files in an on-prem system, then the working environment is not shown.
++
+image:screenshot_compliance_onprem_backups.png[A screenshot of the Compliance page to select volumes you want to scan.]
+
+. To scan all backed up volumes in a working environment, click *Activate Compliance for all backed up Volumes*.
++
+To scan only certain backed up volumes in a working environment, click *or select Volumes* and then choose the backup files (volumes) that you want to scan.
+
+See <<Enabling and disabling compliance scans on volumes,Enabling and disabling compliance scans on volumes>> for details.
+
+==== Scanning on-prem volumes versus backups of those volumes
+
+When you view the entire list of working environments you will see two listings for each on-prem cluster if they have backed up files.
+
+image:screenshot_compliance_we_scan_2_onprems.png[A screenshot showing how on-prem clusters will appear twice in the list of working environments if they have backup files.]
+
+The first item is the on-prem cluster and the actual volumes. The second item is the backup files from that same on-prem cluster. Choose the first option to scan the volumes on the on-prem system. Choose the second option to scan the backup files from those volumes. Do not scan both on-prem volumes and backup files of the same cluster.
 
 == Scanning data protection volumes
 

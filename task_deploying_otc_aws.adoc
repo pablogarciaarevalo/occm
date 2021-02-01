@@ -87,6 +87,8 @@ image:screenshot_aws_marketplace.gif["A screenshot that shows the subscription p
 
 . *Location & Connectivity*: Enter the network information that you recorded in the AWS worksheet.
 +
+If you have an AWS Outpost, you can deploy a single node Cloud Volumes ONTAP system in that Outpost by selecting the Outpost VPC. The experience is the same as any other VPC that resides in AWS.
++
 The following image shows the page filled out:
 +
 image:screenshot_cot_vpc.gif[Screen shot: Shows the VPC page filled out for a new Cloud Volumes ONTAP instance.]

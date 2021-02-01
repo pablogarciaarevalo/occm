@@ -5,7 +5,7 @@ keywords: backing up, back up, backup, backup cloud volumes ontap, back up cloud
 summary: Complete a few steps to get started backing up data from Cloud Volumes ONTAP to Google Cloud storage.
 ---
 
-= Backing up data to Google Cloud storage
+= Backing up data to Google Cloud Storage
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,7 @@ summary: Complete a few steps to get started backing up data from Cloud Volumes 
 :imagesdir: ./media/
 
 [.lead]
-Complete a few steps to get started backing up data from Cloud Volumes ONTAP to Google Cloud storage.
+Complete a few steps to get started backing up data from Cloud Volumes ONTAP to Google Cloud Storage.
 
 == Quick start
 
@@ -60,10 +60,10 @@ Identify which volumes you want to back up in the Select Volumes page.
 ==== image:number6.png[Number 6] Restore your data, as needed
 
 [role="quick-margin-para"]
-From the Backup List, select a volume, select a backup, and then restore data from the backup to a new volume. A Service Account is required on the Cloud Volumes ONTAP system where you are performing the restore.
+Restore a backup to a new volume. You can restore data to a Cloud Volumes ONTAP system in Google. A Service Account is required on the Cloud Volumes ONTAP system where you are performing the restore.
 
 [role="quick-margin-para"]
-image:screenshot_backup_to_s3_restore_icon.gif[A screenshot of the restore icon for a backup after you select a volume.]
+See link:task_restore_backups.html[Restoring volume data from backup files^] for details.
 
 == Requirements
 
@@ -71,8 +71,6 @@ Read the following requirements to make sure that you have a supported configura
 
 Supported ONTAP versions::
 Cloud Volumes ONTAP 9.7P5 and later.
-
-*Note:* Only single-node Cloud Volumes ONTAP systems are currently supported.
 
 Supported GCP regions::
 Backup to Cloud is supported in all GCP regions https://cloud.netapp.com/cloud-volumes-global-regions[where Cloud Volumes ONTAP is supported^].
@@ -101,9 +99,7 @@ See link:task_deploying_gcp.html[Launching Cloud Volumes ONTAP in GCP] for requi
 
 . *Choose a Location*: Select *Google Cloud Platform*.
 
-. *Choose Type*: Select *Cloud Volumes ONTAP*.
-+
-Select a single node system at this time. HA systems are not currently supported.
+. *Choose Type*: Select *Cloud Volumes ONTAP* (either single-node or high-availability).
 
 . *Details & Credentials*: Enter the following information:
 .. Click *Edit Project* and select a new project if the one you want to use is different than the default Project (where Cloud Manager resides).
@@ -125,7 +121,7 @@ image:screenshot_backup_to_gcp.png[Shows the Backup to Cloud option in the worki
 
 Backup to Cloud is enabled on the system and backs up the volume you created every day and retains the most recent 30 backup copies.
 
-You can link:task_managing_backups.html[start and stop backups for additional volumes or change the backup schedule^] and you can link:task_restore_backups.html[restore entire volumes or individual files from a backup file^].
+You can link:task_managing_backups.html[start and stop backups for additional volumes or change the backup schedule^] and you can link:task_restore_backups.html[restore entire volumes from a backup file^].
 
 == Enabling Backup to Cloud on an existing system
 
@@ -162,4 +158,4 @@ Backup to Cloud starts taking the initial backups of each selected volume.
 
 .What's next?
 
-You can link:task_managing_backups.html[start and stop backups for volumes or change the backup schedule^] and you can link:task_restore_backups.html[restore entire volumes or individual files from a backup file^].
+You can link:task_managing_backups.html[start and stop backups for volumes or change the backup schedule^] and you can link:task_restore_backups.html[restore entire volumes from a backup file^].

@@ -222,6 +222,8 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 * StorageGRID
 * ONTAP S3 Storage
 
+| SFTP ^1^ | S3
+
 | SMB server a|
 
 * AWS S3
@@ -254,6 +256,8 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 |===
 
 Notes:
+
+. Cloud Sync supports sync relationships from SFTP to S3 by using the API only.
 
 . You can choose a specific Azure Blob storage tier when a Blob container is the target:
 +

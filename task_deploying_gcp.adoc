@@ -231,7 +231,7 @@ NOTE: You must be an Account Admin to create a Connector. When you create your f
 
 . *Choose a Location*: Select *Google Cloud* and *Cloud Volumes ONTAP HA*.
 
-. *Details & Credentials*: Select a project, specify a cluster name, optionally add labels, and then specify credentials.
+. *Details & Credentials*: Select a project, specify a cluster name, optionally select a Service Account, optionally add labels, and then specify credentials.
 +
 The following table describes fields for which you might need guidance:
 +
@@ -241,6 +241,8 @@ The following table describes fields for which you might need guidance:
 | Description
 
 | Working Environment Name | Cloud Manager uses the working environment name to name both the Cloud Volumes ONTAP system and the GCP VM instance. It also uses the name as the prefix for the predefined security group, if you select that option.
+
+| Service Account Name | If you plan to use the link:concept_data_tiering.html[Tiering] or link:concept_backup_to_cloud.html[Backup to Cloud] services, you need to enable the *Service Account* switch and then select the Service Account that has the predefined Storage Admin role.
 
 | Add Labels |	Labels are metadata for your GCP resources. Cloud Manager adds the labels to the Cloud Volumes ONTAP system and GCP resources associated with the system.
 
@@ -266,6 +268,8 @@ To create a pay-as-you-go Cloud Volumes ONTAP system, you need to select a GCP p
 The following video shows how to associate a pay-as-you-go Marketplace subscription to your GCP project:
 +
 video::video_subscribing_gcp.mp4[width=848, height=480]
+
+. *Services*: Select the services that you want to use on this system. In order to select Backup to Cloud, or to use Tiering, you must have specified the Service Account in step 3.
 
 . *HA Deployment Models*: Choose multiple zones (recommended) or a single zone for the HA configuration. Then select a region and zones.
 +

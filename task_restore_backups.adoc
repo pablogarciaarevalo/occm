@@ -17,19 +17,33 @@ Backups are stored in an object store in your cloud account so that you can rest
 
 _Restoring an entire volume_ is part of the Backup to Cloud service that you used to create the backup file. Once you have activated the Backup to Cloud service in a working environment, you can restore an entire volume in the same working environment, or to a different working environment, that's using the same cloud account. See <<Restoring a volume from a backup,Restoring a volume from a backup>>.
 
-_Restoring individual files_ from a backup file actually uses two services. It uses the Backup to Cloud service to create the backup file just like described above. But when you initiate a single file restore it uses the Restore service to restore the files. Again, you can restore files to a volume in the same working environment, or to a volume in a different working environment, that's using the same cloud account. See <<Restoring files from a backup,Restoring files from a backup>>.
-
-TIP: Backups created from on-premises ONTAP systems can be restored only to Cloud Volumes ONTAP systems that use the same cloud provider as where the backup resides.
+_Restoring individual files_ from a backup file actually uses two services. It uses the Backup to Cloud service to create the backup file just like described above. But when you initiate a single file restore it uses the Restore service to restore the files. You can restore files to a volume in the same working environment, or to a volume in a different working environment, that's using the same cloud account. You can also restore files to a volume on an on-premises ONTAP system. See <<Restoring files from a backup,Restoring files from a backup>>.
 
 == Restoring a volume from a backup
 
 When you restore a volume from a backup file, Cloud Manager creates a _new_ volume using the data from the backup. You can restore the data to a volume in the same working environment or to a different working environment that's located in the same cloud account as the source working environment.
 
+=== Supported Working Environments
+
+You can restore a volume from a backup file to the following working environments:
+
+[cols=2*,options="header",cols="30,40",width="90%"]
+|===
+
+| Backup File Location
+| Restore Working Environment
+
+| Amazon S3 | Cloud Volumes ONTAP in AWS
+| Azure Blob | Cloud Volumes ONTAP in Azure
+| Google Cloud Storage | Cloud Volumes ONTAP in Google
+
+|===
+
 .Steps
 
-. Select the working environment.
+. From and Canvas, select the working environment.
 
-. Click image:screenshot_gallery_options.gif[More icon] and select *View Backups*.
+. From the Services panel, click image:screenshot_gallery_options.gif[More icon] and select *View Backups*.
 +
 image:screenshot_view_backups_selection.png[A screenshot of selecting the View Backups button for a working environment.]
 
@@ -37,7 +51,7 @@ image:screenshot_view_backups_selection.png[A screenshot of selecting the View B
 +
 image:screenshot_backup_to_s3_volume.gif[A screenshot of the Backup and Restore tab showing a volume that has backups.]
 
-. Find the backup that you want to restore and click the *Restore* icon.
+. Find the backup that you want to restore based on the date/time stamp and click the *Restore* icon.
 +
 image:screenshot_backup_to_s3_restore_icon.gif[A screenshot of the restore icon for a backup after you select a volume.]
 
@@ -54,25 +68,42 @@ Cloud Manager creates a new volume based on the backup you selected and you are 
 
 == Restoring files from a backup
 
-If you only need to restore a few files for a volume, you can choose to restore individual files instead of restoring the entire volume. Restoring individual files from a backup file uses the Restore service. You can restore files to a volume in the same working environment, or to a different working environment, that's using the same cloud account.
+If you only need to restore a few files from a volume, you can choose to restore individual files instead of restoring the entire volume. Restoring individual files from a backup file uses the Restore service. You can restore files to a volume in the same working environment, or to a different working environment, that's using the same cloud account. You can also restore files to an on-premises ONTAP system.
 
 You can restore up to 8 files at a time from a volume in a backup file. If you need to restore more than 8 files you can run the restore process a second time. All the files are restored to the same destination volume that you choose.
 
-NOTE: Single File Restore is supported only with AWS at this time.
+=== Supported Working Environments
+
+You can restore individual files from a backup file to the following working environments:
+
+[cols=2*,options="header",cols="30,40",width="90%"]
+|===
+
+| Backup File Location
+| Restore Working Environment
+
+| Amazon S3 | Cloud Volumes ONTAP in AWS
+ On-premises ONTAP system
+| Azure Blob | Cloud Volumes ONTAP in Azure
+On-premises ONTAP system
+
+|===
+
+=== Single File Restore process
 
 The process goes like this:
 
-. You activate the Restore service from the Services panel.
-+
-A Restore instance is deployed in your cloud providers' environment, and then it is shut down to save costs while there are no active restore jobs.
+. You enable the Restore service from the Services panel and you are directed to the Restore page under the Restore tab.
 
-. When you need to restore one or more files from a volume, you click the Restore tab and select the backup file (the snapshot) where the file resides.
+. When you want to restore one or more files from a volume, select the Restore tab and select the backup file (the snapshot) where the file resides.
 +
-The Restore instance starts up and displays the folders and files that exist in the backup file.
+The Restore instance starts up and displays the folders and files that exist within the backup file.
++
+Note that a Restore instance is deployed in your cloud providers' environment the first time you attempt to restore a file.
 
-. You choose the file (or up to 8 files) from that backup, select the location where you want the file(s) to be written (working environment, volume, and folder), and click Restore.
+. You choose the file (or up to 8 files) from that backup, select the location where you want the file(s) to be written (the working environment, volume, and folder), and click Restore.
 +
-The Restore instance restores the file(s), and then the instance is shut down after one hour of inactivity.
+The Restore instance restores the file(s), and then the instance is shut down to save costs after a period of inactivity.
 
 === Details
 
@@ -80,9 +111,15 @@ The Restore instance restores the file(s), and then the instance is shut down af
 
 See link:concept_backup_to_cloud.html#cost[this topic^] for the cost of both the Backup to Cloud service and the Restore service.
 
+.Instance type
+
+* In AWS, the Restore instance runs on an https://aws.amazon.com/ec2/instance-types/m5/[m5n.xlarge instance^] with 4 CPUs, 16 GiB Memory, and EBS Only instance storage. In regions where m5n.xlarge instance isn’t available, Restore runs on an m5.xlarge instance instead.
+
+* In Azure, the Restore virtual machine runs on a https://docs.microsoft.com/en-us/azure/virtual-machines/dv3-dsv3-series#dsv3-series[Standard_D4s_v3 VM^] with 4 CPUs, 16 GiB Memory, and a 32 GB disk.
+
 .AWS permissions required
 
-The IAM role that provides Cloud Manager with permissions must include S3 permissions from the latest https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policy^] as described in link:task_backup_to_s3.html#requirements[AWS requirements^].
+When using the Restore service with AWS, the IAM role that provides Cloud Manager with permissions must include S3 permissions from the latest https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policy^] as described in link:task_backup_to_s3.html#requirements[AWS requirements^].
 
 Additionally, the following permissions are needed in the policy for single file restore:
 
@@ -98,25 +135,25 @@ Additionally, the following permissions are needed in the policy for single file
 
 The Restore instance requires outbound internet access to manage resources and processes within your public cloud environment.
 
-=== Activating the Restore service
+=== Enabling the Restore service
 
-This is a one-time operation per working environment to create the Restore instance.
+This is a one-time operation per working environment.
 
 NOTE: The Backup to Cloud service must already be activated for this working environment.
 
 .Steps
 
-. Select the working environment.
+. From and Canvas, select the working environment.
 
-. Click the *Activate* button from the Restore service.
+. Click the *Enable* button for the Restore service.
 +
-image:screenshot_restore_activate_button.png[A screenshot of the Activate button to enable the single file restore functionality.]
+image:screenshot_restore_activate_button.png[A screenshot of the Enable button to enable the single file restore functionality.]
 
-A Restore instance is deployed in your cloud providers' environment, and then it is shut down. The instance is stopped to save you money so that you incur restore costs only when the instance is active.
+You are directed to the Restore page under the Restore tab.
 
 === Restoring a single file from a backup file
 
-Follow these steps to restore up to 8 files from a volume backup to a new volume. This functionality uses Live Browsing so that you can view the current list of directories and files within the backup file.
+Follow these steps to restore up to 8 files from a volume backup to a volume. You should know the date of the backup file you want to use to restore the file, or files. This functionality uses Live Browsing so that you can view the current list of directories and files within the backup file.
 
 Note that the wording in the UI calls each backup file a "snapshot" because backup files are created using NetApp Snapshot technology.
 
@@ -124,7 +161,7 @@ The following video shows a quick walkthrough of restoring a single file:
 
 video::ROAY6gPL9N0[youtube, width=848, height=480]
 
-NOTE: The ONTAP version must be 9.6 or greater in your source and destination Cloud Volumes ONTAP systems.
+NOTE: The ONTAP version must be 9.6 or greater in your source and destination ONTAP systems.
 
 .Steps
 
@@ -142,30 +179,41 @@ image:screenshot_restore_select_source.png[A screenshot of selecting the volume 
 
 . Click *Continue* and the Restore instance is started. After a few minutes the Restore instance displays the list of folders and files from the volume snapshot.
 +
+Note that a Restore instance is deployed in your cloud providers' environment the first time you restore a file and that this step could take a few minutes longer the first time.
++
 image:screenshot_restore_select_files.png[A screenshot of the Select Files page so you can navigate to the files you want to restore.]
 
 . In the _Select Files_ page, select the file or files that you want to restore and click *Continue*.
 * You can click the search icon and enter the name of the file to navigate directly to the file.
 * You can click the file name if you see it.
-* You can navigate down levels in folders using the  image:button_subfolder.png[] button at the end of the row to find the file.
+* You can navigate down levels in folders using the image:button_subfolder.png[] button at the end of the row to find the file.
 +
 As you select files they are added to the left side of the page so you can see the files that you have already chosen. You can remove a file from this list if needed by clicking the *x* next to the file name.
 
-. In the _Select Destination_ page, select the *Working Environment*, the *Volume*, and the *Folder* where you want to restore the files.
+. In the _Select Destination_ page, select the *Working Environment*.
 +
-image:screenshot_restore_select_dest.png[A screenshot of selecting the volume and snapshot for the files you want to restore.]
+image:screenshot_restore_select_work_env.png[A screenshot of selecting the destination working environment for the files you want to restore.]
++
+If you select an on-premises cluster and you haven't already configured the cluster connection to the object storage, you are prompted for additional information:
++
+* When restoring from Amazon S3, enter IPspace in the ONTAP cluster where the destination volumes reside, and the AWS Access Key and Secret Key needed to access the backup file.
+* When restoring from Azure Blob, enter the IPspace in the ONTAP cluster where the destination volumes reside.
+
+. Then select the *Volume* and the *Folder* where you want to restore the files.
++
+image:screenshot_restore_select_dest.png[A screenshot of selecting the volume and folder for the files you want to restore.]
 +
 You have a few options for the location when restoring files.
 
 +
-When you have chosen *Select Target Folder*, as shown above:
+* When you have chosen *Select Target Folder*, as shown above:
 +
-* You can select any folder.
-* You can hover over a folder and click image:button_subfolder.png[] at the end of the row to drill down into subfolders, and then select a folder.
+** You can select any folder.
+** You can hover over a folder and click image:button_subfolder.png[] at the end of the row to drill down into subfolders, and then select a folder.
 
 +
-If you have selected the same Working Environment and Volume as the source file (as identified by the image:button_source.png[] icon), you can select *Maintain Source Folder Path* to restore the file, or all files, to the same folder where they existed in the source structure. All the same folders and sub-folders must exist - folders are not created.
+* If you have selected the same Working Environment and Volume as the source file (as identified by the image:button_source.png[] icon), you can select *Maintain Source Folder Path* to restore the file, or all files, to the same folder where they existed in the source structure. All the same folders and sub-folders must exist; folders are not created.
 
 . Click *Restore* and you are returned to the Restore Dashboard so you can see the progress of the restore operation.
 
-The Restore instance is shut down after a certain period of inactivity.
+The Restore instance is shut down after a certain period of inactivity to save you money so that you incur costs only when the Restore instance is active.

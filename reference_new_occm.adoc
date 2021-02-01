@@ -19,6 +19,108 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.2 Update (11 Jan 2021)
+
+* <<Cloud Compliance enhancements>>
+* <<Backup to Cloud enhancements>>
+
+=== Cloud Compliance enhancements
+
+* Added support for scanning Microsoft OneDrive accounts.
++
+Now you can add your corporate OneDrive accounts to Cloud Compliance in order to scan folders and files from all your OneDrive users. See link:task_scanning_onedrive.html[scanning OneDrive accounts^] for details.
+
+* The "Highlights" feature now allows you can create your own custom Highlights that provide results for searches specific to your organization.
++
+In the last release, Cloud Compliance provided a set predefined highlight filters that all users could use. Now you can create your own Highlights to return specific scan results in the Investigation page. See how to link:task_managing_highlights.html#creating-custom-highlights[create your own custom highlights^].
+
+* Ability to scan backup files from on-premises ONTAP systems for free.
++
+If you don’t want Cloud Compliance to scan volumes directly on your on-prem ONTAP systems, a new Beta feature released this month allows you to run compliance scans on backup files created from your on-prem ONTAP volumes. So if you're already creating backups of your on-prem ONTAP volumes using link:concept_backup_to_cloud.html[Backup to Cloud^], you can use this new feature to run compliance scans on those backup files - for *FREE*.
++
+See how to link:task_backup_from_onprem.html[back up on-prem ONTAP volumes to object storage^] and how you can link:task_getting_started_compliance.html#scanning-backup-files-from-on-premises-ontap-systems[scan those backup files].
+
+* Cloud Compliance can now find the personal data type "IP Address" in files. See the list of all link:reference_private_data_categories.html#types-of-personal-data[personal data types^] that Cloud Compliance finds in scans.
+
+=== Backup to Cloud enhancements
+
+You can restore individual files to additional destination working environments:
+
+* Backup files in Azure Blob can be used to restore individual files to Cloud Volumes ONTAP systems installed on Azure, and to on-premises ONTAP systems.
+
+* Backup files in Amazon S3 can be used to restore individual files to on-premises ONTAP systems (restoring files to Cloud Volumes ONTAP systems installed on AWS was already supported).
+
+View the link:concept_backup_to_cloud.html#supported-working-environments-and-object-storage-providers[backup and restore matrix^] to see which working environments are supported for creating backups, restoring volumes, and restoring files.
+
+== Cloud Manager 3.9.2 (4 Jan 2021)
+
+* <<Cloud Volumes ONTAP enhancements>>
+* <<Cloud Tiering enhancements>>
+* <<General enhancements>>
+
+=== Cloud Volumes ONTAP enhancements
+
+This release of Cloud Manager introduces the following enhancements for Cloud Volumes ONTAP.
+
+==== Support for AWS Outposts
+
+A few months ago, we announced that Cloud Volumes ONTAP had achieved the Amazon Web Services (AWS) Outposts Ready designation. Today, we're pleased to announce that we've validated Cloud Manager and Cloud Volumes ONTAP with AWS Outposts.
+
+If you have an AWS Outpost, you can deploy Cloud Volumes ONTAP in that Outpost by selecting the Outpost VPC in the Working Environment wizard. The experience is the same as any other VPC that resides in AWS. Note that you will need to first deploy a Connector in your AWS Outpost.
+
+There are a few limitations to point out:
+
+* Only single node Cloud Volumes ONTAP systems are supported at this time
+* The EC2 instances that you can use with Cloud Volumes ONTAP are limited to what's available in your Outpost
+* Only General Purpose SSDs are supported at this time
+
+==== Support for Ultra SSD VNVRAM in all supported Azure regions
+
+Cloud Volumes ONTAP can now use an Ultra SSD as VNVRAM when you use the E32s_v3 VM type with a single node system https://docs.microsoft.com/en-us/azure/virtual-machines/disks-enable-ultra-ssd[in any supported Azure region^].
+
+VNVRAM provides better write performance.
+
+==== Ability to choose an Availability Zone in Azure
+
+You can now choose the Availability Zone in which you'd like to deploy a single node Cloud Volumes ONTAP system. If you don't select an AZ, Cloud Manager will select one for you.
+
+image:screenshot_azure_az.gif[A screenshot of the Availability Zone drop-down list that's available after choosing a region.]
+
+==== Support for bigger disks and new instances in GCP
+
+* Cloud Volumes ONTAP now supports 64 TB disks in GCP.
++
+NOTE: The maximum system capacity with disks alone remains at 256 TB due to GCP limits.
+
+* Cloud Volumes ONTAP now supports the following machine types:
+** n2-standard-4 with the Explore license and with BYOL
+** n2-standard-8 with the Standard license and with BYOL
+** n2-standard-32 with the Premium license and with BYOL
+
+=== Cloud Tiering enhancements
+
+* A new Cloud Performance Test gives you the ability to measure network latency and throughput performance from an ONTAP cluster to an object store before and after setting up data tiering.
++
+image:screenshot_tiering_performance_test.gif[A screenshot of the Cloud Performance Test results that shows the latency and throughput to object storage.]
+
+* The Tiering Setup wizards were redesigned for ease of use.
+
+=== Additional enhancements
+
+* New Support Dashboard
++
+In the Help menu, a new Support Dashboard includes links to resources that can enable you to get help, submit feedback, and contact NetApp Support. You can also send and download AutoSupport messages from the *Connector AutoSupport* tab.
++
+image:screenshot_support_dashboard.gif[A screenshot of the Support Dashboard in Cloud Manager.]
+
+* Visual representation between working environments
++
+Cloud Manager makes it easier to view the relationships between the services enabled on your working environments.
++
+For example, the following image shows an example of two working environments where data is backed up from Cloud Volumes ONTAP to Amazon S3, and where data is synced between Amazon S3 and two Cloud Volumes ONTAP systems.
++
+image:screenshot_we_relationships.png[A screenshot that shows the Canvas tab and several relationships between working environments which are depicted by lines and arrows.]
+
 == Cloud Manager 3.9.1 (7 Dec 2020)
 
 * <<General enhancements>>
@@ -77,9 +179,7 @@ Ten highlights are available with this release. For example, the "HIPAA – Stal
 +
 You can select Highlights from a tab in the Compliance Dashboard and as a filter in the Investigation page.
 
-* Two new sensitive personal data types
-+
-Cloud Compliance can now find Political Opinions Reference and Civil Law Reference in files.
+* Cloud Compliance can now find the sensitive personal data type "Political Opinions Reference" in files. See the list of all link:reference_private_data_categories.html#types-of-sensitive-personal-data[sensitive personal data types^] that Cloud Compliance finds in scans.
 
 * A new filter for "file size" is available from the Investigation page to refine your search results for files of a certain size
 +

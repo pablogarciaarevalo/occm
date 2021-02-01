@@ -12,12 +12,6 @@ summary: There are many requirements you need to be aware of before you begin to
 :linkattrs:
 :imagesdir: ./media/
 
-//
-// This file was created with NDAC Version 0.9 (July 10, 2020)
-//
-// 2020-07-29 10:32:33.351682
-//
-
 [.lead]
 There are many requirements you need to be aware of before you begin to deploy Global File Cache in the cloud and in your remote offices.
 
@@ -130,7 +124,7 @@ The Global File Cache Core requirements are:
 * Service account. The services on this Global File Cache Core run as a specific domain user account. This account, also known as the Service Account, must have the following privileges on each of the SMB servers that will be associated with the Global File Cache Core instance:
 
 ** The provisioned Service Account must be a domain user.
-
++
 Depending on the level of restrictions and GPOs in the network environment, this account might require domain admin privileges.
 
 ** It must have "Run as a Service" privileges.

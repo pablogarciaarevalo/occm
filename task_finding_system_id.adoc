@@ -21,13 +21,11 @@ You need to create a Connector before you can change Cloud Manager settings. lin
 
 .Steps
 
-. In the upper right of the Cloud Manager console, click the Settings icon.
-+
-image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the Cloud Manager console.]
+. In the upper right of the Cloud Manager console, click the Help icon.
 
-. Click *Support Dashboard*.
+. Click *Support > Connector AutoSupport*.
 +
-Your system ID appears in the top right.
+Your system ID appears at the top.
 +
 *Example*
 +

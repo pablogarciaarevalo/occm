@@ -301,14 +301,22 @@ entries:
                 url: /task_scanning_s3.html
               - title: Database schemas
                 url: /task_scanning_databases.html
-      - title: Gain visibility and control of data
+              - title: OneDrive accounts
+                url: /task_scanning_onedrive.html
+      - title: View details about private data in your organization
         url: /task_controlling_private_data.html
+      - title: Gain control of private data with Highlights
+        url: /task_managing_highlights.html
+      - title: Add custom personal data identifiers
+        url: /task_managing_data_fusion.html
       - title: Generate reports
         url: /task_generating_compliance_reports.html
       - title: Respond to a DSAR
         url: /task_responding_to_dsar.html
       - title: Disable Cloud Compliance
         url: /task_managing_compliance.html
+      - title: Categories of private data
+        url: /reference_private_data_categories.html
       - title: FAQ
         url: /faq_cloud_compliance.html
   - title: Enable real-time global file sharing
@@ -349,6 +357,8 @@ entries:
             url: /task_tiering_onprem_storagegrid.html
       - title: Set up licensing
         url: /task_licensing_cloud_tiering.html
+      - title: Test cloud performance
+        url: /task_tiering_test.html
       - title: Manage data tiering
         url: /task_managing_tiering.html
       - title: Get an overview of tiering

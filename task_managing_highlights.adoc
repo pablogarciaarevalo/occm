@@ -1,0 +1,81 @@
+---
+sidebar: sidebar
+permalink: task_managing_highlights.html
+keywords: compliance, privacy, filter data, highlights
+summary: Highlights are like a Favorites list of custom filters that provide search results in the Investigation page for commonly requested compliance queries. Cloud Compliance provides a set of predefined Highlights based on common customer questions. In addition, you can create your own custom Highlights that provide results for searches specific to your organization.
+---
+
+= Gaining control of private data with Highlights
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Highlights are like a Favorites list of custom filters that provide search results in the Investigation page for commonly requested compliance queries. Cloud Compliance provides a set of predefined Highlights based on common customer questions. In addition, you can create your own custom Highlights that provide results for searches specific to your organization.
+
+The *Highlights* tab in the Compliance Dashboard lists all the Highlights available on this instance of Cloud Compliance.
+
+image:screenshot_compliance_highlights_tab.png[A screenshot of the Highlights tab in the Cloud Compliance dashboard.]
+
+In addition, Highlights appear in the list of Filters in the Investigation page.
+
+==	Creating custom highlights
+
+You can create your own custom highlights that provide results for searches specific to your organization.
+
+.Steps
+
+. From the Data Investigation page, define your search by selecting all the filters you want to use. See link:task_controlling_private_data.html#filtering-data-in-the-data-investigation-page[Filtering data in the Data Investigation page^] for details.
+
+. Once you have all the filter characteristics just the way you want them, click *Save this search as a Highlight*.
++
+image:screenshot_compliance_save_as_highlight.png[A screenshot showing how to save a filtered query as a Highlight.]
+
+. Enter a unique name and description for the highlight and click *Save Highlight*.
++
+image:screenshot_compliance_save_highlight.png[A screenshot that shows how to name the highlight and save it.]
+
+The new highlight appears in the Highlights tab.
+
+== Viewing highlights results in the Investigation page
+
+To display the results for a highlight in the Investigation page, click the image:screenshot_gallery_options.gif[More button] button for a specific highlight, and then click *Investigate Results*.
+
+image:screenshot_compliance_highlights_investigate.png[A screenshot of selecting Investigate Results from the Highlights tab.]
+
+==	Editing highlights
+
+You can modify any custom highlight that you created. You can't modify any of the predefined highlights.
+
+NOTE: At this time, you can modify only the _Name_ and _Description_ for a custom highlight. If you need to change the filter parameters, you'll need to create a new highlight with the parameters you want, and then delete the old highlight.
+
+To modify a highlight, click the image:screenshot_gallery_options.gif[More button] button for a specific highlight, click *Edit Highlight*, enter your changes on the _Edit Highlight_ page, and click *Save Highlight*.
+
+==	Deleting highlights
+
+You can delete any custom highlight that you created if you no longer need it. You can't delete any of the predefined highlights.
+
+To delete a highlight, click the image:screenshot_gallery_options.gif[More button] button for a specific highlight, click *Delete Highlight*, and then click *Delete Highlight* again in the confirmation dialog.
+
+== List of predefined highlights
+
+Cloud Compliance provides the following system-defined highlights:
+
+[cols="25,40,40",width=90%,options="header"]
+|===
+| Name
+| Description
+| Logic
+| S3 publicly-exposed private data | S3 Objects containing personal or sensitive personal information, with open Public read access. | (S3 Public) AND contains personal OR sensitive personal info)
+| PCI DSS – Stale data over 30 days | Files containing Credit Card information, last modified over 30 days ago. | Contains credit card AND last modified over 30 days
+| HIPAA – Stale data over 30 days | Files containing Health information, last modified over 30 days ago. | Contains health data (defined same way as in HIPAA report) AND last modified over 30 days
+| Private data – Stale over 7 years | Files containing personal or sensitive personal information, last modified over 7 years ago. | Files containing personal or sensitive personal information, last modified over 7 years ago
+| GDPR – European citizens | Files containing more than 5 identifiers of an EU country’s citizens or DB Tables containing identifiers of an EU country’s citizens. | Files containing over 5 identifiers of an (one) EU citizens or DB Tables containing rows with over 15% of columns with one country’s EU identifiers. (any one of the national identifiers of the European countries. Does not include Brazil, California, USA SSN, Israel, South Africa)
+| CCPA – California residents | Files containing over 10 California Driver’s License identifiers or DB Tables with this identifier. | Files containing over 10 California Driver’s License identifiers OR DB Tables containing California Driver’s license
+| Data Subject names – High risk | Files with over 50 Data Subject names. | Files with over 50 Data Subject names
+| Email Addresses – High risk | Files with over 50 Email Addresses, or DB Columns with over 50% of their rows containing Email Addresses | Files with over 50 Email Addresses, or DB Columns with over 50% of their rows containing Email Addresses
+| Personal data – High risk | Files with over 20 Personal data identifiers, or DB Columns with over 50% of their rows containing Personal data identifiers. | Files with over 20 personal, or DB Columns with over 50% of their rows containing personal
+| Sensitive Personal data – High risk | Files with over 20 Sensitive Personal data identifiers, or DB Columns with over 50% of their rows containing Sensitive Personal data. | Files with over 20 sensitive personal, or DB Columns with over 50% of their rows containing sensitive personal
+|===

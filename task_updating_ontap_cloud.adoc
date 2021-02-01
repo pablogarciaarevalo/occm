@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: task_updating_ontap_cloud.html
 keywords: update, updating, upgrading, upgrade, software, downgrade, downgrading, FTP, HTTP, mediator, local image, revert, reverting, downgrading
-summary: Cloud Manager includes several options that you can use to upgrade to the current Cloud Volumes ONTAP release or to downgrade Cloud Volumes ONTAP to an earlier release. You should prepare Cloud Volumes ONTAP systems before you upgrade or downgrade the software.
+summary: Cloud Manager includes several options that you can use to upgrade to the current Cloud Volumes ONTAP release. You should prepare Cloud Volumes ONTAP systems before you upgrade the software.
 ---
 
-= Updating Cloud Volumes ONTAP software
+= Upgrading Cloud Volumes ONTAP software
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,29 +13,27 @@ summary: Cloud Manager includes several options that you can use to upgrade to t
 :imagesdir: ./media/
 
 [.lead]
-Cloud Manager includes several options that you can use to upgrade to the current Cloud Volumes ONTAP release or to downgrade Cloud Volumes ONTAP to an earlier release. You should prepare Cloud Volumes ONTAP systems before you upgrade or downgrade the software.
+Cloud Manager includes several options that you can use to upgrade to the current Cloud Volumes ONTAP release. You should prepare Cloud Volumes ONTAP systems before you upgrade the software.
 
-== Software updates must be completed by Cloud Manager
+== Requirements
+
+You should be aware of the following requirements before you start the Cloud Volumes ONTAP upgrade process.
+
+=== Software upgrades must be completed by Cloud Manager
 
 Upgrades of Cloud Volumes ONTAP must be completed from Cloud Manager. You should not upgrade Cloud Volumes ONTAP by using System Manager or the CLI. Doing so can impact system stability.
 
-== Cloud Volumes ONTAP must be registered with NetApp Support
+=== Cloud Volumes ONTAP must be registered with NetApp Support
 
 Cloud Volumes ONTAP must be registered with NetApp support in order to upgrade the software using any of the methods described on this page. This applies to both PAYGO and BYOL. You'll need to link:task_registering.html[manually register PAYGO systems], while BYOL systems are registered by default.
 
 TIP: A system that isn't registered for support will still receive the software update notifications that appear in Cloud Manager when a new version is available. But you will need to register the system before you can upgrade the software.
 
-== Downgrade notes and requirements
+== A note about downgrades
 
-* You can start the downgrade process from Cloud Manager, but it almost always requires manual intervention from the CLI.
+Cloud Manager doesn't support downgrading Cloud Volumes ONTAP to a previous version. Contact NetApp technical support for help with downgrades.
 
-* In many cases, you might need help from NetApp support to complete the process. So we recommend that you call NetApp support for assistance when downgrading a production Cloud Volumes ONTAP system to an earlier version.
-
-* You can downgrade Cloud Volumes ONTAP but only by one version at a time.
-+
-For example, you can downgrade from 9.7 to 9.6, but not from 9.7 to 9.5. So to go from 9.7 to 9.5, you'd need to downgrade from 9.7 to 9.6 and then from 9.6 to 9.5.
-
-== Ways to update Cloud Volumes ONTAP
+== Ways to upgrade Cloud Volumes ONTAP
 
 Cloud Manager displays a notification in Cloud Volumes ONTAP working environments when a new version of Cloud Volumes ONTAP is available:
 
@@ -45,35 +43,33 @@ You can start the upgrade process from this notification, which automates the pr
 
 NOTE: For HA systems in AWS, Cloud Manager might upgrade the HA mediator as part of the upgrade process.
 
-=== Advanced options for software updates
+Cloud Manager also provides the following advanced options for upgrading Cloud Volumes ONTAP software with both PAYGO and BYOL:
 
-Cloud Manager also provides the following advanced options for updating Cloud Volumes ONTAP software with both PAYGO and BYOL:
-
-* Software updates using an image on an external URL
+* Software upgrades using an image on an external URL
 +
-This option is helpful if Cloud Manager cannot access the S3 bucket to upgrade the software, if you were provided with a patch, or if you want to downgrade the software to a specific version.
+This option is helpful if Cloud Manager can't access the S3 bucket to upgrade the software or if you were provided with a patch.
 +
-For details, see <<Upgrading or downgrading Cloud Volumes ONTAP by using an HTTP or FTP server>>.
+For details, see <<Upgrading Cloud Volumes ONTAP by using an HTTP or FTP server>>.
 
-* Software updates using the alternate image on the system
+* Software upgrades using the alternate image on the system
 +
-You can use this option to downgrade to the previous version by making the alternate software image the default image. This option is not available for HA pairs.
+You can use this option to upgrade by making the alternate software image the default image. This option is not available for HA pairs.
 +
-For details, see <<Downgrading Cloud Volumes ONTAP by using a local image>>.
+For details, see <<Upgrading Cloud Volumes ONTAP by using a local image>>.
 
-== Preparing to update Cloud Volumes ONTAP software
+== Preparing to upgrade Cloud Volumes ONTAP software
 
-Before performing an upgrade or downgrade, you must verify that your systems are ready and make any required configuration changes.
+Before performing an upgrade, you must verify that your systems are ready and make any required configuration changes.
 
-* <<Understanding supported upgrade and downgrade paths>>
+* <<Understanding supported upgrade paths>>
 * <<Planning for downtime>>
 * <<Verifying that automatic giveback is still enabled>>
 * <<Suspending SnapMirror transfers>>
 * <<Verifying that aggregates are online>>
 
-=== Understanding supported upgrade and downgrade paths
+=== Understanding supported upgrade paths
 
-You need to upgrade or downgrade Cloud Volumes ONTAP by one release at a time. You can't upgrade or downgrade by skipping a release.
+You need to upgrade Cloud Volumes ONTAP by one release at a time. You can't upgrade by skipping a release.
 
 For example, if you're currently running Cloud Volumes ONTAP 9.6 and you want to upgrade to 9.8, then you first need to upgrade to 9.7. From there, you can upgrade to 9.8.
 
@@ -165,9 +161,9 @@ Cloud Manager starts the software upgrade. You can perform actions on the workin
 
 If you suspended SnapMirror transfers, use System Manager to resume the transfers.
 
-== Upgrading or downgrading Cloud Volumes ONTAP by using an HTTP or FTP server
+== Upgrading Cloud Volumes ONTAP by using an HTTP or FTP server
 
-You can place the Cloud Volumes ONTAP software image on an HTTP or FTP server and then initiate the software update from Cloud Manager. You might use this option if Cloud Manager cannot access the S3 bucket to upgrade the software or if you want to downgrade the software.
+You can place the Cloud Volumes ONTAP software image on an HTTP or FTP server and then initiate the software upgrade from Cloud Manager. You might use this option if Cloud Manager can't access the S3 bucket to upgrade the software.
 
 .Steps
 
@@ -197,15 +193,9 @@ Cloud Manager starts the software update. You can perform actions on the working
 
 If you suspended SnapMirror transfers, use System Manager to resume the transfers.
 
-== Downgrading Cloud Volumes ONTAP by using a local image
+== Upgrading Cloud Volumes ONTAP by using a local image
 
-Transitioning Cloud Volumes ONTAP to an earlier release in the same release family (for example, 9.5 to 9.4) is referred to as a downgrade. You can downgrade without assistance when downgrading new or test clusters, but you should contact technical support if you want to downgrade a production cluster.
-
-Each Cloud Volumes ONTAP system can hold two software images: the current image that is running, and an alternate image that you can boot. Cloud Manager can change the alternate image to be the default image. You can use this option to downgrade to the previous version of Cloud Volumes ONTAP, if you are experiencing issues with the current image.
-
-.About this task
-
-This downgrade process is available for single Cloud Volumes ONTAP systems only. It is not available for HA pairs.
+Each Cloud Volumes ONTAP system can hold two software images: the current image that is running, and an alternate image that you can boot. Cloud Manager can change the alternate image to be the default image.
 
 .Steps
 

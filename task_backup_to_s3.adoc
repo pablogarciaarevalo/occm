@@ -51,10 +51,10 @@ Identify which volumes you want to back up in the Select Volumes page.
 ==== image:number5.png[Number 5] Restore your data, as needed
 
 [role="quick-margin-para"]
-From the Backup List, select a volume, select a backup, and then restore data from the backup to a new volume.
+Choose to restore an entire backup to a new volume, or to restore individual files from the backup to an existing volume. You can restore data to a Cloud Volumes ONTAP system in AWS, or to an on-premises ONTAP system.
 
 [role="quick-margin-para"]
-image:screenshot_backup_to_s3_restore_icon.gif[A screenshot of the restore icon for a backup after you select a volume.]
+See link:task_restore_backups.html[Restoring volume data from backup files^] for details.
 
 == Requirements
 

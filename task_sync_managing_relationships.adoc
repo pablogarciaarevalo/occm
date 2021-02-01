@@ -113,6 +113,26 @@ Copy Access Control Lists to the target:: Choose to copy access control lists (A
 
 Cloud Sync modifies the sync relationship with the new settings.
 
+== Creating and viewing reports about paths
+
+Create and view reports to get information that you can use with the help of NetApp personnel to tune a data broker’s configuration and improve performance.
+
+Each report provides in-depth details about the path in a sync relationship: how many directories and files there are, the distribution of file size, how deep and wide the directories are, and more.
+
+.Steps
+
+. Click *Reports*.
++
+The paths (source or target) in each of your sync relationships display in a table.
+
+. In the *Reports* column, click *Create New* for a path.
+
+. When the report is ready, click *View*.
++
+Here's a sample report.
++
+image:screenshot_sync_report.gif[A report that shows the amount of sync items, file size, maximums, access time, change time, and modify time.]
+
 == Deleting relationships
 
 You can delete a sync relationship, if you no longer need to sync data between the source and target. This action does not delete the data broker instance and it does not delete data from the target.

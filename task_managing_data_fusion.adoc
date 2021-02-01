@@ -1,0 +1,58 @@
+---
+sidebar: sidebar
+permalink: task_managing_data_fusion.html
+keywords: data identifiers, personal data, sensitive personal data, compliance, data fusion
+summary: A feature we call "Data Fusion" allows you to scan your organizations' data to identify whether unique identifiers from your databases are found in files or other databases - basically making your own list of "personal data" that is identified in Cloud Compliance scans. This gives you the full picture about where potentially sensitive data resides in all your files.
+---
+
+= Adding personal data identifiers using Data Fusion
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+A feature we call _Data Fusion_ allows you to scan your organizations' data to identify whether unique identifiers from your databases are found in files or other databases - basically making your own list of "personal data" that is identified in Cloud Compliance scans. This gives you the full picture about where potentially sensitive data resides in _all_ your files.
+
+== Creating custom personal data identifiers from your databases
+
+You can choose the additional identifiers that Cloud Compliance will look for in its' scans by selecting a specific column, or columns, in a database table. For example, the diagram below shows how data fusion is used to scan your volumes, buckets, and databases for occurrences of all your Customer IDs from your Oracle database.
+
+image:diagram_compliance_data_fusion.png[A diagram showing how content from your databases can be used as a source to identify files that contain the same data.]
+
+As you can see, two unique Customer IDs have been found in two volumes and in one S3 bucket. Any matches in database tables will also be identified.
+
+.Steps
+
+You must have link:task_scanning_databases.html#adding-the-database-server[added at least one database server^] to Cloud Compliance before you can add data fusion sources.
+
+. In the Scan Configuration page, click *Manage Data Fusion* in the database where the source data resides.
++
+image:screenshot_compliance_manage_data_fusion.png[A screenshot of selecting the Manage Data Fusion button to add a source column.]
+
+. Click *Add Data Fusion source* on the next page.
+
+. In the _Add Data Fusion Source_ page:
+.. Select the Database Schema from the drop-down menu.
+.. Enter the Table name in that schema.
+.. Enter the Column, or Columns, that contain the unique identifiers you want to use.
++
+When adding multiple columns, enter each column name, or table view name, on a separate line.
++
+image:screenshot_compliance_add_data_fusion.png[A screenshot of identifying the schema, table, and column for the data fusion source.]
+
+. Click *Add Data Fusion Source*.
++
+The Data Fusion inventory page displays the database source columns that you have configured for Cloud Compliance to scan.
++
+image:screenshot_compliance_data_fusion_list.png[A screenshot of all the data source references you have configured with Data Fusion.]
+
+.Results
+After the next scan, the results will include this new information in the Dashboard under the "Personal" results section, and in the Investigation page in the "Personal Data" filter. Each source column you added appears in the filter list as "Table.Column", for example `Customers.Customer ID`.
+
+== Deleting a Data Fusion source
+
+If at some point you decide not to scan your files using a certain Data Fusion source, you can select the source row from the Data Fusion inventory page and click *Delete Data Fusion Source*.
+
+image:screenshot_compliance_delete_data_fusion.png[A screenshot showing how to remove a data fusion source.]

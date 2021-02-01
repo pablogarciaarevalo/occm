@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_backup_from_onprem.html
-keywords: backing up, back up, backup, backup cloud volumes ontap, back up cloud volumes ontap, cloud volumes ontap, on-prem, on-premises, back up volumes, Backup to Cloud, cloud backup service
+keywords: backing up, back up, backup, backup cloud volumes ontap, back up cloud volumes ontap, cloud volumes ontap, on-prem, on-premises, back up volumes, Backup to Cloud, cloud backup service, backup and compliance
 summary: Complete a few steps to get started backing up data from your on-premises ONTAP system to low-cost object storage in the cloud.
 ---
 
@@ -14,6 +14,8 @@ summary: Complete a few steps to get started backing up data from your on-premis
 
 [.lead]
 Complete a few steps to get started backing up data from your on-premises ONTAP system to low-cost object storage in the cloud.
+
+A new Beta feature released in January 2021 allows you to run Compliance scans on the backed up volumes from your on-prem systems. Typically, compliance scans are free up to 1 TB of data, and then a cost for the service is applied for data over 1 TB. When combining Backup and Compliance for your on-prem volumes, the cost for scans on those on-prem volumes is free. Learn more about how link:concept_cloud_compliance.html[Cloud Compliance^] can get your business applications and cloud environments privacy ready.
 
 == Quick start
 
@@ -32,10 +34,10 @@ Get started quickly by following these steps or scroll down to the remaining sec
 ==== image:number2.png[Number 2] Enable Backup to Cloud on the system
 
 [role="quick-margin-para"]
-Select the working environment and click *Activate* next to the Backup to Cloud service in the right-panel, and then follow the setup wizard.
+Select the working environment and click *Activate* next to the Backup & Compliance service in the right-panel, and then follow the setup wizard.
 
 [role="quick-margin-para"]
-image:screenshot_backup_to_s3_icon.gif[A screenshot that shows the Backup to Cloud Activate button which is available after you select a working environment.]
+image:screenshot_backup_from_onprem_activate.png[A screenshot that shows the Backup & Compliance Activate button which is available after you select an on-prem working environment.]
 
 ==== image:number3.png[Number 3] Select the cloud provider and enter provider details
 
@@ -55,13 +57,18 @@ image:screenshot_backup_onprem_policy.png[A screenshot that shows the Backup to 
 [role="quick-margin-para"]
 Identify which volumes you want to back up from the cluster.
 
-==== image:number6.png[Number 6] Restore your data, as needed
+==== image:number6.png[Number 6] Activate Compliance scans on the backed up volumes (optional)
 
 [role="quick-margin-para"]
-From the Backup List, select a volume, select a backup, and then restore data from the backup to a new volume on a Cloud Volumes ONTAP system that is using the same cloud provider.
+Choose whether you want to have Cloud Compliance scan the volumes that are backed up in the cloud.
+
+==== image:number7.png[Number 7] Restore your data, as needed
 
 [role="quick-margin-para"]
-image:screenshot_backup_to_s3_restore_icon.gif[A screenshot of the restore icon for a backup after you select a volume.]
+Choose to restore an entire backup to a new volume, or to restore individual files from the backup to an existing volume. You can restore data to a Cloud Volumes ONTAP system that is using the same cloud provider, or to an on-premises ONTAP system.
+
+[role="quick-margin-para"]
+See link:task_restore_backups.html[Restoring volume data from backup files^] for details.
 
 == Requirements
 
@@ -144,15 +151,15 @@ See the https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-k
 
 == Enabling Backup to Cloud
 
-Enable Backup to Cloud at any time directly from the working environment.
+Enable Backup to Cloud at any time directly from the on-premises working environment.
 
 .Steps
 
-. Select the working environment and click *Activate* next to the Backup to Cloud service in the right-panel.
+. From the Canvas, select the working environment and click *Activate* next to the Backup & Compliance service in the right-panel.
 +
-image:screenshot_backup_to_s3_icon.gif[A screenshot that shows the Backup to Cloud Activate button which is available after you select a working environment.]
+image:screenshot_backup_from_onprem_activate.png[A screenshot that shows the Backup & Compliance Activate button which is available after you select an on-prem working environment.]
 
-. Select the provider, and then enter the provider details:
+. Select the provider (Azure or AWS), and then enter the provider details:
 - For Azure, enter:
 .. The Azure subscription used for backups and the Azure region where the backups will be stored.
 .. The resource group - you can create a new resource group or select and existing resource group.
@@ -175,17 +182,38 @@ image:screenshot_backup_onprem_policy.png[A screenshot that shows the Backup to 
 +
 See link:concept_backup_to_cloud.html#the-schedule-is-daily-weekly-monthly-or-a-combination[the list of existing policies^].
 
-. Select the volumes that you want to back up and click *Save*.
-+
-image:screenshot_backup_select_onprem_volumes.png[A screenshot of selecting the volumes that will be backed up.]
+. Select the volumes that you want to back up.
 +
 * To back up all volumes, check the box in the title row (image:button_backup_all_volumes.png[]).
 * To back up individual volumes, check the box for each volume (image:button_backup_1_volume.png[]).
++
+image:screenshot_backup_select_onprem_volumes.png[A screenshot of selecting the volumes that will be backed up.]
+
+. Click *Activate* and Backup to Cloud starts taking the initial backups of your volumes.
++
+You are prompted whether you want to run compliance scans on the backed up volumes. Cloud Compliance scans are free when you run them on the backed up volumes (except for the link:concept_cloud_compliance.html#cost[cost of the deployed Cloud Compliance instance^]).
++
+image:screenshot_compliance_on_backups.png[A screenshot of the page where you can choose to activate Cloud Compliance on your backed up volumes.]
+
+. Click *Go to Compliance* to activate compliance scans on the volumes. (If you choose *Close* and not to scan these backed up volumes, you can always link:task_getting_started_compliance.html#scanning-backup-files-from-on-premises-ontap-systems[enable this functionality^] later from Cloud Compliance.)
+
+* If an instance of Cloud Compliance is already deployed in your environment, you are directed to the Configuration page to select the volumes you want to scan in each on-premises working environment that has backups. See link:task_getting_started_compliance.html#enabling-cloud-compliance-in-your-working-environments[how to choose the volumes^].
++
+image:screenshot_compliance_onprem_backups.png[A screenshot of the Compliance page to select volumes you want to scan.]
+* If Cloud Compliance has not been deployed, you are directed to the Compliance page where you can choose to deploy Compliance in the cloud or in your premises. We strongly recommend deploying it in the cloud. Go link:task_deploy_cloud_compliance.html[here^] for installation requirements and instructions.
++
+image:screenshot_cloud_compliance_deploy_options.png[A screenshot of the Compliance page to choose how you want to deploy Cloud Compliance.]
++
+After you have deployed Compliance you can choose the volumes you want to scan as described above.
 
 .Result
 
-Backup to Cloud starts taking the initial backups of each selected volume.
+Backup to Cloud backs up your volumes from the on-prem ONTAP system, and optionally, Cloud Compliance runs compliance scans on the backed up volumes.
 
 .What's next?
 
 You can link:task_managing_backups.html[start and stop backups for volumes or change the backup schedule^] and you can link:task_restore_backups.html[restore entire volumes or individual files from a backup file^].
+
+You can also link:task_controlling_private_data.html[view the results of the compliance scans^] and review other features of Cloud Compliance that can help you understand data context and identify sensitive data in your organization.
+
+NOTE: The scan results are not available immediately because Backup to Cloud has to finish creating the backups before Cloud Compliance can start compliance scans.
