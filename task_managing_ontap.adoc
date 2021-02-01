@@ -140,4 +140,6 @@ Certain workloads or volumes are ideal to move to a Cloud Volumes ONTAP system f
 
 image:screenshot_aiq_workloads.png[A screenshot showing the workloads from your on-prem clusters that could be moved o the cloud.]
 
-Lift and shift is an approach for migrating your apps to the cloud. It means moving an application and its associated data to a cloud platform—without redesigning the app. See mmore information about link:https://www.netapp.com/knowledge-center/what-is-lift-and-shift/[lift and shift^].
+The supported workloads that are called out on this page include: SAP, SAP HANA, Oracle, File share, and SharePoint
+
+_Lift and shift_ is an approach for migrating your apps to the cloud. It means moving an application and its associated data to a cloud platform—without redesigning the app. See more information about link:https://www.netapp.com/knowledge-center/what-is-lift-and-shift/[lift and shift^].
