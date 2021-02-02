@@ -5,7 +5,7 @@ keywords: ontap, cluster, manage, fas, aff, active iq, shelf firmware, disk firm
 summary: The Active IQ page in Cloud Manager shows you any undiscovered ONTAP clusters in your on-premises environment, whether any clusters require updated disk or shelf firmware, and if you are using all the Cloud Volumes ONTAP licenses that you were granted when you purchased the on-prem systems. This information is provided to Cloud Manager from Active IQ Digital Advisor.
 ---
 
-= Using Active IQ data to managing ONTAP clusters
+= Using Active IQ data to manage ONTAP clusters
 :hardbreaks:
 :nofooter:
 :icons: font
