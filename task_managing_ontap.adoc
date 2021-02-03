@@ -34,7 +34,7 @@ A *Use License* button appears for each unused license.
 +
 image:screenshot_aiq_use_license.png[Screenshot of the two use license options.]
 
-See the tasks below to learn about the options for using the free license.
+See the tasks below to learn about the options for using the available licenses.
 
 == Using unused Cloud Volumes ONTAP licenses
 
@@ -42,7 +42,7 @@ You can use unused licenses to create a new Cloud Volumes ONTAP instance or to e
 
 The _Expires_ column indicates the last day the license is active. When creating a new Cloud Volumes ONTAP system this is the date the license expires. When updating an existing Cloud Volumes ONTAP system this indicates the length of time the existing license is extended.
 
-The _Description_ column tells you what type of Cloud Volumes ONTAP license it is, for example *PAYGO | Single | Azure*. This sample license includes a "pay-as-you-go" license for a "single node" Cloud Volumes ONTAP system deployed in "Microsoft Azure". The values that can appear in this column are shown in the table.
+The _Description_ column tells you what type of Cloud Volumes ONTAP license it is, for example *BYOL | Single | Azure*. This sample license includes a "bring-your-own" license for a "single node" Cloud Volumes ONTAP system deployed in "Microsoft Azure". The values that can appear in this column are shown in the table.
 
 [cols=2*,options="header",width=60%,cols="25,25"]
 |===
@@ -69,7 +69,7 @@ All Providers
 
 |===
 
-When creating a _new_ Cloud Volumes ONTAP system, this is the type of system you are deploying. For example, using the sample license (*PAYGO | Single | Azure*), you can create a single-node Cloud Volumes ONTAP system in Azure with 368 TB of space. This license can't be used to create an HA system or to deploy an instance in AWS.
+When creating a _new_ Cloud Volumes ONTAP system, this is the type of system you are deploying. For example, using the sample license (*BYOL | Single | Azure*), you can create a single-node Cloud Volumes ONTAP system in Azure with entitlement for up to 368 TB. This license can't be used to create an HA system or to deploy an instance in AWS.
 
 When updating an _existing_ Cloud Volumes ONTAP system, this indicates the type of system that can have the capacity for its existing license extended. Using the sample license again, you can extend the license for any single-node Cloud Volumes ONTAP system in Azure. This license can't be used to extend the license for an HA system or for an instance deployed in AWS.
 
@@ -94,7 +94,7 @@ See the following sections depending on the cloud provider on which you are depl
 * link:task_deploying_otc_aws.html[Launching Cloud Volumes ONTAP in AWS^]
 * link:task_deploying_gcp.html[Launching Cloud Volumes ONTAP in GCP^]
 
-=== Extending the license term for an existing Cloud Volumes ONTAP system
+=== Extending the license capacity for an existing Cloud Volumes ONTAP system
 
 If you have a currently deployed Cloud Volumes ONTAP system that matches the license requirements of one of the free licenses (meaning the same cloud provider, number of nodes, etc.), you can follow these steps to extend the capacity of the license by 368 TB.
 
@@ -140,6 +140,6 @@ Certain workloads or volumes are ideal to move to a Cloud Volumes ONTAP system f
 
 image:screenshot_aiq_workloads.png[A screenshot showing the workloads from your on-prem clusters that could be moved o the cloud.]
 
-The supported workloads that are called out on this page include: SAP, SAP HANA, Oracle, File share, and SharePoint
+The supported workloads that are called out on this page include: SAP, SAP HANA, Oracle, File share, and SharePoint.
 
-_Lift and shift_ is an approach for migrating your apps to the cloud. It means moving an application and its associated data to a cloud platform—without redesigning the app. See more information about link:https://www.netapp.com/knowledge-center/what-is-lift-and-shift/[lift and shift^].
+_Lift and shift_ is an approach for migrating your apps to the cloud. It means moving an application and its associated data to a cloud platform without redesigning the app. See more information about link:https://www.netapp.com/knowledge-center/what-is-lift-and-shift/[lift and shift^].
