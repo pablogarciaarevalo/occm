@@ -114,7 +114,7 @@ image:screenshot_aiq_license_added.png[A screenshot showing that the license has
 
 . You can click *Close* to close the window and return to the Active IQ page, or you can click the link to go to the Cloud Volumes ONTAP Licensing page to view more details about licensing for that system.
 
-== Checking for new disk and shelf firmware
+== Downloading new disk and shelf firmware
 
 You can see whether any of your discovered ONTAP clusters need to have their shelf or disk firmware updated. And you can download the Ansible playbook to upgrade the firmware.
 

@@ -72,7 +72,7 @@ image:screenshot_aiq_clusters.png[A screenshot of the Active IQ page showing all
 
 . On the _ONTAP Cluster Details_ page, enter the password for the admin user account and click *Add*.
 +
-image:screenshot_discover_ontap.gif[A screenshot that shows an example of the ONTAP Cluster Details page: the cluster management IP address, user name and password.]
+image:screenshot_discover_ontap.png[A screenshot that shows an example of the ONTAP Cluster Details page: the cluster management IP address, user name and password.]
 +
 Note that the cluster management IP address is populated based on information from Active IQ.
 
@@ -98,7 +98,7 @@ Refer to the links above for more details.
 
 . On the _ONTAP Cluster Details_ page, enter the cluster management IP address, the password for the admin user account, and click *Add*.
 +
-image:screenshot_discover_ontap.gif[A screenshot that shows an example of the ONTAP Cluster Details page: the cluster management IP address, user name and password.]
+image:screenshot_discover_ontap.png[A screenshot that shows an example of the ONTAP Cluster Details page: the cluster management IP address, user name and password.]
 
 . On the Details page, enter a name and description for the working environment, and then click *Go*.
 
