@@ -26,16 +26,21 @@ When you create your first Cloud Volumes ONTAP working environment, Cloud Manage
 ==== image:number2.png[Number 2] Plan your configuration
 
 [role="quick-margin-para"]
-Cloud Manager offers preconfigured packages that match your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you. link:task_planning_your_config_gcp.html[Learn more].
+Cloud Manager offers preconfigured packages that match your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you.
+
+[role="quick-margin-para"]
+link:task_planning_your_config_gcp.html[Learn more about planning your configuration].
 
 ==== image:number3.png[Number 3] Set up your networking
 
 [role="quick-margin-list"]
 .. Ensure that your VPC and subnets will support connectivity between the Connector and Cloud Volumes ONTAP.
 
+.. If you plan to enable data tiering, https://cloud.google.com/vpc/docs/configure-private-google-access[configure the Cloud Volumes ONTAP subnet for Private Google Access^].
+
 .. If you're deploying an HA pair, ensure that you have four VPCs, each with their own subnet.
 
-.. If you're using a shared VPC, provide the Compute Network User role to the Connector service account.
+.. If you're using a shared VPC, provide the _Compute Network User_ role to the Connector service account.
 
 .. Enable outbound internet access from the target VPC so the Connector and Cloud Volumes ONTAP can contact several endpoints.
 +
@@ -44,24 +49,16 @@ This step is important because the Connector can't manage Cloud Volumes ONTAP wi
 [role="quick-margin-para"]
 link:reference_networking_gcp.html[Learn more about networking requirements].
 
-==== image:number4.png[Number 4] Set up GCP for data tiering and Backup to Cloud
+==== image:number4.png[Number 4] Set up a service account
 
 [role="quick-margin-para"]
-Two requirements must be met to tier cold data from Cloud Volumes ONTAP to low-cost object storage (a Google Cloud Storage bucket). Option b. is a requirement to backup up volumes from Cloud Volumes ONTAP to low-cost object storage:
+Cloud Volumes ONTAP requires a Google Cloud service account for two purposes. The first is when you enable link:concept_data_tiering.html[data tiering] to tier cold data to low-cost object storage in Google Cloud. The second is when you enable the link:concept_backup_to_cloud.html[Cloud Backup Service] to back up volumes to low-cost object storage.
 
-[role="quick-margin-list"]
-.. https://cloud.google.com/vpc/docs/configure-private-google-access[Configure the Cloud Volumes ONTAP subnet for Private Google Access^].
+[role="quick-margin-para"]
+You can set up one service account and use it for both purposes. The service account must have the *Storage Admin* role.
 
-.. https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[Set up a service account for data tiering^]:
-+
-* Assign the predefined _Storage Admin_ role to the tiering service account.
-* Add the Connector service account as a _Service Account User_ to the tiering service account.
-+
-You can provide the user role https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[in step 3 of the wizard when you create the tiering service account], or https://cloud.google.com/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_user_for_a_service_account[grant the role after the service account was created^].
-+
-You'll need to select the tiering service account later when you create a Cloud Volumes ONTAP working environment.
-+
-If you don't enable data tiering and select a service account when you create the Cloud Volumes ONTAP system, then you'll need to turn off the system and add the service account to Cloud Volumes ONTAP from the GCP console.
+[role="quick-margin-para"]
+link:task_creating_gcp_service_account.html[Read step-by-step instructions].
 
 ==== image:number5.png[Number 5] Enable Google Cloud APIs
 

@@ -80,6 +80,7 @@ video::video_subscribing_azure.mp4[width=848, height=480]
 +
 * link:concept_cloud_compliance.html[Learn more about Cloud Compliance].
 * link:concept_backup_to_cloud.html[Learn more about Backup to Cloud].
+* link:concept_monitoring.html[Learn more about the Monitoring service].
 
 . *Location & Connectivity*: Select a location and security group, and select the checkbox to confirm network connectivity between the Connector and the target location.
 +

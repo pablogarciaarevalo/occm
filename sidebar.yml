@@ -127,6 +127,8 @@ entries:
             url: /task_planning_your_config_gcp.html
           - title: Set up your networking
             url: /reference_networking_gcp.html
+          - title: Create a service account
+            url: /task_creating_gcp_service_account.html
           - title: Use customer-managed encryption keys
             url: /task_setting_up_gcp_encryption.html
           - title: Launch a system in GCP

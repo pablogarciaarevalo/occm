@@ -369,6 +369,10 @@ Sync relationships that include Google Cloud Storage require a data broker deplo
 
 All regions are supported.
 
+=== ONTAP requirements
+
+If the sync relationship includes Cloud Volumes ONTAP or an on-prem ONTAP cluster and you selected NFSv4 or later, then you'll need to enable NFSv4 ACLs on the ONTAP system. This is required to copy the ACLs.
+
 === NFS server requirements
 
 * The NFS server can be a NetApp system or a non-NetApp system.

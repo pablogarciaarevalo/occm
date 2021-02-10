@@ -101,18 +101,11 @@ The permissions are included in the latest https://mysupport.netapp.com/site/inf
 
 * The subnet in which Cloud Volumes ONTAP resides must be configured for Private Google Access. For instructions, refer to https://cloud.google.com/vpc/docs/configure-private-google-access[Google Cloud Documentation: Configuring Private Google Access^].
 
-* You need a service account that has the predefined Storage Admin role. You'll need to select this service account when you create a Cloud Volumes ONTAP working environment.
+* You need a service account that meets the following requirements:
+** It must have the predefined Storage Admin role.
+** The Connector service account must be a _Service Account User_ of this tiering service account.
 +
-https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[Set up this tiering service account as follows^]:
-+
-.. Assign the predefined _Storage Admin_ role to the tiering service account.
-.. Add the Connector service account as a _Service Account User_ to the tiering service account.
-+
-You can provide the user role https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[in step 3 of the wizard when you create the tiering service account], or https://cloud.google.com/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_user_for_a_service_account[grant the role after the service account was created^].
-+
-You'll need to select the tiering service account later when you create a Cloud Volumes ONTAP working environment.
-+
-If you don't enable data tiering and select a service account when you create the Cloud Volumes ONTAP system, then you'll need to turn off the system and add the service account to Cloud Volumes ONTAP from the GCP console.
+link:task_creating_gcp_service_account.html[Read step-by-step instructions].
 
 === Enabling data tiering after implementing the requirements
 

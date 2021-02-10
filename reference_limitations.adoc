@@ -33,9 +33,10 @@ It also means that the following services aren't available from Cloud Manager:
 * Kubernetes
 * Cloud Tiering
 * Global File Cache
-* Monitoring (Cloud Insights)
 
 The SaaS platform is required to use these services.
+
+NOTE: The Monitoring service is supported and available in Government regions.
 
 == Cloud Manager doesn't support downgrades of Cloud Volumes ONTAP
 

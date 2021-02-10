@@ -161,7 +161,7 @@ Change you account name at any time to change it to something meaningful for you
 
 . Type a new account name and click *Save*.
 
-== Enabling or disabling the SaaS platform
+== Disabling the SaaS platform
 
 We don't recommend disabling the SaaS platform unless you need to in order to comply with your company’s security policies. Disabling the SaaS platform limits your ability to use NetApp’s integrated cloud services.
 
@@ -171,4 +171,13 @@ The following services aren't available from Cloud Manager if you disable the Sa
 *	Kubernetes
 *	Cloud Tiering
 *	Global File Cache
-*	Monitoring (Cloud Insights)
+
+If you do disable the SaaS platform, you'll need to perform all tasks from link:task_managing_connectors.html#accessing-the-local-ui[the local user interface that is available on a Connector].
+
+CAUTION: This is an irreversible action that will prevent you from using the Cloud Manager SaaS platform. You'll need to perform actions from the local Connector. You won't have the ability to use many of NetApp's integrated cloud services, and re-enabling the SaaS platform will require the help of NetApp support.
+
+.Steps
+
+. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account*.
+
+. In the Overview tab, toggle the option to disable use of the SaaS platform.

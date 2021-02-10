@@ -19,7 +19,58 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
-== Cloud Manager 3.9.2 Update (11 Jan 2021)
+== Cloud Manager 3.9.3 update (10 Feb 2021)
+
+* <<Cloud Tiering enhancements>>
+* <<Cloud Sync enhancements>>
+
+=== Cloud Tiering enhancements
+
+* Cloud Tiering now activates write-back prevention on a cluster when an aggregate is at >90% capacity (70% for ONTAP 9.6 and earlier). By preventing cold data write-backs on heavily utilized local tiers, Cloud Tiering preserves the local tier for active data.
++
+When this happens, an indication appears in the Manage Aggregates table.
++
+image:screenshot_tiering_write_back.gif[A screenshot of the Manage Aggregates table where a notification shows that write-back prevention was enabled.]
+
+* You can now add on-prem ONTAP clusters more easily from the Cloud Tiering service.
++
+When you click *Add cluster* from the Cloud Tiering page, you're now sent directly to the *Add Working Environment* wizard.
+
+* You can now filter the Timeline to show actions specific to the Cloud Tiering service.
++
+image:screenshot_tiering_timeline.gif[A screenshot of the Timeline and the filter ability by selecting the Cloud Tiering service.]
+
+=== Cloud Sync enhancements
+
+* We've simplified the process for syncing data to or from Cloud Volumes ONTAP. You can now select a Cloud Volumes ONTAP working environment and choose an option to sync data to or from this working environment.
++
+image:screenshot_sync_we.gif[A screenshot that shows the actions available from the Sync menu after selecting a working environment.]
+
+* In the last release, we introduced a new Reports feature that provides information that you can use with the help of NetApp personnel to tune a data broker's configuration and improve performance. These reports are now supported with object storage.
++
+image:screenshot_sync_report_object.gif[A report that shows the number of path items, objects size, modify time, and storage class.]
+
+== Cloud Manager 3.9.3 (9 Feb 2021)
+
+* <<Monitoring enhancements>>
+* <<Support improvements>>
+
+=== Monitoring enhancements
+
+* The Monitoring service is now supported with Cloud Volumes ONTAP for Azure.
+* The Monitoring service is also supported in Government regions in AWS and Azure.
+
+The Monitoring service gives you complete visibility into your Cloud Volumes ONTAP infrastructure. Enable the service to monitor, troubleshoot, and optimize your Cloud Volumes ONTAP resources.
+
+link:concept_monitoring.html[Learn more about the Monitoring service].
+
+=== Support improvements
+
+We've updated the Support Dashboard by enabling you to add your NetApp Support Site credentials, which registers you for support. You can also initiate a NetApp Support case directly from the dashboard. Just click the Help icon and then *Support*.
+
+image:screenshot_support_dashboard.gif["A screenshot of the Support Dashboard which provides support information, links, the ability to create a case."]
+
+== Cloud Manager 3.9.2 update (11 Jan 2021)
 
 * <<Cloud Compliance enhancements>>
 * <<Backup to Cloud enhancements>>

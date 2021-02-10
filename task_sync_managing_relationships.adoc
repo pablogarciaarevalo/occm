@@ -117,7 +117,7 @@ Cloud Sync modifies the sync relationship with the new settings.
 
 Create and view reports to get information that you can use with the help of NetApp personnel to tune a data broker’s configuration and improve performance.
 
-Each report provides in-depth details about the path in a sync relationship: how many directories and files there are, the distribution of file size, how deep and wide the directories are, and more.
+Each report provides in-depth details about a path in a sync relationship. For example, the report for a file system shows how many directories and files there are, the distribution of file size, how deep and wide the directories are, and more.
 
 .Steps
 
@@ -129,9 +129,13 @@ The paths (source or target) in each of your sync relationships display in a tab
 
 . When the report is ready, click *View*.
 +
-Here's a sample report.
+Here's a sample report for a file system path.
 +
 image:screenshot_sync_report.gif[A report that shows the amount of sync items, file size, maximums, access time, change time, and modify time.]
++
+And here's a sample report for object storage.
++
+image:screenshot_sync_report_object.gif[A report that shows the number of path items, objects size, modify time, and storage class.]
 
 == Deleting relationships
 

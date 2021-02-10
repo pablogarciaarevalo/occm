@@ -25,7 +25,7 @@ Get started quickly by following these steps or scroll down to the remaining sec
 You need the following:
 
 [role="quick-margin-list"]
-* An AFF or FAS system with all-SSD aggregates that's running ONTAP 9.6 or later and has an HTTPS connection to Google Cloud Storage.
+* An AFF or FAS system with all-SSD aggregates that's running ONTAP 9.6 or later and has an HTTPS connection to Google Cloud Storage. link:task_discovering_ontap.html[Learn how to discover a cluster].
 * A service account that has the predefined Storage Admin role and storage access keys.
 * A Connector installed in a Google Cloud Platform VPC.
 * Networking for the Connector that enables an outbound HTTPS connection to the ONTAP cluster in your data center, to Google Cloud Storage, and to the Cloud Tiering service.
@@ -81,9 +81,15 @@ IPspaces enable network traffic segregation, allowing for separation of client t
 +
 When you set up data tiering, Cloud Tiering prompts you for the IPspace to use. You should choose the IPspace that each LIF is associated with. That might be the "Default" IPspace or a custom IPspace that you created.
 
-include::https://raw.githubusercontent.com/NetAppDocs/cloud-tiering/master/_include/supported_volumes.adoc[]
+include::_include/tiering_supported_volumes.adoc[]
 
 NOTE: Cloud Tiering supports FlexGroup volumes. Setup works the same as any other volume.
+
+=== Discovering an ONTAP cluster
+
+You need to create an on-prem ONTAP working environment in Cloud Manager before you can start tiering cold data.
+
+link:task_discovering_ontap.html[Learn how to discover a cluster].
 
 === Creating or switching Connectors
 

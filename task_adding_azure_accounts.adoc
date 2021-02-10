@@ -62,7 +62,7 @@ image:screenshot_azure_ad.gif[Shows the Active Directory service in Microsoft Az
 
 * *Name*: Enter a name for the application.
 * *Account type*: Select an account type (any will work with Cloud Manager).
-* *Redirect URI*: Select *Web* and then enter any URL—for example, \https://url
+* *Redirect URI*: You can leave this field blank.
 
 . Click *Register*.
 
@@ -113,6 +113,8 @@ You should now have a custom role called _Cloud Manager Operator_.
 .. Keep *Azure AD user, group, or service principal* selected.
 
 .. Search for the name of the application (you can't find it in the list by scrolling).
++
+Here's an example:
 +
 image:screenshot_azure_service_principal_role.gif[A screenshot that shows the Add role assignment form in the Azure portal.]
 

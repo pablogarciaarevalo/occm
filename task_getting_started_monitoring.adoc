@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: task_getting_started_monitoring.html
 keywords: monitoring, cloud insights, tenant, acquisition unit, iops, throughput, latency, performance, cloud volumes ontap performance, volume performance
-summary: Complete a few steps to get started monitoring Cloud Volumes ONTAP performance.
+summary: Complete a few steps to start monitoring Cloud Volumes ONTAP performance.
 ---
 
-= Monitoring Cloud Volumes ONTAP in AWS
+= Monitoring Cloud Volumes ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,7 @@ summary: Complete a few steps to get started monitoring Cloud Volumes ONTAP perf
 :imagesdir: ./media/
 
 [.lead]
-Complete a few steps to get started monitoring Cloud Volumes ONTAP performance.
+Complete a few steps to start monitoring Cloud Volumes ONTAP performance.
 
 == Quick start
 
@@ -21,8 +21,11 @@ Get started quickly by following these steps or scroll down to the remaining sec
 
 ==== image:number1.png[Number 1] Verify support for your configuration
 
-[role="quick-margin-para"]
-You need a new installation of Cloud Manager 3.8.4 or later in AWS, Cloud Volumes ONTAP in AWS, and you must be a new Cloud Insights customer.
+[role="quick-margin-list"]
+* You must be a new Cloud Insights customer.
+* You need a Cloud Volumes ONTAP system running in AWS or Azure.
+* For AWS, you need a Connector running version 3.8.4 or later.
+* For Azure, you need a Connector running version 3.9.3 or later.
 
 ==== image:number2.png[Number 2] Enable Monitoring on your new or existing system
 
@@ -45,17 +48,20 @@ Subscribe before your 30-day free trial ends to continue seeing performance data
 
 Read the following requirements to make sure that you have a supported configuration.
 
-Supported Cloud Manager versions::
-You need a new installation of Cloud Manager 3.8.4 or later. A new installation is needed because a new infrastructure is required to enable the Monitoring service. This infrastructure is available starting with new installations of Cloud Manager 3.8.4.
-
 Supported Cloud Volumes ONTAP versions::
-Any version of Cloud Volumes ONTAP in AWS.
+Any version of Cloud Volumes ONTAP in AWS or in Azure.
+
+Supported Connector::
+* For AWS, you need a Connector running version 3.8.4 or later.
+* For Azure, you need a Connector running version 3.9.3 or later.
+
+TIP: You can view a Connector's version by clicking the image:screenshot_help_icon.gif[A screenshot of the help icon in the top right of Cloud Manager] icon and then *Support > Connector*.
 
 Cloud Insights requirement::
 You must be a new Cloud Insights customer. Monitoring isn't supported if you already have a Cloud Insights tenant.
 
 Email address for Cloud Central::
-The email address for your Cloud Central user account should be your business email address. Free email domains like gmail and hotmail aren’t supported when creating a Cloud Insights tenant.
+The email address for your Cloud Central user account should be your business email address. Free email domains like gmail and hotmail aren't supported when creating a Cloud Insights tenant.
 
 Networking for the Acquisition Unit::
 The Acquisition Unit uses 2-way/mutual authentication to connect to the Cloud Insights server. The client certificate must be passed to the Cloud Insights server to be authenticated. To accomplish this, the proxy must be set up to forward the http request to the Cloud Insights server without decrypting the data.
@@ -91,11 +97,11 @@ The Monitoring service is enabled by default in the working environment wizard. 
 
 . Click *Create Cloud Volumes ONTAP*.
 
-. Select Amazon Web Services as the cloud provider and then choose a single node or HA system.
+. Select Amazon Web Services or Microsoft Azure as the cloud provider and then choose a single node or HA system.
 
 . Fill out the Details & Credentials page.
 
-. On the Services page, leave the service enabled and click *Continue*.
+. On the Services page, leave the Monitoring service enabled and click *Continue*.
 +
 image:screenshot_monitoring.gif[A screenshot of the Monitoring service that you can enable from the Working Environments wizard.]
 
@@ -111,7 +117,7 @@ Enable monitoring at any time from the working environment.
 
 . In the pane on the right, click *Start Monitoring*.
 +
-image:screenshot_enable_monitoring.gif[[A screenshot that shows the Enable Monitoring icon which is available on the Canvas page after you select a working environment.]
+image:screenshot_enable_monitoring.gif[[A screenshot that shows the Start Monitoring icon which is available on the Canvas page after you select a working environment.]
 
 == Monitoring your volumes
 
@@ -158,7 +164,7 @@ Cloud Insights open in a new browser tab. If you need help, refer to the https:/
 
 If you no longer want to monitor Cloud Volumes ONTAP, you can disable the service at any time.
 
-NOTE: If you disable monitoring from each of your working environments, you'll need to delete the EC2 instance yourself. The instance is named _AcquisitionUnit_ with a generated hash (UUID) concatenated to it. For example: _AcquisitionUnit-FAN7FqeH_
+NOTE: If you disable monitoring from each of your working environments, you'll need to delete the virtual machine instance yourself. The instance is named _AcquisitionUnit_ with a generated hash (UUID) concatenated to it. For example: _AcquisitionUnit-FAN7FqeH_
 
 .Steps
 
