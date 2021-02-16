@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_controlling_private_data.html
-keywords: personal files, personal data, sensitive personal files, sensitive personal data, health data, ethnic origin, political opinions, gdpr, email address, credit card, ip address, iban, national ID, identifier, sex, criminal, compliance, privacy, filter data, csv file, highlights
+keywords: personal files, personal data, sensitive personal files, sensitive personal data, health data, ethnic origin, political opinions, gdpr, email address, credit card, ip address, iban, national ID, identifier, sex, criminal, compliance, privacy, filter data, permissions, csv file, highlights
 summary: Gain control of your private data by viewing details about the personal data and sensitive personal data in your organization. You can also gain visibility by reviewing the categories and file types that Cloud Compliance found in your data.
 ---
 
@@ -122,6 +122,10 @@ image:screenshot_compliance_file_details.png[A screenshot showing the metadata d
 In addition to showing you the working environment and volume where the file resides, the metadata shows much more information, including the file permissions, file owner, and assigned AIP label (if you have link:task_managing_highlights.html#categorizing-your-data-using-aip-labels[integrated AIP in Cloud Compliance^]). This information is useful if you're planning to create highlights because you can see all the information that you can use to filter your data.
 
 Note that not all information is available for all data sources - just what is appropriate for that data source. For example, permissions and AIP labels are not relevant for database files.
+
+To view detailed file permissions, click *View all Permissions*. This button is available only for files in CIFS shares and OneDrive accounts.
+
+image:screenshot_compliance_permissions.png[A screenshot showing detailed file permissions.]
 
 There are also two items in this metadata that allow you to make changes to files:
 

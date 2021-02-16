@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_scanning_file_shares.html
 keywords: cloud compliance, enable cloud compliance, privacy, compliance, file shares, nfs, cifs, smb
-summary: Complete a few steps to start scanning NFS or CIFS file shares directly with Cloud Compliance.
+summary: Complete a few steps to start scanning NFS or CIFS file shares that do not reside in ONTAP systems directly with Cloud Compliance.
 ---
 
 = Scanning file shares
@@ -13,7 +13,7 @@ summary: Complete a few steps to start scanning NFS or CIFS file shares directly
 :imagesdir: ./media/
 
 [.lead]
-Complete a few steps to start scanning NFS or CIFS file shares directly with Cloud Compliance.
+Complete a few steps to start scanning NFS or CIFS file shares that do not reside in ONTAP systems directly with Cloud Compliance.
 
 == Quick start
 
@@ -29,7 +29,7 @@ For CIFS (SMB) shares, ensure that you have credentials to access the shares.
 [role="quick-margin-para"]
 link:task_deploy_cloud_compliance.html[Deploy Cloud Compliance^] if there isn't already an instance deployed.
 
-==== image:number3.png[Number 3] Add a group to identify the file shares
+==== image:number3.png[Number 3] Create a group to hold the file shares
 
 [role="quick-margin-para"]
 The group is a container for the file shares that you want to scan, and it is used as the working environment name for those file shares.
@@ -49,11 +49,13 @@ For CIFS (SMB) shares, ensure that you have Active Directory credentials that pr
 
 You will need the list of shares you want to add in the format `<host_name>:/<share_path>`. You can enter the shares individually, or you can supply a line-separated list of the file shares you want to scan.
 
-== Adding the group for the file shares
+== Creating the group for the file shares
 
 You must have link:task_deploy_cloud_compliance.html[deployed an instance of Cloud Compliance in Cloud Manager already^].
 
 The group is a container for the file shares that you want to scan, and the group name is used as the working environment name for those file shares.
+
+You can mix NFS and CIFS shares in the same group. However, all CIFS file shares in a group need to be using the same Active Directory credentials. If you plan to add CIFS shares that use different credentials, you must make a group for each unique set of credentials.
 
 Add the group where you will add your file shares.
 
@@ -67,11 +69,13 @@ image:screenshot_compliance_add_fileshares_button.png[A screenshot of the Scan C
 
 The new File Shares Group is added to the list of working environments.
 
-== Adding file shares to compliance scans
+== Adding file shares to a group
 
 You add file shares to the File Shares Group so that the files in those shares will be scanned by Cloud Compliance. You add the shares in the format `<host_name>:/<share_path>`.
 
 You can add individual file shares, or you can supply a line-separated list of the file shares you want to scan. You can add up to 100 shares at a time.
+
+When adding both NFS and CIFS shares in a single group, you'll need to run through the process twice - once adding NFS shares, and then again adding the CIFS shares.
 
 .Steps
 
@@ -83,7 +87,7 @@ image:screenshot_compliance_fileshares_add_shares.png[A screenshot of the Scan C
 +
 image:screenshot_compliance_fileshares_add_initial_shares.png[A screenshot showing the Add your first Shares button to add initial shares to the group.]
 +
-If you are adding additional file shares to an existing group, click *Add Shares*.
+If you are adding file shares to an existing group, click *Add Shares*.
 +
 image:screenshot_compliance_fileshares_add_more_shares.png[A screenshot showing the Add Shares button to add more shares to the group.]
 
