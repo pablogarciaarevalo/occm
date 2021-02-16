@@ -13,7 +13,7 @@ summary: Complete a few steps to start scanning data within object storage direc
 :imagesdir: ./media/
 
 [.lead]
-Complete a few steps to start scanning data within object storage directly with Cloud Compliance. Compliance can scan data from any Object Storage service which uses the Simple Storage Service (S3) protocol. This includes NetApp StorageGRID, IBM Cloud Object Store, MinIO, Linode, B2 Cloud Storage, and more.
+Complete a few steps to start scanning data within object storage directly with Cloud Compliance. Compliance can scan data from any Object Storage service which uses the Simple Storage Service (S3) protocol. This includes NetApp StorageGRID, IBM Cloud Object Store, Azure Blob (using MinIO), Linode, B2 Cloud Storage, and more.
 
 == Quick start
 
@@ -25,7 +25,7 @@ Get started quickly by following these steps or scroll down to the remaining sec
 You need to have the endpoint URL to connect with the object storage service.
 
 [role="quick-margin-para"]
-You need to have the Access Key and Secret Key so that Cloud Compliance can access the buckets within the object storage.
+You need to have the Access Key and Secret Key from the object storage provider so that Cloud Compliance can access the buckets.
 
 ==== image:number2.png[Number 2] Deploy the Cloud Compliance instance
 
@@ -50,7 +50,9 @@ Review the following prerequisites to make sure that you have a supported config
 
 You need to have the endpoint URL to connect with the object storage service.
 
-You need to have the Access Key and Secret Key so that Cloud Compliance can access the buckets within the object storage.
+You need to have the Access Key and Secret Key from the object storage provider so that Cloud Compliance can access the buckets.
+
+Note that support for Azure Blob requires that you use the link:https://min.io/[MinIO service^].
 
 == Adding the object storage service to Cloud Compliance
 
