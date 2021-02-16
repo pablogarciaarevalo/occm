@@ -227,7 +227,7 @@ entries:
         url: /task_provisioning_ontap.html
   - title: Back up to the cloud
     entries:
-      - title: Learn about Backup to Cloud
+      - title: Learn about Cloud Backup
         url: /concept_backup_to_cloud.html
       - title: Get started
         entries:

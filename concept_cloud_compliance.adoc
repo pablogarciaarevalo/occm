@@ -40,7 +40,7 @@ Cloud Compliance can scan data from the following types of data sources:
 * Databases that reside anywhere (there is no requirement that the database resides in a working environment)
 * OneDrive accounts
 
-NOTE: A Beta feature released in January 2021 allows you to run Compliance scans for free on the backup files created from your on-prem ONTAP volumes (created using link:concept_backup_to_cloud.html[Backup to Cloud^]). This gives you a choice whether you want to have Cloud Compliance scan your on-prem ONTAP volumes directly, or scan the backup files made from those volumes.
+NOTE: A Beta feature released in January 2021 allows you to run Compliance scans for free on the backup files created from your on-prem ONTAP volumes (created using link:concept_backup_to_cloud.html[Cloud Backup^]). This gives you a choice whether you want to have Cloud Compliance scan your on-prem ONTAP volumes directly, or scan the backup files made from those volumes.
 
 == Cost
 

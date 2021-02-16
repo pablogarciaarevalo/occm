@@ -75,7 +75,7 @@ Cloud Compliance must be deployed in the cloud when scanning Azure NetApp Files 
 
 You can enable Cloud Compliance on Cloud Volumes ONTAP systems (in AWS and Azure), on-premises ONTAP clusters, and Azure NetApp Files.
 
-NOTE: Following these steps for on-prem ONTAP systems scans the volumes directly on the on-prem ONTAP system. If you are already creating backup files from those on-prem systems using link:concept_backup_to_cloud.html[Backup to Cloud^], you can run compliance scans on the backup files in the cloud instead. Go to <<Scanning backup files from on-premises ONTAP systems,Scanning backup files from on-premises ONTAP systems>> to scan the volumes by scanning the backup files.
+NOTE: Following these steps for on-prem ONTAP systems scans the volumes directly on the on-prem ONTAP system. If you are already creating backup files from those on-prem systems using link:concept_backup_to_cloud.html[Cloud Backup^], you can run compliance scans on the backup files in the cloud instead. Go to <<Scanning backup files from on-premises ONTAP systems,Scanning backup files from on-premises ONTAP systems>> to scan the volumes by scanning the backup files.
 
 . At the top of Cloud Manager, click *Compliance* and then select the *Configuration* tab.
 +
@@ -151,7 +151,7 @@ TIP: New volumes added to the working environment are automatically scanned only
 
 == Scanning backup files from on-premises ONTAP systems
 
-If you don't want Cloud Compliance to scan volumes directly on your on-prem ONTAP systems, a new Beta feature released in January 2021 allows you to run compliance scans on backup files created from your on-prem ONTAP volumes. So if you are already creating backup files using link:concept_backup_to_cloud.html[Backup to Cloud^], you can use this new feature to run compliance scans on those backup files.
+If you don't want Cloud Compliance to scan volumes directly on your on-prem ONTAP systems, a new Beta feature released in January 2021 allows you to run compliance scans on backup files created from your on-prem ONTAP volumes. So if you are already creating backup files using link:concept_backup_to_cloud.html[Cloud Backup^], you can use this new feature to run compliance scans on those backup files.
 
 The Compliance scans you run on backup files are *free* - no Cloud Compliance subscription or license is needed.
 

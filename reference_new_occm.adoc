@@ -95,7 +95,7 @@ image:screenshot_support_dashboard.gif["A screenshot of the Support Dashboard wh
 == Cloud Manager 3.9.2 update (11 Jan 2021)
 
 * <<Cloud Compliance enhancements>>
-* <<Backup to Cloud enhancements>>
+* <<Cloud Backup enhancements>>
 
 === Cloud Compliance enhancements
 
@@ -109,13 +109,13 @@ In the last release, Cloud Compliance provided a set predefined highlight filter
 
 * Ability to scan backup files from on-premises ONTAP systems for free.
 +
-If you don’t want Cloud Compliance to scan volumes directly on your on-prem ONTAP systems, a new Beta feature released this month allows you to run compliance scans on backup files created from your on-prem ONTAP volumes. So if you're already creating backups of your on-prem ONTAP volumes using link:concept_backup_to_cloud.html[Backup to Cloud^], you can use this new feature to run compliance scans on those backup files - for *FREE*.
+If you don’t want Cloud Compliance to scan volumes directly on your on-prem ONTAP systems, a new Beta feature released this month allows you to run compliance scans on backup files created from your on-prem ONTAP volumes. So if you're already creating backups of your on-prem ONTAP volumes using link:concept_backup_to_cloud.html[Cloud Backup^], you can use this new feature to run compliance scans on those backup files - for *FREE*.
 +
 See how to link:task_backup_from_onprem.html[back up on-prem ONTAP volumes to object storage^] and how you can link:task_getting_started_compliance.html#scanning-backup-files-from-on-premises-ontap-systems[scan those backup files].
 
 * Cloud Compliance can now find the personal data type "IP Address" in files. See the list of all link:reference_private_data_categories.html#types-of-personal-data[personal data types^] that Cloud Compliance finds in scans.
 
-=== Backup to Cloud enhancements
+=== Cloud Backup enhancements
 
 You can restore individual files to additional destination working environments:
 
@@ -198,7 +198,7 @@ image:screenshot_we_relationships.png[A screenshot that shows the Canvas tab and
 
 * <<General enhancements>>
 * <<Cloud Volumes ONTAP AMI change>>
-* <<Backup to Cloud enhancements>>
+* <<Cloud Backup enhancements>>
 * <<Cloud Compliance enhancements>>
 * <<Cloud Tiering enhancements>>
 * <<Cloud Sync enhancements>>
@@ -219,14 +219,14 @@ A new *Storage Operations* section in Spot enables you to navigate directly to C
 
 Starting with the 9.8 release, the Cloud Volumes ONTAP PAYGO AMI is no longer available in the AWS Marketplace. If you use the Cloud Manager API to deploy Cloud Volumes ONTAP PAYGO, you'll need to https://aws.amazon.com/marketplace/pp/B07QX2QLXX[subscribe to the Cloud Manager subscription in the AWS Marketplace^] before deploying a 9.8 system.
 
-=== Backup to Cloud enhancements
+=== Cloud Backup enhancements
 
 * You now have the ability to restore individual files from a backup file.
 - If you need to restore a few files from a certain point in time, now you can just restore those files instead of having to restore the whole volume.
 - You can restore the files to a volume in the same working environment, or to a volume in a different working environment that’s using the same cloud account.
 - This single file restore option relies on a new Cloud Restore instance that is deployed in your environment. link:task_restore_backups.html#restoring-files-from-a-backup[Go here for details about this new functionality.]
 
-* You can configure Backup to Cloud in a Google Cloud environment now while deploying a new Cloud Volumes ONTAP system. In the past you could only configure Backup to Cloud on existing Cloud Volumes ONTAP systems.
+* You can configure Cloud Backup in a Google Cloud environment now while deploying a new Cloud Volumes ONTAP system. In the past you could only configure Cloud Backup on existing Cloud Volumes ONTAP systems.
 
 * Now you can restore volumes that you had backed up from on-prem ONTAP systems to Cloud Volumes ONTAP systems deployed in AWS or Azure.
 
@@ -282,7 +282,7 @@ link:reference_sync_requirements.html[View the entire list of supported sources 
 
 == Cloud Manager 3.9 Update (18 Nov 2020)
 
-Backup to Cloud is now supported on Cloud Volumes ONTAP in Google Cloud. Click link:task_backup_to_gcp.html[here] for details.
+Cloud Backup is now supported on Cloud Volumes ONTAP in Google Cloud. Click link:task_backup_to_gcp.html[here] for details.
 
 *Note:* Only single-node systems are currently supported.
 

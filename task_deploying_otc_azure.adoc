@@ -79,7 +79,7 @@ video::video_subscribing_azure.mp4[width=848, height=480]
 . *Services*: Keep the services enabled or disable the individual services that you don't want to use with Cloud Volumes ONTAP.
 +
 * link:concept_cloud_compliance.html[Learn more about Cloud Compliance].
-* link:concept_backup_to_cloud.html[Learn more about Backup to Cloud].
+* link:concept_backup_to_cloud.html[Learn more about Cloud Backup].
 * link:concept_monitoring.html[Learn more about the Monitoring service].
 
 . *Location & Connectivity*: Select a location and security group, and select the checkbox to confirm network connectivity between the Connector and the target location.
@@ -92,7 +92,7 @@ To understand how licenses work, see link:concept_licensing.html[Licensing].
 +
 A NetApp Support Site Account is optional for pay-as-you-go, but required for BYOL systems. link:task_adding_nss_accounts.html[Learn how to add NetApp Support Site accounts].
 
-. *Preconfigured Packages*: Shelect one of the packages to quickly deploy a Cloud Volumes ONTAP system, or click *Create my own configuration*.
+. *Preconfigured Packages*: Select one of the packages to quickly deploy a Cloud Volumes ONTAP system, or click *Create my own configuration*.
 +
 If you choose one of the packages, you only need to specify a volume and then review and approve the configuration.
 

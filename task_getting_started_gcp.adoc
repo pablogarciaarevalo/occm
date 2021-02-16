@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_getting_started_gcp.html
-keywords: google cloud platform, gcp, deploy cloud manager, launch cloud manager, create cloud manager, getting started, networking, gcp networking, service account, tiering, data tiering, bucket, fabricpool, backup to cloud, storage access key, gcp role, role, iam role, permissions, gcp permissions
+keywords: google cloud platform, gcp, deploy cloud manager, launch cloud manager, create cloud manager, getting started, networking, gcp networking, service account, tiering, data tiering, bucket, fabricpool, cloud backup, storage access key, gcp role, role, iam role, permissions, gcp permissions
 summary: Get started with Cloud Volumes ONTAP for GCP in a few steps.
 ---
 
