@@ -18,7 +18,7 @@ This FAQ can help if you’re just looking for a quick answer to a question.
 
 == What is Cloud Compliance?
 
-Cloud Compliance is a cloud offering that uses Artificial Intelligence (AI) driven technology to help organizations understand data context and identify sensitive data across your storage systems. The systems can be Azure NetApp Files configurations, Cloud Volumes ONTAP systems hosted in AWS or Azure, Amazon S3 buckets, on-prem ONTAP systems, databases, and OneDrive accounts.
+Cloud Compliance is a cloud offering that uses Artificial Intelligence (AI) driven technology to help organizations understand data context and identify sensitive data across your storage systems. The systems can be Azure NetApp Files configurations, Cloud Volumes ONTAP systems hosted in AWS or Azure, Amazon S3 buckets, on-prem ONTAP systems, non-NetApp file shares, generic S3 object storage, databases, and OneDrive accounts.
 
 Cloud Compliance provides pre-defined parameters (such as sensitive information types and categories) to address new data compliance regulations for data privacy and sensitivity, such as GDPR, CCPA, HIPAA, and more.
 
@@ -40,7 +40,7 @@ https://cloud.netapp.com/cloud-compliance[Learn more about the use cases for Clo
 
 == What types of data can be scanned with Cloud Compliance?
 
-Cloud Compliance supports scanning of unstructured data over NFS and CIFS protocols that are managed by Cloud Volumes ONTAP and Azure NetApp Files. Cloud Compliance can also scan data stored on Amazon S3 buckets and on-prem ONTAP systems.
+Cloud Compliance supports scanning of unstructured data over NFS and CIFS protocols that are managed by Cloud Volumes ONTAP, Azure NetApp Files, on-prem ONTAP systems, and non-NetApp file shares. Cloud Compliance can also scan data stored on Amazon S3 buckets and generic S3 object storage.
 
 Additionally, Cloud Compliance can scan databases that are located anywhere, and user files from OneDrive accounts.
 
@@ -48,7 +48,7 @@ link:concept_cloud_compliance.html#how-scans-work[Learn how scans work^].
 
 == Which cloud providers are supported?
 
-Cloud Compliance operates as part of Cloud Manager and currently supports AWS and Azure. This provides your organization with unified privacy visibility across different cloud providers. Support for Google Cloud Platform (GCP) will be added soon.
+Cloud Compliance operates as part of Cloud Manager and currently supports AWS and Azure. This provides your organization with unified privacy visibility across different cloud providers.
 
 == How do I access Cloud Compliance?
 
@@ -56,13 +56,27 @@ Cloud Compliance is operated and managed through Cloud Manager. You can access C
 
 == How does Cloud Compliance work?
 
-Cloud Compliance deploys another layer of Artificial Intelligence alongside your Cloud Manager system and storage systems. It then scans the data on volumes, buckets, databases, and OneDrive and indexes the data insights that are found.
+Cloud Compliance deploys another layer of Artificial Intelligence alongside your Cloud Manager system and storage systems. It then scans the data on volumes, buckets, databases, and OneDrive accounts and indexes the data insights that are found.
 
 link:concept_cloud_compliance.html[Learn more about how Cloud Compliance works^].
 
 == How much does Cloud Compliance cost?
 
 The cost to use Cloud Compliance depends on the amount of data that you're scanning. The first 1 TB of data that Cloud Compliance scans in a Cloud Manager workspace is free. A subscription to the AWS or Azure Marketplace is required to continue scanning data after that point. See https://cloud.netapp.com/cloud-compliance#pricing[pricing^] for details.
+
+== What type of instance or VM is required for Cloud Compliance?
+
+* In Azure, Cloud Compliance runs on a Standard_D16s_v3 VM with a 512 GB disk.
+
+* In AWS, Cloud Compliance runs on an m5.4xlarge instance with a 500 GB GP2 disk.
++
+In regions where m5.4xlarge isn't available, Cloud Compliance runs on an m4.4xlarge instance instead.
+
+You can also download and install Compliance software on a Linux host in your network or in the cloud. Everything works the same and you continue to manage your scan configuration and results through Cloud Manager. See link:task_deploy_cloud_compliance.html#deploying-the-cloud-compliance-instance-on-premises[Deploying Cloud Compliance on premises^] for system requirements and installation details.
+
+NOTE: Cloud Compliance is currently unable to scan S3 buckets and ANF files when it is installed on premises.
+
+link:concept_cloud_compliance.html[Learn more about how Cloud Compliance works^].
 
 == How often does Cloud Compliance scan my data?
 
@@ -86,20 +100,6 @@ HIPAA report:: Helps you identify the distribution of health information across 
 
 Reports on a specific information type:: Reports are available that include details about the identified files that contain personal data and sensitive personal data. You can also see files broken down by category and file type. link:task_controlling_private_data.html[Learn more^].
 
-== What type of instance or VM is required for Cloud Compliance?
-
-* In Azure, Cloud Compliance runs on a Standard_D16s_v3 VM with a 512 GB disk.
-
-* In AWS, Cloud Compliance runs on an m5.4xlarge instance with a 500 GB GP2 disk.
-+
-In regions where m5.4xlarge isn't available, Cloud Compliance runs on an m4.4xlarge instance instead.
-
-You can also download and install Compliance software on a Linux host in your network or in the cloud. Everything works the same and you continue to manage your scan configuration and results through Cloud Manager. See link:task_deploy_cloud_compliance.html#deploying-the-cloud-compliance-instance-on-premises[Deploying Cloud Compliance on premises^] for system requirements and installation details.
-
-NOTE: Cloud Compliance is currently unable to scan S3 buckets and ANF files when it is installed on premises.
-
-link:concept_cloud_compliance.html[Learn more about how Cloud Compliance works^].
-
 == Does scan performance vary?
 
 Scan performance can vary based on the network bandwidth and the average file size in your cloud environment.
@@ -121,7 +121,7 @@ NOTE: Activating Cloud Compliance results in an immediate initial scan. Complian
 
 == How do I disable Cloud Compliance?
 
-You can disable Cloud Compliance from the Canvas page after you select an individual working environment.
+You can disable Cloud Compliance from the Canvas page after you select an individual working environment, database, or OneDrive account.
 
 link:task_managing_compliance.html[Learn more^].
 
@@ -145,7 +145,7 @@ link:task_getting_started_compliance.html[Learn more^].
 
 Yes. In conjunction with the Highlights feature, you can send email alerts to Cloud Manager users (daily, weekly, or monthly) when a highlight return results so you can get notifications to protect your data. Learn more about link:task_managing_highlights.html#controlling-your-data-using-highlights[highlights^].
 
-You can also download status reports in .CSV format that you can share internally in your organization.
+You can also download status reports from the Investigation page in .CSV format that you can share internally in your organization.
 
 == Can I customize the service to my organization’s needs?
 
@@ -157,7 +157,7 @@ link:task_managing_data_fusion.html#creating-custom-personal-data-identifiers-fr
 
 == Can Cloud Compliance work with the AIP labels I have embedded in my files?
 
-Yes. You can manage AIP labels in the files that Cloud Compliance is scanning if you have subscribed to link:https://azure.microsoft.com/en-us/services/information-protection/[Azure Information Protection (AIP)^]. You can view the labels that are already assigned to files, add labels to files, and change labels when a label already exists.
+Yes. You can manage AIP labels in the files that Cloud Compliance is scanning if you have subscribed to link:https://azure.microsoft.com/en-us/services/information-protection/[Azure Information Protection (AIP)^]. You can view the labels that are already assigned to files, add labels to files, and change existing labels.
 
 link:task_managing_highlights.html#categorizing-your-data-using-aip-labels[Learn more^].
 
