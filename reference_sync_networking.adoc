@@ -86,6 +86,8 @@ repo.cloudsync.netapp.com:443
 
 | fedoraproject.org:443 | To install 7z on the data broker virtual machine during installation and updates. 7z is needed to send AutoSupport messages to NetApp technical support.
 
+| sts.amazonaws.com:443 | To verify AWS credentials when the data broker is deployed in AWS or when it's deployed on your premises and AWS credentials are provided. The data broker contacts this endpoint during deployment, when it's updated, and when it's restarted.
+
 |===
 
 === Web browser endpoints

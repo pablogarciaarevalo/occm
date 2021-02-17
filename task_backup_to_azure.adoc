@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_backup_to_azure.html
-keywords: backing up, back up, backup, backup cloud volumes ontap, back up cloud volumes ontap, cloud volumes ontap, azure, azure blob, back up volumes, Backup to Cloud, cloud backup service
+keywords: backing up, back up, backup, backup cloud volumes ontap, back up cloud volumes ontap, cloud volumes ontap, azure, azure blob, back up volumes, Cloud Backup, cloud backup service
 summary: Complete a few steps to get started backing up data from Cloud Volumes ONTAP to Azure Blob storage.
 ---
 
@@ -24,16 +24,16 @@ Get started quickly by following these steps or scroll down to the remaining sec
 [role="quick-margin-list"]
 * You're running Cloud Volumes ONTAP 9.7 or later in Azure.
 * You have a valid cloud provider subscription for the storage space where your backups will be located.
-* You have subscribed to the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Cloud Manager Marketplace Backup offering^], or you have purchased link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[and activated^] a Backup to Cloud BYOL license from NetApp.
+* You have subscribed to the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Cloud Manager Marketplace Backup offering^], or you have purchased link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[and activated^] a Cloud Backup BYOL license from NetApp.
 
-==== image:number2.png[Number 2] Enable Backup to Cloud on your new or existing system
+==== image:number2.png[Number 2] Enable Cloud Backup on your new or existing system
 
 [role="quick-margin-list"]
-* New systems: Backup to Cloud is enabled by default in the working environment wizard. Be sure to keep the option enabled.
+* New systems: Cloud Backup is enabled by default in the working environment wizard. Be sure to keep the option enabled.
 
-* Existing systems: Select the working environment and click *Activate* next to the Backup to Cloud service in the right-panel, and then follow the setup wizard.
+* Existing systems: Select the working environment and click *Activate* next to the Cloud Backup service in the right-panel, and then follow the setup wizard.
 +
-image:screenshot_backup_to_s3_icon.gif[A screenshot that shows the Backup to Cloud Activate button which is available after you select a working environment.]
+image:screenshot_backup_to_s3_icon.gif[A screenshot that shows the Cloud Backup Activate button which is available after you select a working environment.]
 
 ==== image:number3.png[Number 3] Enter the provider details
 
@@ -49,7 +49,7 @@ image:screenshot_backup_provider_settings_azure.png[A screenshot that shows the 
 The default policy backs up volumes every day and retains the most recent 30 backup copies of each volume. Change to weekly or monthly backups, or select one of the system-defined policies that provide more options.
 
 [role="quick-margin-para"]
-image:screenshot_backup_onprem_policy.png[A screenshot that shows the Backup to Cloud settings where you can enable or disable the feature and then choose your backup retention.]
+image:screenshot_backup_onprem_policy.png[A screenshot that shows the Cloud Backup settings where you can enable or disable the feature and then choose your backup retention.]
 
 ==== image:number5.png[Number 5] Select the volumes that you want to back up
 
@@ -72,20 +72,20 @@ Supported ONTAP versions::
 Cloud Volumes ONTAP 9.7 and later.
 
 Supported Azure regions::
-Backup to Cloud is supported in all Azure regions https://cloud.netapp.com/cloud-volumes-global-regions[where Cloud Volumes ONTAP is supported^].
+Cloud Backup is supported in all Azure regions https://cloud.netapp.com/cloud-volumes-global-regions[where Cloud Volumes ONTAP is supported^].
 
 License requirements::
-For Backup to Cloud PAYGO licensing, a subscription through the Azure Marketplace is required before you enable Backup to Cloud. Billing for Backup to Cloud is done through this subscription. link:task_deploying_otc_azure.html[You can subscribe from the Details & Credentials page of the working environment wizard^].
+For Cloud Backup PAYGO licensing, a subscription through the Azure Marketplace is required before you enable Cloud Backup. Billing for Cloud Backup is done through this subscription. link:task_deploying_otc_azure.html[You can subscribe from the Details & Credentials page of the working environment wizard^].
 +
-For Backup to Cloud BYOL licensing, you need the serial number from NetApp that enables you to use the service for the duration and capacity of the license. See link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[Adding and updating your Backup BYOL license^].
+For Cloud Backup BYOL licensing, you need the serial number from NetApp that enables you to use the service for the duration and capacity of the license. See link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[Adding and updating your Backup BYOL license^].
 +
 And you need to have a Microsoft Azure subscription for the storage space where your backups will be located.
 
-== Enabling Backup to Cloud on a new system
+== Enabling Cloud Backup on a new system
 
-Backup to Cloud is enabled by default in the working environment wizard. Be sure to keep the option enabled.
+Cloud Backup is enabled by default in the working environment wizard. Be sure to keep the option enabled.
 
-NOTE: If you want to pick the name of the resource group, *disable* Backup to Cloud when deploying Cloud Volumes ONTAP. Follow the steps for <<enabling-backup-to-cloud-on-an-existing-system,enabling backup to cloud on an existing system>> to enable Backup to Cloud and choose the resource group.
+NOTE: If you want to pick the name of the resource group, *disable* Cloud Backup when deploying Cloud Volumes ONTAP. Follow the steps for <<enabling-cloud-backup-on-an-existing-system,enabling Cloud Backup on an existing system>> to enable Cloud Backup and choose the resource group.
 
 .Steps
 
@@ -97,27 +97,27 @@ NOTE: If you want to pick the name of the resource group, *disable* Backup to Cl
 
 . On the Services page, leave the service enabled and click *Continue*.
 +
-image:screenshot_backup_to_azure.gif[Shows the Backup to Cloud option in the working environment wizard.]
+image:screenshot_backup_to_azure.gif[Shows the Cloud Backup option in the working environment wizard.]
 
 . Complete the pages in the wizard to deploy the system.
 
 .Result
 
-Backup to Cloud is enabled on the system and backs up volumes every day and retains the most recent 30 backup copies.
+Cloud Backup is enabled on the system and backs up volumes every day and retains the most recent 30 backup copies.
 
 .What's next?
 
 You can link:task_managing_backups.html[start and stop backups for volumes or change the backup schedule^] and you can link:task_restore_backups.html[restore entire volumes or individual files from a backup file^].
 
-== Enabling Backup to Cloud on an existing system
+== Enabling Cloud Backup on an existing system
 
-Enable Backup to Cloud at any time directly from the working environment.
+Enable Cloud Backup at any time directly from the working environment.
 
 .Steps
 
-. Select the working environment and click *Activate* next to the Backup to Cloud service in the right-panel.
+. Select the working environment and click *Activate* next to the Cloud Backup service in the right-panel.
 +
-image:screenshot_backup_to_s3_icon.gif[A screenshot that shows the Backup to Cloud Settings button which is available after you select a working environment.]
+image:screenshot_backup_to_s3_icon.gif[A screenshot that shows the Cloud Backup Settings button which is available after you select a working environment.]
 
 . Select the provider details:
 .. The Azure subscription used to store the backups.
@@ -130,7 +130,7 @@ Note that you cannot change the subscription or the resource group after the ser
 
 . In the _Define Policy_ page, select the backup schedule and retention value and click *Continue*.
 +
-image:screenshot_backup_onprem_policy.png[A screenshot that shows the Backup to Cloud settings where you can enable or disable the feature and then choose your backup retention.]
+image:screenshot_backup_onprem_policy.png[A screenshot that shows the Cloud Backup settings where you can enable or disable the feature and then choose your backup retention.]
 +
 See link:concept_backup_to_cloud.html#the-schedule-is-daily-weekly-monthly-or-a-combination[the list of existing policies^].
 
@@ -143,7 +143,7 @@ image:screenshot_backup_select_volumes.png[A screenshot of selecting the volumes
 
 .Result
 
-Backup to Cloud starts taking the initial backups of each selected volume.
+Cloud Backup starts taking the initial backups of each selected volume.
 
 .What's next?
 

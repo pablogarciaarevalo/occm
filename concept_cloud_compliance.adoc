@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept_cloud_compliance.html
-keywords: artificial intelligence, ai, compliance, cloud compliance, dsar, personal data, personal information, sensitive, personal sensitive data, gdpr, hipaa, scans, scanning, azure netapp files, cloud volumes ontap, Amazon S3, database, onedrive, on-prem ontap, backup files
+keywords: artificial intelligence, ai, compliance, cloud compliance, dsar, personal data, personal information, sensitive, personal sensitive data, gdpr, hipaa, scans, scanning, azure netapp files, cloud volumes ontap, Amazon S3, database, onedrive, on-prem ontap, backup files, aip labels
 summary: Cloud Compliance is a data privacy and compliance service for Cloud Manager that scans your volumes, Amazon S3 buckets, and databases to identify the personal and sensitive data that resides in those files. Using Artificial Intelligence (AI) driven technology, Cloud Compliance helps organizations understand data context and identify sensitive data.
 ---
 
@@ -24,6 +24,9 @@ Cloud Compliance provides several tools that can help you with your compliance e
 * Identify Personal Identifiable Information (PII)
 * Identify a wide scope of sensitive information as required by GDPR, CCPA, PCI, and HIPAA privacy regulations
 * Respond to Data Subject Access Requests (DSAR)
+* Notify Cloud Manager users through email when files contain certain PII (you define this criteria using link:task_managing_highlights.html#controlling-your-data-using-highlights[highlights^])
+* View and modify link:https://azure.microsoft.com/en-us/services/information-protection/[Azure Information Protection (AIP) labels^] in your files
+* Delete individual files
 
 == Supported working environments and data sources
 
@@ -37,7 +40,7 @@ Cloud Compliance can scan data from the following types of data sources:
 * Databases that reside anywhere (there is no requirement that the database resides in a working environment)
 * OneDrive accounts
 
-NOTE: A new Beta feature released in January 2021 allows you to run Compliance scans for free on the backup files created from your on-prem ONTAP volumes (created using link:concept_backup_to_cloud.html[Backup to Cloud^]). This gives you a choice whether you want to have Compliance scan your on-prem ONTAP volumes directly, or scan the backup files made from those volumes.
+NOTE: A Beta feature released in January 2021 allows you to run Compliance scans for free on the backup files created from your on-prem ONTAP volumes (created using link:concept_backup_to_cloud.html[Cloud Backup^]). This gives you a choice whether you want to have Cloud Compliance scan your on-prem ONTAP volumes directly, or scan the backup files made from those volumes.
 
 == Cost
 

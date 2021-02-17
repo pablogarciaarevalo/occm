@@ -56,7 +56,7 @@ You can find the latest list of permissions on the https://mysupport.netapp.com/
 
 === AWS
 
-Starting with the 3.8.1 release, the following permissions are required to use Backup to Cloud with Cloud Volumes ONTAP. link:task_backup_to_s3.html[Learn more].
+Starting with the 3.8.1 release, the following permissions are required to use Cloud Backup with Cloud Volumes ONTAP. link:task_backup_to_s3.html[Learn more].
 
 [source,json]
 {

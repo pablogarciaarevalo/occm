@@ -23,7 +23,7 @@ A Connector is required to use any of the following features within Cloud Manage
 * On-premises ONTAP clusters
 * Cloud Compliance
 * Kubernetes
-* Backup to Cloud
+* Cloud Backup
 * Monitoring
 * On-prem tiering
 * Global File Cache

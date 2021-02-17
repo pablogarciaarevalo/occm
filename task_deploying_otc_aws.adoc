@@ -82,7 +82,7 @@ image:screenshot_aws_marketplace.gif["A screenshot that shows the subscription p
 . *Services*: Keep the services enabled or disable the individual services that you don't want to use with Cloud Volumes ONTAP.
 +
 * link:concept_cloud_compliance.html[Learn more about Cloud Compliance].
-* link:concept_backup_to_cloud.html[Learn more about Backup to Cloud].
+* link:concept_backup_to_cloud.html[Learn more about Cloud Backup].
 * link:concept_monitoring.html[Learn more about Monitoring].
 
 . *Location & Connectivity*: Enter the network information that you recorded in the AWS worksheet.
@@ -281,7 +281,7 @@ image:screenshot_aws_marketplace.gif[A screenshot that shows the subscription pa
 . *Services*: Keep the services enabled or disable the individual services that you don't want to use with this Cloud Volumes ONTAP system.
 +
 * link:concept_cloud_compliance.html[Learn more about Cloud Compliance].
-* link:task_backup_to_s3.html[Learn more about Backup to Cloud].
+* link:task_backup_to_s3.html[Learn more about Cloud Backup].
 * link:concept_monitoring.html[Learn more about Monitoring].
 
 . *HA Deployment Models*: Choose an HA configuration.
