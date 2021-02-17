@@ -169,7 +169,7 @@ For example, you could name the S3 bucket fabric-pool-AFF1, where AFF1 is the na
 
 .. *Storage Class*: Select the S3 storage class that you want to transition the data to after 30 days.
 +
-If you choose Standard, then the data remains in that storage class.
+link:reference_aws_support.html[See supported storage classes^]. If you choose Standard, then the data remains in that storage class.
 
 .. *Credentials*: Enter the access key ID and secret key for an IAM user who has the required S3 permissions.
 +

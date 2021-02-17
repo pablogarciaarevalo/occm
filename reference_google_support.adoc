@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: reference_google_support.html
-keywords: google, gcp, regions, google regions, gcp regions, storage class, standard storage class
-summary: Cloud Tiering supports the Standard storage class and most regions.
+keywords: google, gcp, regions, google regions, gcp regions, storage class, standard, nearline, coldline, archive
+summary: Cloud Tiering supports several Google Cloud storage classes and most regions.
 ---
 
 = Supported Google Cloud storage classes and regions
@@ -13,11 +13,18 @@ summary: Cloud Tiering supports the Standard storage class and most regions.
 :imagesdir: ./media/
 
 [.lead]
-Cloud Tiering supports the Standard storage class and most Google Cloud regions.
+Cloud Tiering supports several Google Cloud storage classes and most regions.
 
-== Supported access tiers
+== Supported storage classes
 
-Cloud Tiering uses the _Standard_ access tier for your inactive data.
+Cloud Tiering supports the following storage classes:
+
+* Standard
+* Nearline
+* Coldline
+* Archive
+
+link:https://cloud.google.com/storage/docs/storage-classes[Learn about Google Cloud Storage classes^].
 
 == Supported Google Cloud regions
 

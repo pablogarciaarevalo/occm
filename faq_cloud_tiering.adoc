@@ -74,7 +74,7 @@ Cloud Tiering automatically uses the _Hot_ access tier for your inactive data.
 
 === Which storage classes are supported for Google Cloud Storage?
 
-Cloud Tiering uses the _Standard_ storage class for inactive data.
+Cloud Tiering supports data tiering to the _Standard_, _Nearline_, _Coldline_, or _Archive_ storage class. See link:reference_google_support.html[Supported Google Cloud storage classes] for more details.
 
 === Does Cloud Tiering use one object store for the entire cluster or one per aggregate?
 
