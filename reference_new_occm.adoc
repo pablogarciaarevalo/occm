@@ -19,6 +19,18 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.3 update (16 Feb 2021)
+
+=== Cloud Backup Service enhancements
+
+* Now you can restore volumes to on-premises ONTAP systems from backup files that reside in Amazon S3, Azure Blob, and Google Cloud Storage.
+
+* A new Restore Dashboard has been added that provides details about all the volumes and files you have restored.
++
+The Dashboard is also the starting place to perform all volume and file restore operations. See link:task_restore_backups.html#the-restore-dashboard[the Restore Dashboard^] for details. In previous releases the restore volumes option was included in the Backup Dashboard.
+
+* Cloud Backup is now supported on Cloud Volumes ONTAP HA systems in Google Cloud.
+
 == Cloud Manager 3.9.3 update (14 Feb 2021)
 
 === Cloud Compliance enhancements

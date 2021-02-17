@@ -48,7 +48,7 @@ You access the Restore Dashboard by clicking the *Restore* tab from the top of C
 
 NOTE: The Cloud Backup service must already be activated for at least one working environment.
 
-image:screenshot_restore_dashboard.png[The Restore Dashboard showing the buttons to restore volumes and files, and showing how to view all restored data.]
+image:screenshot_restore_dashboard.png["The Restore Dashboard showing the buttons to restore volumes and files, and showing how to view all restored data."]
 
 The Restore Dashboard provides buttons for you to restore volumes and files. Clicking the _Restore Volumes_ or _Restore Files_ buttons starts a wizard that walks you through the steps to restore that data.
 
@@ -77,7 +77,7 @@ image:screenshot_restore_volume_selection.png[A screenshot of selecting the Rest
 
 . In the _Select Source_ page, navigate to the backup file (snapshot) for the volume you want to restore. Select the *Working Environment*, the *Volume*, and the *Snapshot* that has the date/time stamp that you want to restore.
 +
-image:screenshot_restore_select_volume_snapshot.png[A screenshot of selecting the working environment, volume, and volume snapshot that you want to restore.]
+image:screenshot_restore_select_volume_snapshot.png["A screenshot of selecting the working environment, volume, and volume snapshot that you want to restore."]
 
 . Click *Continue*.
 
