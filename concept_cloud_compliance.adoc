@@ -30,16 +30,16 @@ Cloud Compliance provides several tools that can help you with your compliance e
 
 == Supported working environments and data sources
 
-Cloud Compliance can scan data from the following types of data sources:
+Cloud Compliance can scan data from the following types of working environments and data sources:
 
 * Cloud Volumes ONTAP in AWS
 * Cloud Volumes ONTAP in Azure
 * On-premises ONTAP clusters
 * Azure NetApp Files
 * Amazon S3
-* File shares
+* Non-NetApp file shares
 * Object storage (that uses S3 protocol)
-* Databases that reside anywhere
+* Databases
 * OneDrive accounts
 
 NOTE: A Beta feature released in January 2021 allows you to run Compliance scans for free on the backup files created from your on-prem ONTAP volumes (created using link:concept_backup_to_cloud.html[Cloud Backup^]). This gives you a choice whether you want to have Cloud Compliance scan your on-prem ONTAP volumes directly, or scan the backup files made from those volumes.
