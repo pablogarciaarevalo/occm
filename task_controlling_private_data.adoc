@@ -5,7 +5,7 @@ keywords: personal files, personal data, sensitive personal files, sensitive per
 summary: Gain control of your private data by viewing details about the personal data and sensitive personal data in your organization. You can also gain visibility by reviewing the categories and file types that Cloud Compliance found in your data.
 ---
 
-= Viewing details about the private data stored in your organization
+= Viewing compliance details about the data stored in your organization
 :hardbreaks:
 :nofooter:
 :icons: font

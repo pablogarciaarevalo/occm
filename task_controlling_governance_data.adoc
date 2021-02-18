@@ -1,0 +1,29 @@
+---
+sidebar: sidebar
+permalink: task_controlling_governance_data.html
+keywords: savings, stale data, non-business data, duplicate data, age or data, size of data, highlights
+summary: Gain control of the costs related to the data on your organizations' storage resources. View the amount of stale and non-business data that Cloud Compliance found in your files. Decide whether you want to remove or tier some files to less expensive object storage.
+---
+
+= Viewing governance details about the data stored in your organization
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Gain control of the costs related to the data on your organizations' storage resources. View the amount of stale and non-business data that Cloud Compliance found in your files. Decide whether you want to remove or tier some files to less expensive object storage.
+
+The Governance dashboard shows xyz to that you can increase the efficiency and control the costs related to the data stored on your storage resources.
+
+image:screenshot_compliance_governance_dashboard.png[A screenshot of the Cloud Compliance Governance dashboard.]
+
+== Data you may want to investigate
+
+Stale Data -- over 3yrs old
+You may want to tier or delete or move to archive
+Non-business (see video call with Nadav)
+Large files (not Duplicate data)
+
+Cloud Compliance automatically identifies specific words, strings, and patterns (Regex) inside the data. For example, Personal Identification Information (PII), credit card numbers, social security numbers, bank account numbers, and more.
