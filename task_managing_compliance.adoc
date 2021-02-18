@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: task_managing_compliance.html
 keywords: remove, delete, stop, stop scans, stop scanning, cloud compliance, stop cloud compliance, delete cloud compliance, terminate, deactivate, deactivating cloud compliance
-summary: If you need to, you can stop Cloud Compliance from scanning one or more working environments. You can also delete the Cloud Compliance instance if you no longer want to use Cloud Compliance with your working environments.
+summary: If you need to, you can stop Cloud Compliance from scanning one or more working environments, databases, or OneDrive accounts. You can also delete the Cloud Compliance instance if you no longer want to use Cloud Compliance with your working environments.
 ---
 
-= Disabling Cloud Compliance
+= Removing data sources from Cloud Compliance
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,25 +13,41 @@ summary: If you need to, you can stop Cloud Compliance from scanning one or more
 :imagesdir: ./media/
 
 [.lead]
-If you need to, you can stop Cloud Compliance from scanning one or more working environments or databases. You can also delete the Cloud Compliance instance if you no longer want to use Cloud Compliance with your working environments.
+If you need to, you can stop Cloud Compliance from scanning one or more working environments, databases, or OneDrive accounts. You can also delete the Cloud Compliance instance if you no longer want to use Cloud Compliance with your working environments.
 
 == Deactivating compliance scans for a working environment
 
-When you deactivate scans, Cloud Compliance no longer scans the data on the system and it removes the indexed compliance insights from the Cloud Compliance instance (the data from the working environment or database itself isn't deleted).
+When you deactivate scans, Cloud Compliance no longer scans the data on the working environment and it removes the indexed compliance insights from the Cloud Compliance instance (the data from the working environment itself isn't deleted).
 
-.Steps
-
-From the _Scan Configuration_ page, click the image:screenshot_gallery_options.gif[More button] button in the row for the working environment, and then click *Deactivate Compliance*.
+. From the _Scan Configuration_ page, click the image:screenshot_gallery_options.gif[More button] button in the row for the working environment, and then click *Deactivate Compliance*.
 
 image:screenshot_deactivate_compliance_scan.png[A screenshot of the action icon where you can select Deactivate scan. This option is available after you select a working environment from the Canvas page.]
 
 TIP: You can also disable compliance scans for a working environment from the Services panel when you select the working environment.
 
+== Removing a database from Cloud Compliance
+
+If you no longer want to scan a certain database, you can delete it from the Cloud Compliance interface and stop all scans.
+
+. From the _Scan Configuration_ page, click the image:screenshot_gallery_options.gif[More button] button in the row for the database, and then click *Remove DB Server*.
+
+image:screenshot_compliance_remove_db.png[A screenshot of the Remove DB Server button from the Scan Configuration page.]
+
+== Removing a OneDrive account from Cloud Compliance
+
+If you no longer want to scan user files from a certain OneDrive account, you can delete the account from the Cloud Compliance interface and stop all scans.
+
+.Steps
+
+. From the _Scan Configuration_ page, click the image:screenshot_gallery_options.gif[More button] button in the row for the OneDrive account, and then click *Remove OneDrive Account*.
++
+image:screenshot_compliance_remove_onedrive.png[A screenshot of the Remove OneDrive button from the Scan Configuration page.]
+
+. Click *Delete Account* from the confirmation dialog.
+
 == Deleting the Cloud Compliance instance
 
 You can delete the Cloud Compliance instance if you no longer want to use Cloud Compliance. Deleting the instance also deletes the associated disks where the indexed data resides.
-
-.Step
 
 . Go to your cloud provider's console and delete the Cloud Compliance instance.
 +

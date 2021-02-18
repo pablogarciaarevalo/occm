@@ -113,6 +113,22 @@ image:screenshot_file_types.gif[A screenshot of the file types dialog box where 
 
 . Investigate the data by searching, sorting, expanding details for a specific file, clicking *Investigate Results* to see masked information, or by downloading the file list.
 
+== Viewing file metadata and permissions
+
+In the Data Investigation results pane you can click image:button_subfolder.png[right-caret] for any single file to view the file metadata.
+
+image:screenshot_compliance_file_details.png[A screenshot showing the metadata details for a file in the Data Investigation page.]
+
+In addition to showing you the working environment and volume where the file resides, the metadata shows much more information, including the file permissions, file owner, and assigned AIP label (if you have link:task_managing_highlights.html#categorizing-your-data-using-aip-labels[integrated AIP in Cloud Compliance^]). This information is useful if you're planning to create highlights because you can see all the information that you can use to filter your data.
+
+Note that not all information is available for all data sources - just what is appropriate for that data source. For example, permissions and AIP labels are not relevant for database files.
+
+There are also two items in this metadata that allow you to make changes to files:
+
+* If you have integrated AIP labels with Cloud Compliance, you can assign a label to this file, or change to a different label if one already exists. See link:task_managing_highlights.html#assigning-aip-labels-manually[Assigning AIP labels manually^] for details.
+
+* You can delete the file. See link:task_managing_highlights.html#deleting-source-files[Deleting source files^] for details.
+
 == Viewing Dashboard data for specific working environments
 
 You can filter the contents of the Cloud Compliance dashboard to see compliance data for all working environments and databases, or for just specific working environments.
@@ -137,11 +153,11 @@ image:screenshot_compliance_investigation_filtered.png[A screenshot of the filte
 
 * The left-pane filters enable you to refine the results by working environment, storage repository, category, private data, file type, file size, last modified date, whether the S3 object’s permissions are open to public access, etc...
 
-* The _Highlights_ filter at the top of the Filters pane lists the custom filters that provide commonly requested combinations of filters; like a saved database query or Favorites list. Go link:task_managing_highlights.html[here^] to view the list of predefined highlights and to see how you can create your own custom highlights.
+* The _Highlights_ filter at the top of the Filters pane lists the custom filters that provide commonly requested combinations of filters; like a saved database query or Favorites list. Go link:task_managing_highlights.html#controlling-your-data-using-highlights[here^] to view the list of predefined highlights and to see how you can create your own custom highlights.
 
 == What’s included in each file list report (CSV file)
 
-From each Investigation page you can download file lists (in CSV format) that include details about the identified files. If there are more than 10,000 results, only the top 10,000 appear in the list.
+From each Investigation page you can click the image:button_download.png[] button to download file lists (in CSV format) that include details about the identified files. If there are more than 10,000 results, only the top 10,000 appear in the list.
 
 Each file list includes the following information:
 
@@ -153,6 +169,7 @@ Each file list includes the following information:
 * File path
 * File type
 * File size
+* File owner
 * Category
 * Personal information
 * Sensitive personal information

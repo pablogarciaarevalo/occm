@@ -70,7 +70,7 @@ link:task_replicating_data.html[Click here for more details].
 
 == Backing up data
 
-You can back up data from your on-premises ONTAP system to low-cost object storage in the cloud by using the Cloud Manager Backup to Cloud service. This service provides backup and restore capabilities for protection and long-term archive of your cloud data.
+You can back up data from your on-premises ONTAP system to low-cost object storage in the cloud by using the Cloud Manager Cloud Backup service. This service provides backup and restore capabilities for protection and long-term archive of your cloud data.
 
 link:task_backup_from_ontap.html[Click here for more details].
 

@@ -98,15 +98,3 @@ Cloud Compliance starts scanning the files for the users you added, and the resu
 If users leave the company or if their email address changes, you can remove individual OneDrive users from having their files scanned at any time. Just click *Remove OneDrive User* from the Configuration page.
 
 image:screenshot_compliance_onedrive_remove_user.png[A screenshot showing how to remove a single user from having their files scanned.]
-
-== Removing a OneDrive account from Cloud Compliance
-
-If you no longer want to scan user files from a certain OneDrive account, you can delete the account from the Cloud Compliance interface and stop all scans.
-
-.Steps
-
-. From the _Scan Configuration_ page, click the image:screenshot_gallery_options.gif[More button] button in the row for the OneDrive account, and then click *Remove OneDrive Account*.
-+
-image:screenshot_compliance_remove_onedrive.png[A screenshot of the Remove OneDrive button from the Scan Configuration page.]
-
-. Click *Delete Account* from the confirmation dialog.

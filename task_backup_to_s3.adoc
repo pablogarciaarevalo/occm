@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_backup_to_s3.html
-keywords: backing up, back up, backup, backup cloud volumes ontap, back up cloud volumes ontap, cloud volumes ontap, aws, aws s3, amazon s3, s3 bucket, back up volumes, Backup to Cloud, cloud backup service
+keywords: backing up, back up, backup, backup cloud volumes ontap, back up cloud volumes ontap, cloud volumes ontap, aws, aws s3, amazon s3, s3 bucket, back up volumes, Cloud Backup, cloud backup service
 summary: Complete a few steps to get started backing up data from Cloud Volumes ONTAP to Amazon S3.
 ---
 
@@ -23,17 +23,17 @@ Get started quickly by following these steps or scroll down to the remaining sec
 
 [role="quick-margin-list"]
 * You're running Cloud Volumes ONTAP 9.6 or later in AWS.
-* You have subscribed to the https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Cloud Manager Marketplace Backup offering^], or you have purchased link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[and activated^] a Backup to Cloud BYOL license from NetApp.
+* You have subscribed to the https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Cloud Manager Marketplace Backup offering^], or you have purchased link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[and activated^] a Cloud Backup BYOL license from NetApp.
 * The IAM role that provides Cloud Manager with permissions includes S3 permissions from the latest https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policy^].
 
-==== image:number2.png[Number 2] Enable Backup to Cloud on your new or existing system
+==== image:number2.png[Number 2] Enable Cloud Backup on your new or existing system
 
 [role="quick-margin-list"]
-* New systems: Backup to Cloud is enabled by default in the working environment wizard. Be sure to keep the option enabled.
+* New systems: Cloud Backup is enabled by default in the working environment wizard. Be sure to keep the option enabled.
 
-* Existing systems: Select the working environment and click *Activate* next to the Backup to Cloud service in the right-panel, and then follow the setup wizard.
+* Existing systems: Select the working environment and click *Activate* next to the Cloud Backup service in the right-panel, and then follow the setup wizard.
 +
-image:screenshot_backup_to_s3_icon.gif[A screenshot that shows the Backup to Cloud Activate button which is available after you select a working environment.]
+image:screenshot_backup_to_s3_icon.gif[A screenshot that shows the Cloud Backup Activate button which is available after you select a working environment.]
 
 ==== image:number3.png[Number 3] Define the backup policy
 
@@ -41,7 +41,7 @@ image:screenshot_backup_to_s3_icon.gif[A screenshot that shows the Backup to Clo
 The default policy backs up volumes every day and retains the most recent 30 backup copies of each volume. Change to weekly or monthly backups, or select one of the system-defined policies that provide more options. You can also change the number of backup copies to retain.
 
 [role="quick-margin-para"]
-image:screenshot_backup_settings.png[A screenshot that shows the Backup to Cloud settings where you can choose your backup schedule and retention period.]
+image:screenshot_backup_settings.png[A screenshot that shows the Cloud Backup settings where you can choose your backup schedule and retention period.]
 
 ==== image:number4.png[Number 4] Select the volumes that you want to back up
 
@@ -64,12 +64,12 @@ Supported ONTAP versions::
 Cloud Volumes ONTAP 9.6 and later.
 
 Supported AWS regions::
-Backup to Cloud is supported in all AWS regions https://cloud.netapp.com/cloud-volumes-global-regions[where Cloud Volumes ONTAP is supported^].
+Cloud Backup is supported in all AWS regions https://cloud.netapp.com/cloud-volumes-global-regions[where Cloud Volumes ONTAP is supported^].
 
 License requirements::
-For Backup to Cloud PAYGO licensing, a Cloud Manager subscription is available in the AWS Marketplace that enables deployments of Cloud Volumes ONTAP 9.6 and later (PAYGO) and Backup to Cloud. You need to https://aws.amazon.com/marketplace/pp/B07QX2QLXX[subscribe to this Cloud Manager subscription^] before you enable Backup to Cloud. Billing for Backup to Cloud is done through this subscription.
+For Cloud Backup PAYGO licensing, a Cloud Manager subscription is available in the AWS Marketplace that enables deployments of Cloud Volumes ONTAP 9.6 and later (PAYGO) and Cloud Backup. You need to https://aws.amazon.com/marketplace/pp/B07QX2QLXX[subscribe to this Cloud Manager subscription^] before you enable Cloud Backup. Billing for Cloud Backup is done through this subscription.
 +
-For Backup to Cloud BYOL licensing, you do not need an AWS Backup to Cloud subscription. You need the serial number from NetApp that enables you to use the service for the duration and capacity of the license. See link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[Adding and updating your Backup BYOL license^].
+For Cloud Backup BYOL licensing, you do not need an AWS Cloud Backup subscription. You need the serial number from NetApp that enables you to use the service for the duration and capacity of the license. See link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[Adding and updating your Backup BYOL license^].
 +
 And you need to have a AWS subscription for the storage space where your backups will be located.
 
@@ -104,9 +104,9 @@ Here are the specific permissions from the policy:
             ]
         },
 
-== Enabling Backup to Cloud on a new system
+== Enabling Cloud Backup on a new system
 
-Backup to Cloud is enabled by default in the working environment wizard. Be sure to keep the option enabled.
+Cloud Backup is enabled by default in the working environment wizard. Be sure to keep the option enabled.
 
 .Steps
 
@@ -118,31 +118,31 @@ Backup to Cloud is enabled by default in the working environment wizard. Be sure
 
 . On the Services page, leave the service enabled and click *Continue*.
 +
-image:screenshot_backup_to_s3.gif[Shows the Backup to Cloud option in the working environment wizard.]
+image:screenshot_backup_to_s3.gif[Shows the Cloud Backup option in the working environment wizard.]
 
 . Complete the pages in the wizard to deploy the system.
 
 .Result
 
-Backup to Cloud is enabled on the system and backs up volumes every day and retains the most recent 30 backup copies.
+Cloud Backup is enabled on the system and backs up volumes every day and retains the most recent 30 backup copies.
 
 .What's next?
 
 You can link:task_managing_backups.html[start and stop backups for volumes or change the backup schedule^] and you can link:task_restore_backups.html[restore entire volumes or individual files from a backup file^].
 
-== Enabling Backup to Cloud on an existing system
+== Enabling Cloud Backup on an existing system
 
-Enable Backup to Cloud at any time directly from the working environment.
+Enable Cloud Backup at any time directly from the working environment.
 
 .Steps
 
-. Select the working environment and click *Activate* next to the Backup to Cloud service in the right-panel.
+. Select the working environment and click *Activate* next to the Cloud Backup service in the right-panel.
 +
-image:screenshot_backup_to_s3_icon.gif[A screenshot that shows the Backup to Cloud Settings button which is available after you select a working environment.]
+image:screenshot_backup_to_s3_icon.gif[A screenshot that shows the Cloud Backup Settings button which is available after you select a working environment.]
 
 . Define the backup schedule and retention value and click *Continue*.
 +
-image:screenshot_backup_settings.png[A screenshot that shows the Backup to Cloud settings where you can choose your schedule and backup retention.]
+image:screenshot_backup_settings.png[A screenshot that shows the Cloud Backup settings where you can choose your schedule and backup retention.]
 +
 See link:concept_backup_to_cloud.html#the-schedule-is-daily-weekly-monthly-or-a-combination[the list of existing policies^].
 
@@ -155,7 +155,7 @@ image:screenshot_backup_select_volumes.png[A screenshot of selecting the volumes
 
 .Result
 
-Backup to Cloud starts taking the initial backups of each selected volume.
+Cloud Backup starts taking the initial backups of each selected volume.
 
 .What's next?
 

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: faq_cloud_compliance.html
-keywords: faq, frequently asked questions, questions
+keywords: faq, frequently asked questions, questions, cloud compliance
 summary: This FAQ can help if you’re just looking for a quick answer to a question.
 ---
 
@@ -94,7 +94,7 @@ Reports on a specific information type:: Reports are available that include deta
 +
 In regions where m5.4xlarge isn't available, Cloud Compliance runs on an m4.4xlarge instance instead.
 
-Starting in December 2020, you can download and install Compliance software on a Linux host in your network or in the cloud. Everything works the same and you continue to manage your scan configuration and results through Cloud Manager. See link:task_deploy_cloud_compliance.html#deploying-the-cloud-compliance-instance-on-premises[Deploying Cloud Compliance on premises^] for system requirements and installation details.
+You can also download and install Compliance software on a Linux host in your network or in the cloud. Everything works the same and you continue to manage your scan configuration and results through Cloud Manager. See link:task_deploy_cloud_compliance.html#deploying-the-cloud-compliance-instance-on-premises[Deploying Cloud Compliance on premises^] for system requirements and installation details.
 
 NOTE: Cloud Compliance is currently unable to scan S3 buckets and ANF files when it is installed on premises.
 
@@ -137,21 +137,29 @@ The compliance scan doesn't heat up the cold data--it stays cold and tiered to o
 
 Yes. As long as you have discovered the on-prem ONTAP cluster as a working environment in Cloud Manager, you can scan any of the volume data.
 
-You can also scan your on-premises ONTAP data by replicating the on-prem NFS or CIFS data to a Cloud Volumes ONTAP working environment and then activating compliance on the data protection volumes.  
+Alternatively, you can run compliance scans on backup files created from your on-prem ONTAP volumes. So if you're already creating backup files from your on-prem systems using link:task_backup_from_onprem.html[Cloud Backup^], you can run compliance scans on those backup files.
 
 link:task_getting_started_compliance.html[Learn more^].
 
 == Can Cloud Compliance send notifications to my organization?
 
-No, but you can download status reports that you can share internally in your organization.
+Yes. In conjunction with the Highlights feature, you can send email alerts to Cloud Manager users (daily, weekly, or monthly) when a highlight return results so you can get notifications to protect your data. Learn more about link:task_managing_highlights.html#controlling-your-data-using-highlights[highlights^].
 
-== Can I customize the service to my organization’s need?
+You can also download status reports in .CSV format that you can share internally in your organization.
+
+== Can I customize the service to my organization’s needs?
 
 Cloud Compliance provides out-of-the-box insights to your data. These insights can be extracted and used for your organization's needs.
 
 Additionally, you can use the *Data Fusion* capability to have Cloud Compliance scan all your data based on criteria found in specific columns in databases you are scanning -- essentially allowing you to make your own custom personal data types.
 
 link:task_managing_data_fusion.html#creating-custom-personal-data-identifiers-from-your-databases[Learn more^].
+
+== Can Cloud Compliance work with the AIP labels I have embedded in my files?
+
+Yes. You can manage AIP labels in the files that Cloud Compliance is scanning if you have subscribed to link:https://azure.microsoft.com/en-us/services/information-protection/[Azure Information Protection (AIP)^]. You can view the labels that are already assigned to files, add labels to files, and change labels when a label already exists.
+
+link:task_managing_highlights.html#categorizing-your-data-using-aip-labels[Learn more^].
 
 == Can I limit Cloud Compliance information to specific users?
 

@@ -46,4 +46,4 @@ NOTE: Cloud Volumes ONTAP support for WORM storage is equivalent to SnapLock Ent
 
 * When WORM storage is activated, data tiering to object storage can't be enabled.
 
-* Backup to Cloud must be disabled in order to enable WORM storage.
+* Cloud Backup must be disabled in order to enable WORM storage.

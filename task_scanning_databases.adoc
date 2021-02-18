@@ -105,11 +105,3 @@ image:screenshot_compliance_select_schemas.png[A screenshot of the Scan Configur
 .Result
 
 Cloud Compliance starts scanning the database schemas that you enabled. If there are any errors, they’ll appear in the Status column, alongside the required action to fix the error.
-
-== Removing a database from Cloud Compliance
-
-If you no longer want to scan a certain database, you can delete it from the Cloud Compliance interface and stop all scans.
-
-From the _Scan Configuration_ page, click the image:screenshot_gallery_options.gif[More button] button in the row for the database, and then click *Remove DB Server*.
-
-image:screenshot_compliance_remove_db.png[A screenshot of the Remove DB Server button from the Scan Configuration page.]

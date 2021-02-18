@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_managing_licenses.html
 keywords: license, licensing, install, updating license, system license, add system license, adding a system license, byol license, add byol license, update byol license, nlf, license generator, backup license, add backup license, update backup license
-summary: Add a Cloud Volumes ONTAP BYOL system license to add additional capacity, update an existing system license, and manage BYOL licenses for Backup to Cloud.
+summary: Add a Cloud Volumes ONTAP BYOL system license to add additional capacity, update an existing system license, and manage BYOL licenses for Cloud Backup.
 ---
 
 = Managing BYOL licenses for Cloud Volumes ONTAP
@@ -13,7 +13,7 @@ summary: Add a Cloud Volumes ONTAP BYOL system license to add additional capacit
 :imagesdir: ./media/
 
 [.lead]
-Add a Cloud Volumes ONTAP BYOL system license to add additional capacity, update an existing system license, and manage BYOL licenses for Backup to Cloud.
+Add a Cloud Volumes ONTAP BYOL system license to add additional capacity, update an existing system license, and manage BYOL licenses for Cloud Backup.
 
 == Managing system licenses
 
@@ -112,4 +112,4 @@ image:screenshot_backup_byol_license_add.png[A screenshot that shows the page to
 
 .Result
 
-Cloud Manager adds or updates the license so that your Backup to Cloud service is active.
+Cloud Manager adds or updates the license so that your Cloud Backup service is active.

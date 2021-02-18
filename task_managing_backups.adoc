@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_managing_backups.html
-keywords: Backup to Cloud, cloud backup service, backup schedule, change schedule, change backup schedule, modify schedule, modify backup schedule, retention, backup retention, delete, delete backups, deleting, deleting backups, disable, disable backups, turn off backups, disable backup to cloud, turn off backup to cloud
+keywords: cloud backup, cloud backup service, backup schedule, change schedule, change backup schedule, modify schedule, modify backup schedule, retention, backup retention, delete, delete backups, deleting, deleting backups, disable, disable backups, turn off backups, disable cloud backup, turn off cloud backup
 summary: You can manage backups for Cloud Volumes ONTAP and on-premises ONTAP systems by changing the backup schedule, enabling/disabling volume backups, deleting backups, and more.
 ---
 
@@ -35,7 +35,7 @@ image:screenshot_backup_modify_policy.png[A screenshot that shows the Backup Set
 
 . From the _Modify Backup Policy_ page, change the schedule and backup retention and then click *Save*.
 +
-image:screenshot_backup_modify_policy_page.png[A screenshot that shows the Backup to Cloud settings where you can modify the backup schedule and backup retention setting.]
+image:screenshot_backup_modify_policy_page.png[A screenshot that shows the Cloud Backup settings where you can modify the backup schedule and backup retention setting.]
 
 == Starting and stopping backups of volumes
 
@@ -61,11 +61,11 @@ image:screenshot_backup_manage_volumes_page.png[The Manage Volumes page where yo
 
 == Deleting backups
 
-Backup to Cloud enables you to delete _all_ backups of a specific volume. You can't delete _individual_ backups. You might do this if you no longer need the backups or if you deleted the source volume and want to remove all backups.
+Cloud Backup enables you to delete _all_ backups of a specific volume. You can't delete _individual_ backups. You might do this if you no longer need the backups or if you deleted the source volume and want to remove all backups.
 
 Note that deleting all backups also disables any further backups of this volume. If you later want to start creating backups of that volume, you can re-enable backups <<Starting and stopping backups of volumes,as described here>>.
 
-IMPORTANT: If you plan to delete a Cloud Volumes ONTAP or on-premises ONTAP system that has backups, you must delete the backups *before* deleting the system.  Backup to Cloud doesn’t automatically delete backups when you delete a system, and there is no current support in the UI to delete the backups after the system has been deleted.
+IMPORTANT: If you plan to delete a Cloud Volumes ONTAP or on-premises ONTAP system that has backups, you must delete the backups *before* deleting the system.  Cloud Backup doesn’t automatically delete backups when you delete a system, and there is no current support in the UI to delete the backups after the system has been deleted.
 
 .Steps
 
@@ -79,9 +79,9 @@ image:screenshot_delete_all_backups.png[A screenshot of selecting the Delete All
 
 . In the confirmation dialog box, click *Delete*.
 
-== Disabling Backup to Cloud
+== Disabling Cloud Backup
 
-Disabling Backup to Cloud for a working environment disables backups of each volume on the system, and it also disables the ability to restore a volume. Any existing backups will not be deleted.
+Disabling Cloud Backup for a working environment disables backups of each volume on the system, and it also disables the ability to restore a volume. Any existing backups will not be deleted.
 
 Note that you'll continue to be charged by your cloud provider for object storage costs for the capacity that your backups use unless you delete the backups.
 
@@ -93,7 +93,7 @@ Note that you'll continue to be charged by your cloud provider for object storag
 +
 image:screenshot_backup_settings_button.png[A screenshot that shows the Backup Settings button which is available after you select a working environment.]
 
-. From the _Backup Settings page_, click image:screenshot_horizontal_more_button.gif[More icon] for the working environment and select *Deactivate Backup to Cloud*.
+. From the _Backup Settings page_, click image:screenshot_horizontal_more_button.gif[More icon] for the working environment and select *Deactivate Cloud Backup*.
 +
 image:screenshot_disable_backups.png[A screenshot of the Deactivate Backup button for a working environment.]
 

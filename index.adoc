@@ -31,7 +31,7 @@ Cloud Manager enables IT experts and cloud architects to centrally manage their 
 * link:task_manage_cvs_gcp.html[Cloud Volumes Service for Google Cloud]
 * link:task_getting_started_compliance.html[Cloud Compliance]
 * link:task_gfc_getting_started.html[Global File Cache]
-* link:concept_backup_to_cloud.html[Backup to Cloud]
+* link:concept_backup_to_cloud.html[Cloud Backup]
 * link:concept_compute.html[Cloud Analyzer]
 * link:concept_cloud_tiering.html[Cloud Tiering]
 * link:task_getting_started_monitoring.html[Cloud Insights]
