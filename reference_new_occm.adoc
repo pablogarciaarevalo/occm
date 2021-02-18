@@ -19,6 +19,20 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.3 update (25 Feb 2021)
+
+=== Active IQ enhancements
+
+* When Active IQ displays the list of your on-prem clusters (based on your NSS account), you can click a button to link:task_discovering_ontap.html#discovering-clusters-from-the-active-iq-page[discover the cluster^] and add it to the Cloud Manager Canvas. This makes it easier to manage all your storage systems from Cloud Manager.
+
+* If Active IQ discovers unused Cloud Volumes ONTAP licenses in your account, you can click a button to create a new Cloud Volumes ONTAP system using the license. Or you can apply the license to an existing Cloud Volumes ONTAP system to extend the capacity of that license by 368 TB. See link:task_managing_ontap.html#using-unused-cloud-volumes-ontap-licenses[how to use your available licenses^].
+
+* When Active IQ determines that one or more clusters require firmware updates, you can click a button to link:task_managing_ontap.html#downloading-new-disk-and-shelf-firmware[download the Ansible playbook and upgrade the cluster firmware^].
+
+* A new link:task_managing_ontap.html#viewing-on-prem-workloads-that-are-candidates-for-the-cloud[Cloud-Ready Workloads tab^] provides a list of the workloads or volumes that we have identified as ideal to move to the cloud from your on-prem ONTAP clusters. Moving some of these volumes could reduce your costs and improve performance and resiliency.
++
+See link:https://www.netapp.com/knowledge-center/what-is-lift-and-shift^[What is Lift and Shift?]
+
 == Cloud Manager 3.9.3 update (16 Feb 2021)
 
 === Cloud Backup Service enhancements
