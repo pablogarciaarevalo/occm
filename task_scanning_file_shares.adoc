@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_scanning_file_shares.html
 keywords: cloud compliance, enable cloud compliance, privacy, compliance, file shares, nfs, cifs, smb
-summary: Complete a few steps to start scanning NFS or CIFS directly with Cloud Compliance. These are file shares that do not reside in ONTAP systems.
+summary: Complete a few steps to start scanning NFS or CIFS file shares directly with Cloud Compliance. These file shares can reside in your premises or in the cloud.
 ---
 
 = Scanning file shares
@@ -13,7 +13,7 @@ summary: Complete a few steps to start scanning NFS or CIFS directly with Cloud 
 :imagesdir: ./media/
 
 [.lead]
-Complete a few steps to start scanning NFS or CIFS directly with Cloud Compliance. These are file shares that do not reside in ONTAP systems.
+Complete a few steps to start scanning NFS or CIFS file shares directly with Cloud Compliance. These file shares can reside in your premises or in the cloud.
 
 == Quick start
 
@@ -48,6 +48,8 @@ Review the following prerequisites to make sure that you have a supported config
 For CIFS (SMB) shares, ensure that you have Active Directory credentials that provide read access to the shares. Admin credentials are preferred in case Cloud Compliance needs to scan any data that requires elevated permissions.
 
 You will need the list of shares you want to add in the format `<host_name>:/<share_path>`. You can enter the shares individually, or you can supply a line-separated list of the file shares you want to scan.
+
+These are file shares that reside on non-NetApp storage systems.
 
 == Creating the group for the file shares
 

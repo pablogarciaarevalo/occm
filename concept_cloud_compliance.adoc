@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: concept_cloud_compliance.html
-keywords: artificial intelligence, ai, compliance, cloud compliance, dsar, personal data, personal information, sensitive, personal sensitive data, gdpr, hipaa, scans, scanning, azure netapp files, cloud volumes ontap, Amazon S3, database, onedrive, on-prem ontap, file shares, object storage, backup files, aip labels
-summary: Cloud Compliance is a data privacy and compliance service for Cloud Manager that scans your volumes, Amazon S3 buckets, databases, OneDrive accounts, and other data sources to identify the personal and sensitive data that resides in those files. Using Artificial Intelligence (AI) driven technology, Cloud Compliance helps organizations understand data context and identify sensitive data.
+keywords: artificial intelligence, ai, compliance, cloud compliance, dsar, personal data, personal information, sensitive, personal sensitive data, gdpr, hipaa, scans, scanning, azure netapp files, cloud volumes ontap, Amazon S3, database, onedrive, on-prem ontap, file shares, object storage, backup files, aip labels, governance
+summary: Cloud Compliance is a data privacy and compliance service for Cloud Manager that scans your volumes, Amazon S3 buckets, databases, OneDrive accounts, and other data sources to identify the personal and sensitive data that resides in those files. Using Artificial Intelligence driven technology, Cloud Compliance helps organizations understand data context and identify sensitive data.
 ---
 
 = Learn about Cloud Compliance
@@ -27,6 +27,15 @@ Cloud Compliance provides several tools that can help you with your compliance e
 * Notify Cloud Manager users through email when files contain certain PII (you define this criteria using link:task_managing_highlights.html#controlling-your-data-using-highlights[highlights^])
 * View and modify link:https://azure.microsoft.com/en-us/services/information-protection/[Azure Information Protection (AIP) labels^] in your files
 * Delete individual files
+
+Cloud Compliance also provides tools that can help with your governance efforts. You can use Cloud Compliance to:
+
+* Identify the stale data, non-business data, and very large files in your systems.
++
+You can use this information to decide whether you want to move, delete, or tier some files to less expensive object storage.
+* View the size of data and whether any of the data contains sensitive information prior to moving it.
++
+This is useful if you are planning to migrate data from on-premises locations to the cloud.
 
 == Supported working environments and data sources
 
