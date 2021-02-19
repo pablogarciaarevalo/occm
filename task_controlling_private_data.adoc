@@ -123,7 +123,7 @@ In addition to showing you the working environment and volume where the file res
 
 Note that not all information is available for all data sources - just what is appropriate for that data source. For example, permissions and AIP labels are not relevant for database files.
 
-To view detailed file permissions, click *View all Permissions*. This button is available only for files in CIFS shares and OneDrive accounts.
+To view a list of all users or groups who have access to a file, click *View all Permissions*. This button is available only for files in CIFS shares and OneDrive accounts.
 
 image:screenshot_compliance_permissions.png[A screenshot showing detailed file permissions.]
 
@@ -143,11 +143,11 @@ When you filter the dashboard, Cloud Compliance scopes the compliance data and r
 
 . Click the filter drop-down, select the working environments that you'd like to view data for, and click *View*.
 +
-image:screenshot_cloud_compliance_filter.gif[]
+image:screenshot_cloud_compliance_filter.gif[A screenshot showing how to filter the investigation results for specific working environments.]
 
 == Filtering data in the Data Investigation page
 
-You can filter the contents of the investigation page to display only the results you want to see. If you want to save a CSV version of the content as a report after you have refined it, click the image:button_download.png[The Download Report button.] button.
+You can filter the contents of the investigation page to display only the results you want to see. If you want to save a CSV version of the content as a report after you have refined it, click the image:button_download.png[down arrow button] button.
 
 image:screenshot_compliance_investigation_filtered.png[A screenshot of the filters available when refining the results in the investigation page.]
 

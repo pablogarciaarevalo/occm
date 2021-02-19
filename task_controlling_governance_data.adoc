@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_controlling_governance_data.html
 keywords: savings, stale data, non-business data, duplicate data, age or data, size of data, highlights
-summary: Gain control of the costs related to the data on your organizations' storage resources. View the amount of stale and non-business data that Cloud Compliance found in your files. Decide whether you want to remove or tier some files to less expensive object storage.
+summary: Gain control of the costs related to the data on your organizations' storage resources. Cloud Compliance identifies the amount of stale data, non-business data, and very large files in your systems so you can decide whether you want to remove or tier some files to less expensive object storage.
 ---
 
 = Viewing governance details about the data stored in your organization
@@ -13,17 +13,40 @@ summary: Gain control of the costs related to the data on your organizations' st
 :imagesdir: ./media/
 
 [.lead]
-Gain control of the costs related to the data on your organizations' storage resources. View the amount of stale and non-business data that Cloud Compliance found in your files. Decide whether you want to remove or tier some files to less expensive object storage.
+Gain control of the costs related to the data on your organizations' storage resources. Cloud Compliance identifies the amount of stale data, non-business data, and very large files in your systems so you can decide whether you want to remove or tier some files to less expensive object storage.
 
-The Governance dashboard shows xyz to that you can increase the efficiency and control the costs related to the data stored on your storage resources.
+Additionally, if you are planning to migrate data from on-premises locations to the cloud, you can view the size of the data and whether any of the data contains sensitive information prior to moving it.
+
+== The Governance dashboard
+
+The Governance dashboard provides information so that you can increase the efficiency and control the costs related to the data stored on your storage resources.
 
 image:screenshot_compliance_governance_dashboard.png[A screenshot of the Cloud Compliance Governance dashboard.]
 
-== Data you may want to investigate
+=== Yearly Saving Opportunities
 
-Stale Data -- over 3yrs old
-You may want to tier or delete or move to archive
-Non-business (see video call with Nadav)
-Large files (not Duplicate data)
+You may want to investigate the items in the _Yearly Saving Opportunities_ area to see if there is any data you should delete or tier to less expensive object storage. Click each item to view the results in the Investigation page.
 
-Cloud Compliance automatically identifies specific words, strings, and patterns (Regex) inside the data. For example, Personal Identification Information (PII), credit card numbers, social security numbers, bank account numbers, and more.
+The Savings amount is an estimate of the savings you could realize by deleting, moving, or tiering data based on $0.30 per GB per year.
+
+* *Stale Data* - Data that was last modified over 3 years ago.
+* *Non-Business Data* - Data considered not to be business related, based on their Category or File Type. This includes:
+
+** Application Data
+** Audio
+** Executables
+** Images
+** Logs
+** Videos
+** Miscellaneous (general “other” category)
+
+* *Large Files* - Files larger than 100 MB.
+
+=== Age of Data and Size of Data graphs
+
+You may want to investigate the items in the _Age_ and _Size_ graphs to see if there is any data you should delete or tier to less expensive object storage.
+
+You can hover over a point in the charts to see details about the age or size of the data in that category. Click to view all the files filtered by that age or size range.
+
+* *Age of Data graph* - Categorizes data based on the last time it was modified.
+* *Size of Data graph* - Categorizes data based on size.

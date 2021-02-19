@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_scanning_file_shares.html
 keywords: cloud compliance, enable cloud compliance, privacy, compliance, file shares, nfs, cifs, smb
-summary: Complete a few steps to start scanning NFS or CIFS file shares that do not reside in ONTAP systems directly with Cloud Compliance.
+summary: Complete a few steps to start scanning NFS or CIFS directly with Cloud Compliance. These are file shares that do not reside in ONTAP systems.
 ---
 
 = Scanning file shares
@@ -13,7 +13,7 @@ summary: Complete a few steps to start scanning NFS or CIFS file shares that do 
 :imagesdir: ./media/
 
 [.lead]
-Complete a few steps to start scanning NFS or CIFS file shares that do not reside in ONTAP systems directly with Cloud Compliance.
+Complete a few steps to start scanning NFS or CIFS directly with Cloud Compliance. These are file shares that do not reside in ONTAP systems.
 
 == Quick start
 
@@ -55,7 +55,7 @@ You must have link:task_deploy_cloud_compliance.html[deployed an instance of Clo
 
 The group is a container for the file shares that you want to scan, and the group name is used as the working environment name for those file shares.
 
-You can mix NFS and CIFS shares in the same group. However, all CIFS file shares in a group need to be using the same Active Directory credentials. If you plan to add CIFS shares that use different credentials, you must make a group for each unique set of credentials.
+You can mix NFS and CIFS shares in the same group. However, all CIFS file shares in a group need to be using the same Active Directory credentials. If you plan to add CIFS shares that use different credentials, you must make a separate group for each unique set of credentials.
 
 Add the group where you will add your file shares.
 
