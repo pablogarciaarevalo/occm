@@ -24,6 +24,7 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 * <<Cloud Volumes ONTAP enhancements>>
 * <<Cloud Sync enhancements>>
 * <<General enhancements>>
+* <<More services supported in Government regions>>
 
 === Cloud Volumes ONTAP enhancements
 
@@ -39,8 +40,6 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_990.html[Learn a
 +
 link:reference_sync_requirements.html[View supported sync relationships].
 
-*
-
 === General enhancements
 
 * Cloud Manager now notifies Admin users through an email when a Connector isn't running.
@@ -50,6 +49,12 @@ Keeping your Connectors up and running helps to ensure the best management of Cl
 * Cloud Manager now displays a notification if you need to change the instance type for your Connector.
 +
 Changing the instance type ensures that you can use the new features and capabilities that you're currently missing. link:reference_key_changes.html#machine-type-changes[Learn more about machine type changes].
+
+=== More services supported in Government regions
+
+The Cloud Compliance and Single File Restore services are now supported in Government regions in AWS and Azure.
+
+!!link with list of what's not supported!!
 
 == Cloud Manager 3.9.3 update (16 Feb 2021)
 
