@@ -19,6 +19,38 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.4 (7 Mar 2021)
+
+* <<Cloud Volumes ONTAP enhancements>>
+* <<Cloud Sync enhancements>>
+* <<General enhancements>>
+
+=== Cloud Volumes ONTAP enhancements
+
+* Cloud Manager can now deploy and manage Cloud Volumes ONTAP 9.9.0.
++
+https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_990.html[Learn about the new features included in this release of Cloud Volumes ONTAP^].
+
+=== Cloud Sync enhancements
+
+* Cloud Sync now supports sync relationships between ONTAP S3 Storage and SMB servers:
+** ONTAP S3 Storage to an SMB server
+** An SMB server to ONTAP S3 Storage
++
+link:reference_sync_requirements.html[View supported sync relationships].
+
+*
+
+=== General enhancements
+
+* Cloud Manager now notifies Admin users through an email when a Connector isn't running.
++
+Keeping your Connectors up and running helps to ensure the best management of Cloud Volumes ONTAP and other NetApp Cloud Services.
+
+* Cloud Manager now displays a notification if you need to change the instance type for your Connector.
++
+Changing the instance type ensures that you can use the new features and capabilities that you're currently missing. link:reference_key_changes.html#machine-type-changes[Learn more about machine type changes].
+
 == Cloud Manager 3.9.3 update (16 Feb 2021)
 
 === Cloud Backup Service enhancements
