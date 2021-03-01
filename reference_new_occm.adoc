@@ -32,6 +32,8 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 +
 https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_990.html[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
+* When you deploy a Cloud Volumes ONTAP HA pair in Google Cloud, you can now choose shared VPCs for VPC-1, VPC-2, and VPC-3. Previously, only VPC-0 could be a shared VPC.
+
 === Cloud Sync enhancements
 
 * Cloud Sync now supports sync relationships between ONTAP S3 Storage and SMB servers:
