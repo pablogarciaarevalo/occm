@@ -82,7 +82,7 @@ One object store for the entire cluster.
 
 === Can I apply policies to my object store to move data around independent of tiering?
 
-No, Cloud Tiering does not support object lifecycle management rules that move or delete data from object stores.
+Yes. When using Amazon S3 or Google Cloud Storage, Cloud Tiering enables you to transition data from the Standard storage class to another storage class after 30 days.
 
 == Connectors
 

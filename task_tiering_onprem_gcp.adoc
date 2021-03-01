@@ -151,7 +151,9 @@ image:screenshot_setup_tiering_onprem.gif[A screenshot that shows the Enable opt
 
 .. *Bucket*: Add a new Google Cloud Storage bucket or select an existing bucket.
 
-.. *Storage Class*: Select the storage class that you want to use for the tiered data. link:reference_google_support.html[See supported storage classes^].
+.. *Storage Class*: Select the storage class that you want to transition the data to after 30 days.
++
+link:reference_google_support.html[See supported storage classes^]. If you choose Standard, then the data remains in that storage class.
 
 .. *Credentials*: Enter the storage access key and secret key for a service account that has the Storage Admin role.
 
