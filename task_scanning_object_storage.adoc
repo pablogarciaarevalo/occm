@@ -48,11 +48,11 @@ Review the following prerequisites to make sure that you have a supported config
 
 === Object storage requirements
 
-You need to have the endpoint URL to connect with the object storage service.
+* You need to have the endpoint URL to connect with the object storage service.
 
-You need to have the Access Key and Secret Key from the object storage provider so that Cloud Compliance can access the buckets.
+* You need to have the Access Key and Secret Key from the object storage provider so that Cloud Compliance can access the buckets.
 
-Note that support for Azure Blob requires that you use the link:https://min.io/[MinIO service^].
+* Support for Azure Blob requires that you use the link:https://min.io/[MinIO service^].
 
 == Adding the object storage service to Cloud Compliance
 

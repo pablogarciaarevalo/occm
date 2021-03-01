@@ -42,6 +42,12 @@ The Savings amount is an estimate of the savings you could realize by deleting, 
 
 * *Large Files* - Files larger than 100 MB.
 
+=== Highlights with the most results
+
+Click the name of a highlight to display the results in the Investigation page. Click *View All* to view the list of all available highlights.
+
+Click link:task_managing_highlights.html#controlling-your-data-using-highlights[here^] to learn more about highlights.
+
 === Age of Data and Size of Data graphs
 
 You may want to investigate the items in the _Age_ and _Size_ graphs to see if there is any data you should delete or tier to less expensive object storage.
@@ -50,3 +56,25 @@ You can hover over a point in the charts to see details about the age or size of
 
 * *Age of Data graph* - Categorizes data based on the last time it was modified.
 * *Size of Data graph* - Categorizes data based on size.
+
+=== Most identified Data Classifications
+
+This area provides a list of the most identified link:task_controlling_private_data.html#categories[Categories^], link:task_controlling_private_data.html#file-types[File types^], and link:task_managing_highlights.html#categorizing-your-data-using-aip-labels[AIP Labels^] in your scanned data.
+
+==== Categories
+
+Categories can help you understand what’s happening with your data by showing you the types of information that you have. For example, a category like resumes or employee contracts can include sensitive data. When you investigate the results, you might find that employee contracts are stored in an insecure location. You can then correct that issue.
+
+See link:task_controlling_private_data.html#viewing-files-by-categories[Viewing files by categories^] for more information.
+
+==== File types
+
+Reviewing your file types can help you control your sensitive data because you might find that certain file types are not stored correctly.
+
+See link:task_controlling_private_data.html#viewing-file-types[Viewing file types^] for more information.
+
+==== AIP labels
+
+If you have subscribed to Azure Information Protection (AIP), you can classify and protect documents and files by applying labels to content. Reviewing the most used AIP labels that are assigned to files enables you to see which labels are most used in your files.
+
+See link:task_managing_highlights.html#categorizing-your-data-using-aip-labels[AIP Labels^] for more information.

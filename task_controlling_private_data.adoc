@@ -127,7 +127,7 @@ To view a list of all users or groups who have access to a file, click *View all
 
 image:screenshot_compliance_permissions.png[A screenshot showing detailed file permissions.]
 
-There are also two items in this metadata that allow you to make changes to files:
+There are two actions you can take on the file:
 
 * If you have integrated AIP labels with Cloud Compliance, you can assign a label to this file, or change to a different label if one already exists. See link:task_managing_highlights.html#assigning-aip-labels-manually[Assigning AIP labels manually^] for details.
 
