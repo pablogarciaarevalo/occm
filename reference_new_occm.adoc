@@ -23,16 +23,36 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 * <<Cloud Volumes ONTAP enhancements>>
 * <<Cloud Sync enhancements>>
-* <<General enhancements>>
-* <<More services supported in Government regions>>
+* <<Connector enhancements>>
+* <<Additional services supported in Gov regions>>
 
 === Cloud Volumes ONTAP enhancements
 
-* Cloud Manager can now deploy and manage Cloud Volumes ONTAP 9.9.0.
-+
+This release of Cloud Manager includes enhancements to Cloud Volumes ONTAP.
+
+==== Enhancement available in all cloud providers
+
+Cloud Manager can now deploy and manage Cloud Volumes ONTAP 9.9.0.
+
 https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_990.html[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
-* When you deploy a Cloud Volumes ONTAP HA pair in Google Cloud, you can now choose shared VPCs for VPC-1, VPC-2, and VPC-3. Previously, only VPC-0 could be a shared VPC.
+==== Enhancements available in AWS
+
+* Cloud Volumes ONTAP 9.8 is now supported in the AWS Commercial Cloud Services (C2S) environment. link:??.html[Learn how to get started in C2S].
+
+* For many releases, Cloud Manager has enabled you to encrypt Cloud Volumes ONTAP data using the AWS Key Management Service (KMS). If you choose the default Customer Master Key (CMK), data on EBS disks and data tiered to S3 are encrypted. Starting in this release, data on EBS disks and data tiered to S3 are also encrypted if you select an external key that was created outside of AWS KMS. Previously, only EBS data would be encrypted.
++
+Note that you'll need to provide the Cloud Volumes ONTAP IAM role with access to use the external key. link:task_setting_up_kms.html[Learn more about setting up the AWS KMS with Cloud Volumes ONTAP].
+
+==== Enhancement available in Azure
+
+Cloud Volumes ONTAP 9.8 is now supported in the Azure Department of Defense (DoD) Impact Level 6 (IL6). link:??.html[Learn how to get started in the IL6 environment].
+
+==== Enhancement available in Google Cloud
+
+When you deploy a Cloud Volumes ONTAP HA pair in Google Cloud, you can now choose shared VPCs for VPC-1, VPC-2, and VPC-3. Previously, only VPC-0 could be a shared VPC.
+
+link:reference_networking_gcp.html[Learn more about Google Cloud networking requirements].
 
 === Cloud Sync enhancements
 
@@ -42,7 +62,7 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_990.html[Learn a
 +
 link:reference_sync_requirements.html[View supported sync relationships].
 
-=== General enhancements
+=== Connector enhancements
 
 * Cloud Manager now notifies Admin users through an email when a Connector isn't running.
 +
@@ -52,11 +72,11 @@ Keeping your Connectors up and running helps to ensure the best management of Cl
 +
 Changing the instance type ensures that you can use the new features and capabilities that you're currently missing. link:reference_key_changes.html#machine-type-changes[Learn more about machine type changes].
 
-=== More services supported in Government regions
+=== Additional services supported in Gov regions
 
-The Cloud Compliance and Single File Restore services are now supported in Government regions in AWS and Azure.
+The Cloud Compliance and Single File Restore services are now supported in AWS GovCloud regions and in Azure Government regions. Go to the https://cloud.netapp.com/cloud-volumes-global-regions[Global Regions Map on NetApp Cloud Central^] to view the list of supported Gov regions in AWS and Azure.
 
-!!link with list of what's not supported!!
+NOTE: These services are not supported in _secret_ Government environments.
 
 == Cloud Manager 3.9.3 update (16 Feb 2021)
 
