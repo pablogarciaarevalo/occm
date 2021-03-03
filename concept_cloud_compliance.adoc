@@ -47,7 +47,7 @@ Cloud Compliance can scan data from the following types of working environments 
 * Azure NetApp Files
 * Amazon S3
 * Non-NetApp file shares
-* Object storage (that uses S3 protocol)
+// * Object storage (that uses S3 protocol)
 * Databases
 * OneDrive accounts
 

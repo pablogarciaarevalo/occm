@@ -307,8 +307,8 @@ entries:
                 url: /task_scanning_onedrive.html
               - title: File shares
                 url: /task_scanning_file_shares.html
-              - title: Object storage
-                url: /task_scanning_object_storage.html
+#              - title: Object storage
+#                url: /task_scanning_object_storage.html
       - title: View governance details about your data
         url: /task_controlling_governance_data.html
       - title: View compliance details about your data
