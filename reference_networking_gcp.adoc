@@ -57,15 +57,19 @@ TIP: If you're using an HA pair, the HA mediator doesn't require outbound intern
 Number of IP addresses::
 Cloud Manager allocates the following number of IP addresses to Cloud Volumes ONTAP in GCP:
 
-* *Single node*: 5 IP addresses
+* *Single node*: 4 IP addresses
 +
 Cloud Manager doesn't create an SVM management LIF for single node systems in GCP.
 +
 A LIF is an IP address associated with a physical port. An SVM management LIF is required for management tools like SnapCenter.
 
-* *HA pair*: 17 IP addresses
+* *HA pair*: 15 or 16 IP addresses
 +
-** 10 IP addresses for VPC-0
+** 8 or 9 IP addresses for VPC-0
++
+You can skip creation of the storage VM (SVM) management LIF if you deploy Cloud Volumes ONTAP using the API and specify the following flag:
++
+`skipSvmManagementLif: true`
 ** Two IP addresses for VPC-1
 ** Two IP addresses for VPC-2
 ** Three IP addresses for VPC-3
