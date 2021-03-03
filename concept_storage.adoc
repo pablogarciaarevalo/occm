@@ -38,13 +38,13 @@ The underlying EBS disk type can be either General Purpose SSD, Provisioned IOPS
 +
 At a high level, the differences between EBS disk types are as follows:
 
-* _General Purpose SSD_ disks balance cost and performance for a broad range of workloads. Performance is defined in terms of IOPS.
+* _General Purpose SSD (gp2)_ disks balance cost and performance for a broad range of workloads. Performance is defined in terms of IOPS.
 
-* _Provisioned IOPS SSD_ disks are for critical applications that require the highest performance at a higher cost.
+* _Provisioned IOPS SSD (io1)_ disks are for critical applications that require the highest performance at a higher cost.
 
-* _Throughput Optimized HDD_ disks are for frequently accessed workloads that require fast and consistent throughput at a lower price.
+* _Throughput Optimized HDD (st1)_ disks are for frequently accessed workloads that require fast and consistent throughput at a lower price.
 
-* _Cold HDD_ disks are meant for backups, or infrequently accessed data, because the performance is very low. Like Throughput Optimized HDD disks, performance is defined in terms of throughput.
+* _Cold HDD (sc1)_ disks are meant for backups, or infrequently accessed data, because the performance is very low. Like Throughput Optimized HDD disks, performance is defined in terms of throughput.
 +
 NOTE: Cold HDD disks are not supported with HA configurations and with data tiering.
 
