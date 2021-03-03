@@ -42,7 +42,7 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_990.html[Learn a
 +
 link:??.html[Learn how to get started in C2S].
 
-* Cloud Manager has always enabled you to encrypt Cloud Volumes ONTAP data using the AWS Key Management Service (KMS). If you choose the default Customer Master Key (CMK), data on EBS disks and data tiered to S3 are encrypted. Starting in this release, data on EBS disks and data tiered to S3 are encrypted if you select an _external_ key that was created outside of AWS KMS. Previously, only EBS data would be encrypted.
+* Cloud Manager has always enabled you to encrypt Cloud Volumes ONTAP data using the AWS Key Management Service (KMS). If you choose the default Customer Master Key (CMK), data on EBS disks and data tiered to S3 are encrypted. Starting with Cloud Volumes ONTAP 9.9.0, data on EBS disks and data tiered to S3 are encrypted if you select an _external_ key that was created outside of the AWS KMS. Previously, only EBS data would be encrypted.
 +
 Note that you'll need to provide the Cloud Volumes ONTAP IAM role with access to use the external key.
 +
@@ -56,7 +56,7 @@ link:??.html[Learn how to get started in the IL6 environment].
 
 ==== Enhancement available in Google Cloud
 
-When you deploy a Cloud Volumes ONTAP HA pair in Google Cloud, you can now choose shared VPCs for VPC-1, VPC-2, and VPC-3. Previously, only VPC-0 could be a shared VPC.
+When you deploy a Cloud Volumes ONTAP HA pair in Google Cloud, you can now choose shared VPCs for VPC-1, VPC-2, and VPC-3. Previously, only VPC-0 could be a shared VPC. This change is supported with Cloud Volumes ONTAP 9.8 and later.
 
 link:reference_networking_gcp.html[Learn more about Google Cloud networking requirements].
 
