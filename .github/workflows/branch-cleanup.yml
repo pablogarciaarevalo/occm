@@ -1,0 +1,24 @@
+name: Branch Cleaner
+
+on:
+  push:
+    branches-ignore:
+      - 'gh-pages'
+
+jobs:
+  housekeeping:
+    name: Cleanup old branches
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Run delete-old-branches-action
+        if: ${{ contains(github.workspace, '-internal') }}
+        uses: beatlabs/delete-old-branches-action@v0.0.6
+        with:
+          repo_token: ${{ secrets.GH_TOKEN }}
+          date: '3 months ago'
+          dry_run: false
+          delete_tags: true
+          minimum_tags: 5
+          extra_protected_branch_regex: ^(gh-pages|master)$
