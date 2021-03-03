@@ -23,7 +23,7 @@ Cloud Tiering can apply a lifecycle rule so the data transitions from the _Stand
 * One Zone-IA
 * Intelligent
 
-If you choose Standard, then the data remains in that storage class.
+If you choose Standard, then the data remains in that storage class and no rules are applied.
 
 https://aws.amazon.com/s3/storage-classes/[Learn about S3 storage classes^].
 

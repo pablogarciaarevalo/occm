@@ -17,14 +17,13 @@ Cloud Tiering supports several Google Cloud storage classes and most regions.
 
 == Supported storage classes
 
-Cloud Tiering can apply a lifecycle rule so the data transitions from the Standard storage class to another storage class after 30 days. You can choose from the following storage classes:
+Cloud Tiering can apply a lifecycle rule so the data transitions from the _Standard_ storage class to another storage class after 30 days. You can choose from the following storage classes:
 
-* Standard
 * Nearline
 * Coldline
 * Archive
 
-If you choose Standard, then the data remains in that storage class.
+If you choose Standard, then the data remains in that storage class and no rules are applied.
 
 link:https://cloud.google.com/storage/docs/storage-classes[Learn about Google Cloud Storage classes^].
 
