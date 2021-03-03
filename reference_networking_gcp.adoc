@@ -61,7 +61,7 @@ Cloud Manager allocates the following number of IP addresses to Cloud Volumes ON
 +
 Cloud Manager doesn't create an SVM management LIF for single node systems in GCP.
 +
-A LIF is an IP address associated with a physical port. An SVM management LIF is required for management tools like SnapCenter.
+A LIF is an IP address associated with a physical port. A storage VM (SVM) management LIF is required for management tools like SnapCenter.
 
 * *HA pair*: 15 or 16 IP addresses
 +
