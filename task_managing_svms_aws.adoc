@@ -5,7 +5,7 @@ keywords: storage virtual machine, vserver, svm, storage vm, supported number, n
 summary: A storage VM is a virtual machine running within ONTAP that provides storage and data services to your clients. You might know this as an SVM or a vserver. Cloud Volumes ONTAP is configured with one storage VM by default, but some configurations support additional storage VMs.
 ---
 
-= Create storage VMs for Cloud Volumes ONTAP in AWS
+= Create data-serving storage VMs for Cloud Volumes ONTAP in AWS
 :toc: macro
 :hardbreaks:
 :nofooter:
@@ -16,17 +16,15 @@ summary: A storage VM is a virtual machine running within ONTAP that provides st
 [.lead]
 A storage VM is a virtual machine running within ONTAP that provides storage and data services to your clients. You might know this as an _SVM_ or a _vserver_. Cloud Volumes ONTAP is configured with one storage VM by default, but some configurations support additional storage VMs.
 
+To create additional data-serving storage VMs, you need to allocate IP addresses in AWS and then run ONTAP commands based on your Cloud Volumes ONTAP configuration.
+
 == Supported number of storage VMs
 
 Multiple storage VMs are supported with Cloud Volumes ONTAP BYOL in AWS with an add-on license, starting with the 9.7 release. Go to the https://docs.netapp.com/us-en/cloud-volumes-ontap/index.html[Cloud Volumes ONTAP Release Notes^] to verify the supported number of storage VMs for your version of Cloud Volumes ONTAP.
 
 All other Cloud Volumes ONTAP configurations support one data-serving storage VM and one destination storage VM used for disaster recovery. You can activate the destination storage VM for data access if there's an outage on the source storage VM.
 
-== Create data-serving storage VMs for Cloud Volumes ONTAP in AWS
-
-As noted above, multiple storage VMs are supported with Cloud Volumes ONTAP in AWS. To create additional storage VMs, you need to allocate IP addresses in AWS and then run ONTAP commands based on your Cloud Volumes ONTAP configuration.
-
-=== Verify limits for your configuration
+== Verify limits for your configuration
 
 Each EC2 instance supports a maximum number of private IPv4 addresses per network interface. You need to verify the limit before you allocate IP addresses in AWS for the new storage VM.
 
@@ -38,7 +36,7 @@ Each EC2 instance supports a maximum number of private IPv4 addresses per networ
 
 . Make note of this number because you'll need it in the next section when you allocate IP addresses in AWS.
 
-=== Allocate IP addresses in AWS
+== Allocate IP addresses in AWS
 
 Private IPv4 addresses must be assigned to port e0a in AWS before you create LIFs for the new storage VM.
 
@@ -86,7 +84,7 @@ An optional secondary private IP is required if you want to create a management 
 
 . If you have an HA pair in multiple AZs, then you'll need to repeat these steps for node 2.
 
-=== Create a storage VM on a single node system
+== Create a storage VM on a single node system
 
 These steps create a new storage VM on a single node system. One private IP address is required to create a NAS LIF and another optional private IP address is needed if you want to create a management LIF.
 
@@ -114,7 +112,7 @@ network interface create -auto-revert true -vserver svm_2 -service-policy defaul
 +
 Where _private_ip_y_ is another unused secondary private IP on e0a.
 
-=== Create a storage VM on an HA pair in a single AZ
+== Create a storage VM on an HA pair in a single AZ
 
 These steps create a new storage VM on an HA pair in a single AZ. One private IP address is required to create a NAS LIF and another optional private IP address is needed if you want to create a management LIF.
 
@@ -144,7 +142,7 @@ network interface create -auto-revert true -vserver svm_2 -service-policy defaul
 +
 Where _private_ip_y_ is another unused secondary private IP on e0a.
 
-=== Create a storage VM on an HA pair in multiple AZs
+== Create a storage VM on an HA pair in multiple AZs
 
 These steps create a new storage VM on an HA pair in multiple AZs.
 

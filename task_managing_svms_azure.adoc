@@ -5,7 +5,7 @@ keywords: storage virtual machine, vserver, svm, storage vm, supported number, n
 summary: A storage VM is a virtual machine running within ONTAP that provides storage and data services to your clients. You might know this as an SVM or a vserver. Cloud Volumes ONTAP is configured with one storage VM by default, but some configurations support additional storage VMs.
 ---
 
-= Create storage VMs for Cloud Volumes ONTAP in Azure
+= Create data-serving storage VMs for Cloud Volumes ONTAP in Azure
 :toc: macro
 :hardbreaks:
 :nofooter:
@@ -16,17 +16,15 @@ summary: A storage VM is a virtual machine running within ONTAP that provides st
 [.lead]
 A storage VM is a virtual machine running within ONTAP that provides storage and data services to your clients. You might know this as an _SVM_ or a _vserver_. Cloud Volumes ONTAP is configured with one storage VM by default, but additional storage VMs are supported when running Cloud Volumes ONTAP in Azure.
 
+To create additional data-serving storage VMs, you need to allocate IP addresses in Azure, set up the load balancer for an HA pair, and then run ONTAP commands to create the storage VM and data LIFs.
+
 == Supported number of storage VMs
 
 Multiple storage VMs are supported with Cloud Volumes ONTAP BYOL in Azure with an add-on license starting with the 9.9.0 release. Go to the https://docs.netapp.com/us-en/cloud-volumes-ontap/index.html[Cloud Volumes ONTAP Release Notes^] to verify the supported number of storage VMs for your version of Cloud Volumes ONTAP.
 
 All other Cloud Volumes ONTAP configurations support one data-serving storage VM and one destination storage VM used for disaster recovery. You can activate the destination storage VM for data access if there's an outage on the source storage VM.
 
-== Create data-serving storage VMs for Cloud Volumes ONTAP in Azure
-
-Multiple storage VMs are supported with Cloud Volumes ONTAP in Azure. To create additional storage VMs, you need to allocate IP addresses in Azure, set up the load balancer for an HA pair, and then run ONTAP commands to create the storage VM and data LIFs.
-
-=== Allocate IP addresses in Azure
+== Allocate IP addresses in Azure
 
 IP addresses must be assigned to nic0 in Azure before you create the storage VM and allocate LIFs.
 
@@ -50,7 +48,7 @@ You'll need to create an IP address for data LIF access from node 1, another IP 
 
 . Repeat the last two steps for any additional IP addresses that you need.
 
-=== Modify the load balancer for an HA pair
+== Modify the load balancer for an HA pair
 
 If you have an HA pair, you need to modify the load balancer so that the IP addresses can migrate to the other node when failover events occur.
 
@@ -86,7 +84,7 @@ It's important that the port number is between 63005 and 63500. For example, if 
 
 .. Enter a name, select the frontend IP address, select the health probe that you created, set session persistence to None, idle timeout to 30 minutes, and enable floating IP.
 
-=== Create a storage VM
+== Create a storage VM
 
 These steps create a new storage VM on a single node system or an HA pair. One IP address is required to create a NAS LIF on a node (two total for an HA pair) and another optional IP address is needed if you want to create a management LIF.
 
