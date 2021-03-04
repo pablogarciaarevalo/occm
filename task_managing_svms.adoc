@@ -5,7 +5,7 @@ keywords: storage virtual machine, vserver, svm, storage vm, supported number, n
 summary: A storage VM is a virtual machine running within ONTAP that provides storage and data services to your clients. You might know this as an SVM or a vserver. Cloud Volumes ONTAP is configured with one storage VM by default, but some configurations support additional storage VMs.
 ---
 
-= Manage storage VMs
+= Manage storage VMs in Cloud Manager
 :toc: macro
 :hardbreaks:
 :nofooter:
@@ -34,269 +34,21 @@ And the following image shows how you can choose a storage VM when replicating a
 
 image:screenshot_replicate_volume_svm.gif[A screenshot that shows the ability to select the storage VM in which you want to replicate a volume.]
 
-== Create data-serving storage VMs for Cloud Volumes ONTAP in AWS
+== Modify the name of the default storage VM
 
-As noted above, multiple storage VMs are supported with Cloud Volumes ONTAP in AWS. To create additional storage VMs, you need to allocate IP addresses in AWS and then run ONTAP commands based on your Cloud Volumes ONTAP configuration.
+Cloud Manager automatically names the single storage VM that it creates for Cloud Volumes ONTAP. You can modify the name of the storage VM if you have strict naming standards. For example, you might want the name to match how you name the storage VMs for your ONTAP clusters.
 
-=== Verify limits for your configuration
-
-Each EC2 instance supports a maximum number of private IPv4 addresses per network interface. You need to verify the limit before you allocate IP addresses in AWS for the new storage VM.
+If you created any additional storage VMs for Cloud Volumes ONTAP, then you can't rename the storage VMs from Cloud Manager. You'll need to do so directly from Cloud Volumes ONTAP by using System Manager or the CLI.
 
 .Steps
 
-. Go the https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_limits_aws_98.html[Storage limits section in the Cloud Volumes ONTAP Release Notes^].
+. From the working environment, click the menu icon, and then click *Information*.
 
-. Identify the maximum number of IP addresses per interface for your instance type.
-
-. Make note of this number because you'll need it in the next section when you allocate IP addresses in AWS.
-
-=== Allocate IP addresses in AWS
-
-Private IPv4 addresses must be assigned to port e0a in AWS before you create LIFs for the new storage VM.
-
-Note that an optional management LIF for a storage VM requires a private IP address on a single node system and on an HA pair in a single AZ. This management LIF provides a connection to management tools like SnapCenter.
-
-.Steps
-
-. Log in to AWS and open the EC2 service.
-
-. Select the Cloud Volumes ONTAP instance and click *Networking*.
+. Click the edit icon to the right of the storage VM name.
 +
-If you're creating a storage VM on an HA pair, select node 1.
+image:screenshot_svm.gif[Screen shot: Shows the SVM Name field and the edit icon that you must click to modify the SVM name.]
 
-. Scroll down to *Network interfaces* and click the *Interface ID* for port e0a.
-+
-image:screenshot_aws_e0a.gif[A screenshot of the AWS Console that shows port e0a on a network interface.]
-
-. Select the network interface and click *Actions > Manage IP addresses*.
-
-. Expand the list of IP addresses for e0a.
-
-. Verify the IP addresses:
-
-.. Count the number of allocated IP addresses to confirm that the port has room for additional IPs.
-+
-You should have identified the maximum number of supported IP addresses per interface in the previous section of this page.
-
-.. Optional: Go to the CLI for Cloud Volumes ONTAP and run *network interface show* to confirm that each of these IP addresses are in use.
-+
-If an IP address isn't in use, then you can use it with the new storage VM.
-
-. Back in the AWS Console, click *Assign new IP address* to assign additional IP addresses based on the amount that you need for the new storage VM.
-+
-* Single node system: One unused secondary private IP is required.
-+
-An optional secondary private IP is required if you want to create a management LIF on the storage VM.
-* HA pair in a single AZ: One unused secondary private IP is required on node 1.
-+
-An optional secondary private IP is required if you want to create a management LIF on the storage VM.
-* HA pair in multiple AZs: One unused secondary private IP is required on each node.
-
-. If you're allocating the IP address on an HA pair in a single AZ, enable *Allow secondary private IPv4 addresses to be reassigned*.
-
-. Click *Save*.
-
-. If you have an HA pair in multiple AZs, then you'll need to repeat these steps for node 2.
-
-=== Create a storage VM on a single node system
-
-These steps create a new storage VM on a single node system. One private IP address is required to create a NAS LIF and another optional private IP address is needed if you want to create a management LIF.
-
-.Steps
-
-. Create the storage VM and a route to the storage VM.
-+
-[source,cli]
-vserver create -rootvolume-security-style mixed -rootvolume root_svm_2 -snapshot-policy default -vserver svm_2 -aggregate aggr1
-+
-[source,cli]
-network route create -destination 0.0.0.0/0 -vserver svm_2 -gateway subnet_gateway
-
-. Create a NAS LIF.
-+
-[source,cli]
-network interface create -auto-revert true -vserver svm_2 -service-policy default-data-files -home-port e0a -address private_ip_x -netmask node1Mask -lif ip_nas_2 -home-node cvo-node
-+
-Where _private_ip_x_ is an unused secondary private IP on e0a.
-
-. Optional: Create a storage VM management LIF.
-+
-[source,cli]
-network interface create -auto-revert true -vserver svm_2 -service-policy default-management -home-port e0a -address private_ip_y -netmask node1Mask -lif ip_svm_mgmt_2 -home-node cvo-node
-+
-Where _private_ip_y_ is another unused secondary private IP on e0a.
-
-=== Create a storage VM on an HA pair in a single AZ
-
-These steps create a new storage VM on an HA pair in a single AZ. One private IP address is required to create a NAS LIF and another optional private IP address is needed if you want to create a management LIF.
-
-Both of these LIFs get allocated on node 1. The private IP addresses can move between nodes if failures occur.
-
-.Steps
-
-. Create the storage VM and a route to the storage VM.
-+
-[source,cli]
-vserver create -rootvolume-security-style mixed -rootvolume root_svm_2 -snapshot-policy default -vserver svm_2 -aggregate aggr1
-+
-[source,cli]
-network route create -destination 0.0.0.0/0 -vserver svm_2 -gateway subnet_gateway
-
-. Create a NAS LIF on node 1.
-+
-[source,cli]
-network interface create -auto-revert true -vserver svm_2 -service-policy default-data-files -home-port e0a -address private_ip_x -netmask node1Mask -lif ip_nas_2 -home-node cvo-node1
-+
-Where _private_ip_x_ is an unused secondary private IP on e0a of cvo-node1. This IP address can be relocated to the e0a of cvo-node2 in case of takeover because the service policy default-data-files indicates that IPs can migrate to the partner node.
-
-. Optional: Create a storage VM management LIF on node 1.
-+
-[source,cli]
-network interface create -auto-revert true -vserver svm_2 -service-policy default-management -home-port e0a -address private_ip_y -netmask node1Mask -lif ip_svm_mgmt_2 -home-node cvo-node1
-+
-Where _private_ip_y_ is another unused secondary private IP on e0a.
-
-=== Create a storage VM on an HA pair in multiple AZs
-
-These steps create a new storage VM on an HA pair in multiple AZs.
-
-A _floating_ IP address is required for a NAS LIF and is optional for a management LIF. These floating IP addresses don't require you to allocate private IPs in AWS. Instead, the floating IPs are automatically configured in the AWS route table to point to a specific node's ENI in the same VPC.
-
-In order for floating IPs to work with ONTAP, a private IP address must be configured on every storage VM on each node. This is reflected in the steps below where an iSCSI LIF is created on node 1 and on node 2.
-
-.Steps
-
-. Create the storage VM and a route to the storage VM.
-+
-[source,cli]
-vserver create -rootvolume-security-style mixed -rootvolume root_svm_2 -snapshot-policy default -vserver svm_2 -aggregate aggr1
-+
-[source,cli]
-network route create -destination 0.0.0.0/0 -vserver svm_2 -gateway subnet_gateway
-
-. Create a NAS LIF on node 1.
-+
-[source,cli]
-network interface create -auto-revert true -vserver svm_2 -service-policy default-data-files -home-port e0a -address floating_ip -netmask node1Mask -lif ip_nas_floating_2 -home-node cvo-node1
-+
-* The floating IP address must be outside of the CIDR blocks for all VPCs in the AWS region in which you deploy the HA configuration. 192.168.209.27 is an example floating IP address. link:reference_networking_aws.html#requirements-for-ha-pairs-in-multiple-azs[Learn more about choosing a floating IP address].
-* `-service-policy default-data-files` indicates that IPs can migrate to the partner node.
-
-. Optional: Create a storage VM management LIF on node 1.
-+
-[source,cli]
-network interface create -auto-revert true -vserver svm_2 -service-policy default-management -home-port e0a -address floating_ip -netmask node1Mask -lif ip_svm_mgmt_2 -home-node cvo-node1
-
-. Create an iSCSI LIF on node 1.
-+
-[source,cli]
-network interface create -vserver svm_2 -service-policy default-data-blocks -home-port e0a -address private_ip -netmask nodei1Mask -lif ip_node1_iscsi_2 -home-node cvo-node1
-+
-* This iSCSI LIF is required to support LIF migration of the floating IPs in the storage VM. It doesn't have to be an iSCSI LIF, but it can't be configured to migrate between nodes.
-* `-service-policy default-data-block` indicates that an IP address does not migrate between nodes.
-* _private_ip_ is an unused secondary private IP address on eth0 (e0a) of cvo_node1.
-
-. Create an iSCSI LIF on node 2.
-+
-[source,cli]
-network interface create -vserver svm_2 -service-policy default-data-blocks -home-port e0a -address private_ip -netmaskNode2Mask -lif ip_node2_iscsi_2 -home-node cvo-node2
-+
-* This iSCSI LIF is required to support LIF migration of the floating IPs in the storage VM. It doesn't have to be an iSCSI LIF, but it can't be configured to migrate between nodes.
-* `-service-policy default-data-block` indicates that an IP address does not migrate between nodes.
-* _private_ip_ is an unused secondary private IP address on eth0 (e0a) of cvo_node2.
-
-== Create data-serving storage VMs for Cloud Volumes ONTAP in Azure
-
-Multiple storage VMs are supported with Cloud Volumes ONTAP in Azure. To create additional storage VMs, you need to allocate IP addresses in Azure, set up the load balancer for an HA pair, and then run ONTAP commands to create the storage VM and data LIFs.
-
-=== Allocate IP addresses in Azure
-
-IP addresses must be assigned to nic0 in Azure before you create the storage VM and allocate LIFs.
-
-You'll need to create an IP address for data LIF access from node 1, another IP address for data LIF access from node 2 (HA pairs only), and another optional IP address for a storage VM (SVM) management LIF. This management LIF provides a connection to management tools like SnapCenter.
-
-.Steps
-
-. Log in to the Azure portal and open the Virtual machine service.
-
-. Click the name of the Cloud Volumes ONTAP VM.
-
-. Click *Networking*.
-
-. Click the name of the network interface for nic0.
-
-. Click *IP configurations*.
-
-. Click *Add*.
-
-. Enter a name for the IP configuration, select *Static*, and then click *OK*.
-
-. Repeat the last two steps for any additional IP addresses that you need.
-
-=== Modify the load balancer for an HA pair
-
-If you have an HA pair, you need to modify the load balancer so that the IP addresses can migrate to the other node when failover events occur.
-
-.Steps
-
-. In the Azure portal, go to the Load balancers service.
-
-. Click the name of the load balancer for the HA pair.
-
-. Create one frontend IP configuration for data LIF access from node 1, another for data LIF access from node 2 (HA pairs only), and another optional frontend IP for a storage VM (SVM) management LIF.
-
-.. Click *Frontend IP configuration*.
-
-.. Click *Add*.
-
-.. Enter a name for the frontend IP, select the default subnet, and leave *Dynamic* selected.
-
-. Add a health probe for each frontend IP that you just created.
-
-.. Under the load balancer's *Settings*, click *Health probes*.
-
-.. Click *Add*.
-
-.. Enter a name for the health probe and enter a port number that's between 63005 and 63500. Keep the default values for the other fields.
-+
-It's important that the port number is between 63005 and 63500. For example, if you are creating three health probes, you could enter probes that use port numbers 63005, 63006, and 63007.
-
-. Create new load balancing rules for each frontend IP.
-
-.. Under the load balancer's *Settings*, click *Load balancing rules*.
-
-.. Click *Add*.
-
-.. Enter a name, select the frontend IP address, select the health probe that you created, set session persistence to None, idle timeout to 30 minutes, and enable floating IP.
-
-=== Create a storage VM
-
-These steps create a new storage VM on a single node system or an HA pair. One IP address is required to create a NAS LIF on a node (two total for an HA pair) and another optional IP address is needed if you want to create a management LIF.
-
-.Steps
-
-. Create the storage VM and a route to the storage VM.
-+
-[source,cli]
-vserver create -vserver svm_2 -subtype default -rootvolume root_svm_2 -rootvolume-security-style mixed -snapshot-policy default
-+
-[source,cli]
-network route create -destination 0.0.0.0/0 -vserver svm_2 -gateway subnet_gateway
-
-. Create a NAS LIF on node 1.
-+
-[source,cli]
-net int create -vserver svm_2 -lif data_1 -role data -data-protocol cifs,nfs,fcache -address 99.0.99.22 -netmask-length 24 -home-node MultiSVMforHA-01 -status-admin up -failover-policy system-defined -firewall-policy data -home-port e0a -auto-revert true -failover-group Default -probe-port 63006
-
-. Create a NAS LIF on node 2 (for HA pairs only).
-+
-[source,cli]
-net int create -vserver svm_2 -lif data_2 -role data -data-protocol cifs,nfs,fcache -address 99.0.99.23 -netmask-length 24 -home-node MultiSVMforHA-02 -status-admin up -failover-policy system-defined -firewall-policy data -home-port e0a -auto-revert true -failover-group Default -probe-port 63007
-
-. Optional: Create a storage VM management LIF on node 1.
-+
-[source,cli]
-net int create -vserver svm-name -lif lif-name -role data -data-protocol cifs,nfs,fcache -address ip-address -netmask-length 24 -home-node node1 -status-admin up -failover-policy system-defined -firewall-policy data -home-port e0a -auto-revert true -failover-group Default -probe-port port-number
+. In the Modify SVM Name dialog box, change the name, and then click *Save*.
 
 == Manage storage VMs for disaster recovery
 
