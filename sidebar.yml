@@ -152,7 +152,7 @@ entries:
           - title: Create storage VMs in AWS
             url: /task_managing_svms_aws.html
           - title: Create storage VMs in Azure
-            url: /task_managing_azure.html
+            url: /task_managing_svms_azure.html
       - title: Replicate data
         url: /task_replicating_data.html
       - title: Monitor performance
