@@ -14,13 +14,13 @@ jobs:
       name: Sync repo to branch
       with:
         source_repo: https://${{ secrets.GH_TOKEN }}@github.com/NetAppDocs/${{ secrets.SOURCE_REPO }}.git
-        source_branch: master
+        source_branch: main
         destination_branch: ${{ secrets.REPO_SYNC_BRANCH }}
         github_token: ${{ secrets.GH_TOKEN }}
     - uses: repo-sync/pull-request@v2
       name: Create pull request
       with:
         source_branch: ${{ secrets.REPO_SYNC_BRANCH }}
-        destination_branch: master
+        destination_branch: main
         github_token: ${{ secrets.GH_TOKEN }}
         pr_title: "Sync main with ${{ secrets.SOURCE_REPO }}"
