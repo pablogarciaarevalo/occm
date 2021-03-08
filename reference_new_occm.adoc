@@ -89,6 +89,12 @@ NOTE: These services are not supported in _secret_ Government environments.
 +
 link:reference_sync_requirements.html[View supported sync relationships].
 
+* Cloud Sync now enables you to unify a data broker group's configuration directly from the user interface.
++
+We don't recommend changing the configuration on your own. You should consult with NetApp to understand when to change the configuration and how to change it.
++
+link:task_sync_managing_data_brokers.html[Learn more about defining a unified configuration].
+
 === Cloud Tiering enhancements
 
 * When tiering to Google Cloud Storage, you can apply a lifecycle rule so that the tiered data transitions from the Standard storage class to lower-cost Nearline, Coldline, or Archive storage after 30 days.
