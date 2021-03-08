@@ -17,7 +17,7 @@ This FAQ can help if you’re just looking for a quick answer to a question.
 
 == Getting started
 
-The following questions relate to getting started with Cloud sync.
+The following questions relate to getting started with Cloud Sync.
 
 === How does Cloud Sync work?
 
