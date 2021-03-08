@@ -138,7 +138,7 @@ image:screenshot_setup_tiering_onprem.gif[A screenshot that shows the Enable opt
 +
 The storage account and containers that appear in this step belong to the resource group that you selected in the previous step.
 
-.. *Access Tier*: Select the access tier that you want to use for the tiered data.
+.. *Access Tier*: Select the access tier that you want to use for the tiered data. link:reference_azure_support.html[See supported access tiers^].
 
 .. *Cluster Network*: Select the IPspace that ONTAP should use to connect to object storage.
 +

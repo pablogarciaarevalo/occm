@@ -116,3 +116,33 @@ image:https://docs.netapp.com/us-en/cloud-tiering/media/screenshot_tiering_healt
 .. Verify that the ONTAP cluster is operational and that it has an inbound and outbound connection to your object storage provider.
 
 .. Verify that Cloud Manager has outbound connections to the Cloud Tiering service, to the object store, and to the ONTAP clusters that it discovers.
+
+== Discovering additional clusters from Cloud Tiering
+
+You can add your undiscovered on-prem ONTAP clusters to Cloud Manager from the Tiering _Cluster Dashboard_ so that you can enable tiering for the cluster.
+
+If your NSS credentials are saved in Cloud Manager, the top of the page displays whether you have any on-prem clusters in your account that have not been discovered in Cloud Manager.
+
+If your NSS credentials are not already saved in Cloud Manager, you are first prompted to add your credentials before you can see if there are undiscovered clusters.  See link:task_adding_nss_accounts.html[Adding NetApp Support Site accounts to Cloud Manager^] for more information.
+
+Note that buttons appear in the Tiering _On-Prem Overview_ page as well for you to discover additional clusters. 
+
+.Steps
+
+. From Cloud Tiering, click the *Cluster Dashboard* tab.
+
+. If the overview row at the top of the page shows that you have undiscovered on-prem clusters, scroll down the page to locate the clusters.
++
+image:screenshot_tiering_discover_cluster.png[A screenshot showing how to discover an existing cluster to add to Cloud Manager and the Tiering Dashboard.]
+
+. Click *Discover Cluster* for the cluster that you want to manage through Cloud Manager and implement data tiering.
+
+. On the _ONTAP Cluster Details_ page, enter the password for the admin user account and click *Add*.
++
+Note that the cluster management IP address is populated based on information from your NSS account.
+
+.Result
+
+Cloud Manager discovers the cluster and adds it to a working environment in the Canvas using the cluster name as the working environment name.
+
+You can enable the Tiering service or other services for this cluster in the right panel.
