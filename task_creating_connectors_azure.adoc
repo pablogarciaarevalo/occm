@@ -39,7 +39,7 @@ TIP: Right-click the link and click *Save link as...* to download the file.
 +
 [source,json]
 "AssignableScopes": [
-"/subscriptions/d333af45-0d07-4154-943d-c25fbzzzzzzz",
+"/subscriptions/d333af45-0d07-4154-943d-c25fbzzzzzzz"
 ],
 
 .. Use the JSON file to create a custom role in Azure.

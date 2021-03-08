@@ -22,7 +22,7 @@ Cloud Manager enables IT experts and cloud architects to centrally manage their 
 == Get started
 
 * link:concept_overview.html[Cloud Manager]
-* link:concept_cloud_central_accounts[Account settings]
+* link:concept_cloud_central_accounts.html[Account settings]
 * link:task_getting_started_aws.html[Cloud Volumes ONTAP for AWS]
 * link:task_getting_started_azure.html[Cloud Volumes ONTAP for Azure]
 * link:task_getting_started_gcp.html[Cloud Volumes ONTAP for Google Cloud]
