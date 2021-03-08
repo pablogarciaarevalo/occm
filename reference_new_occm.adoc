@@ -19,12 +19,13 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
-== Cloud Manager 3.9.4 (7 Mar 2021)
+== Cloud Manager 3.9.4 (8 Mar 2021)
 
 * <<Cloud Volumes ONTAP enhancements>>
 * <<Connector enhancements>>
 * <<Additional services supported in Gov regions>>
 * <<Cloud Sync enhancements>>
+* <<Cloud Tiering enhancements>>
 
 === Cloud Volumes ONTAP enhancements
 
@@ -87,6 +88,14 @@ NOTE: These services are not supported in _secret_ Government environments.
 ** An SMB server to ONTAP S3 Storage
 +
 link:reference_sync_requirements.html[View supported sync relationships].
+
+=== Cloud Tiering enhancements
+
+* When tiering to Google Cloud Storage, you can apply a lifecycle rule so that the tiered data transitions from the Standard storage class to lower-cost Nearline, Coldline, or Archive storage after 30 days.
+
+* Cloud Tiering now displays if you have any undiscovered on-prem ONTAP clusters so that you can add them to Cloud Manager to enable tiering or other services on those clusters.
+
+link:task_managing_tiering.html#discovering-additional-clusters-from-cloud-tiering[Learn how to discover these additional clusters].
 
 == Cloud Manager 3.9.3 update (16 Feb 2021)
 
