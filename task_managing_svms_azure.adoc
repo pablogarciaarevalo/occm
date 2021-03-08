@@ -26,13 +26,13 @@ All other Cloud Volumes ONTAP configurations support one data-serving storage VM
 
 == Allocate IP addresses in Azure
 
-IP addresses must be assigned to nic0 in Azure before you create the storage VM and allocate LIFs.
+IP addresses must be assigned to nic0 in Azure before you create a storage VM and allocate LIFs.
 
 You'll need to create an IP address for data LIF access from node 1, another IP address for data LIF access from node 2 (HA pairs only), and another optional IP address for a storage VM (SVM) management LIF. This management LIF provides a connection to management tools like SnapCenter.
 
 .Steps
 
-. Log in to the Azure portal and open the Virtual machine service.
+. Log in to the Azure portal and open the *Virtual machine* service.
 
 . Click the name of the Cloud Volumes ONTAP VM.
 
@@ -40,31 +40,39 @@ You'll need to create an IP address for data LIF access from node 1, another IP 
 
 . Click the name of the network interface for nic0.
 
-. Click *IP configurations*.
+. Under *Settings*, click *IP configurations*.
 
 . Click *Add*.
 
 . Enter a name for the IP configuration, select *Static*, and then click *OK*.
 
-. Repeat the last two steps for any additional IP addresses that you need.
+. If you have an HA pair, repeat these steps on node 2.
+
+. If you want to create an SVM management LIF, repeat these steps on node 1.
+
+.After you finish
+
+Copy the private IP addresses that you just created. You'll need to specify those IP addresses when you create LIFs for the new storage VM.
 
 == Modify the load balancer for an HA pair
 
-If you have an HA pair, you need to modify the load balancer so that the IP addresses can migrate to the other node when failover events occur.
+If you have an HA pair, you need to modify the load balancer so that the IP addresses can migrate to the other node in case failover events occur.
 
 .Steps
 
-. In the Azure portal, go to the Load balancers service.
+. In the Azure portal, open the *Load balancers* service.
 
 . Click the name of the load balancer for the HA pair.
 
 . Create one frontend IP configuration for data LIF access from node 1, another for data LIF access from node 2 (HA pairs only), and another optional frontend IP for a storage VM (SVM) management LIF.
 
-.. Click *Frontend IP configuration*.
+.. Under *Settings*, click *Frontend IP configuration*.
 
 .. Click *Add*.
 
 .. Enter a name for the frontend IP, select the default subnet, and leave *Dynamic* selected.
++
+image:screenshot_azure_frontend_ip.gif[A screenshot of adding a frontend IP address in the Azure portal where a name and subnet are selected.]
 
 . Add a health probe for each frontend IP that you just created.
 
@@ -74,41 +82,56 @@ If you have an HA pair, you need to modify the load balancer so that the IP addr
 
 .. Enter a name for the health probe and enter a port number that's between 63005 and 63500. Keep the default values for the other fields.
 +
-It's important that the port number is between 63005 and 63500. For example, if you are creating three health probes, you could enter probes that use port numbers 63005, 63006, and 63007.
+It's important that the port number is between 63005 and 63500. For example, if you are creating three health probes, you could enter probes that use the port numbers 63005, 63006, and 63007.
++
+image:screenshot_azure_health_probe.gif[A screenshot of adding a health probe in the Azure portal where a name and port are entered.]
 
 . Create new load balancing rules for each frontend IP.
 
 .. Under the load balancer's *Settings*, click *Load balancing rules*.
 
-.. Click *Add*.
+.. Click *Add* and enter the required information:
++
+* *Name*: Enter a name for the rule.
+* *IP Version*: Select *IPv4*.
+* *Frontend IP address*: Select one of the frontend IP addresses that you just created.
+* *HA Ports*: Enable this option.
+* *Backend pool*: Keep the default Backend pool that was already selected.
+* *Health probe*: Select one of the health probes that you just created.
+* *Session persistence*: Select *None*.
+* *Floating IP*: Select *Enabled*.
++
+image:screenshot_azure_lb_rule.gif[A screenshot of adding a load balancing rule in the Azure portal with the fields shown above.]
 
-.. Enter a name, select the frontend IP address, select the health probe that you created, set session persistence to None, idle timeout to 30 minutes, and enable floating IP.
+.After you finish
+
+Ensure that the network security group rules for Cloud Volumes ONTAP allow the load balancer to send TCP probes for the health probes that were created up above. This is allowed by default.
 
 == Create a storage VM
 
-These steps create a new storage VM on a single node system or an HA pair. One IP address is required to create a NAS LIF on a node (two total for an HA pair) and another optional IP address is needed if you want to create a management LIF.
+These steps create a new storage VM on a single node system or on an HA pair. One IP address is required for data LIF access from node 1, another IP address for data LIF access from node 2 (HA pairs only), and another optional IP address for a storage VM (SVM) management LIF. This management LIF provides a connection to management tools like SnapCenter.
 
 .Steps
 
 . Create the storage VM and a route to the storage VM.
 +
 [source,cli]
-vserver create -vserver svm_2 -subtype default -rootvolume root_svm_2 -rootvolume-security-style mixed -snapshot-policy default
+vserver create -vserver <svm-name> -subtype default -rootvolume <root-volume-name> -rootvolume-security-style mixed
 +
 [source,cli]
-network route create -destination 0.0.0.0/0 -vserver svm_2 -gateway subnet_gateway
+network route create -destination 0.0.0.0/0 -vserver <svm-name> -gateway <ip-of-gateway-server>
 
 . Create a NAS LIF on node 1.
 +
 [source,cli]
-net int create -vserver svm_2 -lif data_1 -role data -data-protocol cifs,nfs,fcache -address 99.0.99.22 -netmask-length 24 -home-node MultiSVMforHA-01 -status-admin up -failover-policy system-defined -firewall-policy data -home-port e0a -auto-revert true -failover-group Default -probe-port 63006
+network interface create -vserver <svm-name> -lif <lif-name> -role data -data-protocol cifs,nfs,fcache -address <nfs-cifs-ip-address> -netmask-length 24 -home-node <name-of-node1> -status-admin up -failover-policy system-defined -firewall-policy data -home-port e0a -auto-revert true -failover-group Default -probe-port <port-number-for-azure-health-probe1>
 
 . Create a NAS LIF on node 2 (for HA pairs only).
 +
 [source,cli]
-net int create -vserver svm_2 -lif data_2 -role data -data-protocol cifs,nfs,fcache -address 99.0.99.23 -netmask-length 24 -home-node MultiSVMforHA-02 -status-admin up -failover-policy system-defined -firewall-policy data -home-port e0a -auto-revert true -failover-group Default -probe-port 63007
+network interface create -vserver <svm-name> -lif <lif-name> -role data -data-protocol cifs,nfs,fcache -address <nfs-cifs-ip-address> -netmask-length 24 -home-node <name-of-node2> -status-admin up -failover-policy system-defined -firewall-policy data -home-port e0a -auto-revert true -failover-group Default -probe-port <port-number-for-azure-health-probe2>
 
 . Optional: Create a storage VM management LIF on node 1.
 +
 [source,cli]
-net int create -vserver svm-name -lif lif-name -role data -data-protocol cifs,nfs,fcache -address ip-address -netmask-length 24 -home-node node1 -status-admin up -failover-policy system-defined -firewall-policy data -home-port e0a -auto-revert true -failover-group Default -probe-port port-number
+network interface create -vserver <svm-name> -lif <lif-name> -role data -data-protocol cifs,nfs,fcache -address <svm-mgmt-ip-address> -netmask-length 24 -home-node node1 -status-admin up -failover-policy system-defined -firewall-policy data -home-port e0a -auto-revert true -failover-group Default -probe-port <port-number-for-azure-health-probe3>
