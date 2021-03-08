@@ -249,7 +249,7 @@ There are certain things you need to be aware of when the volume you are backing
 
 == Limitations
 
-* When making backups from on-premises ONTAP systems, Cloud Manager must be deployed in the cloud. There is no support for on-premises Cloud Manager deployments.
+* When making backups from on-premises ONTAP systems, the Connector must be deployed in the cloud. There is no support for on-premises Connector deployments.
 
 * When backing up data protection (DP) volumes, the rule that is defined for the SnapMirror policy on the source volume must use a label that matches the allowed Cloud Backup policy names of *daily*, *weekly*, or *monthly*. Otherwise the backup will fail for that DP volume.
 
@@ -269,12 +269,12 @@ There are certain things you need to be aware of when the volume you are backing
 
 * Single file restore can restore individual files. There is currently no support for restoring folders/directories.
 
+* The file being restored must be using the same language as the language on the destination volume. You will receive an error message if the languages are not the same.
+
 * The ONTAP version must be 9.6 or greater in your Cloud Volumes ONTAP or on-premises systems.
 
 * Cross account restore requires manual action in the cloud provider console. See the AWS topic https://docs.aws.amazon.com/AmazonS3/latest/dev/example-walkthroughs-managing-access-example2.html[granting cross-account bucket permissions^] for details.
 
-* Non supported configurations:
-** Gov Cloud is currently not supported.
-** Same account with different Cloud Managers in different subnets.
+* Single file restore is not supported when using the same account with different Cloud Managers in different subnets.
 
 * Restore can browse a single directory with flat files up to a maximum of 30,000 files. Larger directories are currently not supported.
