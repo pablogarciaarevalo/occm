@@ -105,7 +105,7 @@ image:screenshot_azure_lb_rule.gif[A screenshot of adding a load balancing rule 
 
 .After you finish
 
-Ensure that the network security group rules for Cloud Volumes ONTAP allow the load balancer to send TCP probes for the health probes that were created up above. This is allowed by default.
+Ensure that the network security group rules for Cloud Volumes ONTAP allows the load balancer to send TCP probes for the health probes that were created in step 4 above. Note that this is allowed by default.
 
 == Create a storage VM
 
