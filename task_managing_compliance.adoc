@@ -44,18 +44,18 @@ If you no longer want to scan user files from a certain OneDrive account, you ca
 image:screenshot_compliance_remove_onedrive.png[A screenshot of the Remove OneDrive button from the Scan Configuration page.]
 
 . Click *Delete Account* from the confirmation dialog.
-
-== Removing a group of file shares from Cloud Compliance
-
-If you no longer want to scan user files from a file shares group, you can delete the File Shares Group from the Cloud Compliance interface and stop all scans.
-
-.Steps
-
-. From the _Scan Configuration_ page, click the image:screenshot_gallery_options.gif[More button] button in the row for the File Shares Group, and then click *Remove File Shares Group*.
-+
-image:screenshot_compliance_remove_fileshare_group.png[A screenshot of the Remove File Share Group button from the Scan Configuration page.]
-
-. Click *Delete Group of Shares* from the confirmation dialog.
+//
+// == Removing a group of file shares from Cloud Compliance
+//
+// If you no longer want to scan user files from a file shares group, you can delete the File Shares Group from the Cloud Compliance interface and stop all scans.
+//
+// .Steps
+//
+// . From the _Scan Configuration_ page, click the image:screenshot_gallery_options.gif[More button] button in the row for the File Shares Group, and then click *Remove File Shares Group*.
+// +
+// image:screenshot_compliance_remove_fileshare_group.png[A screenshot of the Remove File Share Group button from the Scan Configuration page.]
+//
+// . Click *Delete Group of Shares* from the confirmation dialog.
 
 == Deleting the Cloud Compliance instance
 
