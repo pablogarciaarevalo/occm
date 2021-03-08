@@ -53,7 +53,7 @@ link:task_setting_up_kms.html[Learn more about setting up the AWS KMS with Cloud
 
 You can now deploy Cloud Volumes ONTAP 9.8 in the Azure Department of Defense (DoD) Impact Level 6 (IL6).
 
-link:??.html[Learn how to get started in the IL6 environment].
+link:task_getting_started_azure_il6.html[Learn how to get started in the IL6 environment].
 
 ==== Enhancements available in Google Cloud
 
@@ -94,7 +94,7 @@ link:reference_sync_requirements.html[View supported sync relationships].
 * When tiering to Google Cloud Storage, you can apply a lifecycle rule so that the tiered data transitions from the Standard storage class to lower-cost Nearline, Coldline, or Archive storage after 30 days.
 
 * Cloud Tiering now displays if you have any undiscovered on-prem ONTAP clusters so that you can add them to Cloud Manager to enable tiering or other services on those clusters.
-
++
 link:task_managing_tiering.html#discovering-additional-clusters-from-cloud-tiering[Learn how to discover these additional clusters].
 
 == Cloud Manager 3.9.3 update (16 Feb 2021)
