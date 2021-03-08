@@ -137,6 +137,7 @@ Take the following into consideration before you choose this tiering policy:
 * Consider the impact of SnapMirror transfers before assigning the All tiering policy to source volumes in data protection relationships.
 +
 Because data is tiered immediately, SnapMirror will read data from the cloud tier rather than the performance tier. This will result in slower SnapMirror operations--possibly slowing other SnapMirror operations later in queue—even if they are using different tiering policies.
+* Cloud Backup is similarly affected by volumes set with a tiering policy. link:concept_backup_to_cloud.html#fabricpool-tiering-policy-considerations[See tiering policy considerations with Cloud Backup].
 
 All DP user data (Backup):: All data on a data protection volume (not including metadata) is immediately moved to the cloud tier. If read, cold data blocks on the cloud tier stay cold and are not written back to the performance tier (starting with ONTAP 9.4).
 +
