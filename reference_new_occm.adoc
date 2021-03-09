@@ -23,7 +23,6 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 * <<Cloud Volumes ONTAP enhancements>>
 * <<Connector enhancements>>
-* <<Additional services supported in Gov regions>>
 * <<Cloud Sync enhancements>>
 * <<Cloud Tiering enhancements>>
 
@@ -37,23 +36,13 @@ Cloud Manager can now deploy and manage Cloud Volumes ONTAP 9.9.0.
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_990.html[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
-==== Enhancements available in AWS
+==== Enhancement available in AWS
 
-* You can now deploy Cloud Volumes ONTAP 9.8 in the AWS Commercial Cloud Services (C2S) environment.
-+
-link:task_getting_started_aws_c2s.html[Learn how to get started in C2S].
+Cloud Manager has always enabled you to encrypt Cloud Volumes ONTAP data using the AWS Key Management Service (KMS). Starting with Cloud Volumes ONTAP 9.9.0, data on EBS disks and data tiered to S3 are encrypted if you select a customer-managed CMK. Previously, only EBS data would be encrypted.
 
-* Cloud Manager has always enabled you to encrypt Cloud Volumes ONTAP data using the AWS Key Management Service (KMS). Starting with Cloud Volumes ONTAP 9.9.0, data on EBS disks and data tiered to S3 are encrypted if you select a customer-managed CMK. Previously, only EBS data would be encrypted.
-+
 Note that you'll need to provide the Cloud Volumes ONTAP IAM role with access to use the CMK.
-+
+
 link:task_setting_up_kms.html[Learn more about setting up the AWS KMS with Cloud Volumes ONTAP].
-
-==== Enhancement available in Azure
-
-You can now deploy Cloud Volumes ONTAP 9.8 in the Azure Department of Defense (DoD) Impact Level 6 (IL6).
-
-link:task_getting_started_azure_il6.html[Learn how to get started in the IL6 environment].
 
 ==== Enhancements available in Google Cloud
 
@@ -74,12 +63,6 @@ Keeping your Connectors up and running helps to ensure the best management of Cl
 * Cloud Manager now displays a notification if you need to change the instance type for your Connector.
 +
 Changing the instance type ensures that you can use the new features and capabilities that you're currently missing. link:reference_key_changes.html#machine-type-changes[Learn more about machine type changes].
-
-=== Additional services supported in Gov regions
-
-The Cloud Compliance and Single File Restore services are now supported in AWS GovCloud regions and in Azure Government regions. Go to the https://cloud.netapp.com/cloud-volumes-global-regions[Global Regions Map on NetApp Cloud Central^] to view the list of supported Gov regions in AWS and Azure.
-
-NOTE: These services are not supported in _secret_ Government environments.
 
 === Cloud Sync enhancements
 
