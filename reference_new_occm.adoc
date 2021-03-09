@@ -241,7 +241,7 @@ There are a few limitations to point out:
 
 * Only single node Cloud Volumes ONTAP systems are supported at this time
 * The EC2 instances that you can use with Cloud Volumes ONTAP are limited to what's available in your Outpost
-* Only General Purpose SSDs are supported at this time
+* Only General Purpose SSDs (gp2) are supported at this time
 
 ==== Support for Ultra SSD VNVRAM in all supported Azure regions
 

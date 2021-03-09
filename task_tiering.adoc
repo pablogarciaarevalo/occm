@@ -65,7 +65,7 @@ You can enable data tiering when using specific configurations and features:
 +
 NOTE: Data tiering is not supported in Azure with the DS3_v2 virtual machine type.
 
-* In AWS, the performance tier can be General Purpose SSDs, Provisioned IOPS SSDs, or Throughput Optimized HDDs.
+* In AWS, the performance tier can be General Purpose SSDs (gp2), Provisioned IOPS SSDs, or Throughput Optimized HDDs.
 
 * In Azure, the performance tier can be Premium SSD managed disks, Standard SSD managed disks, or Standard HDD managed disks.
 
