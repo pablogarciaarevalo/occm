@@ -82,7 +82,7 @@ In addition to the storage for user data, Cloud Manager also purchases cloud sto
 **	9.6: 93 GB io1 disk for boot data and a 140 GB gp2 disk for root data
 **	9.5: 45 GB io1 disk for boot data and a 140 GB gp2 disk for root data
 
-* Starting with version 9.8, a 540 GB General Purpose SSD for a core disk when using a C5, M5, or R5 instance type
+* Starting with version 9.8, a 540 GB General Purpose SSD (gp2) for a core disk when using a C5, M5, or R5 instance type
 
 * One EBS snapshot for each boot disk and root disk
 
