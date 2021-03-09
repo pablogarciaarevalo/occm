@@ -38,7 +38,9 @@ Cloud Manager will prompt you to choose four VPCs when you create the HA pair:
 * VPC-0 for inbound connections to the data and nodes
 * VPC-1, VPC-2, and VPC-3 for internal communication between the nodes and the HA mediator
 +
-Similar to a single node system, an HA pair is supported in a shared VPC and also in standalone VPCs. However, only VPC-0 can be a shared VPC. All other VPCs must be a standalone VPC.
+Note that the subnets in these VPCs must have distinct CIDR ranges. They can't have overlapping CIDR ranges.
++
+Similar to a single node system, an HA pair is supported in a shared VPC and also in standalone VPCs. All VPCs can be either shared or non-shared VPCs.
 +
 The only requirement when using a shared VPC is to provide the https://cloud.google.com/compute/docs/access/iam#compute.networkUser[Compute Network User role^] to the Connector service account. Cloud Manager needs these permissions to query the firewalls, VPC, and subnets in the host project.
 
