@@ -94,3 +94,11 @@ The following policy provides the permissions that Cloud Manager needs to use th
 }
 +
 For additional details about this process, see https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying.html#key-policy-modifying-external-accounts[AWS Documentation: Allowing External AWS Accounts to Access a CMK^].
+
+. If you are using a customer-managed CMK, modify the key policy for the CMK by adding the Cloud Volumes ONTAP IAM role as a _key user_.
++
+This step is required if you enabled data tiering on Cloud Volumes ONTAP and want to encrypt the data stored in the S3 bucket.
++
+You'll need to perform this step _after_ you deploy Cloud Volumes ONTAP because the IAM role is created when you create a working environment. (Of course, you do have the option to use an existing Cloud Volumes ONTAP IAM role, so it's possible to perform this step before.)
++
+https://docs.aws.amazon.com/kms/latest/developerguide/editing-keys.html[AWS Documentation: Editing Keys^]
