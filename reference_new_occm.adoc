@@ -25,6 +25,7 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 * <<Connector enhancements>>
 * <<Cloud Sync enhancements>>
 * <<Cloud Tiering enhancements>>
+* <<Active IQ enhancements>>
 
 === Cloud Volumes ONTAP enhancements
 
@@ -85,6 +86,16 @@ link:task_sync_managing_data_brokers.html[Learn more about defining a unified co
 * Cloud Tiering now displays if you have any undiscovered on-prem ONTAP clusters so that you can add them to Cloud Manager to enable tiering or other services on those clusters.
 +
 link:task_managing_tiering.html#discovering-additional-clusters-from-cloud-tiering[Learn how to discover these additional clusters].
+
+=== Active IQ enhancements
+
+* When Active IQ displays the list of your on-prem clusters (based on your NSS account), you can click a button to link:task_discovering_ontap.html#discovering-clusters-from-the-active-iq-page[discover the cluster^] and add it to the Cloud Manager Canvas. This makes it easier to manage all your storage systems from Cloud Manager.
+
+* When Active IQ determines that one or more clusters require firmware updates, you can click a button to link:task_managing_ontap.html#downloading-new-disk-and-shelf-firmware[download the Ansible playbook and upgrade the cluster firmware^].
+
+* A new link:task_managing_ontap.html#viewing-on-prem-workloads-that-are-candidates-for-the-cloud[Cloud-Ready Workloads tab^] provides a list of the workloads or volumes that we have identified as ideal to move to the cloud from your on-prem ONTAP clusters. Moving some of these volumes could reduce your costs and improve performance and resiliency.
++
+See link:https://www.netapp.com/knowledge-center/what-is-lift-and-shift^[What is Lift and Shift?]
 
 == Cloud Manager 3.9.3 update (16 Feb 2021)
 
