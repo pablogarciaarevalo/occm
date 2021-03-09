@@ -320,7 +320,7 @@ TIP: The GCP service account associated with the Connector link:https://occm-sam
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_98.html[Learn what else is new in Cloud Volumes ONTAP 9.8^].
 
-== Cloud Manager 3.9 (8 Nov 2020)
+== Cloud Manager 3.9 update (8 Nov 2020)
 
 We released an enhancement to Cloud Manager 3.9.
 
