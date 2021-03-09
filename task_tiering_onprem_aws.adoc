@@ -119,9 +119,9 @@ A VPC Endpoint to S3 is recommended if you have a Direct Connect or VPN connecti
 
 === Preparing Amazon S3
 
-When you set up data tiering to a new cluster, you're prompted to create an S3 bucket or to select an existing S3 bucket in the AWS account where the Connector is set up.
+When you set up data tiering to a new cluster, you're prompted to create an S3 bucket or to select an existing S3 bucket in the AWS account where the Connector is set up. The AWS account must have permissions and an access key that you can enter in Cloud Tiering. The ONTAP cluster uses the access key to tier data in and out of S3.
 
-The AWS account must have permissions and an access key that you can enter in Cloud Tiering. The ONTAP cluster uses the access key to tier data in and out of S3.
+NOTE: If you are planning to select a lower cost storage class where your tiered data will transition to after 30 days, you must ensure that there are no other rules applied to the selected bucket.
 
 .Steps
 
@@ -167,9 +167,9 @@ The _fabric-pool_ prefix is required because the IAM policy for the Connector en
 +
 For example, you could name the S3 bucket fabric-pool-AFF1, where AFF1 is the name of the cluster.
 
-.. *Storage Class*: Select the S3 storage class that you want to transition the data to after 30 days.
+.. *Storage Class*: Select the S3 storage class that you want to transition the tiered data to after 30 days.
 +
-If you choose Standard, then the data remains in that storage class.
+link:reference_aws_support.html[See supported storage classes^]. If you choose Standard, then the data remains in that storage class and no rules are applied.
 
 .. *Credentials*: Enter the access key ID and secret key for an IAM user who has the required S3 permissions.
 +
