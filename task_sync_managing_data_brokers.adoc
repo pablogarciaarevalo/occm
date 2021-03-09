@@ -174,3 +174,25 @@ image:screenshot_sync_broker_status.gif[]
 . Correct the issue.
 +
 For example, you might need to simply restart the data broker if it's offline, or you might need to remove data broker if the initial deployment failed.
+
+== Defining a unified configuration for a data broker group
+
+If a sync relationship encounters errors during the sync process, unifying the concurrency of the data broker group can help to decrease the number of sync errors. Be aware that changes to the group's configuration can affect performance by slowing down the transfer.
+
+We don't recommend changing the configuration on your own. You should consult with NetApp to understand when to change the configuration and how to change it.
+
+.Steps
+
+. Click *Manage Data Brokers*.
+
+. Click the Settings icon for a data broker group.
+
+. Change the settings as needed and then click *Unify Configuration*.
++
+Note the following:
++
+* You can pick and choose which settings to change--you don't need to change all four at once.
+* After a new configuration is sent to a data broker, the data broker automatically restarts and uses the new configuration.
+* It can take up to a minute until this change takes place and is visible in the Cloud Sync interface.
+* If a data broker isn't running, it's configuration won't change because Cloud Sync can't communicate with it. The configuration will change after the data broker restarts.
+* After you set a unified configuration, any new data brokers will automatically use the new configuration.

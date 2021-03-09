@@ -55,7 +55,7 @@ Instance type::
 ** https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html[AWS Documentation: Amazon EBS–Optimized Instances^]
 
 EBS disk type::
-General Purpose SSDs are the most common disk type for Cloud Volumes ONTAP. To view the use cases for EBS disks, refer to http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html[AWS Documentation: EBS Volume Types^].
+General Purpose SSDs (gp2) are the most common disk type for Cloud Volumes ONTAP. To view the use cases for EBS disks, refer to http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html[AWS Documentation: EBS Volume Types^].
 
 EBS disk size::
 You need to choose an initial disk size when you launch a Cloud Volumes ONTAP system. After that, you can link:concept_storage_management.html[let Cloud Manager manage a system's capacity for you], but if you want to link:task_provisioning_storage.html#creating-aggregates[build aggregates yourself], be aware of the following:
@@ -79,7 +79,7 @@ There are a few limitations to point out:
 
 * Only single node Cloud Volumes ONTAP systems are supported at this time
 * The EC2 instances that you can use with Cloud Volumes ONTAP are limited to what's available in your Outpost
-* Only General Purpose SSDs are supported at this time
+* Only General Purpose SSDs (gp2) are supported at this time
 
 == AWS network information worksheet
 
