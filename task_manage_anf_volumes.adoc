@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_manage_anf_volumes.html
-keywords: azure netapp files, create volumes, delete volumes, create nfs volumes, delete nfs volumes, netapp account, capacity pool, create capacity pool, azure netapp files permissions, azure permissions, mount path, get mount path, find mount path, mount volume
+keywords: azure netapp files, create volumes, delete volumes, create nfs volumes, delete nfs volumes, netapp account, capacity pool, create capacity pool, azure netapp files permissions, azure permissions, mount path, get mount path, find mount path, mount volume, change service level
 summary: After you set up your working environment, you can start create and manage Azure NetApp Files accounts, capacity pools, volumes, and snapshots.
 ---
 
@@ -19,6 +19,12 @@ After you set up your working environment, you can create and manage Azure NetAp
 
 You can create NFS or SMB volumes in a new or existing Azure NetApp Files account.
 
+.Before you begin
+
+* If you want to use SMB, you must have set up DNS and Active Directory.
+
+* When planning to create an SMB volume, you must have a Windows Active Directory server available to which you can connect. You will enter this information when creating the volume.
+
 .Steps
 
 . Open the Azure NetApp Files working environment.
@@ -27,9 +33,9 @@ You can create NFS or SMB volumes in a new or existing Azure NetApp Files accoun
 
 . Provide the required information on each page:
 
-* *Azure NetApp Files Account*: Choose an existing Azure NetApp Files account or create a new account.
+* *Azure NetApp Files Account*: Choose an existing Azure NetApp Files account or create a new account. When creating a new account you can also choose the Resource Group that you want to use.
 +
-image:screenshot_anf_create_account.gif["A screenshot of the fields required to create an Azure NetApp Files account, which includes a name, Azure subscription, location, and resource group."]
+image:screenshot_anf_create_account.png[A screenshot of the fields required to create an Azure NetApp Files account, which includes a name, Azure subscription, location, and resource group.]
 
 * *Capacity Pool*: Select an existing capacity pool or create a new capacity pool.
 +
@@ -43,13 +49,21 @@ The minimum size for the capacity pool is 4 TB. You can specify a size in multip
 +
 Here's an example of details for NFS.
 +
-image:screenshot_anf_nfs.gif[]
+image:screenshot_anf_nfs.gif[A screenshot of the fields required to set up an NFS volume.]
 +
-Here's an example of details for SMB. You'll need to provide Active Directory information when you set up your first SMB volume.
+Here's an example of details for SMB. You'll need to provide Active Directory information on the next page when you set up your first SMB volume.
 +
-image:screenshot_anf_smb.gif[]
+image:screenshot_anf_smb.gif[A screenshot of the fields required to set up an SMB volume.]
+
+. If you want this volume to be created based on a snapshot of an existing volume, select the snapshot from the Snapshot Name drop-down list.
 
 . Click *Add Volume*.
+
+.Result
+
+The new volume is added to the working environment.
+
+Continue with mounting the cloud volume.
 
 == Mounting volumes
 
@@ -61,7 +75,7 @@ Access mounting instructions from within Cloud Manager so you can mount the volu
 
 . Hover over the volume and select *Mount the volume*.
 +
-image:screenshot_anf_hover.gif[]
+image:screenshot_anf_hover.png[A screenshot of available operations available when you hover the cursor over a volume.]
 
 . Follow the instructions to mount the volume.
 
@@ -79,6 +93,24 @@ After you create a volume, you can modify its size and tags at any time.
 
 . Click *Apply*.
 
+== Changing the volume's service level
+
+After you create a volume, you can change the service level at any time as long as the destination capacity pool already exists.
+
+.Steps
+
+. Open the working environment.
+
+. Hover over the volume and select *Change service level*.
+
+. Select the capacity pool that provides the service level that you want.
+
+. Click *Change*.
+
+.Result
+
+The volume is moved to the other capacity pool with no impact to the volume.
+
 == Managing Snapshot copies
 
 Snapshot copies provide a point-in-time copy of your volume. Create Snapshot copies, restore the data to a new volume, and delete Snapshot copies.
@@ -90,7 +122,7 @@ Snapshot copies provide a point-in-time copy of your volume. Create Snapshot cop
 . Hover over the volume and choose one of the available options to manage Snapshot copies:
 
 * *Create a Snapshot copy*
-* *Restore to a new volume*
+* *Revert volume to Snapshot*
 * *Delete a Snapshot copy*
 
 . Follow the prompts to complete the selected action.
@@ -117,6 +149,6 @@ This action removes Azure NetApp Files from Cloud Manager. It doesn't delete you
 
 . At the top right of the page, select the actions menu and click *Remove Azure NetApp Files*.
 +
-image:screenshot_anf_remove.gif[]
+image:screenshot_anf_remove.gif[A screenshot of clicking Remove Azure NetApp Files to remove the volumes from the Cloud Manager interface.]
 
 . Click *Remove* to confirm.
