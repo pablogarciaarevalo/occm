@@ -137,7 +137,6 @@ if (document.location.hostname.search("netapp.com") !== -1) {
 <li><a href="#_activedirectorycreaterequest">ActiveDirectoryCreateRequest</a></li>
 <li><a href="#_activedirectoryentry">ActiveDirectoryEntry</a></li>
 <li><a href="#_activedirectoryupdaterequest">ActiveDirectoryUpdateRequest</a></li>
-<li><a href="#_addawsregionsrequest">AddAwsRegionsRequest</a></li>
 <li><a href="#_adddiskstoaggregaterequest">AddDisksToAggregateRequest</a></li>
 <li><a href="#_addportaluserrequest">AddPortalUserRequest</a></li>
 <li><a href="#_addtagsrequest">AddTagsRequest</a></li>
@@ -272,13 +271,11 @@ if (document.location.hostname.search("netapp.com") !== -1) {
 <li><a href="#_createbucketreq">CreateBucketReq</a></li>
 <li><a href="#_createcifsshareinforequest">CreateCifsShareInfoRequest</a></li>
 <li><a href="#_createcloudcompliancebywesrequest">CreateCloudComplianceByWesRequest</a></li>
-<li><a href="#_createfilesystemrequest">CreateFilesystemRequest</a></li>
 <li><a href="#_creategcpvsaworkingenvironmentrequest">CreateGcpVsaWorkingEnvironmentRequest</a></li>
 <li><a href="#_createiscsiinforequest">CreateIscsiInfoRequest</a></li>
 <li><a href="#_createreplicationrequesttoonprem">CreateReplicationRequestToOnPrem</a></li>
 <li><a href="#_createreplicationrequesttovsa">CreateReplicationRequestToVsa</a></li>
 <li><a href="#_createrequestparametersresponse">CreateRequestParametersResponse</a></li>
-<li><a href="#_createsvmharequest">CreateSvmHaRequest</a></li>
 <li><a href="#_createsyncrequest">CreateSyncRequest</a></li>
 <li><a href="#_createvsaworkingenvironmentrequest">CreateVSAWorkingEnvironmentRequest</a></li>
 <li><a href="#_cronjobschedule">CronJobSchedule</a></li>
@@ -426,7 +423,6 @@ if (document.location.hostname.search("netapp.com") !== -1) {
 <li><a href="#_mediatorupgradeconfiguration">MediatorUpgradeConfiguration</a></li>
 <li><a href="#_mediatorversioninfo">MediatorVersionInfo</a></li>
 <li><a href="#_metadataresponse">MetadataResponse</a></li>
-<li><a href="#_modifymappingrequest">ModifyMappingRequest</a></li>
 <li><a href="#_modifyusertagsrequest">ModifyUserTagsRequest</a></li>
 <li><a href="#_money">Money</a></li>
 <li><a href="#_monitoringinfo">MonitoringInfo</a></li>
@@ -434,7 +430,6 @@ if (document.location.hostname.search("netapp.com") !== -1) {
 <li><a href="#_monitoringstatusresponse">MonitoringStatusResponse</a></li>
 <li><a href="#_ntpconfigurationrequest">NTPConfigurationRequest</a></li>
 <li><a href="#_namedexportpolicyinfo">NamedExportPolicyInfo</a></li>
-<li><a href="#_networkinterfaceinfo">NetworkInterfaceInfo</a></li>
 <li><a href="#_networkrequirementsresponse">NetworkRequirementsResponse</a></li>
 <li><a href="#_nksinforesponse">NksInfoResponse</a></li>
 <li><a href="#_nssaccountcredentials">NssAccountCredentials</a></li>
@@ -534,8 +529,6 @@ if (document.location.hostname.search("netapp.com") !== -1) {
 <li><a href="#_snapshotresponse">SnapshotResponse</a></li>
 <li><a href="#_snapshotpolicycreaterequest">SnapshotPolicyCreateRequest</a></li>
 <li><a href="#_snapshotpolicyschedulerequest">SnapshotPolicyScheduleRequest</a></li>
-<li><a href="#_softwareversionamisresponse">SoftwareVersionAmisResponse</a></li>
-<li><a href="#_softwareversionsresponse">SoftwareVersionsResponse</a></li>
 <li><a href="#_sortby">SortBy</a></li>
 <li><a href="#_sortdirection">SortDirection</a></li>
 <li><a href="#_sourceortargetreplication">SourceOrTargetReplication</a></li>
@@ -63190,36 +63183,6 @@ kmsKey=`cat kmsKey.txt`</pre>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_addawsregionsrequest">AddAwsRegionsRequest</h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Required</th>
-<th class="tableblock halign-left valign-top">Schema</th>
-<th class="tableblock halign-left valign-top">Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">newRegions</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_region">Region</a> array</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
 <h3 id="_adddiskstoaggregaterequest">AddDisksToAggregateRequest</h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -71188,176 +71151,6 @@ kmsKey=`cat kmsKey.txt`</pre>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_createfilesystemrequest">CreateFilesystemRequest</h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Required</th>
-<th class="tableblock halign-left valign-top">Schema</th>
-<th class="tableblock halign-left valign-top">Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">svmPassword</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">vpcId</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">region</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ebsVolumeSize</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EBS volume size</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_capacity">Capacity</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ebsVolumeType</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EBS volume type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">enum (gp2,  st1,  io1,  io2)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ontapVersion</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ontap Version</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">instanceType</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Instance Type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">haParams</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_haparameters">HaParameters</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">node1CustomerDataEni</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_networkinterfaceinfo">NetworkInterfaceInfo</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">node2CustomerDataEni</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_networkinterfaceinfo">NetworkInterfaceInfo</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">node1SerialNumber</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">node2SerialNumber</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">awsEncryptionParameters</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Parameters required if using aws encryption</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_awsencryption">AwsEncryption</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">securityGroupId</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">skipSnapshots</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Take snapshot flag</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">capacityTier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Capacity tier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">enum (S3)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">iops</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provisioned IOPS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">integer (int32)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">instanceProfileName</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Instance profile name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">tierLevel</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Tier Level</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">enum (normal,  ia,  ia-single,  intelligent)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">svmAdminPassword</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SVM admin password</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
 <h3 id="_creategcpvsaworkingenvironmentrequest">CreateGcpVsaWorkingEnvironmentRequest</h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -71796,71 +71589,6 @@ kmsKey=`cat kmsKey.txt`</pre>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Map[string,any]</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_createsvmharequest">CreateSvmHaRequest</h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Required</th>
-<th class="tableblock halign-left valign-top">Schema</th>
-<th class="tableblock halign-left valign-top">Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">svmName</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">svmPassword</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">subnet1Cidr</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">subnet2Cidr</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dataFloatingIp</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">svmMgmtFloatingIp</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
@@ -79994,36 +79722,6 @@ kmsKey=`cat kmsKey.txt`</pre>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_modifymappingrequest">ModifyMappingRequest</h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Required</th>
-<th class="tableblock halign-left valign-top">Schema</th>
-<th class="tableblock halign-left valign-top">Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">newMapping</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Map[string,string]</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
 <h3 id="_modifyusertagsrequest">ModifyUserTagsRequest</h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -80326,57 +80024,6 @@ kmsKey=`cat kmsKey.txt`</pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Export policy protocol</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string array</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_networkinterfaceinfo">NetworkInterfaceInfo</h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Required</th>
-<th class="tableblock halign-left valign-top">Schema</th>
-<th class="tableblock halign-left valign-top">Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">primaryIpAddress</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">secondaryIpAddresses</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string array</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">subnetCidrBlock</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
@@ -85944,66 +85591,6 @@ kmsKey=`cat kmsKey.txt`</pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Snapshot policy retention</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">integer (int32)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_softwareversionamisresponse">SoftwareVersionAmisResponse</h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Required</th>
-<th class="tableblock halign-left valign-top">Schema</th>
-<th class="tableblock halign-left valign-top">Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">regionToAmi</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Map[string,string]</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_softwareversionsresponse">SoftwareVersionsResponse</h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Required</th>
-<th class="tableblock halign-left valign-top">Schema</th>
-<th class="tableblock halign-left valign-top">Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">versions</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string array</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>

@@ -108,7 +108,7 @@ entries:
           - title: Launch a system in AWS
             url: /task_deploying_otc_aws.html
           - title: Get started in AWS C2S
-            url: https://docs.netapp.com/us-en/occm/media/c2s.pdf
+            url: /task_getting_started_aws_c2s.html
       - title: Get started in Azure
         entries:
           - title: Quick start
