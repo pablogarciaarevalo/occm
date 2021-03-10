@@ -50,6 +50,10 @@ Note that you'll need to provide the Cloud Volumes ONTAP IAM role with access to
 +
 link:task_setting_up_kms.html[Learn more about setting up the AWS KMS with Cloud Volumes ONTAP].
 
+==== Enhancement available in Azure
+
+You can now deploy Cloud Volumes ONTAP 9.8 in the Azure Department of Defense (DoD) Impact Level 6 (IL6).
+
 ==== Enhancements available in Google Cloud
 
 * We've reduced the number of IP addresses that are required for Cloud Volumes ONTAP 9.8 and later in Google Cloud. By default, one less IP address is required (we unified the intercluster LIF with the node management LIF). You also have the option to skip the creation of the SVM management LIF when using the API, which would reduce the need for an additional IP address.
