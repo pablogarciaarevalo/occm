@@ -251,7 +251,9 @@ There are certain things you need to be aware of when the volume you are backing
 
 * When making backups from on-premises ONTAP systems, the Connector must be deployed in the cloud. There is no support for on-premises Connector deployments.
 
-* When backing up data protection (DP) volumes, the rule that is defined for the SnapMirror policy on the source volume must use a label that matches the allowed Cloud Backup policy names of *daily*, *weekly*, or *monthly*. Otherwise the backup will fail for that DP volume.
+* When backing up data protection (DP) volumes:
+** Only DP volumes that are a destination of a Vault/MirrorAndVault relationship are supported. DP volumes created using the MirrorAllSnapshots policy cannot be backed up and will fail with an error.
+** The rule that is defined for the SnapMirror policy on the source volume must use a label that matches the allowed Cloud Backup policy names of *daily*, *weekly*, or *monthly*. Otherwise the backup will fail for that DP volume.
 
 * In Azure, if you enable Cloud Backup when Cloud Volumes ONTAP is deployed, Cloud Manager creates the resource group for you and you cannot change it. If you want to pick your own resource group when enabling Cloud Backup, *disable* Cloud Backup when deploying Cloud Volumes ONTAP and then enable Cloud Backup and choose the resource group from the Cloud Backup Settings page.
 
