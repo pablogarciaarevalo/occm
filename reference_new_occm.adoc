@@ -19,6 +19,84 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.4 (8 Mar 2021)
+
+* <<Cloud Volumes ONTAP enhancements>>
+* <<Connector enhancements>>
+* <<Cloud Sync enhancements>>
+* <<Cloud Tiering enhancements>>
+* <<Active IQ enhancements>>
+
+=== Cloud Volumes ONTAP enhancements
+
+This release of Cloud Manager includes enhancements to the management of Cloud Volumes ONTAP.
+
+==== Enhancement available in all cloud providers
+
+Cloud Manager can now deploy and manage Cloud Volumes ONTAP 9.9.0.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_990.html[Learn about the new features included in this release of Cloud Volumes ONTAP^].
+
+==== Enhancement available in AWS
+
+Cloud Manager has always enabled you to encrypt Cloud Volumes ONTAP data using the AWS Key Management Service (KMS). Starting with Cloud Volumes ONTAP 9.9.0, data on EBS disks and data tiered to S3 are encrypted if you select a customer-managed CMK. Previously, only EBS data would be encrypted.
+
+Note that you'll need to provide the Cloud Volumes ONTAP IAM role with access to use the CMK.
+
+link:task_setting_up_kms.html[Learn more about setting up the AWS KMS with Cloud Volumes ONTAP].
+
+==== Enhancements available in Google Cloud
+
+* We've reduced the number of IP addresses that are required for Cloud Volumes ONTAP 9.8 and later in Google Cloud. By default, one less IP address is required (we unified the intercluster LIF with the node management LIF). You also have the option to skip the creation of the SVM management LIF when using the API, which would reduce the need for an additional IP address.
++
+link:reference_networking_gcp.html#requirements-for-cloud-volumes-ontap[Learn more about IP address requirements in Google Cloud].
+
+* When you deploy a Cloud Volumes ONTAP HA pair in Google Cloud, you can now choose shared VPCs for VPC-1, VPC-2, and VPC-3. Previously, only VPC-0 could be a shared VPC. This change is supported with Cloud Volumes ONTAP 9.8 and later.
++
+link:reference_networking_gcp.html[Learn more about Google Cloud networking requirements].
+
+=== Connector enhancements
+
+* Cloud Manager now notifies Admin users through an email when a Connector isn't running.
++
+Keeping your Connectors up and running helps to ensure the best management of Cloud Volumes ONTAP and other NetApp Cloud Services.
+
+* Cloud Manager now displays a notification if you need to change the instance type for your Connector.
++
+Changing the instance type ensures that you can use the new features and capabilities that you're currently missing. link:reference_key_changes.html#machine-type-changes[Learn more about machine type changes].
+
+=== Cloud Sync enhancements
+
+* Cloud Sync now supports sync relationships between ONTAP S3 Storage and SMB servers:
+** ONTAP S3 Storage to an SMB server
+** An SMB server to ONTAP S3 Storage
++
+link:reference_sync_requirements.html[View supported sync relationships].
+
+* Cloud Sync now enables you to unify a data broker group's configuration directly from the user interface.
++
+We don't recommend changing the configuration on your own. You should consult with NetApp to understand when to change the configuration and how to change it.
++
+link:task_sync_managing_data_brokers.html[Learn more about defining a unified configuration].
+
+=== Cloud Tiering enhancements
+
+* When tiering to Google Cloud Storage, you can apply a lifecycle rule so that the tiered data transitions from the Standard storage class to lower-cost Nearline, Coldline, or Archive storage after 30 days.
+
+* Cloud Tiering now displays if you have any undiscovered on-prem ONTAP clusters so that you can add them to Cloud Manager to enable tiering or other services on those clusters.
++
+link:task_managing_tiering.html#discovering-additional-clusters-from-cloud-tiering[Learn how to discover these additional clusters].
+
+=== Active IQ enhancements
+
+* When Active IQ displays the list of your on-prem clusters (based on your NSS account), you can click a button to link:task_discovering_ontap.html#discovering-clusters-from-the-active-iq-page[discover the cluster^] and add it to the Cloud Manager Canvas. This makes it easier to manage all your storage systems from Cloud Manager.
+
+* When Active IQ determines that one or more clusters require firmware updates, you can click a button to link:task_managing_ontap.html#downloading-new-disk-and-shelf-firmware[download the Ansible playbook and upgrade the cluster firmware^].
+
+* A new link:task_managing_ontap.html#viewing-on-prem-workloads-that-are-candidates-for-the-cloud[Cloud-Ready Workloads tab^] provides a list of the workloads or volumes that we have identified as ideal to move to the cloud from your on-prem ONTAP clusters. Moving some of these volumes could reduce your costs and improve performance and resiliency.
++
+See link:https://www.netapp.com/knowledge-center/what-is-lift-and-shift^[What is Lift and Shift?]
+
 == Cloud Manager 3.9.3 update (16 Feb 2021)
 
 === Cloud Backup Service enhancements
@@ -157,7 +235,7 @@ There are a few limitations to point out:
 
 * Only single node Cloud Volumes ONTAP systems are supported at this time
 * The EC2 instances that you can use with Cloud Volumes ONTAP are limited to what's available in your Outpost
-* Only General Purpose SSDs are supported at this time
+* Only General Purpose SSDs (gp2) are supported at this time
 
 ==== Support for Ultra SSD VNVRAM in all supported Azure regions
 
@@ -306,7 +384,7 @@ TIP: The GCP service account associated with the Connector link:https://occm-sam
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_98.html[Learn what else is new in Cloud Volumes ONTAP 9.8^].
 
-== Cloud Manager 3.9 (8 Nov 2020)
+== Cloud Manager 3.9 update (8 Nov 2020)
 
 We released an enhancement to Cloud Manager 3.9.
 

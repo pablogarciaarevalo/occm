@@ -17,12 +17,12 @@ Cloud Manager enables IT experts and cloud architects to centrally manage their 
 
 * link:reference_key_changes.html[Important changes in Cloud Manager]
 * link:reference_new_occm.html[What's new in Cloud Manager]
-* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_98.html[What's new in Cloud Volumes ONTAP^]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_990.html[What's new in Cloud Volumes ONTAP^]
 
 == Get started
 
 * link:concept_overview.html[Cloud Manager]
-* link:concept_cloud_central_accounts[Account settings]
+* link:concept_cloud_central_accounts.html[Account settings]
 * link:task_getting_started_aws.html[Cloud Volumes ONTAP for AWS]
 * link:task_getting_started_azure.html[Cloud Volumes ONTAP for Azure]
 * link:task_getting_started_gcp.html[Cloud Volumes ONTAP for Google Cloud]
