@@ -38,12 +38,16 @@ Cloud Manager can now deploy and manage Cloud Volumes ONTAP 9.9.0.
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_990.html[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
-==== Enhancement available in AWS
+==== Enhancements available in AWS
 
-Cloud Manager has always enabled you to encrypt Cloud Volumes ONTAP data using the AWS Key Management Service (KMS). Starting with Cloud Volumes ONTAP 9.9.0, data on EBS disks and data tiered to S3 are encrypted if you select a customer-managed CMK. Previously, only EBS data would be encrypted.
+* You can now deploy Cloud Volumes ONTAP 9.8 in the AWS Commercial Cloud Services (C2S) environment.
++
+link:task_getting_started_aws_c2s.html[Learn how to get started in C2S].
 
+* Cloud Manager has always enabled you to encrypt Cloud Volumes ONTAP data using the AWS Key Management Service (KMS). Starting with Cloud Volumes ONTAP 9.9.0, data on EBS disks and data tiered to S3 are encrypted if you select a customer-managed CMK. Previously, only EBS data would be encrypted.
++
 Note that you'll need to provide the Cloud Volumes ONTAP IAM role with access to use the CMK.
-
++
 link:task_setting_up_kms.html[Learn more about setting up the AWS KMS with Cloud Volumes ONTAP].
 
 ==== Enhancements available in Google Cloud
