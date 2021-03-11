@@ -69,8 +69,8 @@ The following links provide pricing and subscription details for these services.
 
 * Cloud Volumes ONTAP
 ** link:task_deploying_gcp.html#subscribe[Learn how to subscribe to Cloud Volumes ONTAP for AWS]
-** link:task_deploying_otc_azure.html#video[Learn how to subscribe to Cloud Volumes ONTAP in Azure]
-** link:task_deploying_gcp.html#subscribe[Learn how to subscribe to Cloud Volumes ONTAP in Google Cloud]
+** link:task_deploying_otc_azure.html#video[Learn how to subscribe to Cloud Volumes ONTAP for Azure]
+** link:task_deploying_gcp.html#subscribe[Learn how to subscribe to Cloud Volumes ONTAP for Google Cloud]
 * Cloud Backup
 ** link:concept_backup_to_cloud.html#cost[Learn about Cloud Backup costs]
 * Cloud Tiering
