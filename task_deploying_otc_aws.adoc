@@ -62,7 +62,7 @@ For information about tags, refer to https://docs.aws.amazon.com/AWSEC2/latest/U
 
 | User name and password | These are the credentials for the Cloud Volumes ONTAP cluster admin account. You can use these credentials to connect to Cloud Volumes ONTAP through OnCommand System Manager or its CLI.
 
-| Edit Credentials | Choose the AWS credentials and marketplace subscription to use with this Cloud Volumes ONTAP system.
+| [[subscribe]]Edit Credentials | Choose the AWS credentials and marketplace subscription to use with this Cloud Volumes ONTAP system.
 
 Click *Add Subscription* to associate the selected credentials with a subscription.
 
