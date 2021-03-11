@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_managing_tiering.html
 keywords: discover, volumes, report, hot, cold, inactive, active, capacity, used capacity, savings, health, failed
-summary: Now that you've discovered and tiered data from your first ONTAP cluster, you can tier data from additional volumes, discover additional clusters, and more.
+summary: Now that you've set up data tiering from your on-prem ONTAP clusters, you can tier data from additional volumes, change a volume's tiering policy, discover additional clusters, and more.
 ---
 
 = Managing data tiering from your clusters
@@ -13,7 +13,7 @@ summary: Now that you've discovered and tiered data from your first ONTAP cluste
 :imagesdir: ./media/
 
 [.lead]
-Now that you've set up data tiering from your on-prem ONTAP clusters, you can tier data from additional volumes, change a volume's tiering policy, and more.
+Now that you've set up data tiering from your on-prem ONTAP clusters, you can tier data from additional volumes, change a volume's tiering policy, discover additional clusters, and more.
 
 == Tiering data from additional volumes
 
@@ -55,7 +55,7 @@ link:concept_cloud_tiering.html#volume-tiering-policies[Learn more about volume 
 
 == Managing tiering settings on aggregates
 
-Each aggregate has two settings that you can adjust: the tiering fullness threshold and whether inactive data reporting is enabled.
+Each aggregate in your on-prem ONTAP systems has two settings that you can adjust: the tiering fullness threshold and whether inactive data reporting is enabled.
 
 Tiering fullness threshold::
 Setting the threshold to a lower number reduces the amount of data required to be stored on the performance tier before tiering takes place. This might be useful for large aggregates that contain little active data.
@@ -121,25 +121,33 @@ image:https://docs.netapp.com/us-en/cloud-tiering/media/screenshot_tiering_healt
 
 You can add your undiscovered on-prem ONTAP clusters to Cloud Manager from the Tiering _Cluster Dashboard_ so that you can enable tiering for the cluster.
 
-If your NSS credentials are saved in Cloud Manager, the top of the page displays whether you have any on-prem clusters in your account that have not been discovered in Cloud Manager.
-
-If your NSS credentials are not already saved in Cloud Manager, you are first prompted to add your credentials before you can see if there are undiscovered clusters.  See link:task_adding_nss_accounts.html[Adding NetApp Support Site accounts to Cloud Manager^] for more information.
-
-Note that buttons appear in the Tiering _On-Prem Overview_ page as well for you to discover additional clusters.
+Note that buttons also appear on the Tiering _On-Prem Overview_ page for you to discover additional clusters.
 
 .Steps
 
 . From Cloud Tiering, click the *Cluster Dashboard* tab.
 
-. If the overview row at the top of the page shows that you have undiscovered on-prem clusters, scroll down the page to locate the clusters.
+. To see any undiscovered clusters, click *Show Undiscovered Clusters*.
++
+image:screenshot_tiering_show_undiscovered_cluster.png[A screenshot showing the Show Undiscovered Clusters button on the Tiering Dashboard.]
++
+If your NSS credentials are saved in Cloud Manager, the clusters in your account are displayed in the list.
++
+If your NSS credentials are not saved in Cloud Manager, you are first prompted to add your credentials before you can see the undiscovered clusters.
+
+. Scroll down the page to locate the clusters.
 +
 image:screenshot_tiering_discover_cluster.png[A screenshot showing how to discover an existing cluster to add to Cloud Manager and the Tiering Dashboard.]
 
 . Click *Discover Cluster* for the cluster that you want to manage through Cloud Manager and implement data tiering.
 
+. On the _Choose a Location_ page *On-Premises ONTAP* is pre-selected, so just click *Continue*.
+
 . On the _ONTAP Cluster Details_ page, enter the password for the admin user account and click *Add*.
 +
 Note that the cluster management IP address is populated based on information from your NSS account.
+
+. On the _Details & Credentials_ page the cluster name is added as the Working Environment Name, so just click *Go*.
 
 .Result
 

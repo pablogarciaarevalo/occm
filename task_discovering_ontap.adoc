@@ -70,11 +70,15 @@ image:screenshot_aiq_clusters.png[A screenshot of the Active IQ page showing all
 
 . Click *Discover* for the cluster that you want to manage through Cloud Manager.
 
+. On the _Choose a Location_ page *On-Premises ONTAP* is pre-selected, so just click *Continue*.
+
 . On the _ONTAP Cluster Details_ page, enter the password for the admin user account and click *Add*.
 +
 image:screenshot_discover_ontap.png[A screenshot that shows an example of the ONTAP Cluster Details page: the cluster management IP address, user name and password.]
 +
 Note that the cluster management IP address is populated based on information from Active IQ.
+
+. On the _Details & Credentials_ page the cluster name is added as the Working Environment Name, so just click *Go*.
 
 .Result
 
@@ -100,7 +104,7 @@ Refer to the links above for more details.
 +
 image:screenshot_discover_ontap.png[A screenshot that shows an example of the ONTAP Cluster Details page: the cluster management IP address, user name and password.]
 
-. On the Details page, enter a name and description for the working environment, and then click *Go*.
+. On the _Details & Credentials_ page, enter a name and description for the working environment, and then click *Go*.
 
 .Result
 
