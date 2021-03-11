@@ -27,23 +27,23 @@ You can see whether you have any unused Cloud Volumes ONTAP licenses based on yo
 . Click the *Licenses* tab in the lower portion of the page.
 +
 image:screenshot_aiq_licenses.png[A screenshot of the used and unused Cloud Volumes ONTAP licenses.]
-// +
-// A *Use License* button appears for each unused license.
-// +
-// . If you want to activate and start using the license, click *Use License*.
-// +
-// image:screenshot_aiq_use_license.png[Screenshot of the two use license options.]
-//
-// See the tasks below to learn about the options for using the available licenses.
-//
-// == Using unused Cloud Volumes ONTAP licenses
-//
-// You can use unused licenses to create a new Cloud Volumes ONTAP instance or to extend the capacity of the license on an existing Cloud Volumes ONTAP instance. The capacity of the license is 368 TB.
 +
+A *Use License* button appears for each unused license.
++
+. If you want to activate and start using the license, click *Use License*.
++
+image:screenshot_aiq_use_license.png[Screenshot of the two use license options.]
+
+See the tasks below to learn about the options for using the available licenses.
+
+== Using unused Cloud Volumes ONTAP licenses
+
+You can use unused licenses to create a new Cloud Volumes ONTAP instance or to extend the capacity of the license on an existing Cloud Volumes ONTAP instance. The capacity of the license is 368 TB.
+
 The _Expires_ column indicates the last day the license is active. When creating a new Cloud Volumes ONTAP system this is the date the license expires. When updating an existing Cloud Volumes ONTAP system this indicates the length of time the existing license is extended.
-+
+
 The _License Type_, _Hyperscaler_, and _Model Type_ columns describe the type of Cloud Volumes ONTAP license it is. For example, *BYOL | Single | Azure* means the license is a "bring-your-own" license for a "single node" Cloud Volumes ONTAP system deployed in "Microsoft Azure". The values that can appear in this column are shown in the table.
-+
+
 [cols=2*,options="header",width=60%,cols="25,25"]
 |===
 
@@ -69,50 +69,50 @@ HA
 
 |===
 
-// When creating a _new_ Cloud Volumes ONTAP system, this is the type of system you are deploying. For example, using the sample license (*BYOL | Single | Azure*), you can create a single-node Cloud Volumes ONTAP system in Azure with entitlement for up to 368 TB. This license can't be used to create an HA system or to deploy an instance in AWS.
-//
-// When updating an _existing_ Cloud Volumes ONTAP system, this indicates the type of system that can have the capacity for its existing license extended. Using the sample license again, you can extend the license for any single-node Cloud Volumes ONTAP system in Azure. This license can't be used to extend the license for an HA system or for an instance deployed in AWS.
-//
-// === Creating a new Cloud Volumes ONTAP system with the unused license
-//
-// Follow these steps to create a new Cloud Volumes ONTAP instance with the unused license.
-//
-// .Steps
-//
-// . Click *Use License* and select *Use License for a new Cloud Volumes ONTAP*.
-//
-// . In the "Use License..." page, verify the license information and click *Use License*.
-// +
-// In most cases you will be directed to the *Details & Credentials* page for creating the working environment for the Cloud Volumes ONTAP system because both the cloud provider and number of nodes are defined by the license.
-// +
-// If you are using a license defined as "All Providers", then you are directed to the *Choose a Location* page so you can pick the cloud provider first, before completing the *Details & Credentials* page.
-//
-// . Follow the steps to create the working environment and your first volume.
-// +
-// See the following sections depending on the cloud provider on which you are deploying the Cloud Volumes ONTAP system.
-// +
-//
-// * link:task_deploying_otc_azure.html[Launching Cloud Volumes ONTAP in Azure^]
-// * link:task_deploying_otc_aws.html[Launching Cloud Volumes ONTAP in AWS^]
-// * link:task_deploying_gcp.html[Launching Cloud Volumes ONTAP in GCP^]
-//
-// === Extending the license capacity for an existing Cloud Volumes ONTAP system
-//
-// If you have a currently deployed Cloud Volumes ONTAP system that matches the license requirements of one of the free licenses (meaning the same cloud provider, number of nodes, etc.), you can follow these steps to extend the capacity of the license by 368 TB.
-//
-// .Steps
-//
-// . Click *Use License* and select *Add License to existing Cloud Volumes ONTAP*.
-// +
-// image:screenshot_aiq_extend_license.png[A screenshot of the add license dialog for adding a license to an existing Cloud Volumes ONTAP system.]
-//
-// . In the "Add License..." page, select the Cloud Volumes ONTAP system where you want to extend the license and click *Add License*.
-// +
-// A confirmation dialog is displayed.
-// +
-// image:screenshot_aiq_license_added.png[A screenshot showing that the license has been added to a Cloud Volumes ONTAP system.]
-//
-// . You can click *Close* to close the window and return to the Active IQ page, or you can click the link to go to the Cloud Volumes ONTAP Licensing page to view more details about licensing for that system.
+When creating a _new_ Cloud Volumes ONTAP system, this is the type of system you are deploying. For example, using the sample license (*BYOL | Single | Azure*), you can create a single-node Cloud Volumes ONTAP system in Azure with entitlement for up to 368 TB. This license can't be used to create an HA system or to deploy an instance in AWS.
+
+When updating an _existing_ Cloud Volumes ONTAP system, this indicates the type of system that can have the capacity for its existing license extended. Using the sample license again, you can extend the license for any single-node Cloud Volumes ONTAP system in Azure. This license can't be used to extend the license for an HA system or for an instance deployed in AWS.
+
+=== Creating a new Cloud Volumes ONTAP system with the unused license
+
+Follow these steps to create a new Cloud Volumes ONTAP instance with the unused license.
+
+.Steps
+
+. Click *Use License* and select *Use License for a new Cloud Volumes ONTAP*.
+
+. In the "Use License..." page, verify the license information and click *Use License*.
++
+In most cases you will be directed to the *Details & Credentials* page for creating the working environment for the Cloud Volumes ONTAP system because both the cloud provider and number of nodes are defined by the license.
++
+If you are using a license defined as "All Providers", then you are directed to the *Choose a Location* page so you can pick the cloud provider first, before completing the *Details & Credentials* page.
+
+. Follow the steps to create the working environment and your first volume.
++
+See the following sections depending on the cloud provider on which you are deploying the Cloud Volumes ONTAP system.
++
+
+* link:task_deploying_otc_azure.html[Launching Cloud Volumes ONTAP in Azure^]
+* link:task_deploying_otc_aws.html[Launching Cloud Volumes ONTAP in AWS^]
+* link:task_deploying_gcp.html[Launching Cloud Volumes ONTAP in GCP^]
+
+=== Extending the license capacity for an existing Cloud Volumes ONTAP system
+
+If you have a currently deployed Cloud Volumes ONTAP system that matches the license requirements of one of the free licenses (meaning the same cloud provider, number of nodes, etc.), you can follow these steps to extend the capacity of the license by 368 TB.
+
+.Steps
+
+. Click *Use License* and select *Add License to existing Cloud Volumes ONTAP*.
++
+image:screenshot_aiq_extend_license.png[A screenshot of the add license dialog for adding a license to an existing Cloud Volumes ONTAP system.]
+
+. In the "Add License..." page, select the Cloud Volumes ONTAP system where you want to extend the license and click *Add License*.
++
+A confirmation dialog is displayed.
++
+image:screenshot_aiq_license_added.png[A screenshot showing that the license has been added to a Cloud Volumes ONTAP system.]
+
+. You can click *Close* to close the window and return to the Active IQ page, or you can click the link to go to the Cloud Volumes ONTAP Licensing page to view more details about licensing for that system.
 
 == Downloading new disk and shelf firmware
 
