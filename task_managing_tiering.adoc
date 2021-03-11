@@ -13,7 +13,7 @@ summary: Now that you've discovered and tiered data from your first ONTAP cluste
 :imagesdir: ./media/
 
 [.lead]
-Now that you've set up data tiering from your ONTAP clusters, you can tier data from additional volumes, change a volume's tiering policy, and more.
+Now that you've set up data tiering from your on-prem ONTAP clusters, you can tier data from additional volumes, change a volume's tiering policy, and more.
 
 == Tiering data from additional volumes
 
@@ -125,7 +125,7 @@ If your NSS credentials are saved in Cloud Manager, the top of the page displays
 
 If your NSS credentials are not already saved in Cloud Manager, you are first prompted to add your credentials before you can see if there are undiscovered clusters.  See link:task_adding_nss_accounts.html[Adding NetApp Support Site accounts to Cloud Manager^] for more information.
 
-Note that buttons appear in the Tiering _On-Prem Overview_ page as well for you to discover additional clusters. 
+Note that buttons appear in the Tiering _On-Prem Overview_ page as well for you to discover additional clusters.
 
 .Steps
 
