@@ -324,7 +324,7 @@ Note the following as you configure the instance:
 
 .. Open a web browser and enter the following URL: http://ipaddress:80
 
-.. Specify a proxy server for internet access.
+.. Specify a proxy server for connectivity to AWS services.
 
 .. Upload the certificate that you obtained in step 1.
 
@@ -405,9 +405,8 @@ The security group for the Connector requires both inbound and outbound rules.
 | Purpose
 
 | SSH | 22 | Provides SSH access to the Connector host
-| HTTP | 80 |	Provides HTTP access from client web browsers to the local user interface and connections from Cloud Compliance
+| HTTP | 80 |	Provides HTTP access from client web browsers to the local user interface
 | HTTPS |	443 |	Provides HTTPS access from client web browsers to the local user interface
-| TCP | 3128 | Provides the Cloud Compliance instance with internet access, if your AWS network doesn’t use a NAT or proxy
 
 |===
 
@@ -492,7 +491,7 @@ The predefined external security group for the Cloud Volumes ONTAP HA mediator i
 
 ==== Inbound rules
 
-The source for inbound rules is 0.0.0.0/0.
+The source for inbound rules is traffic from the VPC where the Connector resides.
 
 [cols=3*,options="header",width=70%,cols="20,20,60"]
 |===
