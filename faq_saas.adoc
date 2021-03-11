@@ -74,7 +74,7 @@ The following links provide pricing and subscription details for these services.
 * Cloud Backup
 ** link:concept_backup_to_cloud.html#cost[Learn about Cloud Backup costs]
 * Cloud Tiering
-* link:concept_cloud_tiering.html#pricing-and-licenses[Learn about Cloud Tiering pricing and licenses]
+** link:concept_cloud_tiering.html#pricing-and-licenses[Learn about Cloud Tiering pricing and licenses]
 ** link:task_licensing_cloud_tiering.html[Learn how to set up licensing for Cloud Tiering]
 * Cloud Compliance
 ** link:concept_cloud_compliance.html#cost[Learn about Cloud Compliance costs]
