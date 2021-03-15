@@ -108,7 +108,7 @@ entries:
           - title: Launch a system in AWS
             url: /task_deploying_otc_aws.html
           - title: Get started in AWS C2S
-            url: https://docs.netapp.com/us-en/occm/media/c2s.pdf
+            url: /task_getting_started_aws_c2s.html
       - title: Get started in Azure
         entries:
           - title: Quick start
@@ -141,12 +141,18 @@ entries:
             url: /task_managing_storage.html
           - title: Tier inactive data to object storage
             url: /task_tiering.html
-          - title: Manage storage VMs
-            url: /task_managing_svms.html
           - title: Use ONTAP as persistent storage
             url: /task_connecting_kubernetes.html
           - title: Encrypt volumes with NetApp encryption
             url: /task_encrypting_volumes.html
+      - title: Manage storage VMs
+        entries:
+          - title: Work with storage VMs in Cloud Manager
+            url: /task_managing_svms.html
+          - title: Create storage VMs in AWS
+            url: /task_managing_svms_aws.html
+          - title: Create storage VMs in Azure
+            url: /task_managing_svms_azure.html
       - title: Replicate data
         url: /task_replicating_data.html
       - title: Monitor performance
@@ -221,7 +227,7 @@ entries:
     entries:
       - title: Discover ONTAP clusters
         url: /task_discovering_ontap.html
-      - title: Monitor ONTAP clusters
+      - title: Manage clusters using Active IQ
         url: /task_managing_ontap.html
       - title: Manage ONTAP volumes
         url: /task_provisioning_ontap.html

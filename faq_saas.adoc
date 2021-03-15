@@ -16,7 +16,7 @@ summary: This FAQ answers key questions associated with the new Cloud Manager Sa
 This FAQ answers key questions associated with the new Cloud Manager SaaS release.
 
 == What capabilities were introduced with the Cloud Manager SaaS release on Aug 3, 2020?
- 
+
 * *A unified API and UI*
 +
 A unified and centralized API control plane for all NetApp ONTAP-based storage solutions, providing customers with management and control of the following:
@@ -49,6 +49,36 @@ The role of the Connector hasn't changed. It has the same purpose as before--to 
 == Can I remove the Connector now that I am using the SaaS platform?
 
 No, you should not. The Connector is the same software that was used to manage resources and processes within your public cloud environments, such as deploying and managing Cloud Volumes ONTAP, enabling Cloud Backup Service, deploying Cloud Compliance, and more.
+
+== When is a SaaS-based subscription required?
+
+A SaaS-based subscription is available from your cloud provider's marketplace to pay for the following as you go:
+
+* Cloud Volumes ONTAP (starting with version 9.6 in AWS and GCP, and version 9.7 in Azure)
+* Cloud Backup
+* Cloud Compliance
+* Cloud Tiering
+
+For Cloud Volumes ONTAP, Cloud Backup, and Cloud Tiering, you also have the option to purchase licenses directly from NetApp. In those cases, a SaaS-based subscription isn’t required.
+
+A SaaS-based subscription is the only way to pay for Cloud Compliance.
+
+When you get started with these services, Cloud Manager prompts you to subscribe if a subscription isn't in place. You'll only need to subscribe once--Cloud Manager uses the same subscription for each of these services.
+
+The following links provide pricing and subscription details for these services.
+
+* Cloud Volumes ONTAP
+** link:task_deploying_gcp.html#subscribe[Learn how to subscribe to Cloud Volumes ONTAP for AWS]
+** link:task_deploying_otc_azure.html#video[Learn how to subscribe to Cloud Volumes ONTAP for Azure]
+** link:task_deploying_gcp.html#subscribe[Learn how to subscribe to Cloud Volumes ONTAP for Google Cloud]
+* Cloud Backup
+** link:concept_backup_to_cloud.html#cost[Learn about Cloud Backup costs]
+* Cloud Tiering
+** link:concept_cloud_tiering.html#pricing-and-licenses[Learn about Cloud Tiering pricing and licenses]
+** link:task_licensing_cloud_tiering.html[Learn how to set up licensing for Cloud Tiering]
+* Cloud Compliance
+** link:concept_cloud_compliance.html#cost[Learn about Cloud Compliance costs]
+** link:task_deploy_cloud_compliance.html#subscribing-to-the-cloud-compliance-service[Learn how to subscribe to Cloud Compliance]
 
 == Can I still use my Cloud Manager the same way that I did before (locally through the instance deployed in my VPC)?
 

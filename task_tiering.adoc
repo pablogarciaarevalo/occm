@@ -65,7 +65,7 @@ You can enable data tiering when using specific configurations and features:
 +
 NOTE: Data tiering is not supported in Azure with the DS3_v2 virtual machine type.
 
-* In AWS, the performance tier can be General Purpose SSDs, Provisioned IOPS SSDs, or Throughput Optimized HDDs.
+* In AWS, the performance tier can be General Purpose SSDs (gp2), Provisioned IOPS SSDs, or Throughput Optimized HDDs.
 
 * In Azure, the performance tier can be Premium SSD managed disks, Standard SSD managed disks, or Standard HDD managed disks.
 
@@ -218,3 +218,23 @@ For information about supported storage classes, see link:concept_data_tiering.h
 . From the working environment, click the menu icon and then click *Storage Classes* or *Blob Storage Tiering*.
 
 . Choose a storage class and then click *Save*.
+
+== Changing the free space ratio for data tiering
+
+The free space ratio for data tiering defines how much free space is required on Cloud Volumes ONTAP SSDs/HDDs when tiering data to object storage. The default setting is 10% free space, but you can tweak the setting based on your requirements.
+
+For example, you might choose less than 10% free space to ensure that you are utilizing the purchased capacity. Cloud Manager can then purchase additional disks for you when additional capacity is required (up until you reach the disk limit for the aggregate).
+
+The ratio is important for disaster recovery scenarios because as data is read from the object store, Cloud Volumes ONTAP moves the data to SSDs/HDDs to provide better performance. If there isn't sufficient space, then Cloud Volumes ONTAP can't move the data. Take this into consideration when changing the ratio so that you can meet your business requirements.
+
+NOTE: This setting applies to Cloud Volumes ONTAP only.
+
+.Steps
+
+. In the upper right of the Cloud Manager console, click the *Settings* icon, and select *Cloud Manager Settings*.
++
+image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the Cloud Manager console.]
+
+. Under *Aggregate Capacity Thresholds*, click *Aggregate free space ratio for data tiering*.
+
+. Change the free space ratio based on your requirements and click *Save*.

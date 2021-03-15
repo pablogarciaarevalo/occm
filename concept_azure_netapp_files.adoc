@@ -19,7 +19,7 @@ Azure NetApp Files enables enterprises to migrate and run their performance-inte
 
 * Support for multiple protocols enables "lift & shift" of both Linux & Windows applications to run seamlessly in Azure.
 * Multiple performance tiers allow for close alignment with workload performance requirements.
-* Leading certifications including SAP HANA, GDPR, and HIPPA enables migration of the most demanding workloads to Azure.
+* Leading certifications including SAP HANA, GDPR, and HIPAA enables migration of the most demanding workloads to Azure.
 
 == Additional features in Cloud Manager
 

@@ -219,6 +219,7 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 * StorageGRID
 
 | ONTAP S3 Storage a|
+* SMB server
 * StorageGRID
 * ONTAP S3 Storage
 
@@ -234,6 +235,7 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 * IBM Cloud Object Storage
 * Google Cloud Storage
 * On-premises ONTAP cluster
+* ONTAP S3 Storage
 * SMB Server
 * StorageGRID
 
@@ -373,6 +375,10 @@ All regions are supported.
 
 If the sync relationship includes Cloud Volumes ONTAP or an on-prem ONTAP cluster and you selected NFSv4 or later, then you'll need to enable NFSv4 ACLs on the ONTAP system. This is required to copy the ACLs.
 
+==== Permissions for a SnapMirror destination
+
+If the source for a sync relationship is a SnapMirror destination (which is read-only), "read/list" permissions are sufficient to sync data from the source to a target.
+
 === NFS server requirements
 
 * The NFS server can be a NetApp system or a non-NetApp system.
@@ -413,7 +419,3 @@ For example, let's say that there's a file named "a" on the source and a file na
 In the case of directories, let's say that there's a directory named "b" on the source and a directory named "B" on the target. When Cloud Sync tries to copy the directory named "b" to the target, Cloud Sync receives an error that says the directory already exists. As a result, Cloud Sync always fails to copy the directory named “b.”
 
 The best way to avoid this limitation is to ensure that you sync data to an empty directory.
-
-== Permissions for a SnapMirror destination
-
-If the source for a sync relationship is a SnapMirror destination (which is read-only), "read/list" permissions are sufficient to sync data from the source to a target.
