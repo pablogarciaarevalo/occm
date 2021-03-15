@@ -47,6 +47,9 @@ Now that Cloud Compliance is enabled, ensure that it can access volumes.
 [role="quick-margin-list"]
 * The Cloud Compliance instance needs a network connection to each Cloud Volumes ONTAP subnet, Azure NetApp Files subnet, or on-prem ONTAP system.
 * Security groups for Cloud Volumes ONTAP must allow inbound connections from the Cloud Compliance instance.
+* Make sure these ports are open to the Cloud Compliance instance:
+** For NFS – ports 111 and 2049.
+** For CIFS – ports 139 and 445.
 * NFS volume export policies must allow access from the Cloud Compliance instance.
 * Cloud Compliance needs Active Directory credentials to scan CIFS volumes.
 +
@@ -104,6 +107,10 @@ NOTE: For Azure NetApp Files, Cloud Compliance can only scan volumes that are in
 . Ensure that the security group for Cloud Volumes ONTAP allows inbound traffic from the Cloud Compliance instance.
 +
 You can either open the security group for traffic from the IP address of the Cloud Compliance instance, or you can open the security group for all traffic from inside the virtual network.
+
+. Ensure the following ports are open to the Cloud Compliance instance:
+** For NFS – ports 111 and 2049.
+** For CIFS – ports 139 and 445.
 
 . Ensure that NFS volume export policies include the IP address of the Cloud Compliance instance so it can access the data on each volume.
 
