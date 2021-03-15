@@ -19,6 +19,18 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.4 update (15 Mar 2021)
+
+=== Cloud Compliance enhancements
+
+* A new link:task_controlling_governance_data.html[Governance dashboard^] is now available so that you can increase the efficiency and control the costs related to the data on your organizations' storage resources.
++
+For example, the dashboard identifies the amount of stale data, non-business data, and very large files in your systems so you can decide whether you want to move, delete, or tier some files to less expensive object storage.
+
+* You can view a list of link:task_controlling_private_data.html#viewing-file-metadata-and-permissions[all users or groups who have access to a file^].
+
+* Cloud Compliance is now supported in Government regions in AWS.
+
 == Cloud Manager 3.9.4 (8 Mar 2021)
 
 * <<Cloud Volumes ONTAP enhancements>>
@@ -94,7 +106,7 @@ link:task_sync_managing_data_brokers.html[Learn more about defining a unified co
 
 * Cloud Tiering now displays if you have any undiscovered on-prem ONTAP clusters so that you can add them to Cloud Manager to enable tiering or other services on those clusters.
 +
-link:task_managing_tiering.html#discovering-additional-clusters-from-cloud-tiering[Learn how to discover these additional clusters].
+link:task_managing_tiering.html#discovering-additional-clusters-from-cloud-tiering[Learn how to discover these additional clusters^].
 
 === Active IQ enhancements
 
