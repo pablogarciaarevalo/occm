@@ -12,12 +12,6 @@ summary: There are many requirements you need to be aware of before you begin to
 :linkattrs:
 :imagesdir: ./media/
 
-//
-// This file was created with NDAC Version 0.9 (July 10, 2020)
-//
-// 2020-07-29 10:32:33.464557
-//
-
 [.lead]
 There are many requirements you need to be aware of before you begin to install Global File Cache Edge software in your remote offices.
 
@@ -121,9 +115,9 @@ Global File Cache runs on Windows Server 2016 and 2019, hence the virtualization
 
 === Partition sizing requirements
 
-* C:\ -  minimum 250GB (system/boot volume)
+* C:\ -  minimum 250 GB (system/boot volume)
 
-* D:\ -  minimum 1TB (separate data volume for Global File Cache Intelligent File Cache*)
+* D:\ -  minimum 1 TB (separate data volume for Global File Cache Intelligent File Cache*)
 
 *Minimum size is 2x the active data set. The cache volume (D:\) can be extended and is only restricted by the limitations of the Microsoft Windows NTFS file system.
 
@@ -188,37 +182,41 @@ Antivirus software or other third-party indexing or scanning utilities should ne
 
 In addition to the D:\ drive, the following Global File Cache directory and processes should generally be excluded from all antivirus applications:
 
-*  `C:\Program Files\TalonFAST\`
+* `C:\Program Files\TalonFAST\`
 
-*  `C:\Program Files\TalonFAST\Bin\LMClientService.exe`
+* `C:\Program Files\TalonFAST\Bin\LMClientService.exe`
 
-*  `C:\Program Files\TalonFAST\Bin\LMServerService.exe`
+* `C:\Program Files\TalonFAST\Bin\LMServerService.exe`
 
-*  `C:\Program Files\TalonFAST\Bin\Optimus.exe`
+* `C:\Program Files\TalonFAST\Bin\Optimus.exe`
 
-*  `C:\Program Files\TalonFAST\Bin\tafsexport.exe`
+* `C:\Program Files\TalonFAST\Bin\tafsexport.exe`
 
-*  `C:\Program Files\TalonFAST\Bin\tafsutils.exe`
+* `C:\Program Files\TalonFAST\Bin\tafsutils.exe`
 
-*  `C:\Program Files\TalonFAST\Bin\tapp.exe`
+* `C:\Program Files\TalonFAST\Bin\tapp.exe`
 
-*  `C:\Program Files\TalonFAST\Bin\tfs.exe`
+* `C:\Program Files\TalonFAST\Bin\tfs.exe`
 
-*  `C:\Program Files\TalonFAST\Bin\TService.exe`
+* `C:\Program Files\TalonFAST\Bin\TappN.exe`
 
-*  `C:\Program Files\TalonFAST\Bin\tum.exe`
+* `C:\Program Files\TalonFAST\Bin\FTLSummaryGenerator.exe`
 
-*  `C:\Program Files\TalonFAST\FastDebugLogs\`
+* `C:\Program Files\TalonFAST\Bin\TService.exe`
 
-*  `C:\Windows\System32\drivers\tfast.sys`
+* `C:\Program Files\TalonFAST\Bin\tum.exe`
 
-*  `\\?\TafsMtPt:\ or \\?\TafsMtPt*`
+* `C:\Program Files\TalonFAST\FastDebugLogs\`
 
-*  `\Device\TalonCacheFS\`
+* `C:\Windows\System32\drivers\tfast.sys`
 
-*  `\\?\GLOBALROOT\Device\TalonCacheFS\`
+* `\\?\TafsMtPt:\` or `\\?\TafsMtPt*`
 
-*  `\\?\GLOBALROOT\Device\TalonCacheFS\*`
+* `\Device\TalonCacheFS\`
+
+* `\\?\GLOBALROOT\Device\TalonCacheFS\`
+
+* `\\?\GLOBALROOT\Device\TalonCacheFS\*`
 
 == NetApp Support policy
 

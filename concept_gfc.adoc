@@ -103,15 +103,15 @@ The cost to use Global File Cache depends on the type of installation you have c
 
 ** Global File Cache Management Server:
 +
-In Azure, this runs on a D2s_V3 or equivalent (2 vCPU/8GB RAM) VM with 127GB premium SSD
+In Azure, this runs on a D2s_V3 or equivalent (2 vCPU/8 GB RAM) VM with 127 GB premium SSD
 +
-In AWS, this runs on a m4.large or equivalent (2 vCPU/8GB RAM) instance with 127GB general purpose SSD
+In AWS, this runs on a m4.large or equivalent (2 vCPU/8 GB RAM) instance with 127 GB general purpose SSD
 
 ** Global File Cache Core:
 +
-In Azure, this runs on a D4s_V3 or equivalent (4 vCPU/16GB RAM) VM with 127GB premium SSD
+In Azure, this runs on a D4s_V3 or equivalent (4 vCPU/16 GB RAM) VM with 127 GB premium SSD
 +
-In AWS, this runs on a m4.xlarge or equivalent (4 vCPU/16GB RAM) instance with 127GB general purpose SSD
+In AWS, this runs on a m4.xlarge or equivalent (4 vCPU/16 GB RAM) instance with 127 GB general purpose SSD
 
 * When installed with Cloud Volumes ONTAP in Azure or AWS (the supported configurations deployed completely through Cloud Manager), there is a charge of $3,000 per site (for each Global File Cache Edge instance), per year.
 
@@ -137,14 +137,24 @@ These other configurations, for example, Global File Cache using Cloud Volumes O
 
 == Release Notes
 
-=== What's new in version 1.0.2
+=== What's new in version 1.0.3
+Released: 17 Mar 2021
+
+* Global File Cache now supports  .
+* The  .
+
+=== Fixed issues in version 1.0.3
+
+* .
+
+==== What's new in version 1.0.2
 Released: 6 Jan 2021
 
 * Global File Cache now supports subscription ID based licensing. The Subscription Number is emailed to you after you register your system. See link:task_gfc_getting_started.html#license-your-global-file-cache-installation[Licensing Global File Cache^] for details.
 * The requirement for the GFC Core joining the domain has been relaxed. Now a username (part of Backup Operators group on the Cloud Volumes ONTAP system) is used to configure GFC services.
 * The License Manager Server (LMS) now has an additional HTTPS endpoint to de-register any registration.
 
-=== Fixed issues in version 1.0.2
+==== Fixed issues in version 1.0.2
 
 * Duplicate GFC icons are no longer displayed on the desktop during upgrade.
 * The License Manager Client Service (LMC) now retains the correct licensing information when the service is restarted.
