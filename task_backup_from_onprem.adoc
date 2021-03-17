@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: task_backup_from_onprem.html
 keywords: backing up, back up, backup, backup cloud volumes ontap, back up cloud volumes ontap, cloud volumes ontap, on-prem, on-premises, back up volumes, cloud backup, cloud backup service, backup and compliance
-summary: Complete a few steps to get started backing up data from your on-premises ONTAP system to low-cost object storage in the cloud.
+summary: Complete a few steps to get started backing up data from your on-premises ONTAP systems to low-cost object storage in the public cloud. This includes creating backup files on Amazon S3 and Azure Blob.
 ---
 
-= Backing up data from an on-premises ONTAP system to the cloud
+= Backing up data from on-premises ONTAP systems to the public cloud
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,8 @@ summary: Complete a few steps to get started backing up data from your on-premis
 :imagesdir: ./media/
 
 [.lead]
-Complete a few steps to get started backing up data from your on-premises ONTAP system to low-cost object storage in the cloud.
+Complete a few steps to get started backing up data from your on-premises ONTAP systems to low-cost object storage in the public cloud. This includes creating backup files on Amazon S3 and Azure Blob.
+// Complete a few steps to get started backing up data from your on-premises ONTAP systems to low-cost object storage in the cloud. This includes creating backup files on Amazon S3, Azure Blob, and Google Cloud Storage.
 
 A Beta feature released in January 2021 allows you to run Compliance scans on the backed up volumes from your on-prem systems. Typically, compliance scans are free up to 1 TB of data, and then a cost for the service is applied for data over 1 TB. When combining Backup and Compliance for your on-prem volumes, the cost for scans on those on-prem volumes is free. Learn more about how link:concept_cloud_compliance.html[Cloud Compliance^] can get your business applications and cloud environments privacy ready.
 
