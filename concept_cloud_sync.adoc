@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept_cloud_sync.html
-keywords: cloud sync, overview, conceptual, how, data broker, service
+keywords: cloud sync, overview, conceptual, how, data broker, service, cloudsync
 summary: The NetApp Cloud Sync service offers a simple, secure, and automated way to migrate your data to any target, in the cloud or on your premises.
 ---
 
