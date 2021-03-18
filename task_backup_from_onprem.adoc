@@ -92,9 +92,9 @@ Cluster networking requirements::
 * The ONTAP cluster initiates an HTTPS connection over port 443 to the cloud object storage.
 +
 ONTAP reads and writes data to and from object storage. The object storage never initiates, it just responds.
-
-* An inbound connection is required from the Connector, which can reside in an AWS VPC, Azure VNet, or Google Cloud Platform VPC; depending on the object storage provider you are using.
-// * An inbound connection is required from the Connector, which can reside in an AWS VPC or Azure VNet; depending on the object storage provider you are using.
++
+// * An inbound connection is required from the Connector, which can reside in an AWS VPC, Azure VNet, or Google Cloud Platform VPC; depending on the object storage provider you are using.
+* An inbound connection is required from the Connector, which can reside in an AWS VPC or Azure VNet; depending on the object storage provider you are using.
 +
 A connection between the cluster and the Cloud Backup service is not required.
 
@@ -115,7 +115,7 @@ A Connector is required to back up data to the cloud, and the Connector must be 
 * link:concept_connectors.html[Learn about Connectors]
 * link:task_creating_connectors_aws.html[Creating a Connector in AWS]
 * link:task_creating_connectors_azure.html[Creating a Connector in Azure]
-* link:task_creating_connectors_gcp.html[Creating a Connector in GCP]
+// * link:task_creating_connectors_gcp.html[Creating a Connector in GCP]
 * link:task_managing_connectors.html[Switching between Connectors]
 
 === Preparing networking for the Connector
@@ -127,33 +127,35 @@ Ensure that the Connector has the required networking connections.
 . Ensure that the network where the Connector is installed enables the following connections:
 
 * An outbound internet connection to the Cloud Backup service over port 443 (HTTPS)
-// * An HTTPS connection over port 443 to your object storage (S3 or Blob)
-* An HTTPS connection over port 443 to your object storage (S3, Blob, or Google)
+* An HTTPS connection over port 443 to your object storage (S3 or Blob)
+// * An HTTPS connection over port 443 to your object storage (S3, Blob, or Google)
 * An HTTPS connection over port 443 to your ONTAP clusters
 
 . Enable an endpoint to your object storage:
 
 * For AWS: Enable a VPC Endpoint to S3. This is needed if you have a Direct Connect or VPN connection from your ONTAP cluster to the VPC and you want communication between the Connector and S3 to stay in your AWS internal network.
 * For Azure: Enable a VNet service endpoint to Azure storage. This is needed if you have an ExpressRoute or VPN connection from your ONTAP cluster to the VNet and you want communication between the Connector and Blob storage to stay in your virtual private network.
-* For Google: Enable Private Google Access on the subnet where you plan to deploy the Service Connector. https://cloud.google.com/vpc/docs/configure-private-google-access[Private Google Access^] is needed if you have a direct connection from your ONTAP cluster to the VPC and you want communication between the Connector and Google Cloud Storage to stay in your virtual private network.
-+
-Note that Private Google Access works with VM instances that have only internal (private) IP addresses (no external IP addresses).
+// * For Google: Enable Private Google Access on the subnet where you plan to deploy the Service Connector. https://cloud.google.com/vpc/docs/configure-private-google-access[Private Google Access^] is needed if you have a direct connection from your ONTAP cluster to the VPC and you want communication between the Connector and Google Cloud Storage to stay in your virtual private network.
+// +
+// Note that Private Google Access works with VM instances that have only internal (private) IP addresses (no external IP addresses).
 
-Supported regions::
-Backups from on-prem systems are supported in all regions https://cloud.netapp.com/cloud-volumes-global-regions[where Cloud Volumes ONTAP is supported^].
-+
+=== Supported regions
+
+You can create backups from on-prem systems to the public cloud in all regions https://cloud.netapp.com/cloud-volumes-global-regions[where Cloud Volumes ONTAP is supported^].
+
 * For Azure, you specify the region where the backups will be stored when you set up the service.
 * For AWS, backups are stored in the region where Cloud Manager is installed.
 // * For GCP, you specify the region where the backups will be stored when you set up the service.
-+
+
 *Note:* Backup to Google Cloud Storage from on-prem ONTAP systems is not currently supported from the UI.
 
 === License requirements
+
 // For Cloud Backup PAYGO licensing, you'll need a subscription to the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Azure^], the https://aws.amazon.com/marketplace/pp/B07QX2QLXX[AWS^], or the https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[Google^] Cloud Manager Marketplace Backup offering before you enable Cloud Backup. Billing for Cloud Backup is done through this subscription.
 For Cloud Backup PAYGO licensing, you'll need a subscription to the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Azure^] or the https://aws.amazon.com/marketplace/pp/B07QX2QLXX[AWS^] Cloud Manager Marketplace Backup offering before you enable Cloud Backup. Billing for Cloud Backup is done through this subscription.
-+
+
 For Cloud Backup BYOL licensing, you need the serial number from NetApp that enables you to use the service for the duration and capacity of the license. See link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[Adding and updating your Backup BYOL license^].
-+
+
 And you need to have a subscription from your cloud provider for the object storage space where your backups will be located.
 
 === Preparing Amazon S3 for backups
