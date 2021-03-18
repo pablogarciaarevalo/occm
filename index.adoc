@@ -21,21 +21,29 @@ Cloud Manager enables IT experts and cloud architects to centrally manage their 
 
 == Get started
 
-* link:concept_overview.html[Cloud Manager]
+* link:concept_overview.html[Cloud Manager overview]
 * link:concept_cloud_central_accounts.html[Account settings]
+
+*Resources*
 * link:task_getting_started_aws.html[Cloud Volumes ONTAP for AWS]
 * link:task_getting_started_azure.html[Cloud Volumes ONTAP for Azure]
 * link:task_getting_started_gcp.html[Cloud Volumes ONTAP for Google Cloud]
 * link:task_manage_anf.html[Azure NetApp Files]
 * link:task_manage_cvs_aws.html[Cloud Volumes Service for AWS]
 * link:task_manage_cvs_gcp.html[Cloud Volumes Service for Google Cloud]
-* link:task_getting_started_compliance.html[Cloud Compliance]
-* link:task_gfc_getting_started.html[Global File Cache]
-* link:concept_backup_to_cloud.html[Cloud Backup]
-* link:concept_compute.html[Cloud Analyzer]
-* link:concept_cloud_tiering.html[Cloud Tiering]
-* link:task_getting_started_monitoring.html[Cloud Insights]
+
+*Services*
 * link:task_managing_ontap.html[Active IQ]
+* link:concept_compute.html[Compute]
+* link:concept_backup_to_cloud.html[Cloud Backup]
+* link:task_getting_started_compliance.html[Cloud Compliance]
+* link:concept_cloud_sync.html[Cloud Sync]
+* link:concept_cloud_tiering.html[Cloud Tiering]
+* link:task_gfc_getting_started.html[Global File Cache]
+* link:task_connecting_kubernetes.html[K8s]
+* link:task_getting_started_monitoring.html[Monitoring]
+* link:task_replicating_data.html[Replication]
+* link:task_restore_backups.html[Restore]
 
 == Automate with APIs
 
