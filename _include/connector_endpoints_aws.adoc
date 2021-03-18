@@ -34,7 +34,7 @@ The exact endpoint depends on the region in which you deploy Cloud Volumes ONTAP
 | \https://netapp-cloud-account.auth0.com | Communication with NetApp Cloud Central for centralized user authentication.
 
 |
-\support.netapp.com:443
+support.netapp.com:443
 \https://mysupport.netapp.com | Communication with NetApp AutoSupport. Note that the Connector communicates with \support.netapp.com:443, which redirects to \https://mysupport.netapp.com.
 
 |
