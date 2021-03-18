@@ -5,7 +5,7 @@ keywords: backing up, back up, backup, backup cloud volumes ontap, back up cloud
 summary: Complete a few steps to get started backing up data from Cloud Volumes ONTAP to Amazon S3.
 ---
 
-= Backing up data from Cloud Volumes ONTAP to Amazon S3
+= Backing up Cloud Volumes ONTAP data to Amazon S3
 :hardbreaks:
 :nofooter:
 :icons: font

@@ -231,19 +231,19 @@ entries:
         url: /task_managing_ontap.html
       - title: Manage ONTAP volumes
         url: /task_provisioning_ontap.html
-  - title: Back up to the cloud
+  - title: Back up data to the cloud
     entries:
       - title: Learn about Cloud Backup
         url: /concept_backup_to_cloud.html
       - title: Get started
         entries:
-          - title: Back up from Cloud Volumes ONTAP to Amazon S3
+          - title: Back up Cloud Volumes ONTAP data to Amazon S3
             url: /task_backup_to_s3.html
-          - title: Back up from Cloud Volumes ONTAP to Azure Blob storage
+          - title: Back up Cloud Volumes ONTAP data to Azure Blob
             url: /task_backup_to_azure.html
-          - title: Back up from Cloud Volumes ONTAP to Google Cloud storage
+          - title: Back up Cloud Volumes ONTAP data to Google Cloud
             url: /task_backup_to_gcp.html
-          - title: Back up from on-premises ONTAP to public cloud storage
+          - title: Back up on-premises ONTAP data to public cloud
             url: /task_backup_from_onprem.html
       - title: Manage backups
         url: /task_managing_backups.html
