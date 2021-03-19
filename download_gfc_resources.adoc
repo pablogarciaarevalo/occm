@@ -89,11 +89,11 @@ For best performance in virtual environments, in addition to the physical host r
 
 Microsoft Hyper-V 2012 R2 and later:
 
-* Processor (CPU):  CPUs must be set as *Static*: Minimum: 4 vCPU cores.
+* Processor (CPU): CPUs must be set as *Static*: Minimum: 4 vCPU cores.
 
 * Memory (RAM):  Minimum: 16 GB set as *Static*.
 
-* Hard-disk provisioning:  Hard Disks must be configured as *Fixed Disk*.
+* Hard-disk provisioning: Hard Disks must be configured as *Fixed Disk*.
 
 VMware vSphere 6.x and later:
 
@@ -109,7 +109,7 @@ VMware vSphere 6.x and later:
 
 ** Devices.hotplug must be set to *False* using the vSphere Client to prevent Microsoft Windows from presenting Global File Cache drives as removable.
 
-* Networking: Network Interface must be set to *VMXNET3* (requires VM Tools).
+* Networking: Network Interface must be set to *VMXNET3* (may require VM Tools).
 
 Global File Cache runs on Windows Server 2016 and 2019, hence the virtualization platform needs to support the operating system, as well as integration with utilities enhancing the performance of the VM's guest operating system and management of the VM, such as VM Tools.
 
@@ -178,7 +178,7 @@ For more information, see the link:https://repo.cloudsync.netapp.com/gfc/NetApp%
 
 ==== Configure exclusions
 
-Antivirus software or other third-party indexing or scanning utilities should never scan drive D:\ on the Edge instance. These scans of Edge server drive D:\  will result in numerous file open requests for the entire cache namespace. This will result in file fetches over the WAN to all file servers being optimized at the data center. WAN connection flooding and unnecessary load on the Edge instance will occur resulting in performance degradation.
+Antivirus software or other third-party indexing or scanning utilities should never scan drive D:\ on the Edge instance. These scans of Edge server drive D:\ will result in numerous file open requests for the entire cache namespace. This will result in file fetches over the WAN to all file servers being optimized at the data center. WAN connection flooding and unnecessary load on the Edge instance will occur resulting in performance degradation.
 
 In addition to the D:\ drive, the following Global File Cache directory and processes should generally be excluded from all antivirus applications:
 
@@ -196,11 +196,11 @@ In addition to the D:\ drive, the following Global File Cache directory and proc
 
 * `C:\Program Files\TalonFAST\Bin\tapp.exe`
 
-* `C:\Program Files\TalonFAST\Bin\tfs.exe`
-
 * `C:\Program Files\TalonFAST\Bin\TappN.exe`
 
 * `C:\Program Files\TalonFAST\Bin\FTLSummaryGenerator.exe`
+
+* `C:\Program Files\TalonFAST\Bin\RFASTSetupWizard.exe`
 
 * `C:\Program Files\TalonFAST\Bin\TService.exe`
 
