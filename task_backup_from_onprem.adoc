@@ -79,6 +79,14 @@ See link:task_restore_backups.html[Restoring volume data from backup files^] for
 
 Read the following requirements to make sure you have a supported configuration before you start backing up on-prem volumes to object storage.
 
+The following image shows each component when backing up an on-prem ONTAP system to Amazon S3 and the connections that you need to prepare between them:
+
+image:diagram_cloud_backup_onprem_aws.png[A diagram showing how Cloud Backup communicates with the volumes on the source systems and the destination storage where the backup files are located.]
+
+The following image shows each component when backing up an on-prem ONTAP system to Azure Blob and the connections that you need to prepare between them:
+
+image:diagram_cloud_backup_onprem_azure.png[A diagram showing how Cloud Backup communicates with the volumes on the source systems and the destination storage where the backup files are located.]
+
 === Preparing your ONTAP clusters
 
 Your ONTAP clusters must meet the following requirements when backing up data to cloud storage.
