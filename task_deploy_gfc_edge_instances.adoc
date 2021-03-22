@@ -135,4 +135,4 @@ The installation process will start.
 
 .What's Next?
 
-For details about Global File Cache Edge advanced configuration, see the link:https://repo.cloudsync.netapp.com/gfc/NetApp%20GFC%20-%20User%20Guide.pdf[NetApp Global File Cache User Guide^].
+For details about Global File Cache Edge advanced configuration, see the link:https://repo.cloudsync.netapp.com/gfc/Netapp%20GFC%20User%20Guide%201.0.3.pdf[NetApp Global File Cache User Guide^].
