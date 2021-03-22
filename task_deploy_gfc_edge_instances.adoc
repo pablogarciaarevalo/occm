@@ -12,12 +12,6 @@ summary: After you have verified that your environment meets all the requirement
 :linkattrs:
 :imagesdir: ./media/
 
-//
-// This file was created with NDAC Version 0.9 (July 10, 2020)
-//
-// 2020-07-29 10:32:33.604955
-//
-
 [.lead]
 After you have verified that your environment meets all the requirements, you install Global File Cache Edge software in each remote office.
 
@@ -125,7 +119,7 @@ Below you can find the steps required to update the Global File Cache installati
 
 . Select the desired Installation Destination Location.
 +
-NetApp recommends that the default installation location be used.
+NetApp recommends that you use the default installation location.
 
 . Click *Next* to continue.
 
@@ -133,12 +127,12 @@ NetApp recommends that the default installation location be used.
 
 . Click *Next* to continue.
 
-. Verify the desired installation parameters and click *Install* to begin the installation.
+. Verify your installation selections and click *Install* to begin the installation.
 +
-The installation process will execute.
+The installation process will start.
 
 . After the installation has completed, reboot the server when prompted.
 
 .What's Next?
 
-For details about Global File Cache Edge advanced configuration, see the link:https://repo.cloudsync.netapp.com/gfc/NetApp%20GFC%20-%20User%20Guide.pdf[NetApp Global File Cache User Guide^].
+For details about Global File Cache Edge advanced configuration, see the link:https://repo.cloudsync.netapp.com/gfc/Netapp%20GFC%20User%20Guide%201.0.3.pdf[NetApp Global File Cache User Guide^].
