@@ -12,12 +12,6 @@ summary: You will want to train your users on the best practices for accessing t
 :linkattrs:
 :imagesdir: ./media/
 
-//
-// This file was created with NDAC Version 0.9 (July 10, 2020)
-//
-// 2020-07-29 10:32:33.669022
-//
-
 [.lead]
 You will want to train your users on the best practices for accessing the shared files through Global File Cache.
 
@@ -38,4 +32,4 @@ link:https://docs.netapp.com/us-en/occm/media/Global_File_Cache_Onboarding_Email
 * Onboarding Communications
 link:https://repo.cloudsync.netapp.com/gfc/Global%20File%20Cache%20Customer%20Onboarding%20-%20Draft.docx[Word Document (.docx)]
 
-See Chapter 12 in the link:https://repo.cloudsync.netapp.com/gfc/NetApp%20GFC%20-%20User%20Guide.pdf[NetApp Global File Cache User Guide^] for additional material.
+See Chapter 13 in the link:https://repo.cloudsync.netapp.com/gfc/Netapp%20GFC%20User%20Guide%201.0.3.pdf[NetApp Global File Cache User Guide^] for additional material.

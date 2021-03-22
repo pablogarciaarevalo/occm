@@ -145,6 +145,26 @@ Depending on the level of restrictions and GPOs in the network environment, this
 
 * The Core and Edge instances need to connect to the LMS instance using HTTPS (TCP port 443).
 
+=== Networking (External Access)
+
+The Global File Cache LMS requires external access over HTTPS (TCP port 443) to the following URLs.
+
+* If you are using GFC subscription-based licensing:
+
+** \https://rest.zuora.com/v1/subscriptions/<subscription-no>
+** \https://rest.zuora.com/oauth/token
+
+* If you are using NetApp NSS-based licensing:
+
+** \https://login.netapp.com
+** \https://login.netapp.com/ms_oauth/oauth2/endpoints
+** \https://login.netapp.com/ms_oauth/oauth2/endpoints/oauthservice/tokens
+
+* If you are using NetApp legacy-based licensing:
+
+** \https://talonazuremicroservices.azurewebsites.net
+** \https://talonlicensing.table.core.windows.net
+
 === Networking
 
 * Firewall: TCP ports should be allowed between Global File Cache Edge and Core instances.
