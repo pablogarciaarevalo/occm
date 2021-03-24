@@ -13,7 +13,7 @@ summary: Before users log in to Cloud Manager, you'll need to ensure that their 
 :imagesdir: ./media/
 
 [.lead]
-Before users log in to Cloud Manager, you'll need to ensure that their web browsers can access specific endpoints. After that, you need to verify networking requirements for the specific type of working environment and services that will be used.
+Before users log in to Cloud Manager, you'll need to ensure that their web browsers can access specific endpoints. After that, you need to verify networking requirements for the specific type of working environment that you create and any services that you enable.
 
 == Endpoints accessed from your web browser
 Users must access Cloud Manager from a web browser. The machine running the web browser must have connections to the following endpoints:
@@ -48,10 +48,12 @@ Users must access Cloud Manager from a web browser. The machine running the web 
 * link:reference_networking_azure.html[Cloud Volumes ONTAP for Azure]
 * link:reference_networking_gcp.html[Cloud Volumes ONTAP for GCP]
 * link:task_replicating_data.html[Data replication between ONTAP systems]
-* link:task_getting_started_compliance.html[Cloud Compliance for Cloud Volumes ONTAP or Azure NetApp Files]
+* link:task_getting_started_compliance.html[Cloud Compliance for Cloud Volumes ONTAP, on-premises ONTAP, or Azure NetApp Files]
 * link:task_scanning_s3.html[Cloud Compliance for Amazon S3]
+* link:task_scanning_databases.html[Cloud Compliance for Databases] or link:task_scanning_onedrive.html[OneDrive accounts]
 * link:task_discovering_ontap.html[On-prem ONTAP clusters]
 ** link:task_tiering_onprem_aws.html[Data tiering from ONTAP clusters to Amazon S3]
 ** link:task_tiering_onprem_azure.html[Data tiering from ONTAP clusters to Azure Blob storage]
 ** link:task_tiering_onprem_gcp.html[Data tiering from ONTAP clusters to Google Cloud Storage]
 ** link:task_tiering_onprem_storagegrid.html[Data tiering from ONTAP clusters to StorageGRID]
+** link:task_backup_from_onprem.html[Back up ONTAP cluster data to Amazon S3 or Azure Blob storage]

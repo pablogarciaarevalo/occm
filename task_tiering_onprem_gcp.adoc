@@ -71,7 +71,7 @@ ONTAP reads and writes data to and from object storage. The object storage never
 +
 Although a Google Cloud Interconnect provides better performance and lower data transfer charges, it's not required between the ONTAP cluster and Google Cloud Storage. Because performance is significantly better when using Google Cloud Interconnect, doing so is the recommended best practice.
 
-* An inbound connection is required from the NetApp Service Connector, which resides in an Google Cloud Platform VPC.
+* An inbound connection is required from the Connector, which resides in a Google Cloud Platform VPC.
 +
 A connection between the cluster and the Cloud Tiering service is not required.
 
