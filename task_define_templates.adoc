@@ -1,0 +1,96 @@
+---
+sidebar: sidebar
+permalink: task_define_templates.html
+keywords: templates, resource templates, application templates, volume templates
+summary: Select one of the NetApp-provided templates and quickly build an application template that your organization can use to start optimizing the creation of resources.
+---
+
+= Building application templates for your organization
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Select one of the NetApp-provided templates and quickly build an application template that your organization can use to start optimizing the creation of resources.
+
+== Quick start
+
+Get started quickly by following these steps or scroll down to the remaining sections for full details.
+
+==== image:number1.png[Number 1] Verify support for your configuration
+
+[role="quick-margin-list"]
+* You must be a new Cloud Insights customer.
+* You need a Cloud Volumes ONTAP system running in AWS or Azure.
+* For AWS, you need a Connector running version 3.8.4 or later.
+* For Azure, you need a Connector running version 3.9.3 or later.
+
+==== image:number2.png[Number 2] Enable Monitoring on your new or existing system
+
+[role="quick-margin-list"]
+* New working environments: Be sure to keep Monitoring enabled when you create the working environment (it’s enabled by default).
+
+* Existing working environments: Select a working environment and click *Start Monitoring*.
+
+==== image:number3.png[Number 3] View performance data
+
+[role="quick-margin-para"]
+Click *Monitoring* and view performance data for your volumes.
+
+==== image:number4.png[Number 4] Subscribe to Cloud Insights
+
+[role="quick-margin-para"]
+Subscribe before your 30-day free trial ends to continue seeing performance data within Cloud Manager and Cloud Insights. https://docs.netapp.com/us-en/cloudinsights/concept_subscribing_to_cloud_insights.html[Learn how to subscribe^].
+
+== Requirements
+
+Read the following requirements to make sure that you have a supported configuration.
+
+Supported Cloud Volumes ONTAP versions::
+Any version of Cloud Volumes ONTAP in AWS or in Azure.
+
+Supported Connector::
+* For
+
+Networking for the Connector::
+Similar to the Acquisition Unit, the Connector must have outbound connectivity to the Cloud Insights tenant. But the endpoint that the Connector contacts is slightly different. It contacts the tenant host URL using the shortened tenant ID:
++
+ https://<your-short-tenant-ID>.<Cloud Insights Domain>
++
+For example:
++
+ https://abcd12345.c01.cloudinsights.netapp.com
++
+Again, you can contact us through the in-product chat if you need help identifying the tenant host URL.
+
+== Viewing the available templates
+
+The Monitoring service is enabled by default in the working environment wizard. Be sure to keep the option enabled.
+
+.Steps
+
+. Click *Create Cloud Volumes ONTAP*.
+
+. Select Amazon Web Services or Microsoft Azure as the cloud provider and then choose a single node or HA system.
+
+. Fill out the Details & Credentials page.
+
+. On the Services page, leave the Monitoring service enabled and click *Continue*.
++
+image:screenshot_monitoring.gif[A screenshot of the Monitoring service that you can enable from the Working Environments wizard.]
+
+== Creating an application template for a standard Cloud Volumes ONTAP configuration
+
+Enable monitoring at any time from the working environment.
+
+.Steps
+
+. At the top of Cloud Manager, click *Canvas*.
+
+. Select a working environment.
+
+. In the pane on the right, click *Start Monitoring*.
++
+image:screenshot_enable_monitoring.gif[[A screenshot that shows the Start Monitoring icon which is available on the Canvas page after you select a working environment.]

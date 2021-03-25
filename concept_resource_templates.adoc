@@ -24,7 +24,6 @@ Application Templates offers the following features and benefits:
 * Automates and improves the design and development of your infrastructure
 * Provides a single location to activate different NetApp Cloud services
 * Enforces template settings with the "drift" feature so that users don't make changes that are no longer aligned with the template definition
-* f
 
 === What is "drift"?
 
@@ -57,5 +56,4 @@ For example, a template to create a Cloud Volumes ONTAP volume or Azure NetApp F
 +
 For example, they select a high speed disk and a large capacity for Cloud Volumes ONTAP volumes that will be used to carry the workloads for Oracle databases.
 . Your storage admins Cloud Manager configures ONTAP to use the object storage provider and discovers the amount of active and inactive data on the cluster.
-.
 . The template enforces certain resource settings by using the "drift" feature.
