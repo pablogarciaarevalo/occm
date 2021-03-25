@@ -155,6 +155,10 @@ Systems that were shifted over to a PAYGO license are returned to the BYOL licen
 
 When you enable Cloud Backup on a Cloud Volumes ONTAP or on-premises ONTAP system, the service performs a full backup of your data. Volume snapshots are not included in the backup image. After the initial backup, all additional backups are incremental, which means that only changed blocks and new blocks are backed up.
 
+The following image shows the relationship between each component:
+
+image:diagram_cloud_backup_general.png[A diagram showing how Cloud Backup communicates with the volumes on the source systems and the destination storage where the backup files are located.]
+
 === Where backups reside
 
 Backup copies are stored in an S3 bucket, Azure Blob container, or Google Cloud Storage bucket that Cloud Manager creates in your cloud account. For Cloud Volumes ONTAP systems the object store is created in the same region where the Cloud Volumes ONTAP system is located. For on-premises ONTAP systems you identify the region when you enable the service.

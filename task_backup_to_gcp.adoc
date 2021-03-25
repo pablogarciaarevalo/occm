@@ -5,7 +5,7 @@ keywords: backing up, back up, backup, backup cloud volumes ontap, back up cloud
 summary: Complete a few steps to get started backing up data from Cloud Volumes ONTAP to Google Cloud storage.
 ---
 
-= Backing up data to Google Cloud Storage
+= Backing up Cloud Volumes ONTAP data to Google Cloud Storage
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -68,6 +68,10 @@ See link:task_restore_backups.html[Restoring volume data from backup files^] for
 == Requirements
 
 Read the following requirements to make sure that you have a supported configuration before you start backing up volumes to Google Cloud storage.
+
+The following image shows each component and the connections that you need to prepare between them:
+
+image:diagram_cloud_backup_cvo_google.png[A diagram showing how Cloud Backup communicates with the volumes on the source systems and the destination storage where the backup files are located.]
 
 Supported ONTAP versions::
 Cloud Volumes ONTAP 9.7P5 and later.

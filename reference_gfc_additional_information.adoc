@@ -12,12 +12,6 @@ summary: Use the following links to learn more about Global File Cache and other
 :linkattrs:
 :imagesdir: ./media/
 
-//
-// This file was created with NDAC Version 0.9 (July 10, 2020)
-//
-// 2020-07-29 10:32:33.680053
-//
-
 [.lead]
 
 Use the following links to learn more about Global File Cache and other NetApp products:
@@ -26,7 +20,7 @@ Use the following links to learn more about Global File Cache and other NetApp p
 +
 ** See a list of frequently asked questions and answers link:https://cloud.netapp.com/global-file-cache-faq[here^]
 
-* link:https://repo.cloudsync.netapp.com/gfc/NetApp%20GFC%20-%20User%20Guide.pdf[NetApp Global File Cache User Guide^]
+* link:https://repo.cloudsync.netapp.com/gfc/Netapp%20GFC%20User%20Guide%201.0.3.pdf[NetApp Global File Cache User Guide^]
 
 * NetApp Product Documentation
 +
