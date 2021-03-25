@@ -19,27 +19,24 @@ Select one of the NetApp-provided templates and quickly build an application tem
 
 Get started quickly by following these steps or scroll down to the remaining sections for full details.
 
-==== image:number1.png[Number 1] Verify support for your configuration
+==== image:number1.png[Number 1] Verify required prerequisites
 
 [role="quick-margin-list"]
-* You must be a new Cloud Insights customer.
-* You need a Cloud Volumes ONTAP system running in AWS or Azure.
-* For AWS, you need a Connector running version 3.8.4 or later.
-* For Azure, you need a Connector running version 3.9.3 or later.
+* If you plan to apply a Cloud service to your template, such as Cloud Backup, ensure that your environment has an active and licensed Cloud Backup service.
 
-==== image:number2.png[Number 2] Enable Monitoring on your new or existing system
+==== image:number2.png[Number 2] Launch the Application Templates service
 
 [role="quick-margin-list"]
 * New working environments: Be sure to keep Monitoring enabled when you create the working environment (it’s enabled by default).
 
 * Existing working environments: Select a working environment and click *Start Monitoring*.
 
-==== image:number3.png[Number 3] View performance data
+==== image:number3.png[Number 3] Select the template for the resource you want to create
 
 [role="quick-margin-para"]
 Click *Monitoring* and view performance data for your volumes.
 
-==== image:number4.png[Number 4] Subscribe to Cloud Insights
+==== image:number4.png[Number 4] Define the resource and save the template
 
 [role="quick-margin-para"]
 Subscribe before your 30-day free trial ends to continue seeing performance data within Cloud Manager and Cloud Insights. https://docs.netapp.com/us-en/cloudinsights/concept_subscribing_to_cloud_insights.html[Learn how to subscribe^].
