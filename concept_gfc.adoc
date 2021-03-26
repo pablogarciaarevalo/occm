@@ -140,6 +140,15 @@ These other configurations, for example, Global File Cache using Cloud Volumes O
 === What's new in version 1.0.3
 Released: 21 Mar 2021
 
+* The Global File Cache software installer now adds process information to exclude all GFC processes from Windows Defender software on-demand scanning.
+* A new Policy Configuration tab has been added to the Configuration Console to add prepopulation jobs from the GFC Core.
+* Many enhancements have been made so that the software uses less memory while increasing performance and stability.
+
+=== Fixed issues in version 1.0.3
+
+* The NetApp license registration and GFC subscription-based registration is only allowed by the cloud-based LMS. The on-premises LMS should use legacy licensing.
+* The Configuration UI now adds jobs in prepopulation when the LMC uses hostnames instead of IP address for the LMS during configuration.
+
 ==== What's new in version 1.0.2
 Released: 6 Jan 2021
 
