@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_define_templates.html
 keywords: templates, resource templates, application templates, volume templates
-summary: Select one of the NetApp-provided templates and quickly build an application template that your organization can use to start optimizing the creation of resources.
+summary: Select one or more of the NetApp-provided "actions" and quickly build an application template that your organization can use to start optimizing the creation of resources.
 ---
 
 = Building application templates for your organization
@@ -13,7 +13,7 @@ summary: Select one of the NetApp-provided templates and quickly build an applic
 :imagesdir: ./media/
 
 [.lead]
-Select one of the NetApp-provided templates and quickly build an application template that your organization can use to start optimizing the creation of resources.
+Select one or more of the NetApp-provided "actions" and quickly build an application template that your organization can use to start optimizing the creation of resources.
 
 == Quick start
 
@@ -22,72 +22,129 @@ Get started quickly by following these steps or scroll down to the remaining sec
 ==== image:number1.png[Number 1] Verify required prerequisites
 
 [role="quick-margin-list"]
-* If you plan to apply a Cloud service to your template, such as Cloud Backup, ensure that your environment has an active and licensed Cloud Backup service.
+* Before users can create a Cloud Volumes ONTAP or Azure NetApp Files volume using a template, make sure they have access to a Cloud Volumes ONTAP or Azure NetApp Files Working Environment.
+
+[role="quick-margin-list"]
+* If you plan to add a Cloud service "action" to your template, such as Cloud Backup, ensure that your environment has an active and licensed Cloud Backup service.
 
 ==== image:number2.png[Number 2] Launch the Application Templates service
 
-[role="quick-margin-list"]
-* New working environments: Be sure to keep Monitoring enabled when you create the working environment (it’s enabled by default).
+[role="quick-margin-para"]
+Select the *Templates* service.
 
-* Existing working environments: Select a working environment and click *Start Monitoring*.
-
-==== image:number3.png[Number 3] Select the template for the resource you want to create
+==== image:number3.png[Number 3] Build the template by selecting "actions" and defining parameters
 
 [role="quick-margin-para"]
-Click *Monitoring* and view performance data for your volumes.
-
-==== image:number4.png[Number 4] Define the resource and save the template
-
-[role="quick-margin-para"]
-Subscribe before your 30-day free trial ends to continue seeing performance data within Cloud Manager and Cloud Insights. https://docs.netapp.com/us-en/cloudinsights/concept_subscribing_to_cloud_insights.html[Learn how to subscribe^].
+Follow the creation wizard and define the actions that will be performed by the template.
 
 == Requirements
 
 Read the following requirements to make sure that you have a supported configuration.
 
 Supported Cloud Volumes ONTAP versions::
-Any version of Cloud Volumes ONTAP in AWS or in Azure.
+Any version ... of Cloud Volumes ONTAP in any cloud provider environment.
 
-Supported Connector::
-* For
+Supported Azure NetApp Files versions::
+Any version ...
 
-Networking for the Connector::
-Similar to the Acquisition Unit, the Connector must have outbound connectivity to the Cloud Insights tenant. But the endpoint that the Connector contacts is slightly different. It contacts the tenant host URL using the shortened tenant ID:
-+
- https://<your-short-tenant-ID>.<Cloud Insights Domain>
-+
-For example:
-+
- https://abcd12345.c01.cloudinsights.netapp.com
-+
-Again, you can contact us through the in-product chat if you need help identifying the tenant host URL.
+== Special template controls ==
 
-== Viewing the available templates
+There are two special options that you can set when pre-populating a value for a parameter in a template. These are checkboxes for "Editable" and "Drift On".
 
-The Monitoring service is enabled by default in the working environment wizard. Be sure to keep the option enabled.
+image:screenshot_template_options.png[A screenshot of the editable and drift on options that you can set for parameter values.]
+
+* *Editable* - Check the box to let the storage admin override the pre-populated value you have entered in the template. This gives the storage admin a suggestion for what the value should be, but it allows them to customize the value when initially creating the resource.
+When unchecked, the user cannot change the value and the hard-coded value in the template is always used when the admin deploys a resource.
+
+* *Drift On* - Check the box so that Cloud Manager monitors the hard-coded value you entered for a parameter when a resource is created with the template. If Cloud Manager later sees that an admin has changed the parameter value so that it no longer aligns with the template definition, you will receive an email notification about the change.
+
+By design, when drift is enabled the value is not editable when the admin is using the template.
+
+For the drift feature to work, after you have defined drift for some parameters, in the last step before saving the template you must enable the drift feature for the template. Drift does not work if it is set for a parameter but has not been enabled on the template.
+
+== Creating a template for a Cloud Volumes ONTAP volume
+
+For this example we'll create a template named "CVO volume for databases" and include the following 2 actions:
+
+*	Create Cloud Volumes ONTAP Volume
++
+Make the volume for an AWS environment and configure it with 100 GB of storage, the default Snapshot Policy, and Storage Efficiency enabled.
+
+*	Enable Cloud Backup
++
+Create daily backups with a retention value of 30 copies.
 
 .Steps
 
-. Click *Create Cloud Volumes ONTAP*.
+. Click the *Templates* tab and click *Add New Template*.
 
-. Select Amazon Web Services or Microsoft Azure as the cloud provider and then choose a single node or HA system.
-
-. Fill out the Details & Credentials page.
-
-. On the Services page, leave the Monitoring service enabled and click *Continue*.
+. In the _Primary Action_ page, select *Create Cloud Volumes ONTAP Volume* as the type of resource you want to create, and click *Next*.
 +
-image:screenshot_monitoring.gif[A screenshot of the Monitoring service that you can enable from the Working Environments wizard.]
+The _Add Definitions_ page is displayed.
 
-== Creating an application template for a standard Cloud Volumes ONTAP configuration
+. *Template Details:* Enter the template name *CVO volume for databases* and a more detailed description so that this template can be distinguished from other similar templates.
 
-Enable monitoring at any time from the working environment.
-
-.Steps
-
-. At the top of Cloud Manager, click *Canvas*.
-
-. Select a working environment.
-
-. In the pane on the right, click *Start Monitoring*.
+. *Details & Protection:* Enter the volume name, size, and Snapshot policy.
 +
-image:screenshot_enable_monitoring.gif[[A screenshot that shows the Start Monitoring icon which is available on the Canvas page after you select a working environment.]
+[cols=2*,options="header",cols="25,75"]
+
+|===
+| Field
+| Description
+
+| Volume Name | You can let the admin enter any name (Free Text) or you can specify that the name has a certain prefix, suffix, that it contains certain characters, or that it follows rules from a regex you enter.
+
+| Size | You can specify a range of allowable values, or you can specify a fixed size.
+
+| Snapshot Policy | Choose whether this volume will have Snapshot copies created by selecting "default" or some other policy, or choose "none" if you do not want to create Snapshot copies. You might choose none for transient data: for example, tempdb for Microsoft SQL Server.
+
+|===
+
+. *Protocol:* Select *NFS* or *CIFS* if you want to set the protocol of the volume. And then the provide the protocol details.
++
+[cols=2*,options="header",cols="25,75"]
+
+|===
+| Fields
+| Description
+
+| Access control (for NFS only) | Choose whether access controls are need to access the volume.
+
+| Export Policy (for NFS only) | Enter an export policy to define the clients in the subnet that can access the volume.
+
+| NFS Version (for NFS only) | Select an NFS version for the volume: either NFSv3 or NFSv4.
+
+| Permissions and Users / Groups (for CIFS only) |	These fields enable you to control the level of access to a share for users and groups (also called access control lists or ACLs). You can specify local or domain Windows users or groups, or UNIX users or groups. If you specify a domain Windows user name, you must include the user's domain using the format domain\username.
+
+|===
+
+. *Usage Profile:* Choose whether or not NetApp storage efficiency features are applied to the volume.
+
+. *Provider:* Choose the cloud storage provider on which this volume will reside.
+
+. *Disk Type:* Choose the type of disk (based on the cloud provider setting you selected) that will be used for the volume storage.
+
+. *Tiering Policy:* Choose the tiering policy that you would like applied to the volume, or set this to "None" if you do not want to tier data from this volume.
++
+See link:concept_data_tiering.html#volume-tiering-policies[volume tiering policies] for details.
+
+. Click *Next* after you have defined the parameters needed for this template.
+
+. In the _Add Actions_ page, enable Backups and set the policy to create daily backups with a 30 day retention value.
+Then click *Next*.
+
+. In the _Configure Drift_ page, choose whether the Drift feature should be applied to the template so that Cloud Manager monitors the hard-coded values you entered for parameters when creating this template.
+
+. Click *Create Template*.
+
+.Result
+
+The template is created and you are returned to the Template Dashboard.
+
+== What to do next ==
+
+Now that you have created a template, you need to inform your storage administrators to use the template when creating new volumes.
+
+Your users should select *Add Volume From Template* when adding a volume to a Working Environment in the future. The selection is available from the Working Environment page, and from the Volume Details page.
+
+image:screenshot_template_add_vol_from.png[Two screenshots showing how users create new volumes from a template.]
