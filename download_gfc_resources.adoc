@@ -27,7 +27,7 @@ https://repo.cloudsync.netapp.com/gfc/2k16Hyperv.zip[Windows Server 2016 .VHDX i
 * Windows Server 2019 Virtual Template:
 +
 https://repo.cloudsync.netapp.com/gfc/2k19-1.0.3.60.zip[Windows Server 2019 .OVA including NetApp GFC (VMware VSphere 6.5+)^]
-https://repo.cloudsync.netapp.com/gfc/2k19Hyperv.zip[Windows Server 2019 .VHDX including NetApp GFC (Microsoft Hyper-v)^]
+https://repo.cloudsync.netapp.com/gfc/2K19Hyperv.zip[Windows Server 2019 .VHDX including NetApp GFC (Microsoft Hyper-v)^]
 
 * Global File Cache Edge Software:
 +
