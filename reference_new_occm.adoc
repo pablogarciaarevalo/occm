@@ -27,7 +27,7 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 +
 For example, the dashboard identifies the amount of stale data, non-business data, and very large files in your systems so you can decide whether you want to move, delete, or tier some files to less expensive object storage.
 
-* You can view a list of link:task_controlling_private_data.html#viewing-file-metadata-and-permissions[all users or groups who have access to a file^].
+* You can view a list of link:task_controlling_private_data.html#viewing-file-metadata[all users or groups who have access to a file^].
 
 * Cloud Compliance is now supported in Government regions in AWS.
 
@@ -148,7 +148,7 @@ The Dashboard is also the starting place to perform all volume and file restore 
 +
 Select this option when link:task_managing_highlights.html#creating-custom-policies[creating or editing any Policy^].
 
-* View File Owner and Permission information when link:task_controlling_private_data.html#viewing-file-metadata-and-permissions[viewing individual file details^].
+* View File Owner and Permission information when link:task_controlling_private_data.html#viewing-file-metadata[viewing individual file details^].
 +
 You can also use this criteria to further filter your data in the Investigation page.
 

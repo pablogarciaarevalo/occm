@@ -113,25 +113,37 @@ image:screenshot_file_types.gif[A screenshot of the file types dialog box where 
 
 . Investigate the data by searching, sorting, expanding details for a specific file, clicking *Investigate Results* to see masked information, or by downloading the file list.
 
-== Viewing file metadata and permissions
+== Viewing file metadata
 
 In the Data Investigation results pane you can click image:button_subfolder.png[right-caret] for any single file to view the file metadata.
 
 image:screenshot_compliance_file_details.png[A screenshot showing the metadata details for a file in the Data Investigation page.]
 
-In addition to showing you the working environment and volume where the file resides, the metadata shows much more information, including the file permissions, file owner, and assigned AIP label (if you have link:task_managing_highlights.html#categorizing-your-data-using-aip-labels[integrated AIP in Cloud Compliance^]). This information is useful if you're planning to create Policies because you can see all the information that you can use to filter your data.
+In addition to showing you the working environment and volume where the file resides, the metadata shows much more information, including the file permissions, file owner, whether there are duplicates of this file, and assigned AIP label (if you have link:task_managing_highlights.html#categorizing-your-data-using-aip-labels[integrated AIP in Cloud Compliance^]). This information is useful if you're planning to create Policies because you can see all the information that you can use to filter your data.
 
 Note that not all information is available for all data sources - just what is appropriate for that data source. For example, permissions and AIP labels are not relevant for database files.
+
+When viewing the details for a single file there are two actions you can take on the file:
+
+* You can delete the file. See link:task_managing_highlights.html#deleting-source-files[Deleting source files^] for details.
+
+* If you have integrated AIP labels with Cloud Compliance, you can assign a label to this file, or change to a different label if one already exists. See link:task_managing_highlights.html#assigning-aip-labels-manually[Assigning AIP labels manually^] for details.
+
+=== Viewing open permissions for a file
 
 To view a list of all users or groups who have access to a file, click *View all Permissions*. This button is available only for files in CIFS shares and OneDrive accounts.
 
 image:screenshot_compliance_permissions.png[A screenshot showing detailed file permissions.]
 
-There are two actions you can take on the file:
+=== Viewing files that are duplicated in your storage systems
 
-* If you have integrated AIP labels with Cloud Compliance, you can assign a label to this file, or change to a different label if one already exists. See link:task_managing_highlights.html#assigning-aip-labels-manually[Assigning AIP labels manually^] for details.
+If there are duplicates of a certain file, this information appears next to the _Duplicates_ field. This is useful if you want to identify areas where you can save storage space. It can also be helpful to make sure certain files that have specific permissions or sensitive information are not unnecessarily duplicated in your storage systems.
 
-* You can delete the file. See link:task_managing_highlights.html#deleting-source-files[Deleting source files^] for details.
+Only files that are in the formats described in link:reference_private_data_categories.html#types-of-files[Types of files] can be identified as duplicate.
+
+To view the list of duplicate files, click *View Details*. In the next page click *View Duplicates* to view the files in the Investigation page.
+
+You can download the list of duplicate files and send it to your storage admin so they can decide which files, if any, can be deleted.  Of you can link:task_managing_highlights.html#deleting-source-files[delete the file^] yourself if you are confident that this version of the file is not needed.
 
 == Viewing Dashboard data for specific working environments
 

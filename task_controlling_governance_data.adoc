@@ -23,11 +23,9 @@ The Governance dashboard provides information so that you can increase the effic
 
 image:screenshot_compliance_governance_dashboard.png[A screenshot of the Cloud Compliance Governance dashboard.]
 
-=== Yearly Saving Opportunities
+=== Saving Opportunities
 
-You may want to investigate the items in the _Yearly Saving Opportunities_ area to see if there is any data you should delete or tier to less expensive object storage. Click each item to view the results in the Investigation page.
-
-The Savings amount is an estimate of the savings you could realize by deleting, moving, or tiering data based on $0.30 per GB per year.
+You may want to investigate the items in the _Saving Opportunities_ area to see if there is any data you should delete or tier to less expensive object storage. Click each item to view the filtered results in the Investigation page.
 
 * *Stale Data* - Data that was last modified over 3 years ago.
 * *Non-Business Data* - Data considered not to be business related, based on their Category or File Type. This includes:
@@ -38,15 +36,27 @@ The Savings amount is an estimate of the savings you could realize by deleting, 
 ** Images
 ** Logs
 ** Videos
-** Miscellaneous (general “other” category)
+** Miscellaneous (general "other" category)
 
 * *Large Files* - Files larger than 100 MB.
 
-=== Policies with the most results
+=== Policies with the largest number of results
 
-Click the name of a Policy to display the results in the Investigation page. Click *View All* to view the list of all available Policies.
+Click the name of a Policy in the _Policy_ area to display the results in the Investigation page. Click *View All* to view the list of all available Policies.
 
 Click link:task_managing_highlights.html#controlling-your-data-using-policies[here^] to learn more about Policies.
+
+=== Top data repositories listed by data sensitivity
+
+The _Top Data Repositories by Sensitivity Level_ area lists up to the top four data repositories (working environments and data sources) that contain the most sensitive items. Each bar in the chart is divided into Non-Personal data, Personal data, and Sensitive Personal data.
+
+You can hover over each section to see the total number of items in each category. Click each area to view the filtered results in the Investigation page so that you can investigate further.
+
+=== Data listed by types of Open Permissions 
+
+The _Open Permissions_ area shows the types of open permissions that exist for all files that are being scanned. The chart shows the following types of permissions: No Open Permissions, Open to Organization, Open to Public, and Unknown Permissions. You can hover over each section to see the total number of files in each category. Click each area to view the filtered results in the Investigation page so that you can investigate further.
+
+TIP: Files in OneDrive accounts and in databases are not represented in this chart.
 
 === Age of Data and Size of Data graphs
 
@@ -59,7 +69,7 @@ You can hover over a point in the charts to see details about the age or size of
 
 === Most identified Data Classifications
 
-This area provides a list of the most identified link:task_controlling_private_data.html#categories[Categories^], link:task_controlling_private_data.html#file-types[File types^], and link:task_managing_highlights.html#categorizing-your-data-using-aip-labels[AIP Labels^] in your scanned data.
+The _Classification_ area provides a list of the most identified link:task_controlling_private_data.html#categories[Categories^], link:task_controlling_private_data.html#file-types[File types^], and link:task_managing_highlights.html#categorizing-your-data-using-aip-labels[AIP Labels^] in your scanned data.
 
 ==== Categories
 

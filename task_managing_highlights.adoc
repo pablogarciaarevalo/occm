@@ -18,17 +18,17 @@ Cloud Compliance provides many ways for you to manage your private data. Some fu
 * Using the "Policy" functionality you can create your own custom search queries so that you can easily see the results by clicking one button.
 * You can send email alerts to Cloud Manager users when certain critical policies return results.
 * If you are subscribed to link:https://azure.microsoft.com/en-us/services/information-protection/[Azure Information Protection (AIP)^] to classify and protect your files, you can use Cloud Compliance to manage those AIP labels.
-* You can delete files that seem insecure or too risky to leave in your storage system.
+* You can delete files that seem insecure or too risky to leave in your storage system or that you have identified as a duplicate.
 
-See below for more functionality that is provided with both the policies and AIP features.
+See below for more functionality that is provided with both the Policies and AIP features.
 
 == Controlling your data using Policies
 
-Policies are like a favorites list of custom filters that provide search results in the Investigation page for commonly requested compliance queries. Cloud Compliance provides a set of predefined Policies based on common customer questions. You can also create custom Policies that provide results for searches specific to your organization.
+Policies are like a favorites list of custom filters that provide search results in the Investigation page for commonly requested compliance queries. Cloud Compliance provides a set of predefined Policies based on common customer requests. You can create custom Policies that provide results for searches specific to your organization.
 
 Policies provide the following functionality:
 
-* <<List of predefined policies,Predefined Policies>> from NetApp based on user requests
+* <<List of predefined Policies,Predefined Policies>> from NetApp based on user requests
 * Ability to create your own custom Policies
 * Launch the Investigation page with the results from your Policies in one click
 * Send email alerts to Cloud Manager users when certain critical Policies return results so you can get notifications to protect your data
@@ -240,6 +240,7 @@ TIP: You can't delete files that reside in databases or files that reside in vol
 .Requirements
 
 Deleting files requires the following permissions:
+
 *	For NFS data – the export policy needs to be defined with write permissions.
 *	For CIFS data – the CIFS credentials need to have write permissions.
 *	For S3 data - the IAM role must include the following permission: `s3:DeleteObject`
