@@ -23,6 +23,10 @@ A Connector requires a network connection to the type of working environment tha
 
 For example, if you install a Connector in your corporate network, then you must set up a VPN connection to the VPC or VNet in which you launch Cloud Volumes ONTAP.
 
+== Possible conflict with IP addresses in the 172 range
+
+If your network has a subnet configured in the 172 range, then you might experience connectivity failures from Cloud Manager. link:reference_issues.html[Learn more about this known issue].
+
 == Outbound internet access
 
 The Connector requires outbound internet access to manage resources and processes within your public cloud environment. Outbound internet access is also required if you want to manually install the Connector on a Linux host or access the local UI running on the Connector.

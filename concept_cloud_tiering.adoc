@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept_cloud_tiering.html
 keywords: cloud tiering, overview, conceptual, value, features, cost, charging, service connector
-summary: Cloud Tiering is a NetApp-managed service that can reduce your on-premises storage costs by automatically tiering inactive data to object storage in the cloud. This enables you to extend your data center to the public cloud without changing your application layer.
+summary: NetApp's Cloud Tiering service extends your data center to the cloud by automatically tiering inactive data from on-premises ONTAP clusters to object storage. This frees valuable space on the cluster for more workloads, without making changes to the application layer. Cloud Tiering can reduce costs in your data center and enables a switch from a CAPEX model to an OPEX model.
 ---
 
 = Learn about Cloud Tiering
