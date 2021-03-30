@@ -141,12 +141,12 @@ The Dashboard is also the starting place to perform all volume and file restore 
 * View and manage Azure Information Protection (AIP) labels in files you are scanning.
 
 ** After you integrate the AIP label functionality into Cloud Compliance, you can view the labels that are assigned to files, add labels to files, and change labels. See link:task_managing_highlights.html#categorizing-your-data-using-aip-labels[how to integrate AIP labels^] in your workspace.
-** Assign labels individually to files, or use the Highlights functionality to link:task_managing_highlights.html#assigning-aip-labels-automatically-with-highlights[add labels to all files that match the Highlight criteria^]. With Highlights, labels are updated continuously as Cloud Compliance finds matches in your files.
+** Assign labels individually to files, or use the Policies functionality to link:task_managing_highlights.html#assigning-aip-labels-automatically-with-policies[add labels to all files that match the Policy criteria^]. With Policies, labels are updated continuously as Cloud Compliance finds matches in your files.
 ** Filter data in the Investigation page by AIP label to view all files that match the label.
 
-* Send email alerts to Cloud Manager users (daily, weekly, or monthly) when any of your Highlights return results so you can get notifications to protect your data.
+* Send email alerts to Cloud Manager users (daily, weekly, or monthly) when any of your Policies return results so you can get notifications to protect your data.
 +
-Select this option when link:task_managing_highlights.html#creating-custom-highlights[creating or editing any highlight^].
+Select this option when link:task_managing_highlights.html#creating-custom-policies[creating or editing any Policy^].
 
 * View File Owner and Permission information when link:task_controlling_private_data.html#viewing-file-metadata-and-permissions[viewing individual file details^].
 +
@@ -218,9 +218,9 @@ image:screenshot_support_dashboard.gif["A screenshot of the Support Dashboard wh
 +
 Now you can add your corporate OneDrive accounts to Cloud Compliance in order to scan folders and files from all your OneDrive users. See link:task_scanning_onedrive.html[scanning OneDrive accounts^] for details.
 
-* The "Highlights" feature now allows you can create your own custom Highlights that provide results for searches specific to your organization.
+* The "Policies" feature now allows you can create your own custom Policies that provide results for searches specific to your organization.
 +
-In the last release, Cloud Compliance provided a set predefined highlight filters that all users could use. Now you can create your own Highlights to return specific scan results in the Investigation page. See how to link:task_managing_highlights.html#creating-custom-highlights[create your own custom highlights^].
+In the last release, Cloud Compliance provided a set predefined Policy filters that all users could use. Now you can create your own Policies to return specific scan results in the Investigation page. See how to link:task_managing_highlights.html#creating-custom-policies[create your own custom policies^].
 
 * Ability to scan backup files from on-premises ONTAP systems for free.
 +
@@ -361,11 +361,11 @@ link:task_deploy_cloud_compliance.html#deploying-the-cloud-compliance-instance-o
 +
 In the past you have been able to scan NFS DP volumes. This release allows you to easily scan CIFS DP volumes directly within Cloud Compliance. link:task_getting_started_compliance.html#scanning-data-protection-volumes[Learn how].
 
-* A new "Highlights" feature provides a predefined selection of combination filters that return results in the Investigation page
+* A new "Policies" feature provides a predefined selection of combination filters that return results in the Investigation page
 +
-Ten highlights are available with this release. For example, the "HIPAA – Stale data over 30 days" highlight identifies files that contain Health information that is over 30 days old. link:task_controlling_private_data.html#using-highlights-to-quickly-view-results-in-the-investigation-page[See the full list of predefined highlights].
+Ten Policies are available with this release. For example, the "HIPAA – Stale data over 30 days" Policy identifies files that contain Health information that is over 30 days old. link:task_controlling_private_data.html#using-policies-to-quickly-view-results-in-the-investigation-page[See the full list of predefined policies].
 +
-You can select Highlights from a tab in the Compliance Dashboard and as a filter in the Investigation page.
+You can select Policies from a tab in the Compliance Dashboard and as a filter in the Investigation page.
 
 * Cloud Compliance can now find the sensitive personal data type "Political Opinions Reference" in files. See the list of all link:reference_private_data_categories.html#types-of-sensitive-personal-data[sensitive personal data types^] that Cloud Compliance finds in scans.
 

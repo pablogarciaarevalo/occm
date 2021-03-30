@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_controlling_governance_data.html
-keywords: savings, stale data, non-business data, duplicate data, age or data, size of data, highlights
+keywords: savings, stale data, non-business data, duplicate data, age or data, size of data, highlights, policies
 summary: Gain control of the costs related to the data on your organizations' storage resources. Cloud Compliance identifies the amount of stale data, non-business data, and very large files in your systems so you can decide whether you want to remove or tier some files to less expensive object storage.
 ---
 
@@ -42,11 +42,11 @@ The Savings amount is an estimate of the savings you could realize by deleting, 
 
 * *Large Files* - Files larger than 100 MB.
 
-=== Highlights with the most results
+=== Policies with the most results
 
-Click the name of a highlight to display the results in the Investigation page. Click *View All* to view the list of all available highlights.
+Click the name of a Policy to display the results in the Investigation page. Click *View All* to view the list of all available Policies.
 
-Click link:task_managing_highlights.html#controlling-your-data-using-highlights[here^] to learn more about highlights.
+Click link:task_managing_highlights.html#controlling-your-data-using-policies[here^] to learn more about Policies.
 
 === Age of Data and Size of Data graphs
 
