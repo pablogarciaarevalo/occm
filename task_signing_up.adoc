@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_signing_up.html
-keywords: netapp cloud central, sign up, sign up to cloud central, create account
+keywords: netapp cloud central, sign up, sign up to cloud central, create account, federated, federation, federated login, federation login
 summary: Sign up to NetApp Cloud Central so you can access NetApp's cloud services.
 ---
 
@@ -14,6 +14,8 @@ summary: Sign up to NetApp Cloud Central so you can access NetApp's cloud servic
 
 [.lead]
 Sign up to NetApp Cloud Central so you can access NetApp's cloud services.
+
+TIP: You can use single sign-on to log in using credentials from your corporate directory (federated identity). To learn more, go to the https://cloud.netapp.com/help-center[Cloud Central Help Center^] and then click *Cloud Central sign-in options*.
 
 .Steps
 
