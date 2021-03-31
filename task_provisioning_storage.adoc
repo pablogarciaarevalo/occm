@@ -91,7 +91,8 @@ For help, refer to the following:
 
 * link:task_planning_your_config.html#choosing-a-volume-usage-profile[Understanding volume usage profiles]
 * link:task_planning_your_config.html#sizing-your-system-in-aws[Sizing your system in AWS]
-* link:task_planning_your_config.html#sizing-your-system-in-azure[Sizing your system in Azure]
+* link:task_planning_your_config_azure.html#sizing-your-system-in-azure[Sizing your system in Azure]
+* link:task_planning_your_config_gcp.html#sizing-your-system-in-gcp[Sizing your system in GCP]
 * link:concept_data_tiering.html[Data tiering overview]
 
 . Click *Go*.
