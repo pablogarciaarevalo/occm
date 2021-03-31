@@ -58,12 +58,12 @@ You can hover over each section to see the total number of items in each categor
 
 === Data listed by types of Open Permissions
 
-The _Open Permissions_ area shows the types of open permissions that exist for all files that are being scanned. The chart shows the following types of permissions:
+The _Open Permissions_ area shows the percentage for each type of permissions that exist for all files that are being scanned. The chart shows the following types of permissions:
 
-* No Open Permissions
+* No Open Access
 * Open to Organization
 * Open to Public
-* Unknown Permissions
+* Unknown Access
 
 You can hover over each section to see the total number of files in each category. Click each area to view the filtered results in the Investigation page so that you can investigate further.
 
