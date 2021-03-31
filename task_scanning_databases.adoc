@@ -17,7 +17,7 @@ Complete a few steps to start scanning your database schemas with Cloud Complian
 
 == Quick start
 
-Get started quickly by following these steps or scroll down to the remaining sections for full details.
+Get started quickly by following these steps, or scroll down to the remaining sections for full details.
 
 ==== image:number1.png[Number 1] Review database prerequisites
 

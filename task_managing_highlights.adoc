@@ -16,7 +16,7 @@ summary: Cloud Compliance provides many ways for you to manage your private data
 Cloud Compliance provides many ways for you to manage your private data. Some functionality just makes it easier to see the data that is most important to you, and other functionality allows you to make changes to the data.
 
 * Using the "Policy" functionality you can create your own custom search queries so that you can easily see the results by clicking one button.
-* You can send email alerts to Cloud Manager users when certain critical policies return results.
+* You can send email alerts to Cloud Manager users when certain critical Policies return results.
 * If you are subscribed to link:https://azure.microsoft.com/en-us/services/information-protection/[Azure Information Protection (AIP)^] to classify and protect your files, you can use Cloud Compliance to manage those AIP labels.
 * You can delete files that seem insecure or too risky to leave in your storage system or that you have identified as a duplicate.
 
@@ -34,7 +34,7 @@ Policies provide the following functionality:
 * Send email alerts to Cloud Manager users when certain critical Policies return results so you can get notifications to protect your data
 * Assign AIP (Azure Information Protection) labels automatically to all files that match the criteria defined in a Policy
 
-The *Policies* tab in the Compliance Dashboard lists all the Policies available on this instance of Cloud Compliance.
+The *Policies* tab in the Compliance Dashboard lists all the predefined and custom Policies available on this instance of Cloud Compliance.
 
 image:screenshot_compliance_highlights_tab.png[A screenshot of the Policies tab in the Cloud Compliance dashboard.]
 

@@ -17,7 +17,7 @@ Complete a few steps to start scanning data within object storage directly with 
 
 == Quick start
 
-Get started quickly by following these steps or scroll down to the remaining sections for full details.
+Get started quickly by following these steps, or scroll down to the remaining sections for full details.
 
 ==== image:number1.png[Number 1] Review object storage prerequisites
 
@@ -42,11 +42,9 @@ Add the object storage service to Cloud Compliance.
 [role="quick-margin-para"]
 Select the buckets that you'd like to scan and Cloud Compliance will start scanning them.
 
-== Reviewing prerequisites
+== Reviewing object storage requirements
 
 Review the following prerequisites to make sure that you have a supported configuration before you enable Cloud Compliance.
-
-=== Object storage requirements
 
 * You need to have the endpoint URL to connect with the object storage service.
 
@@ -67,7 +65,7 @@ Add the object storage service.
 image:screenshot_compliance_add_object_storage_button.png[A screenshot of the Scan Configuration page where you can click the Add File Shares Group button.]
 
 . In the Add Object Storage Service dialog, enter the details for the object storage service and click *Continue*.
-.. Enter the name you want to use for the Working Environment.
+.. Enter the name you want to use for the Working Environment. This name should reflect the name of the object storage service to which you are connecting.
 .. Enter the Endpoint URL to access the object storage service.
 .. Enter the Access Key and Secret Key so that Cloud Compliance can access the buckets in the object storage.
 +

@@ -17,7 +17,7 @@ Complete a few steps to start scanning files in your user's OneDrive folders wit
 
 == Quick start
 
-Get started quickly by following these steps or scroll down to the remaining sections for full details.
+Get started quickly by following these steps, or scroll down to the remaining sections for full details.
 
 ==== image:number1.png[Number 1] Review OneDrive prerequisites
 
@@ -39,15 +39,12 @@ Using Admin user credentials, log into the OneDrive account that you want to acc
 [role="quick-margin-para"]
 Add the list of users from the OneDrive account that you want to scan. You can add up to 100 users at time.
 
-== Reviewing prerequisites
+== Reviewing OneDrive requirements
 
 Review the following prerequisites to make sure that you have a supported configuration before you enable Cloud Compliance.
 
-=== OneDrive requirements
-
-You must have the Admin login credentials for the OneDrive for Business account that provides read access to all user files.
-
-You will need a line-separated list of the email addresses for all the users whose OneDrive folders you want to scan.
+* You must have the Admin login credentials for the OneDrive for Business account that provides read access to all user files.
+* You will need a line-separated list of the email addresses for all the users whose OneDrive folders you want to scan.
 
 == Adding the OneDrive account
 
