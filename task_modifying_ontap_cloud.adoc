@@ -144,26 +144,6 @@ IMPORTANT: You should not change the password for the admin account through Syst
 +
 The new password must be different than one of the last six passwords that you used.
 
-== Changing the network MTU for c4.4xlarge and c4.8xlarge instances
-
-By default, Cloud Volumes ONTAP is configured to use 9,000 MTU (also called jumbo frames) when you choose the c4.4xlarge instance or the c4.8xlarge instance in AWS. You can change the network MTU to 1,500 bytes if that is more appropriate for your network configuration.
-
-.About this task
-
-A network maximum transmission unit (MTU) of 9,000 bytes can provide the highest maximum network throughput possible for specific configurations.
-
-9,000 MTU is a good choice if clients in the same VPC communicate with the Cloud Volumes ONTAP system and some or all of those clients also support 9,000 MTU. If traffic leaves the VPC, packet fragmentation can occur, which degrades performance.
-
-A network MTU of 1,500 bytes is a good choice if clients or systems outside of the VPC communicate with the Cloud Volumes ONTAP system.
-
-.Steps
-
-. From the working environment, click the menu icon and then click *Advanced > Network Utilization*.
-
-. Select *Standard* or *Jumbo Frames*.
-
-. Click *Change*.
-
 == Changing route tables associated with HA pairs in multiple AWS AZs
 
 You can modify the AWS route tables that include routes to the floating IP addresses for an HA pair. You might do this if new NFS or CIFS clients need to access an HA pair in AWS.
