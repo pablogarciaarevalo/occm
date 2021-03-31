@@ -94,7 +94,7 @@ If the dialog lists any users who could not be added, capture this information s
 
 Cloud Compliance starts scanning the files for the users you added, and the results are displayed in the Dashboard and in other locations.
 
-== Removing a OneDrive user from compliance scans
+== Removing a OneDrive user from Compliance scans
 
 If users leave the company or if their email address changes, you can remove individual OneDrive users from having their files scanned at any time. Just click *Remove OneDrive User* from the Configuration page.
 

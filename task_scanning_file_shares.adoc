@@ -109,7 +109,7 @@ If the dialog lists any shares that could not be added, capture this information
 
 Cloud Compliance starts scanning the files in the file shares you added, and the results are displayed in the Dashboard and in other locations.
 
-== Removing a file share from compliance scans
+== Removing a file share from Compliance scans
 
 If you no longer need to scan certain file shares, you can remove individual file shares from having their files scanned at any time. Just click *Remove Share* from the Configuration page.
 

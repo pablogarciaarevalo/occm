@@ -147,6 +147,8 @@ image:screenshot_compliance_duplicate_file.png[A screenshot showing how to view 
 
 You can download the list of duplicate files and send it to your storage admin so they can decide which files, if any, can be deleted.  Of you can link:task_managing_highlights.html#deleting-source-files[delete the file^] yourself if you are confident that this version of the file is not needed.
 
+TIP: You can use the "hash" value provided in this page and enter it directly in the Filters page to search for a specific duplicate file at any time - or to be used in a Policy.
+
 == Viewing Dashboard data for specific working environments
 
 You can filter the contents of the Cloud Compliance dashboard to see compliance data for all working environments and databases, or for just specific working environments.

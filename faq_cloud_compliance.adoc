@@ -121,7 +121,7 @@ NOTE: Activating Cloud Compliance results in an immediate initial scan. Complian
 
 == How do I disable Cloud Compliance?
 
-You can disable Cloud Compliance from the Canvas page after you select an individual working environment, database, or OneDrive account.
+You can disable Cloud Compliance from the Canvas page after you select an individual working environment, database, file share group, or OneDrive account.
 
 link:task_managing_compliance.html[Learn more^].
 
