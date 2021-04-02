@@ -21,7 +21,7 @@ There are two services that provide the full suite of backup and restore functio
 
 * The *Cloud Backup service* enables you to create backup files from volumes on your Cloud Volumes ONTAP and on-prem ONTAP clusters.
 
-* The *Restore service* enables you to restore an entire _volume_, or one or more _files_, from a backup file to the same or different Cloud Volumes ONTAP or on-prem ONTAP cluster.
+* The *Restore service* enables you to restore an entire _volume_, or one or more _files_, from a backup file to the same or different Cloud Volumes ONTAP or on-premises ONTAP cluster.
 
 link:https://cloud.netapp.com/cloud-backup-service[Learn more about the Cloud Backup Service^].
 
@@ -99,7 +99,7 @@ The instance runs only when browsing the backup file to locate the individual fi
 +
 See the link:task_restore_backups.html#details[type of virtual machine/instance that is deployed^] for each supported cloud provider.
 
-* For volume restore there is no cost because no separate instance is required.
+* For volume restore there is no cost because no separate instance or virtual machine is required.
 
 *Service charges*
 

@@ -95,7 +95,7 @@ image:screenshot_restore_select_work_env_volume.png[A screenshot of selecting th
 +
 image:screenshot_restore_new_vol_name.png[A screenshot of selecting the volume and folder for the files you want to restore.]
 +
-You can select the Aggregate that the volume will use for its' capacity when restoring a volume to an on-prem ONTAP system.
+You can select the Aggregate that the volume will use for its' capacity when restoring a volume to an on-premises ONTAP system.
 
 . Click *Restore* and you are returned to the Restore Dashboard so you can review the progress of the restore operation.
 
@@ -267,7 +267,7 @@ You have a few options for the location when restoring files.
 ** You can hover over a folder and click image:button_subfolder.png[] at the end of the row to drill down into subfolders, and then select a folder.
 
 +
-* If you have selected the same destination Working Environment and Volume as where the source file was located (as identified by the image:button_source.png[] icon), you can select *Maintain Source Folder Path* to restore the file, or all files, to the same folder where they existed in the source structure. All the same folders and sub-folders must already exist; folders are not created.
+* If you have selected the same destination Working Environment and Volume as where the source file was located, you can select *Maintain Source Folder Path* to restore the file, or all files, to the same folder where they existed in the source structure. All the same folders and sub-folders must already exist; folders are not created.
 
 . Click *Restore* and you are returned to the Restore Dashboard so you can review the progress of the restore operation.
 
