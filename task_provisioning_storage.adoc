@@ -21,7 +21,7 @@ IMPORTANT: All disks and aggregates must be created and deleted directly from Cl
 
 If you need more storage after you launch your initial Cloud Volumes ONTAP system, you can create new FlexVol volumes for NFS, CIFS, or iSCSI from Cloud Manager.
 
-A Cloud Manager feature called "templates" enables you to create volumes that are optimized for the workload requirements for certain applications; such as databases or streaming services. If your organization has created some volume templates, you can follow these same steps. Just be aware that the template may pre-define some fields depending on the workloads that will run on the volume.
+A Cloud Manager feature called "templates" enables you to create volumes that are optimized for the workload requirements for certain applications; such as databases or streaming services. If your organization has created volume templates that you should use, follow <<Creating volumes using templates,these steps>>.
 
 .About this task
 
@@ -44,8 +44,6 @@ If you want to use CIFS in AWS, you must have set up DNS and Active Directory. F
 | Action
 | Steps
 | Create a new volume and let Cloud Manager choose the containing aggregate |	Click *Add Volume* > *New volume*.
-or
-Click *Add Volume* > *New volume from template*.
 | Create a new volume on a specific aggregate
 a|
 .. Click the menu icon, and then click *Advanced > Advanced allocation*.
@@ -110,6 +108,43 @@ Cloud Volumes ONTAP provisions the volume.
 If you provisioned a CIFS share, give users or groups permissions to the files and folders and verify that those users can access the share and create a file.
 
 If you want to apply quotas to volumes, you must use System Manager or the CLI. Quotas enable you to restrict or track the disk space and number of files used by a user, group, or qtree.
+
+== Creating volumes from templates
+
+If your organization has created volume templates so you can deploy volumes that are optimized for the workload requirements for certain applications, these are the steps you should follow.
+
+The template should make your job easier because certain volume parameters will already be defined in the template, such as disk type, size, protocol, snapshot policy, cloud provider, and more. When a parameter is already defined, you can just skip to the next volume parameter.
+
+.Steps
+
+. On the Canvas page, double-click the name of the Cloud Volumes ONTAP system on which you want to provision a volume.
+
+. Click *Add Volume* > *New volume from template*.
++
+(Screenshot of available templates page)
+
+. Select the template that you want to use to create the volumes and click *Next*.
++
+The xyz page is displayed.
++
+(Screenshot of at least the top of the details page)
+
+. *Details & Protection:* Enter the volume name, size, and Snapshot policy.
+copy from templates topic
+copy from templates topic
+copy from templates topic
+copy from templates topic
+copy from templates topic
+
+. Click *Next* after you have defined the parameters needed for this volume.
+
+. In the _Add Actions_ page, if required, enable Backups and set the policy to create backups with a certain retention value.
+
+. Click *Create Volume*.
+
+.Result
+
+The volume is created.
 
 == Creating FlexVol volumes on the second node in an HA configuration
 
