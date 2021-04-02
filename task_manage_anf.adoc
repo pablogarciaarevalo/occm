@@ -5,7 +5,7 @@ keywords: azure netapp files, create volumes, delete volumes, create nfs volumes
 summary: Create an Azure NetApp Files working environment in Cloud Manager to create and manage NetApp accounts, capacity pools, volumes, and snapshots.
 ---
 
-= Setting up Azure NetApp Files
+= Setting up and discovering Azure NetApp Files
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -14,6 +14,10 @@ summary: Create an Azure NetApp Files working environment in Cloud Manager to cr
 
 [.lead]
 Create an Azure NetApp Files working environment in Cloud Manager to create and manage NetApp accounts, capacity pools, volumes, and snapshots.
+
+If you haven't set up Azure NetApp Files yet, you'll need to complete all of the steps on this page.
+
+If you already set up Azure NetApp Files from outside of Cloud Manager, then you simply need to set up an Azure AD application and then create the Azure NetApp Files working environment.
 
 == Quick start
 
