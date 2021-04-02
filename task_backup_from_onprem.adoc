@@ -16,11 +16,11 @@ summary: Complete a few steps to get started backing up data from your on-premis
 Complete a few steps to get started backing up data from your on-premises ONTAP systems to low-cost object storage in the public cloud. This includes creating backup files on Amazon S3 and Azure Blob.
 // Complete a few steps to get started backing up data from your on-premises ONTAP systems to low-cost object storage in the cloud. This includes creating backup files on Amazon S3, Azure Blob, and Google Cloud Storage.
 
-A Beta feature released in January 2021 allows you to run Compliance scans on the backed up volumes from your on-prem systems. Typically, compliance scans are free up to 1 TB of data, and then a cost for the service is applied for data over 1 TB. When combining Backup and Compliance for your on-prem volumes, the cost for scans on those on-prem volumes is free. Learn more about how link:concept_cloud_compliance.html[Cloud Compliance^] can get your business applications and cloud environments privacy ready.
+A Beta feature released in January 2021 allows you to run Compliance scans on the backed up volumes from your on-premises systems. Typically, compliance scans are free up to 1 TB of data, and then a cost for the service is applied for data over 1 TB. When combining Backup and Compliance for your on-prem volumes, the cost for scans on those on-prem volumes is free. Learn more about how link:concept_cloud_compliance.html[Cloud Compliance^] can get your business applications and cloud environments privacy ready.
 
 == Quick start
 
-Get started quickly by following these steps or scroll down to the remaining sections for full details.
+Get started quickly by following these steps, or scroll down to the remaining sections for full details.
 
 ==== image:number1.png[Number 1] Verify support for your configuration
 
@@ -77,7 +77,7 @@ See link:task_restore_backups.html[Restoring volume data from backup files^] for
 
 == Requirements
 
-Read the following requirements to make sure you have a supported configuration before you start backing up on-prem volumes to object storage.
+Read the following requirements to make sure you have a supported configuration before you start backing up on-premises volumes to object storage.
 
 The following image shows each component when backing up an on-prem ONTAP system to Amazon S3 and the connections that you need to prepare between them:
 
@@ -112,7 +112,7 @@ When you set up Cloud Backup, you are prompted for the IPspace to use. You shoul
 
 === Discovering an ONTAP cluster
 
-You need to create an on-prem ONTAP working environment in Cloud Manager before you can start backing up volume data.
+You need to discover your on-premises ONTAP clusters in Cloud Manager before you can start backing up volume data.
 
 link:task_discovering_ontap.html[Learn how to discover a cluster].
 
@@ -149,7 +149,7 @@ Ensure that the Connector has the required networking connections.
 
 === Supported regions
 
-You can create backups from on-prem systems to the public cloud in all regions https://cloud.netapp.com/cloud-volumes-global-regions[where Cloud Volumes ONTAP is supported^].
+You can create backups from on-premises systems to the public cloud in all regions https://cloud.netapp.com/cloud-volumes-global-regions[where Cloud Volumes ONTAP is supported^].
 
 * For Azure, you specify the region where the backups will be stored when you set up the service.
 * For AWS, backups are stored in the region where Cloud Manager is installed.
@@ -168,7 +168,7 @@ And you need to have a subscription from your cloud provider for the object stor
 
 === Preparing Amazon S3 for backups
 
-When you are using Amazon S3, you must configure permissions for Cloud Manager to access the S3 bucket, and you must configure permissions so the on-prem ONTAP cluster can access the S3 bucket.
+When you are using Amazon S3, you must configure permissions for Cloud Manager to access the S3 bucket, and you must configure permissions so the on-premises ONTAP cluster can access the S3 bucket.
 
 .Steps
 
@@ -250,19 +250,19 @@ image:screenshot_backup_from_onprem_activate.png[A screenshot that shows the Bac
 .. The resource group - you can create a new resource group or select and existing resource group.
 .. The IPspace in the ONTAP cluster where the volumes you want to back up reside.
 +
-image:screenshot_backup_onprem_to_azure.png[A screenshot that shows the cloud provider details when backing up volumes from an on-premises cluster to an Azure Blob tier.]
+image:screenshot_backup_onprem_to_azure.png[A screenshot that shows the cloud provider details when backing up volumes from an on-premises cluster to Azure Blob storage.]
 - For AWS, enter:
 .. The AWS Access Key and Secret Key used to store the backups.
 .. The IPspace in the ONTAP cluster where the volumes you want to back up reside.
 +
-image:screenshot_backup_onprem_to_aws.png[A screenshot that shows the cloud provider details when backing up volumes from an on-premises cluster to an AWS S3 tier.]
+image:screenshot_backup_onprem_to_aws.png[A screenshot that shows the cloud provider details when backing up volumes from an on-premises cluster to AWS S3 storage.]
 // - For Google, enter:
 // .. The Google Cloud Project where you want the Google Cloud Storage bucket to be created for backups. This can be a different Project than where Cloud Manager resides. (The Project must have a Service Account that has the predefined Storage Admin role.)
 // .. The Google Access Key and Secret Key used to store the backups.
 // .. The Google region where the backups will be stored. This can be a different region than where Cloud Manager resides.
 // .. The IPspace in the ONTAP cluster where the volumes you want to back up reside.
 // +
-//image:screenshot_backup_onprem_to_google.png[A screenshot that shows the cloud provider details when backing up volumes from an on-premises cluster to a Google Cloud Storage bucket.]
+//image:screenshot_backup_onprem_to_google.png[A screenshot that shows the cloud provider details when backing up volumes from an on-premises cluster to Google Cloud Storage.]
 +
 Note that you cannot change this information after the service has started.
 
@@ -300,7 +300,7 @@ After you have deployed Compliance you can choose the volumes you want to scan a
 
 .Result
 
-Cloud Backup backs up your volumes from the on-prem ONTAP system, and optionally, Cloud Compliance runs compliance scans on the backed up volumes.
+Cloud Backup backs up your volumes from the on-premises ONTAP system, and optionally, Cloud Compliance runs compliance scans on the backed up volumes.
 
 .What's next?
 
