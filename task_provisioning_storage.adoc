@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_provisioning_storage.html
 keywords: storage, provisioning, iscsi, nfs, cifs, volumes, aggregates, provision, create, quotas, nas, san, LUNs, quotas, qtree, add, advanced allocation, create a volume, add a volume, create volumes, add volumes, creating a volume, adding a volume, creating aggregates, adding an aggregate, add an aggregate, create an aggregate, provision volume, provision a volume, provisioning volumes, create a LUN, create LUNs, create LUN, provision LUNs, add volume to second node, add volume to node 2, flexcache, flexcache volumes, create a flexcache volume, provision flexcache, create flexcache volume
-summary: You can provision additional NFS, CIFS, and iSCSI storage for your Cloud Volumes ONTAP systems from Cloud Manager by managing volumes and aggregates.
+summary: You can provision additional storage for your Cloud Volumes ONTAP systems from Cloud Manager by managing volumes and aggregates.
 ---
 
 = Provisioning storage
@@ -19,7 +19,9 @@ IMPORTANT: All disks and aggregates must be created and deleted directly from Cl
 
 == Creating FlexVol volumes
 
-If you need more storage after you launch a Cloud Volumes ONTAP system, you can create new FlexVol volumes for NFS, CIFS, or iSCSI from Cloud Manager.
+If you need more storage after you launch your initial Cloud Volumes ONTAP system, you can create new FlexVol volumes for NFS, CIFS, or iSCSI from Cloud Manager.
+
+A Cloud Manager feature called "templates" enables you to create volumes that are optimized for the workload requirements for certain applications; such as databases or streaming services. If your organization has created some volume templates, you can follow these same steps. Just be aware that the template may pre-define some fields depending on the workloads that will run on the volume.
 
 .About this task
 
@@ -41,7 +43,9 @@ If you want to use CIFS in AWS, you must have set up DNS and Active Directory. F
 |===
 | Action
 | Steps
-| Create a new volume and let Cloud Manager choose the containing aggregate |	Click *Add New Volume*.
+| Create a new volume and let Cloud Manager choose the containing aggregate |	Click *Add Volume* > *New volume*.
+or
+Click *Add Volume* > *New volume from template*.
 | Create a new volume on a specific aggregate
 a|
 .. Click the menu icon, and then click *Advanced > Advanced allocation*.

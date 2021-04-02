@@ -17,7 +17,7 @@ Select one or more of the NetApp-provided "actions" and quickly build an applica
 
 == Quick start
 
-Get started quickly by following these steps or scroll down to the remaining sections for full details.
+Get started quickly by following these steps, or scroll down to the remaining sections for full details.
 
 ==== image:number1.png[Number 1] Verify required prerequisites
 
@@ -25,12 +25,12 @@ Get started quickly by following these steps or scroll down to the remaining sec
 * Before users can create a Cloud Volumes ONTAP or Azure NetApp Files volume using a template, make sure they have access to a Cloud Volumes ONTAP or Azure NetApp Files Working Environment.
 
 [role="quick-margin-list"]
-* If you plan to add a Cloud service "action" to your template, such as Cloud Backup, ensure that your environment has an active and licensed Cloud Backup service.
+* If you plan to add a Cloud service "action" to your template, such as link:concept_backup_to_cloud.html[Cloud Backup], ensure that your environment has an active and licensed Cloud Backup service.
 
 ==== image:number2.png[Number 2] Launch the Application Templates service
 
 [role="quick-margin-para"]
-Select the *Templates* service.
+Select the *Templates* service and add your template.
 
 ==== image:number3.png[Number 3] Build the template by selecting "actions" and defining parameters
 
@@ -49,18 +49,20 @@ Any version ...
 
 == Special template controls ==
 
-There are two special options that you can set when pre-populating a value for a parameter in a template. These are checkboxes for "Editable" and "Drift On".
+Before you start creating your template, you should understand some special options that you can set when pre-populating a value for a parameter in a template.
 
 image:screenshot_template_options.png[A screenshot of the editable and drift on options that you can set for parameter values.]
 
-* *Editable* - Check the box to let the storage admin override the pre-populated value you have entered in the template. This gives the storage admin a suggestion for what the value should be, but it allows them to customize the value when initially creating the resource.
-When unchecked, the user cannot change the value and the hard-coded value in the template is always used when the admin deploys a resource.
+* *Editable* - Check this box to let the storage admin override the pre-populated value you have entered in the template. This gives the storage admin a suggestion for what the value should be, but it allows them to customize the value when creating the resource.
+When unchecked, the user can't change the value and the hard-coded value in the template is always used when the admin deploys a resource.
 
-* *Drift On* - Check the box so that Cloud Manager monitors the hard-coded value you entered for a parameter when a resource is created with the template. If Cloud Manager later sees that an admin has changed the parameter value so that it no longer aligns with the template definition, you will receive an email notification about the change.
+* *Drift On* - Check this box so that Cloud Manager monitors the hard-coded value you entered for a parameter when a resource is created with the template. If Cloud Manager later sees that an admin has changed the parameter value so that it no longer aligns with the template definition, you will receive an email notification about the change.
+When unchecked, the user can change the value to any value after the resource has been created.
 
-By design, when drift is enabled the value is not editable when the admin is using the template.
+By design, when drift is enabled (on) for a parameter value, the value is also not "editable" when the admin deploys a resource using the template.
 
-For the drift feature to work, after you have defined drift for some parameters, in the last step before saving the template you must enable the drift feature for the template. Drift does not work if it is set for a parameter but has not been enabled on the template.
+One additional thing to know about drift:
+For the drift feature to work, after you have defined drift for some parameters in the template, you must enable the drift feature for the template. This is the last step when creating a template. Drift doesn't work if it is enabled for a parameter but has not been enabled on the template.
 
 == Creating a template for a Cloud Volumes ONTAP volume
 
@@ -68,7 +70,7 @@ For this example we'll create a template named "CVO volume for databases" and in
 
 *	Create Cloud Volumes ONTAP Volume
 +
-Make the volume for an AWS environment and configure it with 100 GB of storage, the default Snapshot Policy, and Storage Efficiency enabled.
+Make the volume for the AWS environment, configure it with 100 GB of storage, set the Snapshot Policy to "default", and enable Storage Efficiency.
 
 *	Enable Cloud Backup
 +
@@ -77,12 +79,16 @@ Create daily backups with a retention value of 30 copies.
 .Steps
 
 . Click the *Templates* tab and click *Add New Template*.
++
+(Screenshot of Add Actions page)
 
 . In the _Primary Action_ page, select *Create Cloud Volumes ONTAP Volume* as the type of resource you want to create, and click *Next*.
 +
 The _Add Definitions_ page is displayed.
++
+(Screenshot of at least the top of the details page)
 
-. *Template Details:* Enter the template name *CVO volume for databases* and a more detailed description so that this template can be distinguished from other similar templates.
+. *Template Details:* Enter the template name *CVO volume for databases* (for this example) and a more detailed description so that this template can be distinguished from other similar templates.
 
 . *Details & Protection:* Enter the volume name, size, and Snapshot policy.
 +
@@ -92,11 +98,11 @@ The _Add Definitions_ page is displayed.
 | Field
 | Description
 
-| Volume Name | You can let the admin enter any name (Free Text) or you can specify that the name has a certain prefix, suffix, that it contains certain characters, or that it follows rules from a regex you enter.
+| Volume Name | You can let the admin enter any name (Free Text) or you can specify that the name must have a certain prefix or suffix, that it _contains_ certain characters, or that it follows rules from a regular expression (regex) you enter.
 
-| Size | You can specify a range of allowable values, or you can specify a fixed size.
+| Size | You can specify a range of allowable values, or you can specify a fixed size. For our example we can add *100 GB*.
 
-| Snapshot Policy | Choose whether this volume will have Snapshot copies created by selecting "default" or some other policy, or choose "none" if you do not want to create Snapshot copies. You might choose none for transient data: for example, tempdb for Microsoft SQL Server.
+| Snapshot Policy | Choose whether this volume will have Snapshot copies created by selecting "default" or some other policy, or choose "none" if you do not want to create Snapshot copies.
 
 |===
 
@@ -108,25 +114,25 @@ The _Add Definitions_ page is displayed.
 | Fields
 | Description
 
-| Access control (for NFS only) | Choose whether access controls are need to access the volume.
+| Access control (NFS only) | Choose whether access controls are needed to access the volume.
 
-| Export Policy (for NFS only) | Enter an export policy to define the clients in the subnet that can access the volume.
+| Export Policy (NFS only) | Enter an export policy to define the clients in the subnet that can access the volume.
 
-| NFS Version (for NFS only) | Select an NFS version for the volume: either NFSv3 or NFSv4.
+| NFS Version (NFS only) | Select an NFS version for the volume: either _NFSv3_ or _NFSv4_.
 
-| Permissions and Users / Groups (for CIFS only) |	These fields enable you to control the level of access to a share for users and groups (also called access control lists or ACLs). You can specify local or domain Windows users or groups, or UNIX users or groups. If you specify a domain Windows user name, you must include the user's domain using the format domain\username.
+| Permissions and Users / Groups (CIFS only) |	These fields enable you to control the level of access to a share for users and groups (also called access control lists, or ACLs). You can specify local or domain Windows users or groups, or UNIX users or groups. If you specify a domain Windows user name, you must include the user's domain using the format domain\username.
 
 |===
 
-. *Usage Profile:* Choose whether or not NetApp storage efficiency features are applied to the volume.
+. *Usage Profile:* Choose whether or not NetApp storage efficiency features are applied to the volume. For our example, keep storage efficiency enabled.
 
-. *Provider:* Choose the cloud storage provider on which this volume will reside.
+. *Provider:* Choose the cloud storage provider on which this volume will reside. For our example, choose *AWS*.
 
 . *Disk Type:* Choose the type of disk (based on the cloud provider setting you selected) that will be used for the volume storage.
 
-. *Tiering Policy:* Choose the tiering policy that you would like applied to the volume, or set this to "None" if you do not want to tier data from this volume.
+. *Tiering Policy:* Choose the tiering policy that you would like applied to the volume, or set this to "None" if you do not want to tier cold data from this volume to object storage.
 +
-See link:concept_data_tiering.html#volume-tiering-policies[volume tiering policies] for details.
+See link:concept_data_tiering.html#volume-tiering-policies[volume tiering policies] for an overview, and see link:task_tiering.html[Tiering inactive data to object storage] to make sure your environment is set up for tiering.
 
 . Click *Next* after you have defined the parameters needed for this template.
 
@@ -145,6 +151,6 @@ The template is created and you are returned to the Template Dashboard.
 
 Now that you have created a template, you need to inform your storage administrators to use the template when creating new volumes.
 
-Your users should select *Add Volume From Template* when adding a volume to a Working Environment in the future. The selection is available from the Working Environment page, and from the Volume Details page.
+Your users should select *Add Volume From Template* when adding a volume to a Working Environment in the future. The selection is available from the _Working Environment_ page, and from the _Volume Details_ page.
 
 image:screenshot_template_add_vol_from.png[Two screenshots showing how users create new volumes from a template.]

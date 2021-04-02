@@ -23,21 +23,21 @@ Application Templates offer the following features and benefits:
 
 * Automates and improves the design and development of your infrastructure
 * Provides a single location to activate different NetApp Cloud services
-* Enforces template settings with the "drift" feature so that users don't make changes that are no longer aligned with the template definition
+* Enforces template settings on created resources with the "drift" feature
 
 ==== What is "drift"? ====
 
-"Drift" allows Cloud Manager to monitor the parameter values used when a resource is created with the template. Then we can notify you if a parameter value is later modified and is no longer aligned with the template definition. In the future "drift" could reverse a user's change so that all resources created from a template are brought back into compliance automatically.
+"Drift" allows Cloud Manager to monitor the parameter values used when a resource is created with the template. Then we can notify you if a certain parameter value is later modified and is no longer aligned with the template definition. In the future "drift" could reverse a user's change so that all resources created from a template are brought back into compliance automatically.
 
 == Pricing and licenses
 
 The Application Templates feature requires no licensing and is free to use by all Cloud Manager users.
 
-NOTE: Templates enable you to apply a cloud service onto a created resources, for example, enable backups on every volume. In this case there is a cost for using the Backup service and for the object storage space used by the backup files.
+NOTE: Templates enable you to apply a cloud service onto a created resources, for example, enable Cloud Backup on every volume. In this case there is a cost for using the Backup service and for the object storage space used by the backup files.
 
 == Available template actions
 
-A template is a chain of actions that have some pre-defined values. You can build templates that include the following actions:
+A template is a chain of "actions" that have some pre-defined values. You can build templates that include the following actions:
 
 * Create a Cloud Volumes ONTAP volume
 * Create an Azure NetApp Files volume
@@ -55,11 +55,11 @@ At a high level, Templates work like this:
 
 . NetApp defines the available template "actions".
 +
-For example, an "action" to create a Cloud Volumes ONTAP volume or Azure NetApp Files volume.
+For example, an "action" to create a Cloud Volumes ONTAP volume or an Azure NetApp Files volume.
 . Your storage architect selects the "actions" they want use to create an Application Template, and then they hard-code certain values for the listed parameters.
 +
 For example, they select high speed disks and a large amount of RAM for Cloud Volumes ONTAP volumes that will be used to carry the workloads for Oracle databases. And they require that backups are made for each volume.
-. Your storage admins use the template to create resources that are optimized for the application they will be used for.
+. Your storage admins use the templates to create resources that are optimized for the application they will be used for.
 +
 For example, they create a volume that will be used for an Oracle database by using the volume template created for databases.
 . The template enforces certain resource settings using the "drift" feature as determined by your storage architect.
