@@ -151,6 +151,6 @@ The template is created and you are returned to the Template Dashboard.
 
 Now that you have created a template, you need to inform your storage administrators to use the template when creating new volumes.
 
-Your users should select *Add Volume From Template* when adding a volume to a Working Environment in the future. The selection is available from the _Working Environment_ page, and from the _Volume Details_ page.
+Your users should select *Add Volume From Template* when adding a volume to a Working Environment in the future. The selection is available from the _Working Environment_ page, and from the _Volume Details_ page. See link:task_provisioning_storage.html[how to provision volumes] using templates.
 
 image:screenshot_template_add_vol_from.png[Two screenshots showing how users create new volumes from a template.]
