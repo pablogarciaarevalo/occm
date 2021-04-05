@@ -41,11 +41,12 @@ Follow the creation wizard and define the actions that will be performed by the 
 
 Read the following requirements to make sure that you have a supported configuration.
 
-Supported Cloud Volumes ONTAP versions::
-Any version ... of Cloud Volumes ONTAP in any cloud provider environment.
+* If you don't already have a Connector, create a Connector:
+** link:task_creating_connectors_aws.html[Create a Connector in AWS^]
+** link:task_creating_connectors_azure.html[Create a Connector in Azure^].
+** link:task_creating_connectors_gcp.html[Create a Connector in GCP^].
 
-Supported Azure NetApp Files versions::
-Any version ...
+* You must have an active Cloud Volumes ONTAP working environment.
 
 == Special template controls ==
 
@@ -61,7 +62,7 @@ When unchecked, the user can change the value to any value after the resource ha
 
 By design, when drift is enabled (on) for a parameter value, the value is also not "editable" when the admin deploys a resource using the template.
 
-One additional thing to know about drift:
+*One additional thing to know about drift:*
 For the drift feature to work, after you have defined drift for some parameters in the template, you must enable the drift feature for the template. This is the last step when creating a template. Drift doesn't work if it is enabled for a parameter but has not been enabled on the template.
 
 == Creating a template for a Cloud Volumes ONTAP volume
@@ -80,17 +81,17 @@ Create daily backups with a retention value of 30 copies.
 
 . Click the *Templates* tab and click *Add New Template*.
 +
-(Screenshot of Add Actions page)
+image:screenshot_create_template_primary_action.png[A screenshot showing how to select the primary action that will be performed using this template.]
 
-. In the _Primary Action_ page, select *Create Cloud Volumes ONTAP Volume* as the type of resource you want to create, and click *Next*.
+. In the _Select_Primary Action_ page, select *Create Volume in Cloud Volumes ONTAP* as the type of resource you want to create, and click *Next*.
 +
 The _Add Definitions_ page is displayed.
 +
-(Screenshot of at least the top of the details page)
+image:screenshot_create_template_define_action.png[A screenshot showing a blank template that you need to fill in.]
 
 . *Template Details:* Enter the template name *CVO volume for databases* (for this example) and a more detailed description so that this template can be distinguished from other similar templates.
 
-. *Details & Protection:* Enter the volume name, size, and Snapshot policy.
+. *Details:* Enter the volume name and size.
 +
 [cols=2*,options="header",cols="25,75"]
 
@@ -98,13 +99,19 @@ The _Add Definitions_ page is displayed.
 | Field
 | Description
 
-| Volume Name | You can let the admin enter any name (Free Text) or you can specify that the name must have a certain prefix or suffix, that it _contains_ certain characters, or that it follows rules from a regular expression (regex) you enter.
+| Volume Name | Select one of the 5 options. You can let the admin enter any name (Free Text) or you can specify that the volume name must have a certain prefix or suffix, that it _contains_ certain characters, or that it follows rules from a regular expression (regex) you enter.
 
-| Size | You can specify a range of allowable values, or you can specify a fixed size. For our example we can add *100 GB*.
+| Volume Size | You can specify a range of allowable values, or you can specify a fixed size. For our example we can add a fixed value *100*.
 
-| Snapshot Policy | Choose whether this volume will have Snapshot copies created by selecting "default" or some other policy, or choose "none" if you do not want to create Snapshot copies.
+| Size Unit | Choose *GB* or *MB*.
 
 |===
+
+. *Protection:* Choose whether this volume will have Snapshot copies created by selecting "Default" or some other policy, or choose "None" if you do not want to create Snapshot copies.
+
+. *Usage Profile:* Choose whether or not NetApp storage efficiency features are applied to the volume. This includes Thin Provisioning, Deduplication, and Compression. For our example, keep storage efficiency enabled.
+
+. *Disk Type:* Choose the cloud storage provider and the type of disk that will be used for the volume storage. For our example, choose *AWS* and leave the Disk Type field empty.
 
 . *Protocol:* Select *NFS* or *CIFS* if you want to set the protocol of the volume. And then the provide the protocol details.
 +
@@ -114,30 +121,31 @@ The _Add Definitions_ page is displayed.
 | Fields
 | Description
 
-| Access control (NFS only) | Choose whether access controls are needed to access the volume.
+| Access Control (NFS only) | Choose whether access controls are needed to access the volume.
 
 | Export Policy (NFS only) | Enter an export policy to define the clients in the subnet that can access the volume.
 
 | NFS Version (NFS only) | Select an NFS version for the volume: either _NFSv3_ or _NFSv4_.
 
-| Permissions and Users / Groups (CIFS only) |	These fields enable you to control the level of access to a share for users and groups (also called access control lists, or ACLs). You can specify local or domain Windows users or groups, or UNIX users or groups. If you specify a domain Windows user name, you must include the user's domain using the format domain\username.
+| Share Name (CIFS only) | Select one of the 5 options. You can let the admin enter any name (Free Text) or you can specify that the share name must have a certain prefix or suffix, that it _contains_ certain characters, or that it follows rules from a regular expression (regex) you enter.
+
+| Permissions (CIFS only) | Select the level of access to a share for users and groups (also called access control lists, or ACLs).
+
+| Users / Groups (CIFS only) | Specify local or domain Windows users or groups, or UNIX users or groups. If you specify a domain Windows user name, you must include the user's domain using the format domain\username.
 
 |===
-
-. *Usage Profile:* Choose whether or not NetApp storage efficiency features are applied to the volume. For our example, keep storage efficiency enabled.
-
-. *Provider:* Choose the cloud storage provider on which this volume will reside. For our example, choose *AWS*.
-
-. *Disk Type:* Choose the type of disk (based on the cloud provider setting you selected) that will be used for the volume storage.
 
 . *Tiering Policy:* Choose the tiering policy that you would like applied to the volume, or set this to "None" if you do not want to tier cold data from this volume to object storage.
 +
 See link:concept_data_tiering.html#volume-tiering-policies[volume tiering policies] for an overview, and see link:task_tiering.html[Tiering inactive data to object storage] to make sure your environment is set up for tiering.
 
-. Click *Next* after you have defined the parameters needed for this template.
+. Click *Next* after you have defined the parameters needed for this action.
++
+The _Add Actions_ page is displayed.
++
+image:screenshot_create_template_add_action.png[]
 
-. In the _Add Actions_ page, enable Backups and set the policy to create daily backups with a 30 day retention value.
-Then click *Next*.
+. Enable Backups and set the policy to create daily backups with a 30 day retention value. Then click *Next*.
 
 . In the _Configure Drift_ page, choose whether the Drift feature should be applied to the template so that Cloud Manager monitors the hard-coded values you entered for parameters when creating this template.
 
@@ -145,12 +153,12 @@ Then click *Next*.
 
 .Result
 
-The template is created and you are returned to the Template Dashboard.
+The template is created and you are returned to the Template Dashboard where your new template appears.
 
 == What to do next ==
 
-Now that you have created a template, you need to inform your storage administrators to use the template when creating new volumes.
+Now that you have created a template, you should inform your storage administrators to use the template when creating new volumes.
 
-Your users should select *Add Volume From Template* when adding a volume to a Working Environment in the future. The selection is available from the _Working Environment_ page, and from the _Volume Details_ page. See link:task_provisioning_storage.html#creating-volumes-using-templates[how to provision volumes] using templates.
+Your users should select *Add Volume From Template* when adding a volume to a Working Environment in the future. The selection is available from the _Working Environment_ page, and from the _Volume Details_ page. See link:task_provisioning_storage.html#creating-volumes-from-templates[how to provision volumes] using templates.
 
-image:screenshot_template_add_vol_from.png[Two screenshots showing how users create new volumes from a template.]
+image:screenshot_template_add_vol_from.png[Two screenshots showing how users can create new volumes from a template.]

@@ -63,3 +63,10 @@ For example, they select high speed disks and a large amount of RAM for Cloud Vo
 +
 For example, they create a volume that will be used for an Oracle database by using the volume template created for databases.
 . The template enforces certain resource settings using the "drift" feature as determined by your storage architect.
+
+== Limitations
+
+* The Application Templates service is not supported in any of the Gov Cloud regions.
+* Volume templates are supported for Cloud Volumes ONTAP only. You can't create volumes for on-premises ONTAP clusters.
+* New volumes are created in a new aggregate. You can't create a volume using an existing aggregate.
+* You can't create a volume on a Cloud Volumes ONTAP system that includes multiple Storage VMs (SVMs).

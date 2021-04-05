@@ -21,7 +21,7 @@ IMPORTANT: All disks and aggregates must be created and deleted directly from Cl
 
 If you need more storage after you launch your initial Cloud Volumes ONTAP system, you can create new FlexVol volumes for NFS, CIFS, or iSCSI from Cloud Manager.
 
-A Cloud Manager feature called "templates" enables you to create volumes that are optimized for the workload requirements for certain applications; such as databases or streaming services. If your organization has created volume templates that you should use, follow <<Creating volumes using templates,these steps>>.
+A Cloud Manager feature called "templates" enables you to create volumes that are optimized for the workload requirements for certain applications; such as databases or streaming services. If your organization has created volume templates that you should use, follow <<Creating volumes from templates,these steps>>.
 
 .About this task
 
@@ -121,7 +121,7 @@ The template should make your job easier because certain volume parameters will 
 
 . Click *Add Volume* > *New volume from template*.
 +
-(Screenshot of available templates page)
+image:screenshot_template_dashboard.png[A screenshot of the available application templates.]
 
 . Select the template that you want to use to create the volumes and click *Next*.
 +
