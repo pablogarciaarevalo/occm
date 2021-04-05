@@ -43,10 +43,13 @@ Read the following requirements to make sure that you have a supported configura
 
 * If you don't already have a Connector, create a Connector:
 ** link:task_creating_connectors_aws.html[Create a Connector in AWS^]
-** link:task_creating_connectors_azure.html[Create a Connector in Azure^].
-** link:task_creating_connectors_gcp.html[Create a Connector in GCP^].
+** link:task_creating_connectors_azure.html[Create a Connector in Azure^]
+** link:task_creating_connectors_gcp.html[Create a Connector in GCP^]
 
-* You must have an active Cloud Volumes ONTAP working environment.
+* If you don't already have an active Cloud Volumes ONTAP working environment, create one:
+** link:task_deploying_otc_aws.html[Launch a Cloud Volumes ONTAP system in AWS^]
+** link:task_deploying_otc_azure.html[Launch a Cloud Volumes ONTAP system in Azure^]
+** link:task_deploying_gcp.html[Launch a Cloud Volumes ONTAP system in GCP^]
 
 == Special template controls ==
 
@@ -81,9 +84,11 @@ Create daily backups with a retention value of 30 copies.
 
 . Click the *Templates* tab and click *Add New Template*.
 +
+The  _Select_Primary Action_ page is displayed.
++
 image:screenshot_create_template_primary_action.png[A screenshot showing how to select the primary action that will be performed using this template.]
 
-. In the _Select_Primary Action_ page, select *Create Volume in Cloud Volumes ONTAP* as the type of resource you want to create, and click *Next*.
+. Select *Create Volume in Cloud Volumes ONTAP* as the type of resource you want to create, and click *Next*.
 +
 The _Add Definitions_ page is displayed.
 +

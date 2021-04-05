@@ -125,16 +125,57 @@ image:screenshot_template_dashboard.png[A screenshot of the available applicatio
 
 . Select the template that you want to use to create the volumes and click *Next*.
 +
-The xyz page is displayed.
+The _Add Definitions_ page is displayed.
 +
-(Screenshot of at least the top of the details page)
+image:screenshot_create_template_define_action.png[A screenshot showing a blank template that you need to fill in.]
 
-. *Details & Protection:* Enter the volume name, size, and Snapshot policy.
-copy from templates topic
-copy from templates topic
-copy from templates topic
-copy from templates topic
-copy from templates topic
+. *Details:* Enter the volume name and size.
++
+[cols=2*,options="header",cols="25,75"]
+
+|===
+| Field
+| Description
+
+| Volume Name | Enter the volume name. The template designer may have allowed you to enter any volume name here, but there may be instructions within the field that you need to use a certain prefix or suffix, that it _contains_ certain characters within the name, or that it follows rules from a regular expression (regex).
+
+| Volume Size | Specify the size of the volume.
+
+| Size Unit | Choose *GB* or *MB*.
+
+|===
+
+. *Protection:* Choose whether this volume will have Snapshot copies created by selecting "Default" or some other policy, or choose "None" if you do not want to create Snapshot copies.
+
+. *Usage Profile:* Choose whether or not NetApp storage efficiency features are applied to the volume. This includes Thin Provisioning, Deduplication, and Compression.
+
+. *Disk Type:* Choose the cloud storage provider and the type of disk that will be used for the volume storage.
+
+. *Protocol:* Select *NFS* or *CIFS* and then the provide the protocol details.
++
+[cols=2*,options="header",cols="25,75"]
+
+|===
+| Fields
+| Description
+
+| Access Control (NFS only) | Choose whether access controls are needed to access the volume.
+
+| Export Policy (NFS only) | Enter an export policy to define the clients in the subnet that can access the volume.
+
+| NFS Version (NFS only) | Select an NFS version for the volume: either _NFSv3_ or _NFSv4_.
+
+| Share Name (CIFS only) | The template designer may have allowed you to enter any share name here, but there may be instructions within the field that you need to use a certain prefix or suffix, that it _contains_ certain characters within the name, or that it follows rules from a regular expression (regex).
+
+| Permissions (CIFS only) | Select the level of access to a share for users and groups (also called access control lists, or ACLs).
+
+| Users / Groups (CIFS only) | Specify local or domain Windows users or groups, or UNIX users or groups. If you specify a domain Windows user name, you must include the user's domain using the format domain\username.
+
+|===
+
+. *Tiering Policy:* Choose the tiering policy that you would like applied to the volume, or set this to "None" if you do not want to tier cold data from this volume to object storage.
++
+See link:concept_data_tiering.html#volume-tiering-policies[volume tiering policies] for an overview, and see link:task_tiering.html[Tiering inactive data to object storage] to make sure your environment is set up for tiering.
 
 . Click *Next* after you have defined the parameters needed for this volume.
 
