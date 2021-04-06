@@ -125,11 +125,11 @@ NOTE: You can only create NFS or CIFS volumes when using templates.
 +
 image:screenshot_template_add_vol.png[A screenshot showing how to add a new volume from a template.]
 
-. In the Template dashboard, select the template that you want to use to create the volume and click *Next*.
+. In the _Select Template_ page, select the template that you want to use to create the volume and click *Next*.
 +
-image:screenshot_template_dashboard.png[A screenshot of the available application templates.]
+image:screenshot_select_template.png[A screenshot of the available application templates.]
 +
-The _Add Definitions_ page is displayed.
+The _Define Parameters_ page is displayed.
 +
 image:screenshot_define_vol_from_template.png[A screenshot showing a blank template that you need to fill in to create a volume.]
 
@@ -153,9 +153,9 @@ image:screenshot_define_vol_from_template.png[A screenshot showing a blank templ
 
 . *Usage Profile:* Choose whether or not NetApp storage efficiency features are applied to the volume. This includes Thin Provisioning, Deduplication, and Compression.
 
-. *Disk Type:* Choose the cloud storage provider and the type of disk that will be used for the volume storage.
+. *Disk Type:* Choose the cloud storage provider (if not preselected) and the type of disk that will be used for the volume storage.
 
-. *Protocol:* Select *NFS* or *CIFS* and then the provide the protocol details.
+. *Protocol:* Select *NFS* or *SMB* and then the provide the protocol details.
 +
 [cols=2*,options="header",cols="25,75"]
 
@@ -169,11 +169,11 @@ image:screenshot_define_vol_from_template.png[A screenshot showing a blank templ
 
 | NFS Version (NFS only) | Select an NFS version for the volume: either _NFSv3_ or _NFSv4_.
 
-| Share Name (CIFS only) | The template designer may have allowed you to enter any share name here, but there may be instructions within the field that you need to use a certain prefix or suffix, that it _contains_ certain characters within the name, or that it follows rules from a regular expression (regex).
+| Share Name (SMB only) | The template designer may have allowed you to enter any share name here, but there may be instructions within the field that you need to use a certain prefix or suffix, that it _contains_ certain characters within the name, or that it follows rules from a regular expression (regex).
 
-| Permissions (CIFS only) | Select the level of access to a share for users and groups (also called access control lists, or ACLs).
+| Permissions (SMB only) | Select the level of access to a share for users and groups (also called access control lists, or ACLs).
 
-| Users / Groups (CIFS only) | Specify local or domain Windows users or groups, or UNIX users or groups. If you specify a domain Windows user name, you must include the user's domain using the format domain\username.
+| Users / Groups (SMB only) | Specify local or domain Windows users or groups, or UNIX users or groups. If you specify a domain Windows user name, you must include the user's domain using the format domain\username.
 
 |===
 
@@ -183,13 +183,17 @@ See link:concept_data_tiering.html#volume-tiering-policies[volume tiering polici
 
 . Click *Next* after you have defined the parameters needed for this volume.
 
-. In the _Add Actions_ page, if required, enable Backups and set the policy to create backups with a certain retention value.
+. In the _Define Actions_ page, if required, enable Backups and set the policy to create backups with a certain retention value.
 
 . Click *Create Volume*.
 
 .Result
 
-Cloud Volumes ONTAP provisions the volume. Additionally, if any secondary action is implemented in the template, for example, enabling Cloud Backup on the volume, that action is also performed.
+Cloud Volumes ONTAP provisions the volume and displays a page so that you can see the progress.
+
+image:screenshot_template_creating_resource.png[A screenshot showing the progress of creating your new volume from the template.]
+
+Additionally, if any secondary action is implemented in the template, for example, enabling Cloud Backup on the volume, that action is also performed.
 
 .After you finish
 
