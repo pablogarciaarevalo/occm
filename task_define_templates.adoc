@@ -167,3 +167,11 @@ Now that you have created a template, you should inform your storage administrat
 Your users should select *Add Volume From Template* when adding a volume to a Working Environment in the future. The selection is available from the _Working Environment_ page, and from the _Volume Details_ page. See link:task_provisioning_storage.html#creating-volumes-from-templates[how to provision volumes] using templates.
 
 image:screenshot_template_add_vol_from.png[Two screenshots showing how users can create new volumes from a template.]
+
+== Editing and deleting a template
+
+You can modify a template if you need to change any of the parameters. After you save your changes, all future resources created from the template will use the new parameters.
+
+You can also delete a template if you no longer need it.
+
+image:screenshot_template_edit_remove.png[A screenshot showing how to modify a template or delete a template.]

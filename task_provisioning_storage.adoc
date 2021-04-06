@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_provisioning_storage.html
-keywords: storage, provisioning, iscsi, nfs, cifs, volumes, aggregates, provision, create, quotas, nas, san, LUNs, quotas, qtree, add, advanced allocation, create a volume, add a volume, create volumes, add volumes, creating a volume, adding a volume, creating aggregates, adding an aggregate, add an aggregate, create an aggregate, provision volume, provision a volume, provisioning volumes, create a LUN, create LUNs, create LUN, provision LUNs, add volume to second node, add volume to node 2, flexcache, flexcache volumes, create a flexcache volume, provision flexcache, create flexcache volume
+keywords: storage, provisioning, iscsi, nfs, cifs, volumes, aggregates, provision, create, quotas, nas, san, LUNs, quotas, qtree, add, advanced allocation, create a volume, add a volume, create volumes, add volumes, creating a volume, adding a volume, creating aggregates, adding an aggregate, add an aggregate, create an aggregate, provision volume, provision a volume, provisioning volumes, create a LUN, create LUNs, create LUN, provision LUNs, add volume to second node, add volume to node 2, flexcache, flexcache volumes, create a flexcache volume, provision flexcache, create flexcache volume, templates
 summary: You can provision additional storage for your Cloud Volumes ONTAP systems from Cloud Manager by managing volumes and aggregates.
 ---
 
@@ -111,9 +111,11 @@ If you want to apply quotas to volumes, you must use System Manager or the CLI. 
 
 == Creating volumes from templates
 
-If your organization has created volume templates so you can deploy volumes that are optimized for the workload requirements for certain applications, these are the steps you should follow.
+If your organization has created volume templates so you can deploy volumes that are optimized for the workload requirements for certain applications, follow the steps in this section.
 
-The template should make your job easier because certain volume parameters will already be defined in the template, such as disk type, size, protocol, snapshot policy, cloud provider, and more. When a parameter is already defined, you can just skip to the next volume parameter.
+The template should make your job easier because certain volume parameters will already be defined in the template, such as disk type, size, protocol, snapshot policy, cloud provider, and more. When a parameter is already predefined, you can just skip to the next volume parameter.
+
+NOTE: You can only create NFS or CIFS volumes when using templates.
 
 .Steps
 
@@ -121,13 +123,15 @@ The template should make your job easier because certain volume parameters will 
 
 . Click *Add Volume* > *New volume from template*.
 +
-image:screenshot_template_dashboard.png[A screenshot of the available application templates.]
+image:screenshot_template_add_vol.png[A screenshot showing how to add a new volume from a template.]
 
-. Select the template that you want to use to create the volumes and click *Next*.
+. In the Template dashboard, select the template that you want to use to create the volume and click *Next*.
++
+image:screenshot_template_dashboard.png[A screenshot of the available application templates.]
 +
 The _Add Definitions_ page is displayed.
 +
-image:screenshot_create_template_define_action.png[A screenshot showing a blank template that you need to fill in.]
+image:screenshot_define_vol_from_template.png[A screenshot showing a blank template that you need to fill in to create a volume.]
 
 . *Details:* Enter the volume name and size.
 +
@@ -137,7 +141,7 @@ image:screenshot_create_template_define_action.png[A screenshot showing a blank 
 | Field
 | Description
 
-| Volume Name | Enter the volume name. The template designer may have allowed you to enter any volume name here, but there may be instructions within the field that you need to use a certain prefix or suffix, that it _contains_ certain characters within the name, or that it follows rules from a regular expression (regex).
+| Volume Name | Enter the volume name. The template designer may allow you to enter any volume name here. However, there may be instructions within the field that you need to use a certain prefix or suffix, that it _contains_ certain characters within the name, or that it follows rules from a regular expression (regex). For example, "db" could be a required prefix, suffix, or contains: "db_vol1", "vol1_db, "vol_db_1".
 
 | Volume Size | Specify the size of the volume.
 
@@ -185,7 +189,13 @@ See link:concept_data_tiering.html#volume-tiering-policies[volume tiering polici
 
 .Result
 
-The volume is created.
+Cloud Volumes ONTAP provisions the volume. Additionally, if any secondary action is implemented in the template, for example, enabling Cloud Backup on the volume, that action is also performed.
+
+.After you finish
+
+If you provisioned a CIFS share, give users or groups permissions to the files and folders and verify that those users can access the share and create a file.
+
+If you want to apply quotas to volumes, you must use System Manager or the CLI. Quotas enable you to restrict or track the disk space and number of files used by a user, group, or qtree.
 
 == Creating FlexVol volumes on the second node in an HA configuration
 
