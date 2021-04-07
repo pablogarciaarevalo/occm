@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_deleting_working_env.html
 keywords: terminate, delete, working environment, remove, cloudformation
-summary: It is best to delete Cloud Volumes ONTAP systems from Cloud Manager, rather than from AWS or Azure.
+summary: It's best to delete Cloud Volumes ONTAP systems from Cloud Manager, rather than from your cloud provider's console. For example, if you terminate a licensed Cloud Volumes ONTAP instance from your cloud provider, then you can't use the license key for another instance. You must delete the working environment from Cloud Manager to release the license.
 ---
 
 = Deleting a Cloud Volumes ONTAP working environment
@@ -13,7 +13,7 @@ summary: It is best to delete Cloud Volumes ONTAP systems from Cloud Manager, ra
 :imagesdir: ./media/
 
 [.lead]
-It is best to delete Cloud Volumes ONTAP systems from Cloud Manager, rather than from your cloud provider's console. For example, if you terminate a licensed Cloud Volumes ONTAP instance from AWS, then you can't use the license key for another instance. You must delete the working environment from Cloud Manager to release the license.
+It's best to delete Cloud Volumes ONTAP systems from Cloud Manager, rather than from your cloud provider's console. For example, if you terminate a licensed Cloud Volumes ONTAP instance from your cloud provider, then you can't use the license key for another instance. You must delete the working environment from Cloud Manager to release the license.
 
 .About this task
 
@@ -23,7 +23,11 @@ IMPORTANT: Cloud Volumes ONTAP instances have termination protection enabled to 
 
 .Steps
 
-. From the working environment, click menu icon and then click *Delete*.
+. On the Canvas page, double-click the name of the Cloud Volumes ONTAP working environment that you want to delete.
+
+. Click menu icon and then click *Delete*.
++
+image:screenshot_delete_cloud_volumes_ontap.gif[A screenshot that shows the menu available from the working environment that contains the Delete action.]
 
 . Type the name of the working environment and then click *Delete*.
 +

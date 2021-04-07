@@ -51,6 +51,14 @@ When you renew a BYOL subscription by contacting a NetApp representative, Cloud 
 
 If Cloud Manager can't access the license file over the secure internet connection, you can obtain the file yourself and then manually upload the file to Cloud Manager. For instructions, see link:task_managing_licenses.html[Managing BYOL licenses for Cloud Volumes ONTAP].
 
+=== License transfer to a new system
+
+A BYOL license is transferable between Cloud Volumes ONTAP systems when you delete an existing system and then create a new one using the same license.
+
+For example, you might want to delete an existing licensed system and then use the license with a new BYOL system in a different VPC/VNet or cloud provider. Note that only _cloud-agnostic_ serial numbers work in any cloud provider. Cloud-agnostic serial numbers start with the _908xxxx_ prefix.
+
+It's important to note that your BYOL license is tied to your company and a specific set of NetApp Support Site credentials.
+
 == BYOL backup licenses
 
 A BYOL backup license allows you to purchase a license from NetApp to use Cloud Backup for a certain period of time and for a maximum amount backup space. When either limit is reached you will need to renew the license.

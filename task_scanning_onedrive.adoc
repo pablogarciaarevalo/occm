@@ -55,6 +55,8 @@ You must have link:task_deploy_cloud_compliance.html[deployed an instance of Clo
 
 Add the OneDrive account where the user files reside.
 
+.Steps
+
 . From the Working Environments Configuration page, click *Add Data Source* > *Add OneDrive Account*.
 +
 image:screenshot_compliance_add_onedrive_button.png[A screenshot of the Scan Configuration page where you can click the Add OneDrive button.]
@@ -69,15 +71,17 @@ The OneDrive account is added to the list of working environments.
 
 You can add individual OneDrive users, or all of your OneDrive users, so that their files will be scanned by Cloud Compliance.
 
+.Steps
+
 . From the _Scan Configuration_ page, click the *Configuration* button for the OneDrive account.
 +
 image:screenshot_compliance_onedrive_add_users.png[A screenshot of the Scan Configuration page where you can select the Configuration button.]
 
 . If this is the first time adding users for this OneDrive account, click *Add your first OneDrive users*.
 +
-image:screenshot_compliance_onedrive_add_initial_users.png[]
+image:screenshot_compliance_onedrive_add_initial_users.png[A screenshot showing the Add your first OneDrive users button to add initial users to an account.]
 +
-If you are adding additional users, click *Add OneDrive users*.
+If you are adding additional users from a OneDrive account, click *Add OneDrive users*.
 +
 image:screenshot_compliance_onedrive_add_more_users.png[A screenshot showing the Add OneDrive users button to add more users to an account.]
 
@@ -93,7 +97,7 @@ If the dialog lists any users who could not be added, capture this information s
 
 Cloud Compliance starts scanning the files for the users you added, and the results are displayed in the Dashboard and in other locations.
 
-== Removing OneDrive users from compliance scans
+== Removing a OneDrive user from compliance scans
 
 If users leave the company or if their email address changes, you can remove individual OneDrive users from having their files scanned at any time. Just click *Remove OneDrive User* from the Configuration page.
 

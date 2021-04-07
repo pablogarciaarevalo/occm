@@ -70,7 +70,7 @@ For information about labels, refer to https://cloud.google.com/compute/docs/lab
 
 If you don't see any additional projects in the drop-down list, then you haven't yet associated the Cloud Manager service account with other projects. Go to the Google Cloud console, open the IAM service, and select the project. Add the service account with the Cloud Manager role to that project. You'll need to repeat this step for each project.
 
-NOTE: This is the service account that you set up for Cloud Manager, link:task_getting_started_gcp.html#service-account[as described in step 4b on this page].
+NOTE: This is the service account that you set up for Cloud Manager, link:task_creating_gcp_service_account.html[as described on this page].
 
 Click *Add Subscription* to associate the selected credentials with a subscription.
 

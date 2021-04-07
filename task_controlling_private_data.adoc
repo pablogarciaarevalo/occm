@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: task_controlling_private_data.html
-keywords: personal files, personal data, sensitive personal files, sensitive personal data, health data, ethnic origin, political opinions, gdpr, email address, credit card, ip address, iban, national ID, identifier, sex, criminal, compliance, privacy, filter data, csv file, highlights
+keywords: personal files, personal data, sensitive personal files, sensitive personal data, health data, ethnic origin, political opinions, gdpr, email address, credit card, ip address, iban, national ID, identifier, sex, criminal, compliance, privacy, filter data, permissions, csv file, highlights
 summary: Gain control of your private data by viewing details about the personal data and sensitive personal data in your organization. You can also gain visibility by reviewing the categories and file types that Cloud Compliance found in your data.
 ---
 
-= Viewing details about the private data stored in your organization
+= Viewing compliance details about the data stored in your organization
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -123,7 +123,11 @@ In addition to showing you the working environment and volume where the file res
 
 Note that not all information is available for all data sources - just what is appropriate for that data source. For example, permissions and AIP labels are not relevant for database files.
 
-There are also two items in this metadata that allow you to make changes to files:
+To view a list of all users or groups who have access to a file, click *View all Permissions*. This button is available only for files in CIFS shares and OneDrive accounts.
+
+image:screenshot_compliance_permissions.png[A screenshot showing detailed file permissions.]
+
+There are two actions you can take on the file:
 
 * If you have integrated AIP labels with Cloud Compliance, you can assign a label to this file, or change to a different label if one already exists. See link:task_managing_highlights.html#assigning-aip-labels-manually[Assigning AIP labels manually^] for details.
 
@@ -139,11 +143,11 @@ When you filter the dashboard, Cloud Compliance scopes the compliance data and r
 
 . Click the filter drop-down, select the working environments that you'd like to view data for, and click *View*.
 +
-image:screenshot_cloud_compliance_filter.gif[]
+image:screenshot_cloud_compliance_filter.gif[A screenshot showing how to filter the investigation results for specific working environments.]
 
 == Filtering data in the Data Investigation page
 
-You can filter the contents of the investigation page to display only the results you want to see. If you want to save a CSV version of the content as a report after you have refined it, click the image:button_download.png[The Download Report button.] button.
+You can filter the contents of the investigation page to display only the results you want to see. If you want to save a CSV version of the content as a report after you have refined it, click the image:button_download.png[down arrow button] button.
 
 image:screenshot_compliance_investigation_filtered.png[A screenshot of the filters available when refining the results in the investigation page.]
 
