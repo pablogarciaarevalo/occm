@@ -66,6 +66,6 @@ For example, they create a volume that will be used for an Oracle database by us
 
 == Limitations
 
-* The Application Templates service is not supported in any of the Gov Cloud regions.
+* The Application Templates service is not supported in any of the Gov Cloud regions or in "dark" sites.
 * You can't use a template to create a volume on an existing aggregate. New volumes are created in a new aggregate.
 * You can't use a template to create a volume on a Cloud Volumes ONTAP system that includes multiple Storage VMs (SVMs).

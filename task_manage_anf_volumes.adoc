@@ -31,7 +31,7 @@ A Cloud Manager feature called "templates" enables you to create volumes that ar
 
 . Open the Azure NetApp Files working environment.
 
-. Click *Add Volume > New volume*.
+. Click *Add New Volume*.
 
 . Provide the required information on each page:
 
@@ -75,9 +75,9 @@ The template should make your job easier because certain volume parameters will 
 
 .Steps
 
-. On the Canvas page, double-click the Azure NetApp Files working environment on which you want to provision a volume.
+. On the Canvas page, click the Azure NetApp Files working environment on which you want to provision a volume.
 
-. Click *Add Volume* > *New volume from template*.
+. Click image:screenshot_gallery_options.gif[More button] > *Add Volume From Template*.
 +
 image:screenshot_template_add_vol.png[A screenshot showing how to add a new volume from a template.]
 

@@ -22,7 +22,7 @@ Get started quickly by following these steps, or scroll down to the remaining se
 ==== image:number1.png[Number 1] Verify required prerequisites
 
 [role="quick-margin-list"]
-* Before users can create a Cloud Volumes ONTAP or Azure NetApp Files volume using a template, make sure they have access to a Cloud Volumes ONTAP or Azure NetApp Files Working Environment.
+* Before users can create a Cloud Volumes ONTAP or Azure NetApp Files volume using a template, make sure they have access to a Cloud Volumes ONTAP or Azure NetApp Files Working Environment where the volume will be deployed.
 
 [role="quick-margin-list"]
 * If you plan to add a Cloud service "action" to your template, such as link:concept_backup_to_cloud.html[Cloud Backup], ensure that your environment has an active and licensed Cloud Backup service.
@@ -30,7 +30,7 @@ Get started quickly by following these steps, or scroll down to the remaining se
 ==== image:number2.png[Number 2] Launch the Application Templates service
 
 [role="quick-margin-para"]
-Select the *Templates* service and add your template.
+Select the *AppTemplate* service and add your template.
 
 ==== image:number3.png[Number 3] Build the template by selecting "actions" and defining parameters
 
@@ -78,7 +78,7 @@ Create daily backups with a retention value of 30 copies.
 
 .Steps
 
-. Select the *Templates* service and click *Add New Template*.
+. Select the *AppTemplate* service and click *Add New Template*.
 +
 The  _Select_Primary Action_ page is displayed.
 +
@@ -102,9 +102,7 @@ image:screenshot_create_template_define_action_cvo.png[A screenshot showing a bl
 
 | Volume Name | Select one of the 5 options. You can let the admin enter any name by selecting *Free Text*, or you can specify that the volume name must have a certain prefix or suffix, that it _contains_ certain characters, or that it follows rules from a regular expression (regex) you enter. For example, you could specify that "db" be a required prefix, suffix, or contains; requiring the user to add volumes names like "db_vol1", "vol1_db, "vol_db_1".
 
-| Volume Size | You can specify a range of allowable values, or you can specify a fixed size. For our example we can add a fixed value *100*.
-
-| Size Unit | Choose *GB* or *MB*.
+| Volume Size | You can specify a range of allowable values, or you can specify a fixed size. This value is in GB.  For our example we can add a fixed value *100*.
 
 |===
 
@@ -126,7 +124,7 @@ image:screenshot_create_template_define_action_cvo.png[A screenshot showing a bl
 
 | Export Policy | Create an export policy to define the clients in the subnet that can access the volume.
 
-| NFS Version | Select an NFS version for the volume: either _NFSv3_ or _NFSv4_.
+| NFS Version | Select the NFS version for the volume: either _NFSv3_ or _NFSv4_, or you can select both.
 
 |===
 +
@@ -154,9 +152,11 @@ The _Add Actions_ page is displayed.
 +
 image:screenshot_create_template_add_action.png[A screenshot showing additional actions that you can add to the created volume.]
 
-. Enable Backups and set the policy to create daily backups with a 30 day retention value. Then click *Next*.
+. Use the switch to enable Backups, and then set the policy to create daily backups with a 30-day retention value.
 
-. The _Configure Drift_ page will allow you in the future to choose whether the Drift feature should be applied to the template. This will allow Cloud Manager to monitor the hard-coded values you entered for parameters when creating this template.
+. In the read-only Volume Name field the value "$input.[0].name" appears. This just means that the value entered by the admin in the "Volume Name" field will be populated here as well so that Backup functionality is added to the volume.
+
+. Click *Next* and the _Configure Drift_ page is displayed. In the future this page will allow you to choose whether the Drift feature should be applied to the template. This will allow Cloud Manager to monitor the hard-coded values you entered for parameters when creating this template.
 // . In the _Configure Drift_ page, choose whether the Drift feature should be applied to the template so that Cloud Manager monitors the hard-coded values you entered for parameters when creating this template.
 
 . Click *Create Template*.

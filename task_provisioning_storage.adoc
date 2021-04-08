@@ -143,9 +143,7 @@ image:screenshot_define_vol_from_template.png[A screenshot showing a blank templ
 
 | Volume Name | Enter the volume name. The template designer may allow you to enter any volume name here. However, there may be instructions within the field that you need to use a certain prefix or suffix, that it _contains_ certain characters within the name, or that it follows rules from a regular expression (regex). For example, "db" could be a required prefix, suffix, or contains; meaning your volume should be named "db_vol1", "vol1_db, "vol_db_1", etc..
 
-| Volume Size | Specify the size of the volume.
-
-| Size Unit | Choose *GB* or *MB*.
+| Volume Size | Specify the size of the volume in GB.
 
 |===
 
@@ -167,7 +165,7 @@ image:screenshot_define_vol_from_template.png[A screenshot showing a blank templ
 
 | Export Policy | Enter an export policy to define the clients in the subnet that can access the volume.
 
-| NFS Version | Select an NFS version for the volume: either _NFSv3_ or _NFSv4_.
+| NFS Version | Select the NFS version for the volume: either _NFSv3_ or _NFSv4_, or you can select both.
 
 |===
 +
