@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_managing_cloud_central_accounts.html
-keywords: account settings, workspaces, Connector, account admin, workspace admin, users, associate, disassociate, add user, add users, user management, administer, user, management, remove user, remove users, remove, delete, account, user account, user accounts, add workspace, setup workspace, workspace, Connector, manage Connector, manage workspace, associate Connector
+keywords: account settings, workspaces, Connector, account admin, workspace admin, users, associate, disassociate, add user, add users, user management, administer, user, management, remove user, remove users, remove, delete, account, user account, user accounts, add workspace, setup workspace, workspace, Connector, manage Connector, manage workspace, associate Connector, service account
 summary: After you perform initial setup, you might need to later manage users, workspaces, Connectors, and subscriptions.
 ---
 
@@ -160,6 +160,10 @@ Change you account name at any time to change it to something meaningful for you
 . In the *Overview* tab, click the edit icon next to the account name.
 
 . Type a new account name and click *Save*.
+
+== Creating a service account
+
+Cloud Manager enables you to create a service account as a member of your account. An application or VM can use a service account to make authorized API calls to Cloud Manager in order to access resources or enable services. We'll announce more about this functionality in future releases.
 
 == Disabling the SaaS platform
 
