@@ -31,7 +31,11 @@ https://repo.cloudsync.netapp.com/gfc/2K19Hyperv.zip[Windows Server 2019 .VHDX i
 
 * Global File Cache Edge Software:
 +
-https://repo.cloudsync.netapp.com/gfc/GFC-1-0-3-60-Release.exe[NetApp GFC Software Installation Package (.EXE)^]
+https://repo.cloudsync.netapp.com/gfc/GFC-1-0-4-63-Release.exe[NetApp GFC Software Installation Package (.EXE)^]
+
+* Global File Cache SCOM (Microsoft Systems Center Operations Manager) Package:
++
+https://repo.cloudsync.netapp.com/gfc/SCOM-151.zip[NetApp GFC SCOM Management Package (.ZIP)]
 
 * Global File Cache Documentation:
 +
