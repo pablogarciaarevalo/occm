@@ -356,7 +356,7 @@ TIP: Consult a solutions architect if you need help determining the right servic
 
 https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-service-levels#throughput-limits[Learn more about Azure NetApp Files service levels and throughput].
 
-=== Google Cloud Storage bucket requirements
+=== [[google]]Google Cloud Storage bucket requirements
 
 Make sure that your Google Cloud Storage bucket meets the following requirements.
 

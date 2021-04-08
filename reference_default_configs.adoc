@@ -36,7 +36,7 @@ Understanding how Cloud Volumes ONTAP is configured by default can help you set 
 ** A cluster management LIF
 ** An intercluster LIF
 ** An SVM management LIF on HA systems in Azure and in GCP, on single node systems in AWS, and optionally on HA systems in multiple AWS Availability Zones
-** A node management LIF
+** A node management LIF (in GCP, this LIF is combined with the intercluster LIF)
 ** An iSCSI data LIF
 ** A CIFS and NFS data LIF
 +

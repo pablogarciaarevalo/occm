@@ -19,6 +19,14 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.4 update (8 Apr 2021)
+
+=== Active IQ enhancements
+
+* If Active IQ discovers unused Cloud Volumes ONTAP licenses in your account, you can click a button to create a new Cloud Volumes ONTAP system using the license. Or you can apply the license to an existing Cloud Volumes ONTAP system to extend the capacity of that license by 368 TB.
++
+See link:task_managing_ontap.html#using-unused-cloud-volumes-ontap-licenses[how to use your available licenses^].
+
 == Cloud Manager 3.9.4 update (15 Mar 2021)
 
 === Cloud Compliance enhancements

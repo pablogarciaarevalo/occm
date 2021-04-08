@@ -34,6 +34,10 @@ Note that this feature is available for new sync relationships created after the
 +
 This feature works with _any_ type of data broker: the AWS, Azure, Google Cloud Platform, or on-prem data broker. The on-prem data broker can run link:task_sync_installing_linux.html[any supported operating system].
 
+* For NFS, you’ll need to use NFS version 4 or later.
++
+The source and target versions must be the same. For example, 4.0 on the source and 4.0 on the target is supported. But 4.0 on the source and 4.1 on the target isn't supported because the versions are different.
+
 .Steps for a new relationship
 
 . From Cloud Sync, click *Create New Sync*.

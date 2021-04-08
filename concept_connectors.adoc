@@ -96,6 +96,21 @@ Here are a few examples:
 
 * A service provider might use one Cloud Central account to provide services for their customers, while using another account to provide disaster recovery for one of their business units. Each account would have separate Connectors.
 
+== Using multiple Connectors with the same working environment
+
+You can manage a working environment with multiple Connectors at the same time for disaster recovery purposes. If one Connector goes down, you can switch to the other Connector to immediately manage the working environment.
+
+To set up this configuration:
+
+. link:task_managing_connectors.html[Switch to another Connector]
+. Discover the existing working environment.
++
+* link:task_adding_ontap_cloud.html[Adding existing Cloud Volumes ONTAP systems to Cloud Manager]
+* link:task_discovering_ontap.html[Discovering ONTAP clusters]
+. Set the link:concept_storage_management.html#capacity-management[Capacity Management Mode] to *Manual* on any additional Connectors.
++
+Only the main Connector should be set to *Automatic Mode*. If you switch to another Connector for DR purposes, then you can change the Capacity Management Mode as needed.
+
 == When to switch between Connectors
 
 When you create your first Connector, Cloud Manager automatically uses that Connector for each additional working environment that you create. Once you create an additional Connector, you'll need to switch between them to see the working environments that are specific to each Connector.
