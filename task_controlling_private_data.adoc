@@ -129,11 +129,13 @@ When viewing the details for a single file there are two actions you can take on
 
 * If you have integrated AIP labels with Cloud Compliance, you can assign a label to this file, or change to a different label if one already exists. See link:task_managing_highlights.html#assigning-aip-labels-manually[Assigning AIP labels manually^] for details.
 
-=== Viewing open permissions for files
+=== Viewing permissions for files
 
-To view a list of all users or groups who have access to a file, click *View all Permissions*. This button is available only for files in CIFS shares and OneDrive accounts.
+To view a list of all users or groups who have access to a file, and the types of permissions they have, click *View all Permissions*.
 
 image:screenshot_compliance_permissions.png[A screenshot showing detailed file permissions.]
+
+This button is available only for files in CIFS shares.
 
 === Viewing whether files are duplicated in your storage systems
 
@@ -147,7 +149,7 @@ image:screenshot_compliance_duplicate_file.png[A screenshot showing how to view 
 
 You can download the list of duplicate files and send it to your storage admin so they can decide which files, if any, can be deleted.  Of you can link:task_managing_highlights.html#deleting-source-files[delete the file^] yourself if you are confident that this version of the file is not needed.
 
-TIP: You can use the "hash" value provided in this page and enter it directly in the Filters page to search for a specific duplicate file at any time - or to be used in a Policy.
+TIP: You can use the "hash" value provided in this page and enter it directly in the Investigation page to search for a specific duplicate file at any time - or to be used in a Policy.
 
 == Viewing Dashboard data for specific working environments
 
