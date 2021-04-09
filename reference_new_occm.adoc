@@ -19,6 +19,45 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.5
+
+* <<Cloud Volumes ONTAP enhancements>>
+* <<Connector enhancements>>
+* <<Cloud Sync enhancements>>
+* <<Cloud Tiering enhancements>>
+* <<Active IQ enhancements>>
+* <<ANF enhancements>>
+
+=== Cloud Volumes ONTAP enhancements
+
+* Cloud Volumes ONTAP now supports _General Purpose SSD (gp3)_ disks in AWS. gp3 disks are the lowest-cost SSDs that balance cost and performance for a broad range of workloads.
++
+https://docs.netapp.com/us-en/occm/task_planning_your_config.html#sizing-your-system-in-aws[Learn more about using gp3 disks with Cloud Volumes ONTAP].
+
+* Cloud Volumes ONTAP no longer supports Cold HDD (sc1) disks in AWS.
+
+* Cloud Manager now enables logi
+
+* logical space reporting
+
+* azure storage account tls version 1.2
+
+=== Cloud Sync enhancements
+
+
+
+=== Connector
+
+* allow direct API traffic when proxy is configured
+
+* settings enhancements
+
+=== Accounts
+
+* third-party services
+
+* private preview settings
+
 == Cloud Manager 3.9.4 update (8 Apr 2021)
 
 === Active IQ enhancements
