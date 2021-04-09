@@ -119,5 +119,3 @@ When you create a sync relationship and choose Google Cloud Storage as the sourc
 .Result
 
 When you set up a sync relationship, you can now choose that bucket as the source or target in the sync relationship.
-
-When setting up a sync relationship, you can choose a Google Cloud bucket from different projects, if you provide the required permissions to the data broker's service account. link:task_sync_installing_gcp.html[Learn how to set up the service account].
