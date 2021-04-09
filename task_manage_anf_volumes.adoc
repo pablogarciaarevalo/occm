@@ -79,7 +79,7 @@ The template should make your job easier because certain volume parameters will 
 
 . Click image:screenshot_gallery_options.gif[More button] > *Add Volume From Template*.
 +
-image:screenshot_template_add_vol.png[A screenshot showing how to add a new volume from a template.]
+image:screenshot_template_add_vol_anf.png[A screenshot showing how to add a new volume from a template.]
 
 . In the _Select Template_ page, select the template that you want to use to create the volume and click *Next*.
 +
@@ -87,7 +87,9 @@ image:screenshot_select_template_anf.png[A screenshot of the available applicati
 +
 The _Define Parameters_ page is displayed.
 +
-image:screenshot_define_vol_from_template.png[A screenshot showing a blank template that you need to fill in to create a volume.]
+image:screenshot_define_anf_vol_from_template.png[A screenshot showing a blank template that you need to fill in to create a volume.]
++
+*Note:* You can click the checkbox *Show read-only parameters* to show all the fields that have been locked by the template if you want to see the values for those parameters. By default these predefined fields are hidden and only the fields you need to complete are shown.
 
 . Add values for all of the parameters that are not hard-coded from the template. See <<Creating volumes,creating volumes>> for details about all the parameters you need to complete to deploy an ANF volume.
 

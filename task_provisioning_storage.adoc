@@ -123,7 +123,7 @@ NOTE: You can only create NFS or CIFS volumes when using templates.
 
 . Click *Add Volume* > *New volume from template*.
 +
-image:screenshot_template_add_vol.png[A screenshot showing how to add a new volume from a template.]
+image:screenshot_template_add_vol_cvo.png[A screenshot showing how to add a new volume from a template.]
 
 . In the _Select Template_ page, select the template that you want to use to create the volume and click *Next*.
 +
@@ -131,7 +131,9 @@ image:screenshot_select_template_cvo.png[A screenshot of the available applicati
 +
 The _Define Parameters_ page is displayed.
 +
-image:screenshot_define_vol_from_template.png[A screenshot showing a blank template that you need to fill in to create a volume.]
+image:screenshot_define_cvo_vol_from_template.png[A screenshot showing a blank template that you need to fill in to create a volume.]
++
+*Note:* You can click the checkbox *Show read-only parameters* to show all the fields that have been locked by the template if you want to see the values for those parameters. By default these predefined fields are hidden and only the fields you need to complete are shown.
 
 . *Details:* Enter the volume name and size.
 +
@@ -141,7 +143,9 @@ image:screenshot_define_vol_from_template.png[A screenshot showing a blank templ
 | Field
 | Description
 
-| Volume Name | Enter the volume name. The template designer may allow you to enter any volume name here. However, there may be instructions within the field that you need to use a certain prefix or suffix, that it _contains_ certain characters within the name, or that it follows rules from a regular expression (regex). For example, "db" could be a required prefix, suffix, or contains; meaning your volume should be named "db_vol1", "vol1_db, "vol_db_1", etc..
+| Volume Name | Enter the volume name. The template designer may allow you to enter any volume name here. However, there may be instructions within the field that you need to use a certain prefix or suffix, that it _contains_ certain characters within the name, or that it follows rules from a regular expression (regex).
+
+For example, "db" could be a required prefix, suffix, or contains; meaning your volume should be named "db_vol1", "vol1_db, "vol_db_1", etc..
 
 | Volume Size | Specify the size of the volume in GB.
 
