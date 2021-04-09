@@ -22,11 +22,9 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 == Cloud Manager 3.9.5
 
 * <<Cloud Volumes ONTAP enhancements>>
-* <<Connector enhancements>>
 * <<Cloud Sync enhancements>>
-* <<Cloud Tiering enhancements>>
-* <<Active IQ enhancements>>
-* <<ANF enhancements>>
+* <<Connector enhancements>>
+* <<Account enhancements>>
 
 === Cloud Volumes ONTAP enhancements
 
@@ -52,13 +50,21 @@ When Cloud Manager creates storage accounts in Azure for Cloud Volumes ONTAP, th
 
 === Cloud Sync enhancements
 
+* The standalone Cloud Sync service has been retired. You should now access Cloud Sync directly from Cloud Manager where all of the same features and functionality are available.
 
+* Cloud Sync now copies metadata between Google Cloud Storage and S3 providers (AWS S3, StorageGRID, and IBM Cloud Object Storage).
 
-=== Connector enhancements
+* Cloud Sync now identifies when a data broker isn't running the latest software release. This message can help to ensure that you're getting the latest features and functionalities.
++
+link:screenshot_sync_warning.gif["A screenshot that shows a warning when viewing a data broker: This Data Broker isn't running the latest software release (1.8). If you experience performance problems please contact us."]
 
-* allow direct API traffic when proxy is configured
+*
 
-* settings enhancements
+=== Connector enhancement
+
+If you configured a proxy server, you can now enable an option to send API calls directly to Cloud Manager without going through the proxy. This option is supported with Connectors that are running in AWS or in Google Cloud.
+
+link:task_configuring_proxy.html[Learn more about this setting].
 
 === Account enhancements
 
