@@ -93,7 +93,7 @@ These steps create a new storage VM on a single node system. One private IP addr
 . Create the storage VM and a route to the storage VM.
 +
 [source,cli]
-vserver create -rootvolume-security-style mixed -rootvolume root_svm_2 -snapshot-policy default -vserver svm_2 -aggregate aggr1
+vserver create -rootvolume-security-style unix -rootvolume root_svm_2 -snapshot-policy default -vserver svm_2 -aggregate aggr1
 +
 [source,cli]
 network route create -destination 0.0.0.0/0 -vserver svm_2 -gateway subnet_gateway
@@ -123,7 +123,7 @@ Both of these LIFs get allocated on node 1. The private IP addresses can move be
 . Create the storage VM and a route to the storage VM.
 +
 [source,cli]
-vserver create -rootvolume-security-style mixed -rootvolume root_svm_2 -snapshot-policy default -vserver svm_2 -aggregate aggr1
+vserver create -rootvolume-security-style unix -rootvolume root_svm_2 -snapshot-policy default -vserver svm_2 -aggregate aggr1
 +
 [source,cli]
 network route create -destination 0.0.0.0/0 -vserver svm_2 -gateway subnet_gateway
@@ -155,7 +155,7 @@ In order for floating IPs to work with ONTAP, a private IP address must be confi
 . Create the storage VM and a route to the storage VM.
 +
 [source,cli]
-vserver create -rootvolume-security-style mixed -rootvolume root_svm_2 -snapshot-policy default -vserver svm_2 -aggregate aggr1
+vserver create -rootvolume-security-style unix -rootvolume root_svm_2 -snapshot-policy default -vserver svm_2 -aggregate aggr1
 +
 [source,cli]
 network route create -destination 0.0.0.0/0 -vserver svm_2 -gateway subnet_gateway

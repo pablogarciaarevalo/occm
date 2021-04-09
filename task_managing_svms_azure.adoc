@@ -156,7 +156,7 @@ Use the commands below that match the data access protocol for the storage VM, w
 . Create the storage VM and a route to the storage VM.
 +
 [source,cli]
-vserver create -vserver <svm-name> -subtype default -rootvolume <root-volume-name> -rootvolume-security-style mixed
+vserver create -vserver <svm-name> -subtype default -rootvolume <root-volume-name> -rootvolume-security-style unix
 +
 [source,cli]
 network route create -destination 0.0.0.0/0 -vserver <svm-name> -gateway <ip-of-gateway-server>
