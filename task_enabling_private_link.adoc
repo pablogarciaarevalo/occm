@@ -56,8 +56,10 @@ If required for your Azure configuration, you can disable the Azure Private Link
 
 .Steps
 
-.	In the upper right of the Cloud Manager console, click the Settings icon, and select *Cloud Manager Settings*.
+.	In the upper right of the Cloud Manager console, click the Settings icon, and select *Connector Settings*.
 
-.	Under Azure Cloud Volumes ONTAP Configuration, deselect *Private Link connection between Cloud Volumes ONTAP and storage accounts*.
+.	Under *Azure*, click *Use Azure Private Link*.
+
+. Deselect *Private Link connection between Cloud Volumes ONTAP and storage accounts*.
 
 .	Click *Save*.

@@ -231,10 +231,10 @@ NOTE: This setting applies to Cloud Volumes ONTAP only.
 
 .Steps
 
-. In the upper right of the Cloud Manager console, click the *Settings* icon, and select *Cloud Manager Settings*.
+. In the upper right of the Cloud Manager console, click the *Settings* icon, and select *Connector Settings*.
 +
 image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the Cloud Manager console.]
 
-. Under *Aggregate Capacity Thresholds*, click *Aggregate free space ratio for data tiering*.
+. Under *Capacity*, click *Aggregate Capacity Thresholds - Free Space Ratio for Data Tiering*.
 
 . Change the free space ratio based on your requirements and click *Save*.
