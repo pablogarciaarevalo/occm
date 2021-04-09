@@ -19,7 +19,7 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
-== Cloud Manager 3.9.5
+== Cloud Manager 3.9.5 (11 Apr 2021)
 
 * <<Cloud Volumes ONTAP enhancements>>
 * <<Cloud Sync enhancements>>
