@@ -30,17 +30,25 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 === Cloud Volumes ONTAP enhancements
 
+This release of Cloud Manager includes enhancements to the management of Cloud Volumes ONTAP.
+
+==== Enhancement available in all cloud providers
+
+Cloud Manager now enables logical space reporting on the initial storage VM that it creates for Cloud Volumes ONTAP.
+
+When space is reported logically, ONTAP reports the volume space such that all the physical space saved by the storage efficiency features are also reported as used.
+
+==== Enhancements available in AWS
+
 * Cloud Volumes ONTAP now supports _General Purpose SSD (gp3)_ disks in AWS. gp3 disks are the lowest-cost SSDs that balance cost and performance for a broad range of workloads.
 +
 https://docs.netapp.com/us-en/occm/task_planning_your_config.html#sizing-your-system-in-aws[Learn more about using gp3 disks with Cloud Volumes ONTAP].
 
 * Cloud Volumes ONTAP no longer supports Cold HDD (sc1) disks in AWS.
 
-* Cloud Manager now enables logi
+==== Enhancement available in Azure
 
-* logical space reporting
-
-* azure storage account tls version 1.2
+When Cloud Manager creates storage accounts in Azure for Cloud Volumes ONTAP, the TLS version for the storage account is now version 1.2.
 
 === Cloud Sync enhancements
 
