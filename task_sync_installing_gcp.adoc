@@ -95,3 +95,29 @@ The instance takes approximately 5 to 10 minutes to deploy. You can monitor the 
 .Result
 
 You've deployed a data broker in GCP and created a new sync relationship. You can use this data broker with additional sync relationships.
+
+== Providing permissions to use buckets in other Google Cloud projects
+
+When you create a sync relationship and choose Google Cloud Storage as the source or target, Cloud Sync enables you to choose from the buckets that the data broker's service account has permissions to use. By default, this includes the buckets that are in the _same_ project as the data broker service account. But you can choose buckets from _other_ projects if you provide the required permissions.
+
+.Steps
+
+. Open the Google Cloud Platform console and load the Cloud Storage service.
+
+. Click the name of the bucket that you'd like to use as a source or target in a sync relationship.
+
+. Click *Permissions*.
+
+. Click *Add*.
+
+. Enter the name of the data broker's service account.
+
+. Select a role that provides <<Permissions required for the service account,the same permissions as shown above>>.
+
+. Click *Save*.
+
+.Result
+
+When you set up a sync relationship, you can now choose that bucket as the source or target in the sync relationship.
+
+When setting up a sync relationship, you can choose a Google Cloud bucket from different projects, if you provide the required permissions to the data broker's service account. link:task_sync_installing_gcp.html[Learn how to set up the service account].
