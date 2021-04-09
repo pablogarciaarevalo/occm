@@ -62,9 +62,11 @@ When Cloud Manager creates storage accounts in Azure for Cloud Volumes ONTAP, th
 
 === Accounts
 
-* third-party services
+* You can now allow private previews in your account to get access to new NetApp cloud services as they are made available as a preview in Cloud Manager.
 
-* private preview settings
+* You can also allow third-party services in your account to get access to third-party services that are available in Cloud Manager.
+
+link:task_managing_cloud_central_accounts.html#changing-the-account-name[Learn more about these options].
 
 == Cloud Manager 3.9.4 update (8 Apr 2021)
 
