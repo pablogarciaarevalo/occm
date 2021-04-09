@@ -45,7 +45,7 @@ Cloud Manager displays a certificate signing request.
 +
 The certificate must use the Privacy Enhanced Mail (PEM) Base-64 encoded X.509 format.
 
-.. Copy the contents of the signed certificate, paste it in the Certificate field, and then click *Install*.
+.. Upload the certificate file and then click *Install*.
 
 | Install your own CA-signed certificate
 a|
@@ -72,7 +72,7 @@ You should renew the Cloud Manager HTTPS certificate before it expires to ensure
 +
 Details about the Cloud Manager certificate displays, including the expiration date.
 
-. Click *Renew HTTPS Certificate* and follow the steps to generate a CSR or install your own CA-signed certificate.
+. Click *Change Certificate* and follow the steps to generate a CSR or install your own CA-signed certificate.
 
 .Result
 
