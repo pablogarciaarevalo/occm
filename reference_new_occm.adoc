@@ -40,9 +40,7 @@ When space is reported logically, ONTAP reports the volume space such that all t
 
 ==== Enhancements available in AWS
 
-* Cloud Volumes ONTAP now supports _General Purpose SSD (gp3)_ disks.
-+
-gp3 disks are the lowest-cost SSDs that balance cost and performance for a broad range of workloads.
+* Cloud Volumes ONTAP now supports _General Purpose SSD (gp3)_ disks. gp3 disks are the lowest-cost SSDs that balance cost and performance for a broad range of workloads.
 +
 https://docs.netapp.com/us-en/occm/task_planning_your_config.html#sizing-your-system-in-aws[Learn more about using gp3 disks with Cloud Volumes ONTAP].
 
@@ -64,7 +62,7 @@ link:task_sync_installing_gcp.html[Learn how to set up the service account].
 
 * Cloud Sync now identifies when a data broker isn't running the latest software release. This message can help to ensure that you're getting the latest features and functionalities.
 +
-link:screenshot_sync_warning.gif[A screenshot that shows a warning when viewing a data broker on the Dashboard.]
+image:screenshot_sync_warning.gif[A screenshot that shows a warning when viewing a data broker on the Dashboard.]
 
 === Cloud Compliance enhancements
 
