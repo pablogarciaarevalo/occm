@@ -19,6 +19,8 @@ If your corporate policies dictate that you use a proxy server for all HTTP comm
 
 When you configure a Connector to use a proxy server, that Connector and the Cloud Volumes ONTAP systems that it manages (including any HA mediators), all use the proxy server.
 
+Note that this operation restarts the Connector. Ensure that the Connector isn’t performing any operations before you proceed.
+
 .Steps
 
 . https://docs.netapp.com/us-en/occm/task_logging_in.html[Log in to the Cloud Manager SaaS interface^] from a machine that has a network connection to the Connector instance.
@@ -35,7 +37,14 @@ The Cloud Manager interface running on the Connector loads in a new browser tab.
 +
 image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the Cloud Manager console.]
 
-. Under HTTP Proxy, enter the server using the syntax http://_address:port_, specify a user name and password if basic authentication is required for the server, and then click *Save*.
+. Under *General*, click *HTTP Proxy Configuration*.
+
+. Set up the proxy:
+
+.. Click *Enable Proxy*.
+.. Specify the server using the syntax http://_address:port_
+.. Specify a user name and password if basic authentication is required for the server
+.. Click *Save*.
 +
 NOTE: Cloud Manager doesn't support passwords that include the @ character.
 
@@ -53,4 +62,6 @@ If you configured a proxy server, you can send API calls directly to Cloud Manag
 +
 image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the Cloud Manager console.]
 
-. Expand *Support Direct API Traffic*, enable the option, and then click *Save*.
+. Under *General*, click *Support Direct API Traffic*.
+
+. Click the checkbox to enable the option and then click *Save*.
