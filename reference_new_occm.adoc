@@ -40,7 +40,7 @@ When space is reported logically, ONTAP reports the volume space such that all t
 
 ==== Enhancements available in AWS
 
-* Cloud Volumes ONTAP now supports _General Purpose SSD (gp3)_ disks. gp3 disks are the lowest-cost SSDs that balance cost and performance for a broad range of workloads.
+* Cloud Volumes ONTAP now supports _General Purpose SSD (gp3)_ disks, starting with the 9.7 release. gp3 disks are the lowest-cost SSDs that balance cost and performance for a broad range of workloads.
 +
 https://docs.netapp.com/us-en/occm/task_planning_your_config.html#sizing-your-system-in-aws[Learn more about using gp3 disks with Cloud Volumes ONTAP].
 
