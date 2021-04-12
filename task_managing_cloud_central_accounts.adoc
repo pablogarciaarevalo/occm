@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_managing_cloud_central_accounts.html
-keywords: account settings, workspaces, Connector, account admin, workspace admin, users, associate, disassociate, add user, add users, user management, administer, user, management, remove user, remove users, remove, delete, account, user account, user accounts, add workspace, setup workspace, workspace, Connector, manage Connector, manage workspace, associate Connector
+keywords: account settings, workspaces, Connector, account admin, workspace admin, users, associate, disassociate, add user, add users, user management, administer, user, management, remove user, remove users, remove, delete, account, user account, user accounts, add workspace, setup workspace, workspace, Connector, manage Connector, manage workspace, associate Connector, service account
 summary: After you perform initial setup, you might need to later manage users, workspaces, Connectors, and subscriptions.
 ---
 
@@ -149,7 +149,7 @@ image:screenshot_subscription_menu.gif[A screenshot of the action menu for a sub
 
 . Choose to rename the subscription or to manage the accounts that are associated with the subscription.
 
-== Changing the account name
+== Changing your account name
 
 Change you account name at any time to change it to something meaningful for you.
 
@@ -160,6 +160,32 @@ Change you account name at any time to change it to something meaningful for you
 . In the *Overview* tab, click the edit icon next to the account name.
 
 . Type a new account name and click *Save*.
+
+== Creating a service account
+
+Cloud Manager enables you to create a service account as a member of your account. An application or VM can use a service account to make authorized API calls to Cloud Manager in order to access resources or enable services. We'll announce more about this functionality in future releases.
+
+== Allowing private previews
+
+Allow private previews in your account to get access to new NetApp cloud services that are made available as a preview in Cloud Manager.
+
+Services in private preview are not guaranteed to behave as expected and might suffer from outages and missing functionality.
+
+.Steps
+
+. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account*.
+
+. In the *Overview* tab, enable the *Allow Private Preview* setting.
+
+== Allowing third-party services
+
+Allow third-party services in your account to get access to third-party services that are available in Cloud Manager. Third-party services are cloud services similar to the services that NetApp offers, but they're managed and supported by third-party companies.
+
+.Steps
+
+. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account*.
+
+. In the *Overview* tab, enable the *Allow Third Party Services* setting.
 
 == Disabling the SaaS platform
 

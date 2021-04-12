@@ -25,7 +25,9 @@ NOTE: You don't need to install a feature license to enable data tiering (Fabric
 
 When you enable data tiering in AWS, Cloud Volumes ONTAP uses EBS as a performance tier for hot data and AWS S3 as a capacity tier for inactive data.
 
-Performance tier:: The performance tier can be General Purpose SSDs (gp2), Provisioned IOPS SSDs, or Throughput Optimized HDDs.
+Performance tier:: The performance tier can be General Purpose SSDs (gp3 or gp2) or Provisioned IOPS SSDs (io1).
++
+NOTE: Tiering data to object storage is not recommended when using Throughput Optimized HDDs (st1).
 
 Capacity tier:: A Cloud Volumes ONTAP system tiers inactive data to a single S3 bucket using the _Standard_ storage class. Standard is ideal for frequently accessed data stored across multiple Availability Zones.
 +

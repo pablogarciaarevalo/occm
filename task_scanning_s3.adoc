@@ -184,7 +184,7 @@ Be sure to do the following:
 . Go to the source AWS account where the Cloud Compliance instance resides and select the IAM role that is attached to the instance.
 .. Change the *Maximum CLI/API session duration* from 1 hour to 12 hours and save that change.
 .. Click *Attach policies* and then click *Create policy*.
-.. Create a policy that includes the "sts:AssumeRole" action and the ARN of the role that you created in the target account.
+.. Create a policy that includes the "sts:AssumeRole" action and specify the ARN of the role that you created in the target account.
 +
 [source,json]
 {

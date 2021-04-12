@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_scanning_file_shares.html
 keywords: cloud compliance, enable cloud compliance, privacy, compliance, file shares, nfs, cifs, smb
-summary: Complete a few steps to start scanning NFS or CIFS file shares directly with Cloud Compliance. These file shares can reside in your premises or in the cloud.
+summary: Complete a few steps to start scanning non-NetApp NFS or CIFS file shares directly with Cloud Compliance. These file shares can reside on-premises or in the cloud.
 ---
 
 = Scanning file shares
@@ -13,11 +13,11 @@ summary: Complete a few steps to start scanning NFS or CIFS file shares directly
 :imagesdir: ./media/
 
 [.lead]
-Complete a few steps to start scanning NFS or CIFS file shares directly with Cloud Compliance. These file shares can reside in your premises or in the cloud.
+Complete a few steps to start scanning non-NetApp NFS or CIFS file shares directly with Cloud Compliance. These file shares can reside on-premises or in the cloud.
 
 == Quick start
 
-Get started quickly by following these steps or scroll down to the remaining sections for full details.
+Get started quickly by following these steps, or scroll down to the remaining sections for full details.
 
 ==== image:number1.png[Number 1] Review file share prerequisites
 
@@ -39,13 +39,11 @@ The group is a container for the file shares that you want to scan, and it is us
 [role="quick-margin-para"]
 Add the list of file shares that you want to scan. You can add up to 100 file shares at a time.
 
-== Reviewing prerequisites
+== Reviewing file share requirements
 
 Review the following prerequisites to make sure that you have a supported configuration before you enable Cloud Compliance.
 
-=== File share requirements
-
-* The shares can be hosted anywhere, including in the cloud or on premises. These are file shares that reside on non-NetApp storage systems.
+* The shares can be hosted anywhere, including in the cloud or on-premises. These are file shares that reside on non-NetApp storage systems.
 
 * There needs to be network connectivity between the Cloud Compliance instance and the shares.
 
@@ -61,9 +59,9 @@ Review the following prerequisites to make sure that you have a supported config
 
 You must have link:task_deploy_cloud_compliance.html[deployed an instance of Cloud Compliance in Cloud Manager already^].
 
-You must add a group before you can add your file shares. The group is a container for the file shares that you want to scan, and the group name is used as the working environment name for those file shares.
+You must add a files shares "group" before you can add your file shares. The group is a container for the file shares that you want to scan, and the group name is used as the working environment name for those file shares.
 
-You can mix NFS and CIFS shares in the same group. However, all CIFS file shares in a group need to be using the same Active Directory credentials. If you plan to add CIFS shares that use different credentials, you must make a separate group for each unique set of credentials.
+You can mix NFS and CIFS shares in the same group, however, all CIFS file shares in a group need to be using the same Active Directory credentials. If you plan to add CIFS shares that use different credentials, you must make a separate group for each unique set of credentials.
 
 .Steps
 
@@ -111,7 +109,7 @@ If the dialog lists any shares that could not be added, capture this information
 
 Cloud Compliance starts scanning the files in the file shares you added, and the results are displayed in the Dashboard and in other locations.
 
-== Removing a file share from compliance scans
+== Removing a file share from Compliance scans
 
 If you no longer need to scan certain file shares, you can remove individual file shares from having their files scanned at any time. Just click *Remove Share* from the Configuration page.
 

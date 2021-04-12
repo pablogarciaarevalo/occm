@@ -371,6 +371,10 @@ Sync relationships that include Google Cloud Storage require a data broker deplo
 
 All regions are supported.
 
+==== Permissions required for buckets in other Google Cloud projects
+
+When setting up a sync relationship, you can choose from Google Cloud buckets in different projects, if you provide the required permissions to the data broker's service account. link:task_sync_installing_gcp.html[Learn how to set up the service account].
+
 === ONTAP requirements
 
 If the sync relationship includes Cloud Volumes ONTAP or an on-prem ONTAP cluster and you selected NFSv4 or later, then you'll need to enable NFSv4 ACLs on the ONTAP system. This is required to copy the ACLs.
