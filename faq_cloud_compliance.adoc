@@ -18,8 +18,7 @@ This FAQ can help if you’re just looking for a quick answer to a question.
 
 == What is Cloud Compliance?
 
-Cloud Compliance is a cloud offering that uses Artificial Intelligence (AI) driven technology to help organizations understand data context and identify sensitive data across your storage systems. The systems can be Azure NetApp Files configurations, Cloud Volumes ONTAP systems hosted in AWS or Azure, Amazon S3 buckets, on-prem ONTAP systems, databases, and OneDrive accounts.
-// non-NetApp file shares, generic S3 object storage,
+Cloud Compliance is a cloud offering that uses Artificial Intelligence (AI) driven technology to help organizations understand data context and identify sensitive data across your storage systems. The systems can be Azure NetApp Files configurations, Cloud Volumes ONTAP systems hosted in AWS or Azure, Amazon S3 buckets, on-prem ONTAP systems, non-NetApp file shares, generic S3 object storage, databases, and OneDrive accounts.
 
 Cloud Compliance provides pre-defined parameters (such as sensitive information types and categories) to address new data compliance regulations for data privacy and sensitivity, such as GDPR, CCPA, HIPAA, and more.
 
@@ -41,8 +40,7 @@ https://cloud.netapp.com/cloud-compliance[Learn more about the use cases for Clo
 
 == What types of data can be scanned with Cloud Compliance?
 
-Cloud Compliance supports scanning of unstructured data over NFS and CIFS protocols that are managed by Cloud Volumes ONTAP, Azure NetApp Files, and on-prem ONTAP systems. Cloud Compliance can also scan data stored on Amazon S3 buckets.
-// non-NetApp file shares,  generic S3 object storage.
+Cloud Compliance supports scanning of unstructured data over NFS and CIFS protocols that are managed by Cloud Volumes ONTAP, Azure NetApp Files, and on-prem ONTAP systems. Cloud Compliance can also scan data stored on Amazon S3 buckets, in generic S3 object storage, and non-NetApp file shares.
 
 Additionally, Cloud Compliance can scan databases that are located anywhere, and user files from OneDrive accounts.
 
@@ -123,7 +121,7 @@ NOTE: Activating Cloud Compliance results in an immediate initial scan. Complian
 
 == How do I disable Cloud Compliance?
 
-You can disable Cloud Compliance from the Canvas page after you select an individual working environment, database, or OneDrive account.
+You can disable Cloud Compliance from the Canvas page after you select an individual working environment, database, file share group, or OneDrive account.
 
 link:task_managing_compliance.html[Learn more^].
 
@@ -145,7 +143,7 @@ link:task_getting_started_compliance.html[Learn more^].
 
 == Can Cloud Compliance send notifications to my organization?
 
-Yes. In conjunction with the Highlights feature, you can send email alerts to Cloud Manager users (daily, weekly, or monthly) when a highlight return results so you can get notifications to protect your data. Learn more about link:task_managing_highlights.html#controlling-your-data-using-highlights[highlights^].
+Yes. In conjunction with the Policies feature, you can send email alerts to Cloud Manager users (daily, weekly, or monthly) when a Policy returns results so you can get notifications to protect your data. Learn more about link:task_managing_highlights.html#controlling-your-data-using-policies[Policies^].
 
 You can also download status reports from the Investigation page in .CSV format that you can share internally in your organization.
 

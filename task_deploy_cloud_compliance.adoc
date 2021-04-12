@@ -15,11 +15,11 @@ summary: Complete a few steps to deploy the Cloud Compliance instance in your Cl
 [.lead]
 Complete a few steps to deploy the Cloud Compliance instance in your Cloud Manager workspace. You can deploy Cloud Compliance in the cloud or on an on-premises system.
 
-The on-prem installation may be a good option if you prefer to scan on-premises ONTAP working environments using a Compliance instance that is also located on premises. But this this not a requirement. The Compliance software functions exactly the same way regardless of which installation method you choose.
+The on-prem installation may be a good option if you prefer to scan on-premises ONTAP working environments using a Compliance instance that's also located on premises. But this this not a requirement. The Compliance software functions exactly the same way regardless of which installation method you choose.
 
 == Quick start
 
-Get started quickly by following these steps or scroll down to the remaining sections for full details.
+Get started quickly by following these steps, or scroll down to the remaining sections for full details.
 
 ==== image:number1.png[Number 1] Create a Connector
 
@@ -55,26 +55,27 @@ The first 1 TB of data that Cloud Compliance scans in Cloud Manager is free. A s
 
 == Creating a Connector
 
-If you don't already have a Connector, create a Connector in Azure or AWS. See link:task_creating_connectors_aws.html[creating a Connector in AWS^] or link:task_creating_connectors_azure.html[creating a Connector in Azure^]. In most cases you will probably have a Connector set up before you attempt to activate Cloud Compliance because most link:concept_connectors.html#when-a-connector-is-required[Cloud Manager features require a Connector], but there are cases when you need to set one up now.
+If you don't already have a Connector, create a Connector in Azure or AWS. See link:task_creating_connectors_aws.html[creating a Connector in AWS^] or link:task_creating_connectors_azure.html[creating a Connector in Azure^]. In most cases you will probably have a Connector set up before you attempt to activate Cloud Compliance because most link:concept_connectors.html#when-a-connector-is-required[Cloud Manager features require a Connector], but there are cases where you'll you need to set one up now.
 
-There are some scenarios where you have to use a Connector in AWS or Azure for Cloud Compliance.
+There are some scenarios where you have to use a Connector that's deployed in AWS or Azure:
 
 * When scanning data in Cloud Volumes ONTAP in AWS or in AWS S3 buckets, you use a connector in AWS.
 * When scanning data in Cloud Volumes ONTAP in Azure or in Azure NetApp Files, you use a connector in Azure.
-* Databases, OneDrive folders, and on-prem ONTAP systems can be scanned using either Connector.
+
+On-prem ONTAP systems, non-NetApp file shares, generic S3 Object storage, databases, and OneDrive folders can be scanned using either Connector.
 
 Note that you can also link:task_installing_linux.html[deploy the Connector on-premises^] on an existing Linux host in your network or in the cloud. Some users planning to install Cloud Compliance on-prem may also choose to install the Connector on-prem.
 
 As you can see, there may be some situations where you need to use link:concept_connectors.html#when-to-use-multiple-connectors[multiple Connectors].
 
-NOTE: If you are planning on scanning Azure NetApp Files, you need to make sure you're deploying in the same region as the volumes you wish to scan.
+NOTE: If you're planning on scanning Azure NetApp Files, you need to make sure you're deploying in the same region as the volumes you wish to scan.
 
 == Reviewing prerequisites
 
 Review the following prerequisites to make sure that you have a supported configuration before you deploy Cloud Compliance.
 
 Enable outbound internet access from Cloud Compliance::
-Cloud Compliance requires outbound internet access. If your virtual or physical network uses a proxy server for internet access, ensure that the Cloud Compliance instance has outbound internet access to contact the following endpoints. When you deploy Cloud Compliance in the cloud, it is located in the same subnet as the Connector.
+Cloud Compliance requires outbound internet access. If your virtual or physical network uses a proxy server for internet access, ensure that the Cloud Compliance instance has outbound internet access to contact the following endpoints. When you deploy Cloud Compliance in the cloud, it's located in the same subnet as the Connector.
 +
 Review the appropriate table below depending on whether you are deploying Cloud Compliance in AWS, Azure, or on-premises.
 +
@@ -139,11 +140,9 @@ Review the appropriate table below depending on whether you are deploying Cloud 
 \https://dseasb33srnrn.cloudfront.net/
 \https://production.cloudflare.docker.com/
 
-| Provides access to software images, manifests, and templates.
+| Provides access to software images, manifests, templates, and to send logs and metrics.
 
-| \https://support.compliance.cloudmanager.cloud.netapp.com/	| Enables NetApp to stream data from audit records.
-
-| \https://support.compliance.cloudmanager.cloud.netapp.com/ | Enables Cloud Compliance to access and download manifests and templates, and to send logs and metrics.
+| \https://support.compliance.cloudmanager.cloud.netapp.com/ | Enables NetApp to stream data from audit records.
 
 |
 *On-premises installs only:*
@@ -169,7 +168,7 @@ When installed in the cloud, ensure that your cloud provider's vCPU limit allows
 +
 In AWS, the instance family is _On-Demand Standard instances_. In Azure, the instance family is _Standard Dsv3 Family_.
 +
-For more details on vCPU limits, see the following:
+See the following links for more details on vCPU limits:
 +
 * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html[AWS documentation: Amazon EC2 Service Limits^]
 * https://docs.microsoft.com/en-us/azure/virtual-machines/linux/quotas[Azure documentation: Virtual machine vCPU quotas^]
@@ -201,7 +200,7 @@ The Compliance software functions exactly the same way regardless of which insta
 +
 image:screenshot_cloud_compliance_deploy_start.png[A screenshot of selecting the button to activate Cloud Compliance.]
 
-. Click *Activate Compliance* to start the deployment wizard.
+. Click *Activate Compliance* to start the cloud deployment wizard.
 +
 image:screenshot_cloud_compliance_deploy_cloud.png[A screenshot of selecting the button to deploy Cloud Compliance in the cloud.]
 
@@ -222,7 +221,7 @@ You can also <<Subscribing to the Cloud Compliance service,subscribe to the Clou
 
 == Deploying the Cloud Compliance instance on premises
 
-The most common way to deploy Cloud Compliance is to <<Deploying the Cloud Compliance instance in the cloud,deploy it in the cloud>>. But you have the option to download and install the Compliance software on a Linux host in your network.
+You can download and install the Compliance software on a Linux host in your network if you do not want to <<Deploying the Cloud Compliance instance in the cloud,deploy it in the cloud>>.
 
 The Compliance software functions exactly the same regardless of which installation method you choose.
 
@@ -257,7 +256,7 @@ See <<Reviewing prerequisites,Reviewing prerequisites>> for the full list of req
 +
 image:screenshot_cloud_compliance_deploy_start.png[A screenshot of selecting the button to activate Cloud Compliance.]
 
-. Click *Activate Compliance*.
+. Click *Activate Compliance* to start the on-prem deployment wizard.
 +
 image:screenshot_cloud_compliance_deploy_onprem.png[A screenshot of selecting the button to deploy Cloud Compliance on premises.]
 
@@ -297,7 +296,7 @@ Variable values:
 * _cm_host_ = IP address or host name of the Cloud Manager Connector system.
 * _proxy_host_ = IP or host name of the proxy server if the host is behind a proxy server.
 * _proxy_port_ = Port to connect to the proxy server (default 80).
-* _proxy_scheme_ = The connection schema: https or http (default http).
+* _proxy_scheme_ = Connection scheme: https or http (default http).
 * _proxy_user_ = Authenticated user to connect to the proxy server, if basic authentication is required.
 * _proxy_password_ = Password for the user name that you specified.
 

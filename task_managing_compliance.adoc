@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_managing_compliance.html
 keywords: remove, delete, stop, stop scans, stop scanning, cloud compliance, stop cloud compliance, delete cloud compliance, terminate, deactivate, deactivating cloud compliance
-summary: If you need to, you can stop Cloud Compliance from scanning one or more working environments, databases, or OneDrive accounts. You can also delete the Cloud Compliance instance if you no longer want to use Cloud Compliance with your working environments.
+summary: If you need to, you can stop Cloud Compliance from scanning one or more working environments, databases, file share groups, or OneDrive accounts. You can also delete the Cloud Compliance instance if you no longer want to use Cloud Compliance with your working environments.
 ---
 
 = Removing data sources from Cloud Compliance
@@ -13,7 +13,7 @@ summary: If you need to, you can stop Cloud Compliance from scanning one or more
 :imagesdir: ./media/
 
 [.lead]
-If you need to, you can stop Cloud Compliance from scanning one or more working environments, databases, or OneDrive accounts. You can also delete the Cloud Compliance instance if you no longer want to use Cloud Compliance with your working environments.
+If you need to, you can stop Cloud Compliance from scanning one or more working environments, databases, file share groups, or OneDrive accounts. You can also delete the Cloud Compliance instance if you no longer want to use Cloud Compliance with your working environments.
 
 == Deactivating compliance scans for a working environment
 
@@ -44,18 +44,18 @@ If you no longer want to scan user files from a certain OneDrive account, you ca
 image:screenshot_compliance_remove_onedrive.png[A screenshot of the Remove OneDrive button from the Scan Configuration page.]
 
 . Click *Delete Account* from the confirmation dialog.
-//
-// == Removing a group of file shares from Cloud Compliance
-//
-// If you no longer want to scan user files from a file shares group, you can delete the File Shares Group from the Cloud Compliance interface and stop all scans.
-//
-// .Steps
-//
-// . From the _Scan Configuration_ page, click the image:screenshot_gallery_options.gif[More button] button in the row for the File Shares Group, and then click *Remove File Shares Group*.
-// +
-// image:screenshot_compliance_remove_fileshare_group.png[A screenshot of the Remove File Share Group button from the Scan Configuration page.]
-//
-// . Click *Delete Group of Shares* from the confirmation dialog.
+
+== Removing a group of file shares from Cloud Compliance
+
+If you no longer want to scan user files from a file shares group, you can delete the File Shares Group from the Cloud Compliance interface and stop all scans.
+
+.Steps
+
+. From the _Scan Configuration_ page, click the image:screenshot_gallery_options.gif[More button] button in the row for the File Shares Group, and then click *Remove File Shares Group*.
++
+image:screenshot_compliance_remove_fileshare_group.png[A screenshot of the Remove File Share Group button from the Scan Configuration page.]
+
+. Click *Delete Group of Shares* from the confirmation dialog.
 
 == Deleting the Cloud Compliance instance
 
