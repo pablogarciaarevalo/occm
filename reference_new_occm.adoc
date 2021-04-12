@@ -53,6 +53,8 @@ When Cloud Manager creates storage accounts in Azure for Cloud Volumes ONTAP, th
 === Cloud Sync enhancements
 
 * The standalone Cloud Sync service has been retired. You should now access Cloud Sync directly from Cloud Manager where all of the same features and functionality are available.
++
+After logging in to Cloud Manager, you can switch to the Sync tab at the top and view your relationships, just like before. https://cloudmanager.netapp.com/
 
 * When setting up a sync relationship, you can choose from Google Cloud buckets in different projects, if you provide the required permissions to the data broker's service account.
 +
