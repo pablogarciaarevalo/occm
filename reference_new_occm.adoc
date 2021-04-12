@@ -19,6 +19,95 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.5 (11 Apr 2021)
+
+* <<Cloud Volumes ONTAP enhancements>>
+* <<Cloud Sync enhancements>>
+* <<Cloud Compliance enhancements>>
+* <<New Application Templates feature>>
+* <<Connector enhancement>>
+* <<Account enhancements>>
+
+=== Cloud Volumes ONTAP enhancements
+
+This release of Cloud Manager includes enhancements to the management of Cloud Volumes ONTAP.
+
+==== Enhancement available in all cloud providers
+
+Cloud Manager now enables logical space reporting on the initial storage VM that it creates for Cloud Volumes ONTAP.
+
+When space is reported logically, ONTAP reports the volume space such that all the physical space saved by the storage efficiency features are also reported as used.
+
+==== Enhancements available in AWS
+
+* Cloud Volumes ONTAP now supports _General Purpose SSD (gp3)_ disks, starting with the 9.7 release. gp3 disks are the lowest-cost SSDs that balance cost and performance for a broad range of workloads.
++
+https://docs.netapp.com/us-en/occm/task_planning_your_config.html#sizing-your-system-in-aws[Learn more about using gp3 disks with Cloud Volumes ONTAP].
+
+* Cloud Volumes ONTAP no longer supports Cold HDD (sc1) disks.
+
+==== Enhancement available in Azure
+
+When Cloud Manager creates storage accounts in Azure for Cloud Volumes ONTAP, the TLS version for the storage account is now version 1.2.
+
+=== Cloud Sync enhancements
+
+* The standalone Cloud Sync service has been retired. You should now access Cloud Sync directly from Cloud Manager where all of the same features and functionality are available.
++
+After logging in to Cloud Manager, you can switch to the Sync tab at the top and view your relationships, just like before. https://cloudmanager.netapp.com/
+
+* When setting up a sync relationship, you can choose from Google Cloud buckets in different projects, if you provide the required permissions to the data broker's service account.
++
+link:task_sync_installing_gcp.html[Learn how to set up the service account].
+
+* Cloud Sync now copies metadata between Google Cloud Storage and S3 providers (AWS S3, StorageGRID, and IBM Cloud Object Storage).
+
+* You can now restart a data broker from Cloud Sync.
++
+image:screenshot_sync_restart_data_broker.gif[A screenshot that shows the Restart Data Broker action from the Manage Data Brokers page.]
+
+* Cloud Sync now identifies when a data broker isn't running the latest software release. This message can help to ensure that you're getting the latest features and functionalities.
++
+image:screenshot_sync_warning.gif[A screenshot that shows a warning when viewing a data broker on the Dashboard.]
+
+=== Cloud Compliance enhancements
+
+* Added support for scanning NFS or CIFS file shares that reside on-premises or in the cloud.
++
+Now you can scan file shares that reside on non-NetApp storage systems. See link:task_scanning_file_shares.html[scanning file shares^] for details.
+
+* Added support for scanning object storage that uses the S3 protocol.
++
+In addition to scanning Amazon S3 buckets, now you can scan data from any Object Storage service which uses the S3 protocol. This includes NetApp StorageGRID, IBM Cloud Object Store, and more. See link:task_scanning_object_storage.html[scanning object storage^] for details.
+
+* The feature called "Highlights" has been renamed to "Policies". See link:task_managing_highlights.html#controlling-your-data-using-policies[how to use Policies] to help in your compliance and governance efforts.
+
+* Now you can see if there are duplicates of certain files in your storage systems. This is useful to identify areas where you can save storage space. It can also help to ensure that files containing sensitive information are not unnecessarily duplicated in your storage systems.
++
+Learn how to link:task_controlling_private_data.html#viewing-whether-files-are-duplicated-in-your-storage-systems[search for duplicate files].
+
+* The link:task_controlling_governance_data.html[Governance dashboard^] has added charts to show link:task_controlling_governance_data.html#top-data-repositories-listed-by-data-sensitivity[top data repositories listed by data sensitivity] and link:task_controlling_governance_data.html#data-listed-by-types-of-open-permissions[data listed by types of Open Permissions].
+
+=== New Application Templates feature
+
+Templates enable you to standardize resource creation in your working environments. For example, you can hard-code required parameters in a "volume template" that are later applied when a storage admin creates a volume. This can include required disk type, size, protocol, cloud provider, and more. You can also turn on certain services, like Cloud Backup, for every created volume.
+
+This makes it easy for your storage admins to create volumes that are optimized for specialized workload requirements; such as databases or streaming services. And it makes life easier for your storage architects knowing that each volume is created optimally for each application. Learn about link:concept_resource_templates.html[Application Templates^] and how you can use them in your environment.
+
+=== Connector enhancement
+
+If you configured a proxy server, you can now enable an option to send API calls directly to Cloud Manager without going through the proxy. This option is supported with Connectors that are running in AWS or in Google Cloud.
+
+link:task_configuring_proxy.html[Learn more about this setting].
+
+=== Account enhancements
+
+* You can now allow private previews in your account to get access to new NetApp cloud services as they are made available as a preview in Cloud Manager.
+
+* You can also allow third-party services in your account to get access to third-party services that are available in Cloud Manager.
+
+link:task_managing_cloud_central_accounts.html#allowing-private-previews[Learn more about these options].
+
 == Cloud Manager 3.9.4 update (8 Apr 2021)
 
 === Active IQ enhancements
