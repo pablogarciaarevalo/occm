@@ -29,8 +29,10 @@ You need to create a Connector before you can change Cloud Manager settings. lin
 
 .Steps
 
-. In the upper right of the Cloud Manager console, click the Settings icon, and select *Cloud Manager Settings*.
+. In the upper right of the Cloud Manager console, click the Settings icon, and select *Connector Settings*.
 +
 image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the Cloud Manager console.]
 
-. Under *HA CIFS Locks*, select the checkbox and click *Save*.
+. Under *Azure*, click *Azure CIFS locks for Azure HA working environments*.
+
+. Click the checkbox to enable the feature and then click *Save*.
