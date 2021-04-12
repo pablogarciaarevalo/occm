@@ -60,6 +60,10 @@ link:task_sync_installing_gcp.html[Learn how to set up the service account].
 
 * Cloud Sync now copies metadata between Google Cloud Storage and S3 providers (AWS S3, StorageGRID, and IBM Cloud Object Storage).
 
+* You can now restart a data broker from Cloud Sync.
++
+image:screenshot_sync_restart_data_broker.gif[A screenshot that shows the Restart Data Broker action from the Manage Data Brokers page.]
+
 * Cloud Sync now identifies when a data broker isn't running the latest software release. This message can help to ensure that you're getting the latest features and functionalities.
 +
 image:screenshot_sync_warning.gif[A screenshot that shows a warning when viewing a data broker on the Dashboard.]
