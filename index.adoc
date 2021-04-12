@@ -37,7 +37,7 @@ Cloud Manager enables IT experts and cloud architects to centrally manage their 
 
 * link:task_managing_ontap.html[Active IQ]
 * link:concept_compute.html[Compute]
-* link:concept_backup_to_cloud.html[Cloud Backup]
+* link:concept_backup_to_cloud.html[Cloud Backup and Restore]
 * link:task_getting_started_compliance.html[Cloud Compliance]
 * link:concept_cloud_sync.html[Cloud Sync]
 * link:concept_cloud_tiering.html[Cloud Tiering]
@@ -45,7 +45,7 @@ Cloud Manager enables IT experts and cloud architects to centrally manage their 
 * link:task_connecting_kubernetes.html[K8s]
 * link:task_getting_started_monitoring.html[Monitoring]
 * link:task_replicating_data.html[Replication]
-* link:task_restore_backups.html[Restore]
+* link:concept_resource_templates.html[Templates]
 
 == Automate with APIs
 

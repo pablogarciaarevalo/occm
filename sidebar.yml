@@ -231,6 +231,12 @@ entries:
         url: /task_managing_ontap.html
       - title: Manage ONTAP volumes
         url: /task_provisioning_ontap.html
+  - title: Create templates to standardize resource creation
+    entries:
+      - title: Learn about Application Templates
+        url: /concept_resource_templates.html
+      - title: Get started
+        url: /task_define_templates.html
   - title: Back up data to the cloud
     entries:
       - title: Learn about Cloud Backup
