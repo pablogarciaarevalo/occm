@@ -15,77 +15,77 @@ summary: Cloud Compliance provides many ways for you to manage your private data
 [.lead]
 Cloud Compliance provides many ways for you to manage your private data. Some functionality just makes it easier to see the data that is most important to you, and other functionality allows you to make changes to the data.
 
-* Using the "highlight" functionality you can create your own custom search queries so that you can easily see the results by clicking one button.
-* You can send email alerts to Cloud Manager users when certain critical highlights return results.
+* Using the "Policy" functionality you can create your own custom search queries so that you can easily see the results by clicking one button.
+* You can send email alerts to Cloud Manager users when certain critical Policies return results.
 * If you are subscribed to link:https://azure.microsoft.com/en-us/services/information-protection/[Azure Information Protection (AIP)^] to classify and protect your files, you can use Cloud Compliance to manage those AIP labels.
-* You can delete files that seem insecure or too risky to leave in your storage system.
+* You can delete files that seem insecure or too risky to leave in your storage system, or that you have identified as a duplicate.
 
-See below for more functionality that is provided with both the highlights and AIP features.
+See below for more functionality that is provided with both the Policies and AIP features.
 
-== Controlling your data using Highlights
+== Controlling your data using Policies
 
-Highlights are like a favorites list of custom filters that provide search results in the Investigation page for commonly requested compliance queries. Cloud Compliance provides a set of predefined Highlights based on common customer questions. You can also create custom Highlights that provide results for searches specific to your organization.
+Policies are like a favorites list of custom filters that provide search results in the Investigation page for commonly requested compliance queries. Cloud Compliance provides a set of predefined Policies based on common customer requests. You can create custom Policies that provide results for searches specific to your organization.
 
-Highlights provide the following functionality:
+Policies provide the following functionality:
 
-* <<List of predefined highlights,Predefined highlights>> from NetApp based on user requests
-* Ability to create your own custom highlights
-* Launch the Investigation page with the results from your highlights in one click
-* Send email alerts to Cloud Manager users when certain critical highlights return results so you can get notifications to protect your data
-* Assign AIP (Azure Information Protection) labels automatically to all files that match the criteria defined in a highlight
+* <<List of predefined Policies,Predefined Policies>> from NetApp based on user requests
+* Ability to create your own custom Policies
+* Launch the Investigation page with the results from your Policies in one click
+* Send email alerts to Cloud Manager users when certain critical Policies return results so you can get notifications to protect your data
+* Assign AIP (Azure Information Protection) labels automatically to all files that match the criteria defined in a Policy
 
-The *Highlights* tab in the Compliance Dashboard lists all the Highlights available on this instance of Cloud Compliance.
+The *Policies* tab in the Compliance Dashboard lists all the predefined and custom Policies available on this instance of Cloud Compliance.
 
-image:screenshot_compliance_highlights_tab.png[A screenshot of the Highlights tab in the Cloud Compliance dashboard.]
+image:screenshot_compliance_highlights_tab.png[A screenshot of the Policies tab in the Cloud Compliance dashboard.]
 
-In addition, Highlights appear in the list of Filters in the Investigation page.
+In addition, Policies appear in the list of Filters in the Investigation page.
 
-=== Viewing highlights results in the Investigation page
+=== Viewing Policy results in the Investigation page
 
-To display the results for a highlight in the Investigation page, click the image:screenshot_gallery_options.gif[More button] button for a specific highlight, and then select *Investigate Results*.
+To display the results for a Policy in the Investigation page, click the image:screenshot_gallery_options.gif[More button] button for a specific Policy, and then select *Investigate Results*.
 
-image:screenshot_compliance_highlights_investigate.png[A screenshot of selecting Investigate Results for a specific highlight from the Highlights tab.]
+image:screenshot_compliance_highlights_investigate.png[A screenshot of selecting Investigate Results for a specific Policy from the Policies tab.]
 
-=== Creating custom highlights
+=== Creating custom Policies
 
-You can create your own custom highlights that provide results for searches specific to your organization.
+You can create your own custom Policies that provide results for searches specific to your organization.
 
 .Steps
 
 . From the Data Investigation page, define your search by selecting all the filters you want to use. See link:task_controlling_private_data.html#filtering-data-in-the-data-investigation-page[Filtering data in the Data Investigation page^] for details.
 
-. Once you have all the filter characteristics just the way you want them, click *Save this search as a Highlight*.
+. Once you have all the filter characteristics just the way you want them, click *Save this search as a Policy*.
 +
-image:screenshot_compliance_save_as_highlight.png[A screenshot showing how to save a filtered query as a Highlight.]
+image:screenshot_compliance_save_as_highlight.png[A screenshot showing how to save a filtered query as a Policy.]
 
-. Name the highlight and select other actions that can be performed by the highlight:
+. Name the Policy and select other actions that can be performed by the Policy:
 .. Enter a unique name and description.
 .. Optionally, check the box if you want notification emails sent to Cloud Manager users, and choose the interval at which the email is sent.
-.. Optionally, check the box to automatically assign AIP labels to files that match the highlight parameters, and select the label. (Learn more about <<Categorizing your data using AIP labels,AIP labels>>.)
-.. Click *Create Highlight*.
+.. Optionally, check the box to automatically assign AIP labels to files that match the Policy parameters, and select the label. (Learn more about <<Categorizing your data using AIP labels,AIP labels>>.)
+.. Click *Create Policy*.
 +
-image:screenshot_compliance_save_highlight.png[A screenshot that shows how to configure the highlight and save it.]
+image:screenshot_compliance_save_highlight.png[A screenshot that shows how to configure the Policy and save it.]
 
 .Result
 
-The new highlight appears in the Highlights tab.
+The new Policy appears in the Policies tab.
 
-=== Editing highlights
+=== Editing Policies
 
-You can modify certain parts of a highlight depending on the type of highlight:
+You can modify certain parts of a Policy depending on the type of Policy:
 
-* Custom highlights - You can modify the _Name_, the _Description_, whether email notifications are sent, and whether AIP labels are added.
-* Predefined highlights - You can modify only whether email notifications are sent and whether AIP labels are added.
+* Custom Policies - You can modify the _Name_, the _Description_, whether email notifications are sent, and whether AIP labels are added.
+* Predefined Policies - You can modify only whether email notifications are sent and whether AIP labels are added.
 
-NOTE: If you need to change the filter parameters for a custom highlight, you'll need to create a new highlight with the parameters you want, and then delete the old highlight.
+NOTE: If you need to change the filter parameters for a custom Policy, you'll need to create a new Policy with the parameters you want, and then delete the old Policy.
 
-To modify a highlight, click the *Edit* button, enter your changes on the _Edit Highlight_ page, and click *Save Highlight*.
+To modify a Policy, click the *Edit* button, enter your changes on the _Edit Policy_ page, and click *Save Policy*.
 
-=== Deleting highlights
+=== Deleting Policies
 
-You can delete any custom highlight that you created if you no longer need it. You can't delete any of the predefined highlights.
+You can delete any custom Policy that you created if you no longer need it. You can't delete any of the predefined Policies.
 
-To delete a highlight, click the image:screenshot_gallery_options.gif[More button] button for a specific highlight, click *Delete Highlight*, and then click *Delete Highlight* again in the confirmation dialog.
+To delete a Policy, click the image:screenshot_gallery_options.gif[More button] button for a specific Policy, click *Delete Policy*, and then click *Delete Policy* again in the confirmation dialog.
 
 == Categorizing your data using AIP labels
 
@@ -99,7 +99,7 @@ TIP: If a file has a label which doesn’t exist anymore in AIP, Cloud Complianc
 
 === Integrating AIP labels in your workspace
 
-Before you can manage AIP labels, you need to integrate the AIP label functionality into Cloud Compliance by signing into your existing Azure account. Once enabled, you can manage AIP labels within files for all link:concept_cloud_compliance.html#supported-working-environments-and-data-sources[working environments and data sources^] in your current Cloud Manager workspace.
+Before you can manage AIP labels, you need to integrate the AIP label functionality into Cloud Compliance by signing into your existing Azure account. Once enabled, you can manage AIP labels within files for all link:concept_cloud_compliance.html#supported-working-environments-and-data-sources[working environments and data sources^] in your Cloud Manager workspace.
 
 .Requirements
 
@@ -125,7 +125,7 @@ image:screenshot_compliance_aip_labels_int.png[A screenshot that shows AIP label
 
 .Result
 
-You can view and assign AIP labels from the results pane of the Investigation page. You can also assign AIP labels to files using highlights.
+You can view and assign AIP labels from the results pane of the Investigation page. You can also assign AIP labels to files using Policies.
 
 === Viewing AIP labels in your files
 
@@ -153,15 +153,15 @@ The label appears in the file metadata.
 
 // NOTE: You can't remove a label when modifying AIP labels manually.
 
-=== Assigning AIP labels automatically with highlights
+=== Assigning AIP labels automatically with Policies
 
-You can assign an AIP label to all the files that meet the criteria of the highlight. You can specify the AIP label when creating the highlight, or you can add the label when editing any highlight.
+You can assign an AIP label to all the files that meet the criteria of the Policy. You can specify the AIP label when creating the Policy, or you can add the label when editing any Policy.
 
 Labels are added or updated in files continuously as Cloud Compliance scans your files.
 
 Depending on whether a label is already applied to a file, and the classification level of the label, the following actions are taken when changing a label:
 
-[cols=2*,options="header",cols="65,35"]
+[cols=2*,options="header",cols="60,40"]
 |===
 
 | If the file...
@@ -170,26 +170,26 @@ Depending on whether a label is already applied to a file, and the classificatio
 | Has no label | The label is added
 | Has an existing label of a lower level of classification | The higher level label is added
 | Has an existing label of a higher level of classification |	The higher level label is retained
-| Is assigned a label both manually and by a highlight | The higher level label is added
-| Is assigned two different labels by two highlights |	The higher level label is added
+| Is assigned a label both manually and by a Policy | The higher level label is added
+| Is assigned two different labels by two Policies |	The higher level label is added
 
 |===
 
-Follow these steps to add an AIP label to an existing highlight.
+Follow these steps to add an AIP label to an existing Policy.
 
 .Steps
 
-. From the Highlights List page, click *Edit* for the highlight where you want to add (or change) the AIP label.
+. From the Policies List page, click *Edit* for the Policy where you want to add (or change) the AIP label.
 +
-image:screenshot_compliance_add_label_highlight_1.png[A screenshot showing how to edit an existing highlight.]
+image:screenshot_compliance_add_label_highlight_1.png[A screenshot showing how to edit an existing Policy.]
 
-. In the Edit Highlight page, check the box to enable automatic labels for files that match the highlight parameters, and select the label (for example, *General*).
+. In the Edit Policy page, check the box to enable automatic labels for files that match the Policy parameters, and select the label (for example, *General*).
 +
-image:screenshot_compliance_add_label_highlight_2.png[A screenshot showing how to select the label to be assigned to files that match the highlight.]
+image:screenshot_compliance_add_label_highlight_2.png[A screenshot showing how to select the label to be assigned to files that match the Policy.]
 
-. Click *Save Highlight* and the label appears in the highlight description.
+. Click *Save Policy* and the label appears in the Policy description.
 
-NOTE: If a highlight was configured with a label, but the label has since been removed from AIP, the label name is turned to OFF and the label is not assigned anymore.
+NOTE: If a Policy was configured with a label, but the label has since been removed from AIP, the label name is turned to OFF and the label is not assigned anymore.
 
 // You can remove a label by clicking the “None” option.
 
@@ -209,37 +209,38 @@ image:screenshot_compliance_un_integrate_aip_labels.png[A screenshot showing how
 
 == Sending email alerts when non-compliant data is found
 
-Cloud Compliance can send email alerts to Cloud Manager users when certain critical highlights return results so you can get notifications to protect your data. You can choose to send the email notifications on a daily, weekly, or monthly basis.
+Cloud Compliance can send email alerts to Cloud Manager users when certain critical Policies return results so you can get notifications to protect your data. You can choose to send the email notifications on a daily, weekly, or monthly basis.
 
-You can configure this setting when creating the highlight or when editing any highlight.
+You can configure this setting when creating the Policy or when editing any Policy.
 
-Follow these steps to add email updates to an existing highlight.
+Follow these steps to add email updates to an existing Policy.
 
 .Steps
 
-. From the Highlights List page, click *Edit* for the highlight where you want to add (or change) the email setting.
+. From the Policies List page, click *Edit* for the Policy where you want to add (or change) the email setting.
 +
-image:screenshot_compliance_add_email_alert_1.png[A screenshot showing how to edit an existing highlight.]
+image:screenshot_compliance_add_email_alert_1.png[A screenshot showing how to edit an existing Policy.]
 
-. In the Edit Highlight page, check the box if you want notification emails sent to Cloud Manager users, and choose the interval at which the email is sent (for example, *Week*).
+. In the Edit Policy page, check the box if you want notification emails sent to Cloud Manager users, and choose the interval at which the email is sent (for example, every *Week*).
 +
-image:screenshot_compliance_add_email_alert_2.png[A screenshot showing how to choose the email criterial to be sent for the highlight.]
+image:screenshot_compliance_add_email_alert_2.png[A screenshot showing how to choose the email criterial to be sent for the Policy.]
 
-. Click *Save Highlight* and the interval at which the email is sent appears in the highlight description.
+. Click *Save Policy* and the interval at which the email is sent appears in the Policy description.
 
 .Result
 
-The first email is sent now if there are any results from the highlight - but only if any files meet the highlight criteria. No personal information is sent in the notification emails. The email indicates that there are files that match the highlight criteria, and it provides a link to the highlight results.
+The first email is sent now if there are any results from the Policy - but only if any files meet the Policy criteria. No personal information is sent in the notification emails. The email indicates that there are files that match the Policy criteria, and it provides a link to the Policy results.
 
 == Deleting source files
 
-You can permanently remove source files that seem insecure or too risky to leave in your storage system. This action is permanent and there is no undo.
+You can permanently remove source files that seem insecure or too risky to leave in your storage system, or that you have identified as a duplicate. This action is permanent and there is no undo.
 
-TIP: You can't delete files that reside in databases or files that reside in volume backup files.
+TIP: You can't delete files that reside in databases or files that reside in volume Backups.
 
 .Requirements
 
 Deleting files requires the following permissions:
+
 *	For NFS data – the export policy needs to be defined with write permissions.
 *	For CIFS data – the CIFS credentials need to have write permissions.
 *	For S3 data - the IAM role must include the following permission: `s3:DeleteObject`
@@ -254,9 +255,9 @@ image:screenshot_compliance_delete_file.png[A screenshot showing selection of th
 
 . Because the delete operation is permanent, you must type "*permanently delete*" in the subsequent _Delete File_ dialog and click *Delete File*.
 
-=== List of predefined highlights
+=== List of predefined Policies
 
-Cloud Compliance provides the following system-defined highlights:
+Cloud Compliance provides the following system-defined Policies:
 
 [cols="25,40,40",width=90%,options="header"]
 |===

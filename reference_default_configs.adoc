@@ -20,6 +20,8 @@ Understanding how Cloud Volumes ONTAP is configured by default can help you set 
 * Cloud Volumes ONTAP is available as a single-node system and as an HA pair in AWS, Azure, and GCP.
 
 * Cloud Manager creates one data-serving storage VM when it deploys Cloud Volumes ONTAP. Some configurations support additional storage VMs. link:task_managing_svms.html[Learn more about managing storage VMs].
++
+Starting with the Cloud Manager 3.9.5 release, logical space reporting is enabled on the initial storage VM. When space is reported logically, ONTAP reports the volume space such that all the physical space saved by the storage efficiency features are also reported as used.
 
 * Cloud Manager automatically installs the following ONTAP feature licenses on Cloud Volumes ONTAP:
 ** CIFS

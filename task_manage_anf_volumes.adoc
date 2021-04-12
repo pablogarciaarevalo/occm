@@ -19,6 +19,8 @@ After you set up your working environment, you can create and manage Azure NetAp
 
 You can create NFS or SMB volumes in a new or existing Azure NetApp Files account.
 
+A Cloud Manager feature called "templates" enables you to create volumes that are optimized for the workload requirements for certain applications; such as databases or streaming services. If your organization has created volume templates that you should use, follow <<Creating volumes from templates,these steps>>.
+
 .Before you begin
 
 * If you want to use SMB, you must have set up DNS and Active Directory.
@@ -62,6 +64,44 @@ image:screenshot_anf_smb.gif[A screenshot of the fields required to set up an SM
 .Result
 
 The new volume is added to the working environment.
+
+Continue with <<Mounting volumes,mounting the cloud volume>>.
+
+== Creating volumes from templates
+
+If your organization has created ANF volume templates so you can deploy volumes that are optimized for the workload requirements for certain applications, follow the steps in this section.
+
+The template should make your job easier because certain volume parameters will already be defined in the template, such as capacity pool, size, protocol, VNet and subnet where the volume should reside, and more. When a parameter is already predefined, you can just skip to the next volume parameter.
+
+.Steps
+
+. On the Canvas page, click the Azure NetApp Files working environment on which you want to provision a volume.
+
+. Click image:screenshot_gallery_options.gif[More button] > *Add Volume From Template*.
++
+image:screenshot_template_add_vol_anf.png[A screenshot showing how to add a new volume from a template.]
+
+. In the _Select Template_ page, select the template that you want to use to create the volume and click *Next*.
++
+image:screenshot_select_template_anf.png[A screenshot of the available application templates.]
++
+The _Define Parameters_ page is displayed.
++
+image:screenshot_define_anf_vol_from_template.png[A screenshot showing a blank template that you need to fill in to create a volume.]
++
+*Note:* You can click the checkbox *Show read-only parameters* to show all the fields that have been locked by the template if you want to see the values for those parameters. By default these predefined fields are hidden and only the fields you need to complete are shown.
+
+. Add values for all of the parameters that are not hard-coded from the template. See <<Creating volumes,creating volumes>> for details about all the parameters you need to complete to deploy an ANF volume.
+
+. Click *Next* after you have defined all the parameters needed for this volume, and then click *Create Volume*.
+
+.Result
+
+Cloud Manager provisions the volume and displays a page so that you can see the progress.
+
+image:screenshot_template_creating_resource_anf.png[A screenshot showing the progress of creating your new volume from the template.]
+
+Then the new volume is added to the working environment.
 
 Continue with mounting the cloud volume.
 

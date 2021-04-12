@@ -19,6 +19,95 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.5 (11 Apr 2021)
+
+* <<Cloud Volumes ONTAP enhancements>>
+* <<Cloud Sync enhancements>>
+* <<Cloud Compliance enhancements>>
+* <<New Application Templates feature>>
+* <<Connector enhancement>>
+* <<Account enhancements>>
+
+=== Cloud Volumes ONTAP enhancements
+
+This release of Cloud Manager includes enhancements to the management of Cloud Volumes ONTAP.
+
+==== Enhancement available in all cloud providers
+
+Cloud Manager now enables logical space reporting on the initial storage VM that it creates for Cloud Volumes ONTAP.
+
+When space is reported logically, ONTAP reports the volume space such that all the physical space saved by the storage efficiency features are also reported as used.
+
+==== Enhancements available in AWS
+
+* Cloud Volumes ONTAP now supports _General Purpose SSD (gp3)_ disks, starting with the 9.7 release. gp3 disks are the lowest-cost SSDs that balance cost and performance for a broad range of workloads.
++
+link:task_planning_your_config.html#sizing-your-system-in-aws[Learn more about using gp3 disks with Cloud Volumes ONTAP].
+
+* Cloud Volumes ONTAP no longer supports Cold HDD (sc1) disks.
+
+==== Enhancement available in Azure
+
+When Cloud Manager creates storage accounts in Azure for Cloud Volumes ONTAP, the TLS version for the storage account is now version 1.2.
+
+=== Cloud Sync enhancements
+
+* The standalone Cloud Sync service has been retired. You should now access Cloud Sync directly from Cloud Manager where all of the same features and functionality are available.
++
+After logging in to Cloud Manager, you can switch to the Sync tab at the top and view your relationships, just like before.
+
+* When setting up a sync relationship, you can choose from Google Cloud buckets in different projects, if you provide the required permissions to the data broker's service account.
++
+link:task_sync_installing_gcp.html[Learn how to set up the service account].
+
+* Cloud Sync now copies metadata between Google Cloud Storage and S3 providers (AWS S3, StorageGRID, and IBM Cloud Object Storage).
+
+* You can now restart a data broker from Cloud Sync.
++
+image:screenshot_sync_restart_data_broker.gif[A screenshot that shows the Restart Data Broker action from the Manage Data Brokers page.]
+
+* Cloud Sync now identifies when a data broker isn't running the latest software release. This message can help to ensure that you're getting the latest features and functionalities.
++
+image:screenshot_sync_warning.gif[A screenshot that shows a warning when viewing a data broker on the Dashboard.]
+
+=== Cloud Compliance enhancements
+
+* Added support for scanning NFS or CIFS file shares that reside on-premises or in the cloud.
++
+Now you can scan file shares that reside on non-NetApp storage systems. See link:task_scanning_file_shares.html[scanning file shares^] for details.
+
+* Added support for scanning object storage that uses the S3 protocol.
++
+In addition to scanning Amazon S3 buckets, now you can scan data from any Object Storage service which uses the S3 protocol. This includes NetApp StorageGRID, IBM Cloud Object Store, and more. See link:task_scanning_object_storage.html[scanning object storage^] for details.
+
+* The feature called "Highlights" has been renamed to "Policies". See link:task_managing_highlights.html#controlling-your-data-using-policies[how to use Policies] to help in your compliance and governance efforts.
+
+* Now you can see if there are duplicates of certain files in your storage systems. This is useful to identify areas where you can save storage space. It can also help to ensure that files containing sensitive information are not unnecessarily duplicated in your storage systems.
++
+Learn how to link:task_controlling_private_data.html#viewing-whether-files-are-duplicated-in-your-storage-systems[search for duplicate files].
+
+* The link:task_controlling_governance_data.html[Governance dashboard^] has added charts to show link:task_controlling_governance_data.html#top-data-repositories-listed-by-data-sensitivity[top data repositories listed by data sensitivity] and link:task_controlling_governance_data.html#data-listed-by-types-of-open-permissions[data listed by types of Open Permissions].
+
+=== New Application Templates feature
+
+Templates enable you to standardize resource creation in your working environments. For example, you can hard-code required parameters in a "volume template" that are later applied when a storage admin creates a volume. This can include required disk type, size, protocol, cloud provider, and more. You can also turn on certain services, like Cloud Backup, for every created volume.
+
+This makes it easy for your storage admins to create volumes that are optimized for specialized workload requirements; such as databases or streaming services. And it makes life easier for your storage architects knowing that each volume is created optimally for each application. Learn about link:concept_resource_templates.html[Application Templates^] and how you can use them in your environment.
+
+=== Connector enhancement
+
+If you configured a proxy server, you can now enable an option to send API calls directly to Cloud Manager without going through the proxy. This option is supported with Connectors that are running in AWS or in Google Cloud.
+
+link:task_configuring_proxy.html[Learn more about this setting].
+
+=== Account enhancements
+
+* You can now allow private previews in your account to get access to new NetApp cloud services as they are made available as a preview in Cloud Manager.
+
+* You can also allow third-party services in your account to get access to third-party services that are available in Cloud Manager.
+
+link:task_managing_cloud_central_accounts.html#allowing-private-previews[Learn more about these options].
+
 == Cloud Manager 3.9.4 update (8 Apr 2021)
 
 === Active IQ enhancements
@@ -35,7 +124,7 @@ See link:task_managing_ontap.html#using-unused-cloud-volumes-ontap-licenses[how 
 +
 For example, the dashboard identifies the amount of stale data, non-business data, and very large files in your systems so you can decide whether you want to move, delete, or tier some files to less expensive object storage.
 
-* You can view a list of link:task_controlling_private_data.html#viewing-file-metadata-and-permissions[all users or groups who have access to a file^].
+* You can view a list of link:task_controlling_private_data.html#viewing-file-metadata[all users or groups who have access to a file^].
 
 * Cloud Compliance is now supported in Government regions in AWS.
 
@@ -149,14 +238,14 @@ The Dashboard is also the starting place to perform all volume and file restore 
 * View and manage Azure Information Protection (AIP) labels in files you are scanning.
 
 ** After you integrate the AIP label functionality into Cloud Compliance, you can view the labels that are assigned to files, add labels to files, and change labels. See link:task_managing_highlights.html#categorizing-your-data-using-aip-labels[how to integrate AIP labels^] in your workspace.
-** Assign labels individually to files, or use the Highlights functionality to link:task_managing_highlights.html#assigning-aip-labels-automatically-with-highlights[add labels to all files that match the Highlight criteria^]. With Highlights, labels are updated continuously as Cloud Compliance finds matches in your files.
+** Assign labels individually to files, or use the Policies functionality to link:task_managing_highlights.html#assigning-aip-labels-automatically-with-policies[add labels to all files that match the Policy criteria^]. With Policies, labels are updated continuously as Cloud Compliance finds matches in your files.
 ** Filter data in the Investigation page by AIP label to view all files that match the label.
 
-* Send email alerts to Cloud Manager users (daily, weekly, or monthly) when any of your Highlights return results so you can get notifications to protect your data.
+* Send email alerts to Cloud Manager users (daily, weekly, or monthly) when any of your Policies return results so you can get notifications to protect your data.
 +
-Select this option when link:task_managing_highlights.html#creating-custom-highlights[creating or editing any highlight^].
+Select this option when link:task_managing_highlights.html#creating-custom-policies[creating or editing any Policy^].
 
-* View File Owner and Permission information when link:task_controlling_private_data.html#viewing-file-metadata-and-permissions[viewing individual file details^].
+* View File Owner and Permission information when link:task_controlling_private_data.html#viewing-file-metadata[viewing individual file details^].
 +
 You can also use this criteria to further filter your data in the Investigation page.
 
@@ -226,9 +315,9 @@ image:screenshot_support_dashboard.gif["A screenshot of the Support Dashboard wh
 +
 Now you can add your corporate OneDrive accounts to Cloud Compliance in order to scan folders and files from all your OneDrive users. See link:task_scanning_onedrive.html[scanning OneDrive accounts^] for details.
 
-* The "Highlights" feature now allows you can create your own custom Highlights that provide results for searches specific to your organization.
+* The "Policies" feature now allows you can create your own custom Policies that provide results for searches specific to your organization.
 +
-In the last release, Cloud Compliance provided a set predefined highlight filters that all users could use. Now you can create your own Highlights to return specific scan results in the Investigation page. See how to link:task_managing_highlights.html#creating-custom-highlights[create your own custom highlights^].
+In the last release, Cloud Compliance provided a set predefined Policy filters that all users could use. Now you can create your own Policies to return specific scan results in the Investigation page. See how to link:task_managing_highlights.html#creating-custom-policies[create your own custom policies^].
 
 * Ability to scan backup files from on-premises ONTAP systems for free.
 +
@@ -369,11 +458,11 @@ link:task_deploy_cloud_compliance.html#deploying-the-cloud-compliance-instance-o
 +
 In the past you have been able to scan NFS DP volumes. This release allows you to easily scan CIFS DP volumes directly within Cloud Compliance. link:task_getting_started_compliance.html#scanning-data-protection-volumes[Learn how].
 
-* A new "Highlights" feature provides a predefined selection of combination filters that return results in the Investigation page
+* A new "Policies" feature provides a predefined selection of combination filters that return results in the Investigation page
 +
-Ten highlights are available with this release. For example, the "HIPAA – Stale data over 30 days" highlight identifies files that contain Health information that is over 30 days old. link:task_controlling_private_data.html#using-highlights-to-quickly-view-results-in-the-investigation-page[See the full list of predefined highlights].
+Ten Policies are available with this release. For example, the "HIPAA – Stale data over 30 days" Policy identifies files that contain Health information that is over 30 days old. link:task_controlling_private_data.html#using-policies-to-quickly-view-results-in-the-investigation-page[See the full list of predefined policies].
 +
-You can select Highlights from a tab in the Compliance Dashboard and as a filter in the Investigation page.
+You can select Policies from a tab in the Compliance Dashboard and as a filter in the Investigation page.
 
 * Cloud Compliance can now find the sensitive personal data type "Political Opinions Reference" in files. See the list of all link:reference_private_data_categories.html#types-of-sensitive-personal-data[sensitive personal data types^] that Cloud Compliance finds in scans.
 

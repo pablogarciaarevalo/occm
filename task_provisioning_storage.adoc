@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: task_provisioning_storage.html
-keywords: storage, provisioning, iscsi, nfs, cifs, volumes, aggregates, provision, create, quotas, nas, san, LUNs, quotas, qtree, add, advanced allocation, create a volume, add a volume, create volumes, add volumes, creating a volume, adding a volume, creating aggregates, adding an aggregate, add an aggregate, create an aggregate, provision volume, provision a volume, provisioning volumes, create a LUN, create LUNs, create LUN, provision LUNs, add volume to second node, add volume to node 2, flexcache, flexcache volumes, create a flexcache volume, provision flexcache, create flexcache volume
-summary: You can provision additional NFS, CIFS, and iSCSI storage for your Cloud Volumes ONTAP systems from Cloud Manager by managing volumes and aggregates.
+keywords: storage, provisioning, iscsi, nfs, cifs, volumes, aggregates, provision, create, quotas, nas, san, LUNs, quotas, qtree, add, advanced allocation, create a volume, add a volume, create volumes, add volumes, creating a volume, adding a volume, creating aggregates, adding an aggregate, add an aggregate, create an aggregate, provision volume, provision a volume, provisioning volumes, create a LUN, create LUNs, create LUN, provision LUNs, add volume to second node, add volume to node 2, flexcache, flexcache volumes, create a flexcache volume, provision flexcache, create flexcache volume, templates
+summary: You can provision additional storage for your Cloud Volumes ONTAP systems from Cloud Manager by managing volumes and aggregates.
 ---
 
 = Provisioning storage
@@ -19,7 +19,9 @@ IMPORTANT: All disks and aggregates must be created and deleted directly from Cl
 
 == Creating FlexVol volumes
 
-If you need more storage after you launch a Cloud Volumes ONTAP system, you can create new FlexVol volumes for NFS, CIFS, or iSCSI from Cloud Manager.
+If you need more storage after you launch your initial Cloud Volumes ONTAP system, you can create new FlexVol volumes for NFS, CIFS, or iSCSI from Cloud Manager.
+
+A Cloud Manager feature called "templates" enables you to create volumes that are optimized for the workload requirements for certain applications; such as databases or streaming services. If your organization has created volume templates that you should use, follow <<Creating volumes from templates,these steps>>.
 
 .About this task
 
@@ -41,7 +43,7 @@ If you want to use CIFS in AWS, you must have set up DNS and Active Directory. F
 |===
 | Action
 | Steps
-| Create a new volume and let Cloud Manager choose the containing aggregate |	Click *Add New Volume*.
+| Create a new volume and let Cloud Manager choose the containing aggregate |	Click *Add Volume* > *New volume*.
 | Create a new volume on a specific aggregate
 a|
 .. Click the menu icon, and then click *Advanced > Advanced allocation*.
@@ -100,6 +102,108 @@ For help, refer to the following:
 .Result
 
 Cloud Volumes ONTAP provisions the volume.
+
+.After you finish
+
+If you provisioned a CIFS share, give users or groups permissions to the files and folders and verify that those users can access the share and create a file.
+
+If you want to apply quotas to volumes, you must use System Manager or the CLI. Quotas enable you to restrict or track the disk space and number of files used by a user, group, or qtree.
+
+== Creating volumes from templates
+
+If your organization has created Cloud Volumes ONTAP volume templates so you can deploy volumes that are optimized for the workload requirements for certain applications, follow the steps in this section.
+
+The template should make your job easier because certain volume parameters will already be defined in the template, such as disk type, size, protocol, snapshot policy, cloud provider, and more. When a parameter is already predefined, you can just skip to the next volume parameter.
+
+NOTE: You can only create NFS or CIFS volumes when using templates.
+
+.Steps
+
+. On the Canvas page, double-click the name of the Cloud Volumes ONTAP system on which you want to provision a volume.
+
+. Click *Add Volume* > *New volume from template*.
++
+image:screenshot_template_add_vol_cvo.png[A screenshot showing how to add a new volume from a template.]
+
+. In the _Select Template_ page, select the template that you want to use to create the volume and click *Next*.
++
+image:screenshot_select_template_cvo.png[A screenshot of the available application templates.]
++
+The _Define Parameters_ page is displayed.
++
+image:screenshot_define_cvo_vol_from_template.png[A screenshot showing a blank template that you need to fill in to create a volume.]
++
+*Note:* You can click the checkbox *Show read-only parameters* to show all the fields that have been locked by the template if you want to see the values for those parameters. By default these predefined fields are hidden and only the fields you need to complete are shown.
+
+. *Details:* Enter the volume name and size.
++
+[cols=2*,options="header",cols="25,75"]
+
+|===
+| Field
+| Description
+
+| Volume Name | Enter the volume name. The template designer may allow you to enter any volume name here. However, there may be instructions within the field that you need to use a certain prefix or suffix, that it _contains_ certain characters within the name, or that it follows rules from a regular expression (regex).
+
+For example, "db" could be a required prefix, suffix, or contains; meaning your volume should be named "db_vol1", "vol1_db, "vol_db_1", etc..
+
+| Volume Size | Specify the size of the volume in GB.
+
+|===
+
+. *Protection:* Choose whether this volume will have Snapshot copies created by selecting "Default" or some other policy, or choose "None" if you do not want to create Snapshot copies.
+
+. *Usage Profile:* Choose whether or not NetApp storage efficiency features are applied to the volume. This includes Thin Provisioning, Deduplication, and Compression.
+
+. *Disk Type:* Choose the cloud storage provider (if not preselected), the type of disk, and the capacity tier (optional) that will be used for the volume storage.
+
+. *Protocol:* Select *NFS* or *SMB* and then the provide the protocol details.
++
+[cols=2*,options="header",cols="25,75"]
+
+|===
+| NFS Fields
+| Description
+
+| Access Control | Choose whether access controls are needed to access the volume.
+
+| Export Policy | Enter an export policy to define the clients in the subnet that can access the volume.
+
+| NFS Version | Select the NFS version for the volume: either _NFSv3_ or _NFSv4_, or you can select both.
+
+|===
++
+[cols=2*,options="header",cols="25,75"]
+
+|===
+| SMB Fields
+| Description
+
+| Share Name | The template designer may have allowed you to enter any share name here, but there may be instructions within the field that you need to use a certain prefix or suffix, that it _contains_ certain characters within the name, or that it follows rules from a regular expression (regex).
+
+| Permissions | Select the level of access to a share for users and groups (also called access control lists, or ACLs).
+
+| Users / Groups | Specify local or domain Windows users or groups, or UNIX users or groups. If you specify a domain Windows user name, you must include the user's domain using the format domain\username.
+
+|===
+
+. *Tiering Policy:* Choose the tiering policy that you would like applied to the volume, or set this to "None" if you do not want to tier cold data from this volume to object storage.
++
+See link:concept_data_tiering.html#volume-tiering-policies[volume tiering policies] for an overview, and see link:task_tiering.html[Tiering inactive data to object storage] to make sure your environment is set up for tiering.
+
+. Click *Next* after you have defined the parameters needed for this volume.
+
+. In the _Define Actions_ page, if required, enable Backups and set the policy to create backups with a certain retention value.
+
+. Click *Create Volume*.
+
+.Result
+
+Cloud Volumes ONTAP provisions the volume and displays a page so that you can see the progress.
+
+image:screenshot_template_creating_resource_cvo.png[A screenshot showing the progress of creating your new volume from the template.]
+
+Additionally, if any secondary action is implemented in the template, for example, enabling Cloud Backup on the volume, that action is also performed.
 
 .After you finish
 

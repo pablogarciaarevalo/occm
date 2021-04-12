@@ -24,13 +24,13 @@ Cloud Compliance provides several tools that can help you with your compliance e
 * Identify Personal Identifiable Information (PII)
 * Identify a wide scope of sensitive information as required by GDPR, CCPA, PCI, and HIPAA privacy regulations
 * Respond to Data Subject Access Requests (DSAR)
-* Notify Cloud Manager users through email when files contain certain PII (you define this criteria using link:task_managing_highlights.html#controlling-your-data-using-highlights[highlights^])
+* Notify Cloud Manager users through email when files contain certain PII (you define this criteria using link:task_managing_highlights.html#controlling-your-data-using-policies[Policies^])
 * View and modify link:https://azure.microsoft.com/en-us/services/information-protection/[Azure Information Protection (AIP) labels^] in your files
 * Delete individual files
 
 Cloud Compliance also provides tools that can help with your governance efforts. You can use Cloud Compliance to:
 
-* Identify the stale data, non-business data, and very large files in your systems.
+* Identify the stale data, non-business data, duplicate files, and very large files in your systems.
 +
 You can use this information to decide whether you want to move, delete, or tier some files to less expensive object storage.
 * View the size of data and whether any of the data contains sensitive information prior to moving it.
@@ -46,12 +46,12 @@ Cloud Compliance can scan data from the following types of working environments 
 * On-premises ONTAP clusters
 * Azure NetApp Files
 * Amazon S3
-// * Non-NetApp file shares
-// * Object storage (that uses S3 protocol)
+* Non-NetApp file shares
+* Object storage (that uses S3 protocol)
 * Databases
 * OneDrive accounts
 
-NOTE: A Beta feature released in January 2021 allows you to run Compliance scans for free on the backup files created from your on-prem ONTAP volumes (created using link:concept_backup_to_cloud.html[Cloud Backup^]). This gives you a choice whether you want to have Cloud Compliance scan your on-prem ONTAP volumes directly, or scan the backup files made from those volumes.
+NOTE: A Beta feature released in January 2021 allows you to run Compliance scans _for free_ on the backup files created from your on-prem ONTAP volumes (created using link:concept_backup_to_cloud.html[Cloud Backup^]). This gives you a choice whether you want to have Cloud Compliance scan your on-prem ONTAP volumes directly, or scan the backup files made from those volumes.
 
 == Cost
 
@@ -61,7 +61,7 @@ link:task_deploy_cloud_compliance.html#subscribing-to-the-cloud-compliance-servi
 +
 *Note:* This subscription is not needed to scan backup files created from your on-prem ONTAP systems.
 
-* Installing Cloud Compliance in the cloud requires deploying a cloud instance, which results in charges from the cloud provider where it is deployed. See the <<The Cloud Compliance instance,the type of instance that is deployed for each cloud provider>>. There is no cost if you install Cloud Compliance on an on-premises system.
+* Installing Cloud Compliance in the cloud requires deploying a cloud instance, which results in charges from the cloud provider where it is deployed. See <<The Cloud Compliance instance,the type of instance that is deployed for each cloud provider>>. There is no cost if you install Cloud Compliance on an on-premises system.
 
 * Cloud Compliance requires that you have deployed a Connector. In many cases you already have a Connector because of other storage and services you are using in Cloud Manager. The Connector instance results in charges from the cloud provider where it is deployed. See the link:reference_cloud_mgr_reqs.html[type of instance that is deployed for each cloud provider^].
 
@@ -79,7 +79,7 @@ At a high-level, Cloud Compliance works like this:
 . You deploy an instance of Cloud Compliance in Cloud Manager.
 . You enable it on one or more working environments or data sources.
 . Cloud Compliance scans the data using an AI learning process.
-. You click *Compliance* and use the provided dashboard and reporting tools to help in your compliance efforts.
+. You click *Compliance* and use the provided dashboards and reporting tools to help in your compliance efforts.
 
 == The Cloud Compliance instance
 

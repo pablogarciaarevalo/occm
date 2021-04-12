@@ -15,7 +15,11 @@ summary: If your corporate policies dictate that you use a proxy server for all 
 [.lead]
 If your corporate policies dictate that you use a proxy server for all HTTP communication to the internet, then you must configure your Connectors to use that proxy server. The proxy server can be in the cloud or in your network.
 
+== Enable a proxy on a Connector
+
 When you configure a Connector to use a proxy server, that Connector and the Cloud Volumes ONTAP systems that it manages (including any HA mediators), all use the proxy server.
+
+Note that this operation restarts the Connector. Ensure that the Connector isn’t performing any operations before you proceed.
 
 .Steps
 
@@ -29,14 +33,35 @@ image:screenshot_connector_local_ui.gif[A screenshot that shows the Connector ic
 +
 The Cloud Manager interface running on the Connector loads in a new browser tab.
 
-. In the upper right of the Cloud Manager console, click the Settings icon, and select *Cloud Manager Settings*.
+. In the upper right of the Cloud Manager console, click the Settings icon, and select *Connector Settings*.
 +
 image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the Cloud Manager console.]
 
-. Under HTTP Proxy, enter the server using the syntax http://_address:port_, specify a user name and password if basic authentication is required for the server, and then click *Save*.
+. Under *General*, click *HTTP Proxy Configuration*.
+
+. Set up the proxy:
+
+.. Click *Enable Proxy*.
+.. Specify the server using the syntax http://_address:port_
+.. Specify a user name and password if basic authentication is required for the server
+.. Click *Save*.
 +
 NOTE: Cloud Manager doesn't support passwords that include the @ character.
 
 .Result
 
 After you specify the proxy server, new Cloud Volumes ONTAP systems are automatically configured to use the proxy server when sending AutoSupport messages. If you didn't specify the proxy server before users create Cloud Volumes ONTAP systems, then they must use System Manager to manually set the proxy server in the AutoSupport options for each system.
+
+== Enable direct API traffic
+
+If you configured a proxy server, you can send API calls directly to Cloud Manager without going through the proxy. This option is supported with Connectors that are running in AWS or in Google Cloud.
+
+.Steps
+
+. In the upper right of the Cloud Manager console, click the Settings icon, and select *Connector Settings*.
++
+image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the Cloud Manager console.]
+
+. Under *General*, click *Support Direct API Traffic*.
+
+. Click the checkbox to enable the option and then click *Save*.
