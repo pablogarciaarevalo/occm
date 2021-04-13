@@ -17,7 +17,11 @@ link:task_setting_up_cloud_central_accounts.html[After you perform initial setup
 
 link:concept_cloud_central_accounts.html[Learn more about how Cloud Central accounts work].
 
-== Adding users
+== Creating and managing users
+
+The user's in your account can access the manage the resources in your account's workspaces.
+
+=== Adding users
 
 Associate Cloud Central users with the Cloud Central account so those users can create and manage working environments in Cloud Manager.
 
@@ -51,7 +55,7 @@ image:screenshot_associate_user.gif[A screenshot that shows how to associate a u
 
 The user should receive an email from NetApp Cloud Central titled "Account Association." The email includes the information needed to access Cloud Manager.
 
-== Removing users
+=== Removing users
 
 Disassociating a user makes it so they can no longer access the resources in a Cloud Central account.
 
@@ -71,7 +75,7 @@ image:screenshot_associate_user_workspace.gif[A screenshot that shows the action
 
 The user can no longer access the resources in this Cloud Central account.
 
-== Managing a Workspace Admin's workspaces
+=== Managing a Workspace Admin's workspaces
 
 You can associate and disassociate Workspace Admins with workspaces at any time. Associating the user enables them to create and view the working environments in that workspace.
 
@@ -92,6 +96,88 @@ image:screenshot_associate_user_workspace.gif[A screenshot that shows the action
 .Result
 
 The user can now access those workspaces from Cloud Manager, as long as the Connector was also associated with the workspaces.
+
+== Creating and managing service accounts
+
+A service account acts as a "user" that can make authorized API calls to Cloud Manager for automation purposes. This makes it easier to manage automation because you don't need to build automation scripts based on a real person's user account who can leave the company at any time. And if you're using federation, you can create a token without generating a refresh token from the cloud.
+
+You give permissions to a service account by assigning it a role, just like any other Cloud Manager user. You can also associate the service account with specific workspaces in order to control the working environments (resources) that the service can access.
+
+When you create the service account, Cloud Manager enables you to copy or download a client ID and client secret for the service account. This key pair is used for authentication with Cloud Manager.
+
+=== Creating a service account
+
+Create as many service accounts as you need to manage the resources in your working environments.
+
+.Steps
+
+. From the top of Cloud Manager, click the *Account* drop-down.
++
+image:screenshot_account_settings_menu.gif[A screenshot that shows the Account Settings option in the top banner of Cloud Manager.]
+
+. Click *Manage Account* next to the currently selected account.
++
+image:screenshot_manage_account_settings.gif[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]
+
+. From the Users tab, click *Create Service Account*.
+
+. Enter a name and select a role. If you chose a role other than Account Admin, choose the workspace to associate with this service account.
+
+. Click *Create*.
+
+. Copy or download the client ID and client secret.
++
+The client secret is visible only once and is not stored anywhere by Cloud Manager. Copy or download the secret and store it safely.
+
+. Click *Close*.
+
+=== Copying the client ID
+
+You can copy a service account's client ID at any time.
+
+.Steps
+
+. From the Users tab, click the action menu in the row that corresponds to the service account.
++
+image:screenshot_service_account_actions.gif[A screenshot that shows the action menu that is available when hovering over a user's name in the Users table.]
+
+. Click *Client ID*.
+
+. The ID is copied to your clipboard.
+
+=== Recreating keys
+
+Recreating the key will delete the existing key for this service account and then create a new key. You won’t be able to use the previous key.
+
+.Steps
+
+. From the Users tab, click the action menu in the row that corresponds to the service account.
++
+image:screenshot_service_account_actions.gif[A screenshot that shows the action menu that is available when hovering over a user's name in the Users table.]
+
+. Click *Recreate Key*.
+
+. Click *Recreate* to confirm.
+
+. Copy or download the client ID and client secret.
++
+The client secret is visible only once and is not stored anywhere by Cloud Manager. Copy or download the secret and store it safely.
+
+. Click *Close*.
+
+=== Deleting a service account
+
+Delete a service account if you no longer need to use it.
+
+.Steps
+
+. From the Users tab, click the action menu in the row that corresponds to the service account.
++
+image:screenshot_service_account_actions.gif[A screenshot that shows the action menu that is available when hovering over a user's name in the Users table.]
+
+. Click *Delete*.
+
+. Click *Delete* again to confirm.
 
 == Managing workspaces
 
@@ -160,10 +246,6 @@ Change you account name at any time to change it to something meaningful for you
 . In the *Overview* tab, click the edit icon next to the account name.
 
 . Type a new account name and click *Save*.
-
-== Creating a service account
-
-Cloud Manager enables you to create a service account as a member of your account. An application or VM can use a service account to make authorized API calls to Cloud Manager in order to access resources or enable services. We'll announce more about this functionality in future releases.
 
 == Allowing private previews
 
