@@ -13,8 +13,7 @@ summary: Complete a few steps to get started backing up data from your on-premis
 :imagesdir: ./media/
 
 [.lead]
-Complete a few steps to get started backing up data from your on-premises ONTAP systems to low-cost object storage in the public cloud. This includes creating backup files on Amazon S3 and Azure Blob.
-// Complete a few steps to get started backing up data from your on-premises ONTAP systems to low-cost object storage in the cloud. This includes creating backup files on Amazon S3, Azure Blob, and Google Cloud Storage.
+Complete a few steps to get started backing up data from your on-premises ONTAP systems to low-cost object storage in the cloud. This includes creating backup files on Amazon S3, Azure Blob, and Google Cloud Storage.
 
 A Beta feature released in January 2021 allows you to run Compliance scans on the backed up volumes from your on-premises systems. Typically, compliance scans are free up to 1 TB of data, and then a cost for the service is applied for data over 1 TB. When combining Backup and Compliance for your on-prem volumes, the cost for scans on those on-prem volumes is free. Learn more about how link:concept_cloud_compliance.html[Cloud Compliance^] can get your business applications and cloud environments privacy ready.
 
@@ -28,10 +27,9 @@ Get started quickly by following these steps, or scroll down to the remaining se
 * You have discovered the on-premises cluster and added it to a working environment in Cloud Manager. See link:task_discovering_ontap.html[Discovering ONTAP clusters^] for details.
 ** The cluster is running ONTAP 9.7P5 or later.
 ** The cluster has a SnapMirror license -- which is included as part of the PREM or Data Protection bundle.
-* You have subscribed to the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Azure^] or the https://aws.amazon.com/marketplace/pp/B07QX2QLXX[AWS^] Cloud Manager Marketplace Backup offering, or you have purchased link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[and activated^] a Cloud Backup BYOL license from NetApp.
-// * You have subscribed to the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Azure^], the https://aws.amazon.com/marketplace/pp/B07QX2QLXX[AWS^], or the https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[Google^] Cloud Manager Marketplace Backup offering, or you have purchased link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[and activated^] a Cloud Backup BYOL license from NetApp.
+* You have subscribed to the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Azure^], the https://aws.amazon.com/marketplace/pp/B07QX2QLXX[AWS^], or the https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[Google^] Cloud Manager Marketplace Backup offering, or you have purchased link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[and activated^] a Cloud Backup BYOL license from NetApp.
 * You have a valid cloud provider subscription for the object storage space where your backups will be located.
-* For AWS, you need to have an account that has an access key and the required permissions so the ONTAP cluster can back up data to S3.
+* For AWS and GCP, you need to have an account that has an access key and the required permissions so the ONTAP cluster can back up the data.
 
 ==== image:number2.png[Number 2] Enable Cloud Backup on the system
 
@@ -45,9 +43,6 @@ image:screenshot_backup_from_onprem_activate.png[A screenshot that shows the Bac
 
 [role="quick-margin-para"]
 Select the provider and then enter the provider details. You also need to specify the IPspace in the ONTAP cluster where the volumes reside.
-
-[role="quick-margin-para"]
-*Note:* Backup to Google Cloud Storage from on-prem ONTAP systems is not currently supported from the UI.
 
 ==== image:number4.png[Number 4] Define the backup policy
 
@@ -105,8 +100,7 @@ Cluster networking requirements::
 +
 ONTAP reads and writes data to and from object storage. The object storage never initiates, it just responds.
 +
-// * An inbound connection is required from the Connector, which can reside in an AWS VPC, Azure VNet, or Google Cloud Platform VPC; depending on the object storage provider you are using.
-* An inbound connection is required from the Connector, which can reside in an AWS VPC or Azure VNet; depending on the object storage provider you are using.
+* An inbound connection is required from the Connector, which can reside in an AWS VPC, Azure VNet, or Google Cloud Platform VPC; depending on the object storage provider you are using.
 +
 A connection between the cluster and the Cloud Backup service is not required.
 
@@ -132,7 +126,7 @@ A Connector is required to back up data to the cloud, and the Connector must be 
 * link:concept_connectors.html[Learn about Connectors]
 * link:task_creating_connectors_aws.html[Creating a Connector in AWS]
 * link:task_creating_connectors_azure.html[Creating a Connector in Azure]
-// * link:task_creating_connectors_gcp.html[Creating a Connector in GCP]
+* link:task_creating_connectors_gcp.html[Creating a Connector in GCP]
 * link:task_managing_connectors.html[Switching between Connectors]
 
 === Preparing networking for the Connector
@@ -144,17 +138,16 @@ Ensure that the Connector has the required networking connections.
 . Ensure that the network where the Connector is installed enables the following connections:
 
 * An outbound internet connection to the Cloud Backup service over port 443 (HTTPS)
-* An HTTPS connection over port 443 to your object storage (S3 or Blob)
-// * An HTTPS connection over port 443 to your object storage (S3, Blob, or Google)
+* An HTTPS connection over port 443 to your object storage (S3, Blob, or Google)
 * An HTTPS connection over port 443 to your ONTAP clusters
 
 . Enable an endpoint to your object storage:
 
 * For AWS: Enable a VPC Endpoint to S3. This is needed if you have a Direct Connect or VPN connection from your ONTAP cluster to the VPC and you want communication between the Connector and S3 to stay in your AWS internal network.
 * For Azure: Enable a VNet Private Endpoint to Azure storage. This is needed if you have an ExpressRoute or VPN connection from your ONTAP cluster to the VNet and you want communication between the Connector and Blob storage to stay in your virtual private network.
-// * For Google: Enable Private Google Access on the subnet where you plan to deploy the Service Connector. https://cloud.google.com/vpc/docs/configure-private-google-access[Private Google Access^] is needed if you have a direct connection from your ONTAP cluster to the VPC and you want communication between the Connector and Google Cloud Storage to stay in your virtual private network.
-// +
-// Note that Private Google Access works with VM instances that have only internal (private) IP addresses (no external IP addresses).
+* For Google: Enable Private Google Access on the subnet where you plan to deploy the Service Connector. https://cloud.google.com/vpc/docs/configure-private-google-access[Private Google Access^] is needed if you have a direct connection from your ONTAP cluster to the VPC and you want communication between the Connector and Google Cloud Storage to stay in your virtual private network.
++
+Note that Private Google Access works with VM instances that have only internal (private) IP addresses (no external IP addresses).
 
 === Supported regions
 
@@ -162,14 +155,11 @@ You can create backups from on-premises systems to the public cloud in all regio
 
 * For Azure, you specify the region where the backups will be stored when you set up the service.
 * For AWS, backups are stored in the region where Cloud Manager is installed.
-// * For GCP, you specify the region where the backups will be stored when you set up the service.
-
-*Note:* Backup to Google Cloud Storage from on-prem ONTAP systems is not currently supported from the UI.
+* For GCP, you specify the region where the backups will be stored when you set up the service.
 
 === License requirements
 
-// For Cloud Backup PAYGO licensing, you'll need a subscription to the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Azure^], the https://aws.amazon.com/marketplace/pp/B07QX2QLXX[AWS^], or the https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[Google^] Cloud Manager Marketplace Backup offering before you enable Cloud Backup. Billing for Cloud Backup is done through this subscription.
-For Cloud Backup PAYGO licensing, you'll need a subscription to the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Azure^] or the https://aws.amazon.com/marketplace/pp/B07QX2QLXX[AWS^] Cloud Manager Marketplace Backup offering before you enable Cloud Backup. Billing for Cloud Backup is done through this subscription.
+For Cloud Backup PAYGO licensing, you'll need a subscription to the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Azure^], the https://aws.amazon.com/marketplace/pp/B07QX2QLXX[AWS^], or the https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[Google^] Cloud Manager Marketplace Backup offering before you enable Cloud Backup. Billing for Cloud Backup is done through this subscription.
 
 For Cloud Backup BYOL licensing, you need the serial number from NetApp that enables you to use the service for the duration and capacity of the license. See link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[Adding and updating your Backup BYOL license^].
 
@@ -226,22 +216,22 @@ See the https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-use
 Cloud Backup passes the access key on to the ONTAP cluster. The credentials are not stored in the Cloud Backup service.
 +
 See the https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html[AWS Documentation: Managing Access Keys for IAM Users^] for details.
-//
-// === Preparing Google Cloud Storage for backups
-//
-// When you set up backup, you need to provide storage access keys for a service account that has Storage Admin permissions. A service account enables Cloud Backup to authenticate and access Cloud Storage buckets used to store backups. The keys are required so that Google Cloud Storage knows who is making the request.
-//
-// .Steps
-//
-// . https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[Create a service account that has the predefined Storage Admin role^].
-//
-// . Go to https://console.cloud.google.com/storage/settings[GCP Storage Settings^] and create access keys for the service account:
-//
-// .. Select a project, and click *Interoperability*. If you haven’t already done so, click *Enable interoperability access*.
-//
-// .. Under *Access keys for service accounts*, click *Create a key for a service account*, select the service account that you just created, and click *Create Key*.
-// +
-// You'll need to link:task_tiering_google.html#tiering-inactive-data-to-a-google-cloud-storage-bucket[enter the keys in Cloud Backup] later when you configure the backup service.
+
+=== Preparing Google Cloud Storage for backups
+
+When you set up backup, you need to provide storage access keys for a service account that has Storage Admin permissions. A service account enables Cloud Backup to authenticate and access Cloud Storage buckets used to store backups. The keys are required so that Google Cloud Storage knows who is making the request.
+
+.Steps
+
+. https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[Create a service account that has the predefined Storage Admin role^].
+
+. Go to https://console.cloud.google.com/storage/settings[GCP Storage Settings^] and create access keys for the service account:
+
+.. Select a project, and click *Interoperability*. If you haven’t already done so, click *Enable interoperability access*.
+
+.. Under *Access keys for service accounts*, click *Create a key for a service account*, select the service account that you just created, and click *Create Key*.
++
+You'll need to link:task_tiering_google.html#tiering-inactive-data-to-a-google-cloud-storage-bucket[enter the keys in Cloud Backup] later when you configure the backup service.
 
 == Enabling Cloud Backup
 
@@ -265,13 +255,13 @@ image:screenshot_backup_onprem_to_azure.png[A screenshot that shows the cloud pr
 .. The IPspace in the ONTAP cluster where the volumes you want to back up reside.
 +
 image:screenshot_backup_onprem_to_aws.png[A screenshot that shows the cloud provider details when backing up volumes from an on-premises cluster to AWS S3 storage.]
-// - For Google, enter:
-// .. The Google Cloud Project where you want the Google Cloud Storage bucket to be created for backups. This can be a different Project than where Cloud Manager resides. (The Project must have a Service Account that has the predefined Storage Admin role.)
-// .. The Google Access Key and Secret Key used to store the backups.
-// .. The Google region where the backups will be stored. This can be a different region than where Cloud Manager resides.
-// .. The IPspace in the ONTAP cluster where the volumes you want to back up reside.
-// +
-//image:screenshot_backup_onprem_to_google.png[A screenshot that shows the cloud provider details when backing up volumes from an on-premises cluster to Google Cloud Storage.]
+- For Google, enter:
+.. The Google Cloud Project where you want the Google Cloud Storage bucket to be created for backups. This can be a different Project than where Cloud Manager resides. (The Project must have a Service Account that has the predefined Storage Admin role.)
+.. The Google Access Key and Secret Key used to store the backups.
+.. The Google region where the backups will be stored. This can be a different region than where Cloud Manager resides.
+.. The IPspace in the ONTAP cluster where the volumes you want to back up reside.
++
+image:screenshot_backup_onprem_to_google.png[A screenshot that shows the cloud provider details when backing up volumes from an on-premises cluster to Google Cloud Storage.]
 +
 Note that you cannot change this information after the service has started.
 

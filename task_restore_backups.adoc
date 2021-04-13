@@ -54,10 +54,9 @@ The Restore Dashboard provides buttons for you to restore volumes and files. Cli
 
 The dashboard also provides a list of all the volumes and all the files you have restored in case you need a history of previous restore actions. You can expand the row for each restored volume or file to view the details about the source and destination locations for the volume or file.
 
-//
-// Note that you can also initiate a volume or file restore operation from a working environment in the Services panel. When started from this location the source working environment selection is automatically filled with the name of the current working environment.
-//
-// image:screenshot_restore_services_actions.png[A screenshot showing how to select volume and file restore operations from the Services panel.]
+Note that you can also initiate a volume or file restore operation from a working environment in the Services panel. When started from this location the source working environment selection is automatically filled with the name of the current working environment.
+
+image:screenshot_restore_services_actions.png[A screenshot showing how to select volume and file restore operations from the Services panel.]
 
 == Restoring a volume from a backup file
 
@@ -67,7 +66,7 @@ You should know the name of the volume you want to restore and the date of the b
 
 .Steps
 
-. Select the *Restore* tab.
+. Select the *Backup & Restore* tab.
 +
 The Restore Dashboard appears.
 
@@ -138,8 +137,8 @@ See link:concept_backup_to_cloud.html#cost[this topic^] for the cost of the Clou
 * In AWS, the Restore instance runs on an https://aws.amazon.com/ec2/instance-types/m5/[m5n.xlarge instance^] with 4 CPUs, 16 GiB Memory, and EBS Only instance storage. In regions where m5n.xlarge instance isn’t available, Restore runs on an m5.xlarge instance instead.
 
 * In Azure, the Restore virtual machine runs on a https://docs.microsoft.com/en-us/azure/virtual-machines/dv3-dsv3-series#dsv3-series[Standard_D4s_v3 VM^] with 4 CPUs, 16 GiB Memory, and a 32 GB disk.
-//
-// *In GCP, the Restore virtual machine runs on
+
+* In GCP, the Restore virtual machine runs on ???
 
 The instance is named _Cloud-Restore-Instance_ with your Account ID concatenated to it. For example: _Cloud-Restore-Instance-MyAccount_.
 
@@ -165,7 +164,7 @@ Additionally, the following permissions are needed in the policy for file restor
 
 Cloud Restore requires outbound internet access. If your virtual or physical network uses a proxy server for internet access, ensure that the instance has outbound internet access to contact the following endpoints. When you deploy Cloud Restore in the cloud, it is located in the same subnet as the Connector.
 
-Review the appropriate table depending on whether you are deploying Cloud Restore in AWS or Azure.
+Review the appropriate table depending on whether you are deploying Cloud Restore in AWS, Azure, or GCP.
 
 *Required endpoints for AWS deployments:*
 
@@ -219,7 +218,7 @@ NOTE: The ONTAP version must be 9.6 or greater in your source and destination ON
 
 .Steps
 
-. Click the *Restore* tab.
+. Click the *Backup & Restore* tab.
 +
 The Restore Dashboard appears.
 
@@ -252,7 +251,7 @@ If you select an on-premises cluster and you haven't already configured the clus
 +
 * When restoring from Amazon S3, enter the IPspace in the ONTAP cluster where the destination volumes reside, and the AWS Access Key and Secret Key needed to access the object storage.
 * When restoring from Azure Blob, enter the IPspace in the ONTAP cluster where the destination volumes reside.
-// * When restoring from Google Cloud Storage, enter the IPspace in the ONTAP cluster where the destination volumes reside, and the Access Key and Secret Key needed to access the object storage.
+* When restoring from Google Cloud Storage, enter the IPspace in the ONTAP cluster where the destination volumes reside, and the Access Key and Secret Key needed to access the object storage.
 
 . Then select the *Volume* and the *Folder* where you want to restore the files.
 +
