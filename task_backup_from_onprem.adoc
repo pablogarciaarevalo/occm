@@ -117,7 +117,7 @@ When you set up Cloud Backup, you are prompted for the IPspace to use. You shoul
 *	DNS servers have been configured for the storage VM where the volumes are located.
 +
 See how to http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-D4A9F825-77F0-407F-BFBD-D94372D6AAC1.html[configure DNS services for the SVM].
-
+* Update firewall rules, if necessary, to allow Cloud Backup service connections from ONTAP to object storage through port 443 and name resolution traffic from the storage VM to the DNS server over port 53 (TCP/UDP).
 
 === Discovering an ONTAP cluster
 
