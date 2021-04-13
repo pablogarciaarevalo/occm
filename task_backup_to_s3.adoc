@@ -153,6 +153,7 @@ See link:concept_backup_to_cloud.html#the-schedule-is-daily-weekly-monthly-or-a-
 . Select the volumes that you want to back up and click *Activate*.
 +
 image:screenshot_backup_select_volumes.png[A screenshot of selecting the volumes that will be backed up.]
+
 +
 * To back up all volumes, check the box in the title row (image:button_backup_all_volumes.png[]).
 * To back up individual volumes, check the box for each volume (image:button_backup_1_volume.png[]).

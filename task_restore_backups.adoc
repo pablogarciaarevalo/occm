@@ -38,7 +38,9 @@ On-premises ONTAP system
 On-premises ONTAP system | Cloud Volumes ONTAP in Azure
 On-premises ONTAP system
 | Google Cloud Storage | Cloud Volumes ONTAP in Google
-On-premises ONTAP system |
+On-premises ONTAP system | Cloud Volumes ONTAP in Google
+On-premises ONTAP system
+| NetApp StorageGRID | On-premises ONTAP system |
 
 |===
 

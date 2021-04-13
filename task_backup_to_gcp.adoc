@@ -125,7 +125,7 @@ image:screenshot_backup_to_gcp.png[Shows the Cloud Backup option in the working 
 
 Cloud Backup is enabled on the system and backs up the volume you created every day and retains the most recent 30 backup copies.
 
-You can link:task_managing_backups.html[start and stop backups for additional volumes or change the backup schedule^] and you can link:task_restore_backups.html[restore entire volumes from a backup file^].
+You can link:task_managing_backups.html[start and stop backups for volumes or change the backup schedule^] and you can link:task_restore_backups.html[restore entire volumes or individual files from a backup file^].
 
 == Enabling Cloud Backup on an existing system
 
@@ -152,6 +152,7 @@ See link:concept_backup_to_cloud.html#the-schedule-is-daily-weekly-monthly-or-a-
 . Select the volumes that you want to back up and click *Activate*.
 +
 image:screenshot_backup_select_volumes.png[A screenshot of selecting the volumes that will be backed up.]
+
 +
 * To back up all volumes, check the box in the title row (image:button_backup_all_volumes.png[]).
 * To back up individual volumes, check the box for each volume (image:button_backup_1_volume.png[]).
@@ -162,4 +163,4 @@ Cloud Backup starts taking the initial backups of each selected volume.
 
 .What's next?
 
-You can link:task_managing_backups.html[start and stop backups for volumes or change the backup schedule^] and you can link:task_restore_backups.html[restore entire volumes from a backup file^].
+You can link:task_managing_backups.html[start and stop backups for volumes or change the backup schedule^] and you can link:task_restore_backups.html[restore entire volumes or individual files from a backup file^].

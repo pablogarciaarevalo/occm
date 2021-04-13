@@ -274,6 +274,7 @@ image:screenshot_backup_onprem_policy.png[A screenshot that shows the Cloud Back
 See link:concept_backup_to_cloud.html#the-schedule-is-daily-weekly-monthly-or-a-combination[the list of existing policies^].
 
 . Select the volumes that you want to back up.
+
 +
 * To back up all volumes, check the box in the title row (image:button_backup_all_volumes.png[]).
 * To back up individual volumes, check the box for each volume (image:button_backup_1_volume.png[]).
