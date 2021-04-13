@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept_backup_to_cloud.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, back up volumes, Cloud Backup, restore volumes, billing, cost, on-premises ONTAP, onprem, restore files
-summary: Cloud Backup is a service for Cloud Volumes ONTAP and on-premises ONTAP clusters that delivers backup and restore capabilities for protection, and long-term archive of your data. Backups are automatically generated and stored in an object store in your public of private cloud account, independent of volume Snapshot copies used for near-term recovery or cloning. And when necessary, you can restore an entire volume, or one or more files, from a backup to the same or different Cloud Volumes ONTAP or on-premises ONTAP cluster.
+summary: Cloud Backup is a service for Cloud Volumes ONTAP and on-premises ONTAP clusters that delivers backup and restore capabilities for protection, and long-term archive of your data. Backups are automatically generated and stored in an object store in your public of private cloud account, independent of volume Snapshot copies used for near-term recovery or cloning.
 ---
 
 = Learn about Cloud Backup
@@ -13,7 +13,9 @@ summary: Cloud Backup is a service for Cloud Volumes ONTAP and on-premises ONTAP
 :imagesdir: ./media/
 
 [.lead]
-Cloud Backup is a service for Cloud Volumes ONTAP and on-premises ONTAP clusters that delivers backup and restore capabilities for protection, and long-term archive of your data. Backups are automatically generated and stored in an object store in your public of private cloud account, independent of volume Snapshot copies used for near-term recovery or cloning. And when necessary, you can restore an entire _volume_, or one or more _files_, from a backup to the same or different Cloud Volumes ONTAP or on-premises ONTAP cluster.
+Cloud Backup is a service for Cloud Volumes ONTAP and on-premises ONTAP clusters that delivers backup and restore capabilities for protection, and long-term archive of your data. Backups are automatically generated and stored in an object store in your public of private cloud account, independent of volume Snapshot copies used for near-term recovery or cloning.
+
+When necessary, you can restore an entire _volume_, or one or more _files_, from a backup to the same or different Cloud Volumes ONTAP or on-premises ONTAP cluster.
 
 link:https://cloud.netapp.com/cloud-backup-service[Learn more about Cloud Backup^].
 
@@ -70,8 +72,7 @@ On-premises ONTAP system
 On-premises ONTAP system | Cloud Volumes ONTAP in Azure
 On-premises ONTAP system
 | Google Cloud Storage | Cloud Volumes ONTAP in Google
-On-premises ONTAP system | Cloud Volumes ONTAP in Google
-On-premises ONTAP system
+On-premises ONTAP system |
 | NetApp StorageGRID | On-premises ONTAP system |
 
 |===
@@ -264,7 +265,7 @@ There are certain things you need to be aware of when the volume you are backing
 
 * SVM-DR and SM-BC configurations are not supported.
 
-* MetroCluster (MCC) backup is supported from ONTAP secondary only: MCC -> SnapMirror -> ONTAP -> Cloud Backup Service -> object storage.
+* MetroCluster (MCC) backup is supported from ONTAP secondary only: MCC > SnapMirror > ONTAP > Cloud Backup Service > object storage.
 
 * WORM/Compliance mode on an object store is not supported.
 
