@@ -4,7 +4,7 @@ permalink: index.html
 summary: Cloud Manager enables IT experts and cloud architects to centrally manage their hybrid multi-cloud infrastructure using NetApp’s cloud solutions.
 ---
 
-= Cloud Manager and Cloud Volumes ONTAP documentation
+= Cloud Manager documentation
 :hardbreaks:
 :nofooter:
 :icons: font
