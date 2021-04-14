@@ -102,6 +102,12 @@ link:task_configuring_proxy.html[Learn more about this setting].
 
 === Account enhancements
 
+* You can now create a service account user.
++
+A service account acts as a "user" that can make authorized API calls to Cloud Manager for automation purposes. This makes it easier to manage automation because you don't need to build automation scripts based on a real person's user account who can leave the company at any time. And if you're using federation, you can create a token without generating a refresh token from the cloud.
++
+link:task_managing_cloud_central_accounts.html#creating-and-managing-service-accounts[Learn more about using service accounts].
+
 * You can now allow private previews in your account to get access to new NetApp cloud services as they are made available as a preview in Cloud Manager.
 
 * You can also allow third-party services in your account to get access to third-party services that are available in Cloud Manager.
