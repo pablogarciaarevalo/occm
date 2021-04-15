@@ -13,7 +13,9 @@ summary: Complete a few steps to get started backing up data from your on-premis
 :imagesdir: ./media/
 
 [.lead]
-Complete a few steps to get started backing up data from your on-premises ONTAP systems to low-cost object storage in the cloud. This includes creating backup files on Amazon S3, Azure Blob, and Google Cloud Storage.
+Complete a few steps to get started backing up data from your on-premises ONTAP systems to low-cost object storage in the public cloud. This includes creating backup files on Amazon S3, Azure Blob, and Google Cloud Storage.
+
+If you have a NetApp StorageGRID system and want to create your backups there, see how to link:task_backup_onprem_private_cloud.html[back up on-premises ONTAP data to the private cloud^].
 
 A Beta feature released in January 2021 allows you to run Compliance scans on the backed up volumes from your on-premises systems. Typically, compliance scans are free up to 1 TB of data, and then a cost for the service is applied for data over 1 TB. When combining Backup and Compliance for your on-prem volumes, the cost for scans on those on-prem volumes is free. Learn more about how link:concept_cloud_compliance.html[Cloud Compliance^] can get your business applications and cloud environments privacy ready.
 
@@ -34,12 +36,12 @@ Get started quickly by following these steps, or scroll down to the remaining se
 ==== image:number2.png[Number 2] Enable Cloud Backup on the system
 
 [role="quick-margin-para"]
-Select the working environment and click *Activate* next to the Backup & Compliance service in the right-panel, and then follow the setup wizard.
+Select the working environment and click *Enable* next to the Backup & Compliance service in the right-panel, and then follow the setup wizard.
 
 [role="quick-margin-para"]
 image:screenshot_backup_from_onprem_activate.png[A screenshot that shows the Backup & Compliance Activate button which is available after you select an on-prem working environment.]
 
-==== image:number3.png[Number 3] Select the cloud provider and enter provider details
+==== image:number3.png[Number 3] Select the cloud provider and enter the provider details
 
 [role="quick-margin-para"]
 Select the provider and then enter the provider details. You also need to specify the IPspace in the ONTAP cluster where the volumes reside.
@@ -81,6 +83,10 @@ image:diagram_cloud_backup_onprem_aws.png[A diagram showing how Cloud Backup com
 The following image shows each component when backing up an on-prem ONTAP system to Azure Blob and the connections that you need to prepare between them:
 
 image:diagram_cloud_backup_onprem_azure.png[A diagram showing how Cloud Backup communicates with the volumes on the source systems and the destination storage where the backup files are located.]
+
+The following image shows each component when backing up an on-prem ONTAP system to Google Cloud Storage and the connections that you need to prepare between them:
+
+image:diagram_cloud_backup_onprem_google.png[A diagram showing how Cloud Backup communicates with the volumes on the source systems and the destination storage where the backup files are located.]
 
 === Preparing your ONTAP clusters
 
@@ -239,11 +245,11 @@ Enable Cloud Backup at any time directly from the on-premises working environmen
 
 .Steps
 
-. From the Canvas, select the working environment and click *Activate* next to the Backup & Compliance service in the right-panel.
+. From the Canvas, select the working environment and click *Enable* next to the Backup & Compliance service in the right-panel.
 +
-image:screenshot_backup_from_onprem_activate.png[A screenshot that shows the Backup & Compliance Activate button which is available after you select an on-prem working environment.]
+image:screenshot_backup_from_onprem_activate.png[A screenshot that shows the Backup & Compliance Enable button which is available after you select an on-prem working environment.]
 
-. Select the provider, and then enter the provider details:
+. Select the provider, click *Next*, and then enter the provider details:
 - For Azure, enter:
 .. The Azure subscription used for backups and the Azure region where the backups will be stored.
 .. The resource group - you can create a new resource group or select and existing resource group.
@@ -251,7 +257,8 @@ image:screenshot_backup_from_onprem_activate.png[A screenshot that shows the Bac
 +
 image:screenshot_backup_onprem_to_azure.png[A screenshot that shows the cloud provider details when backing up volumes from an on-premises cluster to Azure Blob storage.]
 - For AWS, enter:
-.. The AWS Access Key and Secret Key used to store the backups.
+.. The AWS Account, the AWS Access Key, and the Secret Key used to store the backups.
+.. The AWS region where the backups will be stored.
 .. The IPspace in the ONTAP cluster where the volumes you want to back up reside.
 +
 image:screenshot_backup_onprem_to_aws.png[A screenshot that shows the cloud provider details when backing up volumes from an on-premises cluster to AWS S3 storage.]
@@ -265,9 +272,9 @@ image:screenshot_backup_onprem_to_google.png[A screenshot that shows the cloud p
 +
 Note that you cannot change this information after the service has started.
 
-. Then click *Continue*.
+. Click *Next* after you've entered the provider details.
 
-. In the _Define Policy_ page, select the backup schedule and retention value and click *Continue*.
+. In the _Define Policy_ page, select an existing backup schedule and retention value, or define a new backup policy, and click *Next*.
 +
 image:screenshot_backup_onprem_policy.png[A screenshot that shows the Cloud Backup settings where you can choose your backup schedule and retention period.]
 +
@@ -279,11 +286,11 @@ See link:concept_backup_to_cloud.html#the-schedule-is-daily-weekly-monthly-or-a-
 * To back up all volumes, check the box in the title row (image:button_backup_all_volumes.png[]).
 * To back up individual volumes, check the box for each volume (image:button_backup_1_volume.png[]).
 +
-image:screenshot_backup_select_onprem_volumes.png[A screenshot of selecting the volumes that will be backed up.]
+image:screenshot_backup_select_volumes.png[A screenshot of selecting the volumes that will be backed up.]
 
-. Click *Activate* and Cloud Backup starts taking the initial backups of your volumes.
+. Click *Next* and Cloud Backup starts taking the initial backups of your volumes.
 +
-You are prompted whether you want to run compliance scans on the backed up volumes. Cloud Compliance scans are free when you run them on the backed up volumes (except for the link:concept_cloud_compliance.html#cost[cost of the deployed Cloud Compliance instance^]).
+When creating backup files in AWS or Azure, you are prompted whether you want to run compliance scans on the backed up volumes. Cloud Compliance scans are free when you run them on the backed up volumes (except for the link:concept_cloud_compliance.html#cost[cost of the deployed Cloud Compliance instance^]).
 +
 image:screenshot_compliance_on_backups.png[A screenshot of the page where you can choose to activate Cloud Compliance on your backed up volumes.]
 
