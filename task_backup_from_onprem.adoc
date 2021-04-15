@@ -107,8 +107,6 @@ Cluster networking requirements::
 ONTAP reads and writes data to and from object storage. The object storage never initiates, it just responds.
 +
 * An inbound connection is required from the Connector, which can reside in an AWS VPC, Azure VNet, or Google Cloud Platform VPC; depending on the object storage provider you are using.
-+
-A connection between the cluster and the Cloud Backup service is not required.
 
 * An intercluster LIF is required on each ONTAP node that hosts the volumes you want to back up. The LIF must be associated with the _IPspace_ that ONTAP should use to connect to object storage. http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-69120CF0-F188-434F-913E-33ACB8751A5D.html[Learn more about IPspaces^].
 +
