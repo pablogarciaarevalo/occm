@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_getting_started_compute.html
-keywords: compute, cloud insights, cloud analyzer, connect cloud analyzer, connect master payer account, connect payer account, aws payer account
+keywords: compute, cloud insights, cloud analyzer, connect cloud analyzer, connect management account, connect payer account, aws payer account
 summary: Complete a few steps to get in-depth analysis of your cloud compute costs from Spot's Cloud Analyzer.
 ---
 
@@ -26,7 +26,7 @@ Click *Compute* and connect your AWS payer account.
 . Click *Add AWS Credentials to Start*.
 
 . Follow the steps on the page to connect your AWS account:
-.. Log in to your AWS master payer account.
+.. Log in to your AWS management account.
 .. Set up cost and usage reports on the AWS account.
 .. Run the CloudFormation template.
 .. Paste the Spot RoleARN.
@@ -37,7 +37,7 @@ image:screenshot_compute_add_account.gif[A screenshot that shows each field avai
 
 .Result
 
-Cloud Analyzer starts processing your AWS account data. If you have multiple accounts, Cloud Analyzer starts with read-only capabilities for all linked accounts under the master payer account. If you want to get more details about the potential savings for those accounts, then you'll need to connect them, as well. You can find more details about that process in the section below.
+Cloud Analyzer starts processing your AWS account data. If you have multiple accounts, Cloud Analyzer starts with read-only capabilities for all linked accounts under the management account. If you want to get more details about the potential savings for those accounts, then you'll need to connect them, as well. You can find more details about that process in the section below.
 
 == Analyze your compute costs
 

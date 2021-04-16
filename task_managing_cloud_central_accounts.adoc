@@ -251,7 +251,7 @@ Change you account name at any time to change it to something meaningful for you
 
 Allow private previews in your account to get access to new NetApp cloud services that are made available as a preview in Cloud Manager.
 
-Services in private preview are not guaranteed to behave as expected and might suffer from outages and missing functionality.
+Services in private preview are not guaranteed to behave as expected and might sustain outages and be missing functionality.
 
 .Steps
 
