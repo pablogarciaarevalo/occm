@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_backup_onprem_private_cloud.html
 keywords: backing up, back up, backup, backup on-prem ontap, on-prem, on-premises, back up volumes, cloud backup, cloud backup service, StorageGRID
-summary: Complete a few steps to get started backing up data from your on-premises ONTAP systems to low-cost object storage in your NetApp StorageGRID systems.
+summary: Complete a few steps to get started backing up data from your on-premises ONTAP systems to object storage in your NetApp StorageGRID systems.
 ---
 
 = Backing up on-premises ONTAP data to the private cloud
@@ -13,7 +13,7 @@ summary: Complete a few steps to get started backing up data from your on-premis
 :imagesdir: ./media/
 
 [.lead]
-Complete a few steps to get started backing up data from your on-premises ONTAP systems to low-cost object storage in your NetApp StorageGRID systems.
+Complete a few steps to get started backing up data from your on-premises ONTAP systems to object storage in your NetApp StorageGRID systems.
 
 == Quick start
 
@@ -112,13 +112,13 @@ link:task_discovering_ontap.html[Learn how to discover a cluster^].
 
 === Preparing StorageGRID
 
-StorageGRID must meet the following requirements.
+StorageGRID must meet the following requirements. See the https://docs.netapp.com/sgws-114/index.jsp^[StorageGRID documentation] for complete information about StorageGRID].
 
 Supported StorageGRID versions::
 StorageGRID 10.3 and later is supported.
 
 S3 credentials::
-When you set up backup to StorageGRID, you need to provide Cloud Backup with an S3 access key and secret key. Cloud Backup uses the keys to access your buckets.
+When you set up backup to StorageGRID, you need to provide Cloud Backup with an S3 access key and secret key for a service account. A service account enables Cloud Backup to authenticate and access the StorageGRID buckets used to store backups. The keys are required so that StorageGRID knows who is making the request.
 +
 These access keys must be associated with a user who has the following permissions:
 +

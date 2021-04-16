@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept_backup_to_cloud.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, back up volumes, Cloud Backup, restore volumes, billing, cost, on-premises ONTAP, onprem, restore files
-summary: Cloud Backup is a service for Cloud Volumes ONTAP and on-premises ONTAP clusters that delivers backup and restore capabilities for protection, and long-term archive of your data. Backups are automatically generated and stored in an object store in your public of private cloud account, independent of volume Snapshot copies used for near-term recovery or cloning.
+summary: Cloud Backup is a service for Cloud Volumes ONTAP and on-premises ONTAP clusters that delivers backup and restore capabilities for protection, and long-term archive of your data. Backups are automatically generated and stored in an object store in your public or private cloud account, independent of volume Snapshot copies used for near-term recovery or cloning.
 ---
 
 = Learn about Cloud Backup
@@ -13,13 +13,11 @@ summary: Cloud Backup is a service for Cloud Volumes ONTAP and on-premises ONTAP
 :imagesdir: ./media/
 
 [.lead]
-Cloud Backup is a service for Cloud Volumes ONTAP and on-premises ONTAP clusters that delivers backup and restore capabilities for protection, and long-term archive of your data. Backups are automatically generated and stored in an object store in your public of private cloud account, independent of volume Snapshot copies used for near-term recovery or cloning.
+Cloud Backup is a service for Cloud Volumes ONTAP and on-premises ONTAP clusters that delivers backup and restore capabilities for protection, and long-term archive of your data. Backups are automatically generated and stored in an object store in your public or private cloud account, independent of volume Snapshot copies used for near-term recovery or cloning.
 
 When necessary, you can restore an entire _volume_, or one or more _files_, from a backup to the same or different Cloud Volumes ONTAP or on-premises ONTAP cluster.
 
 link:https://cloud.netapp.com/cloud-backup-service[Learn more about Cloud Backup^].
-
-NOTE: You must use Cloud Manager for all backup and restore operations. Any actions taken directly from ONTAP or from your cloud provider results in an unsupported configuration.
 
 == Features
 
@@ -35,7 +33,7 @@ NOTE: You must use Cloud Manager for all backup and restore operations. Any acti
 
 Cloud Backup enables you to back up volumes from the following working environments to object storage in the following cloud providers:
 
-[cols=2*,options="header",cols="50,40",width="90%"]
+[cols=2*,options="header",cols="40,40",width="85%"]
 |===
 
 | Source Working Environment
@@ -151,7 +149,11 @@ Systems that were shifted over to a PAYGO license are returned to the BYOL licen
 
 == How Cloud Backup works
 
-When you enable Cloud Backup on a Cloud Volumes ONTAP or on-premises ONTAP system, the service performs a full backup of your data. Volume snapshots are not included in the backup image. After the initial backup, all additional backups are incremental, which means that only changed blocks and new blocks are backed up.
+When you enable Cloud Backup on a Cloud Volumes ONTAP or on-premises ONTAP system, the service performs a full backup of your data. Volume snapshots are not included in the backup image. After the initial backup, all additional backups are incremental, which means that only changed blocks and new blocks are backed up. This keeps network traffic to a minimum.
+
+In most cases you will use Cloud Manager for all backup and restore operations. However, starting with ONTAP 9.9.1 you can initiate volume backup operations of your on-premises ONTAP clusters using ONTAP System Manager. See how to use System Manager to back up your volumes to the cloud using Cloud Backup.
+
+NOTE: Any actions taken directly from your cloud provider to manage backup files results in an unsupported configuration.
 
 The following image shows the relationship between each component:
 
@@ -172,6 +174,8 @@ Notes:
 * In Azure, Cloud Manager uses a new or existing resource group with a storage account for the Blob container.
 
 * In GCP, Cloud Manager uses a new or existing project with a storage account for the Google Cloud Storage bucket.
+
+* In StorageGRID, Cloud Manager uses an existing storage account for the object store bucket.
 
 === Supported storage classes or access tiers
 
@@ -276,8 +280,6 @@ There are certain things you need to be aware of when the volume you are backing
 * Single file restore can restore individual files. There is currently no support for restoring folders/directories.
 
 * The file being restored must be using the same language as the language on the destination volume. You will receive an error message if the languages are not the same.
-
-* The ONTAP version must be 9.6 or greater in your Cloud Volumes ONTAP or on-premises systems.
 
 * Cross account restore requires manual action in the cloud provider console. See the AWS topic https://docs.aws.amazon.com/AmazonS3/latest/dev/example-walkthroughs-managing-access-example2.html[granting cross-account bucket permissions^] for details.
 

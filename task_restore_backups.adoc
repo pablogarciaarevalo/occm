@@ -90,6 +90,7 @@ image:screenshot_restore_select_work_env_volume.png[A screenshot of selecting th
 * When restoring from Amazon S3, enter the IPspace in the ONTAP cluster where the destination volumes reside, and the AWS Access Key and Secret Key needed to access the object storage.
 * When restoring from Azure Blob, enter the IPspace in the ONTAP cluster where the destination volumes reside.
 * When restoring from Google Cloud Storage, enter the IPspace in the ONTAP cluster where the destination volumes reside, and the Access Key and Secret Key needed to access the object storage.
+* When restoring from StorageGRID, enter the IPspace in the ONTAP cluster where the destination volumes reside, and the Access Key and Secret Key needed to access the object storage.
 
 . Select the Storage VM where the volume will reside and enter the name you want to use for the restored volume. By default, *<source_volume_name>_Restore* is used as the volume name.
 +
@@ -108,6 +109,8 @@ Cloud Manager creates a new volume based on the backup you selected. You can lin
 If you only need to restore a few files from a volume, you can choose to restore individual files instead of restoring the entire volume. You can restore files to a volume in the same working environment, or to a different working environment that's using the same cloud account. You can also restore files to an on-premises ONTAP system.
 
 You can restore up to 8 files at a time from a volume in a backup file. All the files are restored to the same destination volume that you choose. If you need to restore more than 8 files you can run the restore process a second time.
+
+Note that the ONTAP version must be 9.6 or greater in your Cloud Volumes ONTAP or on-premises ONTAP systems to perform file restore operations.
 
 NOTE: Restoring individual files from a backup file uses a separate Restore instance/virtual machine.
 
