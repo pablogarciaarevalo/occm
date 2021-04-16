@@ -42,7 +42,7 @@ The System Manager console loads. You can now use it to manage Cloud Volumes ONT
 
 == Connecting to the Cloud Volumes ONTAP CLI
 
-The Cloud Volumes ONTAP CLI enables you to execute all administrative commands and is a good choice for advanced tasks or if you are more comfortable using the CLI. You can connect to the CLI using Secure Shell (SSH).
+The Cloud Volumes ONTAP CLI enables you to run all administrative commands and is a good choice for advanced tasks or if you are more comfortable using the CLI. You can connect to the CLI using Secure Shell (SSH).
 
 .Before you begin
 
