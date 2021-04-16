@@ -35,7 +35,7 @@ There's no cost to use this service through Cloud Manager.
 
 At a high-level, Cloud Analyzer integration with Cloud Manager works like this:
 
-. You click *Compute* and connect your AWS master payer account.
+. You click *Compute* and connect your AWS management account.
 
 . NetApp configures your environment as follows:
 
