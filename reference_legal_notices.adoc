@@ -46,4 +46,4 @@ Notice files provide information about third-party copyright and licenses used i
 * link:media/notice_cloud_sync.pdf[Notice for Cloud Sync^]
 * link:media/notice_cloud_tiering.pdf[Notice for Cloud Tiering^]
 * link:media/notice_cloud_compliance.pdf[Notice for Cloud Compliance^]
-* link:media/notice_application_templates.pdf[Application Templates^]
+* link:media/notice_application_templates.pdf[Notice for Application Templates^]
