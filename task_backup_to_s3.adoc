@@ -120,6 +120,8 @@ Here are the specific permissions from the policy:
 
 Cloud Backup is enabled by default in the working environment wizard. Be sure to keep the option enabled.
 
+See link:task_deploying_otc_aws.html[Launching Cloud Volumes ONTAP in AWS] for requirements and details for creating your Cloud Volumes ONTAP system.
+
 .Steps
 
 . Click *Create Cloud Volumes ONTAP*.

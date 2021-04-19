@@ -89,6 +89,8 @@ And you need to have a Microsoft Azure subscription for the storage space where 
 
 Cloud Backup is enabled by default in the working environment wizard. Be sure to keep the option enabled.
 
+See link:task_deploying_otc_azure.html[Launching Cloud Volumes ONTAP in Azure] for requirements and details for creating your Cloud Volumes ONTAP system.
+
 NOTE: If you want to pick the name of the resource group, *disable* Cloud Backup when deploying Cloud Volumes ONTAP. Follow the steps for <<enabling-cloud-backup-on-an-existing-system,enabling Cloud Backup on an existing system>> to enable Cloud Backup and choose the resource group.
 
 .Steps
@@ -97,7 +99,9 @@ NOTE: If you want to pick the name of the resource group, *disable* Cloud Backup
 
 . Select Microsoft Azure as the cloud provider and then choose a single node or HA system.
 
-. Fill out the Details & Credentials page and be sure that an Azure Marketplace subscription is in place.
+. In the Define Azure Credentials page, enter the credentials name, client ID, client secret, and directory ID, and click *Continue*.
+
+. Fill out the Details & Credentials page and be sure that an Azure Marketplace subscription is in place, and click *Continue*.
 
 . On the Services page, leave the service enabled and click *Continue*.
 +
