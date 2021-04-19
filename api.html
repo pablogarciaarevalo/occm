@@ -37,6 +37,7 @@ if (document.location.hostname.search("netapp.com") !== -1) {
 <li><a href="#_http_status_codes">HTTP status codes</a></li>
 <li><a href="#_uri_scheme">URI scheme</a></li>
 <li><a href="#_authentication_with_netapp_cloud_central">Authentication with NetApp Cloud Central</a></li>
+<li><a href="#_managing_your_account_with_the_tenancy_api">Managing your account with the Tenancy API</a></li>
 </ul>
 </li>
 <li><a href="#_accessing_the_api_reference_and_running_operations_using_swagger">Accessing the API reference and running operations using Swagger</a></li>
@@ -826,6 +827,15 @@ curl  https://$domain/oauth/token -X POST --header "Content-Type:application/jso
 
 token+=`cat token.txt`</pre>
 </div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_managing_your_account_with_the_tenancy_api">Managing your account with the Tenancy API</h3>
+<div class="paragraph">
+<p>If you want to manage your account settings by sending API requests, then you&#8217;ll need to use the <em>Tenancy</em> API. This API is different than the Cloud Manager API, which you use to create and manage working environments.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://cloudmanager.cloud.netapp.com/tenancy/api-docs/static/index.html" target="_blank" rel="noopener">View endpoints for the Tenancy API</a>.</p>
 </div>
 </div>
 </div>
