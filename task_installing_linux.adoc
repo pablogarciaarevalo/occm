@@ -47,7 +47,7 @@ If you receive a message that installing the awscli failed, you can safely ignor
 +
 For help with connecting and copying the file to an EC2 instance in AWS, see http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html[AWS Documentation: Connecting to Your Linux Instance Using SSH^].
 
-. Assign permissions to execute the script.
+. Assign permissions to run the script.
 +
 *Example*
 +
