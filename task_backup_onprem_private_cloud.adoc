@@ -112,7 +112,7 @@ link:task_discovering_ontap.html[Learn how to discover a cluster^].
 
 === Preparing StorageGRID
 
-StorageGRID must meet the following requirements. See the https://docs.netapp.com/sgws-114/index.jsp^[StorageGRID documentation] for complete information about StorageGRID].
+StorageGRID must meet the following requirements. See the https://docs.netapp.com/sgws-114/index.jsp[StorageGRID documentation^] for more information.
 
 Supported StorageGRID versions::
 StorageGRID 10.3 and later is supported.
@@ -172,7 +172,7 @@ image:screenshot_backup_from_onprem_activate.png[A screenshot that shows the Bac
 
 . Select *StorageGRID* as the provider, click *Next*, and then enter the provider details:
 
-.. The Access Key and the Secret Key used to store the backups.
+.. The Access Key and the Secret Key used to access the bucket to store backups.
 .. The IPspace in the ONTAP cluster where the volumes you want to back up reside.
 +
 Selecting the correct IPspace ensures that Cloud Backup can set up a connection from ONTAP to your StorageGRID object storage.

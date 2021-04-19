@@ -96,7 +96,7 @@ image:screenshot_restore_select_work_env_volume.png[A screenshot of selecting th
 +
 image:screenshot_restore_new_vol_name.png[A screenshot of selecting the volume and folder for the files you want to restore.]
 +
-You can select the Aggregate that the volume will use for its' capacity when restoring a volume to an on-premises ONTAP system.
+You can select the Aggregate that the volume will use for its' capacity only when restoring a volume to an on-premises ONTAP system.
 
 . Click *Restore* and you are returned to the Restore Dashboard so you can review the progress of the restore operation.
 
