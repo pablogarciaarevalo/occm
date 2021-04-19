@@ -32,12 +32,10 @@ If you choose three zones, the two nodes and mediator are in separate Google Clo
 * Four Virtual Private Clouds (VPCs).
 +
 The configuration uses four VPCs because GCP requires that each network interface resides in a separate VPC network.
-+
-For the subnets, VPC-0 requires 7 or 8 private IPs, VPC-1 requires 2 private IPs, VPC-2 requires 2 private IPs, and VPC-3 requires 3 private IPs. These IP addresses are per HA pair.
 
 * Three Google Cloud internal load balancers (TCP/UDP) that manage incoming traffic to the Cloud Volumes ONTAP HA pair. (Prior to 9.9.0, four load balancers were created.)
 
-link:reference_networking_gcp.html[Learn about networking requirements]. The networking requirements page includes more details about load balancers, VPCs, internal IP addresses, subnets, and more.
+link:reference_networking_gcp.html[Learn about networking requirements], including more details about load balancers, VPCs, internal IP addresses, subnets, and more.
 
 The following conceptual image shows a Cloud Volumes ONTAP HA pair and its components:
 
