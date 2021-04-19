@@ -21,28 +21,60 @@ If you want to deploy an HA pair, you should link:concept_ha_google_cloud.html[l
 
 The following requirements must be met in GCP.
 
-Virtual Private Cloud for single node systems::
-One VPC is required for a single node system.
+Internal load balancers::
+Cloud Manager automatically creates three Google Cloud internal load balancers (TCP/UDP) that manage incoming traffic to the Cloud Volumes ONTAP HA pair. (Prior to 9.9.0, four load balancers were created.) No setup is required from your end. We've listed this as a requirement simply to inform you of the network traffic and to mitigate any security concerns.
 +
-Cloud Volumes ONTAP and the Connector are supported in a Google Cloud shared VPC and also in standalone VPCs.
+One load balancer is for cluster management, one is for NAS traffic to node 1, and the last is for NAS traffic to node 2.
 +
-A shared VPC enables you to configure and centrally manage virtual networks across multiple projects. You can set up shared VPC networks in the _host project_ and deploy the Connector and Cloud Volumes ONTAP virtual machine instances in a _service project_. https://cloud.google.com/vpc/docs/shared-vpc[Google Cloud documentation: Shared VPC overview^].
+The setup for each load balancer is as follows:
 +
-The only requirement when using a shared VPC is to provide the https://cloud.google.com/compute/docs/access/iam#compute.networkUser[Compute Network User role^] to the Connector service account. Cloud Manager needs these permissions to query the firewalls, VPC, and subnets in the host project.
+* One shared private IP address
+* One global health check
++
+By default, the ports used by the health check are 63001, 63002, and 63003.
+* One regional TCP backend service
+* One regional UDP backend service
+* One TCP forwarding rule
+* One UDP forwarding rule
 
-Virtual Private Clouds for HA pairs::
-Four Virtual Private Clouds (VPCs) are required for the HA configuration. Four VPCs are required because GCP requires that each network interface resides in a separate VPC network.
+One or multiple zones for HA pairs::
+You can ensure the high availability of your data by deploying an HA configuration across multiple or in a single zone. Cloud Manager will prompt you to choose multiple zones or a single zone when you create the HA pair.
 +
-Similar to a single node system, an HA pair is supported in a shared VPC and also in standalone VPCs. All VPCs can be either shared or non-shared VPCs.
+* Multiple zones (recommended)
 +
-The only requirement when using a shared VPC is to provide the https://cloud.google.com/compute/docs/access/iam#compute.networkUser[Compute Network User role^] to the Connector service account. Cloud Manager needs these permissions to query the firewalls, VPC, and subnets in the host project.
+Deploying an HA configuration across three zones ensures continuous data availability if a failure occurs within a zone. Note that write performance is slightly lower compared to using a single zone, but it's minimal.
+* Single zone
++
+When deployed in a single zone, a Cloud Volumes ONTAP HA configuration uses a spread placement policy. This policy ensures that an HA configuration is protected from a single point of failure within the zone, without having to use separate zones to achieve fault isolation.
++
+This deployment model does lower your costs because there are no data egress charges between zones.
+
+Four Virtual Private Clouds for HA pairs::
+Four Virtual Private Clouds (VPCs) are required for an HA configuration. Four VPCs are required because GCP requires that each network interface resides in a separate VPC network.
 +
 Cloud Manager will prompt you to choose four VPCs when you create the HA pair:
 +
 * VPC-0 for inbound connections to the data and nodes
 * VPC-1, VPC-2, and VPC-3 for internal communication between the nodes and the HA mediator
 +
-Note that the subnets in these VPCs must have distinct CIDR ranges. They can't have overlapping CIDR ranges.
+image:diagram_gcp_ha.png[]
+
+Subnets for HA pairs::
+A private subnet is required for each VPC.
++
+If you place the Connector in VPC-0, then you will need to enable Private Google Access on the subnet to access the APIs and to enable data tiering.
++
+The subnets in these VPCs must have distinct CIDR ranges. They can't have overlapping CIDR ranges.
+
+One Virtual Private Cloud for single node systems::
+One VPC is required for a single node system.
+
+Shared VPCs::
+Cloud Volumes ONTAP and the Connector are supported in a Google Cloud shared VPC and also in standalone VPCs. For HA pairs, all VPCs can be either shared or non-shared VPCs.
++
+A shared VPC enables you to configure and centrally manage virtual networks across multiple projects. You can set up shared VPC networks in the _host project_ and deploy the Connector and Cloud Volumes ONTAP virtual machine instances in a _service project_. https://cloud.google.com/vpc/docs/shared-vpc[Google Cloud documentation: Shared VPC overview^].
++
+The only requirement when using a shared VPC is to provide the https://cloud.google.com/compute/docs/access/iam#compute.networkUser[Compute Network User role^] to the Connector service account. Cloud Manager needs these permissions to query the firewalls, VPC, and subnets in the host project.
 
 Outbound internet access for Cloud Volumes ONTAP::
 Cloud Volumes ONTAP requires outbound internet access to send messages to NetApp AutoSupport, which proactively monitors the health of your storage.
@@ -56,10 +88,10 @@ link:task_setting_up_ontap_cloud.html[Learn how to configure AutoSupport].
 +
 TIP: If you're using an HA pair, the HA mediator doesn't require outbound internet access.
 
-Number of IP addresses::
-Cloud Manager allocates the following number of IP addresses to Cloud Volumes ONTAP in GCP:
+Private IP addresses::
+Cloud Manager allocates the following number of private IP addresses to Cloud Volumes ONTAP in GCP:
 
-* *Single node*: 3 or 4 IP addresses
+* *Single node*: 3 or 4 private IP addresses
 +
 You can skip creation of the storage VM (SVM) management LIF if you deploy Cloud Volumes ONTAP using the API and specify the following flag:
 +
@@ -67,16 +99,16 @@ You can skip creation of the storage VM (SVM) management LIF if you deploy Cloud
 +
 A LIF is an IP address associated with a physical port. A storage VM (SVM) management LIF is required for management tools like SnapCenter.
 
-* *HA pair*: 15 or 16 IP addresses
+* *HA pair*: 15 or 16 private IP addresses
 +
-** 8 or 9 IP addresses for VPC-0
+** 7 or 8 private IP addresses for VPC-0
 +
 You can skip creation of the storage VM (SVM) management LIF if you deploy Cloud Volumes ONTAP using the API and specify the following flag:
 +
 `skipSvmManagementLif: true`
-** Two IP addresses for VPC-1
-** Two IP addresses for VPC-2
-** Three IP addresses for VPC-3
+** Two private IP addresses for VPC-1
+** Two private IP addresses for VPC-2
+** Three private IP addresses for VPC-3
 
 Firewall rules::
 You don't need to create firewall rules because Cloud Manager does that for you. If you need to use your own, refer to the firewall rules listed below.
