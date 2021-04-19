@@ -22,18 +22,23 @@ If you want to deploy an HA pair, you should link:concept_ha_google_cloud.html[l
 The following requirements must be met in GCP.
 
 Internal load balancers::
-Cloud Manager automatically creates three Google Cloud internal load balancers (TCP/UDP) that manage incoming traffic to the Cloud Volumes ONTAP HA pair. (Prior to 9.9.0, four load balancers were created.) No setup is required from your end.
+Cloud Manager automatically creates three Google Cloud internal load balancers (TCP/UDP) that manage incoming traffic to the Cloud Volumes ONTAP HA pair. (Prior to 9.9.0, four load balancers were created.) No setup is required from your end. We've listed this as a requirement simply to inform you of the network traffic and to mitigate any security concerns.
 +
 One load balancer is for cluster management, one is for NAS traffic to node 1, and the last is for NAS traffic to node 2.
 +
 The setup for each load balancer is as follows:
 +
-One shared private IP address, one global health check, 1 regional TCP backend service, 1 regional UDP backend service, 1 TCP forwarding rule, and 1 UDP forwarding rule.
+* One shared private IP address
+* One global health check
 +
-By default, the ports used by the health checks are 63001, 63002, and 63003.
+By default, the ports used by the health check is 63001, 63002, and 63003.
+* One regional TCP backend service
+* One regional UDP backend service
+* One TCP forwarding rule
+* One UDP forwarding rule
 
-One or three zones for HA pairs::
-You can ensure the high availability of your data by deploying an HA configuration in multiple zones or in a single zone.
+One or multiple zones for HA pairs::
+You can ensure the high availability of your data by deploying an HA configuration across multiple or in a single zone. Cloud Manager will prompt you to choose multiple zones or a single zone when you create the HA pair.
 +
 * Multiple zones (recommended)
 +
@@ -43,8 +48,6 @@ Deploying an HA configuration across three zones ensures continuous data availab
 When deployed in a single zone, a Cloud Volumes ONTAP HA configuration uses a spread placement policy. This policy ensures that an HA configuration is protected from a single point of failure within the zone, without having to use separate zones to achieve fault isolation.
 +
 This deployment model does lower your costs because there are no data egress charges between zones.
-+
-Cloud Manager will prompt you to choose a single zone or multiple zones when you create the HA pair:
 
 Four Virtual Private Clouds for HA pairs::
 Four Virtual Private Clouds (VPCs) are required for an HA configuration. Four VPCs are required because GCP requires that each network interface resides in a separate VPC network.
@@ -56,20 +59,22 @@ Cloud Manager will prompt you to choose four VPCs when you create the HA pair:
 +
 image:diagram_gcp_ha.png[]
 
+Subnets for HA pairs::
+A private subnet is required for each VPC.
++
+If you place the Connector in VPC-0, then you will need to enable Private Google Access on the subnet to access the APIs and to enable data tiering.
++
+The subnets in these VPCs must have distinct CIDR ranges. They can't have overlapping CIDR ranges.
+
 One Virtual Private Cloud for single node systems::
 One VPC is required for a single node system.
 
-Shared VPC::
+Shared VPCs::
 Cloud Volumes ONTAP and the Connector are supported in a Google Cloud shared VPC and also in standalone VPCs. For HA pairs, all VPCs can be either shared or non-shared VPCs.
 +
 A shared VPC enables you to configure and centrally manage virtual networks across multiple projects. You can set up shared VPC networks in the _host project_ and deploy the Connector and Cloud Volumes ONTAP virtual machine instances in a _service project_. https://cloud.google.com/vpc/docs/shared-vpc[Google Cloud documentation: Shared VPC overview^].
 +
 The only requirement when using a shared VPC is to provide the https://cloud.google.com/compute/docs/access/iam#compute.networkUser[Compute Network User role^] to the Connector service account. Cloud Manager needs these permissions to query the firewalls, VPC, and subnets in the host project.
-
-Subnets::
-A private subnet is required for each VPC. If you place the Connector in VPC-0, then you will need to enable Private Google Access on the subnet to access the APIs and enable data tiering.
-+
-The subnets in these VPCs must have distinct CIDR ranges. They can't have overlapping CIDR ranges.
 
 Outbound internet access for Cloud Volumes ONTAP::
 Cloud Volumes ONTAP requires outbound internet access to send messages to NetApp AutoSupport, which proactively monitors the health of your storage.
