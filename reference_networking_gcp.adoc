@@ -31,7 +31,7 @@ The setup for each load balancer is as follows:
 * One shared private IP address
 * One global health check
 +
-By default, the ports used by the health check is 63001, 63002, and 63003.
+By default, the ports used by the health check are 63001, 63002, and 63003.
 * One regional TCP backend service
 * One regional UDP backend service
 * One TCP forwarding rule
