@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: task_managing_cloud_central_accounts.html
 keywords: account settings, workspaces, Connector, account admin, workspace admin, users, associate, disassociate, add user, add users, user management, administer, user, management, remove user, remove users, remove, delete, account, user account, user accounts, add workspace, setup workspace, workspace, Connector, manage Connector, manage workspace, associate Connector, service account
-summary: After you perform initial setup, you might need to later manage users, workspaces, Connectors, and subscriptions.
+summary: After you perform initial setup, you can administer your account settings later by managing users, service accounts, workspaces, Connectors, and subscriptions.
 ---
 
-= Managing users, workspaces, Connectors, and subscriptions
+= Managing your account
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,9 +13,15 @@ summary: After you perform initial setup, you might need to later manage users, 
 :imagesdir: ./media/
 
 [.lead]
-link:task_setting_up_cloud_central_accounts.html[After you perform initial setup], you might need to administer your account settings later by managing users, workspaces, Connectors, and subscriptions.
+link:task_setting_up_cloud_central_accounts.html[After you perform initial setup], you can administer your account settings later by managing users, service accounts, workspaces, Connectors, and subscriptions.
 
 link:concept_cloud_central_accounts.html[Learn more about how Cloud Central accounts work].
+
+== Managing your account with the Tenancy API
+
+If you want to manage your account settings by sending API requests, then you'll need to use the _Tenancy_ API. This API is different than the Cloud Manager API, which you use to create and manage working environments.
+
+https://cloudmanager.cloud.netapp.com/tenancy/api-docs/static/index.html[View endpoints for the Tenancy API^].
 
 == Creating and managing users
 
@@ -130,6 +136,20 @@ image:screenshot_manage_account_settings.gif[A screenshot that shows the Manage 
 The client secret is visible only once and is not stored anywhere by Cloud Manager. Copy or download the secret and store it safely.
 
 . Click *Close*.
+
+=== Obtaining a bearer token for a service account
+
+In order to make API calls to the https://cloudmanager.cloud.netapp.com/tenancy/api-docs/static/index.html[Tenancy API^], you'll need to obtain a bearer token for a service account.
+
+[source,curl]
+curl --location --request POST 'https://netapp-cloud-account.auth0.com/oauth/token' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "grant_type": "client_credentials",
+    "client_secret": "<client secret>",
+    "audience": "https://api.cloud.netapp.com",
+    "client_id": "<client id>"
+}'
 
 === Copying the client ID
 
