@@ -36,7 +36,7 @@ Get started quickly by following these steps, or scroll down to the remaining se
 Select the working environment and click *Enable* next to the Backup & Compliance service in the right-panel, and then follow the setup wizard.
 
 [role="quick-margin-para"]
-image:screenshot_backup_from_onprem_activate.png[A screenshot that shows the Backup & Compliance Enable button which is available after you select an on-prem working environment.]
+image:screenshot_backup_from_onprem_activate.png["A screenshot that shows the Backup & Compliance Enable button which is available after you select an on-prem working environment."]
 
 ==== image:number3.png[Number 3] Enter the StorageGRID details
 
