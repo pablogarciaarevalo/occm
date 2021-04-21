@@ -21,10 +21,11 @@ link:https://cloud.netapp.com/cloud-backup-service[Learn more about Cloud Backup
 
 == Features
 
-* Back up independent copies of your data volumes to low-cost object storage in the cloud.
-* Backup data is secured with AES-256 bit encryption at-rest and TLS 1.2 HTTPS connections in-flight.
+* Back up independent copies of your data volumes to low-cost object storage.
 * Back up from cloud to cloud, and from on-premises ONTAP systems to public or private cloud.
+* Backup data is secured with AES-256 bit encryption at-rest and TLS 1.2 HTTPS connections in-flight.
 * Support for up to 4,000 backups of a single volume.
+* Backups can be stored in the same or different region as your Cloud Volumes ONTAP system.
 * Restore data from a specific point in time.
 * Restore a volume or individual files to the source system or to a different system.
 * Browsable file catalog for single file restore.
@@ -161,7 +162,7 @@ image:diagram_cloud_backup_general.png[A diagram showing how Cloud Backup commun
 
 === Where backups reside
 
-Backup copies are stored in an object store that Cloud Manager creates in your cloud account. For Cloud Volumes ONTAP systems the object store is created in the same region where the Cloud Volumes ONTAP system is located. For on-premises ONTAP systems you identify the region when you enable the service.
+Backup copies are stored in an object store that Cloud Manager creates in your cloud account. You identify the region when you enable the service.
 
 There's one object store per Cloud Volumes ONTAP or on-premises ONTAP system. Cloud Manager names the object store as follows: "netapp-backup-_clusteruuid_". Be sure not to delete this object store.
 

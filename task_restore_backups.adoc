@@ -45,7 +45,7 @@ On-premises ONTAP system |
 
 == The Restore Dashboard
 
-You access the Restore Dashboard by clicking the *Backup & Restore* tab from the top of Cloud Manager, or you can click the *Enable* button for the Restore service from the Services panel.
+You access the Restore Dashboard by clicking the *Backup & Restore* tab from the top of Cloud Manager, or you can click image:screenshot_gallery_options.gif[More button] > *View Restore Dashboard* from the Backup & Restore service from the Services panel.
 
 NOTE: The Cloud Backup service must already be activated for at least one working environment.
 
