@@ -89,15 +89,15 @@ The list of all backup files (snapshots) is displayed along with details about t
 +
 image:screenshot_backup_view_backups.png[A screenshot that shows the List of all backup files for a single volume.]
 
-== Deleting backups
+== Delete backups
 
-Cloud Backup enables you to delete a single backup file or _all_ backups of a specific volume. You might want to delete all backups if you no longer need the backups or if you deleted the source volume and want to remove all backups.
+Cloud Backup enables you to delete a single backup file, delete all backups for a volume, or delete all backups of all volumes in a working environment. You might want to delete all backups if you no longer need the backups or if you deleted the source volume and want to remove all backups.
 
-Note that deleting all backups does not disable further backups of this volume. If you want to stop creating backups of the volume, you can disable backups <<Starting and stopping backups of volumes,as described here>>.
+Note that deleting all backups does not disable further backups of this volume or the working environment. If you want to stop creating backups of a volume, you can disable backups <<Starting and stopping backups of volumes,as described here>>. If you want to stop creating backups of all volumes in a working environment, you can deactivate backups <<Disabling Cloud Backup for a working environment,as described here>>.
 
 IMPORTANT: If you plan to delete a Cloud Volumes ONTAP or on-premises ONTAP system that has backups, you must delete the backups *before* deleting the system. Cloud Backup doesn’t automatically delete backups when you delete a system, and there is no current support in the UI to delete the backups after the system has been deleted.
 
-=== Deleting all backup files for a volume
+=== Deleting all backup files for a working environment
 
 .Steps
 
@@ -107,9 +107,27 @@ image:screenshot_backup_settings_button.png[A screenshot that shows the Backup S
 
 . Click image:screenshot_horizontal_more_button.gif[More icon] for the working environment where you want to delete all backups and select *Delete All Backups*.
 +
-image:screenshot_delete_all_backups.png[A screenshot of selecting the Delete All Backups button to delete all backup for a volume.]
+image:screenshot_delete_all_backups.png[A screenshot of selecting the Delete All Backups button to delete all backup for a working environment.]
 
 . In the confirmation dialog box, click *Delete*.
+
+=== Deleting all backup files for a volume
+
+.Steps
+
+. From the Backup Dashboard, click image:screenshot_horizontal_more_button.gif[More icon] for the source volume and select *Details & Snapshot List*.
++
+image:screenshot_backup_view_backups_button.png[A screenshot that shows the Details & Snapshot List button which is available for a single volume.]
++
+The list of all backup files (snapshots) is displayed.
++
+image:screenshot_backup_view_backups.png[A screenshot that shows the List of all backup files for a single volume.]
+
+. Click *Actions* > *Delete all Snapshots*.
++
+image:screenshot_delete_we_backups.png[A screenshot showing how to delete all backup files for a volume.]
+
+. In the confirmation dialog box, enter the volume name and click *Delete*.
 
 === Deleting a single backup file for a volume
 
@@ -131,7 +149,7 @@ image:screenshot_delete_one_backup.png[A screenshot showing how to delete a sing
 
 . In the confirmation dialog box, click *Delete*.
 
-== Disabling Cloud Backup
+== Disabling Cloud Backup for a working environment
 
 Disabling Cloud Backup for a working environment disables backups of each volume on the system, and it also disables the ability to restore a volume. Any existing backups will not be deleted.
 
