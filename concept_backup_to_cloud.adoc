@@ -161,13 +161,9 @@ image:diagram_cloud_backup_general.png[A diagram showing how Cloud Backup commun
 
 === Where backups reside
 
-Backup copies are stored in an S3 bucket, Azure Blob container, or Google Cloud Storage bucket that Cloud Manager creates in your cloud account. For Cloud Volumes ONTAP systems the object store is created in the same region where the Cloud Volumes ONTAP system is located. For on-premises ONTAP systems you identify the region when you enable the service.
+Backup copies are stored in an object store that Cloud Manager creates in your cloud account. For Cloud Volumes ONTAP systems the object store is created in the same region where the Cloud Volumes ONTAP system is located. For on-premises ONTAP systems you identify the region when you enable the service.
 
-There's one object store per Cloud Volumes ONTAP or on-premises ONTAP system. Cloud Manager names the object store as follows: netapp-backup-_clusteruuid_
-
-Be sure not to delete this object store.
-
-Notes:
+There's one object store per Cloud Volumes ONTAP or on-premises ONTAP system. Cloud Manager names the object store as follows: "netapp-backup-_clusteruuid_". Be sure not to delete this object store.
 
 * In AWS, Cloud Manager enables the https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html[Amazon S3 Block Public Access feature^] on the S3 bucket.
 
@@ -179,7 +175,7 @@ Notes:
 
 === Supported storage classes or access tiers
 
-* In Amazon S3, backups start in the _Standard_ storage class and transition to the _Standard-Infrequent Access_ storage class after 30 days.
+* In AWS, backups start in the _Standard_ storage class and transition to the _Standard-Infrequent Access_ storage class after 30 days.
 
 * In Azure, backups are associated with the _cool_ access tier.
 
@@ -197,7 +193,7 @@ The schedule and number of backups to retain are defined at the system level. Th
 
 === The schedule is daily, weekly, monthly, or a combination
 
-You can choose daily, or weekly, or monthly backups of all volumes. You can also select one of the system-defined policies that provide backups and retention for 3 months, 1 year, and 7 years. These policies are:
+You can choose a combination of daily, weekly, and monthly backups of all volumes. You can also select one of the system-defined policies that provide backups and retention for 3 months, 1 year, and 7 years. These policies are:
 
 [cols=5*,options="header",cols="30,20,20,20,30",width="80%"]
 |===
@@ -229,7 +225,7 @@ Note that the retention period for backups of data protection volumes is the sam
 
 * Monthly backups start just after midnight on the first of each month.
 
-The start time is based on the time zone set on each source ONTAP system. At this time, you can’t schedule backup operations at a user specified time.
+The start time is based on the time zone set on each source ONTAP system. For now you can’t schedule backup operations at a user specified time.
 
 === Backup copies are associated with your Cloud Central account
 
@@ -259,7 +255,7 @@ There are certain things you need to be aware of when the volume you are backing
 
 * When making backups from on-premises ONTAP systems to public cloud storage, the Connector must be deployed in the cloud.
 
-* When making backups from on-premises ONTAP systems to StorageGRID, the Connector must be deployed on premises.
+* When making backups from on-premises ONTAP systems to StorageGRID (private cloud), the Connector must be deployed on premises.
 
 * When backing up data protection (DP) volumes:
 ** Only DP volumes that are a destination of a Vault/MirrorAndVault relationship are supported. DP volumes created using the MirrorAllSnapshots policy cannot be backed up and will fail with an error.
@@ -283,7 +279,7 @@ There are certain things you need to be aware of when the volume you are backing
 
 * The file being restored must be using the same language as the language on the destination volume. You will receive an error message if the languages are not the same.
 
-* Cross account restore requires manual action in the cloud provider console. See the AWS topic https://docs.aws.amazon.com/AmazonS3/latest/dev/example-walkthroughs-managing-access-example2.html[granting cross-account bucket permissions^] for details.
+* AWS cross account restore requires manual action in the cloud provider console. See the topic https://docs.aws.amazon.com/AmazonS3/latest/dev/example-walkthroughs-managing-access-example2.html[granting cross-account bucket permissions^] for details.
 
 * Single file restore is not supported when using the same account with different Cloud Managers in different subnets.
 

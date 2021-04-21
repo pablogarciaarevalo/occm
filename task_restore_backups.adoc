@@ -45,7 +45,7 @@ On-premises ONTAP system |
 
 == The Restore Dashboard
 
-You access the Restore Dashboard by clicking the *Restore* tab from the top of Cloud Manager, or you can click the *Activate* or *Enable* button for the Restore service from the Services panel.
+You access the Restore Dashboard by clicking the *Backup & Restore* tab from the top of Cloud Manager, or you can click the *Enable* button for the Restore service from the Services panel.
 
 NOTE: The Cloud Backup service must already be activated for at least one working environment.
 
@@ -68,8 +68,8 @@ You should know the name of the volume you want to restore and the date of the b
 .Steps
 
 . Select the *Backup & Restore* tab.
-+
-The Restore Dashboard appears.
+
+. Click the *Restore* tab and the Restore Dashboard is displayed.
 
 . Click *Restore Volumes*.
 +
@@ -222,9 +222,9 @@ NOTE: The ONTAP version must be 9.6 or greater in your source and destination ON
 
 .Steps
 
-. Click the *Backup & Restore* tab.
-+
-The Restore Dashboard appears.
+. Select the *Backup & Restore* tab.
+
+. Click the *Restore* tab and the Restore Dashboard is displayed.
 
 . Click the *Restore Files* button.
 +
