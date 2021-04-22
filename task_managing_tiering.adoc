@@ -24,12 +24,15 @@ Set up data tiering for additional volumes at any time--for example, after creat
 . At the top of Cloud Manager, click *Tiering*.
 
 . From the *Cluster Dashboard*, click *Tier Volumes* for the cluster.
++
+image:screenshot_tiering_tier_volumes_button.png[A screenshot showing how to select the Tier Volumes button for a cluster.]
 
-. On the *Tier Volumes* page, set up tiering for each volume.
+. On the _Tier Volumes_ page, set up tiering for each volume.
 +
 link:concept_cloud_tiering.html#volume-tiering-policies[Learn more about volume tiering policies].
 +
 TIP: You don't need to configure the object storage because it was already configured when you initially set up tiering for the cluster. ONTAP will tier inactive data from these volumes to the same object store.
+
 +
 * To select a tiering policy for just one volume, click the image:screenshot_edit_icon.gif[A screenshot of the edit icon that appears at the end of each row in the table for tiering volumes] icon, select a tiering policy, and optionally adjust the cooling days.
 +
@@ -73,7 +76,7 @@ TIP: It's best to keep IDR enabled because it helps to identify your inactive da
 
 . From the *Cloud Tiering* page, click the menu icon for a cluster and select *Manage Aggregates*.
 +
-image:https://docs.netapp.com/us-en/cloud-tiering/media/screenshot_manage_aggregates.gif[A screenshot of the Cluster Dashboard that shows a cluster and the action menu expanded.]
+image:screenshot_tiering_manage_aggr_button.png[A screenshot of the Cluster Dashboard that shows a cluster and the action menu expanded.]
 
 . On the *Manage Aggregates* page, click the image:screenshot_edit_icon.gif[A screenshot of the edit icon that appears at the end of each row in the table for managing aggregates] icon for an aggregate in the table.
 
