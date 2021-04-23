@@ -32,7 +32,7 @@ You need the following:
 ==== image:number2.png[number2] Set up tiering
 
 [role="quick-margin-para"]
-In Cloud Manager, select an on-prem working environment, click *Setup Tiering* and follow the prompts to tier data to Azure Blob storage.
+In Cloud Manager, select an on-prem working environment, click *Enable* and follow the prompts to tier data to Azure Blob storage.
 
 ==== image:number3.png[number 3] Set up licensing
 
@@ -126,9 +126,9 @@ link:task_discovering_ontap.html[An on-premises working environment].
 
 . Select an on-prem cluster.
 
-. Click *Enable*.
+. Click *Enable* for the Tiering service.
 +
-image:screenshot_setup_tiering_onprem.gif[A screenshot that shows the Enable option that appears on the right side of the screen after you select an on-prem ONTAP working environment.]
+image:screenshot_setup_tiering_onprem.png[A screenshot that shows the Enable option that appears on the right side of the screen after you select an on-prem ONTAP working environment.]
 
 . Complete the steps on the *Tiering Setup* page:
 

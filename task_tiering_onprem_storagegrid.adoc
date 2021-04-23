@@ -33,7 +33,7 @@ You need the following:
 ==== image:number2.png[number 2] Set up tiering
 
 [role="quick-margin-para"]
-Select an on-prem working environment, click *Setup Tiering* and follow the prompts to tier data to StorageGRID.
+Select an on-prem working environment, click *Enable* and follow the prompts to tier data to StorageGRID.
 
 == Requirements
 
@@ -139,9 +139,9 @@ After you prepare your environment, start tiering inactive data from your first 
 
 . Select an on-prem cluster.
 
-. Click *Enable*.
+. Click *Enable* for the Tiering service.
 +
-image:screenshot_setup_tiering_onprem.gif[A screenshot that shows the Setup Tiering option that appears on the right side of the screen after you select an on-prem ONTAP working environment.]
+image:screenshot_setup_tiering_onprem.png[A screenshot that shows the Setup Tiering option that appears on the right side of the screen after you select an on-prem ONTAP working environment.]
 
 . Complete the steps on the *Tiering Setup* page:
 
