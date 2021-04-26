@@ -157,11 +157,22 @@ Selecting the correct IPspace ensures that Cloud Tiering can set up a connection
 
 . Click *Continue* to select the volumes that you want to tier.
 
-. On the *Tier Volumes* page, set up tiering for each volume. Click the image:screenshot_edit_icon.gif[A screenshot of the edit icon that appears at the end of each row in the table for tiering volumes] icon, select a tiering policy, optionally adjust the cooling days, and click *Apply*.
+. On the _Tier Volumes_ page, select the volumes that you want to configure tiering for and launch the Tiering Policy page:
+
++
+* To select all volumes, check the box in the title row (image:button_backup_all_volumes.png[]) and click *Modify selected volumes*.
+* To select multiple volumes, check the box for each volume (image:button_backup_1_volume.png[]) and click *Modify selected volumes*.
+* To select a single volume, click the image:screenshot_edit_icon.gif[edit pencil icon] icon for the volume.
++
+image:screenshot_tiering_modify_volumes.gif[A screenshot that shows how to select a single volume, multiple volume, or all volumes, and the modify selected volumes button.]
+
+. In the _Tiering Policy_ dialog, configure tiering for the selected volumes and click *Apply*.
 +
 link:concept_cloud_tiering.html#volume-tiering-policies[Learn more about volume tiering policies].
 +
-image:screenshot_volumes_select_snapshot.gif[A screenshot that shows the Snapshot used size in the Tier Volumes page.]
+Select a tiering policy and optionally adjust the cooling days.
++
+image:screenshot_tiering_policy_settings.png[A screenshot that shows the configurable tiering policy settings.]
 
 .Result
 
