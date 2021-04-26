@@ -38,7 +38,7 @@ image:screenshot_tiering_tier_volumes_button.png[A screenshot showing how to sel
 +
 image:screenshot_tiering_modify_volumes.gif[A screenshot that shows how to select a single volume, multiple volume, or all volumes, and the modify selected volumes button.]
 
-. In the _Tiering Policy_ dialog, select a tiering policy, and optionally adjust the cooling days for the selected volumes, and click *Apply*.
+. In the _Tiering Policy_ dialog, select a tiering policy, optionally adjust the cooling days for the selected volumes, and click *Apply*.
 +
 link:concept_cloud_tiering.html#volume-tiering-policies[Learn more about volume tiering policies].
 +
@@ -58,11 +58,13 @@ Changing the tiering policy for a volume changes how ONTAP tiers cold data to ob
 
 . From the *Cluster Dashboard*, click *Tier Volumes* for the cluster.
 
-. Click the image:screenshot_edit_icon.gif[A screenshot of the edit icon that appears at the end of each row in the table for tiering volumes] icon, select a tiering policy, optionally adjust the cooling days, optionally choose whether you want to move data from the cloud tier back to the performance tier, and click *Apply*.
+. Click the image:screenshot_edit_icon.gif[A screenshot of the edit icon that appears at the end of each row in the table for tiering volumes] icon for a volume, select a tiering policy, optionally adjust the cooling days, and click *Apply*.
 +
-image:screenshot_tiering_policy_settings_with_retrieve.png[A screenshot that shows the configurable tiering policy settings.]
-
 link:concept_cloud_tiering.html#volume-tiering-policies[Learn more about volume tiering policies].
++
+image:screenshot_tiering_policy_settings.png[A screenshot that shows the configurable tiering policy settings.]
+
+*Note:* If you see options to "Retrieve Tiered Data", see the next section for details.
 
 .Result
 
@@ -72,9 +74,9 @@ The tiering policy is changed and data is tiered based on the new policy.
 
 Tiered data that is accessed from the cloud may be "re-heated" and moved back to the performance tier. However, if you want to proactively promote data to the performance tier from the cloud tier, you can do this in the _Tiering Policy_ dialog. This capability is available when using ONTAP 9.8 and greater.
 
-You might do this if you want to stop using tiering on a volume, or if you have a snapshot-only tiering policy and you want to bring restored Snapshot copy data back to the performance tier.
+You might do this if you want to stop using tiering on a volume, or if you want to keep all user data on the performance tier, but keep Snapshot copies on the cloud tier.
 
-There are two options you can choose:
+There are two options:
 
 [cols="20,40,40",width=90%,options="header"]
 |===
