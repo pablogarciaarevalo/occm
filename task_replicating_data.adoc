@@ -72,35 +72,37 @@ You can configure fanout and cascade configurations in Cloud Manager by setting 
 +
 image:screenshot_drag_and_drop.gif[Screen shot: Shows a working environment being placed on top of another working environment to start the data replication process.]
 
-. If the Source and Destination Peering Setup pages appear, select all of the intercluster LIFs for the cluster peer relationship.
+. *Source and Destination Peering Setup*: If this page appears, select all of the intercluster LIFs for the cluster peer relationship.
 +
 The intercluster network should be configured so that cluster peers have _pair-wise full-mesh connectivity_, which means that each pair of clusters in a cluster peer relationship has connectivity among all of their intercluster LIFs.
 +
 These pages appear if an ONTAP cluster that has multiple LIFs is the source or destination.
 
-. On the Source Volume Selection page, select the volume that you want to replicate.
+. *Source Volume Selection*: Select the volume that you want to replicate.
 
-. On the Destination Volume Name and Tiering page, specify the destination volume name, choose an underlying disk type, change any of the advanced options, and then click *Continue*.
+. *Destination Disk Type and Tiering*: If the target is a Cloud Volumes ONTAP system, select the destination disk type and choose whether you want to enable data tiering.
+
+. *Destination Volume Name*: Specify the destination volume name and choose the destination aggregate.
 +
-If the destination is an ONTAP cluster, you must also specify the destination SVM and aggregate.
+If the destination is an ONTAP cluster, you must also specify the destination storage VM.
 
-. On the Max Transfer Rate page, specify the maximum rate (in megabytes per second) at which data can be transferred.
+. *Max Transfer Rate*: Specify the maximum rate (in megabytes per second) at which data can be transferred.
 
-. On the Replication Policy page, choose one of the default policies or click *Additional Policies*, and then select one of the advanced policies.
+. *Replication Policy*: Choose a default policy or click *Additional Policies*, and then select one of the advanced policies.
 +
 For help, see link:task_replicating_data.html#choosing-a-replication-policy[Choosing a replication policy].
 +
 If you choose a custom backup (SnapVault) policy, the labels associated with the policy must match the labels of the Snapshot copies on the source volume. For more information, see link:task_replicating_data.html#how-backup-policies-work[How backup policies work].
 
-. On the Schedule page, choose a one-time copy or a recurring schedule.
+. *Schedule*: Choose a one-time copy or a recurring schedule.
 +
 Several default schedules are available. If you want a different schedule, you must create a new schedule on the _destination_ cluster using System Manager.
 
-. On the Review page, review your selections, and then click *Go*.
+. *Review*: Review your selections and click *Go*.
 
 .Result
 
-Cloud Manager starts the data replication process. You can view details about the replication in the Replication Status page.
+Cloud Manager starts the data replication process. You can view details about the volume relationship in the Replication service.
 
 == Managing data replication schedules and relationships
 
@@ -108,27 +110,13 @@ After you set up data replication between two systems, you can manage the data r
 
 .Steps
 
-. On the Canvas page, view the replication status for all working environments in the workspace or for a specific working environment:
-+
-[cols=2*,options="header",cols="15,85"]
-|===
-
-| Option
-| Action
-
-| All working environments in the workspace
-a| At the top of Cloud Manager, click *Replication*.
-
-| A specific working environment
-a| Open the working environment and click *Replications*.
-
-|===
+. Click *Replication*.
 
 . Review the status of the data replication relationships to verify that they are healthy.
 +
 NOTE: If the Status of a relationship is idle and the Mirror State is uninitialized, you must initialize the relationship from the destination system for the data replication to occur according to the defined schedule. You can initialize the relationship by using System Manager or the command-line interface (CLI). These states can appear when the destination system fails and then comes back online.
 
-. Select the menu icon next to the source volume, and then choose one of the available actions.
+. Click the action menu for a volume relationship and choose one of the available actions.
 +
 image:screenshot_replication_managing.gif[Screen shot: Shows the list of actions available from the Replication Status page.]
 +
@@ -138,6 +126,8 @@ The following table describes the available actions:
 |===
 | Action
 | Description
+
+| Information | Shows you details about the volume relationship: transfer information, last transfer information, details about the volume, and information about the protection policy assigned to the relationship.
 
 | Break | Breaks the relationship between the source and destination volumes, and activates the destination volume for data access.
 
@@ -157,13 +147,11 @@ Any data written to the original source volume between the last data replication
 
 | Edit Schedule | Enables you to choose a different schedule for data replication.
 
-| Policy Info | Shows you the protection policy assigned to the data replication relationship.
-
 | Edit Max Transfer Rate | Enables you to edit the maximum rate (in kilobytes per second) at which data can be transferred.
 
 | Update | Starts an incremental transfer to update the destination volume.
 
-| Delete | Deletes the data protection relationship between the source and destination volumes, which means that data replication no longer occurs between the volumes. This action does not activate the destination volume for data access. This action also deletes the cluster peer relationship and the storage virtual machine (SVM) peer relationship, if there are no other data protection relationships between the systems.
+| Delete | Deletes the data protection relationship between the source and destination volumes, which means that data replication no longer occurs between the volumes. This action does not activate the destination volume for data access. This action also deletes the cluster peer relationship and the storage VM (SVM) peer relationship, if there are no other data protection relationships between the systems.
 |===
 
 .Result
@@ -231,12 +219,3 @@ The default Snapshot policy creates hourly, daily, and weekly Snapshot copies, r
 You can easily use a default Backup policy with the default Snapshot policy. The default Backup policies replicate daily and weekly Snapshot copies, retaining seven daily and 52 weekly Snapshot copies.
 
 If you create custom policies, the labels defined by those policies must match. You can create custom policies using System Manager.
-
-== Data replication from NetApp HCI to Cloud Volumes ONTAP
-
-If you're trying to replicate data from NetApp HCI to Cloud Volumes ONTAP, you can do so on a NetApp HCI system running NetApp Element software using SnapMirror. Alternatively, you can replicate data on volumes created on an ONTAP Select system running as a virtual guest in a NetApp HCI solution to Cloud Volumes ONTAP.
-
-Refer to the following technical reports for details:
-
-*	https://www.netapp.com/us/media/tr-4641.pdf[Technical Report 4641: NetApp HCI Data Protection^]
-*	https://www.netapp.com/us/media/tr-4651.pdf[Technical Report 4651: NetApp SolidFire SnapMirror Architecture and Configuration^]
