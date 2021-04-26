@@ -1,0 +1,66 @@
+---
+sidebar: sidebar
+permalink: task_managing_replication.html
+keywords: replication policy, policy, replication, replicating, snapmirror, snapvault, data replication, source, destination, schedule, relationship, break, resync, max transfer, maximum transfer rate, rate, transfer rate, reverse resync, status, replication status, disaster recovery, DR, archive, archiving, retention
+summary: After you set up data replication between two systems, you can manage the data replication schedule and relationship from Cloud Manager.
+---
+
+= Managing data replication schedules and relationships
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+After you set up data replication between two systems, you can manage the data replication schedule and relationship from Cloud Manager.
+
+.Steps
+
+. Click *Replication*.
+
+. Review the status of the data replication relationships to verify that they are healthy.
++
+NOTE: If the Status of a relationship is idle and the Mirror State is uninitialized, you must initialize the relationship from the destination system for the data replication to occur according to the defined schedule. You can initialize the relationship by using System Manager or the command-line interface (CLI). These states can appear when the destination system fails and then comes back online.
+
+. Click the action menu for a volume relationship and choose one of the available actions.
++
+image:screenshot_replication_managing.gif[Screen shot: Shows the list of actions available from the Replication Status page.]
++
+The following table describes the available actions:
++
+[cols=2*,options="header",cols="15,85"]
+|===
+| Action
+| Description
+
+| Information | Shows you details about the volume relationship: transfer information, last transfer information, details about the volume, and information about the protection policy assigned to the relationship.
+
+| Break | Breaks the relationship between the source and destination volumes, and activates the destination volume for data access.
+
+This option is typically used when the source volume cannot serve data due to events such as data corruption, accidental deletion, or an offline state.
+
+For information about configuring a destination volume for data access and reactivating a source volume, see the ONTAP 9 Volume Disaster Recovery Express Guide.
+
+| Resync a| Reestablishes a broken relationship between volumes and resumes data replication according to the defined schedule.
+
+IMPORTANT: When you resynchronize the volumes, the contents on the destination volume are overwritten by the contents on the source volume.
+
+To perform a reverse resync, which resynchronizes the data from the destination volume to the source volume, see the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-sm-ic-fr/home.html[ONTAP 9 Volume Disaster Recovery Express Guide^].
+
+| Reverse Resync | Reverses the roles of the source and destination volumes. Contents from the original source volume are overwritten by contents of the destination volume. This is helpful when you want to reactivate a source volume that went offline.
+
+Any data written to the original source volume between the last data replication and the time that the source volume was disabled is not preserved.
+
+| Edit Schedule | Enables you to choose a different schedule for data replication.
+
+| Edit Max Transfer Rate | Enables you to edit the maximum rate (in kilobytes per second) at which data can be transferred.
+
+| Update | Starts an incremental transfer to update the destination volume.
+
+| Delete | Deletes the data protection relationship between the source and destination volumes, which means that data replication no longer occurs between the volumes. This action does not activate the destination volume for data access. This action also deletes the cluster peer relationship and the storage VM (SVM) peer relationship, if there are no other data protection relationships between the systems.
+|===
+
+.Result
+
+After you select an action, Cloud Manager updates the relationship or schedule.
