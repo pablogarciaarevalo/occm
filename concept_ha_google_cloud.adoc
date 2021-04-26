@@ -25,13 +25,21 @@ Cloud Volumes ONTAP HA configurations in GCP include the following components:
 +
 The mediator runs the Linux operating system on a f1-micro instance and uses two standard persistent disks that are 10 GB each.
 
-* Four Virtual Private Clouds (VPCs) are required for the HA configuration.
+* One zone or three zones (recommended).
++
+If you choose three zones, the two nodes and mediator are in separate Google Cloud zones.
+
+* Four Virtual Private Clouds (VPCs).
 +
 The configuration uses four VPCs because GCP requires that each network interface resides in a separate VPC network.
 
-* Four Google Cloud internal load balancers (TCP/UDP) that manage incoming traffic to the Cloud Volumes ONTAP HA pair.
+* Three Google Cloud internal load balancers (TCP/UDP) that manage incoming traffic to the Cloud Volumes ONTAP HA pair. (Prior to 9.9.0, four load balancers were created.)
 
-link:reference_networking_gcp.html[Learn about networking requirements].
+link:reference_networking_gcp.html[Learn about networking requirements], including more details about load balancers, VPCs, internal IP addresses, subnets, and more.
+
+The following conceptual image shows a Cloud Volumes ONTAP HA pair and its components:
+
+image:diagram_gcp_ha.png[]
 
 == Storage takeover and giveback
 

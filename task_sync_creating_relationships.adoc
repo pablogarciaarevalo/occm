@@ -5,7 +5,7 @@ keywords: sync, relationship, create, tags, settings, create a relationship, cre
 summary: When you create a sync relationship, the Cloud Sync service copies files from the source to the target. After the initial copy, the service syncs any changed data every 24 hours.
 ---
 
-= Creating a sync relationship
+= Create sync relationships
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -15,9 +15,34 @@ summary: When you create a sync relationship, the Cloud Sync service copies file
 [.lead]
 When you create a sync relationship, the Cloud Sync service copies files from the source to the target. After the initial copy, the service syncs any changed data every 24 hours.
 
-== Creating a sync relationship
+== Create sync relationships for Cloud Volumes ONTAP, Azure NetApp Files, or on-prem clusters
 
-Use these steps to sync data to or from any supported storage type. The steps below provide an example that shows how to set up a sync relationship from an NFS server to an S3 bucket.
+If you want to create sync relationships for Cloud Volumes ONTAP, Azure NetApp Files, or an on-prem ONTAP cluster, then you first need to create or discover the working environment.
+
+.Steps
+
+. Create or discover the working environment.
++
+* link:task_deploying_otc_aws.html[Launching Cloud Volumes ONTAP in AWS]
+* link:task_deploying_otc_azure.html[Launching Cloud Volumes ONTAP in Azure]
+* link:task_deploying_gcp.html[Launching Cloud Volumes ONTAP in GCP]
+* link:task_adding_ontap_cloud.html[Adding existing Cloud Volumes ONTAP systems]
+* link:task_manage_anf.html[Setting up and discovering Azure NetApp Files]
+* link:task_discovering_ontap.html[Discovering ONTAP clusters]
+
+. Click *Canvas*.
+
+. Select a working environment that matches any of the types listed above.
+
+. Select the action menu next to Sync.
++
+image:screenshot_sync_we.gif[A screenshot that shows the actions available from the Sync menu after selecting a working environment.]
+
+. Select *Sync data from this location* or *Sync data to this location* and follow the prompts to set up the sync relationship.
+
+== Create other types of sync relationships
+
+Use these steps to sync data to or from a supported storage type other than Cloud Volumes ONTAP, Azure NetApp Files, or on-prem ONTAP clusters. The steps below provide an example that shows how to set up a sync relationship from an NFS server to an S3 bucket.
 
 . In Cloud Manager, click *Sync*.
 
@@ -97,24 +122,3 @@ The Cloud Sync service assigns the tags to each object that it syncs to the S3 b
 *Result*
 
 Cloud Sync starts syncing data between the source and target.
-
-== Creating a sync relationship for an existing working environment
-
-Use these steps to sync data to or from any of the following:
-
-* Amazon S3
-* Azure NetApp Files
-* Cloud Volumes ONTAP
-* On-prem ONTAP cluster
-
-.Steps
-
-. In Cloud Manager, click *Canvas*.
-
-. Select a working environment that matches any of the types listed above.
-
-. Select the action menu next to Sync.
-+
-image:screenshot_sync_we.gif[A screenshot that shows the actions available from the Sync menu after selecting a working environment.]
-
-. Select *Sync data from this location* or *Sync data to this location* and follow the prompts to set up the sync relationship.
