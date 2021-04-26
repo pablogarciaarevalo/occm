@@ -30,7 +30,7 @@ Get started quickly by following these steps, or scroll down to the remaining se
 [role="quick-margin-list"]
 * You have discovered the on-premises cluster and added it to a working environment in Cloud Manager. See link:task_discovering_ontap.html[Discovering ONTAP clusters^] for details.
 ** The cluster is running ONTAP 9.7P5 or later.
-** The cluster has a SnapMirror license -- which is included as part of the PREM or Data Protection bundle.
+** The cluster has a SnapMirror license -- it is included as part of the PREM or Data Protection bundle.
 * You have subscribed to the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Azure^], the https://aws.amazon.com/marketplace/pp/B07QX2QLXX[AWS^], or the https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[Google^] Cloud Manager Marketplace Backup offering, or you have purchased link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[and activated^] a Cloud Backup BYOL license from NetApp.
 * You have a valid cloud provider subscription for the object storage space where your backups will be located.
 * For AWS and GCP, you need to have an account that has an access key and the required permissions so the ONTAP cluster can back up the data.

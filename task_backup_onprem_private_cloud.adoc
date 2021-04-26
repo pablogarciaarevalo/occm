@@ -26,9 +26,9 @@ Get started quickly by following these steps, or scroll down to the remaining se
 ** Networking for the Connector enables an outbound HTTPS connection to the ONTAP cluster and to StorageGRID.
 * You have discovered the on-premises cluster and added it to a working environment in Cloud Manager. See link:task_discovering_ontap.html[Discovering ONTAP clusters^] for details.
 ** The cluster is running ONTAP 9.7P5 or later.
-** The cluster has a SnapMirror license -- which is included as part of the PREM or Data Protection bundle.
+** The cluster has a SnapMirror license -- it is included as part of the PREM or Data Protection bundle.
 * You have purchased link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[and activated^] a Cloud Backup BYOL license from NetApp.
-* Your StorageGRID has version 10.3 or later with AWS access keys that have S3 permissions.
+* Your StorageGRID has version 10.3 or later with access keys that have S3 permissions.
 
 ==== image:number2.png[Number 2] Enable Cloud Backup on the system
 
@@ -98,7 +98,6 @@ ONTAP reads and writes data to and from object storage. The object storage never
 * An intercluster LIF is required on each ONTAP node that hosts the volumes you want to back up. The LIF must be associated with the _IPspace_ that ONTAP should use to connect to object storage. http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-69120CF0-F188-434F-913E-33ACB8751A5D.html[Learn more about IPspaces^].
 +
 When you set up Cloud Backup, you are prompted for the IPspace to use. You should choose the IPspace that each LIF is associated with. That might be the "Default" IPspace or a custom IPspace that you created.
-* Node and intercluster LIFs are able to access the internet.
 *	DNS servers have been configured for the storage VM where the volumes are located.
 +
 See how to http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-D4A9F825-77F0-407F-BFBD-D94372D6AAC1.html[configure DNS services for the SVM^].
