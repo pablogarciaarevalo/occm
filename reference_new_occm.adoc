@@ -35,6 +35,12 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 link:concept_monitoring.html[Learn more about using the Monitoring service with Cloud Volumes ONTAP].
 
+== Account enhancement
+
+The Timeline in Cloud Manager now shows the actions that users completed to manage your Cloud Central account. This includes management actions such as associating users, creating workspaces, creating Connectors, and more. Checking the Timeline can be helpful if you need to identify who performed a specific action, or if you need to identify the status of an action.
+
+link:task_managing_cloud_central_accounts[Learn how to filter the Timeline to the Tenancy service].
+
 == Cloud Manager 3.9.5 (11 Apr 2021)
 
 * <<Cloud Volumes ONTAP enhancements>>
