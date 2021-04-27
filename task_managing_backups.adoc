@@ -71,19 +71,19 @@ image:screenshot_backup_manage_volumes_page.png[The Manage Volumes page where yo
 
 == Viewing the list of backups for each volume
 
-You can view the list of all backup files (snapshots) that exist for each volume. This page displays details about the source volume, destination location, and backup details such as last backup taken, the current backup policy, and more.
+You can view the list of all backup files that exist for each volume. This page displays details about the source volume, destination location, and backup details such as last backup taken, the current backup policy, and more.
 
 This page also enables you perform the following tasks:
 
-* Delete all backup files (snapshots) for the volume
+* Delete all backup files for the volume
 * Delete individual backup files for the volume
 * Download a backup report for the volume
 
 .Steps
 
-. From the Backup Dashboard, click image:screenshot_horizontal_more_button.gif[More icon] for the source volume and select *Details & Snapshot List*.
+. From the Backup Dashboard, click image:screenshot_horizontal_more_button.gif[More icon] for the source volume and select *Details & Backup List*.
 +
-image:screenshot_backup_view_backups_button.png[A screenshot that shows the Details & Snapshot List button which is available for a single volume.]
+image:screenshot_backup_view_backups_button.png[A screenshot that shows the Details & Backup List button which is available for a single volume.]
 +
 The list of all backup files (snapshots) is displayed along with details about the source volume, destination location, and backup details.
 +
@@ -115,9 +115,9 @@ image:screenshot_delete_all_backups.png[A screenshot of selecting the Delete All
 
 .Steps
 
-. From the Backup Dashboard, click image:screenshot_horizontal_more_button.gif[More icon] for the source volume and select *Details & Snapshot List*.
+. From the Backup Dashboard, click image:screenshot_horizontal_more_button.gif[More icon] for the source volume and select *Details & Backup List*.
 +
-image:screenshot_backup_view_backups_button.png[A screenshot that shows the Details & Snapshot List button which is available for a single volume.]
+image:screenshot_backup_view_backups_button.png[A screenshot that shows the Details & Backup List button which is available for a single volume.]
 +
 The list of all backup files (snapshots) is displayed.
 +
@@ -135,9 +135,9 @@ You can delete a single backup file. This feature is available only if the volum
 
 .Steps
 
-. From the Backup Dashboard, click image:screenshot_horizontal_more_button.gif[More icon] for the source volume and select *Details & Snapshot List*.
+. From the Backup Dashboard, click image:screenshot_horizontal_more_button.gif[More icon] for the source volume and select *Details & Backup List*.
 +
-image:screenshot_backup_view_backups_button.png[A screenshot that shows the Details & Snapshot List button which is available for a single volume.]
+image:screenshot_backup_view_backups_button.png[A screenshot that shows the Details & Backup List button which is available for a single volume.]
 +
 The list of all backup files (snapshots) is displayed.
 +
