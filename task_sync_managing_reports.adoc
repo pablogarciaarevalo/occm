@@ -1,0 +1,71 @@
+---
+sidebar: sidebar
+permalink: task_sync_managing_reports.html
+keywords: reports, sync reports, cloud sync reports, report errors, path reports
+summary: Create and view reports to get information that you can use with the help of NetApp personnel to tune a data broker’s configuration and improve performance.
+---
+
+= Creating and viewing reports to tune your configuration
+:toc: macro
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Create and view reports to get information that you can use with the help of NetApp personnel to tune a data broker’s configuration and improve performance.
+
+Each report provides in-depth details about a path in a sync relationship. For example, the report for a file system shows how many directories and files there are, the distribution of file size, how deep and wide the directories are, and more.
+
+== Creating and viewing reports about paths
+
+Create a new report for a path at any time.
+
+.Steps
+
+. Click *Sync > Reports*.
++
+The paths (source or target) in each of your sync relationships display in a table.
+
+. In the *Reports Actions* column, click the action menu for a path and select *Create New*.
+
+. When the report is ready, click *View*.
++
+Here's a sample report for a file system path.
++
+image:screenshot_sync_report.gif[A report that shows the amount of sync items, file size, maximums, access time, change time, and modify time.]
++
+And here's a sample report for object storage.
++
+image:screenshot_sync_report_object.gif[A report that shows the number of path items, objects size, modify time, and storage class.]
+
+== Viewing report errors
+
+The Paths table identifies whether any errors are present in the most recent report. View the report errors, address any issues, and then run the report again.
+
+.Steps
+
+. Click *Sync > Reports*.
+
+. In the *Errors* column, identify whether any errors are present in a report.
+
+. If errors are present, click the action menu and select *View*.
+
+. In the report, click the action menu and select *View errors*.
+
+. Use the information in the error to correct the issue.
++
+After you resolve the issue, the error shouldn't appear the next time that you run the report.
+
+== Deleting reports
+
+Delete any reports that you no longer need.
+
+.Steps
+
+.. Click *Sync > Reports*.
+
+. In the *Reports Actions* column, click the action menu for a path and select *Delete last report* or *Delete all reports*.
+
+. Confirm that you want to delete the report or reports.
