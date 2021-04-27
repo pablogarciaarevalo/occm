@@ -140,8 +140,8 @@ This button is available only for files in CIFS shares.
 === Viewing whether files are duplicated in your storage systems
 
 If there are duplicates of a certain file, this information appears next to the _Duplicates_ field. This is useful if you want to identify areas where you can save storage space. It can also be helpful to make sure certain files that have specific permissions or sensitive information are not unnecessarily duplicated in your storage systems.
-
-Only files that are in the formats described in link:reference_private_data_categories.html#types-of-files[Types of files] can be identified as duplicate.
+//
+// Only files that are in the formats described in link:reference_private_data_categories.html#types-of-files[Types of files] can be identified as duplicate.
 
 To view the list of duplicate files, click *View Details*. In the next page click *View Duplicates* to view the files in the Investigation page.
 
