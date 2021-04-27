@@ -21,7 +21,8 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 == Cloud Manager 3.9.6 (2 May 2021)
 
-* <<Montiroing enhancements>>
+* <<Monitoring enhancements>>
+* <<Replication enhancements>>
 * <<Cloud Sync enhancements>>
 * <<Cloud Compliance enhancements>>
 * <<Application Templates enhancements>>
@@ -34,6 +35,12 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 * When you enable the Monitoring service, you get a free trial of Cloud Insights. On the 29th day, your plan now automatically transitions from the Trial Version to the https://docs.netapp.com/us-en/cloudinsights/concept_subscribing_to_cloud_insights.html#editions[Basic Edition].
 
 link:concept_monitoring.html[Learn more about using the Monitoring service with Cloud Volumes ONTAP].
+
+== Replication enhancement
+
+We redesigned the Replication tab for ease of use and to match the current look and feel of the Cloud Manager user interface.
+
+image:replication.gif[]
 
 == Account enhancement
 
