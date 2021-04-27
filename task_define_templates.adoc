@@ -78,6 +78,14 @@ image:screenshot_template_regex.png[A screenshot of using a regex to define the 
 
 As an example, if you enter "^[a-zA-Z][0-9a-zA-Z_]{0,149}$" as the regex for the volume name, it means that "_the name should start with an alphabetic character, it can contain only numbers, letters, or the underscore, and it should be 150 or fewer characters in length_".
 
+== Passing values between template actions
+
+Templates have the ability to use information from a previous action to populate a field in a future action. For example, when defining the name of the volume that will have Cloud Backup functionality enabled, you can tell the Backup action to use the value the storage admin used as the name of the volume from the Create Cloud Volumes ONTAP action.
+
+* information an admin
+* s
+
+
 == Creating a template for a Cloud Volumes ONTAP volume
 
 See link:task_provisioning_storage.html#creating-flexvol-volumes[how to provision Cloud Volumes ONTAP volumes^] for details about all the parameters you need to complete in the Cloud Volumes ONTAP volume template.
