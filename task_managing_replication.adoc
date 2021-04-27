@@ -40,7 +40,7 @@ The following table describes the available actions:
 
 This option is typically used when the source volume cannot serve data due to events such as data corruption, accidental deletion, or an offline state.
 
-For information about configuring a destination volume for data access and reactivating a source volume, see the ONTAP 9 Volume Disaster Recovery Express Guide.
+For information about configuring a destination volume for data access and reactivating a source volume, see the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-sm-ic-fr/home.html[ONTAP 9 Volume Disaster Recovery Express Guide^].
 
 | Resync a| Reestablishes a broken relationship between volumes and resumes data replication according to the defined schedule.
 

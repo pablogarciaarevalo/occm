@@ -20,7 +20,7 @@ You can replicate data between working environments by choosing a one-time data 
 Before you can replicate data, you should confirm that specific requirements are met for both Cloud Volumes ONTAP and ONTAP clusters.
 
 Version requirements::
-You should verify that the source and destination volumes are running compatible ONTAP versions before replicating data. For details, see the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-dap/home.html[Data Protection Power Guide^].
+You should verify that the source and destination volumes are running compatible ONTAP versions before replicating data. For details, see the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-dap/GUID-0810D764-4CEA-4683-8280-032433B1886B.html[Data Protection Power Guide^].
 
 Requirements specific to Cloud Volumes ONTAP::
 * The instance's security group must include the required inbound and outbound rules: specifically, rules for ICMP and ports 11104 and 11105.
@@ -29,20 +29,20 @@ These rules are included in the predefined security group.
 
 * To replicate data between two Cloud Volumes ONTAP systems in different subnets, the subnets must be routed together (this is the default setting).
 
-* To replicate data between a Cloud Volumes ONTAP system in AWS and a system in Azure, you must have a VPN connection between the AWS VPC and the Azure VNet.
+* To replicate data between two Cloud Volumes ONTAP systems in different cloud providers, you must have a VPN connection between the virtual networks.
 
 Requirements specific to ONTAP clusters::
 * An active SnapMirror license must be installed.
 
-* If the cluster is on your premises, you should have a connection from your corporate network to AWS or Azure, which is typically a VPN connection.
+* If the cluster is on your premises, you should have a connection from your corporate network to your virtual network in AWS, Azure, or GCP. This is typically a VPN connection.
 
 * ONTAP clusters must meet additional subnet, port, firewall, and cluster requirements.
 +
-For details, see the Cluster and SVM Peering Express Guide for your version of ONTAP.
+For details, see the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-clus-peer/home.html[Cluster and SVM Peering Express Guide^].
 
 == Setting up data replication between systems
 
-You can replicate data between Cloud Volumes ONTAP systems and ONTAP clusters by choosing a one-time data replication, which can help you move data to and from the cloud, or a recurring schedule, which can help with disaster recovery or long-term retention.
+You can replicate data between Cloud Volumes ONTAP systems and on-prem ONTAP clusters by choosing a one-time data replication, which can help you move data to and from the cloud, or a recurring schedule, which can help with disaster recovery or long-term retention.
 
 .Steps
 
@@ -65,12 +65,14 @@ These pages appear if an ONTAP cluster that has multiple LIFs is the source or d
 If the destination is an ONTAP cluster, you must also specify the destination storage VM.
 
 . *Max Transfer Rate*: Specify the maximum rate (in megabytes per second) at which data can be transferred.
++
+You should limit the transfer rate. An unlimited rate might negatively impact the performance of other applications and it might impact your internet performance.
 
 . *Replication Policy*: Choose a default policy or click *Additional Policies*, and then select one of the advanced policies.
 +
-For help, see link:task_replicating_data.html#choosing-a-replication-policy[Choosing a replication policy].
+For help, link:concept_replication_policies.html[learn about replication policies].
 +
-If you choose a custom backup (SnapVault) policy, the labels associated with the policy must match the labels of the Snapshot copies on the source volume. For more information, see link:task_replicating_data.html#how-backup-policies-work[How backup policies work].
+If you choose a custom backup (SnapVault) policy, the labels associated with the policy must match the labels of the Snapshot copies on the source volume. For more information, link:concept_replication_policies.html#how-backup-policies-work[learn how backup policies work].
 
 . *Schedule*: Choose a one-time copy or a recurring schedule.
 +
