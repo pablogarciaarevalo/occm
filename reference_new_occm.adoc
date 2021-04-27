@@ -22,7 +22,7 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 == Cloud Manager 3.9.6 (2 May 2021)
 
 * <<Monitoring enhancements>>
-* <<Replication enhancements>>
+* <<Replication enhancement>>
 * <<Cloud Sync enhancements>>
 * <<Cloud Compliance enhancements>>
 * <<Application Templates enhancements>>
@@ -32,7 +32,7 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 * You can now enable the Monitoring service on a Cloud Volumes ONTAP working environment even if you have an existing Cloud Insights tenant.
 
-* When you enable the Monitoring service, you get a free trial of Cloud Insights. On the 29th day, your plan now automatically transitions from the Trial Version to the https://docs.netapp.com/us-en/cloudinsights/concept_subscribing_to_cloud_insights.html#editions[Basic Edition].
+* When you enable the Monitoring service, Cloud Manager sets up a free trial of Cloud Insights. On the 29th day, your plan now automatically transitions from the Trial Version to the https://docs.netapp.com/us-en/cloudinsights/concept_subscribing_to_cloud_insights.html#editions[Basic Edition].
 
 link:concept_monitoring.html[Learn more about using the Monitoring service with Cloud Volumes ONTAP].
 
@@ -44,7 +44,7 @@ image:replication.gif[]
 
 == Account enhancement
 
-The Timeline in Cloud Manager now shows the actions that users completed to manage your Cloud Central account. This includes management actions such as associating users, creating workspaces, creating Connectors, and more. Checking the Timeline can be helpful if you need to identify who performed a specific action, or if you need to identify the status of an action.
+The Timeline in Cloud Manager now shows actions and events related to account management. The actions include things like associating users, creating workspaces, and creating Connectors. Checking the Timeline can be helpful if you need to identify who performed a specific action, or if you need to identify the status of an action.
 
 link:task_managing_cloud_central_accounts[Learn how to filter the Timeline to the Tenancy service].
 
