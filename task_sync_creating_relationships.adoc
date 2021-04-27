@@ -97,7 +97,7 @@ Compare By:: Choose the attributes that you want Cloud Sync to compare when dete
 +
 You can choose from the following attributes:
 +
-* *mtime*: The last modified time for a file. This attribute isn't valid for directories.
+* *mtime*: The last modified time for a file. This attribute is valid for files only (not directories).
 * *uid*, *gid*, and *mode*: Permission flags for NFS. These attributes are valid for NFS only.
 
 Recently Modified Files:: Choose to exclude files that were recently modified prior to the scheduled sync.
