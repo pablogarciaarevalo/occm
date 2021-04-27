@@ -68,7 +68,7 @@ image:screenshot_tiering_policy_settings.png[A screenshot that shows the configu
 
 .Result
 
-The tiering policy is changed and data is tiered based on the new policy.
+The tiering policy is changed and data begins to be tiered based on the new policy.
 
 == Migrating data from the cloud tier back to the performance tier
 
@@ -78,7 +78,7 @@ You might do this if you want to stop using tiering on a volume, or if you want 
 
 There are two options:
 
-[cols="20,40,40",width=90%,options="header"]
+[cols="22,45,35",width=95%,options="header"]
 |===
 | Option
 | Description
@@ -88,7 +88,7 @@ There are two options:
 | Bring back active file system | Retrieves only active file system data tiered in the cloud and promotes it to the performance tier (Snapshot copies remain in the cloud). | Tiering policy is changed to "Cold snapshots".
 |===
 
-NOTE: You may be charged by your cloud provider for the transfer of data off the cloud.
+NOTE: You may be charged by your cloud provider based on that amount of data transferred off the cloud.
 
 .Steps
 
@@ -98,7 +98,7 @@ Make sure you have enough space in the performance tier for all the data that is
 
 . From the *Cluster Dashboard*, click *Tier Volumes* for the cluster.
 
-. Click the image:screenshot_edit_icon.gif[A screenshot of the edit icon that appears at the end of each row in the table for tiering volumes] icon, choose the retrieval option you want to use for that volume, and click *Apply*.
+. Click the image:screenshot_edit_icon.gif[A screenshot of the edit icon that appears at the end of each row in the table for tiering volumes] icon for the volume, choose the retrieval option you want to use, and click *Apply*.
 +
 image:screenshot_tiering_policy_settings_with_retrieve.png[A screenshot that shows the configurable tiering policy settings.]
 
