@@ -80,11 +80,13 @@ As an example, if you enter "^[a-zA-Z][0-9a-zA-Z_]{0,149}$" as the regex for the
 
 == Passing values between template actions
 
-Templates have the ability to use information from a previous action to populate a field in a future action. For example, when defining the name of the volume that will have Cloud Backup functionality enabled, you can tell the Backup action to use the value the storage admin used as the name of the volume from the Create Cloud Volumes ONTAP action.
+Templates have the ability to use information from a previous action to populate a field in a future action. For example, when defining the name of the volume that will have Cloud Backup functionality enabled, you can instruct the Backup action to use the value the storage admin used as the name of the volume from the Create Cloud Volumes ONTAP action.
 
-* information an admin
-* s
+The following illustration shows how to enter this information in the Backup action section of the template.
 
+image:screenshot_template_variable_input.png[An illustration showing how to use a value entered in a previous action to populate a field in another action.]
+
+At this time there are no use cases for selecting an "Output" operation, so the "Input" operation is the only option you can currently use.
 
 == Creating a template for a Cloud Volumes ONTAP volume
 
