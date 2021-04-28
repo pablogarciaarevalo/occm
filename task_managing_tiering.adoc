@@ -32,9 +32,9 @@ image:screenshot_tiering_tier_volumes_button.png[A screenshot showing how to sel
 . On the _Tier Volumes_ page, select the volumes that you want to configure tiering for and launch the Tiering Policy page:
 
 +
-* To select all volumes, check the box in the title row (image:button_backup_all_volumes.png[]) and click *Modify selected volumes*.
-* To select multiple volumes, check the box for each volume (image:button_backup_1_volume.png[]) and click *Modify selected volumes*.
-* To select a single volume, click the image:screenshot_edit_icon.gif[edit pencil icon] icon for the volume.
+* To select all volumes, check the box in the title row (image:button_backup_all_volumes.png[]) and click *Configure volumes*.
+* To select multiple volumes, check the box for each volume (image:button_backup_1_volume.png[]) and click *Configure volumes*.
+* To select a single volume, click the row (or image:screenshot_edit_icon.gif[edit pencil icon] icon) for the volume.
 +
 image:screenshot_tiering_modify_volumes.gif[A screenshot that shows how to select a single volume, multiple volume, or all volumes, and the modify selected volumes button.]
 
@@ -58,7 +58,7 @@ Changing the tiering policy for a volume changes how ONTAP tiers cold data to ob
 
 . From the *Cluster Dashboard*, click *Tier Volumes* for the cluster.
 
-. Click the image:screenshot_edit_icon.gif[A screenshot of the edit icon that appears at the end of each row in the table for tiering volumes] icon for a volume, select a tiering policy, optionally adjust the cooling days, and click *Apply*.
+. Click the row for a volume, select a tiering policy, optionally adjust the cooling days, and click *Apply*.
 +
 link:concept_cloud_tiering.html#volume-tiering-policies[Learn more about volume tiering policies].
 +
