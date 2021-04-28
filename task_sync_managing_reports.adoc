@@ -64,7 +64,7 @@ Delete any reports that you no longer need.
 
 .Steps
 
-.. Click *Sync > Reports*.
+. Click *Sync > Reports*.
 
 . In the *Reports Actions* column, click the action menu for a path and select *Delete last report* or *Delete all reports*.
 
