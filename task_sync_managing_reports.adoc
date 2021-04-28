@@ -18,7 +18,7 @@ Create and view reports to get information that you can use with the help of Net
 
 Each report provides in-depth details about a path in a sync relationship. For example, the report for a file system shows how many directories and files there are, the distribution of file size, how deep and wide the directories are, and more.
 
-== Creating and viewing reports about paths
+== Creating reports
 
 Create a new report for a path at any time.
 
