@@ -80,7 +80,7 @@ image:replication.gif[A screenshot of the redesigned Replication tab in Cloud Ma
 
 === Cloud Compliance enhancements
 
-* Scanning of data stored on Azure Blob is now supported when using the https://min.io/[MinIO service]. See link:task_scanning_object_storage.html[Scanning object storage that uses S3 protocol^] for details.
+* Scanning of data stored on Azure Blob is now supported when using the https://min.io/[MinIO service^]. See link:task_scanning_object_storage.html[Scanning object storage that uses S3 protocol^] for details.
 
 * New personal data type. Cloud Compliance can now find Austrian SSNs in files.
 
