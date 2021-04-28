@@ -21,15 +21,16 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 == Cloud Manager 3.9.6 (2 May 2021)
 
-* <<Cloud Backup & Restore enhancements>>
+* <<Cloud Backup enhancements>>
 * <<Cloud Sync enhancements>>
 * <<Monitoring enhancements>>
 * <<Replication enhancement>>
+* <<Cloud Tiering>>
 * <<Cloud Compliance enhancements>>
 * <<Application Template enhancement>>
 * <<Account enhancement>>
 
-=== Cloud Backup & Restore enhancements
+=== Cloud Backup enhancements
 
 * The separate Backup and Restore Dashboards have been combined under a new *Backup & Restore* tab to make it easier for you to manage all your backup and restore operations from a single location. See link:task_managing_backups.html#viewing-the-volumes-that-are-being-backed-up[the Backup & Restore Dashboard^] for details.
 
