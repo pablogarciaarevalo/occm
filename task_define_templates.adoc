@@ -30,12 +30,12 @@ Get started quickly by following these steps, or scroll down to the remaining se
 ==== image:number2.png[Number 2] Launch the Application Templates service
 
 [role="quick-margin-para"]
-Select the *AppTemplate* service and add your template.
+Select the *AppTemplate* service and select the template.
 
 ==== image:number3.png[Number 3] Build the template by selecting "actions" and defining parameters
 
 [role="quick-margin-para"]
-Follow the creation wizard and define the actions that will be performed by the template.
+Follow the creation steps and define the actions that will be performed by the template.
 
 == Requirements
 
@@ -104,19 +104,19 @@ Create daily backups with a retention value of 30 copies.
 
 .Steps
 
-. Select the *AppTemplate* service and click *Add New Template*.
+. Select the *AppTemplate* service and click *Add new template*.
 +
-The _Select_Primary Action_ page is displayed.
+The _Select_a Template_ page is displayed.
 +
 image:screenshot_create_template_primary_action_cvo.png[A screenshot showing how to select the primary action that will be performed using this template.]
 
-. Select *Create Volume in Cloud Volumes ONTAP* as the type of resource you want to create, and click *Next*.
+. Select *Volume for Cloud Volumes ONTAP + Backup* as the type of resource you want to create, and click *Get Started*.
 +
-The _Add Definitions_ page is displayed.
+The _Create Volume in Cloud Volumes ONTAP Action Definition_ page is displayed.
 +
 image:screenshot_create_template_define_action_cvo.png[A screenshot showing a blank CVO template that you need to fill in.]
 
-. *Template Details:* Enter the template name *CVO volume for databases* (for this example) and a more detailed description so that this template can be distinguished from other similar templates.
+. Enter the template name *CVO volume for databases* (for this example) in the top left.
 
 . *Details:* Enter the volume name and size.
 +
@@ -126,11 +126,11 @@ image:screenshot_create_template_define_action_cvo.png[A screenshot showing a bl
 | Field
 | Description
 
-| Volume Name | Select one of the 5 options. You can let the admin enter any name by selecting *Free Text*, or you can specify that the volume name must have a certain prefix or suffix, that it _contains_ certain characters, or that it follows rules from a regular expression (regex) you enter.
+| Volume Name | Click in the field and select one of the 5 options. You can let the admin enter any name by selecting *Free Text*, or you can specify that the volume name must have a certain prefix or suffix, that it _contains_ certain characters, or that it follows rules from a regular expression (regex) you enter.
 
-For example, you could specify that "db" be a required prefix, suffix, or contains; requiring the user to add volume names like "db_vol1", "vol1_db", "vol_db_1".
+For example, you could specify that "db" be a required prefix, suffix, or contains; requiring the user to add volume names like "db_vol1", "vol1_db", or "vol_db_1".
 
-| Volume Size | You can specify a range of allowable values, or you can specify a fixed size. This value is in GB.  For our example we can add a fixed value *100*.
+| Volume Size | You can specify a range of allowable values, or you can specify a fixed size. This value is in GB. For our example we can add a fixed value *100*.
 
 |===
 
@@ -138,7 +138,7 @@ For example, you could specify that "db" be a required prefix, suffix, or contai
 
 . *Usage Profile:* Choose whether or not NetApp storage efficiency features are applied to the volume. This includes Thin Provisioning, Deduplication, and Compression. For our example, keep storage efficiency enabled.
 
-. *Disk Type:* Choose the cloud storage provider, the type of disk, and the capacity tier (optional) that will be used for the aggregate that the volume uses for storage. For our example, choose *AWS* and select *GP2* as the Disk Type.
+. *Disk Type:* Choose the cloud storage provider and the type of disk. For some disk selections you can also select a minimum and maximum IOPS or Throughput (MB/s) value; basically defining a certain Quality of Service (QoS).
 
 . *Protocol:* Select *NFS* or *SMB* to set the protocol of the volume. And then the provide the protocol details.
 +
@@ -162,7 +162,7 @@ For example, you could specify that "db" be a required prefix, suffix, or contai
 | SMB Fields
 | Description
 
-| Share Name | Select one of the 5 options. You can let the admin enter any name (Free Text) or you can specify that the share name must have a certain prefix or suffix, that it _contains_ certain characters, or that it follows rules from a regular expression (regex) you enter.
+| Share Name | Click in the field and select one of the 5 options. You can let the admin enter any name (Free Text) or you can specify that the share name must have a certain prefix or suffix, that it _contains_ certain characters, or that it follows rules from a regular expression (regex) you enter.
 
 | Permissions | Select the level of access to a share for users and groups (also called access control lists, or ACLs).
 
@@ -174,20 +174,26 @@ For example, you could specify that "db" be a required prefix, suffix, or contai
 +
 See link:concept_data_tiering.html#volume-tiering-policies[volume tiering policies^] for an overview, and see link:task_tiering.html[Tiering inactive data to object storage^] to make sure your environment is set up for tiering.
 
-. Click *Next* after you have defined the parameters needed for this action.
+. Click *Apply* after you have defined the parameters needed for this action.
 +
-The _Add Actions_ page is displayed.
+If the template values are correctly completed, a green box is shown around the "Create Volume in Cloud Volumes ONTAP" box.
+
+. Click the *Enable Cloud Backup* box and the _Enable Cloud Backup Action Definition_ dialog is displayed so you can fill in the Cloud Backup details.
 +
 image:screenshot_create_template_add_action.png[A screenshot showing additional actions that you can add to the created volume.]
 
-. Use the switch to enable Backups (if required), and then set the policy to create daily backups with a 30-day retention value.
+. Define the backup policy to create daily backups with a 30-day retention value.
 
-. In the read-only Volume Name field the value "$input.[0].name" appears. This just means that the value entered by the admin in the "Volume Name" field will be populated here as well so that Backup functionality is added to the volume.
+. Below the Volume Name field there are three fields you use to indicate which volume will get backup applied. See <<Passing values between template actions,how to complete these fields>>.
 
-. Click *Next* and the _Configure Drift_ page is displayed. In the future this page will allow you to choose whether the Drift feature should be applied to the template. This will allow Cloud Manager to monitor the hard-coded values you entered for parameters when creating this template.
+. Click *Apply* and the Cloud Backup dialog is saved.
+
+. Click *Template settings* if you want to provide a more detailed description so that this template can be distinguished from other similar templates, and then click *Apply*.
+//
+//_Configure Drift_ page is displayed. In the future this page will allow you to choose whether the Drift feature should be applied to the template. This will allow Cloud Manager to monitor the hard-coded values you entered for parameters when creating this template.
 // . In the _Configure Drift_ page, choose whether the Drift feature should be applied to the template so that Cloud Manager monitors the hard-coded values you entered for parameters when creating this template.
 
-. Click *Create Template*.
+. Click *Save Template*.
 
 .Result
 
