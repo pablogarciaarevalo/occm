@@ -26,7 +26,7 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 * <<Cloud Sync enhancements>>
 * <<Cloud Compliance enhancements>>
 * <<Application Templates enhancements>>
-* <<Account enhancements>>
+* <<Account enhancement>>
 
 == Monitoring enhancements
 
@@ -40,13 +40,25 @@ link:concept_monitoring.html[Learn more about using the Monitoring service with 
 
 We redesigned the Replication tab for ease of use and to match the current look and feel of the Cloud Manager user interface.
 
-image:replication.gif[]
+image:replication.gif[A screenshot of the redesigned Replication tab in Cloud Manager that shows a list of volume relationships.]
+
+== Cloud Sync enhancements
+
+* You can now view the errors found in reports and you can delete the last report or all reports.
++
+link:task_sync_managing_reports.html[Learn more about creating and viewing reports to tune your configuration].
+
+* A new *Compare by* setting is now available for each sync relationship.
++
+This advanced setting enables you to choose whether Cloud Sync should compare certain attributes when determining whether a file or directory has changed and should be synced again.
++
+link:task_sync_managing_relationships.html#changing-the-settings-for-a-sync-relationship[Learn more about changing the settings for a sync relationship].
 
 == Account enhancement
 
 The Timeline in Cloud Manager now shows actions and events related to account management. The actions include things like associating users, creating workspaces, and creating Connectors. Checking the Timeline can be helpful if you need to identify who performed a specific action, or if you need to identify the status of an action.
 
-link:task_managing_cloud_central_accounts[Learn how to filter the Timeline to the Tenancy service].
+link:task_managing_cloud_central_accounts.html[Learn how to filter the Timeline to the Tenancy service].
 
 == Cloud Manager 3.9.5 (11 Apr 2021)
 
