@@ -89,13 +89,13 @@ The list of all backup files (snapshots) is displayed along with details about t
 +
 image:screenshot_backup_view_backups.png[A screenshot that shows the List of all backup files for a single volume.]
 
-== Delete backups
+== Deleting backups
 
 Cloud Backup enables you to delete a single backup file, delete all backups for a volume, or delete all backups of all volumes in a working environment. You might want to delete all backups if you no longer need the backups or if you deleted the source volume and want to remove all backups.
 
 Note that deleting all backups does not disable further backups of this volume or the working environment. If you want to stop creating backups of a volume, you can disable backups <<Starting and stopping backups of volumes,as described here>>. If you want to stop creating backups of all volumes in a working environment, you can deactivate backups <<Disabling Cloud Backup for a working environment,as described here>>.
 
-IMPORTANT: If you plan to delete a Cloud Volumes ONTAP or on-premises ONTAP system that has backups, you must delete the backups *before* deleting the system. Cloud Backup doesn’t automatically delete backups when you delete a system, and there is no current support in the UI to delete the backups after the system has been deleted.
+IMPORTANT: If you plan to delete a Cloud Volumes ONTAP or on-premises ONTAP system that has backups, you must delete the backups *before* deleting the system. Cloud Backup doesn’t automatically delete backups when you delete a system, and there is no current support in the UI to delete the backups after the system has been deleted. You'll continue to be charged for object storage costs for any remaining backups.
 
 === Deleting all backup files for a working environment
 
@@ -153,7 +153,7 @@ image:screenshot_delete_one_backup.png[A screenshot showing how to delete a sing
 
 Disabling Cloud Backup for a working environment disables backups of each volume on the system, and it also disables the ability to restore a volume. Any existing backups will not be deleted.
 
-Note that you'll continue to be charged by your cloud provider for object storage costs for the capacity that your backups use unless you delete the backups.
+Note that you'll continue to be charged by your cloud provider for object storage costs for the capacity that your backups use unless you <<Deleting all backup files for a working environment,delete the backups>>.
 
 .Steps
 

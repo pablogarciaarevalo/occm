@@ -151,10 +151,12 @@ Systems that were shifted over to a PAYGO license are returned to the BYOL licen
 == How Cloud Backup works
 
 When you enable Cloud Backup on a Cloud Volumes ONTAP or on-premises ONTAP system, the service performs a full backup of your data. Volume snapshots are not included in the backup image. After the initial backup, all additional backups are incremental, which means that only changed blocks and new blocks are backed up. This keeps network traffic to a minimum.
+//
+// In most cases you will use Cloud Manager for all backup and restore operations. However, starting with ONTAP 9.9.1 you can initiate volume backup operations of your on-premises ONTAP clusters using ONTAP System Manager. See how to use System Manager to back up your volumes to the cloud using Cloud Backup.
+//
+// NOTE: Any actions taken directly from your cloud provider to manage backup files results in an unsupported configuration.
 
-In most cases you will use Cloud Manager for all backup and restore operations. However, starting with ONTAP 9.9.1 you can initiate volume backup operations of your on-premises ONTAP clusters using ONTAP System Manager. See how to use System Manager to back up your volumes to the cloud using Cloud Backup.
-
-NOTE: Any actions taken directly from your cloud provider to manage backup files results in an unsupported configuration.
+NOTE: You must use Cloud Manager for all backup and restore operations. Any actions taken directly from ONTAP or from your cloud provider results in an unsupported configuration.
 
 The following image shows the relationship between each component:
 
