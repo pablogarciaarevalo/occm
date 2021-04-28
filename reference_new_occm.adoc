@@ -26,7 +26,7 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 * <<Monitoring enhancements>>
 * <<Replication enhancement>>
 * <<Cloud Compliance enhancements>>
-* <<Application Templates enhancements>>
+* <<Application Template enhancement>>
 * <<Account enhancement>>
 
 === Cloud Backup & Restore enhancements
@@ -84,7 +84,7 @@ image:replication.gif[A screenshot of the redesigned Replication tab in Cloud Ma
 
 * New personal data type. Cloud Compliance can now find Austrian SSNs in files.
 
-=== Application Template enhancements
+=== Application Template enhancement
 
 The user interface has been enhanced in the AppTemplates service so that it is easier for template designers to move between actions and to see which action they are currently defining.
 
