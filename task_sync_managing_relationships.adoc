@@ -91,7 +91,7 @@ Even if you uncheck these attributes, Cloud Sync still compares the source to th
 You can choose to enable or disable Cloud Sync from comparing the following attributes:
 +
 * *mtime*: The last modified time for a file. This attribute isn't valid for directories.
-* *uid*, *gid*, and *mode*: Permission flags for NFS. These attributes are valid for NFS only.
+* *uid*, *gid*, and *mode*: Permission flags for Linux.
 
 Recently Modified Files:: Choose to exclude files that were recently modified prior to the scheduled sync.
 
