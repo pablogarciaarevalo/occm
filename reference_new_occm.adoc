@@ -81,6 +81,8 @@ image:replication.gif[A screenshot of the redesigned Replication tab in Cloud Ma
 
 === Cloud Compliance enhancements
 
+* Cloud Compliance has been renamed to “Governance & Compliance”. There are two tabs in Cloud Manager: “Governance” and “Compliance”. The “Governance” tab brings you to the “Governance Dashboard” within the “Governance & Compliance” service, and the “Compliance” tab brings you to the “Compliance Dashboard” within the “Governance & Compliance” service.
+
 * Scanning of data stored on Azure Blob is now supported when using the https://min.io/[MinIO service^]. See link:task_scanning_object_storage.html[Scanning object storage that uses S3 protocol^] for details.
 
 * New personal data type. Cloud Compliance can now find Austrian SSNs in files.
