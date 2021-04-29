@@ -28,9 +28,9 @@ Each time that you create a report, Cloud Sync scans the path and then compiles 
 +
 The paths (source or target) in each of your sync relationships display in a table.
 
-. In the *Reports Actions* column, click the action menu for a path and select *Create New*.
+. In the *Reports Actions* column, go to a specific path and click *Create*, or click the action menu and select *Create New*.
 
-. When the report is ready, click *View*.
+. When the report is ready, click action menu and select *View*.
 +
 Here's a sample report for a file system path.
 +
