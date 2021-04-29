@@ -14,13 +14,13 @@ summary: Create and view reports to get information that you can use with the he
 :imagesdir: ./media/
 
 [.lead]
-Create and view reports to get information that you can use with the help of NetApp personnel to tune a data broker’s configuration and improve performance.
+Create and view reports to get information that you can use with the help of NetApp personnel to tune a data broker's configuration and improve performance.
 
 Each report provides in-depth details about a path in a sync relationship. For example, the report for a file system shows how many directories and files there are, the distribution of file size, how deep and wide the directories are, and more.
 
 == Creating reports
 
-Create a new report for a path at any time.
+Each time that you create a report, Cloud Sync scans the path and then compiles the details into a report. 
 
 .Steps
 
@@ -42,7 +42,11 @@ image:screenshot_sync_report_object.gif[A report that shows the number of path i
 
 == Viewing report errors
 
-The Paths table identifies whether any errors are present in the most recent report. View the report errors, address any issues, and then run the report again.
+The Paths table identifies whether any errors are present in the most recent report. An error identifies an issue that Cloud Sync faced when scanning the path.
+
+For example, a report might contain permission denied errors. This type of error can affect Cloud Sync's ability to scan the entire set of files and directories.
+
+After you view the list of errors, you can then address the issues and run the report again.
 
 .Steps
 
@@ -50,9 +54,9 @@ The Paths table identifies whether any errors are present in the most recent rep
 
 . In the *Errors* column, identify whether any errors are present in a report.
 
-. If errors are present, click the action menu and select *View*.
-
-. In the report, click the action menu and select *View errors*.
+. If errors are present, click the arrow next to the number of errors.
++
+image:screenshot_sync_reports_errors.gif[A screenshot of the Paths table that shows the number of errors and a small clickable arrow in the Errors column.]
 
 . Use the information in the error to correct the issue.
 +
@@ -60,7 +64,7 @@ After you resolve the issue, the error shouldn't appear the next time that you r
 
 == Deleting reports
 
-Delete any reports that you no longer need.
+You might delete a report of it contained an error that you fixed, or if the report is related to a sync relationship that you removed.
 
 .Steps
 
