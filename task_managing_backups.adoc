@@ -45,7 +45,7 @@ image:screenshot_backup_settings_button.png[A screenshot that shows the Backup S
 +
 image:screenshot_backup_modify_policy.png[A screenshot that shows the Backup Settings button which is available after you select a working environment.]
 
-. From the _Modify Backup Policy_ page, change the schedule and backup retention and then click *Save*.
+. From the _Modify Policy_ page, change the schedule and backup retention and then click *Save*.
 +
 image:screenshot_backup_modify_policy_page.png[A screenshot that shows the Cloud Backup settings where you can modify the backup schedule and backup retention setting.]
 
