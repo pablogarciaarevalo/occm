@@ -293,7 +293,7 @@ entries:
         url: /task_sync_managing_relationships.html
       - title: Manage data brokers
         url: /task_sync_managing_data_brokers.html
-      - title: View reports to tune your configuration
+      - title: Create reports to tune your configuration
         url: /task_sync_managing_reports.html
       - title: Uninstall the data broker
         url: /task_sync_uninstalling.html

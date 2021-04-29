@@ -20,7 +20,7 @@ Each report provides in-depth details about a path in a sync relationship. For e
 
 == Creating reports
 
-Each time that you create a report, Cloud Sync scans the path and then compiles the details into a report. 
+Each time that you create a report, Cloud Sync scans the path and then compiles the details into a report.
 
 .Steps
 
@@ -56,7 +56,7 @@ After you view the list of errors, you can then address the issues and run the r
 
 . If errors are present, click the arrow next to the number of errors.
 +
-image:screenshot_sync_reports_errors.gif[A screenshot of the Paths table that shows the number of errors and a small clickable arrow in the Errors column.]
+image:screenshot_sync_report_errors.gif[A screenshot of the Paths table that shows the number of errors and a small clickable arrow in the Errors column.]
 
 . Use the information in the error to correct the issue.
 +
