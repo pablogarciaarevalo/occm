@@ -80,7 +80,7 @@ As an example, if you enter "^[a-zA-Z][0-9a-zA-Z_]{0,149}$" as the regex for the
 
 == Passing values between template actions
 
-Templates have the ability to use information from a previous action to populate a field in a future action. For example, when defining the name of the volume that will have Cloud Backup functionality enabled, you can instruct the Backup action to use the value the storage admin used as the name of the volume from the Create Cloud Volumes ONTAP action.
+Templates have the ability to use information from a previous action to populate a field in a future action. For example, when defining the name of the volume that will have Cloud Backup functionality enabled, you can instruct the Backup action to use the value the storage admin entered as the name of the volume from the Create Cloud Volumes ONTAP action.
 
 The following illustration shows how to enter this information in the Backup action section of the template.
 
@@ -184,7 +184,7 @@ image:screenshot_create_template_add_action.png[A screenshot showing additional 
 
 . Define the backup policy to create daily backups with a 30-day retention value.
 
-. Below the Volume Name field there are three fields you use to indicate which volume will get backup applied. See <<Passing values between template actions,how to complete these fields>>.
+. Below the Volume Name field there are three fields you use to indicate which volume will have backup enabled. See <<Passing values between template actions,how to complete these fields>>.
 
 . Click *Apply* and the Cloud Backup dialog is saved.
 
@@ -209,19 +209,21 @@ See link:task_manage_anf_volumes.html#creating-volumes[how to provision Azure Ne
 
 .Steps
 
-. Select the *AppTemplate* service and click *Add New Template*.
+. Select the *AppTemplate* service and click *Add new template*.
 +
-The _Select_Primary Action_ page is displayed.
+The _Select_a Template_ page is displayed.
 +
 image:screenshot_create_template_primary_action_anf.png[A screenshot showing how to select the primary action that will be performed using this template.]
 
-. Select *Create Volume in Azure NetApp Files* as the type of resource you want to create, and click *Next*.
+. Select *Volume for Azure NetApp Files* as the type of resource you want to create, and click *Get Started*.
 +
-The _Add Definitions_ page is displayed.
+The _Create Volume in Azure NetApp Files Action Definition_ page is displayed.
 +
 image:screenshot_create_template_define_action_anf.png[A screenshot showing a blank ANF template that you need to fill in.]
 
-. *Azure NetApp Files Details:* Add the details for a new or an existing Azure NetApp Files account.
+. Enter the name you want to use for the template in the top left.
+
+. *Details:* Enter the details for a new or an existing Azure NetApp Files account.
 +
 [cols=2*,options="header",cols="25,75"]
 
@@ -249,9 +251,9 @@ image:screenshot_create_template_define_action_anf.png[A screenshot showing a bl
 | Field
 | Description
 
-| Volume Name | Select one of the 5 options. You can let the admin enter any name by selecting *Free Text*, or you can specify that the volume name must have a certain prefix or suffix, that it _contains_ certain characters, or that it follows rules from a regular expression (regex) you enter.
+| Volume Name | Click in the field and select one of the 5 options. You can let the admin enter any name by selecting *Free Text*, or you can specify that the volume name must have a certain prefix or suffix, that it _contains_ certain characters, or that it follows rules from a regular expression (regex) you enter.
 
-For example, you could specify that "db" be a required prefix, suffix, or contains; requiring the user to add volume names like "db_vol1", "vol1_db", "vol_db_1".
+For example, you could specify that "db" be a required prefix, suffix, or contains; requiring the user to add volume names like "db_vol1", "vol1_db", or "vol_db_1".
 
 | Volume Size | You can specify a range of allowable values, or you can specify a fixed size. This value is in GB.
 
