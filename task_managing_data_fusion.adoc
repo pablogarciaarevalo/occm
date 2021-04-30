@@ -27,7 +27,7 @@ As you can see, two unique Customer IDs have been found in two volumes and in on
 
 You must have link:task_scanning_databases.html#adding-the-database-server[added at least one database server^] to Cloud Compliance before you can add data fusion sources.
 
-. In the Scan Configuration page, click *Manage Data Fusion* in the database where the source data resides.
+. In the Configuration page, click *Manage Data Fusion* in the database where the source data resides.
 +
 image:screenshot_compliance_manage_data_fusion.png[A screenshot of selecting the Manage Data Fusion button to add a source column.]
 

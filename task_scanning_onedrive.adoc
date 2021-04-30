@@ -70,7 +70,7 @@ You can add individual OneDrive users, or all of your OneDrive users, so that th
 
 .Steps
 
-. From the _Scan Configuration_ page, click the *Configuration* button for the OneDrive account.
+. From the _Configuration_ page, click the *Configuration* button for the OneDrive account.
 +
 image:screenshot_compliance_onedrive_add_users.png[A screenshot of the Scan Configuration page where you can select the Configuration button.]
 

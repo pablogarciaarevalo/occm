@@ -208,14 +208,14 @@ image:screenshot_cloud_compliance_deploy_cloud.png[A screenshot of selecting the
 +
 image:screenshot_cloud_compliance_wizard_start.png[A screenshot of the Cloud Compliance wizard to deploy a new instance.]
 
-. When the instance is deployed, click *Continue to configuration* to go to the _Scan Configuration_ page.
+. When the instance is deployed, click *Continue to configuration* to go to the _Configuration_ page.
 
 .Result
 
 Cloud Manager deploys the Cloud Compliance instance in your cloud provider.
 
 .What's Next
-From the Scan Configuration page you can select the data sources that you want to scan.
+From the Configuration page you can select the data sources that you want to scan.
 
 You can also <<Subscribing to the Cloud Compliance service,subscribe to the Cloud Compliance service>> at this time. You will not be charged until the amount of data exceeds 1 TB.
 
@@ -307,7 +307,7 @@ The Cloud Compliance installer installs packages, installs docker, registers the
 If there is connectivity over port 8080 between the host machine and the Connector instance, you will see the installation progress in the Compliance tab in Cloud Manager.
 
 .What's Next
-From the Scan Configuration page you can select the data sources that you want to scan.
+From the Configuration page you can select the data sources that you want to scan.
 
 You can also <<Subscribing to the Cloud Compliance service,subscribe to the Cloud Compliance service>> at this time. You will not be charged until the amount of data exceeds 1 TB. A subscription to either the AWS or Azure Marketplace can be used when you have deployed Cloud Compliance on an on-premises system.
 
