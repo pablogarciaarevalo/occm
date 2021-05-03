@@ -191,9 +191,13 @@ For example, "db" could be a required prefix, suffix, or contains; meaning your 
 +
 See link:concept_data_tiering.html#volume-tiering-policies[volume tiering policies] for an overview, and see link:task_tiering.html[Tiering inactive data to object storage] to make sure your environment is set up for tiering.
 
-. Click *Next* after you have defined the parameters needed for this volume.
-
-. In the _Define Actions_ page, if required, enable Backups and set the policy to create backups with a certain retention value.
+. If there are no other Actions that you need to define, click *Create Volume*.
++
+If there are other actions, click the action in the left pane to display the parameters you need to complete.
++
+image:screenshot_template_select_next_action.png[A screenshot showing how to select additional actions that need to be completed.]
++
+For example, if the Enable Cloud Backup action requires that you select a backup policy, you can do that now.
 
 . Click *Create Volume*.
 
