@@ -47,6 +47,10 @@ Read the following requirements to make sure that you have a supported configura
 
 * When creating an Azure NetApp Files volume template, make sure you have an Azure NetApp Files working environment available for your users. See how to link:task_manage_anf.html[create an Azure NetApp Files working environment^] in Cloud Manager.
 
+* If you plan to enable Cloud Backup on Cloud Volumes ONTAP volumes, ensure that your environment has an active and licensed Cloud Backup service.
+
+* If you plan to enable Cloud Compliance on Cloud Volumes ONTAP or Azure NetApp Files volumes, ensure that your environment has an active and licensed Cloud Compliance service.
+
 == Special template controls ==
 
 Before you start creating your template, you should understand some special options that you can set when pre-populating a value for a parameter in a template.
@@ -82,11 +86,22 @@ As an example, if you enter "^[a-zA-Z][0-9a-zA-Z_]{0,149}$" as the regex for the
 
 Templates have the ability to use information from a previous action to populate a field in a future action. For example, when defining the name of the volume that will have Cloud Backup functionality enabled, you can instruct the Backup action to use the value the storage admin entered as the name of the volume from the Create Cloud Volumes ONTAP action.
 
-The following illustration shows how to enter this information in the Backup action section of the template.
+There are two types of information that the AppTemplate service can use from previous actions:
 
-image:screenshot_template_variable_input.png[An illustration showing how to use a value entered in a previous action to populate a field in another action.]
+* Input value - This is the actual value the storage admin entered into a field in a previous template action.
+* Output value - This is the value Cloud Manager generates after creating a resource from a previous template action.
 
-At this time there are no use cases for selecting an "Output" operation, so the "Input" operation is the only option you can currently use.
+For example, to enable Compliance on a volume, the Cloud Compliance service needs both the "volume name" that the storage admin enters (the Input value), and the "volume uuid" that Cloud Manager generates when it creates the volume (the Output value).
+
+The following illustration shows how to enter this information in the Cloud Compliance action section of the template.
+
+image:screenshot_template_variable_input_output.png[An illustration showing how to use a value entered in a previous action to populate a field in another action.]
+//
+// The following illustration shows how to enter this information in the Backup action section of the template.
+//
+// image:screenshot_template_variable_input.png[An illustration showing how to use a value entered in a previous action to populate a field in another action.]
+//
+// At this time there are no use cases for selecting an "Output" operation, so the "Input" operation is the only option you can currently use.
 
 == Creating a template for a Cloud Volumes ONTAP volume
 
@@ -115,8 +130,6 @@ image:screenshot_create_template_primary_action_cvo.png[A screenshot showing how
 The _Create Volume in Cloud Volumes ONTAP Action Definition_ page is displayed.
 +
 image:screenshot_create_template_define_action_cvo.png[A screenshot showing a blank CVO template that you need to fill in.]
-
-. Enter the template name *CVO volume for databases* (for this example) in the top left.
 
 . *Details:* Enter the volume name and size.
 +
@@ -188,6 +201,8 @@ image:screenshot_create_template_add_action.png[A screenshot showing additional 
 
 . Click *Apply* and the Cloud Backup dialog is saved.
 
+. Enter the template name *CVO volume for databases* (for this example) in the top left.
+
 . Click *Template settings* if you want to provide a more detailed description so that this template can be distinguished from other similar templates, and then click *Apply*.
 //
 //_Configure Drift_ page is displayed. In the future this page will allow you to choose whether the Drift feature should be applied to the template. This will allow Cloud Manager to monitor the hard-coded values you entered for parameters when creating this template.
@@ -220,8 +235,6 @@ image:screenshot_create_template_primary_action_anf.png[A screenshot showing how
 The _Create Volume in Azure NetApp Files Action Definition_ page is displayed.
 +
 image:screenshot_create_template_define_action_anf.png[A screenshot showing a blank ANF template that you need to fill in.]
-
-. Enter the name you want to use for the template in the top left.
 
 . *Details:* Enter the details for a new or an existing Azure NetApp Files account.
 +
@@ -290,6 +303,10 @@ For example, you could specify that "db" be a required prefix, suffix, or contai
 . Click *Next* after you have defined the parameters needed for this action.
 
 . Click *Next* as there are no additional Actions available at this time for ANF volumes.
+
+. Enter the name you want to use for the template in the top left.
+
+. Click *Template settings* if you want to provide a more detailed description so that this template can be distinguished from other similar templates, and then click *Apply*.
 
 . In the future the _Configure Drift_ page will allow you to choose whether the Drift feature should be applied to the template. This will allow Cloud Manager to monitor the hard-coded values you entered for parameters when creating this template.
 // . In the _Configure Drift_ page, choose whether the Drift feature should be applied to the template so that Cloud Manager monitors the hard-coded values you entered for parameters when creating this template.

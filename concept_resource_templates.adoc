@@ -41,7 +41,8 @@ A template is a chain of "actions" that have some pre-defined values. You can bu
 
 * Create a Cloud Volumes ONTAP volume
 * Create an Azure NetApp Files volume
-* Enable the Cloud Backup service
+* Enable Cloud Backup on created volumes
+* Enable Cloud Compliance on created volumes (Cloud Volumes ONTAP volumes only)
 
 More actions will be added over time by NetApp.
 
