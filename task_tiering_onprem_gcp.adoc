@@ -33,7 +33,7 @@ You need the following:
 ==== image:number2.png[number2] Set up tiering
 
 [role="quick-margin-para"]
-In Cloud Manager, select an on-prem working environment, click *Setup Tiering* and follow the prompts to tier data to Google Cloud Storage.
+In Cloud Manager, select an on-prem working environment, click *Enable* and follow the prompts to tier data to Google Cloud Storage.
 
 ==== image:number3.png[number 3] Set up licensing
 
@@ -145,9 +145,9 @@ After you prepare your Google Cloud environment, start tiering inactive data fro
 
 . Select an on-prem cluster.
 
-. Click *Enable*.
+. Click *Enable* for the Tiering service.
 +
-image:screenshot_setup_tiering_onprem.gif[A screenshot that shows the Enable option that appears on the right side of the screen after you select an on-prem ONTAP working environment.]
+image:screenshot_setup_tiering_onprem.png[A screenshot that shows the Enable option that appears on the right side of the screen after you select an on-prem ONTAP working environment.]
 
 . Complete the steps on the *Tiering Setup* page:
 
@@ -165,17 +165,20 @@ Selecting the correct IPspace ensures that Cloud Tiering can set up a connection
 
 . Click *Continue* to select the volumes that you want to tier.
 
-. On the *Tier Volumes* page, set up tiering for each volume.
+. On the _Tier Volumes_ page, select the volumes that you want to configure tiering for and launch the Tiering Policy page:
+
++
+* To select all volumes, check the box in the title row (image:button_backup_all_volumes.png[]) and click *Configure volumes*.
+* To select multiple volumes, check the box for each volume (image:button_backup_1_volume.png[]) and click *Configure volumes*.
+* To select a single volume, click the row (or image:screenshot_edit_icon.gif[edit pencil icon] icon) for the volume.
++
+image:screenshot_tiering_modify_volumes.gif[A screenshot that shows how to select a single volume, multiple volume, or all volumes, and the modify selected volumes button.]
+
+. In the _Tiering Policy_ dialog, select a tiering policy, optionally adjust the cooling days for the selected volumes, and click *Apply*.
 +
 link:concept_cloud_tiering.html#volume-tiering-policies[Learn more about volume tiering policies].
 +
-* To select a tiering policy for just one volume, click the image:screenshot_edit_icon.gif[A screenshot of the edit icon that appears at the end of each row in the table for tiering volumes] icon, select a tiering policy, and optionally adjust the cooling days.
-+
-image:screenshot_tiering_modify_volume.gif[A screenshot that shows the edit icon for a volume.]
-
-* To select a tiering policy for several volumes, select multiple volumes, click *Modify selected volumes*, select a tiering policy, and optionally adjust the cooling days.
-+
-image:screenshot_tiering_modify_volumes.gif[A screenshot that shows multiple volumes selected and the Modify selected volumes button.]
+image:screenshot_tiering_policy_settings.png[A screenshot that shows the configurable tiering policy settings.]
 
 .Result
 
