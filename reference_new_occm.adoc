@@ -23,6 +23,7 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 * <<Cloud Tiering enhancements>>
 * <<Application Template enhancements>>
+* <<Cloud Sync enhancements>>
 
 === Cloud Tiering enhancements
 
@@ -35,6 +36,18 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 * The user interface has been enhanced in the AppTemplates service so that it is easier for template designers to move between actions and to see which action they are currently defining.
 
 * Now you can integrate Cloud Compliance when creating a volume template for either Cloud Volumes ONTAP or Azure NetApp Files. So you can enable Compliance for each newly created volume, or enable Cloud Backup for each newly created volume... or create a template that enables both Backup and Compliance on the created volume.
+
+=== Cloud Sync enhancements
+
+* You can now view the errors found in reports and you can delete the last report or all reports.
++
+link:task_sync_managing_reports.html[Learn more about creating and viewing reports to tune your configuration].
+
+* A new *Compare by* setting is now available for each sync relationship.
++
+This advanced setting enables you to choose whether Cloud Sync should compare certain attributes when determining whether a file or directory has changed and should be synced again.
++
+link:task_sync_managing_relationships.html#changing-the-settings-for-a-sync-relationship[Learn more about changing the settings for a sync relationship].
 
 == Cloud Manager 3.9.5 (11 Apr 2021)
 
