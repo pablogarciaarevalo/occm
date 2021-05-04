@@ -93,6 +93,15 @@ Schedule:: Choose a recurring schedule for future syncs or turn off the sync sch
 
 Retries:: Define the number of times that Cloud Sync should retry to sync a file before skipping it.
 
+Compare By:: Choose whether Cloud Sync should compare certain attributes when determining whether a file or directory has changed and should be synced again.
++
+Even if you uncheck these attributes, Cloud Sync still compares the source to the target by checking the paths, file sizes, and file names. If there are any changes, then it syncs those files and directories.
++
+You can choose to enable or disable Cloud Sync from comparing the following attributes:
++
+* *mtime*: The last modified time for a file. This attribute isn't valid for directories.
+* *uid*, *gid*, and *mode*: Permission flags for Linux.
+
 Recently Modified Files:: Choose to exclude files that were recently modified prior to the scheduled sync.
 
 Delete Files on Source:: Choose to delete files from the source location after Cloud Sync copies the files to the target location. This option includes the risk of data loss because the source files are deleted after they're copied.
