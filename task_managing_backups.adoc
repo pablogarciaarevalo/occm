@@ -95,7 +95,7 @@ Cloud Backup enables you to delete a single backup file, delete all backups for 
 
 Note that deleting all backups does not disable further backups of this volume or the working environment. If you want to stop creating backups of a volume, you can disable backups <<Starting and stopping backups of volumes,as described here>>. If you want to stop creating backups of all volumes in a working environment, you can deactivate backups <<Disabling Cloud Backup for a working environment,as described here>>.
 
-IMPORTANT: If you plan to delete a Cloud Volumes ONTAP or on-premises ONTAP system that has backups, you must delete the backups *before* deleting the system. Cloud Backup doesn’t automatically delete backups when you delete a system, and there is no current support in the UI to delete the backups after the system has been deleted. You'll continue to be charged for object storage costs for any remaining backups.
+CAUTION: If you plan to delete a Cloud Volumes ONTAP or on-premises ONTAP system that has backups, you must delete the backups *before* deleting the system. Cloud Backup doesn’t automatically delete backups when you delete a system, and there is no current support in the UI to delete the backups after the system has been deleted. You'll continue to be charged for object storage costs for any remaining backups.
 
 === Deleting all backup files for a working environment
 
