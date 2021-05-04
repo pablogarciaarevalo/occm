@@ -19,6 +19,23 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.6 (2 May 2021)
+
+* <<Cloud Tiering enhancements>>
+* <<Application Template enhancements>>
+
+=== Cloud Tiering enhancements
+
+* When selecting the volumes that you want to tier from an ONTAP system, now there's a checkbox in the Tier Volumes page to select *all* volumes to make it easier to apply the same policy to all volumes. link:task_managing_tiering.html#tiering-data-from-additional-volumes[See how to select all volumes in the cluster^].
+
+* If you need to change the number of "cooling days" that determine how long data in a volume must remain inactive before it is moved to object storage, now you can specify up to 183 days (up from 63 days) when using ONTAP 9.8 or greater.
+
+=== Application Template enhancements
+
+* The user interface has been enhanced in the AppTemplates service so that it is easier for template designers to move between actions and to see which action they are currently defining.
+
+* Now you can integrate Cloud Compliance when creating a volume template for either Cloud Volumes ONTAP or Azure NetApp Files. So you can enable Compliance for each newly created volume, or enable Cloud Backup for each newly created volume... or create a template that enables both Backup and Compliance on the created volume.
+
 == Cloud Manager 3.9.5 (11 Apr 2021)
 
 * <<Cloud Volumes ONTAP enhancements>>
