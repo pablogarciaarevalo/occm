@@ -87,10 +87,10 @@ image:screenshot_restore_select_work_env_volume.png[A screenshot of selecting th
 +
 . If you select an on-premises ONTAP system and you haven't already configured the cluster connection to the object storage, you are prompted for additional information:
 +
-* When restoring from Amazon S3, enter the IPspace in the ONTAP cluster where the destination volumes reside, and the AWS Access Key and Secret Key needed to access the object storage.
-* When restoring from Azure Blob, enter the IPspace in the ONTAP cluster where the destination volumes reside.
-* When restoring from Google Cloud Storage, enter the IPspace in the ONTAP cluster where the destination volumes reside, and the Access Key and Secret Key needed to access the object storage.
-* When restoring from StorageGRID, enter the IPspace in the ONTAP cluster where the destination volumes reside, and the Access Key and Secret Key needed to access the object storage.
+* When restoring from Amazon S3, select the AWS Account and the Access Key and Secret Key to access the object storage, the region where the backups are stored, and the IPspace in the ONTAP cluster where the destination volumes reside.
+* When restoring from Azure Blob, select the Azure Subscription to access the object storage, the region where the backups are stored, and the IPspace in the ONTAP cluster where the destination volumes reside.
+* When restoring from Google Cloud Storage, select the Google Cloud Project and the Access Key and Secret Key to access the object storage, the region where the backups are stored, and the IPspace in the ONTAP cluster where the destination volumes reside.
+* When restoring from StorageGRID, select the Access Key and Secret Key needed to access the object storage, and the IPspace in the ONTAP cluster where the destination volumes reside.
 
 . Select the Storage VM where the volume will reside and enter the name you want to use for the restored volume. By default, *<source_volume_name>_Restore* is used as the volume name.
 +

@@ -67,6 +67,8 @@ image:screenshot_backup_manage_volumes.png[A screenshot that shows the Manage Vo
 +
 image:screenshot_backup_manage_volumes_page.png[The Manage Volumes page where you can select or deselect volumes.]
 
+. Click *Save* to commit your changes.
+
 *Note:* When stopping a volume from being backed up you’ll continue to be charged by your cloud provider for object storage costs for the capacity that the backups use unless you <<Deleting backups,delete the backups>>.
 
 == Viewing the list of backups for each volume
