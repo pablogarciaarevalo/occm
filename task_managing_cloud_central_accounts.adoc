@@ -256,6 +256,20 @@ image:screenshot_subscription_menu.gif[A screenshot of the action menu for a sub
 
 . Choose to rename the subscription or to manage the accounts that are associated with the subscription.
 
+== Auditing user activity in your account
+
+The Timeline in Cloud Manager shows the actions that users completed to manage your account. This includes management actions such as associating users, creating workspaces, creating Connectors, and more. Checking the Timeline can be helpful if you need to identify who performed a specific action, or if you need to identify the status of an action.
+
+.Steps
+
+. Click *All Services > Timeline*.
+
+. Under the Filters, click *Service*, enable *Tenancy*, and click *Apply*.
+
+.Result
+
+The Timeline updates to show you account management actions.
+
 == Changing your account name
 
 Change you account name at any time to change it to something meaningful for you.
