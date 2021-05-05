@@ -77,6 +77,10 @@ For example: s3.us-east-2.amazonaws.com:443
 https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region[See AWS documentation for a list of S3 endpoints^]
 | To contact Amazon S3 when a sync relationship includes an S3 bucket.
 
+| s3.us-east-1.amazonaws.com:443
+
+| When you download data broker logs from Cloud Sync, the data broker zips its logs directory and uploads the logs to a predefined S3 bucket in the us-east-1 region.
+
 |
 cf.cloudsync.netapp.com:443
 repo.cloudsync.netapp.com:443

@@ -22,7 +22,6 @@ Get started quickly by following these steps or scroll down to the remaining sec
 ==== image:number1.png[Number 1] Verify support for your configuration
 
 [role="quick-margin-list"]
-* You must be a new Cloud Insights customer.
 * You need a Cloud Volumes ONTAP system running in AWS or Azure.
 * For AWS, you need a Connector running version 3.8.4 or later.
 * For Azure, you need a Connector running version 3.9.3 or later.
@@ -39,11 +38,6 @@ Get started quickly by following these steps or scroll down to the remaining sec
 [role="quick-margin-para"]
 Click *Monitoring* and view performance data for your volumes.
 
-==== image:number4.png[Number 4] Subscribe to Cloud Insights
-
-[role="quick-margin-para"]
-Subscribe before your 30-day free trial ends to continue seeing performance data within Cloud Manager and Cloud Insights. https://docs.netapp.com/us-en/cloudinsights/concept_subscribing_to_cloud_insights.html[Learn how to subscribe^].
-
 == Requirements
 
 Read the following requirements to make sure that you have a supported configuration.
@@ -56,9 +50,6 @@ Supported Connector::
 * For Azure, you need a Connector running version 3.9.3 or later.
 
 TIP: You can view a Connector's version by clicking the image:screenshot_help_icon.gif[A screenshot of the help icon in the top right of Cloud Manager] icon and then *Support > Connector*.
-
-Cloud Insights requirement::
-You must be a new Cloud Insights customer. Monitoring isn't supported if you already have a Cloud Insights tenant.
 
 Email address for Cloud Central::
 The email address for your Cloud Central user account should be your business email address. Free email domains like gmail and hotmail aren't supported when creating a Cloud Insights tenant.

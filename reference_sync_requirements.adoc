@@ -287,6 +287,10 @@ For example, if an NFS server is in your data center and the data broker is in A
 
 Verify that your source and targets meet the following requirements.
 
+=== Target directory
+
+When you create a sync relationship, Cloud Sync enables you to select an existing target directory and then optionally create a new folder inside that directory. So be sure that you're preferred target directory already exists.
+
 === [[s3]]AWS S3 bucket requirements
 
 Make sure that your AWS S3 bucket meets the following requirements.

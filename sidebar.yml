@@ -154,7 +154,15 @@ entries:
           - title: Create storage VMs in Azure
             url: /task_managing_svms_azure.html
       - title: Replicate data
-        url: /task_replicating_data.html
+        entries:
+          - title: Learn about Replication
+            url: /concept_replication.html
+          - title: Get started
+            url: /task_replicating_data.html
+          - title: Manage schedules and relationships
+            url: /task_managing_replication.html
+          - title: Learn about replication policies
+            url: /concept_replication_policies.html
       - title: Monitor performance
         entries:
           - title: Learn about Monitoring

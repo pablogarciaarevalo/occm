@@ -1,0 +1,54 @@
+---
+sidebar: sidebar
+permalink: concept_replication.html
+keywords: ontap, cluster, discover, manage, cloud manager, hybrid cloud, replication policy, policy, replication, replicating, snapmirror, snapvault, data replication, fanout, cascade, source, destination, disaster recovery, DR, archive, archiving, retention
+summary: NetApp SnapMirror replicates data at high speeds over LAN or WAN, so you get high data availability and fast data replication in both virtual and traditional environments. When you replicate data to NetApp storage systems and continually update the secondary data, your data is kept current and remains available whenever you need it. No external replication servers are required.
+---
+
+= Learn about the Replication service
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+NetApp SnapMirror replicates data at high speeds over LAN or WAN, so you get high data availability and fast data replication in both virtual and traditional environments. When you replicate data to NetApp storage systems and continually update the secondary data, your data is kept current and remains available whenever you need it. No external replication servers are required.
+
+== Features
+
+* Replicate data between storage systems to support backup and disaster recovery to the cloud or between clouds.
+
+* Ensure the reliability of your DR environment with high availability.
+
+* Efficient block-level replication between ONTAP storage is fast and efficient, with granular recovery points for both DR and backup.
+
+== Cost
+
+NetApp doesn't charge you for using the Replication service, but you'll need to check your cloud provider for applicable data ingress and egress charges.
+
+== Supported working environments
+
+Cloud Manager enables data replication between the following types of working environments:
+
+* From a Cloud Volumes ONTAP system to another Cloud Volumes ONTAP system
+
+* Between a Cloud Volumes ONTAP system and an on-prem ONTAP cluster
+
+* From an on-prem ONTAP cluster to another on-prem ONTAP cluster
+
+== How data replication works
+
+Cloud Manager simplifies data replication between volumes on separate systems using SnapMirror and SnapVault technologies. You simply need to identify the source volume and the destination volume, and then choose a replication policy and schedule. Cloud Manager purchases the required disks for Cloud Volumes ONTAP, configures relationships, applies the replication policy, and then initiates the baseline transfer between volumes.
+
+NOTE: The baseline transfer includes a full copy of the source data. Subsequent transfers contain differential copies of the source data.
+
+== Supported data protection configurations
+
+Cloud Manager supports simple, fanout, and cascade data protection configurations:
+
+* In a simple configuration, replication occurs from volume A to volume B.
+
+* In a fanout configuration, replication occurs from volume A to multiple destinations.
+
+* In a cascade configuration, replication occurs from volume A to volume B and from volume B to volume C.
