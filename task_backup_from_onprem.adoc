@@ -284,7 +284,7 @@ See link:concept_backup_to_cloud.html#the-schedule-is-daily-weekly-monthly-or-a-
 +
 image:screenshot_backup_select_volumes.png[A screenshot of selecting the volumes that will be backed up.]
 
-. Click *Next* and Cloud Backup starts taking the initial backups of your volumes.
+. Click *Activate Backup* and Cloud Backup starts taking the initial backups of your volumes.
 +
 When creating backup files in AWS or Azure, you are prompted whether you want to run compliance scans on the backed up volumes. Cloud Compliance scans are free when you run them on the backed up volumes (except for the link:concept_cloud_compliance.html#cost[cost of the deployed Cloud Compliance instance^]).
 +

@@ -171,7 +171,7 @@ image:screenshot_backup_from_onprem_activate.png[A screenshot that shows the Bac
 
 . Select *StorageGRID* as the provider, click *Next*, and then enter the provider details:
 
-.. The Access Key and the Secret Key used to access the bucket to store backups.
+.. The FQDN of the StorageGRID server, Access Key, and the Secret Key used to access the bucket to store backups.
 .. The IPspace in the ONTAP cluster where the volumes you want to back up reside.
 +
 Selecting the correct IPspace ensures that Cloud Backup can set up a connection from ONTAP to your StorageGRID object storage.
@@ -194,7 +194,7 @@ See link:concept_backup_to_cloud.html#the-schedule-is-daily-weekly-monthly-or-a-
 +
 image:screenshot_backup_select_volumes.png[A screenshot of selecting the volumes that will be backed up.]
 
-. Click *Next* and Cloud Backup starts taking the initial backups of each selected volume and the Backup Dashboard is displayed so you can monitor the state of the backups.
+. Click *Activate Backup* and Cloud Backup starts taking the initial backups of each selected volume and the Backup Dashboard is displayed so you can monitor the state of the backups.
 
 .Result
 
