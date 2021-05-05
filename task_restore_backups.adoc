@@ -39,12 +39,13 @@ On-premises ONTAP system | Cloud Volumes ONTAP in Azure
 On-premises ONTAP system
 | Google Cloud Storage | Cloud Volumes ONTAP in Google
 On-premises ONTAP system |
+| NetApp StorageGRID | On-premises ONTAP system |
 
 |===
 
 == The Restore Dashboard
 
-You access the Restore Dashboard by clicking the *Restore* tab from the top of Cloud Manager, or you can click the *Activate* or *Enable* button for the Restore service from the Services panel.
+You access the Restore Dashboard by clicking the *Backup & Restore* tab from the top of Cloud Manager, or you can click image:screenshot_gallery_options.gif[More button] > *View Restore Dashboard* from the Backup & Restore service from the Services panel.
 
 NOTE: The Cloud Backup service must already be activated for at least one working environment.
 
@@ -54,10 +55,9 @@ The Restore Dashboard provides buttons for you to restore volumes and files. Cli
 
 The dashboard also provides a list of all the volumes and all the files you have restored in case you need a history of previous restore actions. You can expand the row for each restored volume or file to view the details about the source and destination locations for the volume or file.
 
-//
-// Note that you can also initiate a volume or file restore operation from a working environment in the Services panel. When started from this location the source working environment selection is automatically filled with the name of the current working environment.
-//
-// image:screenshot_restore_services_actions.png[A screenshot showing how to select volume and file restore operations from the Services panel.]
+Note that you can also initiate a volume or file restore operation from a working environment in the Services panel. When started from this location the source working environment selection is automatically filled with the name of the current working environment.
+
+image:screenshot_restore_services_actions.png[A screenshot showing how to select volume and file restore operations from the Services panel.]
 
 == Restoring a volume from a backup file
 
@@ -67,9 +67,9 @@ You should know the name of the volume you want to restore and the date of the b
 
 .Steps
 
-. Select the *Restore* tab.
-+
-The Restore Dashboard appears.
+. Select the *Backup & Restore* tab.
+
+. Click the *Restore* tab and the Restore Dashboard is displayed.
 
 . Click *Restore Volumes*.
 +
@@ -87,15 +87,16 @@ image:screenshot_restore_select_work_env_volume.png[A screenshot of selecting th
 +
 . If you select an on-premises ONTAP system and you haven't already configured the cluster connection to the object storage, you are prompted for additional information:
 +
-* When restoring from Amazon S3, enter the IPspace in the ONTAP cluster where the destination volumes reside, and the AWS Access Key and Secret Key needed to access the object storage.
-* When restoring from Azure Blob, enter the IPspace in the ONTAP cluster where the destination volumes reside.
-* When restoring from Google Cloud Storage, enter the IPspace in the ONTAP cluster where the destination volumes reside, and the Access Key and Secret Key needed to access the object storage.
+* When restoring from Amazon S3, select the AWS Account and the Access Key and Secret Key to access the object storage, the region where the backups are stored, and the IPspace in the ONTAP cluster where the destination volumes reside.
+* When restoring from Azure Blob, select the Azure Subscription to access the object storage, the region where the backups are stored, and the IPspace in the ONTAP cluster where the destination volumes reside.
+* When restoring from Google Cloud Storage, select the Google Cloud Project and the Access Key and Secret Key to access the object storage, the region where the backups are stored, and the IPspace in the ONTAP cluster where the destination volumes reside.
+* When restoring from StorageGRID, select the Access Key and Secret Key needed to access the object storage, and the IPspace in the ONTAP cluster where the destination volumes reside.
 
 . Select the Storage VM where the volume will reside and enter the name you want to use for the restored volume. By default, *<source_volume_name>_Restore* is used as the volume name.
 +
 image:screenshot_restore_new_vol_name.png[A screenshot of selecting the volume and folder for the files you want to restore.]
 +
-You can select the Aggregate that the volume will use for its' capacity when restoring a volume to an on-premises ONTAP system.
+You can select the Aggregate that the volume will use for its' capacity only when restoring a volume to an on-premises ONTAP system.
 
 . Click *Restore* and you are returned to the Restore Dashboard so you can review the progress of the restore operation.
 
@@ -108,6 +109,8 @@ Cloud Manager creates a new volume based on the backup you selected. You can lin
 If you only need to restore a few files from a volume, you can choose to restore individual files instead of restoring the entire volume. You can restore files to a volume in the same working environment, or to a different working environment that's using the same cloud account. You can also restore files to an on-premises ONTAP system.
 
 You can restore up to 8 files at a time from a volume in a backup file. All the files are restored to the same destination volume that you choose. If you need to restore more than 8 files you can run the restore process a second time.
+
+Note that the ONTAP version must be 9.6 or greater in your Cloud Volumes ONTAP or on-premises ONTAP systems to perform file restore operations.
 
 NOTE: Restoring individual files from a backup file uses a separate Restore instance/virtual machine.
 
@@ -139,7 +142,7 @@ See link:concept_backup_to_cloud.html#cost[this topic^] for the cost of the Clou
 
 * In Azure, the Restore virtual machine runs on a https://docs.microsoft.com/en-us/azure/virtual-machines/dv3-dsv3-series#dsv3-series[Standard_D4s_v3 VM^] with 4 CPUs, 16 GiB Memory, and a 32 GB disk.
 //
-// *In GCP, the Restore virtual machine runs on
+// * In GCP, the Restore virtual machine runs on ???
 
 The instance is named _Cloud-Restore-Instance_ with your Account ID concatenated to it. For example: _Cloud-Restore-Instance-MyAccount_.
 
@@ -219,9 +222,9 @@ NOTE: The ONTAP version must be 9.6 or greater in your source and destination ON
 
 .Steps
 
-. Click the *Restore* tab.
-+
-The Restore Dashboard appears.
+. Select the *Backup & Restore* tab.
+
+. Click the *Restore* tab and the Restore Dashboard is displayed.
 
 . Click the *Restore Files* button.
 +
