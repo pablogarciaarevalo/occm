@@ -16,8 +16,8 @@ summary: Complete a few steps to get started backing up data from your on-premis
 Complete a few steps to get started backing up data from your on-premises ONTAP systems to low-cost object storage in the public cloud. This includes creating backup files on Amazon S3, Azure Blob, and Google Cloud Storage.
 
 If you have a NetApp StorageGRID system and want to create your backups there, see how to link:task_backup_onprem_private_cloud.html[back up on-premises ONTAP data to the private cloud^].
-//
-// TIP:: In most cases you'll use Cloud Manager for all backup and restore operations. However, starting with ONTAP 9.9.1 you can initiate volume backup operations of your on-premises ONTAP clusters using ONTAP System Manager. https://docs.netapp.com/us-en/ontap/task_cloud_backup_data_using_cbs.html[See how to use System Manager to back up your volumes to the cloud using Cloud Backup.^]
+
+TIP:: In most cases you'll use Cloud Manager for all backup and restore operations. However, starting with ONTAP 9.9.1 you can initiate volume backup operations of your on-premises ONTAP clusters using ONTAP System Manager. https://docs.netapp.com/us-en/ontap/task_cloud_backup_data_using_cbs.html[See how to use System Manager to back up your volumes to the cloud using Cloud Backup.^]
 
 A Beta feature released in January 2021 allows you to run Compliance scans on the backed up volumes from your on-premises systems. Typically, compliance scans are free up to 1 TB of data, and then a cost for the service is applied for data over 1 TB. When combining Backup and Compliance for your on-premises volumes, the cost for scans on those on-prem volumes is free. Learn more about how link:concept_cloud_compliance.html[Cloud Compliance^] can get your business applications and cloud environments privacy ready.
 
@@ -265,6 +265,8 @@ image:screenshot_backup_onprem_to_aws.png[A screenshot that shows the cloud prov
 .. The IPspace in the ONTAP cluster where the volumes you want to back up reside.
 +
 image:screenshot_backup_onprem_to_google.png[A screenshot that shows the cloud provider details when backing up volumes from an on-premises cluster to Google Cloud Storage.]
++
+- For StorageGRID, see how to link:task_backup_onprem_private_cloud.html[back up on-premises ONTAP data to the private cloud].
 +
 Note that you cannot change this information after the service has started.
 
