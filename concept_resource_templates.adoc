@@ -41,7 +41,8 @@ A template is a chain of "actions" that have some pre-defined values. You can bu
 
 * Create a Cloud Volumes ONTAP volume
 * Create an Azure NetApp Files volume
-* Enable the Cloud Backup service
+* Enable Cloud Backup on created volumes (Cloud Volumes ONTAP volumes only)
+* Enable Cloud Compliance on created volumes
 
 More actions will be added over time by NetApp.
 
@@ -67,5 +68,5 @@ For example, they create a volume that will be used for an Oracle database by us
 == Limitations
 
 * The Application Templates service is not supported in any of the Gov Cloud regions or in "dark" sites.
-* You can't use a template to create a volume on an existing aggregate. New volumes are created in a new aggregate.
+* You can't use a template to create a Cloud Volumes ONTAP volume on an existing aggregate. New volumes are created in a new aggregate.
 * You can't use a template to create a volume on a Cloud Volumes ONTAP system that includes multiple Storage VMs (SVMs).
