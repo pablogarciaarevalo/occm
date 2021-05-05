@@ -19,6 +19,25 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.6 update (5 May 2021)
+
+=== Cloud Backup enhancements
+
+* The separate Backup and Restore Dashboards have been combined under a new *Backup & Restore* tab to make it easier for you to manage all your backup and restore operations from a single location. See link:task_managing_backups.html#viewing-the-volumes-that-are-being-backed-up[the Backup & Restore Dashboard^] for details. 
+
+* Now you can create backups from your on-premises ONTAP systems to Google Cloud Storage or to your NetApp StorageGRID systems. See link:task_backup_from_onprem.html[Backing up to Google Cloud Storage^] and link:task_backup_onprem_private_cloud.html[Backing up to StorageGRID^] for details.
+
+* Backup policies have been improved with the following enhancements:
+
+** Now you create a custom policy that includes a combination of daily, weekly, and monthly backups.
+** When you change a backup policy, the change applies to all new backups *and* to all volumes using the original backup policy. In the past the change only applied to new volume backups.
+
+* Some smaller improvements have also been made:
+
+** When configuring the cloud destination for your backup files, now you can select a different region than the region in which the Cloud Volumes ONTAP system resides.
+** The number of backup files you can create for a single volume has been increased from 1,019 to 4,000.
+** In addition to the earlier ability to delete all backup files for a single volume, now you can delete just a single backup file for a volume, or you can delete all backup files for an entire working environment, if needed.
+
 == Cloud Manager 3.9.6 (2 May 2021)
 
 * <<Cloud Tiering enhancements>>
