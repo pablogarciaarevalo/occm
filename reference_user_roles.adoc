@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: reference_user_roles.html
-keywords: user, users, roles, role, task, permission, permissions, tasks, admin, Account Admin, Workspace Admin, Cloud Compliance Viewer
-summary: The Account Admin, Workspace Admin, and Cloud Compliance Viewer roles provide specific permissions to users.
+keywords: user, users, roles, role, task, permission, permissions, tasks, admin, Account Admin, Workspace Admin, Cloud Compliance Viewer, SnapCenter Admin
+summary: The Account Admin, Workspace Admin, Compliance Viewer, and SnapCenter Admin roles provide specific permissions to users.
 ---
 
 = Roles
@@ -13,7 +13,7 @@ summary: The Account Admin, Workspace Admin, and Cloud Compliance Viewer roles p
 :imagesdir: ./media/
 
 [.lead]
-The Account Admin, Workspace Admin, and Cloud Compliance Viewer roles provide specific permissions to users.
+The Account Admin, Workspace Admin, Compliance Viewer, and SnapCenter Admin roles provide specific permissions to users.
 
 [cols=4*,options="header",cols="31,23,23,23"]
 |===
@@ -22,38 +22,41 @@ The Account Admin, Workspace Admin, and Cloud Compliance Viewer roles provide sp
 | Account Admin
 | Workspace Admin
 | Cloud Compliance Viewer
+| SnapCenter Admin
 
-| Manage working environments |	Yes |	Yes | No
+| Manage working environments |	Yes |	Yes | No | No
 
-| Enable services on working environments | Yes | Yes | No
+| Enable services on working environments | Yes | Yes | No | No
 
-| View data replication status | Yes |	Yes | No
+| View data replication status | Yes |	Yes | No | No
 
-| View the timeline |	Yes |	Yes | No
+| View the timeline |	Yes |	Yes | No | No
 
-| Switch between workspaces | Yes | Yes | Yes
+| Switch between workspaces | Yes | Yes | Yes | No
 
-| View Compliance scan results | Yes | Yes | Yes
+| View Compliance scan results | Yes | Yes | Yes | No
 
-| Delete working environments | Yes | No | No
+| Delete working environments | Yes | No | No | No
 
-| Connect Kubernetes clusters to working environments | Yes | No | No
+| Connect Kubernetes clusters to working environments | Yes | No | No | No
 
-| Receive the Cloud Volumes ONTAP report | Yes | No | No
+| Receive the Cloud Volumes ONTAP report | Yes | No | No | No
 
-| Create Connectors | Yes | No | No
+| Create Connectors | Yes | No | No | No
 
-| Manage Cloud Central accounts |	Yes |	No | No
+| Manage Cloud Central accounts |	Yes |	No | No | No
 
-| Manage credentials | Yes | No | No
+| Manage credentials | Yes | No | No | No
 
-| Modify Cloud Manager settings |	Yes |	No | No
+| Modify Cloud Manager settings |	Yes |	No | No | No
 
-| View and manage the Support Dashboard |	Yes |	No | No
+| View and manage the Support Dashboard |	Yes |	No | No | No
 
-| Remove working environments from Cloud Manager | Yes |	No | No
+| Remove working environments from Cloud Manager | Yes |	No | No | No
 
-| Install an HTTPS certificate | Yes |	No | No
+| Install an HTTPS certificate | Yes |	No | No | No
+
+| Use the SnapCenter Service | Yes | Yes | No | Yes
 
 |===
 

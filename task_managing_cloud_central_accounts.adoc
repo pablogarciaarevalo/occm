@@ -50,6 +50,7 @@ image:screenshot_manage_account_settings.gif[A screenshot that shows the Manage 
 * *Account Admin*: Can perform any action in Cloud Manager.
 * *Workspace Admin*: Can create and manage resources in assigned workspaces.
 * *Compliance Viewer*: Can only view compliance information and generate reports for workspaces that they have permission to access.
+* *SnapCenter Admin*: Can use the SnapCenter Service to create application consistent backups and restore data using those backups. _This service is currently in Beta._
 
 . If you selected Workspace Admin or Compliance Viewer, select one or more workspaces to associate with that user.
 +
@@ -254,6 +255,20 @@ You'll only see the subscriptions that are associated with the account that you'
 image:screenshot_subscription_menu.gif[A screenshot of the action menu for a subscription.]
 
 . Choose to rename the subscription or to manage the accounts that are associated with the subscription.
+
+== Auditing user activity in your account
+
+The Timeline in Cloud Manager shows the actions that users completed to manage your account. This includes management actions such as associating users, creating workspaces, creating Connectors, and more. Checking the Timeline can be helpful if you need to identify who performed a specific action, or if you need to identify the status of an action.
+
+.Steps
+
+. Click *All Services > Timeline*.
+
+. Under the Filters, click *Service*, enable *Tenancy*, and click *Apply*.
+
+.Result
+
+The Timeline updates to show you account management actions.
 
 == Changing your account name
 

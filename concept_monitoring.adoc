@@ -38,7 +38,11 @@ At a high-level, Cloud Insights integration with Cloud Manager works like this:
 . You enable the Monitoring service on Cloud Volumes ONTAP.
 . Cloud Manager configures your environment. It does the following:
 .. Creates a Cloud Insights tenant (also called _environment_) and associates all users in your Cloud Central account to the tenant.
-.. Enables a 30-day free trial of Cloud Insights.
++
+If you already have a tenant, then Cloud Manager uses that existing tenant.
+.. Enables a free trial of Cloud Insights.
++
+On the 29th day, your plan automatically transitions from the Trial Version to the https://docs.netapp.com/us-en/cloudinsights/concept_subscribing_to_cloud_insights.html#editions[Basic Edition^].
 .. Deploys a virtual machine in your VPC/VNet called an Acquisition Unit. The Acquisition Unit facilitates monitoring of volumes (this is the VM mentioned in the Cost section above).
 .. Connects the Acquisition Unit to Cloud Volumes ONTAP and to the Cloud Insights tenant.
 . In Cloud Manager, you click Monitoring and use the performance data to troubleshoot and optimize performance.
@@ -63,7 +67,7 @@ Note the following about the Acquisition Unit instance:
 
 === Cloud Insights tenant
 
-Cloud Manager sets up a _tenant_ for you when you enable Monitoring. A Cloud Insights tenant enables you to access the performance data that the Acquisition Unit collects. The tenant is a secure data partition within the NetApp Cloud Insights service.
+If you don't already have a _tenant_, Cloud Manager sets one up for you when you enable Monitoring. A Cloud Insights tenant enables you to access the performance data that the Acquisition Unit collects. The tenant is a secure data partition within the NetApp Cloud Insights service.
 
 === Cloud Insights web interface
 
@@ -71,8 +75,10 @@ The Monitoring tab in Cloud Manager provides basic performance data for your vol
 
 === Free trial and subscription
 
-Cloud Manager enables a 30-day free trial of Cloud Insights to provide performance data within Cloud Manager and for you to explore the features that Cloud Insights Standard Edition has to offer.
+Cloud Manager enables a free trial of Cloud Insights to provide performance data within Cloud Manager and for you to explore the features that Cloud Insights Standard Edition has to offer.
 
-You need to subscribe by the end of the free trial or your Cloud Insights tenant will eventually be deleted. You can subscribe to either the Basic, Standard, or Premium edition to continue using the Monitoring feature within Cloud Manager.
+On the 29th day, your plan automatically transitions from the Trial Version to the https://docs.netapp.com/us-en/cloudinsights/concept_subscribing_to_cloud_insights.html#editions[Basic Edition^].
+
+You have the option to subscribe to the Standard or Premium editions to gain access to additional features from the Cloud Insights web interface.
 
 https://docs.netapp.com/us-en/cloudinsights/concept_subscribing_to_cloud_insights.html[Learn how to subscribe to Cloud Insights^].

@@ -1,0 +1,74 @@
+---
+sidebar: sidebar
+permalink: concept_replication_policies.html
+keywords: replication policy, policy, replication, replicating, snapmirror, snapvault, data replication, disaster recovery, DR, archive, archiving, retention
+summary: You can replicate data between Cloud Manager working environments. You can choose a one-time data replication to move data to and from the cloud, or a recurring schedule for disaster recovery or long-term retention.
+---
+
+= Learn about replication policies
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+You might need help choosing a replication policy when you set up data replication in Cloud Manager. A replication policy defines how the storage system replicates data from a source volume to a destination volume.
+
+== What replication policies do
+
+The ONTAP operating system automatically creates backups called Snapshot copies. A Snapshot copy is a read-only image of a volume that captures the state of the file system at a point in time.
+
+When you replicate data between systems, you replicate Snapshot copies from a source volume to a destination volume. A replication policy specifies which Snapshot copies to replicate from the source volume to the destination volume.
+
+TIP: Replication policies are also referred to as _protection_ policies because they are powered by SnapMirror and SnapVault technologies, which provide disaster recovery protection and disk-to-disk backup and recovery.
+
+The following image shows the relationship between Snapshot copies and replication policies:
+
+image:diagram_replication_policies.png[This illustration shows Snapshot copies on a source volume and a replication policy that specifies replication of all or specific Snapshot copies from the source volume to the destination volume.]
+
+== Types of replication policies
+
+There are three types of replication policies:
+
+* A _Mirror_ policy replicates newly created Snapshot copies to a destination volume.
++
+You can use these Snapshot copies to protect the source volume in preparation for disaster recovery or for one-time data replication. You can activate the destination volume for data access at any time.
+
+* A _Backup_ policy replicates specific Snapshot copies to a destination volume and typically retains them for a longer period of time than you would on the source volume.
++
+You can restore data from these Snapshot copies when data is corrupted or lost, and retain them for standards compliance and other governance-related purposes.
+
+* A _Mirror and Backup_ policy provides both disaster recovery and long-term retention.
++
+Each system includes a default Mirror and Backup policy, which works well for many situations. If you find that you need custom policies, you can create your own using System Manager.
+
+The following images show the difference between the Mirror and Backup policies. A Mirror policy mirrors the Snapshot copies available on the source volume.
+
+image:diagram_replication_snapmirror.png[This illustration shows Snapshot copies on a source volume and a Mirror destination volume that mirrors the source volume.]
+
+A Backup policy typically retains Snapshot copies longer than they are retained on the source volume:
+
+image:diagram_replication_snapvault.png[This illustration shows Snapshot copies on a source volume and a Backup destination volume that includes more Snapshot copies because SnapVault retains Snapshot copies for long-term retention.]
+
+== How Backup policies work
+
+Unlike Mirror policies, Backup (SnapVault) policies replicate specific Snapshot copies to a destination volume. It is important to understand how Backup policies work if you want to use your own policies instead of the default policies.
+
+=== Understanding the relationship between Snapshot copy labels and Backup policies
+
+A Snapshot policy defines how the system creates Snapshot copies of volumes. The policy specifies when to create the Snapshot copies, how many copies to retain, and how to label them. For example, a system might create one Snapshot copy every day at 12:10 a.m., retain the two most recent copies, and label them "daily".
+
+A Backup policy includes rules that specify which labeled Snapshot copies to replicate to a destination volume and how many copies to retain. The labels defined in a Backup policy must match one or more labels defined in a Snapshot policy. Otherwise, the system cannot replicate any Snapshot copies.
+
+For example, a Backup policy that includes the labels "daily" and "weekly" results in replication of Snapshot copies that include only those labels. No other Snapshot copies are replicated, as shown in the following image:
+
+image:diagram_replication_snapvault_policy.png["This illustration shows a Snapshot policy, a source volume, the Snapshot copies created from the Snapshot policy, and then replication of those Snapshot copies to a destination volume based on a Backup policy, which specifies replication of Snapshot copies with the "daily" and "weekly" labels."]
+
+=== Default policies and custom policies
+
+The default Snapshot policy creates hourly, daily, and weekly Snapshot copies, retaining six hourly, two daily, and two weekly Snapshot copies.
+
+You can easily use a default Backup policy with the default Snapshot policy. The default Backup policies replicate daily and weekly Snapshot copies, retaining seven daily and 52 weekly Snapshot copies.
+
+If you create custom policies, the labels defined by those policies must match. You can create custom policies using System Manager.
