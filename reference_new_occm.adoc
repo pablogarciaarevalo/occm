@@ -19,15 +19,11 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
-== Cloud Manager 3.9.6 (4 May 2021)
+== Cloud Manager 3.9.6 update (5 May 2021)
 
 * <<Cloud Backup enhancements>>
-* <<Cloud Sync enhancements>>
 * <<Monitoring enhancements>>
 * <<Replication enhancement>>
-* <<Cloud Tiering>>
-* <<Cloud Compliance enhancements>>
-* <<Application Template enhancement>>
 * <<Account enhancement>>
 
 === Cloud Backup enhancements
@@ -47,18 +43,6 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 ** The number of backup files you can create for a single volume has been increased from 1,019 to 4,000.
 ** In addition to the earlier ability to delete all backup files for a single volume, now you can delete just a single backup file for a volume, or you can delete all backup files for an entire working environment, if needed.
 
-=== Cloud Sync enhancements
-
-* You can now view the errors found in reports and you can delete the last report or all reports.
-+
-link:task_sync_managing_reports.html[Learn more about creating and viewing reports to tune your configuration].
-
-* A new *Compare by* setting is now available for each sync relationship.
-+
-This advanced setting enables you to choose whether Cloud Sync should compare certain attributes when determining whether a file or directory has changed and should be synced again.
-+
-link:task_sync_managing_relationships.html#changing-the-settings-for-a-sync-relationship[Learn more about changing the settings for a sync relationship].
-
 === Monitoring enhancements
 
 * You can now enable the Monitoring service on a Cloud Volumes ONTAP working environment even if you have an existing Cloud Insights tenant.
@@ -73,29 +57,41 @@ We redesigned the Replication tab for ease of use and to match the current look 
 
 image:replication.gif[A screenshot of the redesigned Replication tab in Cloud Manager that shows a list of volume relationships.]
 
-=== Cloud Tiering enhancements
-
-* When selecting the volumes that you want to tier from an ONTAP system, now there's a checkbox in the Tier Volumes page to select *all* volumes to make it easier to apply the same policy to all volumes.
-
-* If you need to change the number of "cooling days" that determine how long data in a volume must remain inactive before it is moved to object storage, now you can specify up to 183 days (up from 63 days) when using ONTAP 9.8 or greater.
-
-=== Cloud Compliance enhancements
-
-* Cloud Compliance has been renamed to “Governance & Compliance”. There are two tabs in Cloud Manager: “Governance” and “Compliance”. The “Governance” tab brings you to the “Governance Dashboard” within the “Governance & Compliance” service, and the “Compliance” tab brings you to the “Compliance Dashboard” within the “Governance & Compliance” service.
-
-* Scanning of data stored on Azure Blob is now supported when using the https://min.io/[MinIO service^]. See link:task_scanning_object_storage.html[Scanning object storage that uses S3 protocol^] for details.
-
-* New personal data type. Cloud Compliance can now find Austrian SSNs in files.
-
-=== Application Template enhancement
-
-The user interface has been enhanced in the AppTemplates service so that it is easier for template designers to move between actions and to see which action they are currently defining.
-
 === Account enhancement
 
 The Timeline in Cloud Manager now shows actions and events related to account management. The actions include things like associating users, creating workspaces, and creating Connectors. Checking the Timeline can be helpful if you need to identify who performed a specific action, or if you need to identify the status of an action.
 
 link:task_managing_cloud_central_accounts.html[Learn how to filter the Timeline to the Tenancy service].
+
+== Cloud Manager 3.9.6 (2 May 2021)
+
+* <<Cloud Tiering enhancements>>
+* <<Application Template enhancements>>
+* <<Cloud Sync enhancements>>
+
+=== Cloud Tiering enhancements
+
+* When selecting the volumes that you want to tier from an ONTAP system, now there's a checkbox in the Tier Volumes page to select *all* volumes to make it easier to apply the same policy to all volumes. link:task_managing_tiering.html#tiering-data-from-additional-volumes[See how to select all volumes in the cluster^].
+
+* If you need to change the number of "cooling days" that determine how long data in a volume must remain inactive before it is moved to object storage, now you can specify up to 183 days (up from 63 days) when using ONTAP 9.8 or greater.
+
+=== Application Template enhancements
+
+* The user interface has been enhanced in the AppTemplates service so that it is easier for template designers to move between actions and to see which action they are currently defining.
+
+* Now you can integrate Cloud Compliance when creating a volume template for either Cloud Volumes ONTAP or Azure NetApp Files. So you can enable Compliance for each newly created volume, or enable Cloud Backup for each newly created volume... or create a template that enables both Backup and Compliance on the created volume.
+
+=== Cloud Sync enhancements
+
+* You can now view the errors found in reports and you can delete the last report or all reports.
++
+link:task_sync_managing_reports.html[Learn more about creating and viewing reports to tune your configuration].
+
+* A new *Compare by* setting is now available for each sync relationship.
++
+This advanced setting enables you to choose whether Cloud Sync should compare certain attributes when determining whether a file or directory has changed and should be synced again.
++
+link:task_sync_managing_relationships.html#changing-the-settings-for-a-sync-relationship[Learn more about changing the settings for a sync relationship].
 
 == Cloud Manager 3.9.5 (11 Apr 2021)
 
