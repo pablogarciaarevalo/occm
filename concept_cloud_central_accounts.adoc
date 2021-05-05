@@ -40,6 +40,7 @@ When you associate a user, you assign them a role:
 * _Account Admin_: Can perform any action in Cloud Manager.
 * _Workspace Admin_: Can create and manage resources in the assigned workspace.
 * _Cloud Compliance Viewer_: Can only view compliance information and generate reports for systems that they have permission to access.
+* _SnapCenter Admin_: Can use the SnapCenter Service to create application consistent backups and restore data using those backups. _This service is currently in Beta._
 
 == Workspaces
 
