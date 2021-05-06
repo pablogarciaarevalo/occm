@@ -54,7 +54,7 @@ Cloud Compliance can scan schemas from the following databases:
 * SAP HANA
 * SQL Server (MSSQL)
 
-IMPORTANT: The statistics gathering feature *must be enabled* in the database.
+CAUTION: The statistics gathering feature *must be enabled* in the database.
 
 === Database requirements
 
@@ -94,7 +94,7 @@ The database is added to the list of working environments.
 
 You can stop or start scanning schemas at any time.
 
-. From the _Scan Configuration_ page, click the *Configuration* button for the database you want to configure.
+. From the _Configuration_ page, click the *Configuration* button for the database you want to configure.
 +
 image:screenshot_compliance_db_server_config.png[A screenshot of the Scan Configuration page where you can select the Configuration button.]
 
