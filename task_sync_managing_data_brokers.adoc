@@ -199,7 +199,7 @@ Note the following:
 
 == Configure the data broker to copy object storage metadata
 
-By default, Cloud Sync copies object storage metadata for several types of sync relationships. But you need to configure the data broker if you want to copy object storage metadata between the following types of sync relationships:
+By default, Cloud Sync copies object storage metadata for link:faq_sync.html#object-storage-metadata[several types of sync relationships]. But you need to configure the data broker if you want to copy object storage metadata between the following types of sync relationships:
 
 * Amazon S3 -> Amazon S3
 * Google Cloud Storage -> StorageGRID
