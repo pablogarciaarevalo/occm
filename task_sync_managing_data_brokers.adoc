@@ -175,7 +175,7 @@ image:screenshot_sync_broker_status.gif[]
 +
 For example, you might need to simply restart the data broker if it's offline, or you might need to remove data broker if the initial deployment failed.
 
-== Defining a unified configuration for a data broker group
+== Define a unified configuration for a data broker group
 
 If a sync relationship encounters errors during the sync process, unifying the concurrency of the data broker group can help to decrease the number of sync errors. Be aware that changes to the group's configuration can affect performance by slowing down the transfer.
 
@@ -196,3 +196,52 @@ Note the following:
 * It can take up to a minute until this change takes place and is visible in the Cloud Sync interface.
 * If a data broker isn't running, it's configuration won't change because Cloud Sync can't communicate with it. The configuration will change after the data broker restarts.
 * After you set a unified configuration, any new data brokers will automatically use the new configuration.
+
+== Configure the data broker to copy object storage metadata
+
+By default, Cloud Sync copies object storage metadata for link:faq_sync.html#object-storage-metadata[several types of sync relationships]. But you need to configure the data broker if you want to copy object storage metadata between the following types of sync relationships:
+
+* Amazon S3 -> Amazon S3
+* Google Cloud Storage -> StorageGRID
+* Google Cloud Storage -> IBM Cloud Object Storage
+* Google Cloud Storage -> Amazon S3
+
+.Steps for Amazon S3 to Amazon S3
+
+. Log in to the data broker host.
+
+.	Modify local.json as follows:
++
+[source,json]
+{
+  "protocols": {
+    "s3": {
+      "copy-metadata-from": true
+    }
+  }
+}
+
+. Restart the data broker.
++
+`pm2 stop all`
+`pm2 start all`
+
+.Steps for Google Cloud to StorageGRID, IBM, or Amazon S3
+
+. Log in to the data broker host.
+
+.	Modify local.json as follows:
++
+[source,json]
+{
+  "protocols": {
+    "gcp": {
+      "copy-metadata-from": true
+    }
+  }
+}
+
+. Restart the data broker.
++
+`pm2 stop all`
+`pm2 start all`
