@@ -234,17 +234,17 @@ Notes:
 *	Glacier
 *	Glacier Deep Archive
 
-== Networking for the source and target
+== Source and target requirements
+
+Verify that your source and targets meet the following requirements.
+
+=== Networking
 
 * The source and target must have a network connection to the data broker.
 +
 For example, if an NFS server is in your data center and the data broker is in AWS, then you need a network connection (VPN or Direct Connect) from your network to the VPC.
 
 * NetApp recommends configuring the source, target, and data broker to use a Network Time Protocol (NTP) service. The time difference between the three components should not exceed 5 minutes.
-
-== Source and target requirements
-
-Verify that your source and targets meet the following requirements.
 
 === Target directory
 
@@ -263,6 +263,26 @@ Object storage::
 SMB:: The SMB credentials that you enter when setting up a sync relationship must have list folder permissions.
 
 NOTE: The data broker ignores the following directories by default: .snapshot, ~snapshot, .copy-offload
+
+=== Object metadata
+
+Cloud Sync copies the metadata from object storage for the following types of sync relationships:
+
+* Amazon S3 -> Amazon S3 ^1^
+* Amazon S3 -> StorageGRID
+* StorageGRID -> Amazon S3
+* StorageGRID -> StorageGRID
+* StorageGRID -> Google Cloud Storage
+* Google Cloud Storage -> StorageGRID ^1^
+* Google Cloud Storage -> IBM Cloud Object Storage ^1^
+* Google Cloud Storage -> Amazon S3 ^1^
+* Amazon S3 -> Google Cloud Storage
+* IBM Cloud Object Storage -> Google Cloud Storage
+* StorageGRID -> IBM Cloud Object Storage
+* IBM Cloud Object Storage -> StorageGRID
+* IBM Cloud Object Storage -> IBM Cloud Object Storage
+
+^1^ For these sync relationships, you need to modify the data broker's configuration in order to copy metadata.
 
 === [[s3]]AWS S3 bucket requirements
 
