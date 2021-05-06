@@ -42,7 +42,7 @@ NOTE: Cloud Volumes ONTAP support for WORM storage is equivalent to SnapLock Ent
 [discrete]
 === Limitations
 
-* WORM storage in Cloud Volumes ONTAP operates under a "trusted storage administrator" model. While WORM files and snapshots are protected from alteration or modification, volumes can be deleted by a cluster administrator even if those volumes contain unexpired WORM data.
+* WORM storage in Cloud Volumes ONTAP operates under a "trusted storage administrator" model. While WORM files are protected from alteration or modification, volumes can be deleted by a cluster administrator even if those volumes contain unexpired WORM data.
 +
 For example, if you delete or move a disk directly from your cloud provider, then a volume can be deleted before its expiry date.
 
