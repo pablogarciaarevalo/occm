@@ -201,10 +201,10 @@ Note the following:
 
 By default, Cloud Sync copies object storage metadata for several types of sync relationships. But you need to configure the data broker if you want to copy object storage metadata between the following types of sync relationships:
 
-* Amazon S3 -> Amazon S3 ^1^
-* Google Cloud Storage -> StorageGRID ^1^
-* Google Cloud Storage -> IBM Cloud Object Storage ^1^
-* Google Cloud Storage -> Amazon S3 ^1^
+* Amazon S3 -> Amazon S3
+* Google Cloud Storage -> StorageGRID
+* Google Cloud Storage -> IBM Cloud Object Storage
+* Google Cloud Storage -> Amazon S3
 
 .Steps for Amazon S3 to Amazon S3
 

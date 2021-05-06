@@ -264,26 +264,6 @@ SMB:: The SMB credentials that you enter when setting up a sync relationship mus
 
 NOTE: The data broker ignores the following directories by default: .snapshot, ~snapshot, .copy-offload
 
-=== Object metadata
-
-Cloud Sync copies the metadata from object storage for the following types of sync relationships:
-
-* Amazon S3 -> Amazon S3 ^1^
-* Amazon S3 -> StorageGRID
-* StorageGRID -> Amazon S3
-* StorageGRID -> StorageGRID
-* StorageGRID -> Google Cloud Storage
-* Google Cloud Storage -> StorageGRID ^1^
-* Google Cloud Storage -> IBM Cloud Object Storage ^1^
-* Google Cloud Storage -> Amazon S3 ^1^
-* Amazon S3 -> Google Cloud Storage
-* IBM Cloud Object Storage -> Google Cloud Storage
-* StorageGRID -> IBM Cloud Object Storage
-* IBM Cloud Object Storage -> StorageGRID
-* IBM Cloud Object Storage -> IBM Cloud Object Storage
-
-^1^ For these sync relationships, you need to modify the data broker's configuration in order to copy metadata.
-
 === [[s3]]AWS S3 bucket requirements
 
 Make sure that your AWS S3 bucket meets the following requirements.
