@@ -201,7 +201,7 @@ Note that no changes are made to the labels you have added using Cloud Complianc
 
 .Steps
 
-. From the _Scan Configuration_ page, click *AIP Labels integrated > Remove Integration*.
+. From the _Configuration_ page, click *AIP Labels integrated > Remove Integration*.
 +
 image:screenshot_compliance_un_integrate_aip_labels.png[A screenshot showing how to remove AIP integrations with Cloud Compliance.]
 
