@@ -256,7 +256,9 @@ In order to show every directory or folder in a source or target, Cloud Sync nee
 
 NFS:: Permissions must be defined on the source/target with uid/gid on files and directories.
 
-Object storage:: The data broker must have list object permissions (these permissions are provided by default if you follow the installation steps).
+Object storage::
+* For AWS and Google Cloud, the data broker must have list object permissions (these permissions are provided by default if you follow the data broker installation steps).
+* For Azure, StorageGRID, and IBM, the credentials that you enter when setting up a sync relationship must have list object permissions.
 
 SMB:: The SMB credentials that you enter when setting up a sync relationship must have list folder permissions.
 
