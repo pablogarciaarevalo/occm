@@ -34,7 +34,8 @@ Note that you can add to the list of personal data that is found in your files i
 | IBAN number (International Bank Account Number) | No
 | IP address | No
 
-.31+| National Identifiers | Belgian ID (Numero National) | Yes
+.32+| National Identifiers | Austrian SSN | Yes
+| Belgian ID (Numero National) | Yes
 | Brazilian ID (CPF) | Yes
 | Bulgarian ID (UCN) | Yes
 | California Driver's License | Yes

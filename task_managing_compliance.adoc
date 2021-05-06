@@ -19,7 +19,7 @@ If you need to, you can stop Cloud Compliance from scanning one or more working 
 
 When you deactivate scans, Cloud Compliance no longer scans the data on the working environment and it removes the indexed compliance insights from the Cloud Compliance instance (the data from the working environment itself isn't deleted).
 
-. From the _Scan Configuration_ page, click the image:screenshot_gallery_options.gif[More button] button in the row for the working environment, and then click *Deactivate Compliance*.
+. From the _Configuration_ page, click the image:screenshot_gallery_options.gif[More button] button in the row for the working environment, and then click *Deactivate Compliance*.
 
 image:screenshot_deactivate_compliance_scan.png[A screenshot of the action icon where you can select Deactivate scan. This option is available after you select a working environment from the Canvas page.]
 
@@ -29,7 +29,7 @@ TIP: You can also disable compliance scans for a working environment from the Se
 
 If you no longer want to scan a certain database, you can delete it from the Cloud Compliance interface and stop all scans.
 
-. From the _Scan Configuration_ page, click the image:screenshot_gallery_options.gif[More button] button in the row for the database, and then click *Remove DB Server*.
+. From the _Configuration_ page, click the image:screenshot_gallery_options.gif[More button] button in the row for the database, and then click *Remove DB Server*.
 
 image:screenshot_compliance_remove_db.png[A screenshot of the Remove DB Server button from the Scan Configuration page.]
 
@@ -39,7 +39,7 @@ If you no longer want to scan user files from a certain OneDrive account, you ca
 
 .Steps
 
-. From the _Scan Configuration_ page, click the image:screenshot_gallery_options.gif[More button] button in the row for the OneDrive account, and then click *Remove OneDrive Account*.
+. From the _Configuration_ page, click the image:screenshot_gallery_options.gif[More button] button in the row for the OneDrive account, and then click *Remove OneDrive Account*.
 +
 image:screenshot_compliance_remove_onedrive.png[A screenshot of the Remove OneDrive button from the Scan Configuration page.]
 
@@ -51,7 +51,7 @@ If you no longer want to scan user files from a file shares group, you can delet
 
 .Steps
 
-. From the _Scan Configuration_ page, click the image:screenshot_gallery_options.gif[More button] button in the row for the File Shares Group, and then click *Remove File Shares Group*.
+. From the _Configuration_ page, click the image:screenshot_gallery_options.gif[More button] button in the row for the File Shares Group, and then click *Remove File Shares Group*.
 +
 image:screenshot_compliance_remove_fileshare_group.png[A screenshot of the Remove File Share Group button from the Scan Configuration page.]
 

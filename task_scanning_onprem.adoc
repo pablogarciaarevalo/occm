@@ -46,7 +46,7 @@ Now that Cloud Compliance is enabled, ensure that it can access all volumes.
 * NFS volume export policies must allow access from the Cloud Compliance instance.
 * Cloud Compliance needs Active Directory credentials to scan CIFS volumes.
 +
-Click *Compliance* > *Scan Configuration* > *Edit CIFS Credentials* and provide the credentials.
+Click *Compliance* > *Configuration* > *Edit CIFS Credentials* and provide the credentials.
 
 ==== image:number4.png[Number 4]  Manage the volumes you are scanning
 
@@ -105,7 +105,7 @@ After you enter the credentials, you should see a message that all CIFS volumes 
 +
 image:screenshot_cifs_status.gif[A screenshot that shows the Scan Configuration page and one Cloud Volumes ONTAP system for which CIFS credentials were successfully provided.]
 
-. On the _Scan Configuration_ page, click *View Details* to review the status for each CIFS and NFS volume and correct any errors.
+. On the _Configuration_ page, click *View Details* to review the status for each CIFS and NFS volume and correct any errors.
 +
 For example, the following image shows three volumes; one of which Cloud Compliance can't scan due to network connectivity issues between the Cloud Compliance instance and the volume.
 +
@@ -133,7 +133,7 @@ You must have link:task_deploy_cloud_compliance.html[deployed an instance of Clo
 +
 link:task_getting_started_compliance.html[Click here if you need help with enabling Cloud Compliance on a Cloud Volumes ONTAP system^].
 
-. Click the *Enable Access to DP volumes* button at the top of the _Scan Configuration_ page so that Cloud Compliance can access the DP volumes.
+. Click the *Enable Access to DP volumes* button at the top of the _Configuration_ page so that Cloud Compliance can access the DP volumes.
 +
 NFS volumes are enabled, but CIFS volumes require that you enter Active Directory Admin credentials.
 

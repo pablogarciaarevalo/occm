@@ -118,7 +118,7 @@ image:screenshot_s3_compliance_iam_role.gif[A screenshot of entering the AWS IAM
 
 . Click *Enable Compliance*.
 
-TIP: You can also enable compliance scans for a working environment from the Scan Configuration page by clicking the image:screenshot_gallery_options.gif[] button and selecting *Activate Compliance*.
+TIP: You can also enable compliance scans for a working environment from the Configuration page by clicking the image:screenshot_gallery_options.gif[] button and selecting *Activate Compliance*.
 
 .Result
 
@@ -212,7 +212,7 @@ Be sure to do the following:
 +
 The Cloud Compliance instance profile account now has access to the additional AWS account.
 
-. Go to the *Amazon S3 Scan Configuration* page and the new AWS account is displayed. Note that it can take a few minutes for Cloud Compliance to sync the new account’s working environment and show this information.
+. Go to the *Amazon S3 Configuration* page and the new AWS account is displayed. Note that it can take a few minutes for Cloud Compliance to sync the new account’s working environment and show this information.
 +
 image:screenshot_activate_and_select_buckets.png[]
 

@@ -25,6 +25,7 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 * <<Monitoring enhancements>>
 * <<Replication enhancement>>
 * <<Account enhancement>>
+* <<Cloud Compliance enhancements>>
 
 === Cloud Backup enhancements
 
@@ -62,6 +63,14 @@ image:replication.gif[A screenshot of the redesigned Replication tab in Cloud Ma
 The Timeline in Cloud Manager now shows actions and events related to account management. The actions include things like associating users, creating workspaces, and creating Connectors. Checking the Timeline can be helpful if you need to identify who performed a specific action, or if you need to identify the status of an action.
 
 link:task_managing_cloud_central_accounts.html[Learn how to filter the Timeline to the Tenancy service].
+
+=== Cloud Compliance enhancements
+
+* Cloud Compliance has been renamed to “Governance & Compliance”. There are two tabs in Cloud Manager: “Governance” and “Compliance”. The “Governance” tab brings you to the link:task_controlling_governance_data.html#the-governance-dashboard[Governance Dashboard] within the “Governance & Compliance” service, and the “Compliance” tab brings you to the link:task_controlling_private_data.html[Compliance Dashboard].
+
+* Scanning of data stored on Azure Blob is now supported when using the https://min.io/[MinIO service]. See link:task_scanning_object_storage.html[Scanning object storage that uses S3 protocol^] for details.
+
+* New personal data type. Cloud Compliance can now find Austrian SSNs in files.
 
 == Cloud Manager 3.9.6 (2 May 2021)
 
