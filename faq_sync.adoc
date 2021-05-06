@@ -190,6 +190,26 @@ Cloud Sync automatically copies NFS permissions between NFS servers as follows:
 * NFS version 3: Cloud Sync copies the permissions and the user group owner.
 * NFS version 4: Cloud Sync copies the ACLs.
 
+== Object storage metadata
+
+Cloud Sync copies object storage metadata from the source to the target for the following types of sync relationships:
+
+* Amazon S3 -> Amazon S3 ^1^
+* Amazon S3 -> StorageGRID
+* StorageGRID -> Amazon S3
+* StorageGRID -> StorageGRID
+* StorageGRID -> Google Cloud Storage
+* Google Cloud Storage -> StorageGRID ^1^
+* Google Cloud Storage -> IBM Cloud Object Storage ^1^
+* Google Cloud Storage -> Amazon S3 ^1^
+* Amazon S3 -> Google Cloud Storage
+* IBM Cloud Object Storage -> Google Cloud Storage
+* StorageGRID -> IBM Cloud Object Storage
+* IBM Cloud Object Storage -> StorageGRID
+* IBM Cloud Object Storage -> IBM Cloud Object Storage
+
+^1^ For these sync relationships, you need to modify the data broker's configuration in order to copy metadata.
+
 == Performance
 
 The following questions relate to Cloud Sync performance.
