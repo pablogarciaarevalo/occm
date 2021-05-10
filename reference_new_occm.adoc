@@ -33,6 +33,8 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 * Now you can create backups from your on-premises ONTAP systems to Google Cloud Storage or to your NetApp StorageGRID systems. See link:task_backup_from_onprem.html[Backing up to Google Cloud Storage^] and link:task_backup_onprem_private_cloud.html[Backing up to StorageGRID^] for details.
 
+* A new feature in ONTAP 9.9.1 enables you to use System Manager to send backups of your on-premises ONTAP volumes to object storage you've set up through Cloud Backup. link:https://docs.netapp.com/us-en/ontap/task_cloud_backup_data_using_cbs.html[See how to use System Manager to back up your volumes to the cloud using Cloud Backup.^]
+
 * Backup policies have been improved with the following enhancements:
 
 ** Now you create a custom policy that includes a combination of daily, weekly, and monthly backups.

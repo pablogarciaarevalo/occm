@@ -108,7 +108,7 @@ Enable Cloud Compliance on Amazon S3 after you verify the prerequisites.
 +
 image:screenshot_s3_we.gif[A screenshot of an Amazon S3 working environment icon]
 
-. In the pane on the right, click *Enable Compliance*.
+. In the pane on the right, click *Enable*.
 +
 image:screenshot_s3_enable_compliance.gif[A screenshot of enabling the Cloud Compliance service from the Services panel]
 
@@ -116,7 +116,7 @@ image:screenshot_s3_enable_compliance.gif[A screenshot of enabling the Cloud Com
 +
 image:screenshot_s3_compliance_iam_role.gif[A screenshot of entering the AWS IAM role for Cloud Compliance]
 
-. Click *Enable Compliance*.
+. Click *Enable*.
 
 TIP: You can also enable compliance scans for a working environment from the Configuration page by clicking the image:screenshot_gallery_options.gif[] button and selecting *Activate Compliance*.
 
