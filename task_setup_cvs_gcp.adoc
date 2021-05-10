@@ -50,18 +50,23 @@ You must complete the following tasks so that Cloud Manager can access your Goog
 
 .Steps
 
-. In the Google Cloud Console, go to the *Service Accounts* page.
+. In the Google Cloud console, https://console.cloud.google.com/iam-admin/serviceaccounts[go to the Service accounts page^].
 
 . Click *Select a project*, choose your project, and click *Open*.
 
-. Click *Create Service Account*, enter the service account name (friendly display name) and description, and click *Create*.
+. Click *Create service account*.
+
+. Enter the service account name (friendly display name) and description.
++
+The Cloud Console generates a service account ID based on this name. Edit the ID if necessary - you cannot change the ID later.
+
+. To set access controls now, click *Create* and continue to the next step.
 
 . From the _IAM page_ click *Add* and fill out the fields in the _Add Members_ page:
 .. In the New Members field, enter the full service account ID, for example, user1-service-account-cvs@project1.iam.gserviceaccount.com.
 .. Add these roles:
 * _NetApp Cloud Volumes Admin_
 * _Compute Network Viewer_
-* _Folder Viewer_
 .. Click *Save*.
 
 . From the _Service account details_ page click *Add key > Create new key*.
@@ -103,7 +108,7 @@ image:screenshot_add_cvs_gcp_working_env.png[A screenshot of adding a working en
 .. Enter the Working Environment Name you want to use.
 .. Copy/paste the JSON private key you downloaded in the previous steps.
 .. Select the name of your Google Cloud project.
-.. Click *Add*.
+.. Click *Continue*.
 +
 image:screenshot_add_cvs_gcp_credentials.png[A screenshot of adding credentials for a Cloud Volumes Service for GCP subscription.]
 
@@ -113,7 +118,7 @@ Cloud Manager displays your Cloud Volumes Service for Google Cloud working envir
 
 image:screenshot_cvs_gcp_cloud.png[A screenshot of Cloud Volumes Service for Google Cloud working environment.]
 
-If cloud volumes already exist for this subscription, then the volumes appear in the new working environment, as shown in the screenshot. You can add additional cloud volumes from Cloud Manager.
+If cloud volumes already exist for this subscription, then the volumes appear in the new working environment. You can add additional cloud volumes from Cloud Manager.
 
 If no cloud volumes exist for this subscription, create them now.
 
