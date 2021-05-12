@@ -37,6 +37,8 @@ The following sections identify the specific endpoints.
 
 A Connector contacts the following endpoints when managing resources in AWS:
 
+NOTE: If your VPC uses a network access control list (ACL) to filter traffic, then make sure that you enable these endpoints for both outbound and inbound traffic.
+
 include::_include/connector_endpoints_aws.adoc[]
 
 === Endpoints to manage resources in Azure
