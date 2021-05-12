@@ -134,6 +134,8 @@ For example, if you install a Connector in your corporate network, then you must
 
 The Connector requires outbound internet access to manage resources and processes within your public cloud environment. A Connector contacts the following endpoints when managing resources in AWS:
 
+NOTE: If your VPC uses a network access control list (ACL) to filter traffic, then make sure that you enable these endpoints for both outbound and inbound traffic.
+
 include::_include/connector_endpoints_aws.adoc[]
 
 While you should perform almost all tasks from the SaaS user interface, a local user interface is still available on the Connector. The machine running the web browser must have connections to the following endpoints:
