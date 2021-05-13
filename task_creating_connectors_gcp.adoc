@@ -43,6 +43,8 @@ The permissions contained in this YAML file are different than the permissions i
 
 .. If you want to deploy Cloud Volumes ONTAP in other projects, https://cloud.google.com/iam/docs/granting-changing-revoking-access#granting-console[grant access by adding the service account with the Cloud Manager role to that project^]. You'll need to repeat this step for each project.
 
+TIP: If you are using a shared VPC to deploy resources into a service project, then the Connector service account will also require the compute.networkUser role within the host project. https://cloud.google.com/iam/docs/job-functions/networking[This gives the Connector VM permission to use the shared VPC].
+
 .Result
 
 The GCP user now has the permissions required to create the Connector from Cloud Manager and the service account for the Connector VM is set up.
