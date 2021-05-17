@@ -61,9 +61,11 @@ image:screenshot_manage_account_settings.gif[A screenshot that shows the Manage 
 +
 * *Account Admin*: Can perform any action in Cloud Manager.
 * *Workspace Admin*: Can create and manage resources in assigned workspaces.
-* *Compliance Viewer*: Can only view compliance information and generate reports for workspaces that they have permission to access.
+* *Compliance Viewer*: Can only view governance and compliance information and generate reports for workspaces that they have permission to access.
+* *SnapCenter Admin*: Can use the SnapCenter Service to create application consistent backups and restore data using those backups. This service is currently in Beta.
 
-. If you selected Workspace Admin or Compliance Viewer, select one or more workspaces to associate with that user.
+
+. If you selected an account other than Account Admin, select one or more workspaces to associate with that user.
 +
 image:screenshot_associate_user.gif[A screenshot that shows how to associate a user by selecting a role and the associated workspaces.]
 
