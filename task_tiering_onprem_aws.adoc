@@ -165,21 +165,21 @@ image:screenshot_setup_tiering_onprem.png[A screenshot that shows the Enable opt
 +
 The _fabric-pool_ prefix is required because the IAM policy for the Connector enables the instance to perform S3 actions on buckets named with that exact prefix.
 +
-For example, you could name the S3 bucket fabric-pool-AFF1, where AFF1 is the name of the cluster.
+For example, you could name the S3 bucket _fabric-pool-AFF1_, where AFF1 is the name of the cluster.
 
-.. *Storage Class*: Select the S3 storage class that you want to transition the tiered data to after 30 days.
+.. *Storage Class Life Cycle Management*: Select the S3 storage class that you want to transition the tiered data to and the number of days before the data will be moved, and click *Continue*.
 +
-link:reference_aws_support.html[See supported storage classes^]. If you choose Standard, then the data remains in that storage class and no rules are applied.
+If you choose *Keep data in this storage class*, then the data remains in the _Standard_ storage class and no rules are applied. link:reference_aws_support.html[See supported storage classes^].
++
+image:screenshot_tiering_lifecycle_selection_aws.png[A screenshot showing how to select another storage class where data is moved after a certain number of days.]
 
-.. *Credentials*: Enter the access key ID and secret key for an IAM user who has the required S3 permissions.
+.. *Credentials*: Enter the access key ID and secret key for an IAM user who has the required S3 permissions, and click *Continue*.
 +
 The IAM user must be in the same AWS account as the bucket that you selected or created on the *S3 Bucket* page.
 
-.. *Cluster Network*: Select the IPspace that ONTAP should use to connect to object storage.
+.. *Cluster Network*: Select the IPspace that ONTAP should use to connect to object storage, and click *Continue*.
 +
 Selecting the correct IPspace ensures that Cloud Tiering can set up a connection from ONTAP to your cloud provider's object storage.
-
-. Click *Continue* to select the volumes that you want to tier.
 
 . On the _Tier Volumes_ page, select the volumes that you want to configure tiering for and launch the Tiering Policy page:
 
@@ -188,7 +188,7 @@ Selecting the correct IPspace ensures that Cloud Tiering can set up a connection
 * To select multiple volumes, check the box for each volume (image:button_backup_1_volume.png[]) and click *Configure volumes*.
 * To select a single volume, click the row (or image:screenshot_edit_icon.gif[edit pencil icon] icon) for the volume.
 +
-image:screenshot_tiering_modify_volumes.gif[A screenshot that shows how to select a single volume, multiple volume, or all volumes, and the modify selected volumes button.]
+image:screenshot_tiering_modify_volumes.gif["A screenshot that shows how to select a single volume, multiple volume, or all volumes, and the modify selected volumes button.""]
 
 . In the _Tiering Policy_ dialog, select a tiering policy, optionally adjust the cooling days for the selected volumes, and click *Apply*.
 +

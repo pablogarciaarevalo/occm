@@ -132,19 +132,22 @@ image:screenshot_setup_tiering_onprem.png[A screenshot that shows the Enable opt
 
 . Complete the steps on the *Tiering Setup* page:
 
-.. *Resource Group*: Select a resource group where an existing container is managed, or where you would like to create a new container for tiered data.
+.. *Resource Group*: Select a resource group where an existing container is managed, or where you would like to create a new container for tiered data, and click *Continue*.
 
-.. *Azure Container*: Add a new Blob container to a storage account or select an existing container.
+.. *Azure Container*: Add a new Blob container to a storage account or select an existing container, and click *Continue*.
 +
 The storage account and containers that appear in this step belong to the resource group that you selected in the previous step.
 
-.. *Access Tier*: Select the access tier that you want to use for the tiered data. link:reference_azure_support.html[See supported access tiers^].
+.. *Access Tier*: Select the access tier that you want to transition the tiered data to and the number of days before the data will be moved, and click *Continue*.
++
+If you choose *Keep data in this access tier*, then the data remains in the _Hot_ access tier and no rules are applied.
+link:reference_azure_support.html[See supported access tiers^].
++
+image:screenshot_tiering_lifecycle_selection_azure.png[A screenshot showing how to select another access tier where data is moved after a certain number of days.]
 
-.. *Cluster Network*: Select the IPspace that ONTAP should use to connect to object storage.
+.. *Cluster Network*: Select the IPspace that ONTAP should use to connect to object storage, and click *Continue*.
 +
 Selecting the correct IPspace ensures that Cloud Tiering can set up a connection from ONTAP to your cloud provider's object storage.
-
-. Click *Continue* to select the volumes that you want to tier.
 
 . On the _Tier Volumes_ page, select the volumes that you want to configure tiering for and launch the Tiering Policy page:
 

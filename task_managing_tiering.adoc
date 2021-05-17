@@ -63,48 +63,48 @@ Changing the tiering policy for a volume changes how ONTAP tiers cold data to ob
 link:concept_cloud_tiering.html#volume-tiering-policies[Learn more about volume tiering policies].
 +
 image:screenshot_tiering_policy_settings.png[A screenshot that shows the configurable tiering policy settings.]
-//
-// *Note:* If you see options to "Retrieve Tiered Data", see the next section for details.
+
+*Note:* If you see options to "Retrieve Tiered Data", see the next section for details.
 
 .Result
 
 The tiering policy is changed and data begins to be tiered based on the new policy.
-//
-// == Migrating data from the cloud tier back to the performance tier
-//
-// Tiered data that is accessed from the cloud may be "re-heated" and moved back to the performance tier. However, if you want to proactively promote data to the performance tier from the cloud tier, you can do this in the _Tiering Policy_ dialog. This capability is available when using ONTAP 9.8 and greater.
-//
-// You might do this if you want to stop using tiering on a volume, or if you want to keep all user data on the performance tier, but keep Snapshot copies on the cloud tier.
-//
-// There are two options:
-//
-// [cols="22,45,35",width=95%,options="header"]
-// |===
-// | Option
-// | Description
-// | Affect on Tiering Policy
-//
-// | Bring back all data | Retrieves all volume data and Snapshot copies tiered in the cloud and promotes them to the performance tier. | Tiering policy is changed to "No policy".
-// | Bring back active file system | Retrieves only active file system data tiered in the cloud and promotes it to the performance tier (Snapshot copies remain in the cloud). | Tiering policy is changed to "Cold snapshots".
-// |===
-//
-// NOTE: You may be charged by your cloud provider based on that amount of data transferred off the cloud.
-//
-// .Steps
-//
-// Make sure you have enough space in the performance tier for all the data that is being moved from the cloud.
-//
-// . At the top of Cloud Manager, click *Tiering*.
-//
-// . From the *Cluster Dashboard*, click *Tier Volumes* for the cluster.
-//
-// . Click the image:screenshot_edit_icon.gif[A screenshot of the edit icon that appears at the end of each row in the table for tiering volumes] icon for the volume, choose the retrieval option you want to use, and click *Apply*.
-// +
-// image:screenshot_tiering_policy_settings_with_retrieve.png[A screenshot that shows the configurable tiering policy settings.]
-//
-// .Result
-//
-// The tiering policy is changed and the tiered data starts to be migrated back to the performance tier. Depending on the amount of data in the cloud, the transfer process could take a long time.
+
+== Migrating data from the cloud tier back to the performance tier
+
+Tiered data that is accessed from the cloud may be "re-heated" and moved back to the performance tier. However, if you want to proactively promote data to the performance tier from the cloud tier, you can do this in the _Tiering Policy_ dialog. This capability is available when using ONTAP 9.8 and greater.
+
+You might do this if you want to stop using tiering on a volume, or if you decide to keep all user data on the performance tier, but keep Snapshot copies on the cloud tier.
+
+There are two options:
+
+[cols="22,45,35",width=95%,options="header"]
+|===
+| Option
+| Description
+| Affect on Tiering Policy
+
+| Bring back all data | Retrieves all volume data and Snapshot copies tiered in the cloud and promotes them to the performance tier. | Tiering policy is changed to "No policy".
+| Bring back active file system | Retrieves only active file system data tiered in the cloud and promotes it to the performance tier (Snapshot copies remain in the cloud). | Tiering policy is changed to "Cold snapshots".
+|===
+
+NOTE: You may be charged by your cloud provider based on that amount of data transferred off the cloud.
+
+.Steps
+
+Make sure you have enough space in the performance tier for all the data that is being moved from the cloud.
+
+. At the top of Cloud Manager, click *Tiering*.
+
+. From the *Cluster Dashboard*, click *Tier Volumes* for the cluster.
+
+. Click the image:screenshot_edit_icon.gif[A screenshot of the edit icon that appears at the end of each row in the table for tiering volumes] icon for the volume, choose the retrieval option you want to use, and click *Apply*.
++
+image:screenshot_tiering_policy_settings_with_retrieve.png[A screenshot that shows the configurable tiering policy settings.]
+
+.Result
+
+The tiering policy is changed and the tiered data starts to be migrated back to the performance tier. Depending on the amount of data in the cloud, the transfer process could take a long time.
 
 == Managing tiering settings on aggregates
 

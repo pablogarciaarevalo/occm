@@ -17,7 +17,11 @@ Cloud Tiering supports the _Hot_ access tier and most regions.
 
 == Supported Azure Blob access tiers
 
-When you set up data tiering to Azure, Cloud Tiering automatically uses the _Hot_ access tier for your inactive data.
+When you set up data tiering to Azure, Cloud Tiering automatically uses the _Hot_ access tier for your inactive data. Cloud Tiering can apply a lifecycle rule so the data transitions from the _Hot_ access tier to the _Cool_ access tier after a certain number of days.
+
+If you do not choose another storage class, then the data remains in the _Hot_ access tier and no rules are applied.
+
+https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-storage-tiers[Learn about S3 storage classes^].
 
 == Supported Azure regions
 
