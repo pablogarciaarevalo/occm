@@ -15,7 +15,7 @@ summary: The Account Admin, Workspace Admin, Compliance Viewer, and SnapCenter A
 [.lead]
 The Account Admin, Workspace Admin, Compliance Viewer, and SnapCenter Admin roles provide specific permissions to users.
 
-[cols=4*,options="header",cols="31,23,23,23"]
+[cols=5*,options="header",cols="24,19,19,19,19"]
 |===
 
 | Task
