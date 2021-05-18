@@ -70,11 +70,11 @@ Cloud Tiering supports data tiering to the _Standard_, _Standard-Infrequent Acce
 
 === Which Azure Blob access tiers are supported?
 
-Cloud Tiering supports data tiering to the _Hot_ or _Cool_ access tiers for your inactive data.
+Cloud Tiering supports data tiering to the _Hot_ or _Cool_ access tiers for your inactive data. See link:reference_azure_support.html[Supported Azure Blob access tiers] for more details.
 
 === Which storage classes are supported for Google Cloud Storage?
 
-Cloud Tiering supports data tiering to the _Standard_, _Nearline_, _Coldline_, or _Archive_ storage classes. See link:reference_google_support.html[Supported Google Cloud storage classes] for more details.
+Cloud Tiering supports data tiering to the _Standard_, _Nearline_, _Coldline_, and _Archive_ storage classes. See link:reference_google_support.html[Supported Google Cloud storage classes] for more details.
 
 === Does Cloud Tiering use one object store for the entire cluster or one per aggregate?
 
