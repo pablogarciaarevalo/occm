@@ -145,7 +145,9 @@ link:task_sync_managing_relationships.html#changing-the-settings-for-a-sync-rela
 
 === What if I have a very large dataset?
 
-If a single directory contains 600,000 files or more, mailto:ng-cloudsync-support@netapp.com[contact us] so we can help you configure the data broker to handle the payload. We might need to add additional memory to the data broker machine.
+If a single directory contains 600,000 files or more, mailto:ng-cloudsync-support@netapp.com[contact us] so that we can help you configure the data broker to handle the payload. We might need to add additional memory to the data broker machine.
+
+Note that there's no limit to the total number of files in the mount point. The extra memory is required for large directories with 600,000 files or more, regardless of their level in the hierarchy (top directory or subdirectory).
 
 == Security
 
