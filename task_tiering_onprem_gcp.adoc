@@ -153,9 +153,11 @@ image:screenshot_setup_tiering_onprem.png[A screenshot that shows the Enable opt
 
 .. *Bucket*: Add a new Google Cloud Storage bucket or select an existing bucket.
 
-.. *Storage Class*: Select the storage class that you want to transition the tiered data to after 30 days.
+.. *Storage Class Life Cycle Management*: Select the Google Cloud storage class that you want to transition the tiered data to and the number of days before the data will be moved, and click *Continue*. For example, the screenshot below shows that tiered data is moved from the _Standard_ class to the _Nearline_ class after 30 days, and then to the _Coldline_ class after 60 days.
 +
-link:reference_google_support.html[See supported storage classes^]. If you choose Standard, then the data remains in that storage class and no rules are applied.
+If you choose *Keep data in this storage class*, then the data remains in the that storage class. link:reference_google_support.html[See supported storage classes^].
++
+image:screenshot_tiering_lifecycle_selection_gcp.png[A screenshot showing how to select additional storage classes where data is moved after a certain number of days.]
 
 .. *Credentials*: Enter the storage access key and secret key for a service account that has the Storage Admin role.
 

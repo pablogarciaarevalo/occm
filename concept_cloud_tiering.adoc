@@ -22,6 +22,7 @@ The Cloud Tiering service leverages the capabilities of _FabricPool_. FabricPool
 Cloud Tiering offers automation, monitoring, reports, and a common management interface:
 
 * Automation makes it easier to set up and manage data tiering from on-prem ONTAP clusters to the cloud
+* You can choose the default cloud provider storage class/access tier, or use lifecycle management to move older tiered data to a more cost-effective tier
 * A single pane of glass removes the need to independently manage FabricPool across several clusters
 * Reports show the amount of active and inactive data on each cluster
 * A tiering health status helps you identify and correct issues as they occur
@@ -95,7 +96,7 @@ At a high level, Cloud Tiering works like this:
 . You set up tiering by providing details about your object storage, including the bucket/container and a storage class or access tier.
 . Cloud Manager configures ONTAP to use the object storage provider and discovers the amount of active and inactive data on the cluster.
 . You choose the volumes to tier and the tiering policy to apply to those volumes.
-. ONTAP starts tiering inactive data to the object store, as soon as the data has reached the thresholds to be considered inactive (see <<Volume tiering policies>>).
+. ONTAP starts tiering inactive data to the object store as soon as the data has reached the thresholds to be considered inactive (see <<Volume tiering policies>>).
 
 === Object storage
 
@@ -104,6 +105,8 @@ Each ONTAP cluster tiers inactive data to a single object store. When you set up
 * link:reference_aws_support.html[Learn about supported S3 storage classes]
 * link:reference_azure_support.html[Learn about supported Azure Blob access tiers]
 * link:reference_google_support.html[Learn about supported Google Cloud storage classes]
+
+Cloud Tiering uses the cloud provider default storage class/access tier for your inactive data. However, you can apply a lifecycle rule so that the data automatically transitions from the default storage class to another storage class after a certain number of days. This can help keep your costs down by moving very cold data to less expensive storage.
 
 === Volume tiering policies
 

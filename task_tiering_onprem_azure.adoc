@@ -98,6 +98,16 @@ A Connector is required to tier data to the cloud. When tiering data to Azure Bl
 * link:task_creating_connectors_azure.html[Creating a Connector in Azure]
 * link:task_managing_connectors.html[Switching between Connectors]
 
+=== Verify that you have the necessary Connector permissions
+
+If you just created the Connector using Cloud Manager version 3.9.7 or greater, then you're all set.
+
+If you created the Connector using an earlier version of Cloud Manager, then you'll need to edit the permission list to add 2 newly required permissions:
+
+[source,json]
+Microsoft.Storage/storageAccounts/managementPolicies/read
+Microsoft.Storage/storageAccounts/managementPolicies/write
+
 === Preparing networking for the Connector
 
 Ensure that the Connector has the required networking connections.
@@ -138,12 +148,14 @@ image:screenshot_setup_tiering_onprem.png[A screenshot that shows the Enable opt
 +
 The storage account and containers that appear in this step belong to the resource group that you selected in the previous step.
 
-.. *Access Tier*: Select the access tier that you want to transition the tiered data to and the number of days before the data will be moved, and click *Continue*.
+.. *Access Tier Life Cycle Management*: Select the access tier that you want to transition the tiered data to and the number of days before the data will be moved, and click *Continue*.
 +
-If you choose *Keep data in this access tier*, then the data remains in the _Hot_ access tier and no rules are applied.
+If you choose *Keep data in this access tier*, then the data remains in the _Hot_ access tier and no rules are applied. For example, the screenshot below shows that tiered data will remain in the _Hot_ access tier.
 link:reference_azure_support.html[See supported access tiers^].
 +
 image:screenshot_tiering_lifecycle_selection_azure.png[A screenshot showing how to select another access tier where data is moved after a certain number of days.]
++
+<<Verify that you have the necessary Connector permissions,Verify that you have the necessary Connector permissions>> for the life cycle management feature.
 
 .. *Cluster Network*: Select the IPspace that ONTAP should use to connect to object storage, and click *Continue*.
 +

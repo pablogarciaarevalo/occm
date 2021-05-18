@@ -167,7 +167,7 @@ The _fabric-pool_ prefix is required because the IAM policy for the Connector en
 +
 For example, you could name the S3 bucket _fabric-pool-AFF1_, where AFF1 is the name of the cluster.
 
-.. *Storage Class Life Cycle Management*: Select the S3 storage class that you want to transition the tiered data to and the number of days before the data will be moved, and click *Continue*.
+.. *Storage Class Life Cycle Management*: Select the S3 storage class that you want to transition the tiered data to and the number of days before the data will be moved, and click *Continue*. For example, the screenshot below shows that tiered data is moved from the _Standard_ class to the _Standard-IA_ class after 45 days.
 +
 If you choose *Keep data in this storage class*, then the data remains in the _Standard_ storage class and no rules are applied. link:reference_aws_support.html[See supported storage classes^].
 +
