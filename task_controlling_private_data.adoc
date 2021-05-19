@@ -190,7 +190,9 @@ Each file list includes the following information:
 * Protocol
 * File path
 * File type
-* File size
+* Created time (does not appear for files in databases)
+* Last modified (does not appear for files in databases)
+* File size (does not appear for files in databases)
 * File owner
 * Category
 * Personal information
