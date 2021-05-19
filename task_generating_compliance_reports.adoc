@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_generating_compliance_reports.html
 keywords: report, privacy, risk, privacy risk assessment, compliance status, severity, compliance, privacy risk, data subjects, privacy, credit cards, pci dss, hipaa
-summary: Cloud Compliance provides reports that you can use to better understand the status of your organization's data privacy program.
+summary: Cloud Data Sense provides reports that you can use to better understand the status of your organization's data privacy program.
 ---
 
 = Viewing compliance reports
@@ -13,11 +13,11 @@ summary: Cloud Compliance provides reports that you can use to better understand
 :imagesdir: ./media/
 
 [.lead]
-Cloud Compliance provides reports that you can use to better understand the status of your organization's data privacy program.
+Cloud Data Sense provides reports that you can use to better understand the status of your organization's data privacy program.
 
-By default, the Cloud Compliance dashboard displays compliance data for all working environments and databases. If you want to view reports that contain data for only some of the working environments, <<Selecting the working environments for reports,select those working environments>>.
+By default, the Cloud Data Sense dashboard displays compliance data for all working environments and databases. If you want to view reports that contain data for only some of the working environments, <<Selecting the working environments for reports,select those working environments>>.
 
-NOTE: NetApp can't guarantee 100% accuracy of the personal data and sensitive personal data that Cloud Compliance identifies. You should always validate the information by reviewing the data.
+NOTE: NetApp can't guarantee 100% accuracy of the personal data and sensitive personal data that Cloud Data Sense identifies. You should always validate the information by reviewing the data.
 
 == Privacy Risk Assessment Report
 
@@ -43,11 +43,11 @@ image:screenshot_privacy_risk_assessment.gif[A screen shot of the Compliance tab
 
 .Result
 
-Cloud Compliance generates a PDF report that you can review and send to other groups as needed.
+Cloud Data Sense generates a PDF report that you can review and send to other groups as needed.
 
 === Severity score
 
-Cloud Compliance calculates the severity score for the Privacy Risk Assessment Report on the basis of three variables:
+Cloud Data Sense calculates the severity score for the Privacy Risk Assessment Report on the basis of three variables:
 
 * The percentage of personal data out of all data.
 * The percentage of sensitive personal data out of all data.
@@ -103,11 +103,11 @@ image:screenshot_pci_dss.gif[A screen shot of the Compliance tab in Cloud Manage
 
 .Result
 
-Cloud Compliance generates a PDF report that you can review and send to other groups as needed.
+Cloud Data Sense generates a PDF report that you can review and send to other groups as needed.
 
 == HIPAA Report
 
-The Health Insurance Portability and Accountability Act (HIPAA) Report can help you identify files containing health information. It is designed to aid in your organization’s requirement to comply with HIPAA data privacy laws. The information Cloud Compliance looks for includes:
+The Health Insurance Portability and Accountability Act (HIPAA) Report can help you identify files containing health information. It is designed to aid in your organization’s requirement to comply with HIPAA data privacy laws. The information Cloud Data Sense looks for includes:
 
 * Health reference pattern
 * ICD-10-CM Medical code
@@ -141,13 +141,13 @@ image:screenshot_hipaa.gif[A screen shot of the Compliance tab in Cloud Manager 
 
 .Result
 
-Cloud Compliance generates a PDF report that you can review and send to other groups as needed.
+Cloud Data Sense generates a PDF report that you can review and send to other groups as needed.
 
 == Selecting the working environments for reports
 
-You can filter the contents of the Cloud Compliance dashboard to see compliance data for all working environments and databases, or for just specific working environments.
+You can filter the contents of the Cloud Data Sense Compliance dashboard to see compliance data for all working environments and databases, or for just specific working environments.
 
-When you filter the dashboard, Cloud Compliance scopes the compliance data and reports to just those working environments that you selected.
+When you filter the dashboard, Data Sense scopes the compliance data and reports to just those working environments that you selected.
 
 .Steps
 

@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: task_managing_highlights.html
-keywords: compliance, privacy, filter data, highlights, policies, email alerts, notifications, aip labels, azure information protection, add labels, change labels
-summary: Cloud Compliance provides many ways for you to manage your private data. Some functionality just makes it easier to see the data that is most important to you, and other functionality allows you to make changes to the data.
+keywords: compliance, privacy, filter data, highlights, policies, email alerts, notifications, aip labels, azure information protection, add labels, change labels, data sense
+summary: Cloud Data Sense provides many ways for you to manage your private data. Some functionality just makes it easier to see the data that is most important to you, and other functionality allows you to make changes to the data.
 ---
 
 = Managing your private data
@@ -13,18 +13,18 @@ summary: Cloud Compliance provides many ways for you to manage your private data
 :imagesdir: ./media/
 
 [.lead]
-Cloud Compliance provides many ways for you to manage your private data. Some functionality just makes it easier to see the data that is most important to you, and other functionality allows you to make changes to the data.
+Cloud Data Sense provides many ways for you to manage your private data. Some functionality just makes it easier to see the data that is most important to you, and other functionality allows you to make changes to the data.
 
 * Using the "Policy" functionality you can create your own custom search queries so that you can easily see the results by clicking one button.
 * You can send email alerts to Cloud Manager users when certain critical Policies return results.
-* If you are subscribed to link:https://azure.microsoft.com/en-us/services/information-protection/[Azure Information Protection (AIP)^] to classify and protect your files, you can use Cloud Compliance to manage those AIP labels.
+* If you are subscribed to link:https://azure.microsoft.com/en-us/services/information-protection/[Azure Information Protection (AIP)^] to classify and protect your files, you can use Cloud Data Sense to manage those AIP labels.
 * You can delete files that seem insecure or too risky to leave in your storage system, or that you have identified as a duplicate.
 
 See below for more functionality that is provided with both the Policies and AIP features.
 
 == Controlling your data using Policies
 
-Policies are like a favorites list of custom filters that provide search results in the Investigation page for commonly requested compliance queries. Cloud Compliance provides a set of predefined Policies based on common customer requests. You can create custom Policies that provide results for searches specific to your organization.
+Policies are like a favorites list of custom filters that provide search results in the Investigation page for commonly requested compliance queries. Cloud Data Sense provides a set of predefined Policies based on common customer requests. You can create custom Policies that provide results for searches specific to your organization.
 
 Policies provide the following functionality:
 
@@ -34,9 +34,9 @@ Policies provide the following functionality:
 * Send email alerts to Cloud Manager users when certain critical Policies return results so you can get notifications to protect your data
 * Assign AIP (Azure Information Protection) labels automatically to all files that match the criteria defined in a Policy
 
-The *Policies* tab in the Compliance Dashboard lists all the predefined and custom Policies available on this instance of Cloud Compliance.
+The *Policies* tab in the Compliance Dashboard lists all the predefined and custom Policies available on this instance of Cloud Data Sense.
 
-image:screenshot_compliance_highlights_tab.png[A screenshot of the Policies tab in the Cloud Compliance dashboard.]
+image:screenshot_compliance_highlights_tab.png[A screenshot of the Policies tab in the Cloud Data Sense dashboard.]
 
 In addition, Policies appear in the list of Filters in the Investigation page.
 
@@ -89,17 +89,17 @@ To delete a Policy, click the image:screenshot_gallery_options.gif[More button] 
 
 == Categorizing your data using AIP labels
 
-You can manage AIP labels in the files that Cloud Compliance is scanning if you have subscribed to link:https://azure.microsoft.com/en-us/services/information-protection/[Azure Information Protection (AIP)^]. AIP enables you to classify and protect documents and files by applying labels to content. Cloud Compliance enables you to view the labels that are already assigned to files, add labels to files, and change labels when a label already exists.
+You can manage AIP labels in the files that Cloud Data Sense is scanning if you have subscribed to link:https://azure.microsoft.com/en-us/services/information-protection/[Azure Information Protection (AIP)^]. AIP enables you to classify and protect documents and files by applying labels to content. Data Sense enables you to view the labels that are already assigned to files, add labels to files, and change labels when a label already exists.
 
-Cloud Compliance support AIP labels within the following file types: .PDF, .DOCX, .DOC, .PPTX, .XLS, .XLSX.
+Cloud Compliance support AIP labels within the following file types: .DOC, .DOCX, .PDF, .PPTX, .XLS, .XLSX.
 
 Note that you can't currently change labels in files larger than 30 MB. For OneDrive accounts the maximum file size is 4 MB.
 
-TIP: If a file has a label which doesn’t exist anymore in AIP, Cloud Compliance considers it as a file without a label.
+TIP: If a file has a label which doesn’t exist anymore in AIP, Cloud Data Sense considers it as a file without a label.
 
 === Integrating AIP labels in your workspace
 
-Before you can manage AIP labels, you need to integrate the AIP label functionality into Cloud Compliance by signing into your existing Azure account. Once enabled, you can manage AIP labels within files for all link:concept_cloud_compliance.html#supported-working-environments-and-data-sources[working environments and data sources^] in your Cloud Manager workspace.
+Before you can manage AIP labels, you need to integrate the AIP label functionality into Cloud Data Sense by signing into your existing Azure account. Once enabled, you can manage AIP labels within files for all link:concept_cloud_compliance.html#supported-working-environments-and-data-sources[working environments and data sources^] in your Cloud Manager workspace.
 
 .Requirements
 
@@ -109,15 +109,15 @@ Before you can manage AIP labels, you need to integrate the AIP label functional
 
 .Steps
 
-. From the Cloud Compliance Configuration page, click *Integrate AIP Labels*.
+. From the Cloud Data Sense Configuration page, click *Integrate AIP Labels*.
 +
-image:screenshot_compliance_integrate_aip_labels.png[A screenshot that shows clicking the button to integrate AIP labels functionality into Cloud Compliance.]
+image:screenshot_compliance_integrate_aip_labels.png[A screenshot that shows clicking the button to integrate AIP labels functionality into Cloud Data Sense.]
 
 . In the Integrate AIP Labels dialog, click *Sign in to Azure*.
 
 . In the Microsoft page that appears, select the account and enter the required credentials.
 
-. Return to the Cloud Compliance tab and you'll see the message "_AIP Labels were integrated successfully with the account <account_name>_".
+. Return to the Cloud Data Sense tab and you'll see the message "_AIP Labels were integrated successfully with the account <account_name>_".
 
 . Click *Close* and you'll see the text _AIP Labels integrated_ at the top of the page.
 +
@@ -137,7 +137,7 @@ image:screenshot_compliance_show_label.png[A screenshot showing the metadata det
 
 === Assigning AIP labels manually
 
-You can add, change, and remove AIP labels from your files using Cloud Compliance.
+You can add, change, and remove AIP labels from your files using Cloud Data Sense.
 
 Follow these steps to assign an AIP label to a single file.
 
@@ -157,7 +157,7 @@ The label appears in the file metadata.
 
 You can assign an AIP label to all the files that meet the criteria of the Policy. You can specify the AIP label when creating the Policy, or you can add the label when editing any Policy.
 
-Labels are added or updated in files continuously as Cloud Compliance scans your files.
+Labels are added or updated in files continuously as Cloud Data Sense scans your files.
 
 Depending on whether a label is already applied to a file, and the classification level of the label, the following actions are taken when changing a label:
 
@@ -195,21 +195,21 @@ NOTE: If a Policy was configured with a label, but the label has since been remo
 
 === Removing the AIP integration
 
-If you no longer want the ability to manage AIP labels in files, you can remove the AIP account from the Cloud Compliance interface.
+If you no longer want the ability to manage AIP labels in files, you can remove the AIP account from the Cloud Data Sense interface.
 
-Note that no changes are made to the labels you have added using Cloud Compliance. The labels that exist in files will stay as they currently exist.
+Note that no changes are made to the labels you have added using Data Sense. The labels that exist in files will stay as they currently exist.
 
 .Steps
 
 . From the _Configuration_ page, click *AIP Labels integrated > Remove Integration*.
 +
-image:screenshot_compliance_un_integrate_aip_labels.png[A screenshot showing how to remove AIP integrations with Cloud Compliance.]
+image:screenshot_compliance_un_integrate_aip_labels.png[A screenshot showing how to remove AIP integrations with Cloud Data Sense.]
 
 . Click *Remove Integration* from the confirmation dialog.
 
 == Sending email alerts when non-compliant data is found
 
-Cloud Compliance can send email alerts to Cloud Manager users when certain critical Policies return results so you can get notifications to protect your data. You can choose to send the email notifications on a daily, weekly, or monthly basis.
+Cloud Data Sense can send email alerts to Cloud Manager users when certain critical Policies return results so you can get notifications to protect your data. You can choose to send the email notifications on a daily, weekly, or monthly basis.
 
 You can configure this setting when creating the Policy or when editing any Policy.
 
@@ -257,7 +257,7 @@ image:screenshot_compliance_delete_file.png[A screenshot showing selection of th
 
 === List of predefined Policies
 
-Cloud Compliance provides the following system-defined Policies:
+Cloud Data Sense provides the following system-defined Policies:
 
 [cols="25,40,40",width=90%,options="header"]
 |===

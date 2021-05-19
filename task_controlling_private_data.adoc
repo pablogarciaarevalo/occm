@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_controlling_private_data.html
 keywords: personal files, personal data, sensitive personal files, sensitive personal data, health data, ethnic origin, political opinions, gdpr, email address, credit card, ip address, iban, national ID, identifier, sex, criminal, compliance, privacy, filter data, permissions, csv file, highlights, policies
-summary: Gain control of your private data by viewing details about the personal data and sensitive personal data in your organization. You can also gain visibility by reviewing the categories and file types that Cloud Compliance found in your data.
+summary: Gain control of your private data by viewing details about the personal data and sensitive personal data in your organization. You can also gain visibility by reviewing the categories and file types that Cloud Data Sense found in your data.
 ---
 
 = Viewing compliance details about the data stored in your organization
@@ -13,11 +13,11 @@ summary: Gain control of your private data by viewing details about the personal
 :imagesdir: ./media/
 
 [.lead]
-Gain control of your private data by viewing details about the personal data and sensitive personal data in your organization. You can also gain visibility by reviewing the categories and file types that Cloud Compliance found in your data.
+Gain control of your private data by viewing details about the personal data and sensitive personal data in your organization. You can also gain visibility by reviewing the categories and file types that Cloud Data Sense found in your data.
 
-By default, the Cloud Compliance dashboard displays compliance data for all working environments and databases.
+By default, the Cloud Data Sense dashboard displays compliance data for all working environments and databases.
 
-image:screenshot_compliance_dashboard.png[A screenshot of the Cloud Compliance dashboard]
+image:screenshot_compliance_dashboard.png[A screenshot of the Cloud Data Sense dashboard]
 
 If you want to see data for only some of the working environments, <<Viewing Dashboard data for specific working environments,select those working environments>>.
 
@@ -25,17 +25,17 @@ You can also filter the results from the Data Investigation page and download a 
 
 == Personal data
 
-Cloud Compliance automatically identifies specific words, strings, and patterns (Regex) inside the data. For example, Personal Identification Information (PII), credit card numbers, social security numbers, bank account numbers, and more. link:reference_private_data_categories.html#types-of-personal-data[See the full list^].
+Cloud Data Sense automatically identifies specific words, strings, and patterns (Regex) inside the data. For example, Personal Identification Information (PII), credit card numbers, social security numbers, bank account numbers, and more. link:reference_private_data_categories.html#types-of-personal-data[See the full list^].
 
 Additionally, if you have added a database server to be scanned, the _Data Fusion_ feature allows you to scan your files to identify whether unique identifiers from your databases are found in those files or other databases. See link:task_managing_data_fusion.html[Adding personal data identifiers using Data Fusion^] for details.
 
-For some types of personal data, Cloud Compliance uses _proximity validation_ to validate its findings. The validation occurs by looking for one or more predefined keywords in proximity to the personal data that was found. For example, Cloud Compliance identifies a U.S. social security number (SSN) as a SSN if it sees a proximity word next to it--for example, _SSN_ or _social security_. link:reference_private_data_categories.html#types-of-personal-data[The table of personal data^] shows when Cloud Compliance uses proximity validation.
+For some types of personal data, Data Sense uses _proximity validation_ to validate its findings. The validation occurs by looking for one or more predefined keywords in proximity to the personal data that was found. For example, Data Sense identifies a U.S. social security number (SSN) as a SSN if it sees a proximity word next to it--for example, _SSN_ or _social security_. link:reference_private_data_categories.html#types-of-personal-data[The table of personal data^] shows when Data Sense uses proximity validation.
 
 === Viewing files that contain personal data
 
 .Steps
 
-. At the top of Cloud Manager, click *Compliance* and click the *Dashboard* tab.
+. At the top of Cloud Manager, click *Data Sense* and click the *Compliance* tab.
 
 . To investigate the details for all personal data, click the icon next to the personal data percentage.
 +
@@ -51,11 +51,11 @@ image:screenshot_compliance_investigation_page.gif[A screenshot of details infor
 
 == Sensitive personal data
 
-Cloud Compliance automatically identifies special types of sensitive personal information, as defined by privacy regulations such as https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32016R0679&from=EN#d1e2051-1-1[articles 9 and 10 of the GDPR^]. For example, information regarding a person's health, ethnic origin, or sexual orientation. link:reference_private_data_categories.html#types-of-sensitive-personal-data[See the full list^].
+Cloud Data Sense automatically identifies special types of sensitive personal information, as defined by privacy regulations such as https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32016R0679&from=EN#d1e2051-1-1[articles 9 and 10 of the GDPR^]. For example, information regarding a person's health, ethnic origin, or sexual orientation. link:reference_private_data_categories.html#types-of-sensitive-personal-data[See the full list^].
 
-Cloud Compliance uses artificial intelligence (AI), natural language processing (NLP), machine learning (ML), and cognitive computing (CC) to understand the meaning of the content that it scans in order to extract entities and categorize it accordingly.
+Cloud Data Sense uses artificial intelligence (AI), natural language processing (NLP), machine learning (ML), and cognitive computing (CC) to understand the meaning of the content that it scans in order to extract entities and categorize it accordingly.
 
-For example, one sensitive GDPR data category is ethnic origin. Because of its NLP abilities, Cloud Compliance can distinguish the difference between a sentence that reads "George is Mexican" (indicating sensitive data as specified in article 9 of the GDPR), versus "George is eating Mexican food."
+For example, one sensitive GDPR data category is ethnic origin. Because of its NLP abilities, Data Sense can distinguish the difference between a sentence that reads "George is Mexican" (indicating sensitive data as specified in article 9 of the GDPR), versus "George is eating Mexican food."
 
 NOTE: Only English is supported when scanning for sensitive personal data. Support for more languages will be added later.
 
@@ -77,7 +77,7 @@ image:screenshot_sensitive_personal_files.gif[A screenshot of the sensitive pers
 
 == Categories
 
-Cloud Compliance takes the data that it scanned and divides it into different types of categories. Categories are topics based on AI analysis of the content and metadata of each file. link:reference_private_data_categories.html#types-of-categories[See the list of categories^].
+Cloud Data Sense takes the data that it scanned and divides it into different types of categories. Categories are topics based on AI analysis of the content and metadata of each file. link:reference_private_data_categories.html#types-of-categories[See the list of categories^].
 
 Categories can help you understand what's happening with your data by showing you the types of information that you have. For example, a category like resumes or employee contracts can include sensitive data. When you investigate the results, you might find that employee contracts are stored in an insecure location. You can then correct that issue.
 
@@ -97,7 +97,7 @@ image:screenshot_categories.gif[A screenshot of the categories dialog box where 
 
 == File types
 
-Cloud Compliance takes the data that it scanned and breaks it down by file type. Reviewing your file types can help you control your sensitive data because you might find that certain file types are not stored correctly. link:reference_private_data_categories.html#types-of-files[See the list of file types^].
+Cloud Data Sense takes the data that it scanned and breaks it down by file type. Reviewing your file types can help you control your sensitive data because you might find that certain file types are not stored correctly. link:reference_private_data_categories.html#types-of-files[See the list of file types^].
 
 For example, you might be storing CAD files that include very sensitive information about your organization. If they are unsecured, you can take control of the sensitive data by restricting permissions or moving the files to another location.
 
@@ -119,7 +119,7 @@ In the Data Investigation results pane you can click image:button_subfolder.png[
 
 image:screenshot_compliance_file_details.png[A screenshot showing the metadata details for a file in the Data Investigation page.]
 
-In addition to showing you the working environment and volume where the file resides, the metadata shows much more information, including the file permissions, file owner, whether there are duplicates of this file, and assigned AIP label (if you have link:task_managing_highlights.html#categorizing-your-data-using-aip-labels[integrated AIP in Cloud Compliance^]). This information is useful if you're planning to link:task_managing_highlights.html#creating-custom-policies[create Policies] because you can see all the information that you can use to filter your data.
+In addition to showing you the working environment and volume where the file resides, the metadata shows much more information, including the file permissions, file owner, whether there are duplicates of this file, and assigned AIP label (if you have link:task_managing_highlights.html#categorizing-your-data-using-aip-labels[integrated AIP in Cloud Data Sense^]). This information is useful if you're planning to link:task_managing_highlights.html#creating-custom-policies[create Policies] because you can see all the information that you can use to filter your data.
 
 Note that not all information is available for all data sources - just what is appropriate for that data source. For example, volume name, permissions, and AIP labels are not relevant for database files.
 
@@ -153,9 +153,9 @@ TIP: You can use the "hash" value provided in this page and enter it directly in
 
 == Viewing Dashboard data for specific working environments
 
-You can filter the contents of the Cloud Compliance dashboard to see compliance data for all working environments and databases, or for just specific working environments.
+You can filter the contents of the Cloud Data Sense dashboard to see compliance data for all working environments and databases, or for just specific working environments.
 
-When you filter the dashboard, Cloud Compliance scopes the compliance data and reports to just those working environments that you selected.
+When you filter the dashboard, Data Sense scopes the compliance data and reports to just those working environments that you selected.
 
 .Steps
 

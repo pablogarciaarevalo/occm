@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_controlling_governance_data.html
 keywords: savings, stale data, non-business data, duplicate data, age or data, size of data, highlights, policies
-summary: Gain control of the costs related to the data on your organizations' storage resources. Cloud Compliance identifies the amount of stale data, non-business data, duplicate files, and very large files in your systems so you can decide whether you want to remove or tier some files to less expensive object storage.
+summary: Gain control of the costs related to the data on your organizations' storage resources. Cloud Data Sense identifies the amount of stale data, non-business data, duplicate files, and very large files in your systems so you can decide whether you want to remove or tier some files to less expensive object storage.
 ---
 
 = Viewing governance details about the data stored in your organization
@@ -13,7 +13,7 @@ summary: Gain control of the costs related to the data on your organizations' st
 :imagesdir: ./media/
 
 [.lead]
-Gain control of the costs related to the data on your organizations' storage resources. Cloud Compliance identifies the amount of stale data, non-business data, duplicate files, and very large files in your systems so you can decide whether you want to remove or tier some files to less expensive object storage.
+Gain control of the costs related to the data on your organizations' storage resources. Cloud Data Sense identifies the amount of stale data, non-business data, duplicate files, and very large files in your systems so you can decide whether you want to remove or tier some files to less expensive object storage.
 
 Additionally, if you are planning to migrate data from on-premises locations to the cloud, you can view the size of the data and whether any of the data contains sensitive information prior to moving it.
 
@@ -21,7 +21,7 @@ Additionally, if you are planning to migrate data from on-premises locations to 
 
 The Governance dashboard provides information so that you can increase the efficiency and control the costs related to the data stored on your storage resources.
 
-image:screenshot_compliance_governance_dashboard.png[A screenshot of the Cloud Compliance Governance dashboard.]
+image:screenshot_compliance_governance_dashboard.png[A screenshot of the Cloud Data Sense Governance dashboard.]
 
 === Saving Opportunities
 
@@ -38,7 +38,7 @@ You may want to investigate the items in the _Saving Opportunities_ area to see 
 ** Videos
 ** Miscellaneous (general "other" category)
 
-* *Large Files* - Files larger than 100 MB.
+* *Duplicate Files* - Files that are duplicated in other locations in the data sources you are scanning.
 
 === Policies with the largest number of results
 
