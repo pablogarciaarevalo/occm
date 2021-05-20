@@ -47,6 +47,7 @@ Review the following prerequisites to make sure that you have a supported config
 
 Cloud Data Sense can scan schemas from the following databases:
 
+* Amazon Relational Database Service (Amazon RDS)
 * MongoDB
 * MySQL
 * Oracle
