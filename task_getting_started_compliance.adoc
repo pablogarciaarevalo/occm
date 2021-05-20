@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: task_getting_started_compliance.html
-keywords: cloud compliance, get started, enable cloud compliance, cifs credentials, smb credentials, cloud compliance access, privacy, compliance, dp volumes, data protection volumes, ANF, Azure NetApp Files, CVO, Cloud Volumes ONTAP, backup files
-summary: Complete a few steps to get started with Cloud Compliance for Cloud Volumes ONTAP, on-premises ONTAP, or Azure NetApp Files.
+keywords: cloud compliance, get started, enable cloud compliance, cifs credentials, smb credentials, cloud compliance access, privacy, compliance, dp volumes, data protection volumes, ANF, Azure NetApp Files, CVO, Cloud Volumes ONTAP, backup files, data sense
+summary: Complete a few steps to get started with Cloud Data Sense for Cloud Volumes ONTAP, on-premises ONTAP, or Azure NetApp Files.
 ---
 
-= Getting started with Cloud Compliance for Cloud Volumes ONTAP, on-premises ONTAP, or Azure NetApp Files
+= Getting started with Cloud Data Sense for Cloud Volumes ONTAP, on-premises ONTAP, or Azure NetApp Files
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,7 @@ summary: Complete a few steps to get started with Cloud Compliance for Cloud Vol
 :imagesdir: ./media/
 
 [.lead]
-Complete a few steps to get started with Cloud Compliance for Cloud Volumes ONTAP, on-premises ONTAP systems, or Azure NetApp Files.
+Complete a few steps to get started with Cloud Data Sense for Cloud Volumes ONTAP, on-premises ONTAP systems, or Azure NetApp Files.
 
 == Quick start
 
@@ -29,12 +29,12 @@ Before you can scan volumes, you must add the systems as working environments in
 * For on-premises ONTAP systems, link:task_discovering_ontap.html[Cloud Manager must discover the ONTAP clusters^]
 * For Azure NetApp Files, link:task_manage_anf.html[Cloud Manager must be set up to discover the configuration^].
 
-==== image:number2.png[Number 2] Deploy the Cloud Compliance instance
+==== image:number2.png[Number 2] Deploy the Cloud Data Sense instance
 
 [role="quick-margin-para"]
-link:task_deploy_cloud_compliance.html[Deploy Cloud Compliance in Cloud Manager^] if there isn't already an instance deployed.
+link:task_deploy_cloud_compliance.html[Deploy Cloud Data Sense in Cloud Manager^] if there isn't already an instance deployed.
 
-==== image:number3.png[Number 3] Enable Cloud Compliance and select the volumes to scan
+==== image:number3.png[Number 3] Enable Cloud Data Sense and select the volumes to scan
 
 [role="quick-margin-para"]
 Click *Compliance*, select the *Configuration* tab, and activate compliance scans for volumes in specific working environments.
@@ -42,23 +42,23 @@ Click *Compliance*, select the *Configuration* tab, and activate compliance scan
 ==== image:number4.png[Number 4] Ensure access to volumes
 
 [role="quick-margin-para"]
-Now that Cloud Compliance is enabled, ensure that it can access all volumes.
+Now that Cloud Data Sense is enabled, ensure that it can access all volumes.
 
 [role="quick-margin-list"]
-* The Cloud Compliance instance needs a network connection to each Cloud Volumes ONTAP subnet, Azure NetApp Files subnet, or on-prem ONTAP system.
-* Security groups for Cloud Volumes ONTAP must allow inbound connections from the Cloud Compliance instance.
-* Make sure these ports are open to the Cloud Compliance instance:
+* The Cloud Data Sense instance needs a network connection to each Cloud Volumes ONTAP subnet, Azure NetApp Files subnet, or on-prem ONTAP system.
+* Security groups for Cloud Volumes ONTAP must allow inbound connections from the Data Sense instance.
+* Make sure these ports are open to the Data Sense instance:
 ** For NFS – ports 111 and 2049.
 ** For CIFS – ports 139 and 445.
-* NFS volume export policies must allow access from the Cloud Compliance instance.
-* Cloud Compliance needs Active Directory credentials to scan CIFS volumes.
+* NFS volume export policies must allow access from the Data Sense instance.
+* Data Sense needs Active Directory credentials to scan CIFS volumes.
 +
 Click *Compliance* > *Configuration* > *Edit CIFS Credentials* and provide the credentials.
 
 ==== image:number5.png[Number 5] Manage the volumes you want to scan
 
 [role="quick-margin-para"]
-Select or deselect the volumes that you want to scan and Cloud Compliance will start or stop scanning them.
+Select or deselect the volumes that you want to scan and Cloud Data Sense will start or stop scanning them.
 
 == Discovering the data sources that you want to scan
 
@@ -66,23 +66,23 @@ If the data sources you want to scan are not already in your Cloud Manager envir
 
 Your Cloud Volumes ONTAP systems should already be available in the Canvas in Cloud Manager. For on-premises ONTAP systems you need to have link:task_discovering_ontap.html[Cloud Manager discover these clusters^]. And for Azure NetApp Files, link:task_manage_anf.html[Cloud Manager must be set up to discover the configuration^].
 
-== Deploying the Cloud Compliance instance
+== Deploying the Cloud Data Sense instance
 
-link:task_deploy_cloud_compliance.html[Deploy Cloud Compliance^] if there isn't already an instance deployed.
+link:task_deploy_cloud_compliance.html[Deploy Cloud Data Sense^] if there isn't already an instance deployed.
 
-Cloud Compliance can be deployed in the cloud or in an on-premises location when scanning Cloud Volumes ONTAP or on-premises ONTAP systems.
+Cloud Data Sense can be deployed in the cloud or in an on-premises location when scanning Cloud Volumes ONTAP or on-premises ONTAP systems.
 
-Cloud Compliance must be deployed in the cloud when scanning Azure NetApp Files volumes, and it must be deployed in the same region as the volumes you wish to scan.
+Data Sense must be deployed in the cloud when scanning Azure NetApp Files volumes, and it must be deployed in the same region as the volumes you wish to scan.
 
-== Enabling Cloud Compliance in your working environments
+== Enabling Cloud Data Sense in your working environments
 
-You can enable Cloud Compliance on Cloud Volumes ONTAP systems (in AWS and Azure), on-premises ONTAP clusters, and Azure NetApp Files.
+You can enable Cloud Data Sense on Cloud Volumes ONTAP systems (in AWS and Azure), on-premises ONTAP clusters, and Azure NetApp Files.
 
 NOTE: Following these steps for on-prem ONTAP systems scans the volumes directly on the on-prem ONTAP system. If you are already creating backup files from those on-prem systems using link:concept_backup_to_cloud.html[Cloud Backup^], you can run compliance scans on the backup files in the cloud instead. Go to <<Scanning backup files from on-premises ONTAP systems,Scanning backup files from on-premises ONTAP systems>> to scan the volumes by scanning the backup files.
 
 . At the top of Cloud Manager, click *Compliance* and then select the *Configuration* tab.
 +
-image:screenshot_cloud_compliance_we_scan_config.png[A screenshot of the Configuration tab immediately after deploying the Cloud Compliance instance.]
+image:screenshot_cloud_compliance_we_scan_config.png[A screenshot of the Configuration tab immediately after deploying the Cloud Data Sense instance.]
 
 . To scan all volumes in a working environment, click *Activate Compliance for All Volumes*.
 +
@@ -92,29 +92,29 @@ See <<Enabling and disabling compliance scans on volumes,Enabling and disabling 
 
 .Result
 
-Cloud Compliance starts scanning the volumes you selected in the working environment. Results will be available in the Compliance dashboard as soon as Cloud Compliance finishes the initial scans. The time that it takes depends on the amount of data--it could be a few minutes or hours.
+Cloud Data Sense starts scanning the volumes you selected in the working environment. Results will be available in the Compliance dashboard as soon as Cloud Data Sense finishes the initial scans. The time that it takes depends on the amount of data--it could be a few minutes or hours.
 
-== Verifying that Cloud Compliance has access to volumes
+== Verifying that Cloud Data Sense has access to volumes
 
-Make sure that Cloud Compliance can access volumes by checking your networking, security groups, and export policies. You'll need to provide Cloud Compliance with CIFS credentials so it can access CIFS volumes.
+Make sure that Cloud Data Sense can access volumes by checking your networking, security groups, and export policies. You'll need to provide Data Sense with CIFS credentials so it can access CIFS volumes.
 
 .Steps
 
-. Make sure that there's a network connection between the Cloud Compliance instance and each network that includes volumes for Cloud Volumes ONTAP, Azure NetApp Files, or on-prem ONTAP clusters.
+. Make sure that there's a network connection between the Cloud Data Sense instance and each network that includes volumes for Cloud Volumes ONTAP, Azure NetApp Files, or on-prem ONTAP clusters.
 +
-NOTE: For Azure NetApp Files, Cloud Compliance can only scan volumes that are in the same region as Cloud Manager.
+NOTE: For Azure NetApp Files, Cloud Data Sense can only scan volumes that are in the same region as Cloud Manager.
 
-. Ensure that the security group for Cloud Volumes ONTAP allows inbound traffic from the Cloud Compliance instance.
+. Ensure that the security group for Cloud Volumes ONTAP allows inbound traffic from the Data Sense instance.
 +
-You can either open the security group for traffic from the IP address of the Cloud Compliance instance, or you can open the security group for all traffic from inside the virtual network.
+You can either open the security group for traffic from the IP address of the Data Sense instance, or you can open the security group for all traffic from inside the virtual network.
 
-. Ensure the following ports are open to the Cloud Compliance instance:
+. Ensure the following ports are open to the Data Sense instance:
 ** For NFS – ports 111 and 2049.
 ** For CIFS – ports 139 and 445.
 
-. Ensure that NFS volume export policies include the IP address of the Cloud Compliance instance so it can access the data on each volume.
+. Ensure that NFS volume export policies include the IP address of the Data Sense instance so it can access the data on each volume.
 
-. If you use CIFS, provide Cloud Compliance with Active Directory credentials so it can scan CIFS volumes.
+. If you use CIFS, provide Data Sense with Active Directory credentials so it can scan CIFS volumes.
 
 .. At the top of Cloud Manager, click *Compliance*.
 
@@ -122,9 +122,9 @@ You can either open the security group for traffic from the IP address of the Cl
 +
 image:screenshot_cifs_credentials.gif[A screenshot of the Compliance tab that shows the Scan Status button that's available in the top right of the content pane.]
 
-.. For each working environment, click *Edit CIFS Credentials* and enter the user name and password that Cloud Compliance needs to access CIFS volumes on the system.
+.. For each working environment, click *Edit CIFS Credentials* and enter the user name and password that Data Sense needs to access CIFS volumes on the system.
 +
-The credentials can be read-only, but providing admin credentials ensures that Cloud Compliance can read any data that requires elevated permissions. The credentials are stored on the Cloud Compliance instance.
+The credentials can be read-only, but providing admin credentials ensures that Data Sense can read any data that requires elevated permissions. The credentials are stored on the Cloud Data Sense instance.
 +
 After you enter the credentials, you should see a message that all CIFS volumes were authenticated successfully.
 +
@@ -132,9 +132,9 @@ image:screenshot_cifs_status.gif[A screenshot that shows the Configuration page 
 
 . On the _Configuration_ page, click *View Details* to review the status for each CIFS and NFS volume and correct any errors.
 +
-For example, the following image shows three volumes; one of which Cloud Compliance can't scan due to network connectivity issues between the Cloud Compliance instance and the volume.
+For example, the following image shows three volumes; one of which Cloud Data Sense can't scan due to network connectivity issues between the Data Sense instance and the volume.
 +
-image:screenshot_compliance_volume_details.gif[A screenshot of the View Details page in the scan configuration that shows three volumes; one of which isn't being scanned because of network connectivity between Cloud Compliance and the volume.]
+image:screenshot_compliance_volume_details.gif["A screenshot of the View Details page in the scan configuration that shows three volumes; one of which isn't being scanned because of network connectivity between Data Sense and the volume."]
 
 == Enabling and disabling compliance scans on volumes
 
@@ -158,11 +158,11 @@ NOTE: New volumes added to the working environment are automatically scanned onl
 
 == Scanning backup files from on-premises ONTAP systems
 
-If you don't want Cloud Compliance to scan volumes directly on your on-prem ONTAP systems, a new Beta feature released in January 2021 allows you to run compliance scans on backup files created from your on-prem ONTAP volumes. So if you're already creating backup files using link:concept_backup_to_cloud.html[Cloud Backup^], you can use this new feature to run compliance scans on those backup files.
+If you don't want Cloud Data Sense to scan volumes directly on your on-prem ONTAP systems, a new Beta feature released in January 2021 allows you to run compliance scans on backup files created from your on-prem ONTAP volumes. So if you're already creating backup files using link:concept_backup_to_cloud.html[Cloud Backup^], you can use this new feature to run compliance scans on those backup files.
 
-The Compliance scans you run on backup files are *free* - no Cloud Compliance subscription or license is needed.
+The Compliance scans you run on backup files are *free* - no Cloud Data Sense subscription or license is needed.
 
-*Note:* When Compliance scans backup files it uses permissions granted through the Restore instance to access the backup files. Typically the Restore instance powers down when not actively restoring files, but it remains on when scanning backup files. See link:task_restore_backups.html#details[more information about the Restore instance^].
+*Note:* When Data Sense scans backup files it uses permissions granted through the Cloud Restore instance to access the backup files. Typically the Restore instance powers down when not actively restoring files, but it remains *On* when scanning backup files. See link:task_restore_backups.html#details[more information about the Restore instance^].
 
 .Steps
 
@@ -174,7 +174,7 @@ If you want to scan the backup files from on-prem ONTAP systems:
 +
 All the on-premises ONTAP working environments that have backup files are listed. If you don't have any backup files from an on-prem system, then the working environment is not shown.
 +
-image:screenshot_compliance_onprem_backups.png[A screenshot of the Compliance page to select volumes you want to scan.]
+image:screenshot_compliance_onprem_backups.png[A screenshot of the Data Sense page to select volumes you want to scan.]
 
 . To scan all backed up volumes in a working environment, click *Activate Compliance for all backed up Volumes*.
 +
@@ -189,13 +189,13 @@ When you view the entire list of working environments you will see two listings 
 image:screenshot_compliance_we_scan_2_onprems.png[A screenshot showing how on-prem clusters will appear twice in the list of working environments if they have backup files.]
 
 The first item is the on-prem cluster and the actual volumes.
-The second item is the backup files from that same on-prem cluster.
+The second item is the backup files of those volumes from that same on-prem cluster.
 
 Choose the first option to scan the volumes on the on-prem system. Choose the second option to scan the backup files from those volumes. Do not scan both on-prem volumes and backup files of the same cluster.
 
 == Scanning data protection volumes
 
-By default, data protection (DP) volumes are not scanned because they are not exposed externally and Cloud Compliance cannot access them. These are the destination volumes for SnapMirror operations from an on-premises ONTAP system or from a Cloud Volumes ONTAP system.
+By default, data protection (DP) volumes are not scanned because they are not exposed externally and Cloud Data Sense cannot access them. These are the destination volumes for SnapMirror operations from an on-premises ONTAP system or from a Cloud Volumes ONTAP system.
 
 Initially, the volume list identifies these volumes as _Type_ *DP* with the _Status_ *Not Scanning* and the _Required Action_ *Enable Access to DP volumes*.
 
@@ -209,13 +209,13 @@ If you want to scan these data protection volumes:
 
 . Review the confirmation message and click *Enable Access to DP volumes* again.
 - Volumes that were initially created as NFS volumes in the source ONTAP system are enabled.
-- Volumes that were initially created as CIFS volumes in the source ONTAP system require that you enter CIFS credentials to scan those DP volumes. If you already entered Active Directory credentials so that Cloud Compliance can scan CIFS volumes you can use those credentials, or you can specify a different set of Admin credentials.
+- Volumes that were initially created as CIFS volumes in the source ONTAP system require that you enter CIFS credentials to scan those DP volumes. If you already entered Active Directory credentials so that Cloud Data Sense can scan CIFS volumes you can use those credentials, or you can specify a different set of Admin credentials.
 +
 image:screenshot_compliance_dp_cifs_volumes.png[A screenshot of the two options for enabling CIFS data protection volumes.]
 
 . Activate each DP volume that you want to scan <<Enabling and disabling compliance scans on volumes,the same way you enabled other volumes>>, or use the *Activate Compliance for all Volumes* control to enable all volumes, including all DP volumes.
 
 .Result
-Once enabled, Cloud Compliance creates an NFS share from each DP volume that was activated for Compliance so that it can be scanned. The share export policies only allow access from the Cloud Compliance instance.
+Once enabled, Cloud Data Sense creates an NFS share from each DP volume that was activated for scanning. The share export policies only allow access from the Data Sense instance.
 
 *Note:* If you had no CIFS data protection volumes when you initially enabled access to DP volumes, and later add some, the button *Enable Access to CIFS DP* appears at the top of the Configuration page. Click this button and add CIFS credentials to enable access to these CIFS DP volumes.

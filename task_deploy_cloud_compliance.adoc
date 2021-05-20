@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: task_deploy_cloud_compliance.html
-keywords: cloud compliance, get started, deploy cloud compliance, outbound internet, endpoints, cloud compliance internet, web browser connectivity, cloud compliance access, privacy, compliance, on-premises
-summary: Complete a few steps to deploy the Cloud Compliance instance in your Cloud Manager workspace. You can deploy Cloud Compliance in the cloud or on an on-premises system.
+keywords: cloud compliance, data sense, get started, deploy cloud compliance, outbound internet, endpoints, cloud compliance internet, web browser connectivity, cloud compliance access, privacy, compliance, on-premises
+summary: Complete a few steps to deploy the Cloud Data Sense instance in your Cloud Manager workspace. You can deploy Data Sense in the cloud or on an on-premises system.
 ---
 
 = Deploy Cloud Compliance
@@ -13,9 +13,9 @@ summary: Complete a few steps to deploy the Cloud Compliance instance in your Cl
 :imagesdir: ./media/
 
 [.lead]
-Complete a few steps to deploy the Cloud Compliance instance in your Cloud Manager workspace. You can deploy Cloud Compliance in the cloud or on an on-premises system.
+Complete a few steps to deploy the Cloud Data Sense instance in your Cloud Manager workspace. You can deploy Data Sense in the cloud or on an on-premises system.
 
-The on-prem installation may be a good option if you prefer to scan on-premises ONTAP working environments using a Compliance instance that's also located on premises. But this this not a requirement. The Compliance software functions exactly the same way regardless of which installation method you choose.
+The on-prem installation may be a good option if you prefer to scan on-premises ONTAP working environments using a Data Sense instance that's also located on premises. But this this not a requirement. The software functions exactly the same way regardless of which installation method you choose.
 
 == Quick start
 
@@ -32,30 +32,30 @@ You can also link:task_installing_linux.html[deploy the Connector on-premises^] 
 ==== image:number2.png[Number 2] Review prerequisites
 
 [role="quick-margin-para"]
-Ensure that your environment can meet the prerequisites. This includes outbound internet access for the instance, connectivity between the Connector and Cloud Compliance over port 80, and more. <<Reviewing prerequisites,See the complete list>>.
+Ensure that your environment can meet the prerequisites. This includes outbound internet access for the instance, connectivity between the Connector and Cloud Data Sense over port 80, and more. <<Reviewing prerequisites,See the complete list>>.
 
 [role="quick-margin-list"]
-* When installed in the cloud, you need 16 vCPUs for the Cloud Compliance instance. See link:concept_cloud_compliance.html#the-cloud-compliance-instance[more details about the instance type^].
-* When installed on premises, you need a Linux system that meets the link:task_deploy_cloud_compliance.html#deploying-the-cloud-compliance-instance-on-premises[following requirements^].
+* When installed in the cloud, you need 16 vCPUs for the Cloud Data Sense instance. See link:concept_cloud_compliance.html#the-cloud-data-sense-instance[more details about the instance type^].
+* When installed on premises, you need a Linux system that meets the link:task_deploy_cloud_compliance.html#deploying-the-cloud-data-sense-instance-on-premises[following requirements^].
 
-==== image:number3.png[Number 3] Deploy Cloud Compliance
-
-[role="quick-margin-para"]
-Launch the installation wizard to deploy the Cloud Compliance instance.
+==== image:number3.png[Number 3] Deploy Cloud Data Sense
 
 [role="quick-margin-para"]
-You can deploy Cloud Compliance in the cloud or in an on-premises location. The only difference you'll notice in the UI is the words "On-Premises Deployment".
-
-image:screenshot_compliance_onprem_notprem.png[A screenshot indicating a Cloud Compliance on-prem deployment versus a cloud deployment.]
-
-==== image:number4.png[Number 4] Subscribe to the Cloud Compliance service
+Launch the installation wizard to deploy the Cloud Data Sense instance.
 
 [role="quick-margin-para"]
-The first 1 TB of data that Cloud Compliance scans in Cloud Manager is free. A subscription to the AWS or Azure Marketplace is required to continue scanning data after that point.
+You can deploy Cloud Data Sense in the cloud or in an on-premises location. The only difference you'll notice in the UI is the words "On-Premises Deployment".
+
+image:screenshot_compliance_onprem_notprem.png[A screenshot indicating a Cloud Data Sense on-prem deployment versus a cloud deployment.]
+
+==== image:number4.png[Number 4] Subscribe to the Cloud Data Sense service
+
+[role="quick-margin-para"]
+The first 1 TB of data that Cloud Data Sense scans in Cloud Manager is free. A subscription to the AWS or Azure Marketplace is required to continue scanning data after that point.
 
 == Creating a Connector
 
-If you don't already have a Connector, create a Connector in Azure or AWS. See link:task_creating_connectors_aws.html[creating a Connector in AWS^] or link:task_creating_connectors_azure.html[creating a Connector in Azure^]. In most cases you will probably have a Connector set up before you attempt to activate Cloud Compliance because most link:concept_connectors.html#when-a-connector-is-required[Cloud Manager features require a Connector], but there are cases where you'll you need to set one up now.
+If you don't already have a Connector, create a Connector in Azure or AWS. See link:task_creating_connectors_aws.html[creating a Connector in AWS^] or link:task_creating_connectors_azure.html[creating a Connector in Azure^]. In most cases you will probably have a Connector set up before you attempt to activate Cloud Data Sense because most link:concept_connectors.html#when-a-connector-is-required[Cloud Manager features require a Connector], but there are cases where you'll you need to set one up now.
 
 There are some scenarios where you have to use a Connector that's deployed in AWS or Azure:
 
@@ -64,7 +64,7 @@ There are some scenarios where you have to use a Connector that's deployed in AW
 
 On-prem ONTAP systems, non-NetApp file shares, generic S3 Object storage, databases, and OneDrive folders can be scanned using either Connector.
 
-Note that you can also link:task_installing_linux.html[deploy the Connector on-premises^] on an existing Linux host in your network or in the cloud. Some users planning to install Cloud Compliance on-prem may also choose to install the Connector on-prem.
+Note that you can also link:task_installing_linux.html[deploy the Connector on-premises^] on an existing Linux host in your network or in the cloud. Some users planning to install Data Sense on-prem may also choose to install the Connector on-prem.
 
 As you can see, there may be some situations where you need to use link:concept_connectors.html#when-to-use-multiple-connectors[multiple Connectors].
 
@@ -72,12 +72,12 @@ NOTE: If you're planning on scanning Azure NetApp Files, you need to make sure y
 
 == Reviewing prerequisites
 
-Review the following prerequisites to make sure that you have a supported configuration before you deploy Cloud Compliance.
+Review the following prerequisites to make sure that you have a supported configuration before you deploy Cloud Data Sense.
 
-Enable outbound internet access from Cloud Compliance::
-Cloud Compliance requires outbound internet access. If your virtual or physical network uses a proxy server for internet access, ensure that the Cloud Compliance instance has outbound internet access to contact the following endpoints. When you deploy Cloud Compliance in the cloud, it's located in the same subnet as the Connector.
+Enable outbound internet access from Cloud Data Sense::
+Cloud Data Sense requires outbound internet access. If your virtual or physical network uses a proxy server for internet access, ensure that the Data Sense instance has outbound internet access to contact the following endpoints. When you deploy Data Sense in the cloud, it's located in the same subnet as the Connector.
 +
-Review the appropriate table below depending on whether you are deploying Cloud Compliance in AWS, Azure, or on-premises.
+Review the appropriate table below depending on whether you are deploying Cloud Data Sense in AWS, Azure, or on-premises.
 +
 *Required endpoints for AWS deployments:*
 +
@@ -113,7 +113,7 @@ Review the appropriate table below depending on whether you are deploying Cloud 
 \https://user-feedback-store-prod.s3.us-west-2.amazonaws.com
 \https://customer-data-production.s3.us-west-2.amazonaws.com
 
-| Enables Cloud Compliance to access and download manifests and templates, and to send logs and metrics.
+| Enables Cloud Data Sense to access and download manifests and templates, and to send logs and metrics.
 |===
 +
 *Required endpoints for Azure and On-Prem deployments:*
@@ -161,7 +161,7 @@ Review the appropriate table below depending on whether you are deploying Cloud 
 |===
 
 Ensure that Cloud Manager has the required permissions::
-Ensure that Cloud Manager has permissions to deploy resources and create security groups for the Cloud Compliance instance. You can find the latest Cloud Manager permissions in https://mysupport.netapp.com/site/info/cloud-manager-policies[the policies provided by NetApp^].
+Ensure that Cloud Manager has permissions to deploy resources and create security groups for the Cloud Data Sense instance. You can find the latest Cloud Manager permissions in https://mysupport.netapp.com/site/info/cloud-manager-policies[the policies provided by NetApp^].
 
 Check your vCPU limits::
 When installed in the cloud, ensure that your cloud provider's vCPU limit allows for the deployment of an instance with 16 cores. You'll need to verify the vCPU limit for the relevant instance family in the region where Cloud Manager is running.
@@ -173,24 +173,24 @@ See the following links for more details on vCPU limits:
 * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html[AWS documentation: Amazon EC2 Service Limits^]
 * https://docs.microsoft.com/en-us/azure/virtual-machines/linux/quotas[Azure documentation: Virtual machine vCPU quotas^]
 
-Ensure that Cloud Manager can access Cloud Compliance::
-Ensure connectivity between the Connector and the Cloud Compliance instance. The security group for the Connector must allow inbound and outbound traffic over port 80 to and from the Cloud Compliance instance.
+Ensure that Cloud Manager can access Cloud Data Sense::
+Ensure connectivity between the Connector and the Cloud Data Sense instance. The security group for the Connector must allow inbound and outbound traffic over port 80 to and from the Data Sense instance.
 +
-This connection enables deployment of the Cloud Compliance instance and enables you to view information in the Compliance tab.
+This connection enables deployment of the Data Sense instance and enables you to view information in the Compliance and Governance tabs.
 
-Ensure that you can keep Cloud Compliance running::
-The Cloud Compliance instance needs to stay on to continuously scan your data.
+Ensure that you can keep Cloud Data Sense running::
+The Cloud Data Sense instance needs to stay on to continuously scan your data.
 
-Ensure web browser connectivity to Cloud Compliance::
-After Cloud Compliance is enabled, ensure that users access the Cloud Manager interface from a host that has a connection to the Cloud Compliance instance.
+Ensure web browser connectivity to Cloud Data Sense::
+After Cloud Data Sense is enabled, ensure that users access the Cloud Manager interface from a host that has a connection to the Data Sense instance.
 +
-The Cloud Compliance instance uses a private IP address to ensure that the indexed data isn't accessible to the internet. As a result, the web browser that you use to access Cloud Manager must have a connection to that private IP address. That connection can come from a direct connection to AWS or Azure (for example, a VPN), or from a host that's inside the same network as the Cloud Compliance instance.
+The Data Sense instance uses a private IP address to ensure that the indexed data isn't accessible to the internet. As a result, the web browser that you use to access Cloud Manager must have a connection to that private IP address. That connection can come from a direct connection to AWS or Azure (for example, a VPN), or from a host that's inside the same network as the Data Sense instance.
 
-== Deploying the Cloud Compliance instance in the cloud
+== Deploying the Cloud Data Sense instance in the cloud
 
-Deploying an instance of Cloud Compliance in the cloud is the most common deployment model. But you have the option to <<Deploying the Cloud Compliance instance on premises,deploy the Compliance software on a Linux host>> in your network or in the cloud.
+Deploying an instance of Cloud Data Sense in the cloud is the most common deployment model. But you have the option to <<Deploying the Cloud Data Sense instance on premises,deploy the Compliance software on a Linux host>> in your network or in the cloud.
 
-The Compliance software functions exactly the same way regardless of which installation method you choose.
+The Data Sense software functions exactly the same way regardless of which installation method you choose.
 
 .Steps
 
@@ -198,34 +198,34 @@ The Compliance software functions exactly the same way regardless of which insta
 
 . Click *Activate Cloud Compliance*.
 +
-image:screenshot_cloud_compliance_deploy_start.png[A screenshot of selecting the button to activate Cloud Compliance.]
+image:screenshot_cloud_compliance_deploy_start.png[A screenshot of selecting the button to activate Cloud Data Sense.]
 
 . Click *Activate Compliance* to start the cloud deployment wizard.
 +
-image:screenshot_cloud_compliance_deploy_cloud.png[A screenshot of selecting the button to deploy Cloud Compliance in the cloud.]
+image:screenshot_cloud_compliance_deploy_cloud.png[A screenshot of selecting the button to deploy Cloud Data Sense in the cloud.]
 
 . The wizard displays progress as it goes through the deployment steps. It will stop and ask for input if it runs into any issues.
 +
-image:screenshot_cloud_compliance_wizard_start.png[A screenshot of the Cloud Compliance wizard to deploy a new instance.]
+image:screenshot_cloud_compliance_wizard_start.png[A screenshot of the Cloud Data Sense wizard to deploy a new instance.]
 
 . When the instance is deployed, click *Continue to configuration* to go to the _Configuration_ page.
 
 .Result
 
-Cloud Manager deploys the Cloud Compliance instance in your cloud provider.
+Cloud Manager deploys the Cloud Data Sense instance in your cloud provider.
 
 .What's Next
 From the Configuration page you can select the data sources that you want to scan.
 
-You can also <<Subscribing to the Cloud Compliance service,subscribe to the Cloud Compliance service>> at this time. You will not be charged until the amount of data exceeds 1 TB.
+You can also <<Subscribing to the Cloud Data Sense service,subscribe to the Cloud Data Sense service>> at this time. You will not be charged until the amount of data exceeds 1 TB.
 
-== Deploying the Cloud Compliance instance on premises
+== Deploying the Cloud Data Sense instance on premises
 
-You can download and install the Compliance software on a Linux host in your network if you do not want to <<Deploying the Cloud Compliance instance in the cloud,deploy it in the cloud>>.
+You can download and install the Data Sense software on a Linux host in your network if you do not want to <<Deploying the Cloud Data Sense instance in the cloud,deploy it in the cloud>>.
 
-The Compliance software functions exactly the same regardless of which installation method you choose.
+The Data Sense software functions exactly the same regardless of which installation method you choose.
 
-NOTE: Cloud Compliance is currently unable to scan S3 buckets and Azure NetApp Files when the Compliance instance is installed on premises. In these cases you'll need to deploy a separate Connector and instance of Compliance in the cloud and link:concept_connectors.html#when-to-switch-between-connectors[switch between Connectors^] for your different data sources.
+NOTE: Cloud Data Sense is currently unable to scan S3 buckets and Azure NetApp Files when the software is installed on premises. In these cases you'll need to deploy a separate Connector and instance of Data Sense in the cloud and link:concept_connectors.html#when-to-switch-between-connectors[switch between Connectors^] for your different data sources.
 
 .Host requirements
 
@@ -240,13 +240,13 @@ NOTE: Cloud Compliance is currently unable to scan S3 buckets and Azure NetApp F
 
 *	Make sure port 8080 is open so you can see the installation progress in Cloud Manager.
 
-* Root privileges are required to install Cloud Compliance.
+* Root privileges are required to install Cloud Data Sense.
 
-See <<Reviewing prerequisites,Reviewing prerequisites>> for the full list of requirements and endpoints that Cloud Compliance must be able to reach over the internet.
+See <<Reviewing prerequisites,Reviewing prerequisites>> for the full list of requirements and endpoints that Cloud Data Sense must be able to reach over the internet.
 
 .Steps
 
-. Download the Cloud Compliance software from the https://mysupport.netapp.com/site/products/all/details/cloud-compliance/downloads-tab/[NetApp Support Site^].
+. Download the Cloud Data Sense software from the https://mysupport.netapp.com/site/products/all/details/cloud-compliance/downloads-tab/[NetApp Support Site^].
 
 . Copy the installer file to the Linux host you plan to use (using `scp` or some other method).
 
@@ -254,13 +254,13 @@ See <<Reviewing prerequisites,Reviewing prerequisites>> for the full list of req
 
 . Click *Activate Cloud Compliance*.
 +
-image:screenshot_cloud_compliance_deploy_start.png[A screenshot of selecting the button to activate Cloud Compliance.]
+image:screenshot_cloud_compliance_deploy_start.png[A screenshot of selecting the button to activate Cloud Data Sense.]
 
 . Click *Activate Compliance* to start the on-prem deployment wizard.
 +
-image:screenshot_cloud_compliance_deploy_onprem.png[A screenshot of selecting the button to deploy Cloud Compliance on premises.]
+image:screenshot_cloud_compliance_deploy_onprem.png[A screenshot of selecting the button to deploy Cloud Data Sense on premises.]
 
-. In the _Deploy Cloud Compliance On Premises_ dialog, copy the provided command and paste it in a text file so you can use it later. For example:
+. In the _Deploy Cloud Data Sense On Premises_ dialog, copy the provided command and paste it in a text file so you can use it later. For example:
 +
 sudo ./install.sh -a 12345 -c 27AG75 -t 2198qq
 
@@ -279,9 +279,9 @@ sudo ./install.sh -a 12345 -c 27AG75 -t 2198qq
 |
 a. Paste the information you copied from step 6:
 `sudo ./install.sh -a <account_id> -c <agent_id> -t <token>`
-b. Enter the IP address or host name of the Compliance host machine so it can be accessed by the Connector instance.
-c. Enter the IP address or host name of the Cloud Manager Connector host machine so it can be accessed by the Cloud Compliance instance.
-d. Enter proxy details as prompted. If your Cloud Manager already uses a proxy, there is no need to enter this information again here since Cloud Compliance will automatically use the proxy used by Cloud Manager.
+b. Enter the IP address or host name of the Data Sense host machine so it can be accessed by the Connector instance.
+c. Enter the IP address or host name of the Cloud Manager Connector host machine so it can be accessed by the Data Sense instance.
+d. Enter proxy details as prompted. If your Cloud Manager already uses a proxy, there is no need to enter this information again here since Data Sense will automatically use the proxy used by Cloud Manager.
 | Alternatively, you can create the whole command in advance and enter it in the first prompt:
 `sudo ./install.sh -a <account_id> -c <agent_id> -t <token> --host <cc_host> --cm-host <cm_host> --proxy-host <proxy_host> --proxy-port <proxy_port> --proxy-scheme <proxy_scheme> --proxy-user <proxy_user> --proxy-password <proxy_password>`
 |===
@@ -292,7 +292,7 @@ Variable values:
 * _account_id_ = NetApp Account ID
 * _agent_id_ = Connector ID
 * _token_ = jwt user token
-* _cc_host_ = IP address or host name of the Cloud Compliance Linux system.
+* _cc_host_ = IP address or host name of the Data Sense Linux system.
 * _cm_host_ = IP address or host name of the Cloud Manager Connector system.
 * _proxy_host_ = IP or host name of the proxy server if the host is behind a proxy server.
 * _proxy_port_ = Port to connect to the proxy server (default 80).
@@ -302,24 +302,24 @@ Variable values:
 
 .Result
 
-The Cloud Compliance installer installs packages, installs docker, registers the installation, and installs Cloud Compliance. Installation can take 10 to 20 minutes.
+The Cloud Data Sense installer installs packages, installs docker, registers the installation, and installs Data Sense. Installation can take 10 to 20 minutes.
 
-If there is connectivity over port 8080 between the host machine and the Connector instance, you will see the installation progress in the Compliance tab in Cloud Manager.
+If there is connectivity over port 8080 between the host machine and the Connector instance, you will see the installation progress in the Data Sense tab in Cloud Manager.
 
 .What's Next
 From the Configuration page you can select the data sources that you want to scan.
 
-You can also <<Subscribing to the Cloud Compliance service,subscribe to the Cloud Compliance service>> at this time. You will not be charged until the amount of data exceeds 1 TB. A subscription to either the AWS or Azure Marketplace can be used when you have deployed Cloud Compliance on an on-premises system.
+You can also <<Subscribing to the Cloud Data Sense service,subscribe to the Cloud Data Sense service>> at this time. You will not be charged until the amount of data exceeds 1 TB. A subscription to either the AWS or Azure Marketplace can be used when you have deployed Data Sense on an on-premises system.
 
-== Subscribing to the Cloud Compliance service
+== Subscribing to the Cloud Data Sense service
 
-The first 1 TB of data that Cloud Compliance scans in a Cloud Manager workspace is free. A subscription to the AWS or Azure Marketplace is required to continue scanning data after that point.
+The first 1 TB of data that Cloud Data Sense scans in a Cloud Manager workspace is free. A subscription to the AWS or Azure Marketplace is required to continue scanning data after that point.
 
-You can subscribe at any time and you will not be charged until the amount of data exceeds 1 TB. You can always see the total amount of data that is being scanned from the Cloud Compliance Dashboard. And the _Subscribe Now_ button makes it easy to subscribe when you are ready.
+You can subscribe at any time and you will not be charged until the amount of data exceeds 1 TB. You can always see the total amount of data that is being scanned from the Data Sense Dashboard. And the _Subscribe Now_ button makes it easy to subscribe when you are ready.
 
 image:screenshot_compliance_subscribe.png[A screenshot showing how much data is being scanned and the Subscribe button to subscribe to the service.]
 
-*Note:* If you are prompted by Cloud Compliance to subscribe, but you already have an Azure subscription, you’re probably using the old *Cloud Manager* subscription and you need to change to the new *NetApp Cloud Manager* subscription. See <<Changing to the new Cloud Manager plan in Azure,Changing to the new NetApp Cloud Manager plan in Azure>> for details.
+*Note:* If you are prompted by Cloud Data Sense to subscribe, but you already have an Azure subscription, you’re probably using the old *Cloud Manager* subscription and you need to change to the new *NetApp Cloud Manager* subscription. See <<Changing to the new Cloud Manager plan in Azure,Changing to the new NetApp Cloud Manager plan in Azure>> for details.
 
 .Steps
 
@@ -355,11 +355,11 @@ video::video_subscribing_azure.mp4[width=848, height=480]
 
 == Changing to the new Cloud Manager plan in Azure
 
-Cloud Compliance was added to the Azure Marketplace subscription named *NetApp Cloud Manager* as of October 7, 2020. If you already have the original Azure *Cloud Manager* subscription it will not allow you to use Cloud Compliance.
+Cloud Data Sense (Cloud Compliance) was added to the Azure Marketplace subscription named *NetApp Cloud Manager* as of October 7, 2020. If you already have the original Azure *Cloud Manager* subscription it will not allow you to use Cloud Data Sense.
 
-You need to follow these steps to change to the new *NetApp Cloud Manager* subscription before you can start using Cloud Compliance.
+You need to follow these steps to change to the new *NetApp Cloud Manager* subscription before you can start using Cloud Data Sense.
 
-NOTE: If your existing Subscription was issued with a special private offer, you need to contact NetApp so that we can issue a new special private offer with Compliance included.
+NOTE: If your existing Subscription was issued with a special private offer, you need to contact NetApp so that we can issue a new special private offer with Data Sense included.
 
 .Steps
 
@@ -376,6 +376,6 @@ The details for your current Marketplace Subscription are displayed.
 image:screenshot_compliance_azure_subscription.png[A screenshot showing the list of all your Azure subscriptions and the details for the subscription you want to change.]
 
 . In the Change Plan page, select the *NetApp Cloud Manager* plan and click the *Change Plan* button.
-image:screenshot_compliance_azure_change_plan.png[A screenshot of changing to the new plan that supports Cloud Compliance.]
+image:screenshot_compliance_azure_change_plan.png[A screenshot of changing to the new plan that supports Cloud Data Sense.]
 
 . Return to Cloud Manager, select the subscription, and hover over the “i” above subscription in the Credentials card to verify your subscription has changed.
