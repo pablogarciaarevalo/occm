@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: task_deploy_cloud_compliance.html
-keywords: cloud compliance, data sense, get started, deploy cloud compliance, outbound internet, endpoints, cloud compliance internet, web browser connectivity, cloud compliance access, privacy, compliance, on-premises
+keywords: cloud compliance, data sense, get started, deploy cloud compliance, outbound internet, endpoints, cloud compliance internet, web browser connectivity, cloud compliance access, privacy, compliance, on-premises, Data Sense
 summary: Complete a few steps to deploy the Cloud Data Sense instance in your Cloud Manager workspace. You can deploy Data Sense in the cloud or on an on-premises system.
 ---
 
-= Deploy Cloud Compliance
+= Deploy Cloud Data Sense
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -194,13 +194,13 @@ The Data Sense software functions exactly the same way regardless of which insta
 
 .Steps
 
-. In Cloud Manager, click *Compliance*.
+. In Cloud Manager, click *Data Sense*.
 
-. Click *Activate Cloud Compliance*.
+. Click *Activate Cloud Data Sense*.
 +
 image:screenshot_cloud_compliance_deploy_start.png[A screenshot of selecting the button to activate Cloud Data Sense.]
 
-. Click *Activate Compliance* to start the cloud deployment wizard.
+. Click *Activate Data Sense* to start the cloud deployment wizard.
 +
 image:screenshot_cloud_compliance_deploy_cloud.png[A screenshot of selecting the button to deploy Cloud Data Sense in the cloud.]
 
@@ -250,13 +250,13 @@ See <<Reviewing prerequisites,Reviewing prerequisites>> for the full list of req
 
 . Copy the installer file to the Linux host you plan to use (using `scp` or some other method).
 
-. In Cloud Manager, click *Compliance*.
+. In Cloud Manager, click *Data Sense*.
 
-. Click *Activate Cloud Compliance*.
+. Click *Activate Cloud Data Sense*.
 +
 image:screenshot_cloud_compliance_deploy_start.png[A screenshot of selecting the button to activate Cloud Data Sense.]
 
-. Click *Activate Compliance* to start the on-prem deployment wizard.
+. Click *Activate Data Sense* to start the on-prem deployment wizard.
 +
 image:screenshot_cloud_compliance_deploy_onprem.png[A screenshot of selecting the button to deploy Cloud Data Sense on premises.]
 
@@ -283,7 +283,7 @@ b. Enter the IP address or host name of the Data Sense host machine so it can be
 c. Enter the IP address or host name of the Cloud Manager Connector host machine so it can be accessed by the Data Sense instance.
 d. Enter proxy details as prompted. If your Cloud Manager already uses a proxy, there is no need to enter this information again here since Data Sense will automatically use the proxy used by Cloud Manager.
 | Alternatively, you can create the whole command in advance and enter it in the first prompt:
-`sudo ./install.sh -a <account_id> -c <agent_id> -t <token> --host <cc_host> --cm-host <cm_host> --proxy-host <proxy_host> --proxy-port <proxy_port> --proxy-scheme <proxy_scheme> --proxy-user <proxy_user> --proxy-password <proxy_password>`
+`sudo ./install.sh -a <account_id> -c <agent_id> -t <token> --host <ds_host> --cm-host <cm_host> --proxy-host <proxy_host> --proxy-port <proxy_port> --proxy-scheme <proxy_scheme> --proxy-user <proxy_user> --proxy-password <proxy_password>`
 |===
 
 +
@@ -292,7 +292,7 @@ Variable values:
 * _account_id_ = NetApp Account ID
 * _agent_id_ = Connector ID
 * _token_ = jwt user token
-* _cc_host_ = IP address or host name of the Data Sense Linux system.
+* _ds_host_ = IP address or host name of the Data Sense Linux system.
 * _cm_host_ = IP address or host name of the Cloud Manager Connector system.
 * _proxy_host_ = IP or host name of the proxy server if the host is behind a proxy server.
 * _proxy_port_ = Port to connect to the proxy server (default 80).
