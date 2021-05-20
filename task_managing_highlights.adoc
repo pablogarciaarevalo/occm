@@ -91,7 +91,7 @@ To delete a Policy, click the image:screenshot_gallery_options.gif[More button] 
 
 You can manage AIP labels in the files that Cloud Data Sense is scanning if you have subscribed to link:https://azure.microsoft.com/en-us/services/information-protection/[Azure Information Protection (AIP)^]. AIP enables you to classify and protect documents and files by applying labels to content. Data Sense enables you to view the labels that are already assigned to files, add labels to files, and change labels when a label already exists.
 
-Cloud Compliance support AIP labels within the following file types: .DOC, .DOCX, .PDF, .PPTX, .XLS, .XLSX.
+Cloud Data Sense supports AIP labels within the following file types: .DOC, .DOCX, .PDF, .PPTX, .XLS, .XLSX.
 
 Note that you can't currently change labels in files larger than 30 MB. For OneDrive accounts the maximum file size is 4 MB.
 
