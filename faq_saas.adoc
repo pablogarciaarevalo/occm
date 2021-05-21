@@ -48,7 +48,7 @@ The role of the Connector hasn't changed. It has the same purpose as before--to 
 
 == Can I remove the Connector now that I am using the SaaS platform?
 
-No, you should not. The Connector is the same software that was used to manage resources and processes within your public cloud environments, such as deploying and managing Cloud Volumes ONTAP, enabling Cloud Backup Service, deploying Cloud Compliance, and more.
+No, you should not. The Connector is the same software that was used to manage resources and processes within your public cloud environments, such as deploying and managing Cloud Volumes ONTAP, enabling Cloud Backup, deploying Cloud Data Sense, and more.
 
 == When is a SaaS-based subscription required?
 
@@ -56,12 +56,12 @@ A SaaS-based subscription is available from your cloud provider's marketplace to
 
 * Cloud Volumes ONTAP (starting with version 9.6 in AWS and GCP, and version 9.7 in Azure)
 * Cloud Backup
-* Cloud Compliance
+* Cloud Data Sense
 * Cloud Tiering
 
 For Cloud Volumes ONTAP, Cloud Backup, and Cloud Tiering, you also have the option to purchase licenses directly from NetApp. In those cases, a SaaS-based subscription isn’t required.
 
-A SaaS-based subscription is the only way to pay for Cloud Compliance.
+A SaaS-based subscription is the only way to pay for Cloud Data Sense.
 
 When you get started with these services, Cloud Manager prompts you to subscribe if a subscription isn't in place. You'll only need to subscribe once--Cloud Manager uses the same subscription for each of these services.
 
@@ -76,9 +76,9 @@ The following links provide pricing and subscription details for these services.
 * Cloud Tiering
 ** link:concept_cloud_tiering.html#pricing-and-licenses[Learn about Cloud Tiering pricing and licenses]
 ** link:task_licensing_cloud_tiering.html[Learn how to set up licensing for Cloud Tiering]
-* Cloud Compliance
-** link:concept_cloud_compliance.html#cost[Learn about Cloud Compliance costs]
-** link:task_deploy_cloud_compliance.html#subscribing-to-the-cloud-compliance-service[Learn how to subscribe to Cloud Compliance]
+* Cloud Data Sense
+** link:concept_cloud_compliance.html#cost[Learn about Cloud Data Sense costs]
+** link:task_deploy_cloud_compliance.html#subscribing-to-the-cloud-data-sense-service[Learn how to subscribe to Cloud Data Sense]
 
 == Can I still use my Cloud Manager the same way that I did before (locally through the instance deployed in my VPC)?
 
@@ -104,15 +104,15 @@ The SaaS platform is used as a secure pipeline for API calls (HTTPS with a NetAp
 
 == What data or metadata is stored by the Connector that’s deployed in the VPC/VNet?
 
-The Connector/Cloud Manager has not changed. It’s storing the same data that it did in the previous release. It only holds metadata required to manage resources and processes within your public cloud environments, such as deploying and managing Cloud Volumes ONTAP, enabling Cloud Backup Service, deploying and using Cloud Compliance, and more (see the link:concept_connectors.html[Learn about Connectors] page for the complete list of services).
+The Connector/Cloud Manager has not changed. It’s storing the same data that it did in the previous release. It only holds metadata required to manage resources and processes within your public cloud environments, such as deploying and managing Cloud Volumes ONTAP, enabling Cloud Backup, deploying and using Cloud Data Sense, and more (see the link:concept_connectors.html[Learn about Connectors] page for the complete list of services).
 
 == What are the data and metadata paths?
 
 Data from the Connector to the customer is transported via HTTPS, encrypted and signed by a NetApp certificate. The SaaS-based UI serves as a secure pipeline between the client web browser and the Connector. That means the data from the Connector can be accessed only by authorized users.
 
-For customers utilizing the Cloud Compliance service, it is now encrypted end-to-end. The key exchange takes place between the web browser and the Connector, so NetApp can’t read any of the data. https://cloud.netapp.com/cloud-compliance[Learn more about Cloud Compliance^].
+For customers utilizing the Cloud Data Sense service, it is now encrypted end-to-end. The key exchange takes place between the web browser and the Connector, so NetApp can’t read any of the data. https://cloud.netapp.com/cloud-compliance[Learn more about Cloud Data Sense^].
 
-== Is there a GDPR impact when using the Cloud Compliance service through the SaaS endpoint?
+== Is there a GDPR impact when using the Cloud Data Sense service through the SaaS endpoint?
 
 The data is encrypted end-to-end. The key exchange takes place between the web browser and the Connector, so NetApp can’t read any of the data.
 

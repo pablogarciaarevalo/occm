@@ -127,7 +127,7 @@ When viewing the details for a single file there are two actions you can take on
 
 * You can delete the file. See link:task_managing_highlights.html#deleting-source-files[Deleting source files^] for details.
 
-* If you have integrated AIP labels with Cloud Compliance, you can assign a label to this file, or change to a different label if one already exists. See link:task_managing_highlights.html#assigning-aip-labels-manually[Assigning AIP labels manually^] for details.
+* If you have integrated AIP labels with Cloud Data Sense, you can assign a label to this file, or change to a different label if one already exists. See link:task_managing_highlights.html#assigning-aip-labels-manually[Assigning AIP labels manually^] for details.
 
 === Viewing permissions for files
 

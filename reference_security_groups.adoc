@@ -239,9 +239,9 @@ The security group for the Connector requires both inbound and outbound rules.
 | Purpose
 
 | SSH | 22 | Provides SSH access to the Connector host
-| HTTP | 80 |	Provides HTTP access from client web browsers to the local user interface and connections from Cloud Compliance
+| HTTP | 80 |	Provides HTTP access from client web browsers to the local user interface and connections from Cloud Data Sense
 | HTTPS |	443 |	Provides HTTPS access from client web browsers to the local user interface
-| TCP | 3128 | Provides the Cloud Compliance instance with internet access, if your AWS network doesn’t use a NAT or proxy
+| TCP | 3128 | Provides the Cloud Data Sense instance with internet access, if your AWS network doesn’t use a NAT or proxy
 
 |===
 
@@ -293,5 +293,5 @@ NOTE: The source IP address is the Connector host.
 .2+| API calls | TCP	| 3000 | ONTAP cluster management LIF | API calls to ONTAP
 | TCP | 8088 | Backup to S3 | API calls to Backup to S3
 | DNS | UDP	| 53 | DNS | Used for DNS resolve by Cloud Manager
-| Cloud Compliance | HTTP | 80 | Cloud Compliance instance | Cloud Compliance for Cloud Volumes ONTAP
+| Cloud Data Sense | HTTP | 80 | Cloud Data Sense instance | Cloud Data Sense for Cloud Volumes ONTAP
 |===
