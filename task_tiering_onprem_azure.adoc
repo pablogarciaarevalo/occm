@@ -148,9 +148,9 @@ image:screenshot_setup_tiering_onprem.png[A screenshot that shows the Enable opt
 +
 The storage account and containers that appear in this step belong to the resource group that you selected in the previous step.
 
-.. *Access Tier Life Cycle Management*: Select the access tier that you want to transition the tiered data to and the number of days before the data will be moved, and click *Continue*.
+.. *Access Tier Life Cycle Management*: Select the access tier that you want to transition the tiered data to and the number of days before the data will be moved, and click *Continue*. For example, the screenshot below shows that tiered data is moved from the _Hot_ class to the _Cool_ class after 45 days in object storage.
 +
-If you choose *Keep data in this access tier*, then the data remains in the _Hot_ access tier and no rules are applied. For example, the screenshot below shows that tiered data will remain in the _Hot_ access tier.
+If you choose *Keep data in this access tier*, then the data remains in the _Hot_ access tier and no rules are applied.
 link:reference_azure_support.html[See supported access tiers^].
 +
 image:screenshot_tiering_lifecycle_selection_azure.png[A screenshot showing how to select another access tier where data is moved after a certain number of days.]
