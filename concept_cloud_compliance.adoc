@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept_cloud_compliance.html
 keywords: artificial intelligence, ai, compliance, cloud compliance, dsar, personal data, personal information, sensitive, personal sensitive data, gdpr, hipaa, scans, scanning, azure netapp files, cloud volumes ontap, Amazon S3, database, onedrive, on-prem ontap, file shares, object storage, backup files, aip labels, governance, data sense
-summary: Cloud Data Sense is a data privacy and compliance service for Cloud Manager that scans your volumes, Amazon S3 buckets, databases, OneDrive accounts, and other data sources to identify the personal and sensitive data that resides in those files. Using Artificial Intelligence driven technology, Cloud Data Sense helps organizations understand data context and identify sensitive data.
+summary: Cloud Data Sense is a data privacy and compliance service for Cloud Manager that scans your corporate data sources to identify the personal and sensitive data that resides in those files. Using Artificial Intelligence driven technology, Cloud Data Sense helps organizations understand data context and identify sensitive data.
 ---
 
 = Learn about Cloud Data Sense
@@ -13,7 +13,9 @@ summary: Cloud Data Sense is a data privacy and compliance service for Cloud Man
 :imagesdir: ./media/
 
 [.lead]
-Cloud Data Sense is a data privacy and compliance service for Cloud Manager that scans your volumes, Amazon S3 buckets, databases, OneDrive accounts, and other data sources to identify the personal and sensitive data that resides in those files. Using Artificial Intelligence (AI) driven technology, Cloud Data Sense helps organizations understand data context and identify sensitive data.
+Cloud Data Sense is a data privacy and compliance service for Cloud Manager that scans your corporate data sources to identify the personal and sensitive data that resides in those files. Using Artificial Intelligence driven technology, Cloud Data Sense helps organizations understand data context and identify sensitive data.
+
+NOTE: *Cloud Compliance* was renamed to *Cloud Data Sense* in the June 2021 release.
 
 https://cloud.netapp.com/cloud-compliance[Learn about the use cases for Cloud Data Sense^].
 
@@ -26,7 +28,7 @@ Cloud Data Sense provides several tools that can help you with your compliance e
 * Respond to Data Subject Access Requests (DSAR)
 * Notify Cloud Manager users through email when files contain certain PII (you define this criteria using link:task_managing_highlights.html#controlling-your-data-using-policies[Policies^])
 * View and modify link:https://azure.microsoft.com/en-us/services/information-protection/[Azure Information Protection (AIP) labels^] in your files
-* Add a custom status and owner to a file so you can assign a Cloud Manager user some action for certain files
+* Add a custom status to a file so you can identify if the file needs attention or has been verified
 * Delete individual files
 
 Cloud Data Sense also provides tools that can help with your governance efforts. You can use Cloud Data Sense to:
@@ -58,7 +60,7 @@ NOTE: A Beta feature released in January 2021 allows you to run compliance scans
 
 * The cost to use Cloud Data Sense depends on the amount of data that you're scanning. The first 1 TB of data that Data Sense scans in a Cloud Manager workspace is free. This includes all data from all working environments and data sources. A subscription to the AWS or Azure Marketplace is required to continue scanning data after that point. See https://cloud.netapp.com/cloud-compliance#pricing[pricing^] for details.
 +
-link:task_deploy_cloud_compliance.html#subscribing-to-the-cloud-compliance-service[Learn how to subscribe^].
+link:task_deploy_cloud_compliance.html#subscribing-to-the-cloud-data-sense-service[Learn how to subscribe^].
 +
 *Note:* This subscription is not needed to scan backup files created from your on-prem ONTAP systems.
 
@@ -126,13 +128,13 @@ Data Sense collects, indexes, and assigns categories to your data (files). The d
 
 Standard metadata:: Cloud Data Sense collects standard metadata about files: the file type, its size, creation and modification dates, and so on.
 
-Personal data:: Personally identifiable information such as email addresses, identification numbers, or credit card numbers. link:task_controlling_private_data.html#personal-data[Learn more about personal data^].
+Personal data:: Personally identifiable information such as email addresses, identification numbers, or credit card numbers. link:task_controlling_private_data.html#viewing-files-that-contain-personal-data[Learn more about personal data^].
 
-Sensitive personal data:: Special types of sensitive information, such as health data, ethnic origin, or political opinions, as defined by GDPR and other privacy regulations. link:task_controlling_private_data.html#sensitive-personal-data[Learn more about sensitive personal data^].
+Sensitive personal data:: Special types of sensitive information, such as health data, ethnic origin, or political opinions, as defined by GDPR and other privacy regulations. link:task_controlling_private_data.html#viewing-files-that-contain-sensitive-personal-data[Learn more about sensitive personal data^].
 
-Categories:: Cloud Data Sense takes the data that it scanned and divides it into different types of categories. Categories are topics based on AI analysis of the content and metadata of each file. link:task_controlling_private_data.html#categories[Learn more about categories^].
+Categories:: Cloud Data Sense takes the data that it scanned and divides it into different types of categories. Categories are topics based on AI analysis of the content and metadata of each file. link:task_controlling_private_data.html#viewing-files-by-categories[Learn more about categories^].
 
-Types:: Cloud Data Sense takes the data that it scanned and breaks it down by file type. link:task_controlling_private_data.html#file-types[Learn more about types^].
+Types:: Cloud Data Sense takes the data that it scanned and breaks it down by file type. link:task_controlling_private_data.html#viewing-files-by-file-types[Learn more about types^].
 
 Name entity recognition::
 Cloud Data Sense uses AI to extract natural persons’ names from documents. link:task_responding_to_dsar.html[Learn about responding to Data Subject Access Requests^].

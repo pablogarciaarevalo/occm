@@ -89,7 +89,7 @@ image:screenshot_categories.gif[A screenshot of the categories dialog box where 
 
 . Investigate the data by searching, sorting, expanding details for a specific file, clicking *Investigate Results* to see masked information, or by downloading the file list.
 
-== Viewing file by file types
+== Viewing files by file types
 
 Cloud Data Sense takes the data that it scanned and breaks it down by file type. Reviewing your file types can help you control your sensitive data because you might find that certain file types are not stored correctly. link:reference_private_data_categories.html#types-of-files[See the list of file types^].
 

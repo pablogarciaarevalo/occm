@@ -40,6 +40,10 @@ You may want to investigate the items in the _Saving Opportunities_ area to see 
 
 * *Duplicate Files* - Files that are duplicated in other locations in the data sources you are scanning.
 
+=== Data Overview
+
+A quick overview of all the data that is being scanned. Click the button to download a full data mapping report that includes Usage Capacity, Age of Data, Size of Data, and File Types for all working environments and data sources. See link:task_generating_compliance_reports.html#data-mapping-report[Data Mapping Report] for complete details.
+
 === Policies with the largest number of results
 
 Click the name of a Policy in the _Policy_ area to display the results in the Investigation page. Click *View All* to view the list of all available Policies.

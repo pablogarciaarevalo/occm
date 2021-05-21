@@ -19,9 +19,9 @@ If you need to, you can stop Cloud Data Sense from scanning one or more working 
 
 When you deactivate scans, Cloud Data Sense no longer scans the data on the working environment and it removes the indexed compliance insights from the Data Sense instance (the data from the working environment itself isn't deleted).
 
-. From the _Configuration_ page, click the image:screenshot_gallery_options.gif[More button] button in the row for the working environment, and then click *Deactivate Scanning*.
+. From the _Configuration_ page, click the image:screenshot_gallery_options.gif[More button] button in the row for the working environment, and then click *Deactivate Data Sense*.
 
-image:screenshot_deactivate_compliance_scan.png[A screenshot of the action icon where you can select Deactivate scan. This option is available after you select a working environment from the Canvas page.]
+image:screenshot_deactivate_compliance_scan.png[A screenshot of the action icon where you can select Deactivate Data Sense. This option is available after you select a working environment from the Canvas page.]
 
 TIP: You can also disable compliance scans for a working environment from the Services panel when you select the working environment.
 

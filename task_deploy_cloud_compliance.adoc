@@ -355,7 +355,7 @@ video::video_subscribing_azure.mp4[width=848, height=480]
 
 == Changing to the new Cloud Manager plan in Azure
 
-Cloud Data Sense (Cloud Compliance) was added to the Azure Marketplace subscription named *NetApp Cloud Manager* as of October 7, 2020. If you already have the original Azure *Cloud Manager* subscription it will not allow you to use Cloud Data Sense.
+Cloud Data Sense (Cloud Compliance) was added to the Azure Marketplace subscription named *NetApp Cloud Manager* as of October 2020. If you already have the original Azure *Cloud Manager* subscription it will not allow you to use Cloud Data Sense.
 
 You need to follow these steps to change to the new *NetApp Cloud Manager* subscription before you can start using Cloud Data Sense.
 

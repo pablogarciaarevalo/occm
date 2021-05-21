@@ -80,7 +80,7 @@ You can enable Cloud Data Sense on Cloud Volumes ONTAP systems (in AWS and Azure
 
 NOTE: Following these steps for on-prem ONTAP systems scans the volumes directly on the on-prem ONTAP system. If you are already creating backup files from those on-prem systems using link:concept_backup_to_cloud.html[Cloud Backup^], you can run compliance scans on the backup files in the cloud instead. Go to <<Scanning backup files from on-premises ONTAP systems,Scanning backup files from on-premises ONTAP systems>> to scan the volumes by scanning the backup files.
 
-. At the top of Cloud Manager, click *Compliance* and then select the *Configuration* tab.
+. At the top of Cloud Manager, click *Data Sense* and then select the *Configuration* tab.
 +
 image:screenshot_cloud_compliance_we_scan_config.png[A screenshot of the Configuration tab immediately after deploying the Cloud Data Sense instance.]
 
@@ -116,7 +116,7 @@ You can either open the security group for traffic from the IP address of the Da
 
 . If you use CIFS, provide Data Sense with Active Directory credentials so it can scan CIFS volumes.
 
-.. At the top of Cloud Manager, click *Compliance*.
+.. At the top of Cloud Manager, click *Data Sense*.
 
 .. Click the *Configuration* tab.
 +
@@ -168,7 +168,7 @@ The Compliance scans you run on backup files are *free* - no Cloud Data Sense su
 
 If you want to scan the backup files from on-prem ONTAP systems:
 
-. At the top of Cloud Manager, click *Compliance* and then select the *Configuration* tab.
+. At the top of Cloud Manager, click *Data Sense* and then select the *Configuration* tab.
 
 . From the list of working environments, click the *BACKUP* button from the list of filters.
 +

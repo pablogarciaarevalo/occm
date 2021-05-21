@@ -161,7 +161,7 @@ Precision:: The probability that what Data Sense finds has been identified corre
 
 Recall:: The probability for Data Sense to find what it should. For example, a recall rate of 70% for personal data means that Data Sense can identify 7 out of 10 files that actually contain personal information in your organization. Data Sense would miss 30% of the data and it won’t appear in the dashboard.
 
-Cloud Data Sense is in a Controlled Availability release and we are constantly improving the accuracy of our results. Those improvements will be automatically available in future Data Sense releases.
+We are constantly improving the accuracy of our results. Those improvements will be automatically available in future Data Sense releases.
 
 [cols="25,20,20",width=80%,options="header"]
 |===

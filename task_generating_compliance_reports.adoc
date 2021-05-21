@@ -31,11 +31,11 @@ Data subjects in this assessment:: The number of people, by location, for which 
 
 === Generating the Privacy Risk Assessment Report
 
-Go to the Compliance tab to generate the report.
+Go to the Data Sense tab to generate the report.
 
 .Steps
 
-. At the top of Cloud Manager, click *Compliance*.
+. At the top of Cloud Manager, click *Data Sense*.
 
 . Under *Reports*, click the download icon next to *Privacy Risk Assessment*.
 +
@@ -91,11 +91,11 @@ Distribution of Credit Card Information:: The working environments where the cre
 
 === Generating the PCI DSS Report
 
-Go to the Compliance tab to generate the report.
+Go to the Data Sense tab to generate the report.
 
 .Steps
 
-. At the top of Cloud Manager, click *Compliance*.
+. At the top of Cloud Manager, click *Data Sense*.
 
 . Under *Reports*, click the download icon next to *PCI DSS Report*.
 +
@@ -129,15 +129,35 @@ Distribution of Health Information:: The working environments where the health i
 
 === Generating the HIPAA Report
 
-Go to the Compliance tab to generate the report.
+Go to the Data Sense tab to generate the report.
 
 .Steps
 
-. At the top of Cloud Manager, click *Compliance*.
+. At the top of Cloud Manager, click *Data Sense*.
 
 . Under *Reports*, click the download icon next to *HIPAA Report*.
 +
 image:screenshot_hipaa.gif[A screen shot of the Compliance tab in Cloud Manager that shows the Reports pane where you can click HIPAA.]
+
+.Result
+
+Cloud Data Sense generates a PDF report that you can review and send to other groups as needed.
+
+== Data Mapping Report
+
+The Data Mapping Report 
+
+=== Generating the Data Mapping Report
+
+Go to the Data Sense tab to generate the report.
+
+.Steps
+
+. At the top of Cloud Manager, click *Data Sense*.
+
+. Under *Governance*, click the button for *Download Data Mapping Report*.
++
+image:screenshot_compliance_data_mapping_report_button.png[A screen shot of the Governance Dashboard that shows how to launch the Data Mapping Report.]
 
 .Result
 
