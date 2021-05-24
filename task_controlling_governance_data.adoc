@@ -97,7 +97,7 @@ See link:task_controlling_private_data.html#viewing-files-by-categories[Viewing 
 
 Reviewing your file types can help you control your sensitive data because you might find that certain file types are not stored correctly.
 
-See link:task_controlling_private_data.html#viewing-file-types[Viewing file types^] for more information.
+See link:task_controlling_private_data.html#viewing-files-by-file-types[Viewing file types^] for more information.
 
 ==== AIP labels
 

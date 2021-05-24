@@ -15,7 +15,7 @@ summary: Cloud Data Sense provides reports that you can use to better understand
 [.lead]
 Cloud Data Sense provides reports that you can use to better understand the status of your organization's data privacy program.
 
-By default, the Cloud Data Sense dashboard displays compliance data for all working environments and databases. If you want to view reports that contain data for only some of the working environments, <<Selecting the working environments for reports,select those working environments>>.
+By default, the Cloud Data Sense dashboards display compliance and governance data for all working environments and databases. If you want to view reports that contain data for only some of the working environments, <<Selecting the working environments for reports,select those working environments>>.
 
 NOTE: NetApp can't guarantee 100% accuracy of the personal data and sensitive personal data that Cloud Data Sense identifies. You should always validate the information by reviewing the data.
 
@@ -37,7 +37,7 @@ Go to the Data Sense tab to generate the report.
 
 . At the top of Cloud Manager, click *Data Sense*.
 
-. Under *Reports*, click the download icon next to *Privacy Risk Assessment*.
+. Click *Compliance*, and then click the download icon next to *Privacy Risk Assessment* under *Reports*.
 +
 image:screenshot_privacy_risk_assessment.gif[A screen shot of the Compliance tab in Cloud Manager that shows the Reports pane where you can click Privacy Risk Assessment.]
 
@@ -97,7 +97,7 @@ Go to the Data Sense tab to generate the report.
 
 . At the top of Cloud Manager, click *Data Sense*.
 
-. Under *Reports*, click the download icon next to *PCI DSS Report*.
+. Click *Compliance*, and then click the download icon next to *PCI DSS Report* under *Reports*.
 +
 image:screenshot_pci_dss.gif[A screen shot of the Compliance tab in Cloud Manager that shows the Reports pane where you can click Privacy Risk Assessment.]
 
@@ -135,7 +135,7 @@ Go to the Data Sense tab to generate the report.
 
 . At the top of Cloud Manager, click *Data Sense*.
 
-. Under *Reports*, click the download icon next to *HIPAA Report*.
+. Click *Compliance*, and then click the download icon next to *HIPAA Report* under *Reports*.
 +
 image:screenshot_hipaa.gif[A screen shot of the Compliance tab in Cloud Manager that shows the Reports pane where you can click HIPAA.]
 
@@ -145,7 +145,19 @@ Cloud Data Sense generates a PDF report that you can review and send to other gr
 
 == Data Mapping Report
 
-The Data Mapping Report 
+The Data Mapping Report provides an overview of the data being stored in your corporate data sources to assist you with decisions of migration, back up, security, and compliance processes. The report first lists an overview report summarizing all your working environments and data sources, and then provides a breakdown for each working environment.
+
+The report includes the following information:
+
+Usage Capacity:: For all working environments: Lists the number of files and the used capacity for each working environment.
+For single working environments: Lists the files that are using the most capacity.
+
+Age of Data:: For all working environments: Lists the number of files that have been modified based on certain date ranges.
+For single working environments: Lists the number of files that have been created, accessed, and modified based on certain date ranges.
+
+Size of Data:: Lists the number of files that exist within certain size ranges in your working environments.
+
+File Types:: Lists the total number of files and the used capacity for each type of file being stored in your working environments.
 
 === Generating the Data Mapping Report
 
@@ -155,7 +167,7 @@ Go to the Data Sense tab to generate the report.
 
 . At the top of Cloud Manager, click *Data Sense*.
 
-. Under *Governance*, click the button for *Download Data Mapping Report*.
+. Click *Governance*, and then click the *Download Data Mapping Report* button from the Governance Dashboard.
 +
 image:screenshot_compliance_data_mapping_report_button.png[A screen shot of the Governance Dashboard that shows how to launch the Data Mapping Report.]
 

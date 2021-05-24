@@ -54,14 +54,14 @@ You can create your own custom Policies that provide results for searches specif
 
 . From the Data Investigation page, define your search by selecting all the filters you want to use. See link:task_controlling_private_data.html#filtering-data-in-the-data-investigation-page[Filtering data in the Data Investigation page^] for details.
 
-. Once you have all the filter characteristics just the way you want them, click *Save this search as a Policy*.
+. Once you have all the filter characteristics just the way you want them, click *Create Policy from this search*.
 +
 image:screenshot_compliance_save_as_highlight.png[A screenshot showing how to save a filtered query as a Policy.]
 
 . Name the Policy and select other actions that can be performed by the Policy:
 .. Enter a unique name and description.
 .. Optionally, check the box if you want notification emails sent to Cloud Manager users, and choose the interval at which the email is sent.
-.. Optionally, check the box to automatically assign AIP labels to files that match the Policy parameters, and select the label. (Learn more about <<Categorizing your data using AIP labels,AIP labels>>.)
+.. Optionally, check the box to automatically assign AIP labels to files that match the Policy parameters, and select the label. (Only if you have already integrated AIP labels. Learn more about <<Categorizing your data using AIP labels,AIP labels>>.)
 .. Click *Create Policy*.
 +
 image:screenshot_compliance_save_highlight.png[A screenshot that shows how to configure the Policy and save it.]

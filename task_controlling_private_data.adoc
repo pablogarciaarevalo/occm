@@ -39,7 +39,7 @@ For some types of personal data, Data Sense uses _proximity validation_ to valid
 +
 image:screenshot_compliance_personal.gif[A screenshot of selecting the personal data percentage.]
 
-. To investigate the details for a specific type of personal data, click *View All* and then click the *Investigate Results* icon for a specific type of personal data.
+. To investigate the details for a specific type of personal data, click *View All* and then click the *Investigate Results* icon for a specific type of personal data; for example, email addresses.
 +
 image:screenshot_personal_files.gif[A screenshot of the personal files dialog box where you can click the Investigate Results icon next to a personal data type.]
 
@@ -59,7 +59,7 @@ NOTE: Only English is supported when scanning for sensitive personal data. Suppo
 
 .Steps
 
-. At the top of Cloud Manager, click *Compliance*.
+. At the top of Cloud Manager, click *Data Sense* and click the *Compliance* tab.
 
 . To investigate the details for all sensitive personal data, click the icon next to the sensitive personal data percentage.
 +
@@ -81,7 +81,7 @@ NOTE: Only English is supported for categories. Support for more languages will 
 
 .Steps
 
-. At the top of Cloud Manager, click *Compliance*.
+. At the top of Cloud Manager, click *Data Sense* and click the *Compliance* tab.
 
 . Click the *Investigate Results* icon for one of the top 4 categories directly from the main screen, or click *View All* and then click the icon for any of the categories.
 +
@@ -97,7 +97,7 @@ For example, you might be storing CAD files that include very sensitive informat
 
 .Steps
 
-. At the top of Cloud Manager, click *Compliance*.
+. At the top of Cloud Manager, click *Data Sense* and click the *Compliance* tab.
 
 . Click the *Investigate Results* icon for one of the top 4 file types directly from the main screen, or click *View All* and then click the icon for any of the file types.
 +
@@ -165,26 +165,47 @@ image:screenshot_compliance_investigation_filtered.png[A screenshot of the filte
 
 * The controls at the top of each column allow you to sort the results in numerical or alphabetical order.
 
-* The left-pane filters enable you to refine the results by working environment, storage repository, category, private data, file type, file size, last modified date, whether the S3 object’s permissions are open to public access, etc...
+* The left-pane filters enable you to refine the results by selecting from the following attributes:
+
+** Policies
+** Open Permissions
+** File Owner
+** Label
+** Working Environment
+** Storage Repository
+** File Path
+** Category
+** Sensitivity Level
+** Personal Data
+** Sensitive Personal Data
+** Data Subject
+** File Type
+** File Size
+** Created Time
+** Last Modified date
+** Has Duplicates
+** File Hash
 
 * The _Policies_ filter at the top of the Filters pane lists the custom filters that provide commonly requested combinations of filters; like a saved database query or Favorites list. Go link:task_managing_highlights.html#controlling-your-data-using-policies[here^] to view the list of predefined Policies and to see how you can create your own custom Policies.
 
 == What’s included in each file list report (CSV file)
 
-From each Investigation page you can click the image:button_download.png[] button to download file lists (in CSV format) that include details about the identified files. If there are more than 10,000 results, only the top 10,000 appear in the list.
+From each Investigation page you can click the image:button_download.png[] button to download file lists (in CSV format) that include details about the identified files. If Data Sense is scanning both Structured (database tables) and Unstructured (files) data, there are two reports contained in the downloaded ZIP file.
 
-Each file list includes the following information:
+If there are more than 10,000 results, only the top 10,000 appear in the list.
+
+The Unstructured Data Report includes the following information:
 
 * File name
 * Location type
 * Working environment
 * Storage repository
-* Protocol
+* Protocol type
 * File path
 * File type
-* Created time (does not appear for files in databases)
-* Last modified (does not appear for files in databases)
-* File size (does not appear for files in databases)
+* Created time
+* Last modified
+* File size
 * File owner
 * Category
 * Personal information
@@ -192,3 +213,14 @@ Each file list includes the following information:
 * Deletion detection date
 +
 A deletion detection date identifies the date that the file was deleted or moved. This enables you to identify when sensitive files have been moved. Deleted files aren't part of the file number count that appears in the dashboard or on the Investigation page. The files only appear in the CSV reports.
+
+The Structured Data Report includes the following information:
+
+* DB Table name
+* Location type
+* Working environment
+* Storage repository
+* Column count
+* Row count
+* Personal information
+* Sensitive personal information

@@ -98,6 +98,8 @@ PCI DSS report:: Helps you identify the distribution of credit card information 
 
 HIPAA report:: Helps you identify the distribution of health information across your files. link:task_generating_compliance_reports.html[Learn more^].
 
+Data Mapping report:: Provides information about the size and number of files in your working environments. This includes usage capacity, age of data, size of data, and file types. link:task_generating_compliance_reports.html#data-mapping-report[Learn more^].
+
 Reports on a specific information type:: Reports are available that include details about the identified files that contain personal data and sensitive personal data. You can also see files broken down by category and file type. link:task_controlling_private_data.html[Learn more^].
 
 == Does scan performance vary?
