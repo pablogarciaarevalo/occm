@@ -27,7 +27,7 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 * <<Cloud Tiering enhancements>>
 * <<Cloud Data Sense (Cloud Compliance) enhancements>>
 * <<Application Template enhancements>>
-* <<NetApp's Identity as a Service>>
+* <<Changes to NSS authentication>>
 
 === Cloud Volumes ONTAP enhancements
 
@@ -47,12 +47,10 @@ link:task_tiering.html[Learn how to adjust the minimum cooling period.]
 +
 This enhancement helps reduce cloud provider costs by removing snapshots that are no longer needed.
 +
-Note that a Connector requires a new permission to delete Azure snapshots:
+Note that a Connector requires a new permission to delete Azure snapshots. https://mysupport.netapp.com/site/info/cloud-manager-policies[View the latest Cloud Manager policy for Azure^].
 +
 [source,json]
 "Microsoft.Compute/snapshots/delete"
-+
-https://mysupport.netapp.com/site/info/cloud-manager-policies[View the latest Cloud Manager policy for Azure^].
 
 * In AWS, Cloud Manager now adds tags to EBS volumes when creating a new Cloud Volumes ONTAP working environment. The tags were previously created after Cloud Volumes ONTAP was deployed.
 +
@@ -60,7 +58,9 @@ This change can help if your organization uses service control policies (SCPs) t
 
 === Digital Wallet
 
-A new *Digital Wallet* feature enables you to more easily view and manage your Cloud Volumes ONTAP licenses and Cloud Backup licenses from a single location. link:task_managing_licenses.html#[Learn more about Digital Wallet].
+A new *Digital Wallet* feature enables you to more easily view and manage your Cloud Volumes ONTAP licenses and Cloud Backup licenses from a single location.
+
+link:task_managing_licenses.html#[Learn more about Digital Wallet].
 
 image:screenshot_digital_wallet.gif[A screenshot of the Digital Wallet page that shows Cloud Volumes ONTAP licenses.]
 
@@ -123,7 +123,7 @@ This feature enables Cloud Manager to monitor the hard-coded values you entered 
 
 * Now you can run a template from the Template Dashboard instead of having to open a working environment and launch the template there.
 
-=== NetApp's Identity as a Service
+=== Changes to NSS authentication
 
 NetApp now uses Microsoft Azure Active Directory as the identity provider for authentication services specific to support and licensing.
 
