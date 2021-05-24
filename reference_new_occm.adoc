@@ -19,6 +19,27 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.7 (30 May 2021)
+
+* <<Cloud Backup enhancements>>
+* <<Monitoring enhancements>>
+* <<Replication enhancement>>
+* <<Account enhancement>>
+* <<Cloud Compliance enhancements>>
+
+=== IDaaS
+
+=== Cloud Volumes ONTAP enhancements
+
+* By capacity charging
+* Sort the export policy drop-down list
+* Auto purge old Snapshot copies
+* Add tags during EBS creation to support SCP policy
+* Adjust retention period for Auto Tiering policy
+
+=== Global licensing
+
+
 == Cloud Manager 3.9.6 build 2 (11 May 2021)
 
 We fixed a bug that caused failures when creating a Cloud Volumes ONTAP working environment in Azure.
