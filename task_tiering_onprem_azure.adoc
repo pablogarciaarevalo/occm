@@ -124,6 +124,12 @@ Ensure that the Connector has the required networking connections.
 +
 A VNet service endpoint to Azure storage is recommended if you have an ExpressRoute or VPN connection from your ONTAP cluster to the VNet and you want communication between the Connector and Blob storage to stay in your virtual private network.
 
+=== Preparing Azure Blob storage
+
+When you set up tiering, you need to provide a resource group and a storage account and Blob container that belong to the resource group. A storage account enables Cloud Tiering to authenticate and access the Blob container used for data tiering.
+
+NOTE: If you are planning to configure Cloud Tiering to use a lower cost access tier where your tiered data will transition to after a certain number of days, you must not select any life cycle rules when setting up the container in your Azure account. In this case Cloud Tiering will manage the life cycle transitions.
+
 == Tiering inactive data from your first cluster to Azure Blob storage
 
 After you prepare your Azure environment, start tiering inactive data from your first cluster.
@@ -155,7 +161,9 @@ link:reference_azure_support.html[See supported access tiers^].
 +
 image:screenshot_tiering_lifecycle_selection_azure.png[A screenshot showing how to select another access tier where data is moved after a certain number of days.]
 +
-<<Verify that you have the necessary Connector permissions,Verify that you have the necessary Connector permissions>> for the life cycle management feature. Note that the life cycle rule is applied to all blob containers in the selected storage account.
+Note that the life cycle rule is applied to all blob containers in the selected storage account.
++
+<<Verify that you have the necessary Connector permissions,Verify that you have the necessary Connector permissions>> for the life cycle management feature.
 
 .. *Cluster Network*: Select the IPspace that ONTAP should use to connect to object storage, and click *Continue*.
 +

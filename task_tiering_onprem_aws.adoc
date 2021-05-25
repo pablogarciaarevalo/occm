@@ -121,7 +121,7 @@ A VPC Endpoint to S3 is recommended if you have a Direct Connect or VPN connecti
 
 When you set up data tiering to a new cluster, you're prompted to create an S3 bucket or to select an existing S3 bucket in the AWS account where the Connector is set up. The AWS account must have permissions and an access key that you can enter in Cloud Tiering. The ONTAP cluster uses the access key to tier data in and out of S3.
 
-NOTE: If you are planning to select a lower cost storage class where your tiered data will transition to after 30 days, you must ensure that there are no other rules applied to the selected bucket.
+NOTE: If you are planning to configure Cloud Tiering to use a lower cost storage class where your tiered data will transition to after a certain number of days, you must not select any life cycle rules when setting up the bucket in your AWS account. In this case Cloud Tiering will manage the life cycle transitions.
 
 .Steps
 

@@ -115,11 +115,11 @@ Ensure that the Connector has the required networking connections.
 +
 https://cloud.google.com/vpc/docs/configure-private-google-access[Private Google Access^] is recommended if you have a direct connection from your ONTAP cluster to the VPC and you want communication between the Connector and Google Cloud Storage to stay in your virtual private network. Note that Private Google Access works with VM instances that have only internal (private) IP addresses (no external IP addresses).
 
-=== Preparing Google Cloud Storage for data tiering
+=== Preparing Google Cloud Storage
 
 When you set up tiering, you need to provide storage access keys for a service account that has Storage Admin permissions. A service account enables Cloud Tiering to authenticate and access Cloud Storage buckets used for data tiering. The keys are required so that Google Cloud Storage knows who is making the request.
 
-NOTE: If you are planning to select a lower cost storage class where your tiered data will transition to after a certain number of days, you must ensure that there are no other rules applied to the selected bucket.
+NOTE: If you are planning to configure Cloud Tiering to use lower cost storage classes where your tiered data will transition to after a certain number of days, you must not select any life cycle rules when setting up the bucket in your GCP account. In this case Cloud Tiering will manage the life cycle transitions.
 
 .Steps
 
