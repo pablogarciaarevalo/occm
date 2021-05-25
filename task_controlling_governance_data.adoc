@@ -38,7 +38,7 @@ You may want to investigate the items in the _Saving Opportunities_ area to see 
 ** Videos
 ** Miscellaneous (general "other" category)
 
-* *Duplicate Files* - Files that are duplicated in other locations in the data sources you are scanning.
+* *Duplicate Files* - Files that are duplicated in other locations in the data sources you are scanning. link:task_controlling_private_data.html#viewing-all-duplicated-files[See what types of duplicate files are displayed].
 
 === Data Overview
 

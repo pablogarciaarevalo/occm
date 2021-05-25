@@ -115,13 +115,15 @@ In addition to showing you the working environment and volume where the file res
 
 Note that not all information is available for all data sources - just what is appropriate for that data source. For example, volume name, permissions, and AIP labels are not relevant for database files.
 
-When viewing the details for a single file there are two actions you can take on the file:
+When viewing the details for a single file there are a few actions you can take on the file:
 
 * You can delete the file. See link:task_managing_highlights.html#deleting-source-files[Deleting source files^] for details.
 
+* You can assign a certain Status to the file.
+
 * If you have integrated AIP labels with Cloud Data Sense, you can assign a label to this file, or change to a different label if one already exists. See link:task_managing_highlights.html#assigning-aip-labels-manually[Assigning AIP labels manually^] for details.
 
-=== Viewing permissions for files
+== Viewing permissions for files
 
 To view a list of all users or groups who have access to a file, and the types of permissions they have, click *View all Permissions*.
 
@@ -129,19 +131,27 @@ image:screenshot_compliance_permissions.png[A screenshot showing detailed file p
 
 This button is available only for files in CIFS shares.
 
-=== Viewing whether files are duplicated in your storage systems
+== Checking for duplicate files in your storage systems
 
-If there are duplicates of a certain file, this information appears next to the _Duplicates_ field. This is useful if you want to identify areas where you can save storage space. It can also be helpful to make sure certain files that have specific permissions or sensitive information are not unnecessarily duplicated in your storage systems.
-//
-// Only files that are in the formats described in link:reference_private_data_categories.html#types-of-files[Types of files] can be identified as duplicate.
+You can view if duplicate files are being stored in your storage systems. This is useful if you want to identify areas where you can save storage space. It can also be helpful to make sure certain files that have specific permissions or sensitive information are not unnecessarily duplicated in your storage systems.
 
-To view the list of duplicate files, click *View Details*. In the next page click *View Duplicates* to view the files in the Investigation page.
+You can download the list of duplicate files and send it to your storage admin so they can decide which files, if any, can be deleted. Or you can link:task_managing_highlights.html#deleting-source-files[delete the file^] yourself if you are confident that a specific version of the file is not needed.
+
+=== Viewing all duplicated files
+
+If you want a list of all files that are duplicated in the working environments and data sources you are scanning, you can use the filter called *Duplicates > Has duplicates* in the Data Investigation page.
+
+All files with duplicates from all file types (not including databases), with a minimum size of 50 MB, and/or containing personal or sensitive personal information, will show in the Results page.
+
+=== Viewing if a specific file is duplicated
+
+If you want to see if a single file has duplicates, in the Data Investigation results pane you can click image:button_subfolder.png[right-caret] for any single file to view the file metadata. If there are duplicates of a certain file, this information appears next to the _Duplicates_ field.
+
+To view the list of duplicate files and where they are located, click *View Details*. In the next page click *View Duplicates* to view the files in the Investigation page.
 
 image:screenshot_compliance_duplicate_file.png[A screenshot showing how to view where duplicated files are located.]
 
-You can download the list of duplicate files and send it to your storage admin so they can decide which files, if any, can be deleted.  Of you can link:task_managing_highlights.html#deleting-source-files[delete the file^] yourself if you are confident that this version of the file is not needed.
-
-TIP: You can use the "hash" value provided in this page and enter it directly in the Investigation page to search for a specific duplicate file at any time - or to be used in a Policy.
+TIP: You can use the "file hash" value provided in this page and enter it directly in the Investigation page to search for a specific duplicate file at any time - or to be used in a Policy.
 
 == Viewing Dashboard data for specific working environments
 
@@ -184,6 +194,7 @@ image:screenshot_compliance_investigation_filtered.png[A screenshot of the filte
 ** Created Time
 ** Last Modified date
 ** Has Duplicates
+** Status
 ** File Hash
 
 * The _Policies_ filter at the top of the Filters pane lists the custom filters that provide commonly requested combinations of filters; like a saved database query or Favorites list. Go link:task_managing_highlights.html#controlling-your-data-using-policies[here^] to view the list of predefined Policies and to see how you can create your own custom Policies.
@@ -194,7 +205,7 @@ From each Investigation page you can click the image:button_download.png[] butto
 
 If there are more than 10,000 results, only the top 10,000 appear in the list.
 
-The Unstructured Data Report includes the following information:
+The *Unstructured Data Report* includes the following information:
 
 * File name
 * Location type
@@ -214,7 +225,7 @@ The Unstructured Data Report includes the following information:
 +
 A deletion detection date identifies the date that the file was deleted or moved. This enables you to identify when sensitive files have been moved. Deleted files aren't part of the file number count that appears in the dashboard or on the Investigation page. The files only appear in the CSV reports.
 
-The Structured Data Report includes the following information:
+The *Structured Data Report* includes the following information:
 
 * DB Table name
 * Location type
