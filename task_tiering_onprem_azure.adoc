@@ -155,7 +155,7 @@ link:reference_azure_support.html[See supported access tiers^].
 +
 image:screenshot_tiering_lifecycle_selection_azure.png[A screenshot showing how to select another access tier where data is moved after a certain number of days.]
 +
-<<Verify that you have the necessary Connector permissions,Verify that you have the necessary Connector permissions>> for the life cycle management feature.
+<<Verify that you have the necessary Connector permissions,Verify that you have the necessary Connector permissions>> for the life cycle management feature. Note that the life cycle rule is applied to all blob containers in the selected storage account.
 
 .. *Cluster Network*: Select the IPspace that ONTAP should use to connect to object storage, and click *Continue*.
 +

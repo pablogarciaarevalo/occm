@@ -172,6 +172,8 @@ For example, you could name the S3 bucket _fabric-pool-AFF1_, where AFF1 is the 
 If you choose *Keep data in this storage class*, then the data remains in the _Standard_ storage class and no rules are applied. link:reference_aws_support.html[See supported storage classes^].
 +
 image:screenshot_tiering_lifecycle_selection_aws.png[A screenshot showing how to select another storage class where data is moved after a certain number of days.]
++
+Note that the life cycle rule is applied to all objects in the selected bucket.
 
 .. *Credentials*: Enter the access key ID and secret key for an IAM user who has the required S3 permissions, and click *Continue*.
 +
