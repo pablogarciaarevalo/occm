@@ -31,11 +31,21 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 === Cloud Volumes ONTAP enhancements
 
+This release of Cloud Manager includes enhancements to the management of Cloud Volumes ONTAP.
+
+==== Enhancements available in AWS
+
 * You can now pay for Cloud Volumes ONTAP and Cloud Backup Service by using an annual contract from the AWS Marketplace that charges by capacity. If you choose this payment option, you can provision up to 2 PB per Cloud Volumes ONTAP system (single node or HA).
 +
-Be aware that disk limits can prevent you from reaching the capacity limit by using disks alone. You can go beyond the disk limit by link:concept_data_tiering.html[tiering inactive data to object storage].
+Be aware that https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_limits_aws_990.html[disk limits^] can prevent you from reaching the capacity limit by using disks alone. You can go beyond the disk capacity limit by link:concept_data_tiering.html[tiering inactive data to object storage].
 +
 https://aws.amazon.com/marketplace/pp/prodview-q7dg6zwszplri[View pricing details for the Professional Edition on the AWS Marketplace page^].
+
+* Cloud Manager now adds tags to EBS volumes when it creates a new Cloud Volumes ONTAP working environment. The tags were previously created after Cloud Volumes ONTAP was deployed.
++
+This change can help if your organization uses service control policies (SCPs) to manage permissions.
+
+==== Enhancements available in all cloud providers
 
 * If you enabled data tiering on a volume using the _auto_ tiering policy, you can now adjust the minimum cooling period using the API.
 +
@@ -52,10 +62,6 @@ Note that a Connector requires a new permission to delete Azure snapshots. https
 [source,json]
 "Microsoft.Compute/snapshots/delete"
 
-* In AWS, Cloud Manager now adds tags to EBS volumes when creating a new Cloud Volumes ONTAP working environment. The tags were previously created after Cloud Volumes ONTAP was deployed.
-+
-This change can help if your organization uses service control policies (SCPs) to manage permissions.
-
 === Digital Wallet
 
 A new *Digital Wallet* feature enables you to more easily view and manage your Cloud Volumes ONTAP licenses and Cloud Backup licenses from a single location.
@@ -66,7 +72,7 @@ image:screenshot_digital_wallet.gif[A screenshot of the Digital Wallet page that
 
 === Cloud Backup enhancements
 
-* Cloud Backup now allows you to create a backup using a different account/subscription than that used for your Cloud Volumes ONTAP system.
+* Cloud Backup now allows you to create a backup using a different account/subscription than used for your Cloud Volumes ONTAP system.
 +
 You can also create backup files in a different region than the one in which your Cloud Volumes ONTAP system is deployed.
 
