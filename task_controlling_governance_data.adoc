@@ -85,7 +85,7 @@ You can hover over a point in the charts to see details about the age or size of
 
 === Most identified data Classifications
 
-The _Classification_ area provides a list of the most identified link:task_controlling_private_data.html#categories[Categories^], link:task_controlling_private_data.html#file-types[File types^], and link:task_managing_highlights.html#categorizing-your-data-using-aip-labels[AIP Labels^] in your scanned data.
+The _Classification_ area provides a list of the most identified link:task_controlling_private_data.html#viewing-files-by-categories[Categories^], link:task_controlling_private_data.html#viewing-files-by-file-types[File types^], and link:task_managing_highlights.html#categorizing-your-data-using-aip-labels[AIP Labels^] in your scanned data.
 
 ==== Categories
 

@@ -118,7 +118,7 @@ image:screenshot_s3_compliance_iam_role.gif[A screenshot of entering the AWS IAM
 
 . Click *Enable*.
 
-TIP: You can also enable compliance scans for a working environment from the Configuration page by clicking the image:screenshot_gallery_options.gif[] button and selecting *Activate Compliance*.
+TIP: You can also enable compliance scans for a working environment from the Configuration page by clicking the image:screenshot_gallery_options.gif[] button and selecting *Activate Data Sense*.
 
 .Result
 
