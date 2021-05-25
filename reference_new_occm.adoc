@@ -250,7 +250,7 @@ This release of Cloud Manager includes enhancements to the management of Cloud V
 
 Cloud Manager can now deploy and manage Cloud Volumes ONTAP 9.9.0.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_990.html[Learn about the new features included in this release of Cloud Volumes ONTAP^].
+https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_991.html[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
 ==== Enhancements available in AWS
 
