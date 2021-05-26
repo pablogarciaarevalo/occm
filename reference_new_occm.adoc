@@ -27,7 +27,6 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 * <<Cloud Tiering enhancements>>
 * <<Cloud Data Sense (Cloud Compliance) enhancements>>
 * <<Application Template enhancements>>
-* <<Changes to NSS authentication>>
 
 === Cloud Volumes ONTAP enhancements
 
@@ -128,16 +127,6 @@ For example, if a Cloud Volumes ONTAP volume is created with NetApp storage effi
 This feature enables Cloud Manager to monitor the hard-coded values you entered for a parameter in a template. After a storage admin has created a volume using that template, if Cloud Manager later sees that the parameter value has been changed so that it no longer aligns with the template definition, you can see all the volumes that have "drifted" from the designed template. In this manner you can identify these volumes and make changes to bring them back into compliance.
 
 * Now you can run a template from the Template Dashboard instead of having to open a working environment and launch the template there.
-
-=== Changes to NSS authentication
-
-NetApp now uses Microsoft Azure Active Directory as the identity provider for authentication services specific to support and licensing.
-
-When you add a new NetApp Support Site (NSS) account to Cloud Manager, you'll be redirected to a Microsoft login page where you will need to provide your NetApp Support Site (NSS) registered email and password to perform the authentication process. This action enables Cloud Manager to use your NSS account.
-
-At this time, there's no impact to NSS accounts that you have already added to Cloud Manager.
-
-link:https://kb.netapp.com/Advice_and_Troubleshooting/Miscellaneous/FAQs_for_NetApp_Adoption_of_MS_Azure_AD_B2B_for_Login[FAQs for NetApp Adoption of MS Azure AD B2B for Login^]
 
 == Cloud Manager 3.9.6 build 2 (11 May 2021)
 
