@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept_cloud_tiering.html
 keywords: cloud tiering, overview, conceptual, value, features, cost, charging, service connector
-summary: NetApp's Cloud Tiering service extends your data center to the cloud by automatically tiering inactive data from on-premises ONTAP clusters to object storage. This frees valuable space on the cluster for more workloads, without making changes to the application layer. Cloud Tiering can reduce costs in your data center and enables a switch from a CAPEX model to an OPEX model.
+summary: NetApp's Cloud Tiering service extends your data center to the cloud by automatically tiering inactive data from on-premises ONTAP clusters to object storage. This frees valuable space on the cluster for more workloads, without making changes to the application layer. Cloud Tiering can reduce costs in your data center and enables you to switch from a CAPEX model to an OPEX model.
 ---
 
 = Learn about Cloud Tiering
@@ -13,7 +13,7 @@ summary: NetApp's Cloud Tiering service extends your data center to the cloud by
 :imagesdir: ./media/
 
 [.lead]
-NetApp's Cloud Tiering service extends your data center to the cloud by automatically tiering inactive data from on-premises ONTAP clusters to object storage. This frees valuable space on the cluster for more workloads, without making changes to the application layer. Cloud Tiering can reduce costs in your data center and enables a switch from a CAPEX model to an OPEX model.
+NetApp's Cloud Tiering service extends your data center to the cloud by automatically tiering inactive data from on-premises ONTAP clusters to object storage. This frees valuable space on the cluster for more workloads, without making changes to the application layer. Cloud Tiering can reduce costs in your data center and enables you to switch from a CAPEX model to an OPEX model.
 
 The Cloud Tiering service leverages the capabilities of _FabricPool_. FabricPool is a NetApp Data Fabric technology that enables automated tiering of data to low-cost object storage. Active data remains on high-performance SSDs, while inactive data is tiered to low-cost object storage while preserving ONTAP data efficiencies.
 
@@ -27,12 +27,10 @@ Cloud Tiering offers automation, monitoring, reports, and a common management in
 * Reports show the amount of active and inactive data on each cluster
 * A tiering health status helps you identify and correct issues as they occur
 * If you have Cloud Volumes ONTAP systems, you'll find them in the Cluster Dashboard so you get a full view of data tiering in your hybrid cloud infrastructure
-+
-TIP: Cloud Volumes ONTAP systems are read-only from Cloud Tiering. link:task_tiering.html[You set up tiering for Cloud Volumes ONTAP from the working environment in Cloud Manager].
 
 For more details about the value that Cloud Tiering provides, https://cloud.netapp.com/cloud-tiering[check out the Cloud Tiering page on NetApp Cloud Central^].
 
-NOTE: While Cloud Tiering can significantly reduce storage footprints, it is not a backup solution.
+TIP: Cloud Volumes ONTAP systems are read-only from Cloud Tiering. link:task_tiering.html[You set up tiering for Cloud Volumes ONTAP from the working environment in Cloud Manager^].
 
 == Supported object storage providers
 
