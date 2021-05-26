@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_managing_licenses.html
 keywords: license, licensing, install, updating license, system license, add system license, adding a system license, byol license, add byol license, update byol license, nlf, license generator, backup license, add backup license, update backup license
-summary: The Digital Wallet page enables you to manage licenses for Cloud Volumes ONTAP and Cloud Backup Service from a single location. You can add new licenses and update existing licenses.
+summary: The Digital Wallet page enables you to manage licenses for Cloud Volumes ONTAP and Cloud Backup from a single location. You can add new licenses and update existing licenses.
 ---
 
 = Manage licenses
@@ -13,7 +13,7 @@ summary: The Digital Wallet page enables you to manage licenses for Cloud Volume
 :imagesdir: ./media/
 
 [.lead]
-The Digital Wallet page enables you to manage licenses for Cloud Volumes ONTAP and Cloud Backup Service from a single location. You can add new licenses and update existing licenses.
+The Digital Wallet page enables you to manage licenses for Cloud Volumes ONTAP and Cloud Backup from a single location. You can add new licenses and update existing licenses.
 
 == Manage Cloud Volumes ONTAP licenses
 
@@ -137,23 +137,23 @@ link:concept_evaluating.html[Learn more about Evaluation licenses].
 
 . Click *Convert License*.
 
-== Manage Cloud Backup Service licenses
+== Manage Cloud Backup licenses
 
-You use the BYOL Licenses page to add or update your Backup BYOL license.
+A Backup license enables you to use Cloud Backup for a certain period of time and for a maximum amount of backup space. The Backup BYOL license applies to all Cloud Volumes ONTAP and on-premises systems associated with your Cloud Central account.
+
+link:concept_backup_to_cloud.html#licensing[Learn more about Cloud Backup licensing].
 
 .Steps
 
-. In Cloud Manager, open the Cloud Volumes ONTAP BYOL working environment.
+. Click *Settings > Digital Wallet*.
 
-. Click the menu icon and then click *License*.
-+
-image:screenshot_menu_license.gif[A screenshot that shows menu icon in a working environment. The License option enables you to upload a license file.]
+. Click *Cloud Backup*.
+
+. If you don't have an existing license, click *Add Backup License*.
 
 . Click *Add Backup License* or *Update Backup License* depending on whether you are adding a new license or updating an existing license.
-+
-image:screenshot_backup_byol_license.png[A screenshot that shows the BYOL licensing page with buttons for add and update backup license]
 
-. Enter the license information and click *Add License*:
+. Enter the license information and click *Add Backup License* or *Update Backup License*:
 +
 * If you have the serial number, select the *Enter Backup BYOL Serial Number* option and enter the serial number.
 * If you have the backup license file, select the *Upload Backup BYOL License* option and follow the prompts to attach the file.
