@@ -64,7 +64,7 @@ link:concept_cloud_tiering.html#volume-tiering-policies[Learn more about volume 
 +
 image:screenshot_tiering_policy_settings.png[A screenshot that shows the configurable tiering policy settings.]
 
-*Note:* If you see options to "Retrieve Tiered Data", see the next section for details.
+*Note:* If you see options to "Retrieve Tiered Data", see <<Migrating data from the cloud tier back to the performance tier,Migrating data from the cloud tier back to the performance tier>> for details.
 
 .Result
 

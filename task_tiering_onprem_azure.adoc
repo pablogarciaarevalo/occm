@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_tiering_onprem_azure.html
 keywords: data tiering, fabricpool, cloud tiering, tiering cold data, tiering inactive data, tiering aff, tiering fas, tiering ontap, tiering volumes, tier data, tier cold data, tier fas, tier aff, tier ontap, azure, blob, azure blob
-summary: Free space on your on-prem ONTAP clusters by tiering data to Azure Blob storage. Data tiering is powered by NetApp's Cloud Tiering service.
+summary: Free space on your on-prem ONTAP clusters by tiering inactive data to Azure Blob storage.
 ---
 
 = Tiering data from on-premises ONTAP clusters to Azure Blob storage
@@ -13,7 +13,7 @@ summary: Free space on your on-prem ONTAP clusters by tiering data to Azure Blob
 :imagesdir: ./media/
 
 [.lead]
-Free space on your on-prem ONTAP clusters by tiering data to Azure Blob storage. Data tiering is powered by NetApp's Cloud Tiering service.
+Free space on your on-prem ONTAP clusters by tiering inactive data to Azure Blob storage.
 
 == Quick start
 
@@ -32,7 +32,7 @@ You need the following:
 ==== image:number2.png[number2] Set up tiering
 
 [role="quick-margin-para"]
-In Cloud Manager, select an on-prem working environment, click *Enable* and follow the prompts to tier data to Azure Blob storage.
+In Cloud Manager, select an on-prem working environment, click *Enable*, and follow the prompts to tier data to Azure Blob storage.
 
 ==== image:number3.png[number 3] Set up licensing
 
@@ -156,8 +156,7 @@ The storage account and containers that appear in this step belong to the resour
 
 .. *Access Tier Life Cycle Management*: Select the access tier that you want to transition the tiered data to and the number of days before the data will be moved, and click *Continue*. For example, the screenshot below shows that tiered data is moved from the _Hot_ class to the _Cool_ class after 45 days in object storage.
 +
-If you choose *Keep data in this access tier*, then the data remains in the _Hot_ access tier and no rules are applied.
-link:reference_azure_support.html[See supported access tiers^].
+If you choose *Keep data in this access tier*, then the data remains in the _Hot_ access tier and no rules are applied. link:reference_azure_support.html[See supported access tiers^].
 +
 image:screenshot_tiering_lifecycle_selection_azure.png[A screenshot showing how to select another access tier where data is moved after a certain number of days.]
 +

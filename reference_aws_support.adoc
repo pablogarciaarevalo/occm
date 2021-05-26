@@ -25,6 +25,8 @@ When you set up data tiering to AWS, Cloud Tiering automatically uses the _Stand
 
 If you do not choose another storage class, then the data remains in the _Standard_ storage class and no rules are applied.
 
+When you configure a Cloud Tiering lifecycle rule, you must not configure any lifecycle rules when setting up the bucket in your AWS account. 
+
 https://aws.amazon.com/s3/storage-classes/[Learn about S3 storage classes^].
 
 == Supported AWS regions

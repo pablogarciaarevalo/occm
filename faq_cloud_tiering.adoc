@@ -84,6 +84,8 @@ One object store for the entire cluster.
 
 Yes. You can enable life cycle management so that Cloud Tiering transitions data from the default storage class/access tier to a more cost-effective tier after a certain number of days.
 
+The life cycle rule is applied to all objects in the selected bucket for Amazon S3 and Google Cloud storage, and to all containers in the selected storage account for Azure Blob.
+
 == Connectors
 
 The following questions relate to Connectors.
@@ -130,7 +132,7 @@ No extra permissions are needed outside of the permissions that you need to prov
 
 === What permissions are required in Google Cloud Platform?
 
-Storage Admin permissions are needed for a service account that has storage access keys.
+Storage Admin permissions are needed for a link:task_tiering_onprem_gcp.html#preparing-google-cloud-storage[service account that has storage access keys].
 
 === What permissions are required for StorageGRID?
 

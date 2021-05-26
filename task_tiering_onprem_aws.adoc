@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_tiering_onprem_aws.html
 keywords: data tiering, fabricpool, cloud tiering, tiering cold data, tiering inactive data, tiering aff, tiering fas, tiering ontap, tiering volumes, tier data, tier cold data, tier fas, tier aff, tier ontap, aws, amazon, s3
-summary: Free space on your on-prem ONTAP clusters by tiering data to Amazon S3. Data tiering is powered by NetApp's Cloud Tiering service.
+summary: Free space on your on-prem ONTAP clusters by tiering inactive data to Amazon S3.
 ---
 
 = Tiering data from on-premises ONTAP clusters to Amazon S3
@@ -13,7 +13,7 @@ summary: Free space on your on-prem ONTAP clusters by tiering data to Amazon S3.
 :imagesdir: ./media/
 
 [.lead]
-Free space on your on-prem ONTAP clusters by tiering data to Amazon S3. Data tiering is powered by NetApp's Cloud Tiering service.
+Free space on your on-prem ONTAP clusters by tiering inactive data to Amazon S3.
 
 == Quick start
 
@@ -33,7 +33,7 @@ You need the following:
 ==== image:number2.png[number 2] Set up tiering
 
 [role="quick-margin-para"]
-In Cloud Manager, select an on-prem working environment, click *Enable* and follow the prompts to tier data to Amazon S3.
+In Cloud Manager, select an on-prem working environment, click *Enable*, and follow the prompts to tier data to Amazon S3.
 
 ==== image:number3.png[number 3] Set up licensing
 
