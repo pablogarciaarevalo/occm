@@ -168,7 +168,7 @@ There's one object store per Cloud Volumes ONTAP or on-premises ONTAP system. Cl
 
 * In AWS, Cloud Manager enables the https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html[Amazon S3 Block Public Access feature^] on the S3 bucket.
 
-* In Azure, Cloud Manager uses a new or existing resource group with a storage account for the Blob container.
+* In Azure, Cloud Manager uses a new or existing resource group with a storage account for the Blob container. Cloud Manager https://docs.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent[blocks public access to your blob data] by default.
 
 * In GCP, Cloud Manager uses a new or existing project with a storage account for the Google Cloud Storage bucket.
 
@@ -257,10 +257,6 @@ There are certain things you need to be aware of when the volume you are backing
 * When making backups from on-premises ONTAP systems to public cloud storage, the Connector must be deployed in the cloud.
 
 * When making backups from on-premises ONTAP systems to StorageGRID (private cloud), the Connector must be deployed on premises.
-
-* When backing up data protection (DP) volumes:
-** Only DP volumes that are a destination of a Vault/MirrorAndVault relationship are supported. DP volumes created using the MirrorAllSnapshots policy cannot be backed up and will fail with an error.
-** The rule that is defined for the SnapMirror policy on the source volume must use a label that matches the allowed Cloud Backup policy names of *daily*, *weekly*, or *monthly*. Otherwise the backup will fail for that DP volume.
 
 * In Azure, if you enable Cloud Backup when Cloud Volumes ONTAP is deployed, Cloud Manager creates the resource group for you and you cannot change it. If you want to pick your own resource group when enabling Cloud Backup, *disable* Cloud Backup when deploying Cloud Volumes ONTAP and then enable Cloud Backup and choose the resource group from the Cloud Backup Settings page.
 
