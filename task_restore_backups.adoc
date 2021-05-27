@@ -112,13 +112,13 @@ You can restore up to 8 files at a time from a volume in a backup file. All the 
 
 Note that the ONTAP version must be 9.6 or greater in your Cloud Volumes ONTAP or on-premises ONTAP systems to perform file restore operations.
 
-NOTE: Restoring individual files from a backup file uses a separate Restore instance/virtual machine. See the Requirements section for link:task_backup_to_s3.html#requirements[AWS] or link:task_backup_to_azure.html#requirements[Azure] to make sure your environment has been set up correctly.
+NOTE: Restoring individual files from a backup file uses a separate Restore instance/virtual machine. See the link:task_backup_to_s3.html#requirements[AWS Requirements] or link:task_backup_to_azure.html#requirements[Azure Requirements] to make sure your environment is ready.
 
 === File Restore process
 
 The process goes like this:
 
-. When you want to restore one or more files from a volume, click the Restore tab, click *Restore Files*, and select the backup file in which the file (or files) reside.
+. When you want to restore one or more files from a volume, click the *Restore* tab, click *Restore Files*, and select the backup file in which the file (or files) reside.
 
 . The Restore instance starts up and displays the folders and files that exist within the backup file.
 +
