@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_deploy_cloud_compliance.html
-keywords: cloud compliance, data sense, get started, deploy cloud compliance, outbound internet, endpoints, cloud compliance internet, web browser connectivity, cloud compliance access, privacy, compliance, on-premises, Data Sense
+keywords: cloud compliance, data sense, get started, deploy cloud compliance, outbound internet, endpoints, cloud compliance internet, web browser connectivity, cloud compliance access, privacy, compliance, on-premises,
 summary: Complete a few steps to deploy the Cloud Data Sense instance in your Cloud Manager workspace. You can deploy Data Sense in the cloud or on an on-premises system.
 ---
 
@@ -246,7 +246,7 @@ See <<Reviewing prerequisites,Reviewing prerequisites>> for the full list of req
 
 .Steps
 
-. Download the Cloud Data Sense software from the https://mysupport.netapp.com/site/products/all/details/cloud-compliance/downloads-tab/[NetApp Support Site^].
+. Download the Cloud Data Sense software from the https://mysupport.netapp.com/site/products/all/details/cloud-data-sense/downloads-tab/[NetApp Support Site^].
 
 . Copy the installer file to the Linux host you plan to use (using `scp` or some other method).
 
