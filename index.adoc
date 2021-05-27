@@ -17,7 +17,7 @@ Cloud Manager enables IT experts and cloud architects to centrally manage their 
 
 * link:reference_key_changes.html[Important changes in Cloud Manager]
 * link:reference_new_occm.html[What's new in Cloud Manager]
-* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_990.html[What's new in Cloud Volumes ONTAP^]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_991.html[What's new in Cloud Volumes ONTAP^]
 
 == Get started
 
