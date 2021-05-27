@@ -130,31 +130,6 @@ The process goes like this:
 
 . The file(s) are restored, and then the Restore instance is shut down to save costs after a period of inactivity.
 
-==== Enable outbound internet access
-
-Cloud Restore requires outbound internet access. If your virtual or physical network uses a proxy server for internet access, ensure that the instance has outbound internet access to contact the following endpoints. When you deploy Cloud Restore in the cloud, it is located in the same subnet as the Connector.
-
-*Required endpoints for Azure deployments:*
-
-[cols="43,57",options="header"]
-|===
-| Endpoints
-| Purpose
-
-|
-\http://olcentgbl.trafficmanager.net
-\https://olcentgbl.trafficmanager.net
-
-| Provides CentOS packages for the Cloud Restore virtual machine.
-
-|
-\http://cloudmanagerinfraprod.azurecr.io
-\https://cloudmanagerinfraprod.azurecr.io
-
-| Cloud Restore Instance image repository.
-
-|===
-
 === Restoring a single file from a backup file
 
 Follow these steps to restore up to 8 files from a volume backup to a volume. You should know the name of the volume and the date of the backup file that you want to use to restore the file, or files. This functionality uses Live Browsing so that you can view the list of directories and files within the backup file.

@@ -27,7 +27,7 @@ Get started quickly by following these steps, or scroll down to the remaining se
 * You have discovered the on-premises cluster and added it to a working environment in Cloud Manager. See link:task_discovering_ontap.html[Discovering ONTAP clusters^] for details.
 ** The cluster is running ONTAP 9.7P5 or later.
 ** The cluster has a SnapMirror license -- it is included as part of the PREM or Data Protection bundle.
-* You have purchased link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[and activated^] a Cloud Backup BYOL license from NetApp.
+* You have purchased link:task_managing_licenses.html#manage-cloud-backup-licenses[and activated^] a Cloud Backup BYOL license from NetApp.
 * Your StorageGRID has version 10.3 or later with access keys that have S3 permissions.
 
 ==== image:number2.png[Number 2] Enable Cloud Backup on the system
@@ -155,7 +155,7 @@ Ensure that the Connector has the required networking connections.
 
 === License requirements
 
-For Cloud Backup BYOL licensing, you need the serial number from NetApp that enables you to use the service for the duration and capacity of the license. See link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[Adding and updating your Backup BYOL license^].
+For Cloud Backup BYOL licensing, you need the serial number from NetApp that enables you to use the service for the duration and capacity of the license. See link:task_managing_licenses.html#manage-cloud-backup-licenses[Managing your Backup BYOL license^].
 
 PAYGO licensing is not currently supported when backing up files to StorageGRID.
 

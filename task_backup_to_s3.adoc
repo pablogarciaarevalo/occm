@@ -23,7 +23,8 @@ Get started quickly by following these steps or scroll down to the remaining sec
 
 [role="quick-margin-list"]
 * You're running Cloud Volumes ONTAP 9.6 or later in AWS.
-* You have subscribed to the https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Cloud Manager Marketplace Backup offering^], or you have purchased link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[and activated^] a Cloud Backup BYOL license from NetApp.
+* You have a valid cloud provider subscription for the storage space where your backups will be located.
+* You have subscribed to the https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Cloud Manager Marketplace Backup offering^], or you have purchased link:task_managing_licenses.html#manage-cloud-backup-licenses[and activated^] a Cloud Backup BYOL license from NetApp.
 * The IAM role that provides Cloud Manager with permissions includes S3 permissions from the latest https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policy^].
 
 ==== image:number2.png[Number 2] Enable Cloud Backup on your new or existing system
@@ -72,13 +73,15 @@ The following image shows each component and the connections that you need to pr
 
 image:diagram_cloud_backup_cvo_aws.png[A diagram showing how Cloud Backup communicates with the volumes on the source systems and the destination storage where the backup files are located.]
 
+When the Cloud Restore instance is deployed in the cloud, it is located in the same subnet as the Connector.
+
 Supported ONTAP versions::
 Cloud Volumes ONTAP 9.6 and later.
 
 License requirements::
-For Cloud Backup PAYGO licensing, a Cloud Manager subscription is available in the AWS Marketplace that enables deployments of Cloud Volumes ONTAP 9.6 and later (PAYGO) and Cloud Backup. You need to https://aws.amazon.com/marketplace/pp/B07QX2QLXX[subscribe to this Cloud Manager subscription^] before you enable Cloud Backup. Billing for Cloud Backup is done through this subscription.
+For Cloud Backup PAYGO licensing, a Cloud Manager subscription is available in the AWS Marketplace that enables deployments of Cloud Volumes ONTAP and Cloud Backup. You need to https://aws.amazon.com/marketplace/pp/B07QX2QLXX[subscribe to this Cloud Manager subscription^] before you enable Cloud Backup. Billing for Cloud Backup is done through this subscription.
 +
-For Cloud Backup BYOL licensing, you do not need an AWS Cloud Backup subscription. You need the serial number from NetApp that enables you to use the service for the duration and capacity of the license. See link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[Adding and updating your Backup BYOL license^].
+For Cloud Backup BYOL licensing, you do not need an AWS Cloud Backup subscription. You need the serial number from NetApp that enables you to use the service for the duration and capacity of the license. See link:task_managing_licenses.html#manage-cloud-backup-licenses[Managing your Backup BYOL license^].
 +
 And you need to have an AWS subscription for the storage space where your backups will be located.
 
@@ -123,9 +126,7 @@ Here are the specific permissions from the policy:
 NOTE: The permissions starting with *s3* are required for Backup and Volume Restore functionality, and those with *ec2* are used for File Restore functionality.
 
 Required outbound internet access for AWS deployments::
-When Cloud Restore is deployed in the cloud, it is located in the same subnet as the Connector.
-+
-The Cloud Restore instance requires outbound internet access. If your virtual or physical network uses a proxy server for internet access, ensure that the instance has outbound internet access to contact the following endpoints. 
+The Cloud Restore instance requires outbound internet access. If your virtual or physical network uses a proxy server for internet access, ensure that the instance has outbound internet access to contact the following endpoints.
 +
 [cols="43,57",options="header"]
 |===
