@@ -74,29 +74,37 @@ Choose to restore an entire backup to a new volume, or to restore individual fil
 [role="quick-margin-para"]
 See link:task_restore_backups.html[Restoring volume data from backup files^] for details.
 
-== Requirements
+== Overview diagrams
 
-Read the following requirements to make sure you have a supported configuration before you start backing up on-premises volumes to object storage. Note that when the Cloud Restore instance is deployed in the cloud, it is located in the same subnet as the Connector.
+The following diagrams show each component when backing up an on-prem ONTAP system to object storage and the connections that you need to prepare between them.
 
-The following image shows each component when backing up an on-prem ONTAP system to Amazon S3 and the connections that you need to prepare between them:
+*Amazon S3 configuration:*
 
 image:diagram_cloud_backup_onprem_aws.png[A diagram showing how Cloud Backup communicates with the volumes on the source systems and the destination storage where the backup files are located.]
 
-The following image shows each component when backing up an on-prem ONTAP system to Azure Blob and the connections that you need to prepare between them:
+Note that when the Cloud Restore instance is deployed in the cloud, it is located in the same subnet as the Connector.
+
+*Azure Blob configuration:*
 
 image:diagram_cloud_backup_onprem_azure.png[A diagram showing how Cloud Backup communicates with the volumes on the source systems and the destination storage where the backup files are located.]
 
-The following image shows each component when backing up an on-prem ONTAP system to Google Cloud Storage and the connections that you need to prepare between them:
+Note that when the Cloud Restore instance is deployed in the cloud, it is located in the same subnet as the Connector.
+
+*Google Cloud Storage configuration:*
 
 image:diagram_cloud_backup_onprem_google.png[A diagram showing how Cloud Backup communicates with the volumes on the source systems and the destination storage where the backup files are located.]
+
+Note that the Cloud Restore instance is not shown in this diagram because single-file restore is not currently supported in GCP.
+
+== Requirements
+
+Read the following requirements to make sure you have a supported configuration before you start backing up on-premises volumes to object storage.
 
 === Preparing your ONTAP clusters
 
 You need to discover your on-premises ONTAP clusters in Cloud Manager before you can start backing up volume data.
 
 link:task_discovering_ontap.html[Learn how to discover a cluster].
-
-Your ONTAP clusters must meet the following requirements when backing up data to cloud storage.
 
 ONTAP requirements::
 * ONTAP 9.7P5 and later.
@@ -161,7 +169,7 @@ You can create backups from on-premises systems to the public cloud in all regio
 
 For Cloud Backup PAYGO licensing, you'll need a subscription to the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Azure^], the https://aws.amazon.com/marketplace/pp/B07QX2QLXX[AWS^], or the https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[Google^] Cloud Manager Marketplace Backup offering before you enable Cloud Backup. Billing for Cloud Backup is done through this subscription.
 
-For Cloud Backup BYOL licensing, you need the serial number from NetApp that enables you to use the service for the duration and capacity of the license. See link:task_managing_licenses.html#manage-cloud-backup-licenses[Managing your Backup BYOL license^].
+For Cloud Backup BYOL licensing, you do not need a subscription. You need the serial number from NetApp that enables you to use the service for the duration and capacity of the license. See link:task_managing_licenses.html#manage-cloud-backup-licenses[Managing your Backup BYOL license^].
 
 And you need to have a subscription from your cloud provider for the object storage space where your backups will be located.
 
@@ -193,11 +201,17 @@ When you are using Amazon S3, you must configure permissions for Cloud Manager t
                 "s3:GetBucketAcl",
                 "s3:GetBucketPolicy",
                 "s3:PutBucketPublicAccessBlock"
+                "ec2:DescribeInstanceTypeOfferings",
+                "ec2:StartInstances",
+                "ec2:StopInstances",
+                "ec2:TerminateInstances"
             ],
             "Resource": [
                 "arn:aws:s3:::netapp-backup-*"
             ]
         },
++
+The permissions starting with *s3* are required for Backup and Volume Restore functionality, and those with *ec2* are used for File Restore functionality.
 
 . Provide the following permissions to the IAM user so that the ONTAP cluster can back up data to S3.
 +
@@ -211,11 +225,51 @@ When you are using Amazon S3, you must configure permissions for Cloud Manager t
 +
 See the https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html[AWS Documentation: Creating a Role to Delegate Permissions to an IAM User^] for details.
 
+. If your virtual or physical network uses a proxy server for internet access, ensure that the Cloud Restore instance has outbound internet access to contact the following endpoints.
++
+[cols="43,57",options="header"]
+|===
+| Endpoints
+| Purpose
+
+| \http://amazonlinux.us-east-1.amazonaws.com/2/extras/docker/stable/x86_64/4bf88ee77c395ffe1e0c3ca68530dfb3a683ec65a4a1ce9c0ff394be50e922b2/ | CentOS package for the Cloud Restore Instance AMI.
+
+|
+\http://cloudmanagerinfraprod.azurecr.io
+\https://cloudmanagerinfraprod.azurecr.io
+
+| Cloud Restore Instance image repository.
+
+|===
+
 . Create or locate an access key.
 +
 Cloud Backup passes the access key on to the ONTAP cluster. The credentials are not stored in the Cloud Backup service.
 +
 See the https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html[AWS Documentation: Managing Access Keys for IAM Users^] for details.
+
+=== Preparing Azure Blob storage for backups
+
+The Cloud Restore virtual machine requires outbound internet access. If your virtual or physical network uses a proxy server for internet access, ensure that the instance has outbound internet access to contact the following endpoints.
+
+[cols="43,57",options="header"]
+|===
+| Endpoints
+| Purpose
+
+|
+\http://olcentgbl.trafficmanager.net
+\https://olcentgbl.trafficmanager.net
+
+| Provides CentOS packages for the Cloud Restore virtual machine.
+
+|
+\http://cloudmanagerinfraprod.azurecr.io
+\https://cloudmanagerinfraprod.azurecr.io
+
+| Cloud Restore virtual machine image repository.
+
+|===
 
 === Preparing Google Cloud Storage for backups
 
