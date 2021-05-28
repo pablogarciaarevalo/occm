@@ -19,6 +19,16 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.6 update (24 May 2021)
+
+Cloud Manager was updated to include the latest version of Cloud Volumes ONTAP.
+
+=== Cloud Volumes ONTAP 9.9.1
+
+Cloud Manager can now deploy and manage Cloud Volumes ONTAP 9.9.1.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_991.html[Learn about the new features included in this release of Cloud Volumes ONTAP^].
+
 == Cloud Manager 3.9.6 build 2 (11 May 2021)
 
 We fixed a bug that caused failures when creating a Cloud Volumes ONTAP working environment in Azure.
@@ -240,7 +250,7 @@ This release of Cloud Manager includes enhancements to the management of Cloud V
 
 Cloud Manager can now deploy and manage Cloud Volumes ONTAP 9.9.0.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_990.html[Learn about the new features included in this release of Cloud Volumes ONTAP^].
+https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_991.html[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
 ==== Enhancements available in AWS
 
