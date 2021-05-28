@@ -22,15 +22,15 @@ Get started quickly by following these steps, or scroll down to the remaining se
 ==== image:number1.png[Number 1] Verify required prerequisites
 
 [role="quick-margin-list"]
-* Before users can create a Cloud Volumes ONTAP or Azure NetApp Files volume using a template, make sure they have access to a Cloud Volumes ONTAP or Azure NetApp Files Working Environment where the volume will be deployed.
+* Before users can create a volume for a Cloud Volumes ONTAP, on-premises ONTAP, or Azure NetApp Files system using a template, make sure they have access to an appropriate Working Environment where the volume will be deployed.
 
 [role="quick-margin-list"]
-* If you plan to add a Cloud service "action" to your template, such as link:concept_backup_to_cloud.html[Cloud Backup^], ensure that your environment has an active and licensed Cloud Backup service.
+* If you plan to add a Cloud service "action" to your template, such as link:concept_backup_to_cloud.html[Cloud Backup^] or link:concept_cloud_compliance.html[Cloud Data Sense^], ensure that the service is active and licensed in your environment.
 
 ==== image:number2.png[Number 2] Launch the Application Templates service
 
 [role="quick-margin-para"]
-Select the *AppTemplate* service and select the template.
+Select the *AppTemplate* service, click the *Editor* tab, and select the template.
 
 ==== image:number3.png[Number 3] Build the template by selecting "actions" and defining parameters
 
@@ -45,11 +45,13 @@ Read the following requirements to make sure that you have a supported configura
 
 * When creating a Cloud Volumes ONTAP volume template, make sure you have a Cloud Volumes ONTAP working environment available for your users. See how to launch a Cloud Volumes ONTAP system in link:task_deploying_otc_aws.html[AWS^], link:task_deploying_otc_azure.html[Azure^], or in link:task_deploying_gcp.html[GCP^].
 
+* When creating an on-premises ONTAP volume template, make sure you have an on-premises ONTAP working environment available for your users. See how to link:task_discovering_ontap.html[discover an on-premises ONTAP system^] in Cloud Manager.
+
 * When creating an Azure NetApp Files volume template, make sure you have an Azure NetApp Files working environment available for your users. See how to link:task_manage_anf.html[create an Azure NetApp Files working environment^] in Cloud Manager.
 
-* If you plan to enable Cloud Backup on Cloud Volumes ONTAP volumes, ensure that your environment has an active and licensed Cloud Backup service.
+* If you plan to enable Cloud Backup in the template, ensure that your environment has an active and licensed Cloud Backup service.
 
-* If you plan to enable Cloud Compliance on Cloud Volumes ONTAP or Azure NetApp Files volumes, ensure that your environment has an active and licensed Cloud Compliance service.
+* If you plan to enable Cloud Data Sense in the template, ensure that your environment has an active and licensed Cloud Data Sense service.
 
 == Special template controls ==
 
@@ -90,9 +92,9 @@ There are two types of information that the AppTemplate service can use from pre
 * Input value - This is the actual value the storage admin entered into a field in a previous template action.
 * Output value - This is the value Cloud Manager generates after creating a resource from a previous template action.
 
-For example, to enable Compliance on a volume, the Cloud Compliance service needs both the "volume name" that the storage admin enters (the Input value), and the "volume uuid" that Cloud Manager generates when it creates the volume (the Output value).
+For example, to enable compliance scanning on a volume, the Cloud Data Sense service needs both the "volume name" that the storage admin enters (the Input value), and the "volume uuid" that Cloud Manager generates when it creates the volume (the Output value).
 
-The following illustration shows how to enter this information in the Cloud Compliance action section of the template.
+The following illustration shows how to enter this information in the Cloud Data Sense action section of the template.
 
 image:screenshot_template_variable_input_output.png[An illustration showing how to use a value entered in a previous action to populate a field in another action.]
 //
@@ -118,11 +120,11 @@ A rule is made up of three parts:
 Source field::
 The location from which you will get the value to compare. The options are:
 * *Get input value from previous action* - The actual value the storage admin entered into a field in a previous template action.
-* *Get output value from previous action* - The value Cloud Manager generates after creating a resource from a previous template action.
-* *Get value from existing resource* - The value from a resource that already exists - for example an existing volume.
+* *Get output value from previous action* - The value Cloud Manager generated after creating a resource from a previous template action.
+* *Get value from existing resource* - The value from a resource that already exists; for example an existing volume.
 
 Operator::
-The operator for the comparison. The options are:
+The operator used for the comparison. The options are:
 * *Equals*
 * *Greater Than*
 * *Less Than*
@@ -147,7 +149,7 @@ Create daily backups with a retention value of 30 copies.
 
 .Steps
 
-. Select the *AppTemplate* service and click *Add new template*.
+. Select the *AppTemplate* service, click the *Templates* tab, and click *Add New Template*.
 +
 The _Select_a Template_ page is displayed.
 +
@@ -252,7 +254,7 @@ See link:task_manage_anf_volumes.html#creating-volumes[how to provision Azure Ne
 
 .Steps
 
-. Select the *AppTemplate* service and click *Add new template*.
+. Select the *AppTemplate* service, click the *Templates* tab, and click *Add New Template*.
 +
 The _Select_a Template_ page is displayed.
 +
