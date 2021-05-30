@@ -23,10 +23,6 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 * <<Cloud Volumes ONTAP enhancements>>
 * <<Digital Wallet>>
-* <<Cloud Backup enhancements>>
-* <<Cloud Tiering enhancements>>
-* <<Cloud Data Sense (Cloud Compliance) enhancements>>
-* <<Application Template enhancements>>
 
 === Cloud Volumes ONTAP enhancements
 
@@ -65,68 +61,9 @@ Note that a Connector requires a new permission to delete Azure snapshots. https
 
 A new *Digital Wallet* feature enables you to more easily view and manage your Cloud Volumes ONTAP licenses and Cloud Backup licenses from a single location.
 
-link:task_managing_licenses.html#[Learn more about Digital Wallet].
+link:task_managing_licenses.html[Learn more about Digital Wallet].
 
 image:screenshot_digital_wallet.gif[A screenshot of the Digital Wallet page that shows Cloud Volumes ONTAP licenses.]
-
-=== Cloud Backup enhancements
-
-* Cloud Backup now allows you to create a backup using a different account/subscription than used for your Cloud Volumes ONTAP system.
-+
-You can also create backup files in a different region than the one in which your Cloud Volumes ONTAP system is deployed.
-
-* When configuring backups on Azure you can now select advanced networking options so that you can use a different Azure Virtual Network (VNet) and Subnet.
-
-* Two known limitations for backing up data protection (DP) volumes have been resolved. Your systems must have ONTAP 9.8 or greater installed:
-
-** Before, cascaded backup worked only if the SnapMirror relationship type was Mirror-Vault or Vault. Now you can make backups if the relationship type is MirrorAllSnapshots.
-** Cloud Backup now can use any label for the backup as long as it is configured in the SnapMirror policy. The restriction of requiring labels with the names daily, weekly, or monthly is gone.
-
-=== Cloud Tiering enhancements
-
-* In earlier releases you could transition tiered data from the Standard storage class to another storage class after 30 days when using Amazon S3 or Google Cloud object storage. This release adds some new functionality:
-
-** You can choose the number of days when tiered data will move to a more cost-effective tier.
-** Azure Blob now supports the _Cool_ access tier.
-** Google Cloud Storage supports moving tiered data to multiple storage tiers over time. For example, you can move tiered data from the _Standard_ class to the _Nearline_ class after 30 days, and then to the _Coldline_ class after 60 days, and then to the _Archive_ class after 270 days.
-
-* Now you can proactively move data back to the performance tier from the cloud tier if you want to stop using tiering on a volume, or if you decide to keep all user data on the performance tier, but keep Snapshot copies on the cloud tier. This capability is available when using ONTAP 9.8 and greater.
-+
-See how to link:task_managing_tiering.html#migrating-data-from-the-cloud-tier-back-to-the-performance-tier[migrate data back to the performance tier].
-
-=== Cloud Data Sense (Cloud Compliance) enhancements
-
-* Cloud Compliance has been renamed as *Cloud Data Sense* as of this release. With all the new Governance and other capabilities that have been included in the product, the Compliance name was not promoting the full set of capabilities.
-
-* A new _Full Data Mapping_ report is available from the Governance Dashboard to provide an overview of the data being stored in your corporate data sources to assist you with decisions of migration, back up, security, and compliance processes.
-+
-The report provides overview pages that summarize all your working environments and data sources, and then provides a breakdown for each working environment.
-
-* A new filter in the Data Investigation page enables you to view a list of all files that are duplicated across your storage systems.
-+
-This is helpful to identify areas where you can save storage space, or identify files that have specific permissions or sensitive information that you do not want duplicated across your storage.
-
-* You can add a custom Status to files that Data Sense is scanning. The Status is not added to the file in the same way as AIP Labels are added. The Status is just seen by Cloud Manager users so you can indicate if a file needs to be deleted, or checked for some reason.
-+
-A new Filter in the Investigation page enables you to easily view all files that have a Status assigned.
-
-* Cloud Data Sense can scan for Personal Identifiable Information (PII) in two additional types of files: .DCM and .DICOM.
-
-* The File Size, Created Date, and Last Modified Date values have been added to reports that you output in CSV format. Created Date is also a new filter you can use to narrow down Investigation page search results.
-
-=== Application Template enhancements
-
-* A new feature enables you to conditionally enable certain actions when the user is running the template.
-+
-For example, if a Cloud Volumes ONTAP volume is created with NetApp storage efficiency enabled, then Cloud Backup is also enabled on that volume. If storage efficiency is not enabled, then Cloud Backup is not enabled.
-
-* You can now create a volume on an on-premises ONTAP system using templates.
-
-* New functionality called "drift" has been added as an option when you create your templates.
-+
-This feature enables Cloud Manager to monitor the hard-coded values you entered for a parameter in a template. After a storage admin has created a volume using that template, if Cloud Manager later sees that the parameter value has been changed so that it no longer aligns with the template definition, you can see all the volumes that have "drifted" from the designed template. In this manner you can identify these volumes and make changes to bring them back into compliance.
-
-* Now you can run a template from the Template Dashboard instead of having to open a working environment and launch the template there.
 
 == Cloud Manager 3.9.6 build 2 (11 May 2021)
 
