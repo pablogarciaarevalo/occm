@@ -141,6 +141,20 @@ link:concept_evaluating.html[Learn more about Evaluation licenses].
 
 A Backup license enables you to use Cloud Backup for a certain period of time and for a maximum amount of backup space. The Backup BYOL license applies to all Cloud Volumes ONTAP and on-premises systems associated with your Cloud Central account.
 
+=== Obtain your Cloud Backup license file
+
+When you add your license to Cloud Manager, you can enter the serial number or upload the NLF license file.
+
+.Steps
+
+. Go to the https://mysupport.netapp.com[NetApp Support Site^] and click *Systems > Software Licenses*.
+
+. Provide your Cloud Backup serial number and Cloud Manager Account ID (this is called a Tenant ID on the support site) to obtain the license file.
+
+=== Add or update a Cloud Backup license
+
+Add or update your Cloud Backup license to Cloud Manager so that the Cloud Backup service is active.
+
 link:concept_backup_to_cloud.html#licensing[Learn more about Cloud Backup licensing].
 
 .Steps
