@@ -86,6 +86,11 @@ Starting with the 3.8.1 release, the following permissions are required to use C
 
 === Azure
 
+* Starting with the 3.9.7 release, Cloud Manager can now delete older cloud snapshots of root and boot disks that are created when a Cloud Volumes ONTAP system is deployed and every time its powered down. A Connector requires a new permission to delete Azure snapshots:
++
+[source,json]
+"Microsoft.Compute/snapshots/delete"
+
 * To avoid Azure deployment failures, make sure that your Cloud Manager policy in Azure includes the following permission:
 +
 [source,json]
