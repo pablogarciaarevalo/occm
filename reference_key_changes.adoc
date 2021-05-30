@@ -116,6 +116,13 @@ Starting with the 3.8.1 release, the following permissions are required to use C
 
 === GCP
 
+==== New permission for changing machine type
+
+We recently discovered that the following permission is required for Cloud Volumes ONTAP machine type changes when switching between machine type families.
+
+[source,yaml]
+- compute.instances.setMinCpuPlatform
+
 ==== New permissions for HA pairs
 
 Starting with the 3.9 release, the service account for a Connector requires additional permissions to deploy a Cloud Volumes ONTAP HA pair in GCP:
