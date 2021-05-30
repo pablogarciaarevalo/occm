@@ -44,7 +44,7 @@ This change can help if your organization uses service control policies (SCPs) t
 
 * If you enabled data tiering on a volume using the _auto_ tiering policy, you can now adjust the minimum cooling period using the API.
 +
-link:task_tiering.html[Learn how to adjust the minimum cooling period.]
+link:task_tiering.html#changing-the-cooling-period-for-the-auto-tiering-policy[Learn how to adjust the minimum cooling period.]
 
 * When you create a new NFS volume, Cloud Manager now displays custom export policies in ascending order, making it easier for you to find the export policy that you need.
 

@@ -20,7 +20,7 @@ The Digital Wallet page enables you to manage licenses for Cloud Volumes ONTAP a
 You can manage the following types of licenses for Cloud Volumes ONTAP:
 
 * Bring your own license (BYOL), which are licenses that you purchase from NetApp.
-* Pay as you go, which are hourly or annual subscriptions from your cloud provider's marketplace.
+* Marketplace subscriptions, which are hourly or annual subscriptions from your cloud provider's marketplace.
 * Eval licenses, which are evaluation licenses that you can later convert to the BYOL licensing model.
 
 link:concept_licensing.html[Learn more about Cloud Volumes ONTAP licenses].
@@ -149,7 +149,9 @@ When you add your license to Cloud Manager, you can enter the serial number or u
 
 . Go to the https://mysupport.netapp.com[NetApp Support Site^] and click *Systems > Software Licenses*.
 
-. Provide your Cloud Backup serial number and Cloud Manager Account ID (this is called a Tenant ID on the support site) to obtain the license file.
+. Provide your Cloud Backup serial number and Cloud Manager System ID (this is called a Tenant ID on the support site) to obtain the license file.
++
+link:task_finding_system_id.html[Learn how to find your system ID].
 
 === Add or update a Cloud Backup license
 
