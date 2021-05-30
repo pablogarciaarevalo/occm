@@ -77,7 +77,7 @@ entries:
                   url: /concept_ha_google_cloud.html
             - title: Evaluating
               url: /concept_evaluating.html
-            - title: Licensing
+            - title: Licensing for BYOL
               url: /concept_licensing.html
             - title: Security
               url: /concept_security.html
