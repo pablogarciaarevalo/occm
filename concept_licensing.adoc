@@ -5,7 +5,7 @@ keywords: licenses, licensing, byol, license, subscription, renewal, expire, net
 summary: Each Cloud Volumes ONTAP BYOL system must have a system license installed with an active subscription. Cloud Manager simplifies the process by managing licenses for you and by notifying you before they expire. BYOL licenses are also available for Cloud Backup.
 ---
 
-= Licensing
+= Licensing overview for BYOL
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -14,6 +14,8 @@ summary: Each Cloud Volumes ONTAP BYOL system must have a system license install
 
 [.lead]
 Each Cloud Volumes ONTAP BYOL system must have a system license installed with an active subscription. Cloud Manager simplifies the process by managing licenses for you and by notifying you before they expire. BYOL licenses are also available for Cloud Backup.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap/index.html[Refer to the Cloud Volumes ONTAP Release Notes for additional licensing options^].
 
 == BYOL system licenses
 
