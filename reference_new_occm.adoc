@@ -34,11 +34,11 @@ This release of Cloud Manager includes enhancements to the management of Cloud V
 
 ==== Enhancements available in AWS
 
-* You can now pay for Cloud Volumes ONTAP and Cloud Backup Service by using an annual contract from the AWS Marketplace that charges by capacity. If you choose this payment option, you can provision up to 2 PB per Cloud Volumes ONTAP system (single node or HA).
+* A new Professional Package enables you to bundle Cloud Volumes ONTAP and Cloud Backup Service by using an annual contract from the AWS Marketplace. Payment is per TiB. This subscription doesn't enable you to back up on-prem data.
 +
-Be aware that https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_limits_aws_990.html[disk limits^] can prevent you from reaching the capacity limit by using disks alone. You can go beyond the disk capacity limit by link:concept_data_tiering.html[tiering inactive data to object storage].
+If you choose this payment option, you can provision up to 2 PB per Cloud Volumes ONTAP system through EBS disks and tiering to S3 object storage (single node or HA).
 +
-https://aws.amazon.com/marketplace/pp/prodview-q7dg6zwszplri[View pricing details for the Professional Edition on the AWS Marketplace page^].
+Go to the https://aws.amazon.com/marketplace/pp/prodview-q7dg6zwszplri[AWS Marketplace page^] to view pricing details and go to the https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_aws_991.html[Cloud Volumes ONTAP Release Notes^] to learn more about this licensing option.
 
 * Cloud Manager now adds tags to EBS volumes when it creates a new Cloud Volumes ONTAP working environment. The tags were previously created after Cloud Volumes ONTAP was deployed.
 +
