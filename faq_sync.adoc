@@ -47,6 +47,8 @@ Cloud Sync licenses are also available through your NetApp representative. Each 
 
 link:concept_cloud_sync.html[Learn more about licenses].
 
+NOTE: Cloud Sync relationships are free for Cloud Volumes Service and Azure NetApp Files.
+
 *Resource charges*
 
 The resource charges are related to the compute and storage costs for running the data broker in the cloud.
