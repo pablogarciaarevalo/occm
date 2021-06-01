@@ -105,9 +105,9 @@ image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in 
 
 . Confirm that the policy requirements have been met and click *Continue*.
 
-. Choose the pay-as-you-go subscription that you want to associate with the credentials, or click *Add Subscription* if you don't have one yet.
+. Choose the subscription that you want to associate with the credentials, or click *Add Subscription* if you don't have one yet.
 +
-To create a pay-as-you-go Cloud Volumes ONTAP system, AWS credentials must be associated with a subscription to Cloud Volumes ONTAP from the AWS Marketplace.
+To pay for Cloud Volumes ONTAP at an hourly rate (PAYGO) or with an annual contract, AWS credentials must be associated with a subscription to Cloud Volumes ONTAP from the AWS Marketplace.
 
 . Click *Add*.
 
@@ -119,7 +119,7 @@ image:screenshot_accounts_switch_aws.gif[A screenshot that shows selecting betwe
 
 == Associating an AWS subscription to credentials
 
-After you add your AWS credentials to Cloud Manager, you can associate an AWS Marketplace subscription with those credentials. The subscription enables you to create a pay-as-you-go Cloud Volumes ONTAP system, and to use other NetApp cloud services.
+After you add your AWS credentials to Cloud Manager, you can associate an AWS Marketplace subscription with those credentials. The subscription enables you to pay for Cloud Volumes ONTAP at an hourly rate (PAYGO) or using an annual contract, and to use other NetApp cloud services.
 
 There are two scenarios in which you might associate an AWS Marketplace subscription after you've already added the credentials to Cloud Manager:
 

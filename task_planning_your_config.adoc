@@ -23,7 +23,7 @@ Newer AWS regions must be enabled before you can create and manage resources in 
 
 == Choosing a license type
 
-Cloud Volumes ONTAP is available in two pricing options: pay-as-you-go and Bring Your Own License (BYOL). For pay-as-you-go, you can choose from three licenses: Explore, Standard, or Premium. Each license provides different capacity and compute options.
+A few licensing options are available for Cloud Volumes ONTAP. Each of these licensing options enables you to choose a configuration that meets your needs.
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_aws_991.html[Supported configurations for Cloud Volumes ONTAP 9.9.1 in AWS^]
 
