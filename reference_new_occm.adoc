@@ -19,6 +19,52 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.7 (30 May 2021)
+
+* <<Cloud Volumes ONTAP enhancements>>
+* <<Digital Wallet>>
+
+=== Cloud Volumes ONTAP enhancements
+
+This release of Cloud Manager includes enhancements to the management of Cloud Volumes ONTAP.
+
+==== Enhancements available in AWS
+
+* A new Professional Package enables you to bundle Cloud Volumes ONTAP and Cloud Backup Service by using an annual contract from the AWS Marketplace. Payment is per TiB. This subscription doesn't enable you to back up on-prem data.
++
+If you choose this payment option, you can provision up to 2 PB per Cloud Volumes ONTAP system through EBS disks and tiering to S3 object storage (single node or HA).
++
+Go to the https://aws.amazon.com/marketplace/pp/prodview-q7dg6zwszplri[AWS Marketplace page^] to view pricing details and go to the https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_aws_991.html[Cloud Volumes ONTAP Release Notes^] to learn more about this licensing option.
+
+* Cloud Manager now adds tags to EBS volumes when it creates a new Cloud Volumes ONTAP working environment. The tags were previously created after Cloud Volumes ONTAP was deployed.
++
+This change can help if your organization uses service control policies (SCPs) to manage permissions.
+
+==== Enhancements available in all cloud providers
+
+* If you enabled data tiering on a volume using the _auto_ tiering policy, you can now adjust the minimum cooling period using the API.
++
+link:task_tiering.html#changing-the-cooling-period-for-the-auto-tiering-policy[Learn how to adjust the minimum cooling period.]
+
+* When you create a new NFS volume, Cloud Manager now displays custom export policies in ascending order, making it easier for you to find the export policy that you need.
+
+* Cloud Manager now deletes older cloud snapshots of root and boot disks that are created when a Cloud Volumes ONTAP system is deployed and every time its powered down. Only the two most recent snapshots are retained for both the root and boot volumes.
++
+This enhancement helps reduce cloud provider costs by removing snapshots that are no longer needed.
++
+Note that a Connector requires a new permission to delete Azure snapshots. https://mysupport.netapp.com/site/info/cloud-manager-policies[View the latest Cloud Manager policy for Azure^].
++
+[source,json]
+"Microsoft.Compute/snapshots/delete"
+
+=== Digital Wallet
+
+A new *Digital Wallet* feature enables you to more easily view and manage your Cloud Volumes ONTAP licenses and Cloud Backup licenses from a single location.
+
+link:task_managing_licenses.html[Learn more about Digital Wallet].
+
+image:screenshot_digital_wallet.gif[A screenshot of the Digital Wallet page that shows Cloud Volumes ONTAP licenses.]
+
 == Cloud Manager 3.9.6 update (24 May 2021)
 
 Cloud Manager was updated to include the latest version of Cloud Volumes ONTAP.

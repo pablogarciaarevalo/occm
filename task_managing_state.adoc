@@ -53,6 +53,8 @@ Cloud Manager saves the schedule. The clock icon changes to indicate that a sche
 
 Stopping Cloud Volumes ONTAP saves you from accruing compute costs and creates snapshots of the root and boot disks, which can be helpful for troubleshooting.
 
+NOTE: To reduce costs, Cloud Manager periodically deletes older snapshots of root and boot disks. Only the two most recent snapshots are retained for both the root and boot disks.
+
 .About this task
 
 When you stop an HA pair, Cloud Manager shuts down both nodes.

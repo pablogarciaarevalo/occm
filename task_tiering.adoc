@@ -240,3 +240,18 @@ image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in 
 . Under *Capacity*, click *Aggregate Capacity Thresholds - Free Space Ratio for Data Tiering*.
 
 . Change the free space ratio based on your requirements and click *Save*.
+
+== Changing the cooling period for the auto tiering policy
+
+If you enabled data tiering on a Cloud Volumes ONTAP volume using the _auto_ tiering policy, you can adjust the default cooling period based on your business needs. This action is supported using the API only.
+
+The cooling period is the number of days that user data in a volume must remain inactive before it is considered "cold" and moved to object storage.
+
+The default cooling period for the auto tiering policy is 31 days. You can change the cooling period as follows:
+
+* 9.8 or later: 2 days to 183 days
+* 9.7 or earlier: 2 days to 63 days
+
+.Step
+
+. Use the _minimumCoolingDays_ parameter with your API request when creating a volume or modifying an existing volume.

@@ -64,9 +64,9 @@ For information about tags, refer to https://docs.aws.amazon.com/AWSEC2/latest/U
 
 | [[subscribe]]Edit Credentials | Choose the AWS credentials and marketplace subscription to use with this Cloud Volumes ONTAP system.
 
-Click *Add Subscription* to associate the selected credentials with a subscription.
+Click *Add Subscription* to associate the selected credentials with a new AWS Marketplace subscription. The subscription can be for an annual contract or to pay for Cloud Volumes ONTAP at an hourly rate.
 
-To create a pay-as-you-go Cloud Volumes ONTAP system, you need to select AWS credentials that are associated with a subscription to Cloud Volumes ONTAP from the AWS Marketplace. You'll be charged from this subscription for every Cloud Volumes ONTAP 9.6 and later PAYGO system that you create and each add-on feature that you enable.
+If purchased a license directly from NetApp (BYOL), then an AWS subscription isn't required.
 
 link:task_adding_aws_accounts.html[Learn how to add additional AWS credentials to Cloud Manager].
 
@@ -103,17 +103,21 @@ link:task_setting_up_kms.html[Learn how to set up the AWS KMS for Cloud Volumes 
 +
 link:concept_security.html#encryption-of-data-at-rest[Learn more about supported encryption technologies].
 
-. *License and Support Site Account*: Specify whether you want to use pay-as-you-go or BYOL, and then specify a NetApp Support Site account.
+. *License and NSS Account*: Specify which licensing option would you like to use with this system, and then specify a NetApp Support Site account.
 +
-To understand how licenses work, see link:concept_licensing.html[Licensing].
+To understand how BYOL licenses work, see link:concept_licensing.html[Licensing].
 +
-A NetApp Support Site Account is optional for pay-as-you-go, but required for BYOL systems. link:task_adding_nss_accounts.html[Learn how to add NetApp Support Site accounts].
+A NetApp Support Site Account is required for BYOL systems. link:task_adding_nss_accounts.html[Learn how to add NetApp Support Site accounts].
 
-. *Preconfigured Packages*: Select one of the packages to quickly launch Cloud Volumes ONTAP, or click *Create my own configuration*.
+. *Cloud Volumes ONTAP Configuration* (annual contract only): Review the default configuration and click *Continue* or click *Change Configuration* to select your own configuration.
 +
-If you choose one of the packages, you only need to specify a volume and then review and approve the configuration.
+If you keep the default configuration, then you only need to specify a volume and then review and approve the configuration.
 
-. *IAM Role*: You should keep the default option to let Cloud Manager create the role for you.
+. *Preconfigured Packages* (hourly or BYOL only): Select one of the packages to quickly launch Cloud Volumes ONTAP, or click *Change Configuration* to select your own configuration.
++
+If you choose one of the packages, then you only need to specify a volume and then review and approve the configuration.
+
+. *IAM Role*: It's best to keep the default option to let Cloud Manager create the role for you.
 +
 If you prefer to use your own policy, it must meet http://mysupport.netapp.com/cloudontap/support/iampolicies[policy requirements for Cloud Volumes ONTAP nodes^].
 
@@ -263,9 +267,9 @@ For information about tags, refer to https://docs.aws.amazon.com/AWSEC2/latest/U
 
 | Edit Credentials | Choose the AWS credentials and marketplace subscription to use with this Cloud Volumes ONTAP system.
 
-Click *Add Subscription* to associate the selected credentials with a subscription.
+Click *Add Subscription* to associate the selected credentials with a new AWS Marketplace subscription. The subscription can be for an annual contract or to pay for Cloud Volumes ONTAP at an hourly rate.
 
-To create a pay-as-you-go Cloud Volumes ONTAP system, you need to select AWS credentials that are associated with a subscription to Cloud Volumes ONTAP from the AWS Marketplace. You'll be charged from this subscription for every Cloud Volumes ONTAP 9.6 and later PAYGO system that you create and each add-on feature that you enable.
+If purchased a license directly from NetApp (BYOL), then an AWS subscription isn't required.
 
 link:task_adding_aws_accounts.html[Learn how to add additional AWS credentials to Cloud Manager].
 
@@ -314,17 +318,21 @@ link:task_setting_up_kms.html[Learn how to set up the AWS KMS for Cloud Volumes 
 +
 link:concept_security.html#encryption-of-data-at-rest[Learn more about supported encryption technologies].
 
-. *License and Support Site Account*: Specify whether you want to use pay-as-you-go or BYOL, and then specify a NetApp Support Site account.
+. *License and NSS Account*: Specify which licensing option would you like to use with this system, and then specify a NetApp Support Site account.
 +
-To understand how licenses work, see link:concept_licensing.html[Licensing].
+To understand how BYOL licenses work, see link:concept_licensing.html[Licensing].
 +
-A NetApp Support Site Account is optional for pay-as-you-go, but required for BYOL systems. link:task_adding_nss_accounts.html[Learn how to add NetApp Support Site accounts].
+A NetApp Support Site Account is required for BYOL systems. link:task_adding_nss_accounts.html[Learn how to add NetApp Support Site accounts].
 
-. *Preconfigured Packages*: Select one of the packages to quickly launch a Cloud Volumes ONTAP system, or click *Create my own configuration*.
+. *Cloud Volumes ONTAP Configuration* (annual contract only): Review the default configuration and click *Continue* or click *Change Configuration* to select your own configuration.
 +
-If you choose one of the packages, you only need to specify a volume and then review and approve the configuration.
+If you keep the default configuration, then you only need to specify a volume and then review and approve the configuration.
 
-. *IAM Role*: You should keep the default option to let Cloud Manager create the roles for you.
+. *Preconfigured Packages* (hourly or BYOL only): Select one of the packages to quickly launch Cloud Volumes ONTAP, or click *Change Configuration* to select your own configuration.
++
+If you choose one of the packages, then you only need to specify a volume and then review and approve the configuration.
+
+. *IAM Role*: It's best to keep the default option to let Cloud Manager create the role for you.
 +
 If you prefer to use your own policy, it must meet http://mysupport.netapp.com/cloudontap/support/iampolicies[policy requirements for Cloud Volumes ONTAP nodes and the HA mediator^].
 
