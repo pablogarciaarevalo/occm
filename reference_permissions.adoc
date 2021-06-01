@@ -316,7 +316,8 @@ The Cloud Manager Azure policy includes the permissions that Cloud Manager needs
 |
 "Microsoft.Compute/snapshots/write",
 "Microsoft.Compute/snapshots/read",
-"Microsoft.Compute/disks/beginGetAccess/action"
+"Microsoft.Compute/snapshots/delete",
+"Microsoft.Compute/disks/beginGetAccess/action",
 
 | Creates and manages Azure managed snapshots.
 
@@ -328,7 +329,7 @@ The Cloud Manager Azure policy includes the permissions that Cloud Manager needs
 
 |
 "Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/read",
-"Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/write"
+"Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/write",
 
 | Enables programmatic deployments from the Azure Marketplace.
 
@@ -345,7 +346,7 @@ The Cloud Manager Azure policy includes the permissions that Cloud Manager needs
 
 | Manages an Azure load balancer for HA pairs.
 
-| "Microsoft.Authorization/locks/*"
+| "Microsoft.Authorization/locks/*",
 
 | Enables management of locks on Azure disks.
 
@@ -478,6 +479,7 @@ The Cloud Manager policy for GCP includes the permissions that Cloud Manager nee
 
 |
 - compute.instances.setMachineType
+- compute.instances.setMinCpuPlatform
 
 | To change the machine type for Cloud Volumes ONTAP.
 

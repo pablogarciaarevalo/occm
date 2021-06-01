@@ -47,11 +47,9 @@ TIP: Cloud Manager gracefully changes one node at a time by initiating takeover 
 
 Cloud Volumes ONTAP reboots with the new configuration.
 
-== Changing between pay-as-you-go configurations
+== Changing between hourly (pay-as-you-go) configurations
 
-After you launch pay-as-you-go Cloud Volumes ONTAP systems, you can change between the Explore, Standard, and Premium configurations at any time by modifying the license. Changing the license increases or decreases the raw capacity limit and enables you to choose from different AWS instance types or Azure virtual machine types.
-
-NOTE: In GCP, a single machine type is available for each pay-as-you-go configuration. You can't choose between different machine types.
+After you launch an hourly, pay-as-you-go Cloud Volumes ONTAP system, you can change between the Explore, Standard, and Premium configurations at any time by modifying the license. Changing the license increases or decreases the raw capacity limit and enables you to choose from different instance or VM types.
 
 .About this task
 
@@ -77,7 +75,7 @@ Cloud Volumes ONTAP reboots with the new license, instance type or machine type,
 
 == Moving to an alternate Cloud Volumes ONTAP configuration
 
-If you want to switch between a pay-as-you-go subscription and a BYOL subscription or between a single Cloud Volumes ONTAP system and an HA pair, then you need to deploy a new system and then replicate data from the existing system to the new system.
+If you want to switch between a pay-by-the-hour (PAYGO) subscription, an annual contract (AWS only), or a BYOL subscription, then you need to create a new Cloud Volumes ONTAP working environment and then replicate data from the existing working environment to the new working environment. The same is true if you want to switch between a single Cloud Volumes ONTAP system and an HA pair.
 
 .Steps
 
