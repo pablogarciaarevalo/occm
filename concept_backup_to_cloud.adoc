@@ -277,6 +277,10 @@ There are certain things you need to be aware of when the volume you are backing
 
 * When making backups from on-premises ONTAP systems to StorageGRID (private cloud), the Connector must be deployed on premises.
 
+* When backing up data protection (DP) volumes, relationships with the following SnapMirror labels will not be backed up to cloud:
+** app_consistent
+** all_source_snapshot
+
 * In Azure, if you enable Cloud Backup when Cloud Volumes ONTAP is deployed, Cloud Manager creates the resource group for you and you cannot change it. If you want to pick your own resource group when enabling Cloud Backup, *disable* Cloud Backup when deploying Cloud Volumes ONTAP and then enable Cloud Backup and choose the resource group from the Cloud Backup Settings page.
 
 * When backing up volumes from Cloud Volumes ONTAP systems, volumes that you create outside of Cloud Manager aren't automatically backed up. For example, if you create a volume from the ONTAP CLI, ONTAP API, or System Manager, then the volume won't be automatically backed up. If you want to back up these volumes, you would need to disable Cloud Backup and then enable it again.
