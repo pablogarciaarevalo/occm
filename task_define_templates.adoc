@@ -67,7 +67,8 @@ When unchecked, the user can't change the value and the hard-coded value in the 
 
 *Drift On checkbox*
 
-Check this box so that Cloud Manager monitors the hard-coded value you entered for a parameter when a resource is created with the template. If Cloud Manager later sees that an admin has changed the parameter value so that it no longer aligns with the template definition, you will receive an email notification about the change.
+Check this box so that Cloud Manager monitors the hard-coded value you entered for a parameter when a resource is created with the template. Later, you can run a Drift Report to see which fields configured with Drift are no longer compliant with the template settings.
+// If Cloud Manager later sees that an admin has changed the parameter value so that it no longer aligns with the template definition, you will receive an email notification about the change.
 
 When unchecked, the user can change the value to any value after the resource has been created.
 
@@ -161,6 +162,12 @@ The _Create Volume in Cloud Volumes ONTAP Action Definition_ page is displayed.
 +
 image:screenshot_create_template_define_action_cvo.png[A screenshot showing a blank CVO template that you need to fill in.]
 
+. *Context:* Enter the Cloud Volumes ONTAP working environment context; if required.
++
+When users launch the template from an existing working environment, this information gets filled in automatically.
++
+When users launch the template from the Templates Dashboard (not in a working environment context), then they need to select the working environment and the SVM where the volume will be created.
+
 . *Details:* Enter the volume name and size.
 +
 [cols=2*,options="header",cols="25,75"]
@@ -183,7 +190,7 @@ For example, you could specify that "db" be a required prefix, suffix, or contai
 
 . *Disk Type:* Choose the cloud storage provider and the type of disk. For some disk selections you can also select a minimum and maximum IOPS or Throughput (MB/s) value; basically defining a certain Quality of Service (QoS).
 
-. *Protocol:* Select *NFS* or *SMB* to set the protocol of the volume. And then the provide the protocol details.
+. *Protocol Options:* Select *NFS* or *SMB* to set the protocol of the volume. And then the provide the protocol details.
 +
 [cols=2*,options="header",cols="25,75"]
 
@@ -213,13 +220,13 @@ For example, you could specify that "db" be a required prefix, suffix, or contai
 
 |===
 
-. *Tiering Policy:* Choose the tiering policy that you would like applied to the volume, or set this to "None" if you do not want to tier cold data from this volume to object storage.
+. *Tiering:* Choose the tiering policy that you would like applied to the volume, or set this to "None" if you do not want to tier cold data from this volume to object storage.
 +
 See link:concept_data_tiering.html#volume-tiering-policies[volume tiering policies^] for an overview, and see link:task_tiering.html[Tiering inactive data to object storage^] to make sure your environment is set up for tiering.
 
 . Click *Apply* after you have defined the parameters needed for this action.
 +
-If the template values are correctly completed, a green box is shown around the "Create Volume in Cloud Volumes ONTAP" box.
+If the template values are correctly completed, a green checkmark is added to the "Create Volume in Cloud Volumes ONTAP" box.
 
 . Click the *Enable Cloud Backup* box and the _Enable Cloud Backup Action Definition_ dialog is displayed so you can fill in the Cloud Backup details.
 +
@@ -233,10 +240,9 @@ image:screenshot_create_template_add_action.png[A screenshot showing additional 
 
 . Enter the template name *CVO volume for databases* (for this example) in the top left.
 
-. Click *Settings & Drift* if you want to provide a more detailed description so that this template can be distinguished from other similar templates, and then click *Apply*.
-//
-//_Configure Drift_ page is displayed. In the future this page will allow you to choose whether the Drift feature should be applied to the template. This will allow Cloud Manager to monitor the hard-coded values you entered for parameters when creating this template.
-// . In the _Configure Drift_ page, choose whether the Drift feature should be applied to the template so that Cloud Manager monitors the hard-coded values you entered for parameters when creating this template.
+. Click *Settings & Drift* to provide a more detailed description so that this template can be distinguished from other similar templates, and so you can enable Drift for the overall template, and then click *Apply*.
++
+Drift allows Cloud Manager to monitor the hard-coded values you entered for parameters when creating this template.
 
 . Click *Save Template*.
 
