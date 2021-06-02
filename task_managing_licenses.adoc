@@ -149,7 +149,15 @@ When you add your license to Cloud Manager, you can enter the serial number or u
 
 . Go to the https://mysupport.netapp.com[NetApp Support Site^] and click *Systems > Software Licenses*.
 
-. Provide your Cloud Backup serial number and Cloud Manager System ID (this is called a Tenant ID on the support site) to obtain the license file.
+. Enter your Cloud Backup serial number.
++
+image:screenshot_cloud_backup_license_step1.gif[A screenshot that shows a table of licenses after searching by serial number.]
+
+. Under *License Key*, click *Get NetApp License File*.
+
+. Enter your Cloud Manager System ID (this is called a Tenant ID on the support site) and click *Submit*.
++
+image:screenshot_cloud_backup_license_step2.gif[A screenshot that shows the get license dialog box where you enter your tenant ID and then click Submit to download the license file.]
 +
 link:task_finding_system_id.html[Learn how to find your system ID].
 
