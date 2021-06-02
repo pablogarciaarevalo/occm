@@ -22,7 +22,7 @@ Get started quickly by following these steps, or scroll down to the remaining se
 ==== image:number1.png[Number 1] Verify required prerequisites
 
 [role="quick-margin-list"]
-* Before users can create a volume for a Cloud Volumes ONTAP, on-premises ONTAP, or Azure NetApp Files system using a template, make sure they have access to an appropriate Working Environment where the volume will be deployed.
+* Before users can create a volume for a Cloud Volumes ONTAP, on-premises ONTAP, or Azure NetApp Files system using a template, make sure they have access to an appropriate working environment where the volume will be deployed.
 
 [role="quick-margin-list"]
 * If you plan to add a Cloud service "action" to your template, such as link:concept_backup_to_cloud.html[Cloud Backup^] or link:concept_cloud_compliance.html[Cloud Data Sense^], ensure that the service is active and licensed in your environment.
@@ -98,10 +98,6 @@ For example, to enable compliance scanning on a volume, the Cloud Data Sense ser
 The following illustration shows how to enter this information in the Cloud Data Sense action section of the template.
 
 image:screenshot_template_variable_input_output.png[An illustration showing how to use a value entered in a previous action to populate a field in another action.]
-//
-// The following illustration shows how to enter this information in the Backup action section of the template.
-//
-// image:screenshot_template_variable_input.png[An illustration showing how to use a value entered in a previous action to populate a field in another action.]
 
 == Using conditions to perform different actions based on logic statements
 
@@ -354,13 +350,126 @@ The template is created and you are returned to the Template Dashboard where you
 
 See <<What to do after you have created the template,what you should tell your users about templates>>.
 
+== Creating a template for an on-premises ONTAP volume
+
+See link:task_provisioning_ontap.html#creating-volumes-for-ontap-clusters[how to provision on-premises ONTAP volumes^] for details about all the parameters you need to complete in the on-premises ONTAP volume template.
+
+.Steps
+
+. Select the *AppTemplate* service, click the *Templates* tab, and click *Add New Template*.
++
+The _Select_a Template_ page is displayed.
++
+image:screenshot_create_template_primary_action_blank.png[A screenshot showing how to select the primary action that will be performed using this template.]
+
+. Select *Blank template* and click *Get Started*.
++
+The _Add New Action_ page is displayed.
++
+image:screenshot_create_template_primary_action_onprem.png[]
+
+. Select *Create Volume in On-Premises ONTAP* as the type of resource you want to create, and click *Apply*.
++
+The _Create Volume in On-Premises ONTAP Action Definition_ page is displayed.
++
+image:screenshot_create_template_define_action_onprem.png[A screenshot showing a blank onprem ONTAP template that you need to fill in.]
+
+
+. *Context:* Enter the Cloud Volumes ONTAP working environment context; if required.
++
+When users launch the template from an existing working environment, this information gets filled in automatically.
++
+When users launch the template from the Templates Dashboard (not in a working environment context), then they need to select the working environment and the SVM where the volume will be created.
+
+. *Details:* Enter the volume name and size.
++
+[cols=2*,options="header",cols="25,75"]
+
+|===
+| Field
+| Description
+
+| Volume Name | Click in the field and select one of the 5 options. You can let the admin enter any name by selecting *Free Text*, or you can specify that the volume name must have a certain prefix or suffix, that it _contains_ certain characters, or that it follows rules from a regular expression (regex) you enter.
+
+For example, you could specify that "db" be a required prefix, suffix, or contains; requiring the user to add volume names like "db_vol1", "vol1_db", or "vol_db_1".
+
+| Volume Size | You can specify a range of allowable values, or you can specify a fixed size. This value is in GB. For our example we can add a fixed value *100*.
+
+|===
+
+. *Protection:* Choose whether this volume will have Snapshot copies created by selecting "Default" or some other policy, or choose "None" if you do not want to create Snapshot copies.
+
+. *Usage Profile:* Choose whether or not NetApp storage efficiency features are applied to the volume. This includes Thin Provisioning, Deduplication, and Compression. For our example, keep storage efficiency enabled.
+
+. *Disk Type:* Choose the cloud storage provider and the type of disk. For some disk selections you can also select a minimum and maximum IOPS or Throughput (MB/s) value; basically defining a certain Quality of Service (QoS).
+
+. *Protocol Options:* Select *NFS* or *SMB* to set the protocol of the volume. And then the provide the protocol details.
++
+[cols=2*,options="header",cols="25,75"]
+
+|===
+| NFS Fields
+| Description
+
+| Access Control | Choose whether access controls are needed to access the volume.
+
+| Export Policy | Create an export policy to define the clients in the subnet that can access the volume.
+
+| NFS Version | Select the NFS version for the volume: either _NFSv3_ or _NFSv4_, or you can select both.
+
+|===
++
+[cols=2*,options="header",cols="25,75"]
+
+|===
+| SMB Fields
+| Description
+
+| Share Name | Click in the field and select one of the 5 options. You can let the admin enter any name (Free Text) or you can specify that the share name must have a certain prefix or suffix, that it _contains_ certain characters, or that it follows rules from a regular expression (regex) you enter.
+
+| Permissions | Select the level of access to a share for users and groups (also called access control lists, or ACLs).
+
+| Users / Groups | Specify local or domain Windows users or groups, or UNIX users or groups. If you specify a domain Windows user name, you must include the user's domain using the format domain\username.
+
+|===
+
+. *Tiering:* Choose the tiering policy that you would like applied to the volume, or set this to "None" if you do not want to tier cold data from this volume to object storage.
++
+See link:concept_data_tiering.html#volume-tiering-policies[volume tiering policies^] for an overview, and see link:task_tiering.html[Tiering inactive data to object storage^] to make sure your environment is set up for tiering.
+
+. Click *Apply* after you have defined the parameters needed for this action.
++
+If the template values are correctly completed, a green checkmark is added to the "Create Volume in Cloud Volumes ONTAP" box.
+
+. Click the *Enable Cloud Backup* box and the _Enable Cloud Backup Action Definition_ dialog is displayed so you can fill in the Cloud Backup details.
++
+image:screenshot_create_template_add_action.png[A screenshot showing additional actions that you can add to the created volume.]
+
+. Define the backup policy to create daily backups with a 30-day retention value.
+
+. Below the Volume Name field there are three fields you use to indicate which volume will have backup enabled. See <<Passing values between template actions,how to complete these fields>>.
+
+. Click *Apply* and the Cloud Backup dialog is saved.
+
+. Enter the template name *CVO volume for databases* (for this example) in the top left.
+
+. Click *Settings & Drift* to provide a more detailed description so that this template can be distinguished from other similar templates, and so you can enable Drift for the overall template, and then click *Apply*.
++
+Drift allows Cloud Manager to monitor the hard-coded values you entered for parameters when creating this template.
+
+. Click *Save Template*.
+
+.Result
+
+The template is created and you are returned to the Template Dashboard where your new template appears.
+
+See <<What to do after you have created the template,what you should tell your users about templates>>.
+
 == What to do after you have created the template
 
 After you have created a template, you should inform your storage administrators to use the template when creating new volumes.
 
-Your users should select *Add Volume From Template* when adding a volume to a Working Environment in the future. The selection is available from the _Working Environment_ page, and from the _Volume Details_ page. See link:task_provisioning_storage.html#creating-volumes-from-templates[how to provision Cloud Volumes ONTAP volumes^] or link:task_manage_anf_volumes.html#creating-volumes-from-templates[how to provision Azure NetApp Files volumes^] using templates.
-
-image:screenshot_template_add_vol_from.png[Two screenshots showing how users can create new volumes from a template.]
+You can point them to link:task_run_templates.html[Creating resources using templates] for details.
 
 == Editing and deleting a template
 
