@@ -119,7 +119,7 @@ When viewing the details for a single file there are a few actions you can take 
 
 * You can delete the file. See link:task_managing_highlights.html#deleting-source-files[Deleting source files^] for details.
 
-* You can assign a certain Status to the file. See link:task_managing_highlights.html#applying-status-codes-to-manage-your-scanned-files[applying Status codes] for details.
+* You can assign a certain Status to the file. See link:task_managing_highlights.html#applying-status-codes-to-manage-your-scanned-files[applying Status tags] for details.
 
 * If you have integrated AIP labels with Cloud Data Sense, you can assign a label to this file, or change to a different label if one already exists. See link:task_managing_highlights.html#assigning-aip-labels-manually[Assigning AIP labels manually^] for details.
 

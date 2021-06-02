@@ -86,7 +86,7 @@ You can delete any custom Policy that you created if you no longer need it. You 
 
 To delete a Policy, click the image:screenshot_gallery_options.gif[More button] button for a specific Policy, click *Delete Policy*, and then click *Delete Policy* again in the confirmation dialog.
 
-== Applying Status codes to manage your scanned files
+== Applying Status tags to manage your scanned files
 
 You can add a Status to files that you want to mark for some type of follow-up. For example, you may have found some duplicate files and you want to delete one of them, but you need to check to see which one should be deleted. You could add a status of "Check to delete" to the file so you know this file requires some research and some type of future action.
 
@@ -94,7 +94,7 @@ Data Sense enables you to view the Statuses that are assigned to files, add a St
 
 Note that the Status is not added to the file in the same way as AIP Labels are part of the file metadata. The Status is just seen by Cloud Manager users using Cloud Data Sense so you can see if a file needs to be deleted, or checked for some type of follow-up.
 
-=== Viewing Status codes assigned to your files
+=== Viewing Status tags assigned to your files
 
 You can view all the files that have a specific Status assigned.
 
@@ -106,11 +106,9 @@ image:screenshot_compliance_filter_status.png[A screenshot showing how to select
 +
 The Investigation Results pane lists all the files that have that Status assigned.
 
-=== Assigning a Status code to files
+=== Assigning a Status tag to files
 
-You can add, change, and remove a Status from your files.
-
-Follow these steps to add a Status to a file.
+You can add, change, and remove a Status tag from your files.
 
 .Steps
 
@@ -121,19 +119,19 @@ Follow these steps to add a Status to a file.
 * To assign an existing Status, click that Status. For example, "Action Required".
 * To create a new Status and assign it to the file, click *Add New Status*, enter the name of the new Status, and click *Done*.
 +
-image:screenshot_compliance_add_status_manually.png[A screenshot showing the metadata details for a file in the Data Investigation page.]
+image:screenshot_compliance_add_status_manually.png[A screenshot showing how to assign a Status tag to a file in the Data Investigation page.]
 +
-The Status code appears in the file metadata.
+The Status tag appears in the file metadata.
 
-=== Editing and deleting a Status code
+=== Editing and deleting a Status tag
 
-You can edit a Status to change the name, or you can delete a Status if you don't need to use it anymore. Click the image:button_3_vert_dots.png[] for an existing Status and click *Edit Status Name* or *Delete Status*.
+You can edit a Status tag to change the name, or you can delete a Status if you don't need to use it anymore. Click the image:button_3_vert_dots.png[] for an existing Status and click *Edit Status Name* or *Delete Status*.
 
-image:screenshot_compliance_edit_delete_status.png[]
+image:screenshot_compliance_edit_delete_status.png[A screenshot showing how to delete a Status tag or rename the tag.]
 
 When you change a Status name, it is changed for all files that were using the old name.
 
-When you delete a Status, it is cleared from all files that were using the Status.
+When you delete a Status tag, it is cleared from all files that were using the Status.
 
 == Categorizing your data using AIP labels
 

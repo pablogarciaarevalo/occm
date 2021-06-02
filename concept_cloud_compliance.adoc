@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept_cloud_compliance.html
 keywords: artificial intelligence, ai, compliance, cloud compliance, dsar, personal data, personal information, sensitive, personal sensitive data, gdpr, hipaa, scans, scanning, azure netapp files, cloud volumes ontap, Amazon S3, database, onedrive, on-prem ontap, file shares, object storage, backup files, aip labels, governance, data sense
-summary: Cloud Data Sense is a data privacy and compliance service for Cloud Manager that scans your corporate data sources to identify the personal and sensitive data that resides in those files. Using Artificial Intelligence driven technology, Cloud Data Sense helps organizations understand data context and identify sensitive data.
+summary: Cloud Data Sense is a data governance service for Cloud Manager that scans your corporate on-premises and cloud data sources to map and classify data, and to identify private information. This can help reduce your security and compliance risk, decrease storage costs, and assist with your data migration projects.
 ---
 
 = Learn about Cloud Data Sense
@@ -13,9 +13,9 @@ summary: Cloud Data Sense is a data privacy and compliance service for Cloud Man
 :imagesdir: ./media/
 
 [.lead]
-Cloud Data Sense is a data privacy and compliance service for Cloud Manager that scans your corporate data sources to identify the personal and sensitive data that resides in those files. Using Artificial Intelligence driven technology, Cloud Data Sense helps organizations understand data context and identify sensitive data.
+Cloud Data Sense is a data governance service for Cloud Manager that scans your corporate on-premises and cloud data sources to map and classify data, and to identify private information. This can help reduce your security and compliance risk, decrease storage costs, and assist with your data migration projects.
 
-NOTE: *Cloud Compliance* was renamed to *Cloud Data Sense* in the June 2021 release.
+NOTE: *Cloud Compliance* was renamed to *Cloud Data Sense* in June 2021.
 
 https://cloud.netapp.com/cloud-compliance[Learn about the use cases for Cloud Data Sense^].
 
