@@ -27,7 +27,7 @@ Application Templates offer the following features and benefits:
 
 ==== What is "drift"? ====
 
-"Drift" allows Cloud Manager to monitor the parameter values used when a resource is created with the template. At this time "drift" can tell you when a resource has been change so you can manually make adjustments to bring it back into compliance with the template. In the future we'll be able to send you notifications when a resource is out of compliance, or even reverse a user's change so that all resources created from a template are brought back into compliance automatically.
+"Drift" allows Cloud Manager to monitor the parameter values used when a resource is created with the template. At this time, "drift" can identify when a resource has been changed so you can manually make adjustments to bring it back into compliance with the template. In the future we'll be able to send you notifications when a resource is out of compliance, or even reverse a user's change so that all resources created from a template are brought back into compliance automatically.
 
 == Pricing and licenses
 

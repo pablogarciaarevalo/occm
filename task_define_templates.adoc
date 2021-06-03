@@ -374,12 +374,11 @@ The _Create Volume in On-Premises ONTAP Action Definition_ page is displayed.
 +
 image:screenshot_create_template_define_action_onprem.png[A screenshot showing a blank onprem ONTAP template that you need to fill in.]
 
-
-. *Context:* Enter the Cloud Volumes ONTAP working environment context; if required.
+. *Context:* Enter the on-premises ONTAP working environment context; if required.
 +
 When users launch the template from an existing working environment, this information gets filled in automatically.
 +
-When users launch the template from the Templates Dashboard (not in a working environment context), then they need to select the working environment and the SVM where the volume will be created.
+When users launch the template from the Templates Dashboard (not in a working environment context), then they need to select the working environment, the SVM, and the aggregate where the volume will be created.
 
 . *Details:* Enter the volume name and size.
 +
@@ -400,8 +399,6 @@ For example, you could specify that "db" be a required prefix, suffix, or contai
 . *Protection:* Choose whether this volume will have Snapshot copies created by selecting "Default" or some other policy, or choose "None" if you do not want to create Snapshot copies.
 
 . *Usage Profile:* Choose whether or not NetApp storage efficiency features are applied to the volume. This includes Thin Provisioning, Deduplication, and Compression. For our example, keep storage efficiency enabled.
-
-. *Disk Type:* Choose the cloud storage provider and the type of disk. For some disk selections you can also select a minimum and maximum IOPS or Throughput (MB/s) value; basically defining a certain Quality of Service (QoS).
 
 . *Protocol Options:* Select *NFS* or *SMB* to set the protocol of the volume. And then the provide the protocol details.
 +
@@ -433,25 +430,11 @@ For example, you could specify that "db" be a required prefix, suffix, or contai
 
 |===
 
-. *Tiering:* Choose the tiering policy that you would like applied to the volume, or set this to "None" if you do not want to tier cold data from this volume to object storage.
-+
-See link:concept_data_tiering.html#volume-tiering-policies[volume tiering policies^] for an overview, and see link:task_tiering.html[Tiering inactive data to object storage^] to make sure your environment is set up for tiering.
-
 . Click *Apply* after you have defined the parameters needed for this action.
 +
-If the template values are correctly completed, a green checkmark is added to the "Create Volume in Cloud Volumes ONTAP" box.
+If the template values are correctly completed, a green checkmark is added to the "Create Volume in On-Premises ONTAP" box.
 
-. Click the *Enable Cloud Backup* box and the _Enable Cloud Backup Action Definition_ dialog is displayed so you can fill in the Cloud Backup details.
-+
-image:screenshot_create_template_add_action.png[A screenshot showing additional actions that you can add to the created volume.]
-
-. Define the backup policy to create daily backups with a 30-day retention value.
-
-. Below the Volume Name field there are three fields you use to indicate which volume will have backup enabled. See <<Passing values between template actions,how to complete these fields>>.
-
-. Click *Apply* and the Cloud Backup dialog is saved.
-
-. Enter the template name *CVO volume for databases* (for this example) in the top left.
+. Enter the template name in the top left.
 
 . Click *Settings & Drift* to provide a more detailed description so that this template can be distinguished from other similar templates, and so you can enable Drift for the overall template, and then click *Apply*.
 +
@@ -475,6 +458,6 @@ You can point them to link:task_run_templates.html[Creating resources using temp
 
 You can modify a template if you need to change any of the parameters. After you save your changes, all future resources created from the template will use the new parameter values.
 
-You can also delete a template if you no longer need it. Deleting a template does not affect any of the resources that were created with the template.
+You can also delete a template if you no longer need it. Deleting a template does not affect any of the resources that were created with the template. However, no Drift compliance checking can be done after the template is deleted.
 
 image:screenshot_template_edit_remove.png[A screenshot showing how to modify a template or delete a template.]
