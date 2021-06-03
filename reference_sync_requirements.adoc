@@ -234,6 +234,13 @@ Notes:
 *	Glacier
 *	Glacier Deep Archive
 
+. You can choose a specific storage class when a Google Cloud Storage bucket is the target:
++
+* Standard
+* Nearline
+* Coldline
+* Archive
+
 == Source and target requirements
 
 Verify that your source and targets meet the following requirements.
