@@ -245,6 +245,8 @@ entries:
         url: /concept_resource_templates.html
       - title: Build templates for your organization
         url: /task_define_templates.html
+      - title: Check resources for template compliance
+        url: /task_check_template_compliance.html
       - title: Run templates to create resources
         url: /task_run_templates.html
   - title: Back up data to the cloud
