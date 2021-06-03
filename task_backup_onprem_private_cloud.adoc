@@ -171,7 +171,7 @@ image:screenshot_backup_from_onprem_activate.png[A screenshot that shows the Bac
 
 . Select *StorageGRID* as the provider, click *Next*, and then enter the provider details:
 
-.. The FQDN or IP address of the StorageGRID server.
+.. The FQDN of the StorageGRID server and the port that ONTAP should use for HTTPS communication with StorageGRID; for example: `s3.eng.company.com:8082`
 .. The Access Key and the Secret Key used to access the bucket to store backups.
 .. The IPspace in the ONTAP cluster where the volumes you want to back up reside.
 +
