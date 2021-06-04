@@ -246,7 +246,7 @@ See <<Reviewing prerequisites,Reviewing prerequisites>> for the full list of req
 
 .Steps
 
-. Download the Cloud Data Sense software from the https://mysupport.netapp.com/site/products/all/details/cloud-data-sense/downloads-tab/[NetApp Support Site^].
+. Download the Cloud Data Sense software from the https://mysupport.netapp.com/site/products/all/details/cloud-compliance/downloads-tab/[NetApp Support Site^].
 
 . Copy the installer file to the Linux host you plan to use (using `scp` or some other method).
 
