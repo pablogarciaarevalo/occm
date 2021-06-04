@@ -53,7 +53,7 @@ Read the following requirements to make sure that you have a supported configura
 
 * If you plan to enable Cloud Data Sense in the template, ensure that your environment has an active and licensed Cloud Data Sense service.
 
-== Special template controls ==
+== Special template controls
 
 Before you start creating your template, you should understand some special options that you can set when pre-populating a value for a parameter in a template.
 
@@ -65,7 +65,7 @@ Check this box to let the storage admin override the pre-populated value you hav
 
 When unchecked, the user can't change the value and the hard-coded value in the template is always used when the admin deploys a resource.
 
-*Drift On checkbox*
+*Drift checkbox*
 
 Check this box so that Cloud Manager monitors the hard-coded value you entered for a parameter when a resource is created with the template. Later, you can run a Drift Report to see which fields configured with Drift are no longer compliant with the template settings.
 // If Cloud Manager later sees that an admin has changed the parameter value so that it no longer aligns with the template definition, you will receive an email notification about the change.
@@ -88,10 +88,11 @@ As an example, if you enter "^[a-zA-Z][0-9a-zA-Z_]{0,149}$" as the regex for the
 
 Templates have the ability to use information from a previous action to populate a field in a future action. For example, when defining the name of the volume that will have Cloud Backup functionality enabled, you can instruct the Backup action to use the value the storage admin entered as the name of the volume from the Create Cloud Volumes ONTAP action.
 
-There are two types of information that the AppTemplate service can use from previous actions:
+There are three types of information that the AppTemplate service can use:
 
 * Input value - This is the actual value the storage admin entered into a field in a previous template action.
 * Output value - This is the value Cloud Manager generates after creating a resource from a previous template action.
+* Enter your own value - This is a value that you enter; it is not accessed from a previous action in the template.
 
 For example, to enable compliance scanning on a volume, the Cloud Data Sense service needs both the "volume name" that the storage admin enters (the Input value), and the "volume uuid" that Cloud Manager generates when it creates the volume (the Output value).
 
@@ -162,7 +163,7 @@ image:screenshot_create_template_define_action_cvo.png[A screenshot showing a bl
 +
 When users launch the template from an existing working environment, this information gets filled in automatically.
 +
-When users launch the template from the Templates Dashboard (not in a working environment context), then they need to select the working environment and the SVM where the volume will be created.
+When users launch the template from the Templates Dashboard (not in a working environment context), then they need to select the working environment and the SVM where the volume will be created. That's why these fields are marked as "Editable".
 
 . *Details:* Enter the volume name and size.
 +
@@ -244,7 +245,7 @@ Drift allows Cloud Manager to monitor the hard-coded values you entered for para
 
 .Result
 
-The template is created and you are returned to the Template Dashboard where your new template appears.
+The template is created and you are returned to the Templates Dashboard where your new template appears.
 
 See <<What to do after you have created the template,what you should tell your users about templates>>.
 
@@ -267,6 +268,12 @@ image:screenshot_create_template_primary_action_anf.png[A screenshot showing how
 The _Create Volume in Azure NetApp Files Action Definition_ page is displayed.
 +
 image:screenshot_create_template_define_action_anf.png[A screenshot showing a blank ANF template that you need to fill in.]
+
+. *Context:* Enter the Cloud Volumes ONTAP working environment context; if required.
++
+When users launch the template from an existing working environment, this information gets filled in automatically.
++
+When users launch the template from the Templates Dashboard (not in a working environment context), then they need to select the working environment where the volume will be created. That's why these fields are marked as "Editable".
 
 . *Details:* Enter the details for a new or an existing Azure NetApp Files account.
 +
@@ -332,21 +339,19 @@ For example, you could specify that "db" be a required prefix, suffix, or contai
 
 . *Snapshot Copy:* Enter the Snapshot ID for an existing volume Snapshot if you want this new volume to be created using characteristics from an existing volume.
 
-. Click *Next* after you have defined the parameters needed for this action.
-
-. Click *Next* as there are no additional Actions available at this time for ANF volumes.
+. Click *Apply* after you have defined the parameters needed for this action.
 
 . Enter the name you want to use for the template in the top left.
 
-. Click *Template settings* if you want to provide a more detailed description so that this template can be distinguished from other similar templates, and then click *Apply*.
+. Click *Settings & Drift* to provide a more detailed description so that this template can be distinguished from other similar templates, and so you can enable Drift for the overall template, and then click *Apply*.
++
+Drift allows Cloud Manager to monitor the hard-coded values you entered for parameters when creating this template.
 
-. In the _Configure Drift_ page, choose whether the Drift feature should be applied to the template so that Cloud Manager monitors the hard-coded values you entered for parameters when creating this template.
-
-. Click *Create Template*.
+. Click *Save Template*.
 
 .Result
 
-The template is created and you are returned to the Template Dashboard where your new template appears.
+The template is created and you are returned to the Templates Dashboard where your new template appears.
 
 See <<What to do after you have created the template,what you should tell your users about templates>>.
 
