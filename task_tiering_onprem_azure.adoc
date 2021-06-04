@@ -126,7 +126,7 @@ A VNet service endpoint to Azure storage is recommended if you have an ExpressRo
 
 When you set up tiering, you need to provide a resource group and a storage account and Blob container that belong to the resource group. A storage account enables Cloud Tiering to authenticate and access the Blob container used for data tiering.
 
-NOTE: If you are planning to configure Cloud Tiering to use a lower cost access tier where your tiered data will transition to after a certain number of days, you must not select any life cycle rules when setting up the container in your Azure account. In this case Cloud Tiering will manage the life cycle transitions.
+NOTE: If you are planning to configure Cloud Tiering to use a lower cost access tier where your tiered data will transition to after a certain number of days, you must not select any life cycle rules when setting up the container in your Azure account. Cloud Tiering manages the life cycle transitions.
 
 == Tiering inactive data from your first cluster to Azure Blob storage
 
@@ -152,7 +152,9 @@ image:screenshot_setup_tiering_onprem.png[A screenshot that shows the Enable opt
 +
 The storage account and containers that appear in this step belong to the resource group that you selected in the previous step.
 
-.. *Access Tier Life Cycle Management*: Select the access tier that you want to transition the tiered data to and the number of days before the data will be moved, and click *Continue*. For example, the screenshot below shows that tiered data is moved from the _Hot_ class to the _Cool_ class after 45 days in object storage.
+.. *Access Tier Life Cycle Management*: Cloud Tiering manages the life cycle transitions of your tiered data. Data starts in the _Hot_ class, but you can create a rule to move the data to the _Cool_ class after a certain number of days.
++
+Select the access tier that you want to transition the tiered data to and the number of days before the data will be moved, and click *Continue*. For example, the screenshot below shows that tiered data is moved from the _Hot_ class to the _Cool_ class after 45 days in object storage.
 +
 If you choose *Keep data in this access tier*, then the data remains in the _Hot_ access tier and no rules are applied. link:reference_azure_support.html[See supported access tiers^].
 +

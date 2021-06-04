@@ -145,7 +145,7 @@ image:screenshot_setup_tiering_onprem.png[A screenshot that shows the Setup Tier
 
 .. *Choose your provider*: Select StorageGRID.
 
-.. *Server*: Enter the FQDN of the StorageGRID server, enter the port that ONTAP should use for HTTPS communication with StorageGRID, and enter the access key and secret key for an AWS account that has the required S3 permissions.
+.. *Server*: Enter the FQDN of the StorageGRID server, enter the port that ONTAP should use for HTTPS communication with StorageGRID, and enter the access key and secret key for an account that has the required S3 permissions.
 
 .. *Bucket*: Add a new bucket or select an existing bucket for the tiered data.
 
