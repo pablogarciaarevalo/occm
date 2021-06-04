@@ -92,7 +92,7 @@ And you need to have an AWS subscription for the storage space where your backup
 Supported AWS regions::
 Cloud Backup is supported in all AWS regions https://cloud.netapp.com/cloud-volumes-global-regions[where Cloud Volumes ONTAP is supported^].
 
-AWS permissions required::
+AWS Backup permissions required::
 The IAM role that provides Cloud Manager with permissions must include S3 permissions from the latest https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policy^].
 +
 Here are the specific permissions from the policy:
@@ -117,17 +117,22 @@ Here are the specific permissions from the policy:
                 "s3:GetBucketAcl",
                 "s3:GetBucketPolicy",
                 "s3:PutBucketPublicAccessBlock"
-                "ec2:DescribeInstanceTypeOfferings",
-                "ec2:StartInstances",
-                "ec2:StopInstances",
-                "ec2:TerminateInstances"
             ],
             "Resource": [
                 "arn:aws:s3:::netapp-backup-*"
             ]
         },
 
-NOTE: The permissions starting with *s3* are required for Backup and Volume Restore functionality, and those with *ec2* are used for File Restore functionality.
+AWS Restore permissions required::
+The following permissions are needed in the policy for the Cloud Restore instance:
++
+[source,json]
+          "Action": [
+              "ec2:DescribeInstanceTypeOfferings",
+              "ec2:StartInstances",
+              "ec2:StopInstances",
+              "ec2:TerminateInstances"
+          ],
 
 Required outbound internet access for AWS deployments::
 The Cloud Restore instance requires outbound internet access. If your virtual or physical network uses a proxy server for internet access, ensure that the instance has outbound internet access to contact the following endpoints.

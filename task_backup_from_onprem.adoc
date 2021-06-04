@@ -201,17 +201,11 @@ When you are using Amazon S3, you must configure permissions for Cloud Manager t
                 "s3:GetBucketAcl",
                 "s3:GetBucketPolicy",
                 "s3:PutBucketPublicAccessBlock"
-                "ec2:DescribeInstanceTypeOfferings",
-                "ec2:StartInstances",
-                "ec2:StopInstances",
-                "ec2:TerminateInstances"
             ],
             "Resource": [
                 "arn:aws:s3:::netapp-backup-*"
             ]
         },
-+
-The permissions starting with *s3* are required for Backup and Volume Restore functionality, and those with *ec2* are used for File Restore functionality.
 
 . Provide the following permissions to the IAM user so that the ONTAP cluster can back up data to S3.
 +
@@ -224,6 +218,16 @@ The permissions starting with *s3* are required for Backup and Volume Restore fu
 "s3:DeleteObject"
 +
 See the https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html[AWS Documentation: Creating a Role to Delegate Permissions to an IAM User^] for details.
+
+. Provide the following permissions for the Cloud Restore instance:
++
+[source,json]
+          "Action": [
+              "ec2:DescribeInstanceTypeOfferings",
+              "ec2:StartInstances",
+              "ec2:StopInstances",
+              "ec2:TerminateInstances"
+          ],
 
 . If your virtual or physical network uses a proxy server for internet access, ensure that the Cloud Restore instance has outbound internet access to contact the following endpoints.
 +
