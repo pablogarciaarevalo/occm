@@ -36,6 +36,9 @@ By default, the ports used by the health check are 63001, 63002, and 63003.
 * One regional UDP backend service
 * One TCP forwarding rule
 * One UDP forwarding rule
+* Global access is disabled
++
+Even though global access is disabled by default, enabling it post deployment is supported. We disabled it because cross region traffic will have significantly higher latencies. We wanted to ensure that you didn't have a negative experience due to accidental cross region mounts. Enabling this option is specific to your business needs.
 
 One or multiple zones for HA pairs::
 You can ensure the high availability of your data by deploying an HA configuration across multiple or in a single zone. Cloud Manager will prompt you to choose multiple zones or a single zone when you create the HA pair.
