@@ -117,19 +117,24 @@ A rule is made up of three parts:
 
 Source field::
 The location from which you will get the value to compare. The options are:
-* *Get input value from previous action* - The actual value the storage admin entered into a field in a previous template action.
-* *Get output value from previous action* - The value Cloud Manager generated after creating a resource from a previous template action.
-* *Get value from existing resource* - The value from a resource that already exists; for example an existing volume.
+* *Get input value from action* - The actual value the storage admin entered into a field in a previous template action.
+* *Get output value from action* - The value Cloud Manager generated after creating a resource from a previous template action.
+* *Enter value* - This is a value that you enter; it is not accessed from a previous action in the template. This can be a value from a resource that already exists; for example an existing volume.
 
 Operator::
 The operator used for the comparison. The options are:
-* *Equals*
+* *Equal*
+* *Not Equal*
 * *Greater Than*
 * *Less Than*
+* *Greater Than or Equal*
+* *Less Than or Equal*
 
 Field value::
 The actual value you are comparing. The options are:
-* *Free Text* - Allows you to enter any value.
+* *Get input value from action* - The actual value the storage admin entered into a field in a previous template action.
+* *Get output value from action* - The value Cloud Manager generated after creating a resource from a previous template action.
+* *Enter value* - This is a value that you enter; it is not accessed from a previous action in the template. This can be a value from a resource that already exists; for example an existing volume.
 
 == Creating a template for a Cloud Volumes ONTAP volume
 

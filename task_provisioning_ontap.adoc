@@ -72,9 +72,9 @@ The template should make your job easier because certain volume parameters will 
 
 .Steps
 
-. On the Canvas page, double-click the name of the on-premises ONTAP system on which you want to provision a volume.
+. On the Canvas page, click the name of the on-premises ONTAP system on which you want to provision a volume.
 
-. Click *Add Volume* > *New volume from template*.
+. Click image:screenshot_gallery_options.gif[] > *Add Volume From Template*.
 +
 image:screenshot_template_add_vol_ontap.png[A screenshot showing how to add a new volume from a template.]
 
