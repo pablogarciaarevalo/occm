@@ -37,13 +37,13 @@ If Cloud Manager can't access the license file over the secure internet connecti
 
 === License expiration
 
-Cloud Manager displays a warning 30 days before a license is due to expire and again when the license expires. The following image shows a 30-day expiration warning:
+Cloud Manager displays a warning 30 days before a license is due to expire and again when the license expires. The following image shows a 30-day expiration warning that appears in the user interface:
 
 image:screenshot_warning.gif["Screen shot: Shows a Cloud Volumes ONTAP working environment that includes a warning icon. The icon indicates that an action is required."]
 
 You can select the working environment to review the message.
 
-Cloud Manager includes this warning in the Cloud Volumes ONTAP report that's emailed to you, if you are an Account Admin and you enabled the option:
+Cloud Manager includes a license expiration warning in the Cloud Volumes ONTAP report that's emailed to you, if you are an Account Admin and you enabled the option:
 
 image:screenshot_cvo_report.gif[A screenshot of the user profile panel that shows the check box for enabling the Cloud Volumes ONTAP report via email.]
 
