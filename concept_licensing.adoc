@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept_licensing.html
 keywords: licenses, licensing, byol, license, subscription, renewal, expire, netapp support site, account, credentials, file, license file, upload, nlf, cloud backup license, byol backup, license for cloud backup
-summary: Each Cloud Volumes ONTAP BYOL system must have a system license installed with an active subscription. Cloud Manager simplifies the process by managing licenses for you and by notifying you before they expire. BYOL licenses are also available for Cloud Backup.
+summary: Each Cloud Volumes ONTAP BYOL system must have a system license installed with an active subscription. Cloud Manager simplifies the process by managing licenses for you and by displaying a warning before they expire. BYOL licenses are also available for Cloud Backup.
 ---
 
 = Licensing overview for BYOL
@@ -13,7 +13,7 @@ summary: Each Cloud Volumes ONTAP BYOL system must have a system license install
 :imagesdir: ./media/
 
 [.lead]
-Each Cloud Volumes ONTAP BYOL system must have a system license installed with an active subscription. Cloud Manager simplifies the process by managing licenses for you and by notifying you before they expire. BYOL licenses are also available for Cloud Backup.
+Each Cloud Volumes ONTAP BYOL system must have a system license installed with an active subscription. Cloud Manager simplifies the process by managing licenses for you and by displaying a warning before they expire. BYOL licenses are also available for Cloud Backup.
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap/index.html[Refer to the Cloud Volumes ONTAP Release Notes for additional licensing options^].
 
@@ -35,17 +35,21 @@ link:task_adding_nss_accounts.html[Learn how to add NetApp Support Site accounts
 
 If Cloud Manager can't access the license file over the secure internet connection, you can obtain the file yourself and then manually upload the file to Cloud Manager. For instructions, see link:task_managing_licenses.html[Managing BYOL licenses for Cloud Volumes ONTAP].
 
-=== License expiration warning
+=== License expiration
 
-Cloud Manager warns you 30 days before a license is due to expire and again when the license expires. The following image shows a 30-day expiration warning:
+Cloud Manager displays a warning 30 days before a license is due to expire and again when the license expires. The following image shows a 30-day expiration warning that appears in the user interface:
 
-image:screenshot_warning.gif[Screen shot: Shows a Cloud Volumes ONTAP working environment that includes a warning icon. The icon indicates that an action is required.]
+image:screenshot_warning.gif["Screen shot: Shows a Cloud Volumes ONTAP working environment that includes a warning icon. The icon indicates that an action is required."]
 
 You can select the working environment to review the message.
 
-If you don't renew the license in time, the Cloud Volumes ONTAP system shuts itself down. If you restart it, it shuts itself down again.
+Cloud Manager includes a license expiration warning in the Cloud Volumes ONTAP report that's emailed to you, if you are an Account Admin and you enabled the option:
 
-NOTE: Cloud Volumes ONTAP can also notify you through email, an SNMP traphost, or syslog server using EMS (Event Management System) event notifications. For instructions, see the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-ems/home.html[ONTAP 9 EMS Configuration Express Guide^].
+image:screenshot_cvo_report.gif[A screenshot of the user profile panel that shows the check box for enabling the Cloud Volumes ONTAP report via email.]
+
+The emailed report includes the license expiration warning every 2 weeks.
+
+If you don't renew the license in time, the Cloud Volumes ONTAP system shuts itself down. If you restart it, it shuts itself down again.
 
 === License renewal
 

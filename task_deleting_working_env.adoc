@@ -17,7 +17,7 @@ You should always delete Cloud Volumes ONTAP systems from Cloud Manager, rather 
 
 When you delete a working environment, Cloud Manager terminates Cloud Volumes ONTAP instances and deletes disks and snapshots.
 
-Resources managed by other services like backups for Cloud Backup and instances for Cloud Compliance and Monitoring are not deleted when you delete a working environment. You'll need to manually delete them yourself. If you don't, then you'll continue to receive charges for these resources.
+Resources managed by other services like backups for Cloud Backup and instances for Cloud Data Sense and Monitoring are not deleted when you delete a working environment. You'll need to manually delete them yourself. If you don't, then you'll continue to receive charges for these resources.
 
 WARNING: Cloud Volumes ONTAP instances have termination protection enabled to help prevent accidental termination from AWS. However, if you do terminate a Cloud Volumes ONTAP instance from AWS, you must go to the AWS CloudFormation console and delete the instance's stack. The stack name is the name of the working environment.
 
@@ -27,9 +27,9 @@ WARNING: Cloud Volumes ONTAP instances have termination protection enabled to he
 +
 Cloud Backup is independent from Cloud Volumes ONTAP by design. Cloud Backup doesn’t automatically delete backups when you delete a Cloud Volumes ONTAP system, and there is no current support in the UI to delete the backups after the system has been deleted.
 
-. If you enabled Cloud Compliance or Monitoring on this working environment and no other working environments use those services, then you'll need to delete the instances for those services.
+. If you enabled Cloud Data Sense or Monitoring on this working environment and no other working environments use those services, then you'll need to delete the instances for those services.
 +
-* link:concept_cloud_compliance.html#the-cloud-compliance-instance[Learn more about the Cloud Compliance instance].
+* link:concept_cloud_compliance.html#the-cloud-data-sense-instance[Learn more about the Cloud Data Sense instance].
 * link:concept_monitoring.html#the-acquisition-unit[Learn more about the Monitoring Acquisition Unit].
 
 . Delete the Cloud Volumes ONTAP working environment.

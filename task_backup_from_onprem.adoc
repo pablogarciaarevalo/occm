@@ -19,7 +19,7 @@ If you have a NetApp StorageGRID system and want to create your backups there, s
 
 TIP:: In most cases you'll use Cloud Manager for all backup and restore operations. However, starting with ONTAP 9.9.1 you can initiate volume backup operations of your on-premises ONTAP clusters using ONTAP System Manager. https://docs.netapp.com/us-en/ontap/task_cloud_backup_data_using_cbs.html[See how to use System Manager to back up your volumes to the cloud using Cloud Backup.^]
 
-A Beta feature released in January 2021 allows you to run Compliance scans on the backed up volumes from your on-premises systems. Typically, compliance scans are free up to 1 TB of data, and then a cost for the service is applied for data over 1 TB. When combining Backup and Compliance for your on-premises volumes, the cost for scans on those on-prem volumes is free. Learn more about how link:concept_cloud_compliance.html[Cloud Compliance^] can get your business applications and cloud environments privacy ready.
+A Beta feature released in January 2021 allows you to run compliance scans on the backed up volumes from your on-premises systems. Typically, compliance scans are free up to 1 TB of data, and then a cost for the service is applied for data over 1 TB. When combining Backup and Data Sense for your on-premises volumes, the cost for scans on those on-prem volumes is free. Learn more about how link:concept_cloud_compliance.html[Cloud Data Sense^] can get your business applications and cloud environments privacy ready.
 
 == Quick start
 
@@ -64,7 +64,7 @@ Identify which volumes you want to back up from the cluster.
 ==== image:number6.png[Number 6] Activate Compliance scans on the backed up volumes (optional)
 
 [role="quick-margin-para"]
-Choose whether you want to have Cloud Compliance scan the volumes that are backed up in the cloud.
+Choose whether you want to have Cloud Data Sense scan the volumes that are backed up in the cloud.
 
 ==== image:number7.png[Number 7] Restore your data, as needed
 
@@ -288,29 +288,29 @@ image:screenshot_backup_select_volumes.png[A screenshot of selecting the volumes
 
 . Click *Activate Backup* and Cloud Backup starts taking the initial backups of your volumes.
 +
-When creating backup files in AWS or Azure, you are prompted whether you want to run compliance scans on the backed up volumes. Cloud Compliance scans are free when you run them on the backed up volumes (except for the link:concept_cloud_compliance.html#cost[cost of the deployed Cloud Compliance instance^]).
+When creating backup files in AWS or Azure, you are prompted whether you want to run compliance scans on the backed up volumes. Cloud Data Sense scans are free when you run them on the backed up volumes (except for the link:concept_cloud_compliance.html#cost[cost of the deployed Cloud Data Sense instance^]).
 +
-image:screenshot_compliance_on_backups.png[A screenshot of the page where you can choose to activate Cloud Compliance on your backed up volumes.]
+image:screenshot_compliance_on_backups.png[A screenshot of the page where you can choose to activate Cloud Data Sense on your backed up volumes.]
 
-. Click *Go to Compliance* to activate compliance scans on the volumes. (If you choose *Close* and not to scan these backed up volumes, you can always link:task_getting_started_compliance.html#scanning-backup-files-from-on-premises-ontap-systems[enable this functionality^] later from Cloud Compliance.)
+. Click *Go to Compliance* to activate compliance scans on the volumes. (If you choose *Close* and not to scan these backed up volumes, you can always link:task_getting_started_compliance.html#scanning-backup-files-from-on-premises-ontap-systems[enable this functionality^] later from Cloud Data Sense.)
 
-* If an instance of Cloud Compliance is already deployed in your environment, you are directed to the Configuration page to select the volumes you want to scan in each on-premises working environment that has backups. See link:task_getting_started_compliance.html#enabling-cloud-compliance-in-your-working-environments[how to choose the volumes^].
+* If an instance of Cloud Data Sense is already deployed in your environment, you are directed to the Configuration page to select the volumes you want to scan in each on-premises working environment that has backups. See link:task_getting_started_compliance.html#enabling-cloud-data-sense-in-your-working-environments[how to choose the volumes^].
 +
 image:screenshot_compliance_onprem_backups.png[A screenshot of the Compliance page to select volumes you want to scan.]
-* If Cloud Compliance has not been deployed, you are directed to the Compliance page where you can choose to deploy Compliance in the cloud or in your premises. We strongly recommend deploying it in the cloud. Go link:task_deploy_cloud_compliance.html[here^] for installation requirements and instructions.
+* If Cloud Data Sense has not been deployed, you are directed to the Compliance page where you can choose to deploy Compliance in the cloud or in your premises. We strongly recommend deploying it in the cloud. Go link:task_deploy_cloud_compliance.html[here^] for installation requirements and instructions.
 +
-image:screenshot_cloud_compliance_deploy_options.png[A screenshot of the Compliance page to choose how you want to deploy Cloud Compliance.]
+image:screenshot_cloud_compliance_deploy_options.png[A screenshot of the Compliance page to choose how you want to deploy Cloud Data Sense.]
 +
 After you have deployed Compliance you can choose the volumes you want to scan as described above.
 
 .Result
 
-Cloud Backup backs up your volumes from the on-premises ONTAP system, and optionally, Cloud Compliance runs compliance scans on the backed up volumes.
+Cloud Backup backs up your volumes from the on-premises ONTAP system, and optionally, Cloud Data Sense runs compliance scans on the backed up volumes.
 
 .What's next?
 
 You can link:task_managing_backups.html[start and stop backups for volumes or change the backup schedule^] and you can link:task_restore_backups.html[restore entire volumes or individual files from a backup file^].
 
-You can also link:task_controlling_private_data.html[view the results of the compliance scans^] and review other features of Cloud Compliance that can help you understand data context and identify sensitive data in your organization.
+You can also link:task_controlling_private_data.html[view the results of the compliance scans^] and review other features of Cloud Data Sense that can help you understand data context and identify sensitive data in your organization.
 
-NOTE: The scan results are not available immediately because Cloud Backup has to finish creating the backups before Cloud Compliance can start compliance scans.
+NOTE: The scan results are not available immediately because Cloud Backup has to finish creating the backups before Cloud Data Sense can start compliance scans.
