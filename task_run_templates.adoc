@@ -103,4 +103,4 @@ The _Run Template_ page appears.
 +
 image:screenshot_run_template_from_dashboard.png[A screenshot showing the parameters you need to define to create the volume from a template.]
 +
-Note that when you run the template from the dashboard that you need to select the working environment and other variables (for example, the storage VM and/or aggregate). When you run the template from the working environment this information gets filled in automatically.
+Note that when you run the template from the dashboard that you need to select the working environment and other variables (for example, the storage VM and/or aggregate). When you run the template from the working environment, the working environment gets filled in automatically.

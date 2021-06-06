@@ -70,6 +70,8 @@ If your organization has created on-premises ONTAP volume templates so you can d
 
 The template should make your job easier because certain volume parameters will already be defined in the template, such as disk type, size, protocol, snapshot policy, and more. When a parameter is already predefined, you can just skip to the next volume parameter.
 
+NOTE: You can only create NFS or CIFS volumes when using templates.
+
 .Steps
 
 . On the Canvas page, click the name of the on-premises ONTAP system on which you want to provision a volume.
@@ -88,9 +90,25 @@ image:screenshot_define_ontap_vol_from_template.png[A screenshot showing a blank
 +
 *Note:* You can click the checkbox *Show read-only parameters* to show all the fields that have been locked by the template if you want to see the values for those parameters. By default these predefined fields are hidden and only the fields you need to complete are shown.
 
-. *Details:* Enter the volume name and size.
+. In the _Context_ area, the Working Environment is filled in with the name of the working environment you started with. You need to select the *Storage VM* and *Aggregate* where the volume will be created.
 
+. Add values for all of the parameters that are not hard-coded from the template. See <<Creating volumes for ONTAP clusters,creating volumes>> for details about all the parameters you need to complete to deploy an on-prem ONTAP volume.
 
+. Click *Create Volume* after you have defined all the parameters needed for this volume.
+
+.Result
+
+Cloud Manager provisions the volume and displays a page so that you can see the progress.
+
+image:screenshot_template_creating_resource_ontap.png[A screenshot showing the progress of creating your new volume from the template.]
+
+Then the new volume is added to the working environment.
+
+Additionally, if any secondary action is implemented in the template, for example, enabling Cloud Backup on the volume, that action is also performed.
+
+.After you finish
+
+If you provisioned a CIFS share, give users or groups permissions to the files and folders and verify that those users can access the share and create a file.
 
 == Replicating data
 
