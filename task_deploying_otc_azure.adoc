@@ -78,7 +78,7 @@ video::video_subscribing_azure.mp4[width=848, height=480]
 
 . *Services*: Keep the services enabled or disable the individual services that you don't want to use with Cloud Volumes ONTAP.
 +
-* link:concept_cloud_compliance.html[Learn more about Cloud Compliance].
+* link:concept_cloud_compliance.html[Learn more about Cloud Data Sense].
 * link:concept_backup_to_cloud.html[Learn more about Cloud Backup].
 * link:concept_monitoring.html[Learn more about the Monitoring service].
 

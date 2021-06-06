@@ -310,7 +310,7 @@ We don't recommend disabling the SaaS platform unless you need to in order to co
 
 The following services aren't available from Cloud Manager if you disable the SaaS platform:
 
-*	Cloud Compliance
+*	Cloud Data Sense
 *	Kubernetes
 *	Cloud Tiering
 *	Global File Cache
