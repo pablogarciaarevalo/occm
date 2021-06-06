@@ -28,10 +28,10 @@ NetApp Cloud Volumes Service for Google Cloud enables you to quickly add multi-p
 * Accelerate app development with rapid cloning.
 
 ////
-Add this content into the topic when Cloud Compliance support CVS GCP
+Add this content into the topic when Cloud Data Sense support CVS GCP
 == Additional features in Cloud Manager
 
-Using Artificial Intelligence (AI) driven technology, Cloud Compliance can help you understand data context and identify sensitive data that resides in your Cloud Volumes Service for Google Cloud volumes. link:concept_cloud_compliance.html[Learn more].
+Using Artificial Intelligence (AI) driven technology, Cloud Data Sense can help you understand data context and identify sensitive data that resides in your Cloud Volumes Service for Google Cloud volumes. link:concept_cloud_compliance.html[Learn more].
 ////
 
 == Cost

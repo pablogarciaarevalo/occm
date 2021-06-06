@@ -24,15 +24,15 @@ In all cases, remember that you can't launch Cloud Volumes ONTAP in AWS from the
 | AWS Marketplace page to use
 | More information
 
-| Enable the use of Cloud Volumes ONTAP PAYGO, Cloud Tiering, Cloud Compliance, and other add-on services
+| Enable the use of Cloud Volumes ONTAP PAYGO, Cloud Tiering, Cloud Data Sense (Cloud Compliance), and other add-on services
 | https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Cloud Manager - Deploy & Manage NetApp Cloud Data Services^]
-| This subscription enables charging for the PAYGO version of Cloud Volumes ONTAP 9.6 and later. It also enables charging for Cloud Tiering, Cloud Compliance, and other add-on services.
+| This subscription enables charging for the PAYGO version of Cloud Volumes ONTAP 9.6 and later. It also enables charging for Cloud Tiering, Cloud Data Sense, and other add-on services.
 
 You should subscribe to this offering when Cloud Manager prompts you and redirects you to the page. Cloud Manager prompts you in the Working Environment wizard or when you add new credentials in the Settings.
 
 This page doesn't enable you to launch Cloud Manager in AWS. That should be done from https://cloud.netapp.com[NetApp Cloud Central^], or alternatively using the AMI listed in row 3 of this table.
 
-| Enable the use of Cloud Volumes ONTAP PAYGO, Cloud Tiering, Cloud Compliance, and other add-on services _using an annual contract_
+| Enable the use of Cloud Volumes ONTAP PAYGO, Cloud Tiering, Cloud Data Sense, and other add-on services _using an annual contract_
 | https://aws.amazon.com/marketplace/pp/B086PDWSS8[Cloud Manager (Contracts) - Deploy & Manage NetApp Cloud Data Services^]
 | This subscription is an alternative to the subscription in the first row. It enables you to get an annual upfront payment for the listings. It's mostly for NetApp partners.
 
