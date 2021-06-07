@@ -103,6 +103,15 @@ You can choose a specific Azure Blob storage tier when a Blob container is the t
 * Hot storage
 * Cool storage
 
+=== Do you support Google Cloud storage tiers?
+
+Yes, you can choose a specific storage class when a Google Cloud Storage bucket is the target:
+
+* Standard
+* Nearline
+* Coldline
+* Archive
+
 == Networking
 
 The following questions relate to networking requirements for Cloud Sync.
