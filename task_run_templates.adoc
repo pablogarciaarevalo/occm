@@ -5,7 +5,7 @@ keywords: templates, resource templates, application templates, volume templates
 summary: Select one of the application templates that your organization has built to create volumes that are optimized for specific workloads and applications. Templates enable you to create volumes for Cloud Volumes ONTAP, Azure NetApp Files, and on-premises ONTAP systems. They also enable you to activate Cloud Backup and Cloud Data Sense for the volumes.
 ---
 
-= Creating resources using templates
+= Create resources using templates
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -51,7 +51,7 @@ Read the following requirements to make sure that you have a supported configura
 
 * If the template activates a cloud service on the volume, such as link:concept_backup_to_cloud.html[Cloud Backup^] or link:concept_cloud_compliance.html[Cloud Data Sense^], ensure that the service is active and licensed in your environment.
 
-== Selecting and running the template
+== Select and run the template
 
 There are multiple ways to select and run a template to create new volumes.
 
@@ -61,7 +61,7 @@ Regardless of the method you choose, the details about the required volume param
 * link:task_manage_anf_volumes.html#creating-volumes-from-templates[How to provision Azure NetApp Files volumes^]
 * link:task_provisioning_ontap.html#creating-volumes-from-templates[How to provision on-premises ONTAP volumes^]
 
-=== Running a volume template from the working environment
+=== Run a volume template from the working environment
 
 You can add a volume to an existing working environment from the _Working Environment_ page and from the _Volume Details_ page.
 
@@ -83,7 +83,7 @@ The _Add Volume from Template_ page appears.
 +
 image:screenshot_run_template_from_canvas.png[A screenshot showing the parameters you need to define to create the volume from a template.]
 
-=== Running a volume template from the Templates Dashboard
+=== Run a volume template from the Templates Dashboard
 
 You can add a volume to an existing working environment from the _Templates Dashboard_.
 
