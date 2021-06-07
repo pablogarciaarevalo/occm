@@ -231,7 +231,7 @@ image:screenshot_create_template_add_action.png[A screenshot showing additional 
 
 . Define the backup policy to create daily backups with a 30-day retention value.
 
-. Below the Volume Name field there are three fields you use to indicate which volume will have backup enabled. See <<Passing values between template actions,how to complete these fields>>.
+. Below the Volume Name field there are three fields you use to indicate which volume will have backup enabled. See <<Pass values between template actions,how to complete these fields>>.
 
 . Click *Apply* and the Cloud Backup dialog is saved.
 
