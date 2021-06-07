@@ -112,12 +112,12 @@ For example, you may have guideline that if a volume has a capacity larger than 
 
 image:screenshot_template_condition_example.png[A screenshot showing how conditions may be used in your template to conditionally enable Cloud Backup.]
 
-Conditions have many different parts:
+Conditions consist of two parts:
 
 * Rules - The item you are checking for being either true or false.
-* And/Or statement - Allows you to use multiple rules in a condition. *And* requires all rules to be true. *Or* means just one of the rules needs to be true.
+* And/Or statement - Allows you to use multiple rules to further refine whether additional actions are added.
 
-A rule is made up of three parts:
+A Rule is made up of three parts:
 
 *Source field* - The location from which you will get the value to compare.
 
@@ -128,6 +128,15 @@ A rule is made up of three parts:
 *Operator* - The operator used for the comparison. The options are *Equal*, *Not Equal*, *Greater Than*, *Less Than*, *Greater Than or Equal*, *Less Than or Equal*.
 
 *Field value* - The actual value you are comparing. The options are the same as those for the _Source field_.
+
+An And/Or statement enables you to conditionally add more actions for users when they run the template based on whether multiple rules are evaluated as True or False. *And* requires all rules to be true or false, and *Or* requires just one of the rules needs to be true or false.
+
+When using both an And and Or statement with your rules, the evaluation process follows standard mathematical order where “AND” precedes “OR”. For example:
+
+* <Rule1> OR <Rule2> AND <Rule3>
++
+This statement is evaluated in the following order:
+<Rule1> OR (<Rule2> AND <Rule3>)
 
 == Examples of creating different types of templates
 
