@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_controlling_governance_data.html
 keywords: savings, stale data, non-business data, duplicate data, age or data, size of data, highlights, policies
-summary: Gain control of the costs related to the data on your organizations' storage resources. Cloud Compliance identifies the amount of stale data, non-business data, duplicate files, and very large files in your systems so you can decide whether you want to remove or tier some files to less expensive object storage.
+summary: Gain control of the costs related to the data on your organizations' storage resources. Cloud Data Sense identifies the amount of stale data, non-business data, duplicate files, and very large files in your systems so you can decide whether you want to remove or tier some files to less expensive object storage.
 ---
 
 = Viewing governance details about the data stored in your organization
@@ -13,7 +13,7 @@ summary: Gain control of the costs related to the data on your organizations' st
 :imagesdir: ./media/
 
 [.lead]
-Gain control of the costs related to the data on your organizations' storage resources. Cloud Compliance identifies the amount of stale data, non-business data, duplicate files, and very large files in your systems so you can decide whether you want to remove or tier some files to less expensive object storage.
+Gain control of the costs related to the data on your organizations' storage resources. Cloud Data Sense identifies the amount of stale data, non-business data, duplicate files, and very large files in your systems so you can decide whether you want to remove or tier some files to less expensive object storage.
 
 Additionally, if you are planning to migrate data from on-premises locations to the cloud, you can view the size of the data and whether any of the data contains sensitive information prior to moving it.
 
@@ -21,7 +21,7 @@ Additionally, if you are planning to migrate data from on-premises locations to 
 
 The Governance dashboard provides information so that you can increase the efficiency and control the costs related to the data stored on your storage resources.
 
-image:screenshot_compliance_governance_dashboard.png[A screenshot of the Cloud Compliance Governance dashboard.]
+image:screenshot_compliance_governance_dashboard.png[A screenshot of the Cloud Data Sense Governance dashboard.]
 
 === Saving Opportunities
 
@@ -38,7 +38,11 @@ You may want to investigate the items in the _Saving Opportunities_ area to see 
 ** Videos
 ** Miscellaneous (general "other" category)
 
-* *Large Files* - Files larger than 100 MB.
+* *Duplicate Files* - Files that are duplicated in other locations in the data sources you are scanning. link:task_controlling_private_data.html#viewing-all-duplicated-files[See what types of duplicate files are displayed].
+
+=== Data Overview
+
+A quick overview of all the data that is being scanned. Click the button to download a full data mapping report that includes Usage Capacity, Age of Data, Size of Data, and File Types for all working environments and data sources. See link:task_generating_compliance_reports.html#data-mapping-report[Data Mapping Report] for complete details.
 
 === Policies with the largest number of results
 
@@ -81,7 +85,7 @@ You can hover over a point in the charts to see details about the age or size of
 
 === Most identified data Classifications
 
-The _Classification_ area provides a list of the most identified link:task_controlling_private_data.html#categories[Categories^], link:task_controlling_private_data.html#file-types[File types^], and link:task_managing_highlights.html#categorizing-your-data-using-aip-labels[AIP Labels^] in your scanned data.
+The _Classification_ area provides a list of the most identified link:task_controlling_private_data.html#viewing-files-by-categories[Categories^], link:task_controlling_private_data.html#viewing-files-by-file-types[File types^], and link:task_managing_highlights.html#categorizing-your-data-using-aip-labels[AIP Labels^] in your scanned data.
 
 ==== Categories
 
@@ -93,7 +97,7 @@ See link:task_controlling_private_data.html#viewing-files-by-categories[Viewing 
 
 Reviewing your file types can help you control your sensitive data because you might find that certain file types are not stored correctly.
 
-See link:task_controlling_private_data.html#viewing-file-types[Viewing file types^] for more information.
+See link:task_controlling_private_data.html#viewing-files-by-file-types[Viewing file types^] for more information.
 
 ==== AIP labels
 

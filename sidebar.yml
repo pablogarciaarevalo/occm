@@ -313,11 +313,11 @@ entries:
         url: /faq_sync.html
   - title: Gain insight into data privacy
     entries:
-      - title: Learn about Cloud Compliance
+      - title: Learn about Cloud Data Sense
         url: /concept_cloud_compliance.html
       - title: Get started
         entries:
-          - title: Deploy Cloud Compliance
+          - title: Deploy Cloud Data Sense
             url: /task_deploy_cloud_compliance.html
           - title: Activate scanning on your data sources
             entries:
@@ -347,7 +347,7 @@ entries:
         url: /task_responding_to_dsar.html
       - title: Categories of private data
         url: /reference_private_data_categories.html
-      - title: Remove data sources from Cloud Compliance
+      - title: Remove data sources from Data Sense
         url: /task_managing_compliance.html
       - title: FAQ
         url: /faq_cloud_compliance.html
