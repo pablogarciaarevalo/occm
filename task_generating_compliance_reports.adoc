@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_generating_compliance_reports.html
 keywords: report, privacy, risk, privacy risk assessment, compliance status, severity, compliance, privacy risk, data subjects, privacy, credit cards, pci dss, hipaa
-summary: Cloud Compliance provides reports that you can use to better understand the status of your organization's data privacy program.
+summary: Cloud Data Sense provides reports that you can use to better understand the status of your organization's data privacy program.
 ---
 
 = Viewing compliance reports
@@ -13,11 +13,11 @@ summary: Cloud Compliance provides reports that you can use to better understand
 :imagesdir: ./media/
 
 [.lead]
-Cloud Compliance provides reports that you can use to better understand the status of your organization's data privacy program.
+Cloud Data Sense provides reports that you can use to better understand the status of your organization's data privacy program.
 
-By default, the Cloud Compliance dashboard displays compliance data for all working environments and databases. If you want to view reports that contain data for only some of the working environments, <<Selecting the working environments for reports,select those working environments>>.
+By default, the Cloud Data Sense dashboards display compliance and governance data for all working environments and databases. If you want to view reports that contain data for only some of the working environments, <<Selecting the working environments for reports,select those working environments>>.
 
-NOTE: NetApp can't guarantee 100% accuracy of the personal data and sensitive personal data that Cloud Compliance identifies. You should always validate the information by reviewing the data.
+NOTE: NetApp can't guarantee 100% accuracy of the personal data and sensitive personal data that Cloud Data Sense identifies. You should always validate the information by reviewing the data.
 
 == Privacy Risk Assessment Report
 
@@ -31,23 +31,23 @@ Data subjects in this assessment:: The number of people, by location, for which 
 
 === Generating the Privacy Risk Assessment Report
 
-Go to the Compliance tab to generate the report.
+Go to the Data Sense tab to generate the report.
 
 .Steps
 
-. At the top of Cloud Manager, click *Compliance*.
+. At the top of Cloud Manager, click *Data Sense*.
 
-. Under *Reports*, click the download icon next to *Privacy Risk Assessment*.
+. Click *Compliance*, and then click the download icon next to *Privacy Risk Assessment* under *Reports*.
 +
 image:screenshot_privacy_risk_assessment.gif[A screen shot of the Compliance tab in Cloud Manager that shows the Reports pane where you can click Privacy Risk Assessment.]
 
 .Result
 
-Cloud Compliance generates a PDF report that you can review and send to other groups as needed.
+Cloud Data Sense generates a PDF report that you can review and send to other groups as needed.
 
 === Severity score
 
-Cloud Compliance calculates the severity score for the Privacy Risk Assessment Report on the basis of three variables:
+Cloud Data Sense calculates the severity score for the Privacy Risk Assessment Report on the basis of three variables:
 
 * The percentage of personal data out of all data.
 * The percentage of sensitive personal data out of all data.
@@ -91,23 +91,23 @@ Distribution of Credit Card Information:: The working environments where the cre
 
 === Generating the PCI DSS Report
 
-Go to the Compliance tab to generate the report.
+Go to the Data Sense tab to generate the report.
 
 .Steps
 
-. At the top of Cloud Manager, click *Compliance*.
+. At the top of Cloud Manager, click *Data Sense*.
 
-. Under *Reports*, click the download icon next to *PCI DSS Report*.
+. Click *Compliance*, and then click the download icon next to *PCI DSS Report* under *Reports*.
 +
 image:screenshot_pci_dss.gif[A screen shot of the Compliance tab in Cloud Manager that shows the Reports pane where you can click Privacy Risk Assessment.]
 
 .Result
 
-Cloud Compliance generates a PDF report that you can review and send to other groups as needed.
+Cloud Data Sense generates a PDF report that you can review and send to other groups as needed.
 
 == HIPAA Report
 
-The Health Insurance Portability and Accountability Act (HIPAA) Report can help you identify files containing health information. It is designed to aid in your organization’s requirement to comply with HIPAA data privacy laws. The information Cloud Compliance looks for includes:
+The Health Insurance Portability and Accountability Act (HIPAA) Report can help you identify files containing health information. It is designed to aid in your organization’s requirement to comply with HIPAA data privacy laws. The information Cloud Data Sense looks for includes:
 
 * Health reference pattern
 * ICD-10-CM Medical code
@@ -129,25 +129,57 @@ Distribution of Health Information:: The working environments where the health i
 
 === Generating the HIPAA Report
 
-Go to the Compliance tab to generate the report.
+Go to the Data Sense tab to generate the report.
 
 .Steps
 
-. At the top of Cloud Manager, click *Compliance*.
+. At the top of Cloud Manager, click *Data Sense*.
 
-. Under *Reports*, click the download icon next to *HIPAA Report*.
+. Click *Compliance*, and then click the download icon next to *HIPAA Report* under *Reports*.
 +
 image:screenshot_hipaa.gif[A screen shot of the Compliance tab in Cloud Manager that shows the Reports pane where you can click HIPAA.]
 
 .Result
 
-Cloud Compliance generates a PDF report that you can review and send to other groups as needed.
+Cloud Data Sense generates a PDF report that you can review and send to other groups as needed.
+
+== Data Mapping Report
+
+The Data Mapping Report provides an overview of the data being stored in your corporate data sources to assist you with decisions of migration, back up, security, and compliance processes. The report first lists an overview report summarizing all your working environments and data sources, and then provides a breakdown for each working environment.
+
+The report includes the following information:
+
+Usage Capacity:: For all working environments: Lists the number of files and the used capacity for each working environment.
+For single working environments: Lists the files that are using the most capacity.
+
+Age of Data:: For all working environments: Lists the number of files that have been modified based on certain date ranges.
+For single working environments: Lists the number of files that have been created, accessed, and modified based on certain date ranges.
+
+Size of Data:: Lists the number of files that exist within certain size ranges in your working environments.
+
+File Types:: Lists the total number of files and the used capacity for each type of file being stored in your working environments.
+
+=== Generating the Data Mapping Report
+
+Go to the Data Sense tab to generate the report.
+
+.Steps
+
+. At the top of Cloud Manager, click *Data Sense*.
+
+. Click *Governance*, and then click the *Download Data Mapping Report* button from the Governance Dashboard.
++
+image:screenshot_compliance_data_mapping_report_button.png[A screen shot of the Governance Dashboard that shows how to launch the Data Mapping Report.]
+
+.Result
+
+Cloud Data Sense generates a PDF report that you can review and send to other groups as needed.
 
 == Selecting the working environments for reports
 
-You can filter the contents of the Cloud Compliance dashboard to see compliance data for all working environments and databases, or for just specific working environments.
+You can filter the contents of the Cloud Data Sense Compliance dashboard to see compliance data for all working environments and databases, or for just specific working environments.
 
-When you filter the dashboard, Cloud Compliance scopes the compliance data and reports to just those working environments that you selected.
+When you filter the dashboard, Data Sense scopes the compliance data and reports to just those working environments that you selected.
 
 .Steps
 

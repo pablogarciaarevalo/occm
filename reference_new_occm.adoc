@@ -32,6 +32,28 @@ When a Google Cloud Storage bucket is the target in a sync relationship, you can
 * Coldline
 * Archive
 
+== Cloud Manager 3.9.7 update (6 June 2021)
+
+=== Cloud Data Sense (Cloud Compliance) enhancements
+
+* Cloud Compliance has been renamed as *Cloud Data Sense* as of this release. With all the new Governance and other capabilities that have been included in the product, the Compliance name was not promoting the full set of capabilities.
+
+* A new _Full Data Mapping_ report is available from the Governance Dashboard to provide an overview of the data being stored in your corporate data sources to assist you with decisions of migration, back up, security, and compliance processes.
++
+The report provides overview pages that summarize all your working environments and data sources, and then provides a breakdown for each working environment. Go link:task_generating_compliance_reports.html#data-mapping-report[here] for more details.
+
+* A new filter in the Data Investigation page enables you to view a list of all files that are duplicated across your storage systems.
++
+This is helpful to identify areas where you can save storage space, or identify files that have specific permissions or sensitive information that you do not want duplicated across your storage. link:task_controlling_private_data.html#viewing-all-duplicated-files[See how to viewing all duplicated files].
+
+* You can add a custom Status tags to files that Data Sense is scanning. The Status is not added to the file in the same way as AIP Labels are added. The Status is just seen by Cloud Manager users so you can indicate if a file needs to be deleted, or checked for some reason. link:task_managing_highlights.html#applying-status-tags-to-manage-your-scanned-files[See how to apply and view Status tags in your files].
++
+A new Filter in the Investigation page enables you to easily view all files that have a Status assigned.
+
+* Cloud Data Sense can scan for Personal Identifiable Information (PII) in two additional types of files: .DCM and .DICOM.
+
+* The File Size, Created Date, and Last Modified Date values have been added to reports that you output in CSV format. Created Date is also a new filter you can use to narrow down Investigation page search results.
+
 == Cloud Manager 3.9.7 (30 May 2021)
 
 * <<Cloud Volumes ONTAP enhancements>>

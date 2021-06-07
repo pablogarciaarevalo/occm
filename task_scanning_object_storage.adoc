@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: task_scanning_object_storage.html
-keywords: cloud compliance, enable cloud compliance, privacy, compliance, object storage
-summary: Complete a few steps to start scanning data within object storage directly with Cloud Compliance. Compliance can scan data from any Object Storage service which uses the Simple Storage Service (S3) protocol. This includes NetApp StorageGRID, IBM Cloud Object Store, Azure Blob (using MinIO), Linode, B2 Cloud Storage, and more.
+keywords: cloud compliance, enable cloud compliance, privacy, compliance, object storage, Data Sense
+summary: Complete a few steps to start scanning data within object storage directly with Cloud Data Sense. Data Sense can scan data from any Object Storage service which uses the Simple Storage Service (S3) protocol. This includes NetApp StorageGRID, IBM Cloud Object Store, Azure Blob (using MinIO), Linode, B2 Cloud Storage, and more.
 ---
 
 = Scanning object storage that uses S3 protocol
@@ -13,7 +13,7 @@ summary: Complete a few steps to start scanning data within object storage direc
 :imagesdir: ./media/
 
 [.lead]
-Complete a few steps to start scanning data within object storage directly with Cloud Compliance. Compliance can scan data from any Object Storage service which uses the Simple Storage Service (S3) protocol. This includes NetApp StorageGRID, IBM Cloud Object Store, Azure Blob (using MinIO), Linode, B2 Cloud Storage, and more.
+Complete a few steps to start scanning data within object storage directly with Cloud Data Sense. Data Sense can scan data from any Object Storage service which uses the Simple Storage Service (S3) protocol. This includes NetApp StorageGRID, IBM Cloud Object Store, Azure Blob (using MinIO), Linode, B2 Cloud Storage, and more.
 
 == Quick start
 
@@ -25,36 +25,36 @@ Get started quickly by following these steps, or scroll down to the remaining se
 You need to have the endpoint URL to connect with the object storage service.
 
 [role="quick-margin-para"]
-You need to have the Access Key and Secret Key from the object storage provider so that Cloud Compliance can access the buckets.
+You need to have the Access Key and Secret Key from the object storage provider so that Cloud Data Sense can access the buckets.
 
-==== image:number2.png[Number 2] Deploy the Cloud Compliance instance
+==== image:number2.png[Number 2] Deploy the Cloud Data Sense instance
 
 [role="quick-margin-para"]
-link:task_deploy_cloud_compliance.html[Deploy Cloud Compliance^] if there isn't already an instance deployed.
+link:task_deploy_cloud_compliance.html[Deploy Cloud Data Sense^] if there isn't already an instance deployed.
 
 ==== image:number3.png[Number 3] Add the Object Storage Service
 
 [role="quick-margin-para"]
-Add the object storage service to Cloud Compliance.
+Add the object storage service to Cloud Data Sense.
 
 ==== image:number4.png[Number 4] Select the buckets to scan
 
 [role="quick-margin-para"]
-Select the buckets that you'd like to scan and Cloud Compliance will start scanning them.
+Select the buckets that you'd like to scan and Cloud Data Sense will start scanning them.
 
 == Reviewing object storage requirements
 
-Review the following prerequisites to make sure that you have a supported configuration before you enable Cloud Compliance.
+Review the following prerequisites to make sure that you have a supported configuration before you enable Cloud Data Sense.
 
 * You need to have the endpoint URL to connect with the object storage service.
 
-* You need to have the Access Key and Secret Key from the object storage provider so that Cloud Compliance can access the buckets.
+* You need to have the Access Key and Secret Key from the object storage provider so that Data Sense can access the buckets.
 
 * Support for Azure Blob requires that you use the link:https://min.io/[MinIO service^].
 
-== Adding the object storage service to Cloud Compliance
+== Adding the object storage service to Cloud Data Sense
 
-You must have link:task_deploy_cloud_compliance.html[deployed an instance of Cloud Compliance in Cloud Manager already^].
+You must have link:task_deploy_cloud_compliance.html[deployed an instance of Cloud Data Sense in Cloud Manager already^].
 
 Add the object storage service.
 
@@ -67,7 +67,7 @@ image:screenshot_compliance_add_object_storage_button.png[A screenshot of the Sc
 . In the Add Object Storage Service dialog, enter the details for the object storage service and click *Continue*.
 .. Enter the name you want to use for the Working Environment. This name should reflect the name of the object storage service to which you are connecting.
 .. Enter the Endpoint URL to access the object storage service.
-.. Enter the Access Key and Secret Key so that Cloud Compliance can access the buckets in the object storage.
+.. Enter the Access Key and Secret Key so that Cloud Data Sense can access the buckets in the object storage.
 +
 image:screenshot_compliance_add_object_storage.png[A screenshot of the dialog where you enter the values to access the object storage service.]
 
@@ -77,7 +77,7 @@ The new Object Storage Service is added to the list of working environments.
 
 == Enabling and disabling compliance scans on object storage buckets
 
-After you enable Cloud Compliance on your Object Storage Service, the next step is to configure the buckets that you want to scan. Cloud Compliance discovers those buckets and displays them in the working environment you created.
+After you enable Cloud Data Sense on your Object Storage Service, the next step is to configure the buckets that you want to scan. Data Sense discovers those buckets and displays them in the working environment you created.
 
 .Steps
 
@@ -91,4 +91,4 @@ image:screenshot_compliance_object_storage_select_buckets.png[A screenshot of se
 
 .Result
 
-Cloud Compliance starts scanning the buckets that you enabled. If there are any errors, they'll appear in the Status column, alongside the required action to fix the error.
+Cloud Data Sense starts scanning the buckets that you enabled. If there are any errors, they'll appear in the Status column, alongside the required action to fix the error.

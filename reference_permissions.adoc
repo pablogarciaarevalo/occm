@@ -191,7 +191,7 @@ Cloud Manager uses an AWS account to make API calls to several AWS services, inc
 | When you deploy an HA configuration in a single AWS Availability Zone, Cloud Manager launches the two HA nodes and the mediator in an AWS spread placement group.
 
 | "ec2:DescribeReservedInstancesOfferings"
-| Cloud Manager uses the permission as part of Cloud Compliance deployment to choose which instance type to use.
+| Cloud Manager uses the permission as part of Cloud Data Sense deployment to choose which instance type to use.
 
 |
 "s3:DeleteBucket",

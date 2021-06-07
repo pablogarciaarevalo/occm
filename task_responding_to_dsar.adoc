@@ -15,15 +15,15 @@ summary: Respond to a Data Subject Access Request (DSAR) by searching for a subj
 [.lead]
 Respond to a Data Subject Access Request (DSAR) by searching for a subject's full name or known identifier (such as an email address) and then downloading a report. The report is designed to aid in your organization's requirement to comply with GDPR or similar data privacy laws.
 
-NOTE: NetApp can't guarantee 100% accuracy of the personal data and sensitive personal data that Cloud Compliance identifies. You should always validate the information by reviewing the data.
+NOTE: NetApp can't guarantee 100% accuracy of the personal data and sensitive personal data that Cloud Data Sense identifies. You should always validate the information by reviewing the data.
 
 == What is a Data Subject Access Request?
 
-Privacy regulations such as the European GDPR grant data subjects (such as customers or employees) the right to access their personal data. When a data subject requests this information, this is known as a DSAR (data subject access request). Organizations are required to respond to these requests "without undue delay," and at the latest within one month of receipt.
+Privacy regulations such as the European GDPR grant data subjects (such as customers or employees) the right to access their personal data. When a data subject requests this information, this is known as a DSAR (data subject access request). Organizations are required to respond to these requests "without undue delay", and at the latest within one month of receipt.
 
-== How can Cloud Compliance help you respond to a DSAR?
+== How can Cloud Data Sense help you respond to a DSAR?
 
-When you perform a data subject search, Cloud Compliance finds all of the files, buckets, and databases that have that person's name or identifier in it. Cloud Compliance checks the latest pre-indexed data for the name or identifier. It doesn't initiate a new scan.
+When you perform a data subject search, Cloud Data Sense finds all of the files, buckets, and databases that have that person's name or identifier in it. Data Sense checks the latest pre-indexed data for the name or identifier. It doesn't initiate a new scan.
 
 After the search is complete, you can then download the list of files for a Data Subject Access Request report. The report aggregates insights from the data and puts it into legal terms that you can send back to the person.
 
@@ -37,7 +37,7 @@ NOTE: Data subject search is not supported within databases at this time.
 
 .Steps
 
-. At the top of Cloud Manager, click *Compliance*.
+. At the top of Cloud Manager, click *Data Sense*.
 
 . Click *Data Subjects*.
 
@@ -48,7 +48,7 @@ Here's an example that shows a search for the name _john doe_:
 image:screenshot_dsar_search.gif[A screenshot that shows a search for the name "John Doe" for a DSAR.]
 
 . Choose one of the available options:
-* *Download DSAR Report*: A formal response to the access request that you can send to the data subject. This report contains automatically-generated information based on data that Cloud Compliance found on the data subject and is designed to be used as a template. You should complete the form and review it internally before sending it to the data subject.
+* *Download DSAR Report*: A formal response to the access request that you can send to the data subject. This report contains automatically-generated information based on data that Cloud Data Sense found on the data subject and is designed to be used as a template. You should complete the form and review it internally before sending it to the data subject.
 
 * *Investigate Results*: A page that enables you to investigate the data by searching, sorting, expanding details for a specific file, and by downloading the file list.
 +
