@@ -19,7 +19,20 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
-== Cloud Manager 3.9.7 update (06 June 2021)
+== Cloud Manager 3.9.7 update (7 June 2021)
+
+A new Cloud Sync enhancement is available.
+
+=== Cloud Sync support for storage classes in Google Cloud
+
+When a Google Cloud Storage bucket is the target in a sync relationship, you can now choose the storage class that you want to use. Cloud Sync supports the following storage classes:
+
+* Standard
+* Nearline
+* Coldline
+* Archive
+
+== Cloud Manager 3.9.7 update (6 June 2021)
 
 === Cloud Data Sense (Cloud Compliance) enhancements
 
