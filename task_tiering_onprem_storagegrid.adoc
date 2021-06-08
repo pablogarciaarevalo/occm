@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_tiering_onprem_storagegrid.html
 keywords: data tiering, fabricpool, cloud tiering, tiering cold data, tiering inactive data, tiering aff, tiering fas, tiering ontap, tiering volumes, tier data, tier cold data, tier fas, tier aff, tier ontap, storagegrid, tier to storagegrid, fabricpool storagegrid
-summary: Free space on your on-prem ONTAP clusters by tiering data to StorageGRID. Data tiering is powered by NetApp's Cloud Tiering service.
+summary: Free space on your on-prem ONTAP clusters by tiering inactive data to StorageGRID.
 ---
 
 = Tiering data from on-premises ONTAP clusters to StorageGRID
@@ -13,7 +13,7 @@ summary: Free space on your on-prem ONTAP clusters by tiering data to StorageGRI
 :imagesdir: ./media/
 
 [.lead]
-Free space on your on-prem ONTAP clusters by tiering data to StorageGRID. Data tiering is powered by NetApp's Cloud Tiering service.
+Free space on your on-prem ONTAP clusters by tiering inactive data to StorageGRID.
 
 == Quick start
 
@@ -33,7 +33,7 @@ You need the following:
 ==== image:number2.png[number 2] Set up tiering
 
 [role="quick-margin-para"]
-Select an on-prem working environment, click *Enable* and follow the prompts to tier data to StorageGRID.
+In Cloud Manager, select an on-prem working environment, click *Enable*, and follow the prompts to tier data to StorageGRID.
 
 == Requirements
 
@@ -67,11 +67,9 @@ ONTAP reads and writes data to and from object storage. The object storage never
 +
 A connection between the cluster and the Cloud Tiering service is not required.
 
-* An intercluster LIF is required on each ONTAP node that hosts tiered volumes. The LIF must be associated with the _IPspace_ that ONTAP should use to connect to object storage.
+* An intercluster LIF is required on each ONTAP node that hosts the volumes you want to tier. The LIF must be associated with the _IPspace_ that ONTAP should use to connect to object storage.
 +
-IPspaces enable network traffic segregation, allowing for separation of client traffic for privacy and security. http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-69120CF0-F188-434F-913E-33ACB8751A5D.html[Learn more about IPspaces^].
-+
-When you set up data tiering, Cloud Tiering prompts you for the IPspace to use. You should choose the IPspace that each LIF is associated with. That might be the "Default" IPspace or a custom IPspace that you created.
+When you set up data tiering, Cloud Tiering prompts you for the IPspace to use. You should choose the IPspace that each LIF is associated with. That might be the "Default" IPspace or a custom IPspace that you created. Learn more about https://docs.netapp.com/us-en/ontap/networking/create_a_lif.html[LIFs^] and https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html[IPspaces^].
 
 include::_include/tiering_supported_volumes.adoc[]
 
@@ -147,7 +145,7 @@ image:screenshot_setup_tiering_onprem.png[A screenshot that shows the Setup Tier
 
 .. *Choose your provider*: Select StorageGRID.
 
-.. *Server*: Enter the FQDN of the StorageGRID server, enter the port that ONTAP should use for HTTPS communication with StorageGRID, and enter the access key and secret key for an AWS account that has the required S3 permissions.
+.. *Server*: Enter the FQDN of the StorageGRID server, enter the port that ONTAP should use for HTTPS communication with StorageGRID, and enter the access key and secret key for an account that has the required S3 permissions.
 
 .. *Bucket*: Add a new bucket or select an existing bucket for the tiered data.
 

@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_tiering_onprem_aws.html
 keywords: data tiering, fabricpool, cloud tiering, tiering cold data, tiering inactive data, tiering aff, tiering fas, tiering ontap, tiering volumes, tier data, tier cold data, tier fas, tier aff, tier ontap, aws, amazon, s3
-summary: Free space on your on-prem ONTAP clusters by tiering data to Amazon S3. Data tiering is powered by NetApp's Cloud Tiering service.
+summary: Free space on your on-prem ONTAP clusters by tiering inactive data to Amazon S3.
 ---
 
 = Tiering data from on-premises ONTAP clusters to Amazon S3
@@ -13,7 +13,7 @@ summary: Free space on your on-prem ONTAP clusters by tiering data to Amazon S3.
 :imagesdir: ./media/
 
 [.lead]
-Free space on your on-prem ONTAP clusters by tiering data to Amazon S3. Data tiering is powered by NetApp's Cloud Tiering service.
+Free space on your on-prem ONTAP clusters by tiering inactive data to Amazon S3.
 
 == Quick start
 
@@ -33,7 +33,7 @@ You need the following:
 ==== image:number2.png[number 2] Set up tiering
 
 [role="quick-margin-para"]
-In Cloud Manager, select an on-prem working environment, click *Enable* and follow the prompts to tier data to Amazon S3.
+In Cloud Manager, select an on-prem working environment, click *Enable*, and follow the prompts to tier data to Amazon S3.
 
 ==== image:number3.png[number 3] Set up licensing
 
@@ -75,11 +75,9 @@ Although AWS Direct Connect provides better performance and lower data transfer 
 +
 A connection between the cluster and the Cloud Tiering service is not required.
 
-* An intercluster LIF is required on each ONTAP node that hosts tiered volumes. The LIF must be associated with the _IPspace_ that ONTAP should use to connect to object storage.
+* An intercluster LIF is required on each ONTAP node that hosts the volumes you want to tier. The LIF must be associated with the _IPspace_ that ONTAP should use to connect to object storage.
 +
-IPspaces enable network traffic segregation, allowing for separation of client traffic for privacy and security. http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-69120CF0-F188-434F-913E-33ACB8751A5D.html[Learn more about IPspaces^].
-+
-When you set up data tiering, Cloud Tiering prompts you for the IPspace to use. You should choose the IPspace that each LIF is associated with. That might be the "Default" IPspace or a custom IPspace that you created.
+When you set up data tiering, Cloud Tiering prompts you for the IPspace to use. You should choose the IPspace that each LIF is associated with. That might be the "Default" IPspace or a custom IPspace that you created. Learn more about https://docs.netapp.com/us-en/ontap/networking/create_a_lif.html[LIFs^] and https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html[IPspaces^].
 
 include::_include/tiering_supported_volumes.adoc[]
 
@@ -121,7 +119,7 @@ A VPC Endpoint to S3 is recommended if you have a Direct Connect or VPN connecti
 
 When you set up data tiering to a new cluster, you're prompted to create an S3 bucket or to select an existing S3 bucket in the AWS account where the Connector is set up. The AWS account must have permissions and an access key that you can enter in Cloud Tiering. The ONTAP cluster uses the access key to tier data in and out of S3.
 
-NOTE: If you are planning to select a lower cost storage class where your tiered data will transition to after 30 days, you must ensure that there are no other rules applied to the selected bucket.
+NOTE: If you are planning to configure Cloud Tiering to use a lower cost storage class where your tiered data will transition to after a certain number of days, you must not select any life cycle rules when setting up the bucket in your AWS account. Cloud Tiering manages the life cycle transitions.
 
 .Steps
 
@@ -163,23 +161,25 @@ image:screenshot_setup_tiering_onprem.png[A screenshot that shows the Enable opt
 
 .. *S3 Bucket*: Add a new S3 bucket or select an existing S3 bucket that starts with the prefix _fabric-pool_ and click *Continue*.
 +
-The _fabric-pool_ prefix is required because the IAM policy for the Connector enables the instance to perform S3 actions on buckets named with that exact prefix.
-+
-For example, you could name the S3 bucket fabric-pool-AFF1, where AFF1 is the name of the cluster.
+The _fabric-pool_ prefix is required because the IAM policy for the Connector enables the instance to perform S3 actions on buckets named with that exact prefix. For example, you could name the S3 bucket _fabric-pool-AFF1_, where AFF1 is the name of the cluster.
 
-.. *Storage Class*: Select the S3 storage class that you want to transition the tiered data to after 30 days.
+.. *Storage Class Life Cycle Management*: Cloud Tiering manages the life cycle transitions of your tiered data. Data starts in the _Standard_ class, but you can create a rule to move the data to another class after a certain number of days.
 +
-link:reference_aws_support.html[See supported storage classes^]. If you choose Standard, then the data remains in that storage class and no rules are applied.
+Select the S3 storage class that you want to transition the tiered data to and the number of days before the data will be moved, and click *Continue*. For example, the screenshot below shows that tiered data is moved from the _Standard_ class to the _Standard-IA_ class after 45 days in object storage.
++
+If you choose *Keep data in this storage class*, then the data remains in the _Standard_ storage class and no rules are applied. link:reference_aws_support.html[See supported storage classes^].
++
+image:screenshot_tiering_lifecycle_selection_aws.png[A screenshot showing how to select another storage class where data is moved after a certain number of days.]
++
+Note that the life cycle rule is applied to all objects in the selected bucket.
 
-.. *Credentials*: Enter the access key ID and secret key for an IAM user who has the required S3 permissions.
+.. *Credentials*: Enter the access key ID and secret key for an IAM user who has the required S3 permissions, and click *Continue*.
 +
 The IAM user must be in the same AWS account as the bucket that you selected or created on the *S3 Bucket* page.
 
-.. *Cluster Network*: Select the IPspace that ONTAP should use to connect to object storage.
+.. *Cluster Network*: Select the IPspace that ONTAP should use to connect to object storage, and click *Continue*.
 +
 Selecting the correct IPspace ensures that Cloud Tiering can set up a connection from ONTAP to your cloud provider's object storage.
-
-. Click *Continue* to select the volumes that you want to tier.
 
 . On the _Tier Volumes_ page, select the volumes that you want to configure tiering for and launch the Tiering Policy page:
 
@@ -188,7 +188,7 @@ Selecting the correct IPspace ensures that Cloud Tiering can set up a connection
 * To select multiple volumes, check the box for each volume (image:button_backup_1_volume.png[]) and click *Configure volumes*.
 * To select a single volume, click the row (or image:screenshot_edit_icon.gif[edit pencil icon] icon) for the volume.
 +
-image:screenshot_tiering_modify_volumes.gif[A screenshot that shows how to select a single volume, multiple volume, or all volumes, and the modify selected volumes button.]
+image:screenshot_tiering_modify_volumes.gif["A screenshot that shows how to select a single volume, multiple volume, or all volumes, and the modify selected volumes button.""]
 
 . In the _Tiering Policy_ dialog, select a tiering policy, optionally adjust the cooling days for the selected volumes, and click *Apply*.
 +

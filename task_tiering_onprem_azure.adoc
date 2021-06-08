@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_tiering_onprem_azure.html
 keywords: data tiering, fabricpool, cloud tiering, tiering cold data, tiering inactive data, tiering aff, tiering fas, tiering ontap, tiering volumes, tier data, tier cold data, tier fas, tier aff, tier ontap, azure, blob, azure blob
-summary: Free space on your on-prem ONTAP clusters by tiering data to Azure Blob storage. Data tiering is powered by NetApp's Cloud Tiering service.
+summary: Free space on your on-prem ONTAP clusters by tiering inactive data to Azure Blob storage.
 ---
 
 = Tiering data from on-premises ONTAP clusters to Azure Blob storage
@@ -13,7 +13,7 @@ summary: Free space on your on-prem ONTAP clusters by tiering data to Azure Blob
 :imagesdir: ./media/
 
 [.lead]
-Free space on your on-prem ONTAP clusters by tiering data to Azure Blob storage. Data tiering is powered by NetApp's Cloud Tiering service.
+Free space on your on-prem ONTAP clusters by tiering inactive data to Azure Blob storage.
 
 == Quick start
 
@@ -32,7 +32,7 @@ You need the following:
 ==== image:number2.png[number2] Set up tiering
 
 [role="quick-margin-para"]
-In Cloud Manager, select an on-prem working environment, click *Enable* and follow the prompts to tier data to Azure Blob storage.
+In Cloud Manager, select an on-prem working environment, click *Enable*, and follow the prompts to tier data to Azure Blob storage.
 
 ==== image:number3.png[number 3] Set up licensing
 
@@ -74,11 +74,9 @@ Although ExpressRoute provides better performance and lower data transfer charge
 +
 A connection between the cluster and the Cloud Tiering service is not required.
 
-* An intercluster LIF is required on each ONTAP node that hosts tiered volumes. The LIF must be associated with the _IPspace_ that ONTAP should use to connect to object storage.
+* An intercluster LIF is required on each ONTAP node that hosts the volumes you want to tier. The LIF must be associated with the _IPspace_ that ONTAP should use to connect to object storage.
 +
-IPspaces enable network traffic segregation, allowing for separation of client traffic for privacy and security. http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-69120CF0-F188-434F-913E-33ACB8751A5D.html[Learn more about IPspaces^].
-+
-When you set up data tiering, Cloud Tiering prompts you for the IPspace to use. You should choose the IPspace that each LIF is associated with. That might be the "Default" IPspace or a custom IPspace that you created.
+When you set up data tiering, Cloud Tiering prompts you for the IPspace to use. You should choose the IPspace that each LIF is associated with. That might be the "Default" IPspace or a custom IPspace that you created. Learn more about https://docs.netapp.com/us-en/ontap/networking/create_a_lif.html[LIFs^] and https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html[IPspaces^].
 
 include::_include/tiering_supported_volumes.adoc[]
 
@@ -98,6 +96,16 @@ A Connector is required to tier data to the cloud. When tiering data to Azure Bl
 * link:task_creating_connectors_azure.html[Creating a Connector in Azure]
 * link:task_managing_connectors.html[Switching between Connectors]
 
+=== Verify that you have the necessary Connector permissions
+
+If you just created the Connector using Cloud Manager version 3.9.7 or greater, then you're all set.
+
+If you created the Connector using an earlier version of Cloud Manager, then you'll need to edit the permission list to add 2 newly required permissions:
+
+[source,json]
+Microsoft.Storage/storageAccounts/managementPolicies/read
+Microsoft.Storage/storageAccounts/managementPolicies/write
+
 === Preparing networking for the Connector
 
 Ensure that the Connector has the required networking connections.
@@ -113,6 +121,12 @@ Ensure that the Connector has the required networking connections.
 . If needed, enable a VNet service endpoint to Azure storage.
 +
 A VNet service endpoint to Azure storage is recommended if you have an ExpressRoute or VPN connection from your ONTAP cluster to the VNet and you want communication between the Connector and Blob storage to stay in your virtual private network.
+
+=== Preparing Azure Blob storage
+
+When you set up tiering, you need to provide a resource group and a storage account and Blob container that belong to the resource group. A storage account enables Cloud Tiering to authenticate and access the Blob container used for data tiering.
+
+NOTE: If you are planning to configure Cloud Tiering to use a lower cost access tier where your tiered data will transition to after a certain number of days, you must not select any life cycle rules when setting up the container in your Azure account. Cloud Tiering manages the life cycle transitions.
 
 == Tiering inactive data from your first cluster to Azure Blob storage
 
@@ -132,19 +146,27 @@ image:screenshot_setup_tiering_onprem.png[A screenshot that shows the Enable opt
 
 . Complete the steps on the *Tiering Setup* page:
 
-.. *Resource Group*: Select a resource group where an existing container is managed, or where you would like to create a new container for tiered data.
+.. *Resource Group*: Select a resource group where an existing container is managed, or where you would like to create a new container for tiered data, and click *Continue*.
 
-.. *Azure Container*: Add a new Blob container to a storage account or select an existing container.
+.. *Azure Container*: Add a new Blob container to a storage account or select an existing container, and click *Continue*.
 +
 The storage account and containers that appear in this step belong to the resource group that you selected in the previous step.
 
-.. *Access Tier*: Select the access tier that you want to use for the tiered data. link:reference_azure_support.html[See supported access tiers^].
+.. *Access Tier Life Cycle Management*: Cloud Tiering manages the life cycle transitions of your tiered data. Data starts in the _Hot_ class, but you can create a rule to move the data to the _Cool_ class after a certain number of days.
++
+Select the access tier that you want to transition the tiered data to and the number of days before the data will be moved, and click *Continue*. For example, the screenshot below shows that tiered data is moved from the _Hot_ class to the _Cool_ class after 45 days in object storage.
++
+If you choose *Keep data in this access tier*, then the data remains in the _Hot_ access tier and no rules are applied. link:reference_azure_support.html[See supported access tiers^].
++
+image:screenshot_tiering_lifecycle_selection_azure.png[A screenshot showing how to select another access tier where data is moved after a certain number of days.]
++
+Note that the life cycle rule is applied to all blob containers in the selected storage account.
++
+<<Verify that you have the necessary Connector permissions,Verify that you have the necessary Connector permissions>> for the life cycle management feature.
 
-.. *Cluster Network*: Select the IPspace that ONTAP should use to connect to object storage.
+.. *Cluster Network*: Select the IPspace that ONTAP should use to connect to object storage, and click *Continue*.
 +
 Selecting the correct IPspace ensures that Cloud Tiering can set up a connection from ONTAP to your cloud provider's object storage.
-
-. Click *Continue* to select the volumes that you want to tier.
 
 . On the _Tier Volumes_ page, select the volumes that you want to configure tiering for and launch the Tiering Policy page:
 

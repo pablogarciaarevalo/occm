@@ -83,10 +83,23 @@ video::video_cloud_sync_registering_azure.mp4[width=848, height=480]
 
 To pay for your sync relationships up front, you must purchase one or more licenses and add them to the Cloud Sync service.
 
+.What you'll need
+
+You'll need the serial number for your license and the user name and password for the NetApp Support Site account that the license is associated with.
+
 .Steps
 
 . Purchase a license by mailto:ng-cloudsync-contact@netapp.com?subject=Cloud%20Sync%20Service%20-%20BYOL%20License%20Purchase%20Request[contacting NetApp].
 
 . In Cloud Manager, click *Sync > Licensing*.
 
-. Click *Add License* and add the license.
+. Click *Add License* and add the required information:
+
+.. Enter the serial number.
+
+.. Select the NetApp Support Site account that is associated with the license that you're adding:
++
+* If your account was already added to Cloud Manager, select it from the drop-down list.
+* If your account wasn't added yet, click *Add NSS Credentials*, enter the user name and password, click *Register*, and then select it from the drop-down list.
+
+.. Click *Add*.
