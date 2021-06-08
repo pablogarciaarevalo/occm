@@ -119,9 +119,9 @@ NOTE: You can only create NFS or CIFS volumes when using templates.
 
 .Steps
 
-. On the Canvas page, double-click the name of the Cloud Volumes ONTAP system on which you want to provision a volume.
+. On the Canvas page, click the name of the Cloud Volumes ONTAP system on which you want to provision a volume.
 
-. Click *Add Volume* > *New volume from template*.
+. Click image:screenshot_gallery_options.gif[] > *Add Volume From Template*.
 +
 image:screenshot_template_add_vol_cvo.png[A screenshot showing how to add a new volume from a template.]
 
@@ -135,63 +135,11 @@ image:screenshot_define_cvo_vol_from_template.png[A screenshot showing a blank t
 +
 *Note:* You can click the checkbox *Show read-only parameters* to show all the fields that have been locked by the template if you want to see the values for those parameters. By default these predefined fields are hidden and only the fields you need to complete are shown.
 
-. *Details:* Enter the volume name and size.
-+
-[cols=2*,options="header",cols="25,75"]
+. In the _Context_ area, the Working Environment is filled in with the name of the working environment you started with. You need to select the *Storage VM* where the volume will be created.
 
-|===
-| Field
-| Description
+. Add values for all of the parameters that are not hard-coded from the template. See <<Creating FlexVol volumes,creating volumes>> for details about all the parameters you need to complete to deploy a Cloud Volumes ONTAP volume.
 
-| Volume Name | Enter the volume name. The template designer may allow you to enter any volume name here. However, there may be instructions within the field that you need to use a certain prefix or suffix, that it _contains_ certain characters within the name, or that it follows rules from a regular expression (regex).
-
-For example, "db" could be a required prefix, suffix, or contains; meaning your volume should be named "db_vol1", "vol1_db, "vol_db_1", etc..
-
-| Volume Size | Specify the size of the volume in GB.
-
-|===
-
-. *Protection:* Choose whether this volume will have Snapshot copies created by selecting "Default" or some other policy, or choose "None" if you do not want to create Snapshot copies.
-
-. *Usage Profile:* Choose whether or not NetApp storage efficiency features are applied to the volume. This includes Thin Provisioning, Deduplication, and Compression.
-
-. *Disk Type:* Choose the cloud storage provider (if not preselected), the type of disk, and the capacity tier (optional) that will be used for the volume storage.
-
-. *Protocol:* Select *NFS* or *SMB* and then the provide the protocol details.
-+
-[cols=2*,options="header",cols="25,75"]
-
-|===
-| NFS Fields
-| Description
-
-| Access Control | Choose whether access controls are needed to access the volume.
-
-| Export Policy | Enter an export policy to define the clients in the subnet that can access the volume.
-
-| NFS Version | Select the NFS version for the volume: either _NFSv3_ or _NFSv4_, or you can select both.
-
-|===
-+
-[cols=2*,options="header",cols="25,75"]
-
-|===
-| SMB Fields
-| Description
-
-| Share Name | The template designer may have allowed you to enter any share name here, but there may be instructions within the field that you need to use a certain prefix or suffix, that it _contains_ certain characters within the name, or that it follows rules from a regular expression (regex).
-
-| Permissions | Select the level of access to a share for users and groups (also called access control lists, or ACLs).
-
-| Users / Groups | Specify local or domain Windows users or groups, or UNIX users or groups. If you specify a domain Windows user name, you must include the user's domain using the format domain\username.
-
-|===
-
-. *Tiering Policy:* Choose the tiering policy that you would like applied to the volume, or set this to "None" if you do not want to tier cold data from this volume to object storage.
-+
-See link:concept_data_tiering.html#volume-tiering-policies[volume tiering policies] for an overview, and see link:task_tiering.html[Tiering inactive data to object storage] to make sure your environment is set up for tiering.
-
-. If there are no other Actions that you need to define, click *Create Volume*.
+. If there are no other Actions that you need to define (for example, configuring Cloud Backup), click *Create Volume*.
 +
 If there are other actions, click the action in the left pane to display the parameters you need to complete.
 +

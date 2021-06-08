@@ -1,0 +1,69 @@
+---
+sidebar: sidebar
+permalink: task_check_template_compliance.html
+keywords: templates, resource templates, application templates, volume templates, drift, compliant
+summary: Cloud Manager can monitor the parameter values used when a resource was created with a template using the "drift" feature. Drift identifies resources that have been changed and that are no longer compliant with the template settings.
+---
+
+= Check resources for template compliance
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Cloud Manager can monitor the parameter values used when a resource was created with a template using the "drift" feature. Drift identifies resources that have been changed and that are no longer compliant with the template settings.
+
+At this time, drift identifies the changed parameters in a resource -- you must manually make adjustments to the resource to bring it back into compliance with the template.
+
+== How does drift work
+
+Drift identifies non-compliant parameters like this:
+
+. When creating a template, you turn drift on for certain parameters that you do not want users to change. For example, you may require that Snapshot copies are created using the "Default" policy for all volumes created from a template.
++
+image:screenshot_template_drift_on_param.png[A screenshot showing how to enable drift on a single parameter in a template.]
+
+. You turn drift on for the template, and then save the template.
++
+image:screenshot_template_drift_on_template.png[A screenshot showing how to enable drift for the template.]
+
+. Storage admins run the template to create volumes.
+
+. Later, a storage admin edits a volume and disables Snapshot copies.
+
+. You run drift checking on all templates, and the AppTemplates service compares the Snapshot copies template setting to the current setting in the volume. Any non-compliant values are flagged so you can fix the incorrect setting.
+
+== The Drift Dashboard
+
+The Drift Dashboard shows the total number of resources (for example, volumes) that have been created using your templates, the number that are still compliant with the template, the number that are not compliant (drifted), and the number that were created with Drift disabled.
+
+image:screenshot_template_drift_dashboard.png[A screenshot of the Drift Dashboard for the AppTemplates service.]
+
+* The controls at the top of each column allow you to sort the results in numerical or alphabetical order.
+// * The image:screenshot_plus_icon.gif[] enables you to filter the results by Template Name, Drift Policy & Status, and Action Type.
+* The search bar enables you to search for a specific volume name or template name.
+* To find out more details about the actual resource (or volume), such as the working environment and storage VM, you can click the image:screenshot_sync_status_icon.gif[].
++
+image:screenshot_template_drift_vol_details.png[A screenshot showing the detail about a volume in the drift dashboard.]
+
+== Populate the Drift Dashboard
+
+You must run drift checking on a template before it populates the values in the Drift Dashboard.
+
+You can run drift checking for all templates from the Templates Dashboard:
+
+image:screenshot_template_drift_for_all.png[A screenshot showing how to run drift checking for all templates.]
+
+You can run drift checking on a single template from the Templates Dashboard:
+
+image:screenshot_template_drift_for_one.png[A screenshot showing how to run drift checking for a single template.]
+
+== Create a drift report for non-compliant resources
+
+You can click the name of a resource in the Drift Dashboard to view a list of the parameters in each resource that is non-compliant.
+
+image:screenshot_template_drift_report_one_resource.png[A screenshot of a drift report for a single resource.]
+//
+// To view a drift report for all resources that have been created from your templates, click image:button_download.png[] to download an .XLS file.

@@ -18,6 +18,8 @@ After you discover your ONTAP cluster from Cloud Manager, you can open the worki
 
 Cloud Manager enables you to provision NFS, CIFS, and iSCSI volumes on ONTAP clusters.
 
+A Cloud Manager feature called "templates" enables you to create volumes that are optimized for the workload requirements for certain applications; such as databases or streaming services. If your organization has created volume templates that you should use, follow <<Creating volumes from templates,these steps>>.
+
 .Before you begin
 
 The data protocols must be set up on the cluster using System Manager or the CLI.
@@ -61,6 +63,52 @@ When you create an iSCSI volume, Cloud Manager automatically creates a LUN for y
 | Usage Profile | Usage profiles define the NetApp storage efficiency features that are enabled for a volume.
 
 |===
+
+== Creating volumes from templates
+
+If your organization has created on-premises ONTAP volume templates so you can deploy volumes that are optimized for the workload requirements for certain applications, follow the steps in this section.
+
+The template should make your job easier because certain volume parameters will already be defined in the template, such as disk type, size, protocol, snapshot policy, and more. When a parameter is already predefined, you can just skip to the next volume parameter.
+
+NOTE: You can only create NFS or CIFS volumes when using templates.
+
+.Steps
+
+. On the Canvas page, click the name of the on-premises ONTAP system on which you want to provision a volume.
+
+. Click image:screenshot_gallery_options.gif[] > *Add Volume From Template*.
++
+image:screenshot_template_add_vol_ontap.png[A screenshot showing how to add a new volume from a template.]
+
+. In the _Select Template_ page, select the template that you want to use to create the volume and click *Next*.
++
+image:screenshot_select_template_ontap.png[A screenshot of the available application templates.]
++
+The _Define Parameters_ page is displayed.
++
+image:screenshot_define_ontap_vol_from_template.png[A screenshot showing a blank template that you need to fill in to create a volume.]
++
+*Note:* You can click the checkbox *Show read-only parameters* to show all the fields that have been locked by the template if you want to see the values for those parameters. By default these predefined fields are hidden and only the fields you need to complete are shown.
+
+. In the _Context_ area, the Working Environment is filled in with the name of the working environment you started with. You need to select the *Storage VM* and *Aggregate* where the volume will be created.
+
+. Add values for all of the parameters that are not hard-coded from the template. See <<Creating volumes for ONTAP clusters,creating volumes>> for details about all the parameters you need to complete to deploy an on-prem ONTAP volume.
+
+. Click *Create Volume* after you have defined all the parameters needed for this volume.
+
+.Result
+
+Cloud Manager provisions the volume and displays a page so that you can see the progress.
+
+image:screenshot_template_creating_resource_ontap.png[A screenshot showing the progress of creating your new volume from the template.]
+
+Then the new volume is added to the working environment.
+
+Additionally, if any secondary action is implemented in the template, for example, enabling Cloud Backup on the volume, that action is also performed.
+
+.After you finish
+
+If you provisioned a CIFS share, give users or groups permissions to the files and folders and verify that those users can access the share and create a file.
 
 == Replicating data
 
