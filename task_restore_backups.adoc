@@ -112,13 +112,13 @@ You can restore up to 8 files at a time from a volume in a backup file. All the 
 
 Note that the ONTAP version must be 9.6 or greater in your Cloud Volumes ONTAP or on-premises ONTAP systems to perform file restore operations.
 
-NOTE: Restoring individual files from a backup file uses a separate Restore instance/virtual machine.
+NOTE: Restoring individual files from a backup file uses a separate Restore instance/virtual machine. See the link:task_backup_to_s3.html#requirements[AWS Requirements] or link:task_backup_to_azure.html#requirements[Azure Requirements] to make sure your environment is ready.
 
 === File Restore process
 
 The process goes like this:
 
-. When you want to restore one or more files from a volume, click the Restore tab, click *Restore Files*, and select the backup file in which the file (or files) reside.
+. When you want to restore one or more files from a volume, click the *Restore* tab, click *Restore Files*, and select the backup file in which the file (or files) reside.
 
 . The Restore instance starts up and displays the folders and files that exist within the backup file.
 +
@@ -129,84 +129,6 @@ The process goes like this:
 . Select the location where you want the file(s) to be restored (the working environment, volume, and folder), and click *Restore*.
 
 . The file(s) are restored, and then the Restore instance is shut down to save costs after a period of inactivity.
-
-=== Details
-
-.Costs
-
-See link:concept_backup_to_cloud.html#cost[this topic^] for the cost of the Cloud Backup service and the Restore instance.
-
-.Instance type
-
-* In AWS, the Restore instance runs on an https://aws.amazon.com/ec2/instance-types/m5/[m5n.xlarge instance^] with 4 CPUs, 16 GiB Memory, and EBS Only instance storage. In regions where m5n.xlarge instance isn’t available, Restore runs on an m5.xlarge instance instead.
-
-* In Azure, the Restore virtual machine runs on a https://docs.microsoft.com/en-us/azure/virtual-machines/dv3-dsv3-series#dsv3-series[Standard_D4s_v3 VM^] with 4 CPUs, 16 GiB Memory, and a 32 GB disk.
-//
-// * In GCP, the Restore virtual machine runs on ???
-
-The instance is named _Cloud-Restore-Instance_ with your Account ID concatenated to it. For example: _Cloud-Restore-Instance-MyAccount_.
-
-=== Reviewing prerequisites
-
-Review the following prerequisites to make sure that you have a supported configuration before Cloud Restore is deployed.
-
-==== AWS permissions required
-
-When using file Restore with AWS, the IAM role that provides Cloud Manager with permissions must include S3 permissions from the latest https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policy^] as described in link:task_backup_to_s3.html#requirements[AWS requirements^].
-
-Additionally, the following permissions are needed in the policy for file restore:
-
-[source,json]
-  "Action": [
-    "ec2:DescribeInstanceTypeOfferings",
-    "ec2:startInstances",
-    "ec2:stopInstances",
-    "ec2:terminateInstances"
-  ],
-
-==== Enable outbound internet access
-
-Cloud Restore requires outbound internet access. If your virtual or physical network uses a proxy server for internet access, ensure that the instance has outbound internet access to contact the following endpoints. When you deploy Cloud Restore in the cloud, it is located in the same subnet as the Connector.
-
-Review the appropriate table depending on whether you are deploying Cloud Restore in AWS or Azure.
-
-*Required endpoints for AWS deployments:*
-
-[cols="43,57",options="header"]
-|===
-| Endpoints
-| Purpose
-
-| \http://amazonlinux.us-east-1.amazonaws.com/2/extras/docker/stable/x86_64/4bf88ee77c395ffe1e0c3ca68530dfb3a683ec65a4a1ce9c0ff394be50e922b2/ | CentOS package for the Cloud Restore Instance AMI.
-
-|
-\http://cloudmanagerinfraprod.azurecr.io
-\https://cloudmanagerinfraprod.azurecr.io
-
-| Cloud Restore Instance image repository.
-
-|===
-
-*Required endpoints for Azure deployments:*
-
-[cols="43,57",options="header"]
-|===
-| Endpoints
-| Purpose
-
-|
-\http://olcentgbl.trafficmanager.net
-\https://olcentgbl.trafficmanager.net
-
-| Provides CentOS packages for the Cloud Restore virtual machine.
-
-|
-\http://cloudmanagerinfraprod.azurecr.io
-\https://cloudmanagerinfraprod.azurecr.io
-
-| Cloud Restore Instance image repository.
-
-|===
 
 === Restoring a single file from a backup file
 

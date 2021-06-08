@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: task_scanning_databases.html
-keywords: cloud compliance, enable cloud compliance, outbound internet, endpoints, cloud compliance internet, web browser connectivity, cloud compliance access, privacy, compliance, databases, database schemas, Oracle, SAP HANA, SQL Server, MongoDB, PostgreSQL
-summary: Complete a few steps to start scanning your database schemas with Cloud Compliance.
+keywords: cloud compliance, enable cloud compliance, outbound internet, endpoints, cloud compliance internet, web browser connectivity, cloud compliance access, privacy, compliance, databases, database schemas, Oracle, SAP HANA, SQL Server, MongoDB, PostgreSQL, Data Sense
+summary: Complete a few steps to start scanning your database schemas with Cloud Data Sense.
 ---
 
 = Scanning database schemas
@@ -13,7 +13,7 @@ summary: Complete a few steps to start scanning your database schemas with Cloud
 :imagesdir: ./media/
 
 [.lead]
-Complete a few steps to start scanning your database schemas with Cloud Compliance.
+Complete a few steps to start scanning your database schemas with Cloud Data Sense.
 
 == Quick start
 
@@ -24,10 +24,10 @@ Get started quickly by following these steps, or scroll down to the remaining se
 [role="quick-margin-para"]
 Ensure that your database is supported and that you have the information necessary to connect to the database.
 
-==== image:number2.png[Number 2] Deploy the Cloud Compliance instance
+==== image:number2.png[Number 2] Deploy the Cloud Data Sense instance
 
 [role="quick-margin-para"]
-link:task_deploy_cloud_compliance.html[Deploy Cloud Compliance^] if there isn't already an instance deployed.
+link:task_deploy_cloud_compliance.html[Deploy Cloud Data Sense^] if there isn't already an instance deployed.
 
 ==== image:number3.png[Number 3] Add the database server
 
@@ -41,11 +41,11 @@ Select the schemas that you want to scan.
 
 == Reviewing prerequisites
 
-Review the following prerequisites to make sure that you have a supported configuration before you enable Cloud Compliance.
+Review the following prerequisites to make sure that you have a supported configuration before you enable Cloud Data Sense.
 
 === Supported databases
 
-Cloud Compliance can scan schemas from the following databases:
+Cloud Data Sense can scan schemas from the following databases:
 
 * Amazon Relational Database Service (Amazon RDS)
 * MongoDB
@@ -59,20 +59,20 @@ CAUTION: The statistics gathering feature *must be enabled* in the database.
 
 === Database requirements
 
-Any database with connectivity to the Cloud Compliance instance can be scanned, regardless of where it is hosted. You just need the following information to connect to the database:
+Any database with connectivity to the Cloud Data Sense instance can be scanned, regardless of where it is hosted. You just need the following information to connect to the database:
 
 * IP Address or host name
 * Port
 * Service name (only for accessing Oracle databases)
 * Credentials that allow read access to the schemas
 +
-When choosing a user name and password, it’s important to choose one that has full read permissions to all the schemas and tables you want to scan. We recommend that you create a dedicated user for the Cloud Compliance system with all the required permissions.
+When choosing a user name and password, it’s important to choose one that has full read permissions to all the schemas and tables you want to scan. We recommend that you create a dedicated user for the Cloud Data Sense system with all the required permissions.
 
 *Note:* For MongoDB, a read-only Admin role is required.
 
 == Adding the database server
 
-You must have link:task_deploy_cloud_compliance.html[deployed an instance of Cloud Compliance in Cloud Manager already^].
+You must have link:task_deploy_cloud_compliance.html[deployed an instance of Cloud Data Sense in Cloud Manager already^].
 
 Add the database server where the schemas reside.
 
@@ -84,7 +84,7 @@ image:screenshot_compliance_add_db_server_button.png[A screenshot of the Scan Co
 .. Select the database type.
 .. Enter the port and the host name or IP address to connect to the database.
 .. For Oracle databases, enter the Service name.
-.. Enter the credentials so that Cloud Compliance can access the server.
+.. Enter the credentials so that Cloud Data Sense can access the server.
 .. Click *Add DB Server*.
 +
 image:screenshot_compliance_add_db_server_dialog.png[A screenshot of the Add DB Server page so you can identify the database.]
@@ -105,4 +105,4 @@ image:screenshot_compliance_select_schemas.png[A screenshot of the Scan Configur
 
 .Result
 
-Cloud Compliance starts scanning the database schemas that you enabled. If there are any errors, they’ll appear in the Status column, alongside the required action to fix the error.
+Cloud Data Sense starts scanning the database schemas that you enabled. If there are any errors, they’ll appear in the Status column, alongside the required action to fix the error.

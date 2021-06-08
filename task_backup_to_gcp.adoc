@@ -25,7 +25,7 @@ Get started quickly by following these steps or scroll down to the remaining sec
 * You're running Cloud Volumes ONTAP 9.7P5 or later in GCP.
 * You have a valid GCP subscription for the storage space where your backups will be located.
 * You have a service account in your Google Cloud Project that has the predefined Storage Admin role.
-* You have subscribed to the https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[Cloud Manager Marketplace Backup offering^], or you have purchased link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[and activated^] a Cloud Backup BYOL license from NetApp.
+* You have subscribed to the https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[Cloud Manager Marketplace Backup offering^], or you have purchased link:task_managing_licenses.html#manage-cloud-backup-licenses[and activated^] a Cloud Backup BYOL license from NetApp.
 
 ==== image:number2.png[Number 2] Enable Cloud Backup on your new or existing system
 
@@ -82,7 +82,7 @@ Cloud Backup is supported in all GCP regions https://cloud.netapp.com/cloud-volu
 License requirements::
 For Cloud Backup PAYGO licensing, a subscription through the https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[GCP Marketplace] is required before you enable Cloud Backup. Billing for Cloud Backup is done through this subscription. link:task_deploying_gcp.html[You can subscribe from the Details & Credentials page of the working environment wizard^].
 +
-For Cloud Backup BYOL licensing, you need the serial number from NetApp that enables you to use the service for the duration and capacity of the license. See link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[Adding and updating your Backup BYOL license^].
+For Cloud Backup BYOL licensing, you need the serial number from NetApp that enables you to use the service for the duration and capacity of the license. See link:task_managing_licenses.html#manage-cloud-backup-licenses[Managing your Backup BYOL license^].
 +
 And you need to have a Google subscription for the storage space where your backups will be located.
 
@@ -137,11 +137,12 @@ You can enable Cloud Backup at any time directly from the working environment.
 +
 image:screenshot_backup_cvo_enable.png[A screenshot that shows the Cloud Backup Settings button which is available after you select a working environment.]
 
-. Select the Google Cloud Project and region where you want the Google Cloud Storage bucket to be created for backups, and click *Next*. This can be a different Project than where the Cloud Volumes ONTAP system resides.
+. Select the Google Cloud Project and region where you want the Google Cloud Storage bucket to be created for backups, and click *Next*.
+// This can be a different Project and region than where the Cloud Volumes ONTAP system resides.
 +
 image:screenshot_backup_provider_settings_gcp.png[A screenshot that shows the cloud provider details when backing up volumes from a Cloud Volumes ONTAP system installed on GCP to a Google Cloud Storage bucket.]
 +
-Note that the Project must have a Service Account that has the predefined Storage Admin role, and that you cannot change the Project after the service has started.
+Note that the Project must have a Service Account that has the predefined Storage Admin role.
 
 . In the _Define Policy_ page, select the backup schedule and retention value and click *Next*.
 +

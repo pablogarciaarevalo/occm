@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: reference_private_data_categories.html
 keywords: personal files, personal data, sensitive personal files, sensitive personal data, categories, health data, ethnic origin, political opinions, gdpr, email address, credit card, ip address, iban, national ID, identifier, sex, criminal, compliance, privacy,
-summary: There are many types of private data that Cloud Compliance can identify in your volumes, Amazon S3 buckets, and databases. See the categories below.
+summary: There are many types of private data that Cloud Data Sense can identify in your volumes, Amazon S3 buckets, and databases. See the categories below.
 ---
 
 = Categories of private data
@@ -13,15 +13,15 @@ summary: There are many types of private data that Cloud Compliance can identify
 :imagesdir: ./media/
 
 [.lead]
-There are many types of private data that Cloud Compliance can identify in your volumes, Amazon S3 buckets, databases, and OneDrive folders. See the categories below.
+There are many types of private data that Cloud Data Sense can identify in your volumes, Amazon S3 buckets, databases, and OneDrive folders. See the categories below.
 
-TIP: If you need Cloud Compliance to identify other private data types, such as additional national ID numbers or healthcare identifiers, email ng-contact-cloud-compliance@netapp.com with your request.
+TIP: If you need Cloud Data Sense to identify other private data types, such as additional national ID numbers or healthcare identifiers, email ng-contact-data-sense@netapp.com with your request.
 
 == Types of personal data
 
-The personal data found in files can be general personal data or national identifiers. The third column identifies whether Cloud Compliance uses link:task_controlling_private_data.html#personal-data[proximity validation^] to validate its findings for the identifier.
+The personal data found in files can be general personal data or national identifiers. The third column identifies whether Cloud Data Sense uses link:task_controlling_private_data.html#personal-data[proximity validation^] to validate its findings for the identifier.
 
-Note that you can add to the list of personal data that is found in your files if you are scanning a database server. The _Data Fusion_ feature allows you to choose the additional identifiers that Cloud Compliance will look for in its' scans by selecting columns in a database table. See link:task_managing_data_fusion.html[Adding personal data identifiers using Data Fusion^] for details.
+Note that you can add to the list of personal data that is found in your files if you are scanning a database server. The _Data Fusion_ feature allows you to choose the additional identifiers that Cloud Data Sense will look for in its' scans by selecting columns in a database table. See link:task_managing_data_fusion.html[Adding personal data identifiers using Data Fusion^] for details.
 
 [cols="20,50,18",width=80%,options="header"]
 |===
@@ -70,7 +70,7 @@ Note that you can add to the list of personal data that is found in your files i
 
 == Types of sensitive personal data
 
-The sensitive personal data that Cloud Compliance can find in files includes the following:
+The sensitive personal data that Cloud Data Sense can find in files includes the following:
 
 // Civil Law Reference:: Data concerning a natural person’s civil law suits, offences, and procedures.
 Criminal Procedures Reference::	Data concerning a natural person’s criminal convictions and offenses.
@@ -85,7 +85,7 @@ Sex Life or Orientation Reference::	Data concerning a natural person’s sex lif
 
 == Types of categories
 
-Cloud Compliance categorizes your data as follows:
+Cloud Data Sense categorizes your data as follows:
 
 Finance::
 *	Balance Sheets
@@ -146,22 +146,22 @@ Metadata categories::
 
 == Types of files
 
-Cloud Compliance scans all files for category and metadata insights and displays all file types in the file types section of the dashboard.
+Cloud Data Sense scans all files for category and metadata insights and displays all file types in the file types section of the dashboard.
 
-But when Cloud Compliance detects Personal Identifiable Information (PII), or when it performs a DSAR search, only the following file formats are supported:
-.PDF, .DOCX, .DOC, .PPTX, .XLS, .XLSX, .CSV, .TXT, .RTF, and .JSON.
+But when Data Sense detects Personal Identifiable Information (PII), or when it performs a DSAR search, only the following file formats are supported:
+.CSV, .DCM, .DICOM, .DOC, .DOCX, .JSON, .PDF, .PPTX, .RTF, .TXT, .XLS, and .XLSX.
 
 == Accuracy of information found
 
-NetApp can't guarantee 100% accuracy of the personal data and sensitive personal data that Cloud Compliance identifies. You should always validate the information by reviewing the data.
+NetApp can't guarantee 100% accuracy of the personal data and sensitive personal data that Cloud Data Sense identifies. You should always validate the information by reviewing the data.
 
-Based on our testing, the table below shows the accuracy of the information that Cloud Compliance finds. We break it down by _precision_ and _recall_:
+Based on our testing, the table below shows the accuracy of the information that Data Sense finds. We break it down by _precision_ and _recall_:
 
-Precision:: The probability that what Cloud Compliance finds has been identified correctly. For example, a precision rate of 90% for personal data means that 9 out of 10 files identified as containing personal information, actually contain personal information. 1 out of 10 files would be a false positive.
+Precision:: The probability that what Data Sense finds has been identified correctly. For example, a precision rate of 90% for personal data means that 9 out of 10 files identified as containing personal information, actually contain personal information. 1 out of 10 files would be a false positive.
 
-Recall:: The probability for Cloud Compliance to find what it should. For example, a recall rate of 70% for personal data means that Cloud Compliance can identify 7 out of 10 files that actually contain personal information in your organization. Cloud Compliance would miss 30% of the data and it won’t appear in the dashboard.
+Recall:: The probability for Data Sense to find what it should. For example, a recall rate of 70% for personal data means that Data Sense can identify 7 out of 10 files that actually contain personal information in your organization. Data Sense would miss 30% of the data and it won’t appear in the dashboard.
 
-Cloud Compliance is in a Controlled Availability release and we are constantly improving the accuracy of our results. Those improvements will be automatically available in future Cloud Compliance releases.
+We are constantly improving the accuracy of our results. Those improvements will be automatically available in future Data Sense releases.
 
 [cols="25,20,20",width=80%,options="header"]
 |===

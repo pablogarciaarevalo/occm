@@ -21,17 +21,17 @@ A Connector is required to use any of the following features within Cloud Manage
 
 * Cloud Volumes ONTAP
 * On-premises ONTAP clusters
-* Cloud Compliance
+* Cloud Data Sense
 * Kubernetes
 * Cloud Backup
 * Monitoring
-* On-prem tiering
+* Tiering on-prem data
 * Global File Cache
 * Amazon S3 bucket discovery
 
 A Connector is *_not_* required for Azure NetApp Files, Cloud Volumes Service, or Cloud Sync.
 
-NOTE: While a Connector isn't required to set up and manage Azure NetApp Files, a Connector is required if you want to use Cloud Compliance to scan Azure NetApp Files data.
+NOTE: While a Connector isn't required to set up and manage Azure NetApp Files, a Connector is required if you want to use Cloud Data Sense to scan Azure NetApp Files data.
 
 == Supported locations
 

@@ -19,7 +19,7 @@ If you have a NetApp StorageGRID system and want to create your backups there, s
 
 TIP:: In most cases you'll use Cloud Manager for all backup and restore operations. However, starting with ONTAP 9.9.1 you can initiate volume backup operations of your on-premises ONTAP clusters using ONTAP System Manager. https://docs.netapp.com/us-en/ontap/task_cloud_backup_data_using_cbs.html[See how to use System Manager to back up your volumes to the cloud using Cloud Backup.^]
 
-A Beta feature released in January 2021 allows you to run Compliance scans on the backed up volumes from your on-premises systems. Typically, compliance scans are free up to 1 TB of data, and then a cost for the service is applied for data over 1 TB. When combining Backup and Compliance for your on-premises volumes, the cost for scans on those on-prem volumes is free. Learn more about how link:concept_cloud_compliance.html[Cloud Compliance^] can get your business applications and cloud environments privacy ready.
+A Beta feature released in January 2021 allows you to run compliance scans on the backed up volumes from your on-premises systems. Typically, compliance scans are free up to 1 TB of data, and then a cost for the service is applied for data over 1 TB. When combining Backup and Data Sense for your on-premises volumes, the cost for scans on those on-prem volumes is free. Learn more about how link:concept_cloud_compliance.html[Cloud Data Sense^] can get your business applications and cloud environments privacy ready.
 
 == Quick start
 
@@ -31,7 +31,7 @@ Get started quickly by following these steps, or scroll down to the remaining se
 * You have discovered the on-premises cluster and added it to a working environment in Cloud Manager. See link:task_discovering_ontap.html[Discovering ONTAP clusters^] for details.
 ** The cluster is running ONTAP 9.7P5 or later.
 ** The cluster has a SnapMirror license -- it is included as part of the PREM or Data Protection bundle.
-* You have subscribed to the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Azure^], the https://aws.amazon.com/marketplace/pp/B07QX2QLXX[AWS^], or the https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[Google^] Cloud Manager Marketplace Backup offering, or you have purchased link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[and activated^] a Cloud Backup BYOL license from NetApp.
+* You have subscribed to the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Azure^], the https://aws.amazon.com/marketplace/pp/B07QX2QLXX[AWS^], or the https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[Google^] Cloud Manager Marketplace Backup offering, or you have purchased link:task_managing_licenses.html#manage-cloud-backup-licenses[and activated^] a Cloud Backup BYOL license from NetApp.
 * You have a valid cloud provider subscription for the object storage space where your backups will be located.
 * For AWS and GCP, you need to have an account that has an access key and the required permissions so the ONTAP cluster can back up the data.
 
@@ -51,7 +51,7 @@ Select the provider and then enter the provider details. You also need to specif
 ==== image:number4.png[Number 4] Define the backup policy
 
 [role="quick-margin-para"]
-The default policy backs up volumes every day and retains the most recent 30 backup copies of each volume. Change to daily, weekly, or monthly backups, or select one of the system-defined policies that provide more options.
+The default policy backs up volumes every day and retains the most recent 30 backup copies of each volume. Change to daily, weekly, or monthly backups, or select one of the system-defined policies that provide more options. You can also change the number of backup copies to retain.
 
 [role="quick-margin-para"]
 image:screenshot_backup_onprem_policy.png[A screenshot that shows the Cloud Backup settings where you can choose the backup schedule and retention period.]
@@ -64,7 +64,7 @@ Identify which volumes you want to back up from the cluster.
 ==== image:number6.png[Number 6] Activate Compliance scans on the backed up volumes (optional)
 
 [role="quick-margin-para"]
-Choose whether you want to have Cloud Compliance scan the volumes that are backed up in the cloud.
+Choose whether you want to have Cloud Data Sense scan the volumes that are backed up in the cloud.
 
 ==== image:number7.png[Number 7] Restore your data, as needed
 
@@ -74,25 +74,37 @@ Choose to restore an entire backup to a new volume, or to restore individual fil
 [role="quick-margin-para"]
 See link:task_restore_backups.html[Restoring volume data from backup files^] for details.
 
+== Overview diagrams
+
+The following diagrams show each component when backing up an on-prem ONTAP system to object storage and the connections that you need to prepare between them.
+
+*Amazon S3 configuration:*
+
+image:diagram_cloud_backup_onprem_aws.png[A diagram showing how Cloud Backup communicates with the volumes on the source systems and the destination storage where the backup files are located.]
+
+Note that when the Cloud Restore instance is deployed in the cloud, it is located in the same subnet as the Connector.
+
+*Azure Blob configuration:*
+
+image:diagram_cloud_backup_onprem_azure.png[A diagram showing how Cloud Backup communicates with the volumes on the source systems and the destination storage where the backup files are located.]
+
+Note that when the Cloud Restore instance is deployed in the cloud, it is located in the same subnet as the Connector.
+
+*Google Cloud Storage configuration:*
+
+image:diagram_cloud_backup_onprem_google.png[A diagram showing how Cloud Backup communicates with the volumes on the source systems and the destination storage where the backup files are located.]
+
+Note that the Cloud Restore instance is not shown in this diagram because single-file restore is not currently supported in GCP.
+
 == Requirements
 
 Read the following requirements to make sure you have a supported configuration before you start backing up on-premises volumes to object storage.
 
-The following image shows each component when backing up an on-prem ONTAP system to Amazon S3 and the connections that you need to prepare between them:
-
-image:diagram_cloud_backup_onprem_aws.png[A diagram showing how Cloud Backup communicates with the volumes on the source systems and the destination storage where the backup files are located.]
-
-The following image shows each component when backing up an on-prem ONTAP system to Azure Blob and the connections that you need to prepare between them:
-
-image:diagram_cloud_backup_onprem_azure.png[A diagram showing how Cloud Backup communicates with the volumes on the source systems and the destination storage where the backup files are located.]
-
-The following image shows each component when backing up an on-prem ONTAP system to Google Cloud Storage and the connections that you need to prepare between them:
-
-image:diagram_cloud_backup_onprem_google.png[A diagram showing how Cloud Backup communicates with the volumes on the source systems and the destination storage where the backup files are located.]
-
 === Preparing your ONTAP clusters
 
-Your ONTAP clusters must meet the following requirements when backing up data to cloud storage.
+You need to discover your on-premises ONTAP clusters in Cloud Manager before you can start backing up volume data.
+
+link:task_discovering_ontap.html[Learn how to discover a cluster].
 
 ONTAP requirements::
 * ONTAP 9.7P5 and later.
@@ -118,12 +130,6 @@ When you set up Cloud Backup, you are prompted for the IPspace to use. You shoul
 +
 See how to http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-D4A9F825-77F0-407F-BFBD-D94372D6AAC1.html[configure DNS services for the SVM].
 * Update firewall rules, if necessary, to allow Cloud Backup service connections from ONTAP to object storage through port 443 and name resolution traffic from the storage VM to the DNS server over port 53 (TCP/UDP).
-
-=== Discovering an ONTAP cluster
-
-You need to discover your on-premises ONTAP clusters in Cloud Manager before you can start backing up volume data.
-
-link:task_discovering_ontap.html[Learn how to discover a cluster].
 
 === Creating or switching Connectors
 
@@ -163,7 +169,7 @@ You can create backups from on-premises systems to the public cloud in all regio
 
 For Cloud Backup PAYGO licensing, you'll need a subscription to the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Azure^], the https://aws.amazon.com/marketplace/pp/B07QX2QLXX[AWS^], or the https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[Google^] Cloud Manager Marketplace Backup offering before you enable Cloud Backup. Billing for Cloud Backup is done through this subscription.
 
-For Cloud Backup BYOL licensing, you need the serial number from NetApp that enables you to use the service for the duration and capacity of the license. See link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[Adding and updating your Backup BYOL license^].
+For Cloud Backup BYOL licensing, you do not need a subscription. You need the serial number from NetApp that enables you to use the service for the duration and capacity of the license. See link:task_managing_licenses.html#manage-cloud-backup-licenses[Managing your Backup BYOL license^].
 
 And you need to have a subscription from your cloud provider for the object storage space where your backups will be located.
 
@@ -213,11 +219,61 @@ When you are using Amazon S3, you must configure permissions for Cloud Manager t
 +
 See the https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html[AWS Documentation: Creating a Role to Delegate Permissions to an IAM User^] for details.
 
+. Provide the following permissions for the Cloud Restore instance:
++
+[source,json]
+          "Action": [
+              "ec2:DescribeInstanceTypeOfferings",
+              "ec2:StartInstances",
+              "ec2:StopInstances",
+              "ec2:TerminateInstances"
+          ],
+
+. If your virtual or physical network uses a proxy server for internet access, ensure that the Cloud Restore instance has outbound internet access to contact the following endpoints.
++
+[cols="43,57",options="header"]
+|===
+| Endpoints
+| Purpose
+
+| \http://amazonlinux.us-east-1.amazonaws.com/2/extras/docker/stable/x86_64/4bf88ee77c395ffe1e0c3ca68530dfb3a683ec65a4a1ce9c0ff394be50e922b2/ | CentOS package for the Cloud Restore Instance AMI.
+
+|
+\http://cloudmanagerinfraprod.azurecr.io
+\https://cloudmanagerinfraprod.azurecr.io
+
+| Cloud Restore Instance image repository.
+
+|===
+
 . Create or locate an access key.
 +
 Cloud Backup passes the access key on to the ONTAP cluster. The credentials are not stored in the Cloud Backup service.
 +
 See the https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html[AWS Documentation: Managing Access Keys for IAM Users^] for details.
+
+=== Preparing Azure Blob storage for backups
+
+The Cloud Restore virtual machine requires outbound internet access. If your virtual or physical network uses a proxy server for internet access, ensure that the instance has outbound internet access to contact the following endpoints.
+
+[cols="43,57",options="header"]
+|===
+| Endpoints
+| Purpose
+
+|
+\http://olcentgbl.trafficmanager.net
+\https://olcentgbl.trafficmanager.net
+
+| Provides CentOS packages for the Cloud Restore virtual machine.
+
+|
+\http://cloudmanagerinfraprod.azurecr.io
+\https://cloudmanagerinfraprod.azurecr.io
+
+| Cloud Restore virtual machine image repository.
+
+|===
 
 === Preparing Google Cloud Storage for backups
 
@@ -288,29 +344,29 @@ image:screenshot_backup_select_volumes.png[A screenshot of selecting the volumes
 
 . Click *Activate Backup* and Cloud Backup starts taking the initial backups of your volumes.
 +
-When creating backup files in AWS or Azure, you are prompted whether you want to run compliance scans on the backed up volumes. Cloud Compliance scans are free when you run them on the backed up volumes (except for the link:concept_cloud_compliance.html#cost[cost of the deployed Cloud Compliance instance^]).
+When creating backup files in AWS or Azure, you are prompted whether you want to run compliance scans on the backed up volumes. Cloud Data Sense scans are free when you run them on the backed up volumes (except for the link:concept_cloud_compliance.html#cost[cost of the deployed Cloud Data Sense instance^]).
 +
-image:screenshot_compliance_on_backups.png[A screenshot of the page where you can choose to activate Cloud Compliance on your backed up volumes.]
+image:screenshot_compliance_on_backups.png[A screenshot of the page where you can choose to activate Cloud Data Sense on your backed up volumes.]
 
-. Click *Go to Compliance* to activate compliance scans on the volumes. (If you choose *Close* and not to scan these backed up volumes, you can always link:task_getting_started_compliance.html#scanning-backup-files-from-on-premises-ontap-systems[enable this functionality^] later from Cloud Compliance.)
+. Click *Go to Compliance* to activate compliance scans on the volumes. (If you choose *Close* and not to scan these backed up volumes, you can always link:task_getting_started_compliance.html#scanning-backup-files-from-on-premises-ontap-systems[enable this functionality^] later from Cloud Data Sense.)
 
-* If an instance of Cloud Compliance is already deployed in your environment, you are directed to the Configuration page to select the volumes you want to scan in each on-premises working environment that has backups. See link:task_getting_started_compliance.html#enabling-cloud-compliance-in-your-working-environments[how to choose the volumes^].
+* If an instance of Cloud Data Sense is already deployed in your environment, you are directed to the Configuration page to select the volumes you want to scan in each on-premises working environment that has backups. See link:task_getting_started_compliance.html#enabling-cloud-data-sense-in-your-working-environments[how to choose the volumes^].
 +
 image:screenshot_compliance_onprem_backups.png[A screenshot of the Compliance page to select volumes you want to scan.]
-* If Cloud Compliance has not been deployed, you are directed to the Compliance page where you can choose to deploy Compliance in the cloud or in your premises. We strongly recommend deploying it in the cloud. Go link:task_deploy_cloud_compliance.html[here^] for installation requirements and instructions.
+* If Cloud Data Sense has not been deployed, you are directed to the Compliance page where you can choose to deploy Compliance in the cloud or in your premises. We strongly recommend deploying it in the cloud. Go link:task_deploy_cloud_compliance.html[here^] for installation requirements and instructions.
 +
-image:screenshot_cloud_compliance_deploy_options.png[A screenshot of the Compliance page to choose how you want to deploy Cloud Compliance.]
+image:screenshot_cloud_compliance_deploy_options.png[A screenshot of the Compliance page to choose how you want to deploy Cloud Data Sense.]
 +
 After you have deployed Compliance you can choose the volumes you want to scan as described above.
 
 .Result
 
-Cloud Backup backs up your volumes from the on-premises ONTAP system, and optionally, Cloud Compliance runs compliance scans on the backed up volumes.
+Cloud Backup backs up your volumes from the on-premises ONTAP system, and optionally, Cloud Data Sense runs compliance scans on the backed up volumes.
 
 .What's next?
 
 You can link:task_managing_backups.html[start and stop backups for volumes or change the backup schedule^] and you can link:task_restore_backups.html[restore entire volumes or individual files from a backup file^].
 
-You can also link:task_controlling_private_data.html[view the results of the compliance scans^] and review other features of Cloud Compliance that can help you understand data context and identify sensitive data in your organization.
+You can also link:task_controlling_private_data.html[view the results of the compliance scans^] and review other features of Cloud Data Sense that can help you understand data context and identify sensitive data in your organization.
 
-NOTE: The scan results are not available immediately because Cloud Backup has to finish creating the backups before Cloud Compliance can start compliance scans.
+NOTE: The scan results are not available immediately because Cloud Backup has to finish creating the backups before Cloud Data Sense can start compliance scans.
