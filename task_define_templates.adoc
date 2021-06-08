@@ -5,7 +5,7 @@ keywords: templates, resource templates, application templates, volume templates
 summary: Select one or more of the NetApp-provided "actions" and quickly build an application template that your organization can use to start optimizing the creation of resources.
 ---
 
-= Building application templates for your organization
+= Build application templates for your organization
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -22,15 +22,15 @@ Get started quickly by following these steps, or scroll down to the remaining se
 ==== image:number1.png[Number 1] Verify required prerequisites
 
 [role="quick-margin-list"]
-* Before users can create a Cloud Volumes ONTAP or Azure NetApp Files volume using a template, make sure they have access to a Cloud Volumes ONTAP or Azure NetApp Files Working Environment where the volume will be deployed.
+* Before users can create a volume for a Cloud Volumes ONTAP, on-premises ONTAP, or Azure NetApp Files system using a template, make sure they have access to an appropriate working environment where the volume will be deployed.
 
 [role="quick-margin-list"]
-* If you plan to add a Cloud service "action" to your template, such as link:concept_backup_to_cloud.html[Cloud Backup^], ensure that your environment has an active and licensed Cloud Backup service.
+* If you plan to add a Cloud service "action" to your template, such as link:concept_backup_to_cloud.html[Cloud Backup^] or link:concept_cloud_compliance.html[Cloud Data Sense^], ensure that the service is active and licensed in your environment.
 
 ==== image:number2.png[Number 2] Launch the Application Templates service
 
 [role="quick-margin-para"]
-Select the *AppTemplate* service and select the template.
+Select the *AppTemplate* service, click the *Editor* tab, and select the template.
 
 ==== image:number3.png[Number 3] Build the template by selecting "actions" and defining parameters
 
@@ -45,13 +45,19 @@ Read the following requirements to make sure that you have a supported configura
 
 * When creating a Cloud Volumes ONTAP volume template, make sure you have a Cloud Volumes ONTAP working environment available for your users. See how to launch a Cloud Volumes ONTAP system in link:task_deploying_otc_aws.html[AWS^], link:task_deploying_otc_azure.html[Azure^], or in link:task_deploying_gcp.html[GCP^].
 
+* When creating an on-premises ONTAP volume template, make sure you have an on-premises ONTAP working environment available for your users. See how to link:task_discovering_ontap.html[discover an on-premises ONTAP system^] in Cloud Manager.
+
 * When creating an Azure NetApp Files volume template, make sure you have an Azure NetApp Files working environment available for your users. See how to link:task_manage_anf.html[create an Azure NetApp Files working environment^] in Cloud Manager.
 
-* If you plan to enable Cloud Backup on Cloud Volumes ONTAP volumes, ensure that your environment has an active and licensed Cloud Backup service.
+* If you plan to enable Cloud Backup in the template, ensure that your environment has an active and licensed Cloud Backup service.
 
-* If you plan to enable Cloud Compliance on Cloud Volumes ONTAP or Azure NetApp Files volumes, ensure that your environment has an active and licensed Cloud Compliance service.
+* If you plan to enable Cloud Data Sense in the template, ensure that your environment has an active and licensed Cloud Data Sense service.
 
-== Special template controls ==
+== Template features
+
+There are certain features you can use when building a template to help your users to easily create resources from the template.
+
+=== Special template controls
 
 Before you start creating your template, you should understand some special options that you can set when pre-populating a value for a parameter in a template.
 
@@ -62,17 +68,17 @@ image:screenshot_template_options.png[A screenshot of the editable and drift on 
 Check this box to let the storage admin override the pre-populated value you have entered in the template. This gives the storage admin a suggestion for what the value should be, but it allows them to customize the value when creating the resource.
 
 When unchecked, the user can't change the value and the hard-coded value in the template is always used when the admin deploys a resource.
-//
-// *Drift On checkbox*
-//
-// Check this box so that Cloud Manager monitors the hard-coded value you entered for a parameter when a resource is created with the template. If Cloud Manager later sees that an admin has changed the parameter value so that it no longer aligns with the template definition, you will receive an email notification about the change.
-//
-// When unchecked, the user can change the value to any value after the resource has been created.
+
+*Drift checkbox*
+
+Check this box so that Cloud Manager monitors the hard-coded value you entered for a parameter when a resource is created with the template. Later, you can run a Drift Report to see which fields configured with Drift are no longer compliant with the template settings.
+// If Cloud Manager later sees that an admin has changed the parameter value so that it no longer aligns with the template definition, you will receive an email notification about the change.
+
+When unchecked, the user can change the value to any value after the resource has been created.
 //
 // By design, when drift is enabled (on) for a parameter value, the value is also not "editable" when the admin deploys a resource using the template.
-//
-// *One additional thing to know about drift:*
-// For the drift feature to work, after you have defined drift for some parameters in the template, you must enable the drift feature for the template. This is the last step when creating a template. Drift doesn't work if it is enabled for a parameter but has not been enabled on the template.
+
+NOTE: For the drift feature to work, after you have defined drift for some parameters in the template, you must enable the drift feature for the template. This is the last step when creating a template. Drift doesn't work if it is enabled for a parameter but has not been enabled on the template.
 
 *Using a regular expression (regex) in fields*
 
@@ -82,28 +88,59 @@ image:screenshot_template_regex.png[A screenshot of using a regex to define the 
 
 As an example, if you enter "^[a-zA-Z][0-9a-zA-Z_]{0,149}$" as the regex for the volume name, it means that "_the name should start with an alphabetic character, it can contain only numbers, letters, or the underscore, and it should be 150 or fewer characters in length_".
 
-== Passing values between template actions
+=== Pass values between template actions
 
 Templates have the ability to use information from a previous action to populate a field in a future action. For example, when defining the name of the volume that will have Cloud Backup functionality enabled, you can instruct the Backup action to use the value the storage admin entered as the name of the volume from the Create Cloud Volumes ONTAP action.
 
-There are two types of information that the AppTemplate service can use from previous actions:
+There are three types of information that the AppTemplate service can use:
 
 * Input value - This is the actual value the storage admin entered into a field in a previous template action.
 * Output value - This is the value Cloud Manager generates after creating a resource from a previous template action.
+* Enter your own value - This is a value that you enter; it is not accessed from a previous action in the template.
 
-For example, to enable Compliance on a volume, the Cloud Compliance service needs both the "volume name" that the storage admin enters (the Input value), and the "volume uuid" that Cloud Manager generates when it creates the volume (the Output value).
+For example, to enable compliance scanning on a volume, the Cloud Data Sense service needs both the "volume name" that the storage admin enters (the Input value), and the "volume uuid" that Cloud Manager generates when it creates the volume (the Output value).
 
-The following illustration shows how to enter this information in the Cloud Compliance action section of the template.
+The following illustration shows how to enter this information in the Cloud Data Sense action section of the template.
 
 image:screenshot_template_variable_input_output.png[An illustration showing how to use a value entered in a previous action to populate a field in another action.]
-//
-// The following illustration shows how to enter this information in the Backup action section of the template.
-//
-// image:screenshot_template_variable_input.png[An illustration showing how to use a value entered in a previous action to populate a field in another action.]
-//
-// At this time there are no use cases for selecting an "Output" operation, so the "Input" operation is the only option you can currently use.
 
-== Creating a template for a Cloud Volumes ONTAP volume
+=== Use conditions to perform different actions based on logic statements
+
+Conditions tell the template to execute different actions depending on whether the condition is true or false when the storage admin runs the template.
+
+For example, you may have guideline that if a volume has a capacity larger than 50 GB then Cloud Backup is required to be enabled on that volume. If the volume has a smaller capacity, then Cloud Backup is not enabled. You can implement this in your template as shown below.
+
+image:screenshot_template_condition_example.png[A screenshot showing how conditions may be used in your template to conditionally enable Cloud Backup.]
+
+Conditions consist of two parts:
+
+* Rules - The item you are checking for being either true or false.
+* And/Or statement - Allows you to use multiple rules to further refine whether additional actions are added.
+
+A Rule is made up of three parts:
+
+*Source field* - The location from which you will get the value to compare.
+
+* Get input value from action - The actual value the storage admin entered into a field in a previous template action.
+* Get output value from action - The value Cloud Manager generated after creating a resource from a previous template action.
+* Enter value - This is a value that you enter; it is not accessed from a previous action in the template. This can be a value from a resource that already exists; for example an existing volume.
+
+*Operator* - The operator used for the comparison. The options are *Equal*, *Not Equal*, *Greater Than*, *Less Than*, *Greater Than or Equal*, *Less Than or Equal*.
+
+*Field value* - The actual value you are comparing. The options are the same as those for the _Source field_.
+
+An And/Or statement enables you to conditionally add more actions for users when they run the template based on whether multiple rules are evaluated as True or False. *And* requires all rules to be true or false, and *Or* requires just one of the rules needs to be true or false.
+
+When using both an And and Or statement with your rules, the evaluation process follows standard mathematical order where “AND” precedes “OR”. For example:
+
+* <Rule1> OR <Rule2> AND <Rule3>
++
+This statement is evaluated in the following order:
+<Rule1> OR (<Rule2> AND <Rule3>)
+
+== Examples of creating different types of templates
+
+=== Create a template for a Cloud Volumes ONTAP volume
 
 See link:task_provisioning_storage.html#creating-flexvol-volumes[how to provision Cloud Volumes ONTAP volumes^] for details about all the parameters you need to complete in the Cloud Volumes ONTAP volume template.
 
@@ -119,7 +156,7 @@ Create daily backups with a retention value of 30 copies.
 
 .Steps
 
-. Select the *AppTemplate* service and click *Add new template*.
+. Select the *AppTemplate* service, click the *Templates* tab, and click *Add New Template*.
 +
 The _Select_a Template_ page is displayed.
 +
@@ -130,6 +167,12 @@ image:screenshot_create_template_primary_action_cvo.png[A screenshot showing how
 The _Create Volume in Cloud Volumes ONTAP Action Definition_ page is displayed.
 +
 image:screenshot_create_template_define_action_cvo.png[A screenshot showing a blank CVO template that you need to fill in.]
+
+. *Context:* Enter the Cloud Volumes ONTAP working environment context; if required.
++
+When users launch the template from an existing working environment, this information gets filled in automatically.
++
+When users launch the template from the Templates Dashboard (not in a working environment context), then they need to select the working environment and the SVM where the volume will be created. That's why these fields are marked as "Editable".
 
 . *Details:* Enter the volume name and size.
 +
@@ -153,7 +196,7 @@ For example, you could specify that "db" be a required prefix, suffix, or contai
 
 . *Disk Type:* Choose the cloud storage provider and the type of disk. For some disk selections you can also select a minimum and maximum IOPS or Throughput (MB/s) value; basically defining a certain Quality of Service (QoS).
 
-. *Protocol:* Select *NFS* or *SMB* to set the protocol of the volume. And then the provide the protocol details.
+. *Protocol Options:* Select *NFS* or *SMB* to set the protocol of the volume. And then the provide the protocol details.
 +
 [cols=2*,options="header",cols="25,75"]
 
@@ -183,13 +226,13 @@ For example, you could specify that "db" be a required prefix, suffix, or contai
 
 |===
 
-. *Tiering Policy:* Choose the tiering policy that you would like applied to the volume, or set this to "None" if you do not want to tier cold data from this volume to object storage.
+. *Tiering:* Choose the tiering policy that you would like applied to the volume, or set this to "None" if you do not want to tier cold data from this volume to object storage.
 +
 See link:concept_data_tiering.html#volume-tiering-policies[volume tiering policies^] for an overview, and see link:task_tiering.html[Tiering inactive data to object storage^] to make sure your environment is set up for tiering.
 
 . Click *Apply* after you have defined the parameters needed for this action.
 +
-If the template values are correctly completed, a green box is shown around the "Create Volume in Cloud Volumes ONTAP" box.
+If the template values are correctly completed, a green checkmark is added to the "Create Volume in Cloud Volumes ONTAP" box.
 
 . Click the *Enable Cloud Backup* box and the _Enable Cloud Backup Action Definition_ dialog is displayed so you can fill in the Cloud Backup details.
 +
@@ -197,26 +240,25 @@ image:screenshot_create_template_add_action.png[A screenshot showing additional 
 
 . Define the backup policy to create daily backups with a 30-day retention value.
 
-. Below the Volume Name field there are three fields you use to indicate which volume will have backup enabled. See <<Passing values between template actions,how to complete these fields>>.
+. Below the Volume Name field there are three fields you use to indicate which volume will have backup enabled. See <<Pass values between template actions,how to complete these fields>>.
 
 . Click *Apply* and the Cloud Backup dialog is saved.
 
 . Enter the template name *CVO volume for databases* (for this example) in the top left.
 
-. Click *Template settings* if you want to provide a more detailed description so that this template can be distinguished from other similar templates, and then click *Apply*.
-//
-//_Configure Drift_ page is displayed. In the future this page will allow you to choose whether the Drift feature should be applied to the template. This will allow Cloud Manager to monitor the hard-coded values you entered for parameters when creating this template.
-// . In the _Configure Drift_ page, choose whether the Drift feature should be applied to the template so that Cloud Manager monitors the hard-coded values you entered for parameters when creating this template.
+. Click *Settings & Drift* to provide a more detailed description so that this template can be distinguished from other similar templates, and so you can enable Drift for the overall template, and then click *Apply*.
++
+Drift allows Cloud Manager to monitor the hard-coded values you entered for parameters when creating this template.
 
 . Click *Save Template*.
 
 .Result
 
-The template is created and you are returned to the Template Dashboard where your new template appears.
+The template is created and you are returned to the Templates Dashboard where your new template appears.
 
 See <<What to do after you have created the template,what you should tell your users about templates>>.
 
-== Creating a template for an Azure NetApp Files volume
+=== Create a template for an Azure NetApp Files volume
 
 Creating a template for an Azure NetApp Files volume is done in the same manner as creating a template for a Cloud Volumes ONTAP volume.
 
@@ -224,7 +266,7 @@ See link:task_manage_anf_volumes.html#creating-volumes[how to provision Azure Ne
 
 .Steps
 
-. Select the *AppTemplate* service and click *Add new template*.
+. Select the *AppTemplate* service, click the *Templates* tab, and click *Add New Template*.
 +
 The _Select_a Template_ page is displayed.
 +
@@ -235,6 +277,12 @@ image:screenshot_create_template_primary_action_anf.png[A screenshot showing how
 The _Create Volume in Azure NetApp Files Action Definition_ page is displayed.
 +
 image:screenshot_create_template_define_action_anf.png[A screenshot showing a blank ANF template that you need to fill in.]
+
+. *Context:* Enter the Cloud Volumes ONTAP working environment context; if required.
++
+When users launch the template from an existing working environment, this information gets filled in automatically.
++
+When users launch the template from the Templates Dashboard (not in a working environment context), then they need to select the working environment where the volume will be created. That's why these fields are marked as "Editable".
 
 . *Details:* Enter the details for a new or an existing Azure NetApp Files account.
 +
@@ -300,18 +348,113 @@ For example, you could specify that "db" be a required prefix, suffix, or contai
 
 . *Snapshot Copy:* Enter the Snapshot ID for an existing volume Snapshot if you want this new volume to be created using characteristics from an existing volume.
 
-. Click *Next* after you have defined the parameters needed for this action.
-
-. Click *Next* as there are no additional Actions available at this time for ANF volumes.
+. Click *Apply* after you have defined the parameters needed for this action.
 
 . Enter the name you want to use for the template in the top left.
 
-. Click *Template settings* if you want to provide a more detailed description so that this template can be distinguished from other similar templates, and then click *Apply*.
+. Click *Settings & Drift* to provide a more detailed description so that this template can be distinguished from other similar templates, and so you can enable Drift for the overall template, and then click *Apply*.
++
+Drift allows Cloud Manager to monitor the hard-coded values you entered for parameters when creating this template.
 
-. In the future the _Configure Drift_ page will allow you to choose whether the Drift feature should be applied to the template. This will allow Cloud Manager to monitor the hard-coded values you entered for parameters when creating this template.
-// . In the _Configure Drift_ page, choose whether the Drift feature should be applied to the template so that Cloud Manager monitors the hard-coded values you entered for parameters when creating this template.
+. Click *Save Template*.
 
-. Click *Create Template*.
+.Result
+
+The template is created and you are returned to the Templates Dashboard where your new template appears.
+
+See <<What to do after you have created the template,what you should tell your users about templates>>.
+
+=== Create a template for an on-premises ONTAP volume
+
+See link:task_provisioning_ontap.html#creating-volumes-for-ontap-clusters[how to provision on-premises ONTAP volumes^] for details about all the parameters you need to complete in the on-premises ONTAP volume template.
+
+.Steps
+
+. Select the *AppTemplate* service, click the *Templates* tab, and click *Add New Template*.
++
+The _Select_a Template_ page is displayed.
++
+image:screenshot_create_template_primary_action_blank.png[A screenshot showing how to select the primary action that will be performed using this template.]
+
+. Select *Blank template* and click *Get Started*.
++
+The _Add New Action_ page is displayed.
++
+image:screenshot_create_template_primary_action_onprem.png[A screenshot showing how to select the primary action from the Add New Action page.]
+
+. Select *Create Volume in On-Premises ONTAP* as the type of resource you want to create, and click *Apply*.
++
+The _Create Volume in On-Premises ONTAP Action Definition_ page is displayed.
++
+image:screenshot_create_template_define_action_onprem.png[A screenshot showing a blank onprem ONTAP template that you need to fill in.]
+
+. *Context:* Enter the on-premises ONTAP working environment context; if required.
++
+When users launch the template from an existing working environment, this information gets filled in automatically.
++
+When users launch the template from the Templates Dashboard (not in a working environment context), then they need to select the working environment, the SVM, and the aggregate where the volume will be created.
+
+. *Details:* Enter the volume name and size.
++
+[cols=2*,options="header",cols="25,75"]
+
+|===
+| Field
+| Description
+
+| Volume Name | Click in the field and select one of the 5 options. You can let the admin enter any name by selecting *Free Text*, or you can specify that the volume name must have a certain prefix or suffix, that it _contains_ certain characters, or that it follows rules from a regular expression (regex) you enter.
+
+For example, you could specify that "db" be a required prefix, suffix, or contains; requiring the user to add volume names like "db_vol1", "vol1_db", or "vol_db_1".
+
+| Volume Size | You can specify a range of allowable values, or you can specify a fixed size. This value is in GB. For our example we can add a fixed value *100*.
+
+|===
+
+. *Protection:* Choose whether this volume will have Snapshot copies created by selecting "Default" or some other policy, or choose "None" if you do not want to create Snapshot copies.
+
+. *Usage Profile:* Choose whether or not NetApp storage efficiency features are applied to the volume. This includes Thin Provisioning, Deduplication, and Compression. For our example, keep storage efficiency enabled.
+
+. *Protocol Options:* Select *NFS* or *SMB* to set the protocol of the volume. And then the provide the protocol details.
++
+[cols=2*,options="header",cols="25,75"]
+
+|===
+| NFS Fields
+| Description
+
+| Access Control | Choose whether access controls are needed to access the volume.
+
+| Export Policy | Create an export policy to define the clients in the subnet that can access the volume.
+
+| NFS Version | Select the NFS version for the volume: either _NFSv3_ or _NFSv4_, or you can select both.
+
+|===
++
+[cols=2*,options="header",cols="25,75"]
+
+|===
+| SMB Fields
+| Description
+
+| Share Name | Click in the field and select one of the 5 options. You can let the admin enter any name (Free Text) or you can specify that the share name must have a certain prefix or suffix, that it _contains_ certain characters, or that it follows rules from a regular expression (regex) you enter.
+
+| Permissions | Select the level of access to a share for users and groups (also called access control lists, or ACLs).
+
+| Users / Groups | Specify local or domain Windows users or groups, or UNIX users or groups. If you specify a domain Windows user name, you must include the user's domain using the format domain\username.
+
+|===
+
+. Click *Apply* after you have defined the parameters needed for this action.
++
+If the template values are correctly completed, a green checkmark is added to the "Create Volume in On-Premises ONTAP" box.
+
+. Enter the template name in the top left.
+
+. Click *Settings & Drift* to provide a more detailed description so that this template can be distinguished from other similar templates, and so you can enable Drift for the overall template, and then click *Apply*.
++
+Drift allows Cloud Manager to monitor the hard-coded values you entered for parameters when creating this template.
+
+. Click *Save Template*.
 
 .Result
 
@@ -323,14 +466,12 @@ See <<What to do after you have created the template,what you should tell your u
 
 After you have created a template, you should inform your storage administrators to use the template when creating new volumes.
 
-Your users should select *Add Volume From Template* when adding a volume to a Working Environment in the future. The selection is available from the _Working Environment_ page, and from the _Volume Details_ page. See link:task_provisioning_storage.html#creating-volumes-from-templates[how to provision Cloud Volumes ONTAP volumes^] or link:task_manage_anf_volumes.html#creating-volumes-from-templates[how to provision Azure NetApp Files volumes^] using templates.
+You can point them to link:task_run_templates.html[Creating resources using templates] for details.
 
-image:screenshot_template_add_vol_from.png[Two screenshots showing how users can create new volumes from a template.]
-
-== Editing and deleting a template
+== Edit or delete a template
 
 You can modify a template if you need to change any of the parameters. After you save your changes, all future resources created from the template will use the new parameter values.
 
-You can also delete a template if you no longer need it. Deleting a template does not affect any of the resources that were created with the template.
+You can also delete a template if you no longer need it. Deleting a template does not affect any of the resources that were created with the template. However, no Drift compliance checking can be done after the template is deleted.
 
 image:screenshot_template_edit_remove.png[A screenshot showing how to modify a template or delete a template.]
