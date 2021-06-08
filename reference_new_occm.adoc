@@ -21,7 +21,11 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 == Cloud Manager 3.9.7 update (7 June 2021)
 
-A new Cloud Sync enhancement is available.
+* <<Cloud Sync support for storage classes in Google Cloud>>
+* <<Cloud Tiering enhancements>>
+* <<Cloud Backup enhancements>>
+* <<Application Templates enhancements>>
+* <<Cloud Data Sense (Cloud Compliance) enhancements>>
 
 === Cloud Sync support for storage classes in Google Cloud
 
@@ -32,7 +36,38 @@ When a Google Cloud Storage bucket is the target in a sync relationship, you can
 * Coldline
 * Archive
 
-== Cloud Manager 3.9.7 update (6 June 2021)
+=== Cloud Tiering enhancements
+
+* In earlier releases you could transition tiered data from the Standard storage class to another storage class after 30 days when using Amazon S3 or Google Cloud object storage. This release adds some new functionality:
+
+** You can choose the number of days when tiered data will move to a more cost-effective tier. This is called data "life cycle management".
+** Azure Blob now supports the _Cool_ access tier.
+** Google Cloud Storage supports moving tiered data to multiple storage tiers over time. For example, you can move tiered data from the _Standard_ class to the _Nearline_ class after 45 days, and then to the _Coldline_ class after 75 days, and then to the _Archive_ class after 270 days.
+
+* Now you can proactively move data back to the performance tier from the cloud tier if you want to stop using tiering on a volume, or if you decide to keep all user data on the performance tier, but keep Snapshot copies on the cloud tier. This capability is available when using ONTAP 9.8 and greater.
++
+See how to link:task_managing_tiering.html#migrating-data-from-the-cloud-tier-back-to-the-performance-tier[migrate data back to the performance tier].
+
+=== Cloud Backup enhancements
+
+* Two known limitations for backing up data protection (DP) volumes have been resolved. Your systems must have ONTAP 9.8 or greater installed:
+
+** Before, cascaded backup worked only if the SnapMirror relationship type was Mirror-Vault or Vault. Now you can make backups if the relationship type is MirrorAllSnapshots.
+** Cloud Backup now can use any label for the backup as long as it is configured in the SnapMirror policy. The restriction of requiring labels with the names daily, weekly, or monthly is gone.
+
+=== Application Templates enhancements
+
+* A new feature enables you to conditionally enable certain actions when the user is running the template.
++
+For example, if a Cloud Volumes ONTAP volume is created with NetApp storage efficiency enabled, then Cloud Backup is also enabled on that volume. If storage efficiency is not enabled, then Cloud Backup is not enabled.
+
+* You can now create a volume on an on-premises ONTAP system using templates.
+
+* New functionality called "drift" has been added as an option when creating your templates.
++
+This feature enables Cloud Manager to monitor the hard-coded values you entered for a parameter in a template. After a storage admin has created a volume using that template, if Cloud Manager later sees that the parameter value has been changed so that it no longer aligns with the template definition, you can see all the volumes that have "drifted" from the designed template. In this manner you can identify these volumes and make changes to bring them back into compliance.
+
+* Now you can run a template from the Template Dashboard instead of having to open a working environment to launch the template there.
 
 === Cloud Data Sense (Cloud Compliance) enhancements
 
