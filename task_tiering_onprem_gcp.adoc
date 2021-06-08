@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_tiering_onprem_gcp.html
 keywords: data tiering, fabricpool, cloud tiering, tiering cold data, tiering inactive data, tiering aff, tiering fas, tiering ontap, tiering volumes, tier data, tier cold data, tier fas, tier aff, tier ontap, google, gcp, google cloud storage
-summary: Free space on your on-prem ONTAP clusters by tiering data to Google Cloud Storage. Data tiering is powered by NetApp's Cloud Tiering service.
+summary: Free space on your on-prem ONTAP clusters by tiering inactive data to Google Cloud Storage.
 ---
 
 = Tiering data from on-premises ONTAP clusters to Google Cloud Storage
@@ -13,7 +13,7 @@ summary: Free space on your on-prem ONTAP clusters by tiering data to Google Clo
 :imagesdir: ./media/
 
 [.lead]
-Free space on your on-prem ONTAP clusters by tiering data to Google Cloud Storage. Data tiering is powered by NetApp's Cloud Tiering service.
+Free space on your on-prem ONTAP clusters by tiering inactive data to Google Cloud Storage.
 
 == Quick start
 
@@ -33,7 +33,7 @@ You need the following:
 ==== image:number2.png[number2] Set up tiering
 
 [role="quick-margin-para"]
-In Cloud Manager, select an on-prem working environment, click *Enable* and follow the prompts to tier data to Google Cloud Storage.
+In Cloud Manager, select an on-prem working environment, click *Enable*, and follow the prompts to tier data to Google Cloud Storage.
 
 ==== image:number3.png[number 3] Set up licensing
 
@@ -75,11 +75,9 @@ Although a Google Cloud Interconnect provides better performance and lower data 
 +
 A connection between the cluster and the Cloud Tiering service is not required.
 
-* An intercluster LIF is required on each ONTAP node that hosts tiered volumes. The LIF must be associated with the _IPspace_ that ONTAP should use to connect to object storage.
+* An intercluster LIF is required on each ONTAP node that hosts the volumes you want to tier. The LIF must be associated with the _IPspace_ that ONTAP should use to connect to object storage.
 +
-IPspaces enable network traffic segregation, allowing for separation of client traffic for privacy and security. http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-69120CF0-F188-434F-913E-33ACB8751A5D.html[Learn more about IPspaces^].
-+
-When you set up data tiering, Cloud Tiering prompts you for the IPspace to use. You should choose the IPspace that each LIF is associated with. That might be the "Default" IPspace or a custom IPspace that you created.
+When you set up data tiering, Cloud Tiering prompts you for the IPspace to use. You should choose the IPspace that each LIF is associated with. That might be the "Default" IPspace or a custom IPspace that you created. Learn more about https://docs.netapp.com/us-en/ontap/networking/create_a_lif.html[LIFs^] and https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html[IPspaces^].
 
 include::_include/tiering_supported_volumes.adoc[]
 
@@ -115,11 +113,11 @@ Ensure that the Connector has the required networking connections.
 +
 https://cloud.google.com/vpc/docs/configure-private-google-access[Private Google Access^] is recommended if you have a direct connection from your ONTAP cluster to the VPC and you want communication between the Connector and Google Cloud Storage to stay in your virtual private network. Note that Private Google Access works with VM instances that have only internal (private) IP addresses (no external IP addresses).
 
-=== Preparing Google Cloud Storage for data tiering
+=== Preparing Google Cloud Storage
 
 When you set up tiering, you need to provide storage access keys for a service account that has Storage Admin permissions. A service account enables Cloud Tiering to authenticate and access Cloud Storage buckets used for data tiering. The keys are required so that Google Cloud Storage knows who is making the request.
 
-NOTE: If you are planning to select a lower cost storage class where your tiered data will transition to after 30 days, you must ensure that there are no other rules applied to the selected bucket.
+NOTE: If you are planning to configure Cloud Tiering to use lower cost storage classes where your tiered data will transition to after a certain number of days, you must not select any life cycle rules when setting up the bucket in your GCP account. Cloud Tiering manages the life cycle transitions.
 
 .Steps
 
@@ -153,9 +151,15 @@ image:screenshot_setup_tiering_onprem.png[A screenshot that shows the Enable opt
 
 .. *Bucket*: Add a new Google Cloud Storage bucket or select an existing bucket.
 
-.. *Storage Class*: Select the storage class that you want to transition the tiered data to after 30 days.
+.. *Storage Class Life Cycle Management*: Cloud Tiering manages the life cycle transitions of your tiered data. Data starts in the _Standard_ class, but you can create rules to move the data to other classes after a certain number of days.
 +
-link:reference_google_support.html[See supported storage classes^]. If you choose Standard, then the data remains in that storage class and no rules are applied.
+Select the Google Cloud storage class that you want to transition the tiered data to and the number of days before the data will be moved, and click *Continue*. For example, the screenshot below shows that tiered data is moved from the _Standard_ class to the _Nearline_ class after 30 days in object storage, and then to the _Coldline_ class after 60 days in object storage.
++
+If you choose *Keep data in this storage class*, then the data remains in the that storage class. link:reference_google_support.html[See supported storage classes^].
++
+image:screenshot_tiering_lifecycle_selection_gcp.png[A screenshot showing how to select additional storage classes where data is moved after a certain number of days.]
++
+Note that the life cycle rule is applied to all objects in the selected bucket.
 
 .. *Credentials*: Enter the storage access key and secret key for a service account that has the Storage Admin role.
 

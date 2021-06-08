@@ -15,17 +15,19 @@ summary: Cloud Tiering supports several Google Cloud storage classes and most re
 [.lead]
 Cloud Tiering supports several Google Cloud storage classes and most regions.
 
-== Supported storage classes
+== Supported GCP storage classes
 
-Cloud Tiering can apply a lifecycle rule so the data transitions from the _Standard_ storage class to another storage class after 30 days. You can choose from the following storage classes:
+When you set up data tiering to GCP, Cloud Tiering automatically uses the _Standard_ storage class for your inactive data. Cloud Tiering can apply a lifecycle rule so the data transitions from the _Standard_ storage class to other storage classes after a certain number of days. You can choose from the following storage classes:
 
 * Nearline
 * Coldline
 * Archive
 
-If you choose Standard, then the data remains in that storage class and no rules are applied.
+If you do not choose another storage class, then the data remains in the _Standard_ storage class and no rules are applied.
 
-link:https://cloud.google.com/storage/docs/storage-classes[Learn about Google Cloud Storage classes^].
+When you configure a Cloud Tiering lifecycle rule, you must not configure any lifecycle rules when setting up the bucket in your Google account. 
+
+https://cloud.google.com/storage/docs/storage-classes[Learn about Google Cloud Storage classes^].
 
 == Supported Google Cloud regions
 
