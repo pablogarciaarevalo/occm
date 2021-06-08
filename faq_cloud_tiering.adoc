@@ -44,7 +44,7 @@ If you have Cloud Volumes ONTAP systems, you'll find them in the Cluster Dashboa
 
 From the Cluster Dashboard, you can view tiering information similar to an on-prem ONTAP cluster: operational health, current savings, savings opportunities, details about volumes and aggregates, and more.
 
-Cloud Volumes ONTAP systems are read-only from Cloud Tiering. You can't set up data tiering on Cloud Volumes ONTAP from Cloud Tiering. You'll still set up tiering the same way: from the working environment in Cloud Manager.
+Cloud Volumes ONTAP systems are read-only from Cloud Tiering. You can't set up data tiering on Cloud Volumes ONTAP from Cloud Tiering. link:task_tiering.html[You set up tiering for Cloud Volumes ONTAP from the working environment in Cloud Manager^].
 
 == Object storage
 
@@ -66,15 +66,15 @@ Yes, you can. When you set up data tiering, you have the choice to add a new buc
 
 === Which S3 storage classes are supported?
 
-Cloud Tiering supports data tiering to the _Standard_, _Standard-Infrequent Access_, _One Zone-IA_, or _Intelligent_ storage class. See link:reference_aws_support.html[Supported S3 storage classes] for more details.
+Cloud Tiering supports data tiering to the _Standard_, _Standard-Infrequent Access_, _One Zone-IA_, or _Intelligent_ storage classes. See link:reference_aws_support.html[Supported S3 storage classes] for more details.
 
 === Which Azure Blob access tiers are supported?
 
-Cloud Tiering automatically uses the _Hot_ access tier for your inactive data.
+Cloud Tiering supports data tiering to the _Hot_ or _Cool_ access tiers for your inactive data. See link:reference_azure_support.html[Supported Azure Blob access tiers] for more details.
 
 === Which storage classes are supported for Google Cloud Storage?
 
-Cloud Tiering supports data tiering to the _Standard_, _Nearline_, _Coldline_, or _Archive_ storage class. See link:reference_google_support.html[Supported Google Cloud storage classes] for more details.
+Cloud Tiering supports data tiering to the _Standard_, _Nearline_, _Coldline_, and _Archive_ storage classes. See link:reference_google_support.html[Supported Google Cloud storage classes] for more details.
 
 === Does Cloud Tiering use one object store for the entire cluster or one per aggregate?
 
@@ -82,7 +82,9 @@ One object store for the entire cluster.
 
 === Can I apply policies to my object store to move data around independent of tiering?
 
-Yes. When using Amazon S3 or Google Cloud Storage, Cloud Tiering enables you to transition data from the Standard storage class to another storage class after 30 days.
+Yes. You can enable life cycle management so that Cloud Tiering transitions data from the default storage class/access tier to a more cost-effective tier after a certain number of days.
+
+The life cycle rule is applied to all objects in the selected bucket for Amazon S3 and Google Cloud storage, and to all containers in the selected storage account for Azure Blob.
 
 == Connectors
 
@@ -130,7 +132,7 @@ No extra permissions are needed outside of the permissions that you need to prov
 
 === What permissions are required in Google Cloud Platform?
 
-Storage Admin permissions are needed for a service account that has storage access keys.
+Storage Admin permissions are needed for a link:task_tiering_onprem_gcp.html#preparing-google-cloud-storage[service account that has storage access keys].
 
 === What permissions are required for StorageGRID?
 
