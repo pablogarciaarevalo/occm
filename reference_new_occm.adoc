@@ -26,6 +26,7 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 * <<Cloud Backup enhancements>>
 * <<Application Templates enhancements>>
 * <<Cloud Data Sense (Cloud Compliance) enhancements>>
+* <<Global File Cache enhancements>>
 
 === Cloud Sync support for storage classes in Google Cloud
 
@@ -88,6 +89,10 @@ A new Filter in the Investigation page enables you to easily view all files that
 * Cloud Data Sense can scan for Personal Identifiable Information (PII) in two additional types of files: .DCM and .DICOM.
 
 * The File Size, Created Date, and Last Modified Date values have been added to reports that you output in CSV format. Created Date is also a new filter you can use to narrow down Investigation page search results.
+
+=== Global File Cache enhancements
+
+Global File Cache software version 1.1.0 has been released. A new "Edge Synchronization" feature is available that keeps multiple Edges at a remote office synchronized. When a file is fetched at one Edge, then the same file on all Edges participating in Edge Sync is updated and cached. See the link:concept_gfc.html#whats-new-in-version-1-1-0[new and fixed issues in this release].
 
 == Cloud Manager 3.9.7 (30 May 2021)
 
