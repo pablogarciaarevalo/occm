@@ -64,10 +64,9 @@ For example, they select high speed disks and a large amount of RAM for Cloud Vo
 . Your storage admins use the templates to create resources that are optimized for the application they will be used for.
 +
 For example, they create a volume that will be used for an Oracle database by using the volume template created for databases.
-// . The template enforces certain resource settings using the "drift" feature as determined by your storage architect.
+. The service tracks certain resource settings defined in the template using the "drift" feature as determined by your storage architect.
 
 == Limitations
 
 * The Application Templates service is not supported in any of the Gov Cloud regions or in "dark" sites.
 * You can't use a template to create a Cloud Volumes ONTAP volume on an existing aggregate. New volumes are created in a new aggregate.
-* You can't use a template to create a volume on a Cloud Volumes ONTAP system that includes multiple Storage VMs (SVMs).
