@@ -32,4 +32,4 @@ link:https://docs.netapp.com/us-en/occm/media/Global_File_Cache_Onboarding_Email
 * Onboarding Communications
 link:https://repo.cloudsync.netapp.com/gfc/Global%20File%20Cache%20Customer%20Onboarding%20-%20Draft.docx[Word Document (.docx)]
 
-See Chapter 13 in the link:https://repo.cloudsync.netapp.com/gfc/Netapp%20GFC%20User%20Guide%201.0.3.pdf[NetApp Global File Cache User Guide^] for additional material.
+See Chapter 13 in the https://repo.cloudsync.netapp.com/gfc/Netapp%20GFC%20User%20Guide%201.1.0.pdf[NetApp Global File Cache User Guide^] for additional material.

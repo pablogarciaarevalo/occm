@@ -20,7 +20,7 @@ Use the following links to learn more about Global File Cache and other NetApp p
 +
 ** See a list of frequently asked questions and answers link:https://cloud.netapp.com/global-file-cache-faq[here^]
 
-* link:https://repo.cloudsync.netapp.com/gfc/Netapp%20GFC%20User%20Guide%201.0.3.pdf[NetApp Global File Cache User Guide^]
+* https://repo.cloudsync.netapp.com/gfc/Netapp%20GFC%20User%20Guide%201.1.0.pdf[NetApp Global File Cache User Guide^]
 
 * NetApp Product Documentation
 +
