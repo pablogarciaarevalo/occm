@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept_accounts_gcp.html
 keywords: cloud provider accounts, gcp, gcp accounts, google cloud platform, google accounts, google cloud platform accounts, permissions, tiering, data tiering, account for data tiering, account for tiering, project, projects, add project, select new project, gcp project, google project, google cloud project
-summary: You use a Google Cloud account to deploy Cloud Manager in a project. You can then deploy Cloud Volumes ONTAP in the same project or a different project. Google Cloud accounts that you add to Cloud Manager are used to enable data tiering.
+summary: A service account provides Cloud Manager with permissions to deploy and manage Cloud Volumes ONTAP systems that are in the same project as the Connector, or in different projects.
 ---
 
 = Google Cloud projects, permissions, and accounts
@@ -13,7 +13,7 @@ summary: You use a Google Cloud account to deploy Cloud Manager in a project. Yo
 :imagesdir: ./media/
 
 [.lead]
-A service account provides Cloud Manager with permissions to deploy and manage Cloud Volumes ONTAP systems in the same project as Cloud Manager, or in different projects.
+A service account provides Cloud Manager with permissions to deploy and manage Cloud Volumes ONTAP systems that are in the same project as the Connector, or in different projects.
 
 == Project and permissions for Cloud Manager
 
