@@ -37,7 +37,7 @@ You can manage existing volumes as your storage needs change. You can view, edit
 | Edit a volume (read-write volumes only)
 a|
 .. Select a volume, and then click *Edit*.
-.. Modify the volume's Snapshot policy, NFS protocol version, NFS access control list, or share permissions, and then click *Update*.
+.. Modify the volume's Snapshot policy, NFS protocol version, NFS access control list (export policy), or share permissions, and then click *Update*.
 
 NOTE: If you need custom Snapshot policies, you can create them by using System Manager.
 
