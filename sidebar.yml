@@ -87,6 +87,8 @@ entries:
               url: https://docs.netapp.com/us-en/cloud-volumes-ontap/index.html
             - title: Supported regions
               url: https://cloud.netapp.com/cloud-volumes-global-regions
+            - title: AutoSupport and Active IQ Digital Advisor
+              url: /concept_active_iq.html
             - title: Default configuration
               url: /reference_default_configs.html
       - title: Get started in AWS
