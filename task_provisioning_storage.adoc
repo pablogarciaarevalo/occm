@@ -139,7 +139,7 @@ image:screenshot_define_cvo_vol_from_template.png[A screenshot showing a blank t
 
 . Add values for all of the parameters that are not hard-coded from the template. See <<Creating FlexVol volumes,creating volumes>> for details about all the parameters you need to complete to deploy a Cloud Volumes ONTAP volume.
 
-. If there are no other Actions that you need to define (for example, configuring Cloud Backup), click *Create Volume*.
+. If there are no other Actions that you need to define (for example, configuring Cloud Backup), click *Run Template*.
 +
 If there are other actions, click the action in the left pane to display the parameters you need to complete.
 +
@@ -147,7 +147,7 @@ image:screenshot_template_select_next_action.png[A screenshot showing how to sel
 +
 For example, if the Enable Cloud Backup action requires that you select a backup policy, you can do that now.
 
-. Click *Create Volume*.
+. Click *Run Template*.
 
 .Result
 

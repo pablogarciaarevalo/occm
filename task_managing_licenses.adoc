@@ -171,7 +171,7 @@ link:concept_backup_to_cloud.html#licensing[Learn more about Cloud Backup licens
 
 . Click *Settings > Digital Wallet*.
 
-. Click *Cloud Backup*.
+. Click *Cloud Backup Licenses*.
 
 . If you don't have an existing license, click *Add Backup License*.
 

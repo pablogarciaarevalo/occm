@@ -93,7 +93,7 @@ image:screenshot_define_anf_vol_from_template.png[A screenshot showing a blank t
 
 . Add values for all of the parameters that are not hard-coded from the template. See <<Creating volumes,creating volumes>> for details about all the parameters you need to complete to deploy an ANF volume.
 
-. Click *Create Volume* after you have defined all the parameters needed for this volume.
+. Click *Run Template* after you have defined all the parameters needed for this volume.
 
 .Result
 

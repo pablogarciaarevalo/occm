@@ -179,7 +179,7 @@ image:screenshot_tiering_modify_volumes.gif[A screenshot that shows how to selec
 
 . In the _Tiering Policy_ dialog, select a tiering policy, optionally adjust the cooling days for the selected volumes, and click *Apply*.
 +
-link:concept_cloud_tiering.html#volume-tiering-policies[Learn more about volume tiering policies].
+link:concept_cloud_tiering.html#volume-tiering-policies[Learn more about volume tiering policies and cooling days].
 +
 image:screenshot_tiering_policy_settings.png[A screenshot that shows the configurable tiering policy settings.]
 
