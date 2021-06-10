@@ -113,7 +113,7 @@ When you select the volumes that you want to tier, you choose a _volume tiering 
 
 You can also adjust the _cooling period_. This is the number of days that user data in a volume must remain inactive before it is considered "cold" and moved to object storage. For tiering policies that allow you to adjust the cooling period, the valid values are 2 to 183 days when using ONTAP 9.8 and later, and 2 to 63 days for earlier ONTAP versions; 2 to 63 is the recommended best practice.
 
-None (No policy):: Keeps the data on a volume in the performance tier, preventing it from being moved to the cloud tier.
+No Policy (None):: Keeps the data on a volume in the performance tier, preventing it from being moved to the cloud tier.
 
 Cold snapshots (Snapshot only):: ONTAP tiers cold Snapshot blocks in the volume that are not shared with the active file system to object storage. If read, cold data blocks on the cloud tier become hot and are moved to the performance tier.
 +

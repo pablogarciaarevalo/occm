@@ -93,7 +93,7 @@ You can add a volume to an existing working environment from the _Templates Dash
 +
 The _Templates Dashboard_ is displayed.
 
-. Click the *View* button to view an outline of the template to make sure it is the one you want, and then click image:screenshot_horizontal_more_button.gif[More icon] and *Run Template*.
+. For the template that you want to use, click the *View* button to view an outline of the template to make sure it is the one you want, and then click image:screenshot_horizontal_more_button.gif[More icon] and *Run Template*.
 +
 image:screenshot_template_run_from_dashboard2.png[A screenshot showing how to run a template from the Templates Dashboard]
 +

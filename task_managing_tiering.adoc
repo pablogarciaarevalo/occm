@@ -40,7 +40,7 @@ image:screenshot_tiering_modify_volumes.gif[A screenshot that shows how to selec
 
 . In the _Tiering Policy_ dialog, select a tiering policy, optionally adjust the cooling days for the selected volumes, and click *Apply*.
 +
-link:concept_cloud_tiering.html#volume-tiering-policies[Learn more about volume tiering policies].
+link:concept_cloud_tiering.html#volume-tiering-policies[Learn more about volume tiering policies and cooling days].
 +
 image:screenshot_tiering_policy_settings.png[A screenshot that shows the configurable tiering policy settings.]
 
@@ -60,7 +60,7 @@ Changing the tiering policy for a volume changes how ONTAP tiers cold data to ob
 
 . Click the row for a volume, select a tiering policy, optionally adjust the cooling days, and click *Apply*.
 +
-link:concept_cloud_tiering.html#volume-tiering-policies[Learn more about volume tiering policies].
+link:concept_cloud_tiering.html#volume-tiering-policies[Learn more about volume tiering policies and cooling days].
 +
 image:screenshot_tiering_policy_settings.png[A screenshot that shows the configurable tiering policy settings.]
 
@@ -104,7 +104,7 @@ image:screenshot_tiering_policy_settings_with_retrieve.png[A screenshot that sho
 
 .Result
 
-The tiering policy is changed and the tiered data starts to be migrated back to the performance tier. Depending on the amount of data in the cloud, the transfer process could take a long time.
+The tiering policy is changed and the tiered data starts to be migrated back to the performance tier. Depending on the amount of data in the cloud, the transfer process could take some time.
 
 == Managing tiering settings on aggregates
 

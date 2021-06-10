@@ -168,6 +168,8 @@ The _Create Volume in Cloud Volumes ONTAP Action Definition_ page is displayed.
 +
 image:screenshot_create_template_define_action_cvo.png[A screenshot showing a blank CVO template that you need to fill in.]
 
+. *Action Name*: Optionally, enter a customized action name instead of the default value.
+
 . *Context:* Enter the Cloud Volumes ONTAP working environment context; if required.
 +
 When users launch the template from an existing working environment, this information gets filled in automatically.
@@ -278,6 +280,8 @@ The _Create Volume in Azure NetApp Files Action Definition_ page is displayed.
 +
 image:screenshot_create_template_define_action_anf.png[A screenshot showing a blank ANF template that you need to fill in.]
 
+. *Action Name*: Optionally, enter a customized action name instead of the default value.
+
 . *Context:* Enter the Cloud Volumes ONTAP working environment context; if required.
 +
 When users launch the template from an existing working environment, this information gets filled in automatically.
@@ -387,6 +391,8 @@ image:screenshot_create_template_primary_action_onprem.png[A screenshot showing 
 The _Create Volume in On-Premises ONTAP Action Definition_ page is displayed.
 +
 image:screenshot_create_template_define_action_onprem.png[A screenshot showing a blank onprem ONTAP template that you need to fill in.]
+
+. *Action Name*: Optionally, enter a customized action name instead of the default value.
 
 . *Context:* Enter the on-premises ONTAP working environment context; if required.
 +
