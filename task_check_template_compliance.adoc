@@ -62,7 +62,7 @@ image:screenshot_template_drift_for_one.png[A screenshot showing how to run drif
 
 == Create a drift report for non-compliant resources
 
-You can click the name of a resource in the Drift Dashboard to view a list of the parameters in each resource that is non-compliant.
+You can click the Drift icon for a resource in the Drift Dashboard to view a list of the parameters in each resource that is non-compliant.
 
 image:screenshot_template_drift_report_one_resource.png[A screenshot of a drift report for a single resource.]
 //
