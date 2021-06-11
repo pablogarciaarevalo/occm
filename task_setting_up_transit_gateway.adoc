@@ -31,6 +31,12 @@ The following steps illustrate how to set up a similar configuration.
 
 . https://docs.aws.amazon.com/vpc/latest/tgw/tgw-getting-started.html[Create a transit gateway and attach the VPCs to the gateway^].
 
+. Associate the VPCs with the transit gateway route table.
+.. In the *VPC* service, click *Transit Gateway Route Tables*.
+.. Select the route table.
+.. Click *Associations* and then select *Create association*.
+.. Choose the attachments (the VPCs) to associate and then click *Create association*.
+
 . Create routes in the transit gateway's route table by specifying the HA pair's floating IP addresses.
 +
 You can find the floating IP addresses on the Working Environment Information page in Cloud Manager. Here's an example:
