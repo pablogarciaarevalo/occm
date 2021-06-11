@@ -17,7 +17,7 @@ Cloud Data Sense is a data governance service for Cloud Manager that scans your 
 
 NOTE: *Cloud Compliance* was renamed to *Cloud Data Sense* in June 2021.
 
-https://cloud.netapp.com/cloud-compliance[Learn about the use cases for Cloud Data Sense^].
+https://cloud.netapp.com/netapp-cloud-data-sense[Learn about the use cases for Cloud Data Sense^].
 
 == Features
 

@@ -62,7 +62,7 @@ link:concept_cloud_compliance.html[Learn more about how Cloud Data Sense works^]
 
 == How much does Cloud Data Sense cost?
 
-The cost to use Cloud Data Sense depends on the amount of data that you're scanning. The first 1 TB of data that Data Sense scans in a Cloud Manager workspace is free. A subscription to the AWS or Azure Marketplace is required to continue scanning data after that point. See https://cloud.netapp.com/cloud-compliance#pricing[pricing^] for details.
+The cost to use Cloud Data Sense depends on the amount of data that you're scanning. The first 1 TB of data that Data Sense scans in a Cloud Manager workspace is free. A subscription to the AWS or Azure Marketplace is required to continue scanning data after that point. See https://cloud.netapp.com/netapp-cloud-data-sense#Pricing[pricing^] for details.
 
 == What type of instance or VM is required for Cloud Data Sense?
 
