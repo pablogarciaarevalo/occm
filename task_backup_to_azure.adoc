@@ -152,10 +152,8 @@ Enable Cloud Backup at any time directly from the working environment.
 image:screenshot_backup_cvo_enable.png[A screenshot that shows the Cloud Backup Settings button which is available after you select a working environment.]
 
 . Select the provider details and click *Next*:
-// .. The Azure subscription used to store the backups. This can be a different subscription than where the Cloud Volumes ONTAP system resides.
-// .. The region where the backups will be stored. This can be a different region than where the Cloud Volumes ONTAP system resides.
-.. The Azure subscription used to store the backups.
-.. The region where the backups will be stored.
+.. The Azure subscription used to store the backups. This can be a different subscription than where the Cloud Volumes ONTAP system resides.
+.. The region where the backups will be stored. This can be a different region than where the Cloud Volumes ONTAP system resides.
 .. The resource group - you can create a new resource group or select and existing resource group.
 +
 image:screenshot_backup_provider_settings_azure.png[A screenshot that shows the cloud provider details when backing up volumes from an on-premises cluster to an Azure Blob tier]
