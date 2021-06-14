@@ -167,7 +167,7 @@ Go to the Data Sense tab to generate the report.
 
 . At the top of Cloud Manager, click *Data Sense*.
 
-. Click *Governance*, and then click the *Download Data Mapping Report* button from the Governance Dashboard.
+. Click *Governance*, and then click the *Full Data Mapping Overview Report* button from the Governance Dashboard.
 +
 image:screenshot_compliance_data_mapping_report_button.png[A screen shot of the Governance Dashboard that shows how to launch the Data Mapping Report.]
 
