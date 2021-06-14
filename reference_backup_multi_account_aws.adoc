@@ -1,0 +1,100 @@
+---
+sidebar: sidebar
+permalink: reference_backup_multi_account_aws.html
+keywords: aws, amazon, s3, multiple accounts, multiple regions, backup
+summary: Cloud Backup enables you to create backup files in an AWS account that is different than where your source volumes reside, and that is different than the account where the Cloud Manager Connector resides.
+---
+
+= Configure Backup for multi-account access in AWS
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Cloud Backup enables you to create backup files in an AWS account that is different than where your source volumes reside. And both of those accounts can be different than the account where the Cloud Manager Connector resides.
+
+Just follow the steps below to set up configuration in this manner.
+
+== Set up VPC peering between accounts
+
+. Log in to second account and Create Peering Connection:
+.. Select a local VPC: Select the VPC of the second account.
+.. Select another VPC: Enter the account ID of the first account.
+.. Select the Region where the Cloud Manager Connector is running. In this test setup both accounts are running in same region.
+.. VPC ID: Log into first account and enter the acceptor VPC ID. This is the VPC ID of the Cloud Manager Connector.
++
+image:screenshot_aws_peer1.png[]
++
+A Success dialog displays.
++
+image:screenshot_aws_peer2.png[]
++
+The status of the peering connection shows as Pending Acceptance.
++
+image:screenshot_aws_peer3.png[]
+
+. Log into the first account and accept the peering request:
++
+image:screenshot_aws_peer4.png[]
++
+image:screenshot_aws_peer5.png[]
+
+.. Click *Yes*.
++
+image:screenshot_aws_peer6.png[]
++
+The connection now shows as Active. We have also added a Name tag to identify the peering connection called `cbs-multi-account`.
++
+image:screenshot_aws_peer7.png[]
+
+.. Refresh the peering connection in the second account and notice that the status changes to Active.
++
+image:screenshot_aws_peer8.png[]
+
+== Add a route to the route tables in both accounts
+
+. Go to VPC > Subnet > Route table.
++
+image:screenshot_aws_route1.png[]
+
+. Click on the Routes tab.
++
+image:screenshot_aws_route2.png[]
+
+. Click *Edit routes*.
++
+image:screenshot_aws_route3.png[]
+
+. Click *Add route*, and from the Target drop-down list select *Peering Connection*, and then select the peering connection that you created.
++
+.. In the Destination, enter the other account's subnet CIDR.
++
+image:screenshot_aws_route4.png[]
++
+.. Click *Save routes* and a Success dialog displays.
++
+image:screenshot_aws_route5.png[]
+
+== Add the second AWS account credentials in Cloud Manager
+
+. Add the second AWS account, for example, _Saran-XCP-Dev_.
++
+image:screenshot_aws_second_account1.png[]
+
+. In the Discover Cloud Volumes ONTAP page, select the newly added credentials
++
+image:screenshot_aws_second_account2.png[]
+
+. Select the Cloud Volumes ONTAP you want to discover from second account. You can also deploy a new Cloud Volumes ONTAP in the second account.
++
+image:screenshot_aws_second_account3.png[]
++
+The Cloud Volumes ONTAP from the second account now got added to the OCCM which is running in a different account.
++
+image:screenshot_aws_second_account4.png[]
+
+== Enable backup in another AWS account
+
+Enable CBS for a CVO running in account1 and select the second account for creating backup.
