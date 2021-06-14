@@ -92,6 +92,17 @@ For help, refer to the following pages:
 * link:task_sync_installing_gcp.html[Installing the data broker in GCP]
 * link:task_sync_installing_linux.html[Installing the data broker on a Linux host]
 
+== Security recommendations
+
+To ensure the security of your data broker machine, NetApp recommends the following:
+
+*	SSH should not permit X11 Forwarding
+*	SSH should not permit TCP connection forwarding
+*	SSH should not permit tunnels
+*	SSH should not accept client environment variables
+
+These security recommendations can help prevent unauthorized connections to the data broker machine.
+
 == View a data broker's configuration
 
 You might want to view details about a data broker to identify things like its host name, IP address, available CPU and RAM, and more.
