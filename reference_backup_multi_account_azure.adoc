@@ -44,6 +44,10 @@ image:screenshot_azure_peer3.png[]
 . Perform the same steps in subscription 2 VNet and specify the subscription and remote VNet details of subscription 1.
 +
 image:screenshot_azure_peer4.png[]
++
+The peering settings are added.
++
+image:screenshot_azure_peer5.png[]
 
 == Add a route to the route tables in both accounts
 
