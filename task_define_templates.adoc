@@ -53,6 +53,8 @@ Read the following requirements to make sure that you have a supported configura
 
 * If you plan to enable Cloud Data Sense in the template, ensure that your environment has an active and licensed Cloud Data Sense service.
 
+* If you plan to enable Replication in the template, and the template is for an on-prem ONTAP volume, ensure that your environment has an active SnapMirror license.
+
 == Template features
 
 There are certain features you can use when building a template to help your users to easily create resources from the template.
@@ -72,7 +74,7 @@ When unchecked, the user can't change the value and the hard-coded value in the 
 *Drift checkbox*
 
 Check this box so that Cloud Manager monitors the hard-coded value you entered for a parameter when a resource is created with the template. Later, you can run a Drift Report to see which fields configured with Drift are no longer compliant with the template settings.
-// If Cloud Manager later sees that an admin has changed the parameter value so that it no longer aligns with the template definition, you will receive an email notification about the change.
+// If Cloud Manager later sees that an admin has changed the parameter value so that it no longer aligns with the template definition, you will receive email notification about the change.
 
 When unchecked, the user can change the value to any value after the resource has been created.
 //

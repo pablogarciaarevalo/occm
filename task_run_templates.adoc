@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_run_templates.html
 keywords: templates, resource templates, application templates, volume templates
-summary: Select one of the application templates that your organization has built to create volumes that are optimized for specific workloads and applications. Templates enable you to create volumes for Cloud Volumes ONTAP, Azure NetApp Files, and on-premises ONTAP systems. They also enable you to activate Cloud Backup and Cloud Data Sense for the volumes.
+summary: Select one of the application templates that your organization has built to create volumes that are optimized for specific workloads and applications. Templates enable you to create volumes for Cloud Volumes ONTAP, Azure NetApp Files, and on-premises ONTAP systems. They also enable you to activate Cloud Backup, Cloud Data Sense, and Replication (SnapMirror) for the volumes.
 ---
 
 = Create resources using templates
@@ -13,7 +13,7 @@ summary: Select one of the application templates that your organization has buil
 :imagesdir: ./media/
 
 [.lead]
-Select one of the application templates that your organization has built to create volumes that are optimized for specific workloads and applications. Templates enable you to create volumes for Cloud Volumes ONTAP, Azure NetApp Files, and on-premises ONTAP systems. They also enable you to activate link:concept_backup_to_cloud.html[Cloud Backup] and link:concept_cloud_compliance.html[Cloud Data Sense] on the created volumes.
+Select one of the application templates that your organization has built to create volumes that are optimized for specific workloads and applications. Templates enable you to create volumes for Cloud Volumes ONTAP, Azure NetApp Files, and on-premises ONTAP systems. They also enable you to activate link:concept_backup_to_cloud.html[Cloud Backup], link:concept_cloud_compliance.html[Cloud Data Sense], and link:concept_replication.html[Replication (SnapMirror)] on the created volumes.
 
 == Quick start
 
@@ -49,7 +49,7 @@ Read the following requirements to make sure that you have a supported configura
 
 * When creating an Azure NetApp Files volume, make sure you have an Azure NetApp Files working environment available.
 
-* If the template activates a cloud service on the volume, such as link:concept_backup_to_cloud.html[Cloud Backup^] or link:concept_cloud_compliance.html[Cloud Data Sense^], ensure that the service is active and licensed in your environment.
+* If the template activates a cloud service on the volume, such as link:concept_backup_to_cloud.html[Cloud Backup^], link:concept_cloud_compliance.html[Cloud Data Sense^], or link:concept_replication.html[Replication (SnapMirror)], ensure that the service is active and licensed in your environment.
 
 == Select and run the template
 
