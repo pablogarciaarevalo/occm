@@ -53,7 +53,7 @@ Read the following requirements to make sure that you have a supported configura
 
 * If you plan to enable Cloud Data Sense in the template, ensure that your environment has an active and licensed Cloud Data Sense service.
 
-* If you plan to enable Replication in the template, and the template is for an on-prem ONTAP volume, ensure that your environment has an active SnapMirror license.
+* If you plan to enable Replication in the template, and the template is for an on-premises ONTAP volume, the ONTAP cluster must have an active SnapMirror license.
 
 == Template features
 
@@ -469,6 +469,48 @@ Drift allows Cloud Manager to monitor the hard-coded values you entered for para
 The template is created and you are returned to the Template Dashboard where your new template appears.
 
 See <<What to do after you have created the template,what you should tell your users about templates>>.
+
+=== Add Backup functionality to a volume
+
+When creating a volume template, you can add in the template that you want to create backups of the volume periodically using the link:concept_backup_to_cloud.html[Cloud Backup] service. This action is not applicable for Azure NetApp Files volumes.
+
+image:screenshot_template_backup.png[A screenshot of the page to enable backup functionality for your volumes.]
+
+. Context: You can enter a Working Environment Name and Storage VM name if you are using this action in a template without first creating a volume. Otherwise, leave these fields as "Editable."
+
+. Policy: Define the backup policy to create daily, weekly, or monthly backups with a specific number of backup copies to retain.
+
+. Volume Name: Typically the volume is the one created prior to the backup action in the same template. In this case, see how to <<Pass values between template actions,complete the three fields>> below the volume name to indicate that volume.
+
+. Click *Apply* to save your changes.
+
+=== Add Data Sense functionality to a volume
+
+When creating a volume template, you can add in the template that you want to scan the volume for compliance and classification using the link:concept_cloud_compliance.html[Cloud Data Sense] service.
+
+image:screenshot_template_data_sense.png[A screenshot of the page to enable scanning functionality for your volumes.]
+
+. Details: You can enter a Working Environment Name if you are using this action in a template without first creating a volume. Otherwise, leave this field as "Editable."
+
+. Volume Name: Typically the volume is the one created prior to the Data Sense action in the same template. In this case, see how to <<Pass values between template actions,complete the three fields>> below the volume name to indicate that volume.
+
+. Volume UUID: Data Sense needs the UUID of the volume before it can scan the volume. See how to <<Pass values between template actions,complete the three fields>> below the volume name to indicate that volume.
+
+. Click *Apply* to save your changes.
+
+=== Add Replication functionality to a volume
+
+When creating a volume template, you can add in the template that you want to replicate the data in the volume to another volume using the link:concept_replication.html[Replication] service. This action is not applicable for Azure NetApp Files volumes.
+
+image:screenshot_template_replication.png[A screenshot of the page to enable replication functionality for your volumes.]
+
+. Context: You can enter a Working Environment Name and Storage VM name if you are using this action in a template without first creating a volume. Otherwise, leave these fields as "Editable."
+
+. Policy: Define the backup policy to create daily, weekly, or monthly backups with a specific number of backup copies to retain.
+
+. Volume Name: Typically the volume is the one created prior to the backup action in the same template. In this case, see how to <<Pass values between template actions,complete the three fields>> below the volume name to indicate that volume.
+
+. Click *Apply* to save your changes.
 
 == What to do after you have created the template
 

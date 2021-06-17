@@ -42,7 +42,9 @@ The Drift Dashboard shows the total number of resources (for example, volumes) t
 image:screenshot_template_drift_dashboard.png[A screenshot of the Drift Dashboard for the AppTemplates service.]
 
 * The controls at the top of each column allow you to sort the results in numerical or alphabetical order.
-* The image:screenshot_plus_icon.gif[] enables you to filter the results by Template Name, Drift Policy & Status, and Action Type.
+* The image:screenshot_plus_icon.gif[] enables you to filter the results by Template Name, Drift Policy & Status, and Action Type. For example:
++
+image:screenshot_template_filter_drift_status.png[A screenshot showing how to use the filter widget to refine the list of resources.]
 * The search bar enables you to search for a specific volume name or template name.
 * To find out more details about the actual resource (or volume), such as the working environment and storage VM, you can click the image:screenshot_sync_status_icon.gif[].
 +
@@ -61,6 +63,8 @@ You can run drift checking on a single template from the Templates Dashboard:
 image:screenshot_template_drift_for_one.png[A screenshot showing how to run drift checking for a single template.]
 
 == Create a drift report for non-compliant resources
+
+You can view a drift report for a single resource, or run a report to download a report for all resources. Using this report you canassign actions to system admins to make changes that bring the resources back into compliance with the template.
 
 You can click the Drift icon for a resource in the Drift Dashboard to view a list of the parameters in each resource that is non-compliant.
 
