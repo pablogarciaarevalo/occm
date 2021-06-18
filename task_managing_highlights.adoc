@@ -285,6 +285,8 @@ TIP: You can't delete files that reside in databases or files that reside in vol
 
 .Requirements
 
+You must have the Account Admin or Workspace Admin role to delete files.
+
 Deleting files requires the following permissions:
 
 *	For NFS data – the export policy needs to be defined with write permissions.
@@ -293,13 +295,15 @@ Deleting files requires the following permissions:
 
 .Steps
 
-. In the Data Investigation results pane, click image:button_subfolder.png[right-caret] for the file to expand the file metadata details.
+. In the Data Investigation results pane, click the checkbox for the file, or files, that you want to delete and click *Delete* from the button bar.
 +
-image:screenshot_compliance_delete_file.png[A screenshot showing selection of the Delete File button from the metadata details for a file in the Data Investigation page.]
-
-. Click *Delete this file*.
+image:screenshot_compliance_delete_multi_files.png[A screenshot showing how to select the files to delete, and the Delete button, from the Data Investigation page.]
 
 . Because the delete operation is permanent, you must type "*permanently delete*" in the subsequent _Delete File_ dialog and click *Delete File*.
+
+Note that you can also delete an individual file when viewing the metadata details for a file. Just click *Delete this file*.
+
+image:screenshot_compliance_delete_file.png[A screenshot showing selection of the Delete File button from the metadata details for a file in the Data Investigation page.]
 
 === List of predefined Policies
 
