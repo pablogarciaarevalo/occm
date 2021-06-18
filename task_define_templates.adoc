@@ -476,11 +476,11 @@ When creating a volume template, you can add in the template that you want to cr
 
 image:screenshot_template_backup.png[A screenshot of the page to enable backup functionality for your volumes.]
 
-. Context: You can enter a Working Environment Name and Storage VM name if you are using this action in a template without first creating a volume. Otherwise, leave these fields as "Editable."
+. *Context:* You can enter a Working Environment Name and Storage VM name if you are using this action in a template without first creating a volume. Otherwise, leave these fields as "Editable."
 
-. Policy: Define the backup policy to create daily, weekly, or monthly backups with a specific number of backup copies to retain.
+. *Policy:* Define the backup policy to create daily, weekly, or monthly backups with a specific number of backup copies to retain.
 
-. Volume Name: Typically the volume is the one created prior to the backup action in the same template. In this case, see how to <<Pass values between template actions,complete the three fields>> below the volume name to indicate that volume.
+. *Volume Name:* Typically the volume is the one created prior to the backup action in the same template. In this case, see how to <<Pass values between template actions,complete the three fields>> below the volume name to indicate that volume.
 
 . Click *Apply* to save your changes.
 
@@ -490,11 +490,11 @@ When creating a volume template, you can add in the template that you want to sc
 
 image:screenshot_template_data_sense.png[A screenshot of the page to enable scanning functionality for your volumes.]
 
-. Details: You can enter a Working Environment Name if you are using this action in a template without first creating a volume. Otherwise, leave this field as "Editable."
+. *Context:* You can enter a Working Environment Name if you are using this action in a template without first creating a volume. Otherwise, leave this field as "Editable."
 
-. Volume Name: Typically the volume is the one created prior to the Data Sense action in the same template. In this case, see how to <<Pass values between template actions,complete the three fields>> below the volume name to indicate that volume.
+. *Volume Name:* Typically the volume is the one created prior to the Data Sense action in the same template. In this case, see how to <<Pass values between template actions,complete the three fields>> below the volume name to indicate that volume.
 
-. Volume UUID: Data Sense needs the UUID of the volume before it can scan the volume. See how to <<Pass values between template actions,complete the three fields>> below the volume name to indicate that volume.
+. *Volume UUID:* Data Sense needs the UUID of the volume before it can scan the volume. See how to <<Pass values between template actions,complete the three fields>> below the volume name to indicate that volume.
 
 . Click *Apply* to save your changes.
 
@@ -504,7 +504,7 @@ When creating a volume template, you can add in the template that you want to re
 
 image:screenshot_template_replication.png[A screenshot of the page to enable replication functionality for your volumes.]
 
-. Context: You can enter a Working Environment Name and Storage VM name if you are using this action in a template without first creating a volume. Otherwise, leave these fields as "Editable."
+. *Context:* You can enter a Working Environment Name and Storage VM name if you are using this action in a template without first creating a volume. Otherwise, leave these fields as "Editable."
 
 . Policy: Define the backup policy to create daily, weekly, or monthly backups with a specific number of backup copies to retain.
 
