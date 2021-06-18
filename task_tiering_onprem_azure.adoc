@@ -144,6 +144,8 @@ link:task_discovering_ontap.html[An on-premises working environment].
 +
 image:screenshot_setup_tiering_onprem.png[A screenshot that shows the Enable option that appears on the right side of the screen after you select an on-prem ONTAP working environment.]
 
+. *Choose your provider*: Select *Microsoft Azure*.
+
 . Complete the steps on the *Tiering Setup* page:
 
 .. *Resource Group*: Select a resource group where an existing container is managed, or where you would like to create a new container for tiered data, and click *Continue*.

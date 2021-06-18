@@ -141,9 +141,9 @@ After you prepare your environment, start tiering inactive data from your first 
 +
 image:screenshot_setup_tiering_onprem.png[A screenshot that shows the Setup Tiering option that appears on the right side of the screen after you select an on-prem ONTAP working environment.]
 
-. Complete the steps on the *Tiering Setup* page:
+. *Choose your provider*: Select *StorageGRID*.
 
-.. *Choose your provider*: Select StorageGRID.
+. Complete the steps on the *Tiering Setup* page:
 
 .. *Server*: Enter the FQDN of the StorageGRID server, enter the port that ONTAP should use for HTTPS communication with StorageGRID, and enter the access key and secret key for an account that has the required S3 permissions.
 

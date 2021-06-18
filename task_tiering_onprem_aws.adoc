@@ -157,6 +157,8 @@ After you prepare your AWS environment, start tiering inactive data from your fi
 +
 image:screenshot_setup_tiering_onprem.png[A screenshot that shows the Enable option that appears on the right side of the screen after you select an on-prem ONTAP working environment.]
 
+. *Choose your provider*: Select *Amazon Web Services*.
+
 . Complete the steps on the *Tiering Setup* page:
 
 .. *S3 Bucket*: Add a new S3 bucket or select an existing S3 bucket that starts with the prefix _fabric-pool_ and click *Continue*.

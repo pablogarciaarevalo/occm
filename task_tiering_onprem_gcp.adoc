@@ -147,6 +147,8 @@ After you prepare your Google Cloud environment, start tiering inactive data fro
 +
 image:screenshot_setup_tiering_onprem.png[A screenshot that shows the Enable option that appears on the right side of the screen after you select an on-prem ONTAP working environment.]
 
+. *Choose your provider*: Select *Google Cloud Platform*.
+
 . Complete the steps on the *Tiering Setup* page:
 
 .. *Bucket*: Add a new Google Cloud Storage bucket or select an existing bucket.
