@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: task_finding_system_id.html
-keywords: system id, id, cloud manager system id
-summary: To help you get started, your NetApp representative might ask you for the system ID that identifies your Cloud Manager system. The ID is typically used for licensing and troubleshooting purposes.
+keywords: system id, id, cloud manager system id, connector system id
+summary: To help you get started, your NetApp representative might ask you for the system ID for a Connector. The ID is typically used for licensing and troubleshooting purposes.
 ---
 
-= Finding your Cloud Manager system ID
+= Finding the system ID for a Connector
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,11 +13,7 @@ summary: To help you get started, your NetApp representative might ask you for t
 :imagesdir: ./media/
 
 [.lead]
-To help you get started, your NetApp representative might ask you for your Cloud Manager system ID. The ID is typically used for licensing and troubleshooting purposes.
-
-.What you'll need
-
-You need to create a Connector before you can change Cloud Manager settings. link:concept_connectors.html#how-to-create-a-connector[Learn how].
+To help you get started, your NetApp representative might ask you for the system ID for a Connector. The ID is typically used for licensing and troubleshooting purposes.
 
 .Steps
 
@@ -25,7 +21,7 @@ You need to create a Connector before you can change Cloud Manager settings. lin
 
 . Click *Support > Connector*.
 +
-Your system ID appears at the top.
+The system ID appears at the top.
 +
 *Example*
 +
