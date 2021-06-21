@@ -278,8 +278,6 @@ entries:
             url: /reference_backup_multi_account_aws.html
           - title: Configure Backup for multi-account access in Azure
             url: /reference_backup_multi_account_azure.html
-          - title: Configure Backup for multi-account access in GCP
-            url: /reference_backup_multi_account_gcp.html
   - title: Copy and synchronize data
     entries:
       - title: Learn about Cloud Sync

@@ -295,7 +295,7 @@ There are certain things you need to be aware of when the volume you are backing
 
 === Single File Restore limitations
 
-* Single file restore can restore individual files. There is currently no support for restoring folders/directories.
+* Single file restore can restore up to 100 individual files at a time. There is currently no support for restoring folders/directories.
 
 * The file being restored must be using the same language as the language on the destination volume. You will receive an error message if the languages are not the same.
 
