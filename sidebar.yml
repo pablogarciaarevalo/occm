@@ -379,7 +379,7 @@ entries:
         url: /concept_compute.html
       - title: Get started
         url: /task_getting_started_compute.html
-  - title: Tier data to the cloud
+  - title: Tier on-premises data to the cloud
     entries:
       - title: Learn about Cloud Tiering
         url: /concept_cloud_tiering.html
