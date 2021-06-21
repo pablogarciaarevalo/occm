@@ -417,10 +417,10 @@ entries:
     url: /task_viewing_amazon_s3.html
   - title: Administer Cloud Manager
     entries:
-      - title: Find your system ID
-        url: /task_finding_system_id.html
       - title: Manage Connectors
         entries:
+          - title: Find the system ID for a Connector
+            url: /task_finding_system_id.html
           - title: Manage existing Connectors
             url: /task_managing_connectors.html
           - title: More ways to create Connectors
