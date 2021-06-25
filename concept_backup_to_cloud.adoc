@@ -25,10 +25,10 @@ link:https://cloud.netapp.com/cloud-backup-service[Learn more about Cloud Backup
 * Back up from cloud to cloud, and from on-premises ONTAP systems to public or private cloud.
 * Backup data is secured with AES-256 bit encryption at-rest and TLS 1.2 HTTPS connections in-flight.
 * Support for up to 4,000 backups of a single volume.
-* Backups can be stored in the same or different region as your Cloud Volumes ONTAP system.
+* Backups can reside on a different subscription/account or different region than your Cloud Volumes ONTAP system.
 * Restore data from a specific point in time.
-* Restore a volume or individual files to the source system or to a different system.
-* Browsable file catalog for single file restore.
+* Restore a volume, or individual files, to the source system or to a different system.
+* Restore data to a working environment using a different subscription/account or that is in a different region.
 
 == Supported working environments and object storage providers
 
@@ -298,8 +298,6 @@ There are certain things you need to be aware of when the volume you are backing
 * Single file restore can restore up to 100 individual files at a time. There is currently no support for restoring folders/directories.
 
 * The file being restored must be using the same language as the language on the destination volume. You will receive an error message if the languages are not the same.
-
-* AWS cross account restore requires manual action in the cloud provider console. See the topic https://docs.aws.amazon.com/AmazonS3/latest/dev/example-walkthroughs-managing-access-example2.html[granting cross-account bucket permissions^] for details.
 
 * Single file restore is not supported when using the same account with different Cloud Managers in different subnets.
 
