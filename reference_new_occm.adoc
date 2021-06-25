@@ -19,6 +19,58 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.8 (6 July 2021)
+
+* <<Cloud Volumes ONTAP enhancements>>
+* <<Support Dashboard enhancement>>
+* <<Digital Wallet enhancement>>
+
+=== Cloud Volumes ONTAP enhancements
+
+This release of Cloud Manager includes enhancements to the management of Cloud Volumes ONTAP.
+
+==== Enhancements available in all cloud providers
+
+* By capacity charging
+
+* Write once, read many (WORM) storage is no longer in Preview and is now available for general use with Cloud Volumes ONTAP. link:concept_worm.html[Learn more about WORM storage].
++
+image:screenshot_enabling_worm.png[A screenshot of the WORM option that you can enable when creating a volume.]
+
+==== Enhancements available in AWS
+
+Starting with the 9.9.1 release, Cloud Volumes ONTAP now supports the m5dn.24xlarge instance type with PAYGO Premium, BYOL, and Freemium.
+
+==== Enhancements available in Azure
+
+* When creating a Cloud Volumes ONTAP system in Azure, you now have the option to select an existing resource group for the VM and its associated resources.
++
+image:screenshot_azure_resource_group.png[A screenshot of the Create Working Environment wizard where you can select an existing resource group.]
+
+* Disable "Allow Blob public access" when creating a storage account in Azure
+
+* By default, Cloud Manager now enables an Azure Private Link connection on the boot diagnostics storage account for Cloud Volumes ONTAP.
++
+link:task_enabling_private_link.html[Learn more about using an Azure Private Link with Cloud Volumes ONTAP]
+
+==== Enhancements available in Google Cloud
+
+* Cloud Volumes ONTAP now supports Balanced persistent disks (pd-balanced) starting with the 9.9.1 release.
++
+These SSDs balance performance and cost by providing lower IOPS per GB.
+
+* The custom-4-16384 machine type is no longer supported with new Cloud Volumes ONTAP systems.
++
+If you have an existing system running on this machine type, you can keep using it, but we recommend switching to the n2-standard-4 machine type.
+
+=== Support Dashboard enhancement
+
+NetApp Support Site (NSS) accounts are now managed in the Support tab, rather than from the Settings menu. This change makes it easier to find and manage all support-related information from a single location.
+
+=== Digital Wallet enhancement
+
+The Digital Wallet page is now located in its own tab under the Resources section.
+
 == Cloud Manager 3.9.7 update (7 June 2021)
 
 * <<Cloud Sync support for storage classes in Google Cloud>>
