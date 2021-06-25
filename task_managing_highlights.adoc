@@ -295,15 +295,47 @@ Deleting files requires the following permissions:
 
 .Steps
 
-. In the Data Investigation results pane, click the checkbox for the file, or files, that you want to delete and click *Delete* from the button bar.
+. In the Data Investigation results pane, select the file, or files, that you want to delete and click *Delete* from the button bar.
 +
 image:screenshot_compliance_delete_multi_files.png[A screenshot showing how to select the files to delete, and the Delete button, from the Data Investigation page.]
+
++
+* To select all files on the current page, check the box in the title row (image:button_backup_all_volumes.png[]). (You can't select files from more than one page.)
+* To select individual files, check the box for each file (image:button_backup_1_volume.png[]).
 
 . Because the delete operation is permanent, you must type "*permanently delete*" in the subsequent _Delete File_ dialog and click *Delete File*.
 
 Note that you can also delete an individual file when viewing the metadata details for a file. Just click *Delete this file*.
 
 image:screenshot_compliance_delete_file.png[A screenshot showing selection of the Delete File button from the metadata details for a file in the Data Investigation page.]
+
+== Moving source files to an NFS share
+
+You can move any source files that Data Sense is scanning to any NFS share.
+
+TIP: You can't move files that reside in databases or files that reside in volume Backups.
+
+.Requirements
+
+You must have the Account Admin or Workspace Admin role to move files.
+
+Moving files requires that the NFS share allows access from the Data Sense instance.
+
+.Steps
+
+. In the Data Investigation results pane, select the file, or files, that you want to move and click *Move* from the button bar.
++
+image:screenshot_compliance_move_multi_files.png[A screenshot showing how to select the files to move, and the Move button, from the Data Investigation page.]
+
++
+* To select all files on the current page, check the box in the title row (image:button_backup_all_volumes.png[]). (You can't select files from more than one page.)
+* To select individual files, check the box for each file (image:button_backup_1_volume.png[]).
+
+. In the _Move File_ dialog, enter the name of the NFS share in the format `<host_name>:/<share_path>` and click *Move File*.
+
+Note that you can also move an individual file when viewing the metadata details for a file. Just click *Move this file*.
+
+image:screenshot_compliance_move_file.png[A screenshot showing selection of the Move File button from the metadata details for a file in the Data Investigation page.]
 
 === List of predefined Policies
 

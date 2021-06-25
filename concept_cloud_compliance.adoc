@@ -112,7 +112,7 @@ TIP: The instance should remain running at all times because Cloud Data Sense co
 
 You can deploy Data Sense on a system with fewer CPUs and less RAM, but there are some limitations when using these less powerful systems.
 
-[cols="18,22,60",width=90%,options="header"]
+[cols="18,26,56",width=92%,options="header"]
 |===
 | System size
 | Specs
@@ -122,7 +122,7 @@ You can deploy Data Sense on a system with fewer CPUs and less RAM, but there ar
 | Small | 8 CPUs, 16 GB RAM | Same limitations as "Medium", plus two features are disabled: contextual AI scanning for most of the link:reference_private_data_categories.html#types-of-sensitive-personal-data[sensitive personal] identifiers, and for identifying link:task_responding_to_dsar.html[data subject names] inside files.
 |===
 
-When deploying Data Sense in the cloud, email ng-contact-data-sense@netapp.com for assistance in selecting these smaller systems.
+When deploying Data Sense in the cloud, email ng-contact-data-sense@netapp.com for assistance if you want to use one of these smaller systems.
 
 When deploying Data Sense on-premises, just use a Linux host with these specifications.
 
