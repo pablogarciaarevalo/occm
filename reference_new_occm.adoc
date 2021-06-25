@@ -36,7 +36,9 @@ This release of Cloud Manager includes enhancements to the management of Cloud V
 ** *Capacity-based BYOL*: A capacity-based license purchased from NetApp enables you to pay for Cloud Volumes ONTAP by capacity. The license is associated with your NetApp account and supports multiple Cloud Volumes ONTAP systems. Each individual system can have up to 2 PB of capacity using disks and data tiering to object storage.
 ** *Freemium*: The Freemium charging method enables you to use all Cloud Volumes ONTAP features free of charge from NetApp (cloud provider charges still apply). You're limited to 500 GB of allocated capacity per system and there's no support contract.
 +
-Learn more about Cloud Volumes ONTAP charging methods.
+Here's an example of the charging methods that you can choose from deploying a new Cloud Volumes ONTAP system in Azure:
++
+image:screenshot_cvo_charging_methods.png[A screenshot of the Cloud Volumes ONTAP working environment wizard where you can choose a charging method.]
 
 * Write once, read many (WORM) storage is no longer in Preview and is now available for general use with Cloud Volumes ONTAP. link:concept_worm.html[Learn more about WORM storage].
 
