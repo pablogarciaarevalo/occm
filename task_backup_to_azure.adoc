@@ -90,6 +90,9 @@ Cloud Backup is supported in all Azure regions https://cloud.netapp.com/cloud-vo
 Required setup for creating backups in a different Azure subscription::
 By default, backups are created using the same subscription as the one used for your Cloud Volumes ONTAP system. If you want to use a different Azure subscription for your backups, you must link:reference_backup_multi_account_azure.html[log in to the Azure portal and link the two subscriptions].
 
+Required information for using customer-managed keys for data encryption::
+You can use your own customer-managed keys for data encryption in the activation wizard instead of using the default Microsoft-managed encryption keys. In this case you will need to have the Azure Subscription, Key Vault name, and the Key. https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview[See how to use your own keys].
+
 Required outbound internet access for Azure deployments::
 The Cloud Restore virtual machine requires outbound internet access. If your virtual or physical network uses a proxy server for internet access, ensure that the instance has outbound internet access to contact the following endpoints.
 
