@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: task_getting_started_compliance.html
-keywords: cloud compliance, get started, enable cloud compliance, cifs credentials, smb credentials, cloud compliance access, privacy, compliance, dp volumes, data protection volumes, ANF, Azure NetApp Files, CVO, Cloud Volumes ONTAP, backup files, data sense
-summary: Complete a few steps to get started with Cloud Data Sense for Cloud Volumes ONTAP, on-premises ONTAP, or Azure NetApp Files.
+keywords: cloud compliance, get started, enable cloud compliance, cifs credentials, smb credentials, cloud compliance access, privacy, compliance, dp volumes, data protection volumes, CVO, Cloud Volumes ONTAP, backup files, data sense
+summary: Complete a few steps to get started with Cloud Data Sense for Cloud Volumes ONTAP and on-premises ONTAP systems.
 ---
 
-= Getting started with Cloud Data Sense for Cloud Volumes ONTAP, on-premises ONTAP, or Azure NetApp Files
+= Getting started with Cloud Data Sense for Cloud Volumes ONTAP and on-premises ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,7 @@ summary: Complete a few steps to get started with Cloud Data Sense for Cloud Vol
 :imagesdir: ./media/
 
 [.lead]
-Complete a few steps to get started with Cloud Data Sense for Cloud Volumes ONTAP, on-premises ONTAP systems, or Azure NetApp Files.
+Complete a few steps to get started with Cloud Data Sense for Cloud Volumes ONTAP and on-premises ONTAP systems.
 
 == Quick start
 
@@ -27,7 +27,6 @@ Before you can scan volumes, you must add the systems as working environments in
 [role="quick-margin-list"]
 * For Cloud Volumes ONTAP systems, these working environments should already be available in Cloud Manager
 * For on-premises ONTAP systems, link:task_discovering_ontap.html[Cloud Manager must discover the ONTAP clusters^]
-* For Azure NetApp Files, link:task_manage_anf.html[Cloud Manager must be set up to discover the configuration^].
 
 ==== image:number2.png[Number 2] Deploy the Cloud Data Sense instance
 
@@ -45,7 +44,7 @@ Click *Compliance*, select the *Configuration* tab, and activate compliance scan
 Now that Cloud Data Sense is enabled, ensure that it can access all volumes.
 
 [role="quick-margin-list"]
-* The Cloud Data Sense instance needs a network connection to each Cloud Volumes ONTAP subnet, Azure NetApp Files subnet, or on-prem ONTAP system.
+* The Cloud Data Sense instance needs a network connection to each Cloud Volumes ONTAP subnet or on-prem ONTAP system.
 * Security groups for Cloud Volumes ONTAP must allow inbound connections from the Data Sense instance.
 * Make sure these ports are open to the Data Sense instance:
 ** For NFS – ports 111 and 2049.
@@ -64,7 +63,7 @@ Select or deselect the volumes that you want to scan and Cloud Data Sense will s
 
 If the data sources you want to scan are not already in your Cloud Manager environment, you can add them to the canvas at this time.
 
-Your Cloud Volumes ONTAP systems should already be available in the Canvas in Cloud Manager. For on-premises ONTAP systems you need to have link:task_discovering_ontap.html[Cloud Manager discover these clusters^]. And for Azure NetApp Files, link:task_manage_anf.html[Cloud Manager must be set up to discover the configuration^].
+Your Cloud Volumes ONTAP systems should already be available in the Canvas in Cloud Manager. For on-premises ONTAP systems you need to have link:task_discovering_ontap.html[Cloud Manager discover these clusters^].
 
 == Deploying the Cloud Data Sense instance
 
@@ -72,11 +71,9 @@ link:task_deploy_cloud_compliance.html[Deploy Cloud Data Sense^] if there isn't 
 
 Cloud Data Sense can be deployed in the cloud or in an on-premises location when scanning Cloud Volumes ONTAP or on-premises ONTAP systems.
 
-Data Sense must be deployed in the cloud when scanning Azure NetApp Files volumes, and it must be deployed in the same region as the volumes you wish to scan.
-
 == Enabling Cloud Data Sense in your working environments
 
-You can enable Cloud Data Sense on Cloud Volumes ONTAP systems (in AWS and Azure), on-premises ONTAP clusters, and Azure NetApp Files.
+You can enable Cloud Data Sense on Cloud Volumes ONTAP systems (in AWS and Azure) and on on-premises ONTAP clusters.
 
 NOTE: Following these steps for on-prem ONTAP systems scans the volumes directly on the on-prem ONTAP system. If you are already creating backup files from those on-prem systems using link:concept_backup_to_cloud.html[Cloud Backup^], you can run compliance scans on the backup files in the cloud instead. Go to <<Scanning backup files from on-premises ONTAP systems,Scanning backup files from on-premises ONTAP systems>> to scan the volumes by scanning the backup files.
 
@@ -100,9 +97,7 @@ Make sure that Cloud Data Sense can access volumes by checking your networking, 
 
 .Steps
 
-. Make sure that there's a network connection between the Cloud Data Sense instance and each network that includes volumes for Cloud Volumes ONTAP, Azure NetApp Files, or on-prem ONTAP clusters.
-+
-NOTE: For Azure NetApp Files, Cloud Data Sense can only scan volumes that are in the same region as Cloud Manager.
+. Make sure that there's a network connection between the Cloud Data Sense instance and each network that includes volumes for Cloud Volumes ONTAP or on-prem ONTAP clusters.
 
 . Ensure that the security group for Cloud Volumes ONTAP allows inbound traffic from the Data Sense instance.
 +

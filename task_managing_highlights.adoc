@@ -90,7 +90,7 @@ To delete a Policy, click the image:screenshot_gallery_options.gif[More button] 
 
 You can add a Status to files that you want to mark for some type of follow-up. For example, you may have found some duplicate files and you want to delete one of them, but you need to check to see which one should be deleted. You could add a status of "Check to delete" to the file so you know this file requires some research and some type of future action.
 
-Data Sense enables you to view the Statuses that are assigned to files, add a Status to files, and change the name or delete an existing Status.
+Data Sense enables you to view the Statuses that are assigned to files, add or remove a Status from files, and change the name or delete an existing Status.
 
 Note that the Status is not added to the file in the same way as AIP Labels are part of the file metadata. The Status is just seen by Cloud Manager users using Cloud Data Sense so you can see if a file needs to be deleted, or checked for some type of follow-up.
 
@@ -112,7 +112,7 @@ You can add, change, and remove a Status tag from your files.
 
 .Steps
 
-. In the Data Investigation results pane, click image:button_subfolder.png[right-caret] for the file to expand the file metadata details.
+. In the Data Investigation results pane, click image:button_down_caret.png[down-caret] for the file to expand the file metadata details.
 
 . Click the *Status* field and assign a Status:
 
@@ -132,6 +132,27 @@ image:screenshot_compliance_edit_delete_status.png[A screenshot showing how to d
 When you change a Status name, it is changed for all files that were using the old name.
 
 When you delete a Status tag, it is cleared from all files that were using the Status.
+
+== Assigning users to manage certain files
+
+You can assign a Cloud Manager user to a specific file so that person can be responsible for any follow-up actions that need to be done on the file. This capability is often used with the feature to add custom Status tags to a file.
+
+For example, you might have a file that contains certain personal data that allows too many users read and write access (open permissions). So you could assign the Status tag "Change permissions" and assign this file to user "Joan Smith" so they can decide how to fix the issue. When they have fixed the issue they could change the Status tag to "Completed".
+
+Note that the user name is not added to the file as part of the file metadata - it is just seen by Cloud Manager users when using Cloud Data Sense.
+
+.Steps
+
+. In the Data Investigation results pane, click image:button_down_caret.png[down-caret] for the file to expand the file metadata details.
+
+. Click the *Assigned to* field and select the user name.
++
+image:screenshot_compliance_add_user_manually.png[A screenshot showing how to assign a user to a file in the Data Investigation page.]
++
+The User name appears in the file metadata.
+
+A new Filter in the Investigation page enables you to easily view all files that have the same person in the "Assigned To" field.
+
 
 == Categorizing your data using AIP labels
 
@@ -297,10 +318,10 @@ Deleting files requires the following permissions:
 
 . In the Data Investigation results pane, select the file, or files, that you want to delete and click *Delete* from the button bar.
 +
-image:screenshot_compliance_delete_multi_files.png[A screenshot showing how to select the files to delete, and the Delete button, from the Data Investigation page.]
+image:screenshot_compliance_delete_multi_files.png["A screenshot showing how to select the files to delete, and the Delete button, from the Data Investigation page."]
 
 +
-* To select all files on the current page, check the box in the title row (image:button_backup_all_volumes.png[]). (You can't select files from more than one page.)
+* To select all files on the current page, check the box in the title row (image:button_select_all_files.png[]). (You can't select files from more than one page.)
 * To select individual files, check the box for each file (image:button_backup_1_volume.png[]).
 
 . Because the delete operation is permanent, you must type "*permanently delete*" in the subsequent _Delete File_ dialog and click *Delete File*.
@@ -311,7 +332,7 @@ image:screenshot_compliance_delete_file.png[A screenshot showing selection of th
 
 == Moving source files to an NFS share
 
-You can move any source files that Data Sense is scanning to any NFS share.
+You can move source files that Data Sense is scanning to any NFS share. The NFS share does not need to be integrated with Data Sense (see link:task_scanning_file_shares.html[Scanning file shares]).
 
 TIP: You can't move files that reside in databases or files that reside in volume Backups.
 
@@ -325,15 +346,15 @@ Moving files requires that the NFS share allows access from the Data Sense insta
 
 . In the Data Investigation results pane, select the file, or files, that you want to move and click *Move* from the button bar.
 +
-image:screenshot_compliance_move_multi_files.png[A screenshot showing how to select the files to move, and the Move button, from the Data Investigation page.]
+image:screenshot_compliance_move_multi_files.png["A screenshot showing how to select the files to move, and the Move button, from the Data Investigation page."]
 
 +
-* To select all files on the current page, check the box in the title row (image:button_backup_all_volumes.png[]). (You can't select files from more than one page.)
+* To select all files on the current page, check the box in the title row (image:button_select_all_files.png[]). (You can't select files from more than one page.)
 * To select individual files, check the box for each file (image:button_backup_1_volume.png[]).
 
-. In the _Move File_ dialog, enter the name of the NFS share in the format `<host_name>:/<share_path>` and click *Move File*.
+. In the _Move File_ dialog, enter the name of the NFS share where all selected files will be moved in the format `<host_name>:/<share_path>`, and click *Move File*.
 
-Note that you can also move an individual file when viewing the metadata details for a file. Just click *Move this file*.
+Note that you can also move an individual file when viewing the metadata details for a file. Just click *Move file*.
 
 image:screenshot_compliance_move_file.png[A screenshot showing selection of the Move File button from the metadata details for a file in the Data Investigation page.]
 
