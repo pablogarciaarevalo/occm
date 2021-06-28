@@ -22,6 +22,10 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 == Cloud Manager 3.9.8 (6 July 2021)
 
 * <<Cloud Volumes ONTAP enhancements>>
+* <<Cloud Backup enhancements>>
+* <<Cloud Tiering enhancements>>
+* <<Cloud Data Sense enhancements>>
+* <<Application Template enhancements>>
 * <<Support Dashboard enhancement>>
 * <<Digital Wallet enhancement>>
 
@@ -34,7 +38,7 @@ This release of Cloud Manager includes enhancements to the management of Cloud V
 * New charging methods are available for Cloud Volumes ONTAP.
 +
 ** *Capacity-based BYOL*: A capacity-based license purchased from NetApp enables you to pay for Cloud Volumes ONTAP by capacity. The license is associated with your NetApp account and supports multiple Cloud Volumes ONTAP systems. With a capacity-based license, each individual Cloud Volumes ONTAP system supports up to 2 PB of capacity using disks and data tiering to object storage.
-** *Freemium*: The Freemium charging method enables you to use all Cloud Volumes ONTAP features free of charge from NetApp (cloud provider charges still apply). You're limited to 500 GB of allocated capacity per system and there's no support contract.
+** *Freemium*: Freemium enables you to use all Cloud Volumes ONTAP features free of charge from NetApp (cloud provider charges still apply). You're limited to 500 GB of allocated capacity per system and there's no support contract. You can have up to 10 Freemium systems.
 +
 Learn more about these Cloud Volumes ONTAP charging methods (note from Ben: link pending)
 +
@@ -71,6 +75,50 @@ These SSDs balance performance and cost by providing lower IOPS per GB.
 * The custom-4-16384 machine type is no longer supported with new Cloud Volumes ONTAP systems.
 +
 If you have an existing system running on this machine type, you can keep using it, but we recommend switching to the n2-standard-4 machine type.
+
+=== Cloud Backup enhancements
+
+* Cloud Backup now allows you to create backups using a different account/subscription than that used for your Cloud Volumes ONTAP system. You can also create backup files in a different region than the one in which your Cloud Volumes ONTAP system is deployed.
++
+This capability is available when using when using AWS or Azure, and only when enabling backup on an existing working environment - it is not available when creating a new Cloud Volumes ONTAP working environment.
+
+* When configuring backups to Azure Blob from an on-premises ONTAP system, you can define a connection to an Azure Private Endpoint in the activation wizard. This allows you to use a network interface that connects you privately and securely to a service powered by Azure Private Link.
+
+* For additional security and control, you can choose your own customer-managed keys for data encryption in the activation wizard instead of using the default Microsoft-managed encryption keys.
++
+This is available when configuring backups from an on-premises ONTAP system or from a Cloud Volumes ONTAP system in Azure.
+
+* The restriction of restoring only 8 files at a time using single-file restore from your backup files has been removed. Now you can restore up to 100 files at a time.
+
+=== Cloud Tiering enhancements
+
+* Now you can tier inactive data from your on-prem ONTAP clusters to any Object Storage service which uses the Simple Storage Service (S3) protocol.
++
+See link:https://review.docs.netapp.com/us-en/occm_jul_2021_tier/task_tiering_onprem_s3_compat.html[how to tier data to S3-compatible object storage].
+
+=== Cloud Data Sense enhancements
+
+* A new feature enables you to move any source files that Data Sense is scanning to any NFS share. This allows you to move sensitive or security-related files to a special area so you can do more analysis.
+
+* You can now choose to quickly map data into categories instead of doing a full classification scan. This enables you to view the Data Mapping report from the Governance Dashboard to get an overview of your data when there are certain data sources that you do not need to run a complete scan on.
+
+* Now you can assign a file to a specific Cloud Manager user so that person can be responsible for any follow-up actions that need to be done on the file. This capability can be used with the existing feature to add custom Status tags to a file.
++
+A new Filter in the Investigation page enables you to easily view all files that have the same person in the "Assigned To" field.
+
+* Some users with smaller scanning requirements have asked to be able to use a smaller Cloud Data Sense instance. Now you can. There are some limitations when using these smaller instances, so link:https://review.docs.netapp.com/us-en/occm_jul_2021_cc/concept_cloud_compliance.html#using-a-smaller-instance-type[see what these restrictions are first].
+
+* Data scans have a negligible impact on your storage systems and on your data. However, if you are concerned with even a very small impact, you can configure Data Sense to perform "slow" scans now.
+
+* The Last Accessed Time value has been added to the File Details page and to reports that you output in CSV format so you can see when users have last accessed the file.
+
+=== Application Template enhancements
+
+* A new feature enables you to add tags to a volume in a volume template. Tagging enables you to group different resources to identify applications, regions, or departments in order to perform automation or to allocate costs to certain departments or regions.
+
+* You can now add in the template that you want to replicate the data in the volume you are creating to another volume using the link:concept_replication.html[Replication service]. When you replicate data to other NetApp storage systems and continually update the secondary data, your data is kept current and remains available whenever you need it.
+
+* Now you can download a report that includes all the volumes that have "drifted" from your template settings instead of just viewing this information for a single volume in the Dashboard. In this manner you can identify these volumes and assign someone to bring the volumes back into compliance.
 
 === Support Dashboard enhancement
 
