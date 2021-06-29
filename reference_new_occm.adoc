@@ -27,6 +27,7 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 * <<Cloud Data Sense enhancements>>
 * <<Application Template enhancements>>
 * <<Cloud Sync enhancements>>
+* <<Connector enhancement>>
 * <<Support Dashboard enhancement>>
 * <<Digital Wallet enhancement>>
 
@@ -140,6 +141,10 @@ link:task_external_vault.html[Learn more about using a HashiCorp Vault with a da
 This page enables you to define the tags or metadata that you want to save on the objects in the target S3 bucket.
 +
 The tagging option was previously part of the sync relationship's settings.
+
+=== Connector enhancement
+
+We redesigned the *Add Connector* wizard to add new options and to make it easier to use. You can now add tags, specify a role (for AWS or Azure), upload a root certificate for a proxy server, view code for Terraform automation, view progress details, and more. 
 
 === Support Dashboard enhancement
 
