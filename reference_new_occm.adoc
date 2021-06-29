@@ -128,23 +128,21 @@ A new Filter in the Investigation page enables you to easily view all files that
 +
 link:reference_sync_requirements.html[View supported sync relationships].
 
-* Cloud Sync can now copy metadata and tags between object-based storage when you create a sync relationship and enable a setting.
+* Cloud Sync can now copy object metadata and tags between object-based storage when you create a sync relationship and enable a setting.
 +
-link:task_sync_creating_relationships.html#settings[Learn more about this setting].
+link:task_sync_creating_relationships.html#settings[Learn more about the Copy for Objects setting].
 
 * You can now set up the data broker to access credentials from an external HashiCorp Vault by authenticating with a Google Cloud service account.
 +
 link:task_external_vault.html[Learn more about using a HashiCorp Vault with a data broker].
 
-* When setting up a sync relationship to an AWS S3 bucket, Cloud Sync now shows a *Tags/Metadata* page.
-+
-This page enables you to define the tags or metadata that you want to save on the objects in the target S3 bucket.
+* When setting up a sync relationship to an AWS S3 bucket, Cloud Sync now shows a *Tags/Metadata* page. This page enables you to define the tags or metadata that you want to save on the objects in the target S3 bucket.
 +
 The tagging option was previously part of the sync relationship's settings.
 
 === Connector enhancement
 
-We redesigned the *Add Connector* wizard to add new options and to make it easier to use. You can now add tags, specify a role (for AWS or Azure), upload a root certificate for a proxy server, view code for Terraform automation, view progress details, and more. 
+We redesigned the *Add Connector* wizard to add new options and to make it easier to use. You can now add tags, specify a role (for AWS or Azure), upload a root certificate for a proxy server, view code for Terraform automation, view progress details, and more.
 
 === Support Dashboard enhancement
 
