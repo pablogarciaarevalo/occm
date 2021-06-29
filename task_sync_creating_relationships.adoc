@@ -87,7 +87,7 @@ NOTE: If you want to sync more than one directory on the NFS server, then you mu
 +
 image:screenshot_bucket_setup.gif[This screenshot shows the Bucket Setup page which enables you to choose Yes or No for encryption and to select a specific S3 storage class for the synced data.]
 
-. On the *Settings* page, define how source files and folders are synced and maintained in the target location:
+. [[settings]]On the *Settings* page, define how source files and folders are synced and maintained in the target location:
 +
 Schedule:: Choose a recurring schedule for future syncs or turn off the sync schedule. You can schedule a relationship to sync data as often as every 1 minute.
 
