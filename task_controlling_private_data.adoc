@@ -195,8 +195,9 @@ image:screenshot_compliance_investigation_filtered.png[A screenshot of the filte
 ** Data Subject
 ** File Type
 ** File Size
-** Created Time
+** Created date
 ** Last Modified date
+** Last Accessed date (For the link:reference_private_data_categories.html#types-of-files[types of files that we scan for content] this is the last time Data Sense scanned the file.)
 ** Has Duplicates
 ** Status
 ** Assigned To
@@ -221,6 +222,7 @@ The *Unstructured Data Report* includes the following information:
 * File type
 * Created time
 * Last modified
+* Last accessed
 * File size
 * File owner
 * Category

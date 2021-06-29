@@ -86,6 +86,8 @@ Data changes frequently, so Cloud Data Sense scans your data continuously with n
 
 link:concept_cloud_compliance.html#how-scans-work[Learn how scans work^].
 
+Data scans have a negligible impact on your storage systems and on your data. However, if you are concerned with even a very small impact, you can configure Data Sense to perform "slow" scans. link:task_managing_compliance.html#reducing-the-data-sense-scan-speed[See how to reduce the scan speed].
+
 == Does Cloud Data Sense offer reports?
 
 Yes. The information offered by Cloud Data Sense can be relevant to other stakeholders in your organizations, so we enable you to generate reports to share the insights.
