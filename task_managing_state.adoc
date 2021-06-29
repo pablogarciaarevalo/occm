@@ -21,9 +21,15 @@ You might want to shut down Cloud Volumes ONTAP during specific time intervals t
 
 .About this task
 
-When you schedule an automatic shutdown of your Cloud Volumes ONTAP system, Cloud Manager postpones the shutdown if an active data transfer is in progress. Cloud Manager shuts down the system after the transfer is complete.
+* When you schedule an automatic shutdown of your Cloud Volumes ONTAP system, Cloud Manager postpones the shutdown if an active data transfer is in progress.
++
+Cloud Manager shuts down the system after the transfer is complete.
 
-This task schedules automatic shutdowns of both nodes in an HA pair.
+* This task schedules automatic shutdowns of both nodes in an HA pair.
+
+* Snapshots of boot and root disks are not created when turning off Cloud Volumes ONTAP through scheduled shutdowns.
++
+Snapshots are automatically created only when performing a manual shutdown, as described in the next section.
 
 .Steps
 
