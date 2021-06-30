@@ -36,7 +36,7 @@ link:task_deploy_cloud_compliance.html[Deploy Cloud Data Sense in Cloud Manager^
 ==== image:number3.png[Number 3] Enable Cloud Data Sense and select the volumes to scan
 
 [role="quick-margin-para"]
-Click *Compliance*, select the *Configuration* tab, and activate compliance scans for volumes in specific working environments.
+Click *Data Sense*, select the *Configuration* tab, and activate compliance scans for volumes in specific working environments.
 
 ==== image:number4.png[Number 4] Ensure access to volumes
 

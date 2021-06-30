@@ -28,7 +28,7 @@ Cloud Data Sense provides several tools that can help you with your compliance e
 * Respond to Data Subject Access Requests (DSAR)
 * Notify Cloud Manager users through email when files contain certain PII (you define this criteria using link:task_managing_highlights.html#controlling-your-data-using-policies[Policies^])
 * View and modify link:https://azure.microsoft.com/en-us/services/information-protection/[Azure Information Protection (AIP) labels^] in your files
-* Add a custom status to a file so you can identify if the file needs follow-up, or has been verified
+* Add a custom status to a file (for example, "needs to be moved") and assign a Cloud Manager user so that person can own the change to the file
 * Delete individual files
 
 Cloud Data Sense also provides tools that can help with your governance efforts. You can use Cloud Data Sense to:
@@ -58,7 +58,7 @@ NOTE: A Beta feature released in January 2021 allows you to run compliance scans
 
 == Cost
 
-* The cost to use Cloud Data Sense depends on the amount of data that you're scanning. The first 1 TB of data that Data Sense scans in a Cloud Manager workspace is free. This includes all data from all working environments and data sources. A subscription to the AWS or Azure Marketplace is required to continue scanning data after that point. See https://cloud.netapp.com/cloud-compliance#pricing[pricing^] for details.
+* The cost to use Cloud Data Sense depends on the amount of data that you're scanning. The first 1 TB of data that Data Sense scans in a Cloud Manager workspace is free. This includes all data from all working environments and data sources. A subscription to the AWS or Azure Marketplace is required to continue scanning data after that point. See https://cloud.netapp.com/netapp-cloud-data-sense[pricing^] for details.
 +
 link:task_deploy_cloud_compliance.html#subscribing-to-the-cloud-data-sense-service[Learn how to subscribe^].
 +
@@ -74,15 +74,6 @@ Data transfer costs depend on your setup. If the Cloud Data Sense instance and d
 
 * https://aws.amazon.com/ec2/pricing/on-demand/[AWS: Amazon EC2 Pricing^]
 * https://azure.microsoft.com/en-us/pricing/details/bandwidth/[Microsoft Azure: Bandwidth Pricing Details^]
-
-== How Cloud Data Sense works
-
-At a high-level, Cloud Data Sense works like this:
-
-. You deploy an instance of Data Sense in Cloud Manager.
-. You enable it on one or more working environments or data sources.
-. Data Sense scans the data using an AI learning process.
-. You click *Data Sense* and use the provided dashboards and reporting tools to help in your compliance efforts.
 
 == The Cloud Data Sense instance
 
@@ -126,6 +117,15 @@ When deploying Data Sense in the cloud, email ng-contact-data-sense@netapp.com f
 
 When deploying Data Sense on-premises, just use a Linux host with these specifications.
 
+== How Cloud Data Sense works
+
+At a high-level, Cloud Data Sense works like this:
+
+. You deploy an instance of Data Sense in Cloud Manager.
+. You enable high-level mapping or deep-level scanning on one or more working environments or data sources.
+. Data Sense scans the data using an AI learning process.
+. You click *Data Sense* and use the provided dashboards and reporting tools to help in your compliance efforts.
+
 == How scans work
 
 After you enable Cloud Data Sense and select the volumes, buckets, database schemas, or OneDrive users you want to scan, it immediately starts scanning the data to identify personal and sensitive data. It maps your organizational data, categorizes each file, and identifies and extracts entities and predefined patterns in the data. The result of the scan is an index of personal information, sensitive personal information, data categories, and file types.
@@ -137,6 +137,33 @@ image:diagram_cloud_compliance_scan.png[A diagram that shows a Cloud Manager ins
 After the initial scan, Data Sense continuously scans your data to detect incremental changes (this is why it's important to keep the instance running).
 
 You can enable and disable scans at the volume level, at the bucket level, at the database schema level, and at the OneDrive user level.
+
+=== What's the difference between Mapping and Classification scans
+
+Cloud Data Sense enables you to run a general "mapping" scan on selected working environments and data sources. Mapping provides only a high-level overview of your data, whereas Classification provides or deep-level scanning of your data. Mapping can be done on your data sources very quickly because it does not access files to see the data inside.
+
+Some users like this functionality because they want to quickly scan their data to identify the areas that require more details - and then they can enable classification only on those required data sources.
+
+The table below shows some of the differences:
+
+[cols="50,20,20",width=90%,options="header"]
+|===
+| Feature
+| Classification
+| Mapping
+
+| Scan speed | Slow | Fast
+| List of file types and used capacity | Yes | Yes
+| Number of files and used capacity | Yes | Yes
+| Age and size of files | Yes | Yes
+| Ability to run a link:task_generating_compliance_reports.html#data-mapping-report[Data Mapping Report] | Yes | Yes
+| Data Investigation page to view file details | Yes | No
+| Search for names within files | Yes | No
+| Create policies that provide custom search results | Yes | No
+| Categorize data using AIP labels and Status tags | Yes | No
+| Delete and move source files | Yes | No
+| Ability to run other reports | Yes | No
+|===
 
 == Information that Cloud Data Sense indexes
 
