@@ -127,7 +127,7 @@ Namespace::
        }
 }
 
-== Creating a new sync relationship using secrets form the vault
+== Creating a new sync relationship using secrets from the vault
 
 Now that everything is set up, you can send an API call to create a sync relationship that uses your vault to get the secrets.
 
