@@ -104,7 +104,7 @@ You must bind the service principal to your Azure subscription and assign it a c
 
 . https://docs.microsoft.com/en-us/azure/role-based-access-control/custom-roles[Create a custom role in Azure^].
 +
-The following steps describe how to create the role form the Azure portal.
+The following steps describe how to create the role from the Azure portal.
 
 .. Open the subscription and click *Access control (IAM)*.
 
