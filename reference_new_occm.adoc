@@ -84,8 +84,6 @@ If you have an existing system running on this machine type, you can keep using 
 +
 This capability is available when using when using AWS or Azure, and only when enabling backup on an existing working environment - it is not available when creating a new Cloud Volumes ONTAP working environment.
 
-* When configuring backups to Azure Blob from an on-premises ONTAP system, you can define a connection to an Azure Private Endpoint in the activation wizard. This allows you to use a network interface that connects you privately and securely to a service powered by Azure Private Link.
-
 * For additional security and control, you can choose your own customer-managed keys for data encryption in the activation wizard instead of using the default Microsoft-managed encryption keys.
 +
 This is available when configuring backups from an on-premises ONTAP system or from a Cloud Volumes ONTAP system in Azure.
