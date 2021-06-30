@@ -23,12 +23,13 @@ link:https://cloud.netapp.com/cloud-backup-service[Learn more about Cloud Backup
 
 * Back up independent copies of your data volumes to low-cost object storage.
 * Back up from cloud to cloud, and from on-premises ONTAP systems to public or private cloud.
+* Backups can reside on a different subscription/account or different region than your Cloud Volumes ONTAP system.
 * Backup data is secured with AES-256 bit encryption at-rest and TLS 1.2 HTTPS connections in-flight.
 * Support for up to 4,000 backups of a single volume.
-* Backups can reside on a different subscription/account or different region than your Cloud Volumes ONTAP system.
 * Restore data from a specific point in time.
 * Restore a volume, or individual files, to the source system or to a different system.
 * Restore data to a working environment using a different subscription/account or that is in a different region.
+* Browsable file catalog for single file restore.
 
 == Supported working environments and object storage providers
 
