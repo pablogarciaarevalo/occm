@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_creating_connectors_azure.html
-keywords: create connector in Azure, create connector in azure, create connector in gcp, launch connector in Azure, launch connector in azure, launch connector in gcp, deploy connector in Azure, deploy connector in azure, deploy connector in gcp
+keywords: create connector in azure, launch connector in azure, deploy connector in azure, azure connector, connector azure, connector permissions
 summary: An Account Admin needs to deploy a Connector before you can use most Cloud Manager features. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
 ---
 
@@ -84,13 +84,15 @@ Cloud Manager enables you to create a Connector in Azure directly from its user 
 
 * A VNet and subnet in your Azure region of choice.
 
+* If you don't want Cloud Manager to automatically create an Azure role for the Connector, then you'll need to create your own https://occm-sample-policies.s3.amazonaws.com/Policy_for_cloud_Manager_Azure_3.8.7.json[using this policy^].
++
+These permissions are for the Connector instance. It's a different set of permissions than what's provided in the first bullet above.
+
 .Steps
 
 . If you're creating your first Working Environment, click *Add Working Environment* and follow the prompts. Otherwise, click the *Connector* drop-down and select *Add Connector*.
 +
 image:screenshot_connector_add.gif[A screenshot that shows the Connector icon in the header and the Add Connector action.]
-
-. Click *Let's Start*.
 
 . Choose *Microsoft Azure* as your cloud provider.
 +
@@ -98,19 +100,21 @@ Remember that the Connector must have a network connection to the type of workin
 +
 link:reference_networking_cloud_manager.html[Learn more about networking requirements for the Connector].
 
-. Review what you'll need and click *Continue*.
+. Follow the steps in the wizard to create the Connector:
 
-. If you're prompted, log in to your Microsoft account, which should have the required permissions to create the virtual machine.
+* *Get Ready*: Review what you'll need.
+
+* If you're prompted, log in to your Microsoft account, which should have the required permissions to create the virtual machine.
 +
 The form is owned and hosted by Microsoft. Your credentials are not provided to NetApp.
 +
 TIP: If you're already logged in to an Azure account, then Cloud Manager will automatically use that account. If you have multiple accounts, then you might need to log out first to ensure that you're using the right account.
 
-. Provide the required information:
+* *VM Authentication*: Choose an Azure subscription, a location, a new resource group or an existing resource group, and then choose an authentication method.
 
-* *VM Authentication*: Enter a name for the virtual machine and a user name and password or public key.
-
-* *Basic Settings*: Choose an Azure subscription, an Azure region, and whether to create a new resource group or to use an existing resource group.
+. *Details*: Enter a name for the instance, specify tags, and choose whether you want Cloud Manager to create a new role that has the required permissions, or if you want to select an existing role that you set up with https://occm-sample-policies.s3.amazonaws.com/Policy_for_cloud_Manager_Azure_3.8.7.json[the required permissions^].
++
+Note that you can choose the subscriptions associated with this role. Each subscription that you choose provides the Connector with permissions to deploy Cloud Volumes ONTAP in those subscriptions.
 
 * *Network*: Choose a VNet and subnet, whether to enable a public IP address, and optionally specify a proxy configuration.
 
@@ -118,7 +122,9 @@ TIP: If you're already logged in to an Azure account, then Cloud Manager will au
 +
 NOTE: There's no incoming traffic to the Connector, unless you initiate it. HTTP and HTTPS provide access to the link:concept_connectors.html#the-local-user-interface[local UI], which you'll use in rare circumstances. SSH is only needed if you need to connect to the host for troubleshooting.
 
-. Click *Create*.
+* *Review*: Review your selections to verify that your set up is correct.
+
+. Click *Add*.
 +
 The virtual machine should be ready in about 7 minutes. You should stay on the page until the process is complete.
 
