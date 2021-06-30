@@ -119,7 +119,7 @@ If you choose one of the packages, then you only need to specify a volume and th
 
 . *IAM Role*: It's best to keep the default option to let Cloud Manager create the role for you.
 +
-If you prefer to use your own policy, it must meet http://mysupport.netapp.com/cloudontap/support/iampolicies[policy requirements for Cloud Volumes ONTAP nodes^].
+If you prefer to use your own policy, it must meet https://mysupport.netapp.com/site/info/cloud-manager-policies[policy requirements for Cloud Volumes ONTAP nodes^].
 
 . *Licensing*: Change the Cloud Volumes ONTAP version as needed, select a license, an instance type, and the instance tenancy.
 +
@@ -334,7 +334,7 @@ If you choose one of the packages, then you only need to specify a volume and th
 
 . *IAM Role*: It's best to keep the default option to let Cloud Manager create the role for you.
 +
-If you prefer to use your own policy, it must meet http://mysupport.netapp.com/cloudontap/support/iampolicies[policy requirements for Cloud Volumes ONTAP nodes and the HA mediator^].
+If you prefer to use your own policy, it must meet https://mysupport.netapp.com/site/info/cloud-manager-policies[policy requirements for Cloud Volumes ONTAP nodes and the HA mediator^].
 
 . *Licensing*: Change the Cloud Volumes ONTAP version as needed, select a license, an instance type, and the instance tenancy.
 +
