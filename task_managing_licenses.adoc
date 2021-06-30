@@ -53,7 +53,7 @@ If Cloud Manager can't access the license file over the secure internet connecti
 
 .Steps
 
-. Click *Settings > Digital Wallet*.
+. Click *All Services > Digital Wallet*.
 
 . In the *BYOL* tab, expand the details for a Cloud Volumes ONTAP system.
 
@@ -79,7 +79,7 @@ Purchase an extra capacity license by contacting us through the chat icon in the
 
 .Steps
 
-. Click *Settings > Digital Wallet*.
+. Click *All Services > Digital Wallet*.
 
 . In the *BYOL* tab, expand the details for a Cloud Volumes ONTAP system.
 
@@ -95,7 +95,7 @@ If you extended the term of an extra capacity license, you'll need to update the
 
 .Steps
 
-. Click *Settings > Digital Wallet*.
+. Click *All Services > Digital Wallet*.
 
 . In the *BYOL* tab, expand the details for a Cloud Volumes ONTAP system.
 
@@ -111,7 +111,7 @@ If an extra capacity license expired and is no longer in use, then you can remov
 
 .Steps
 
-. Click *Settings > Digital Wallet*.
+. Click *All Services > Digital Wallet*.
 
 . In the *BYOL* tab, expand the details for a Cloud Volumes ONTAP system.
 
@@ -127,7 +127,7 @@ link:concept_evaluating.html[Learn more about Evaluation licenses].
 
 .Steps
 
-. Click *Settings > Digital Wallet*.
+. Click *All Services > Digital Wallet*.
 
 . Click *Eval*.
 
@@ -169,7 +169,7 @@ link:concept_backup_to_cloud.html#licensing[Learn more about Cloud Backup licens
 
 .Steps
 
-. Click *Settings > Digital Wallet*.
+. Click *All Services > Digital Wallet*.
 
 . Click *Cloud Backup Licenses*.
 
