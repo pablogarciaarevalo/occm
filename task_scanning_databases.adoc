@@ -93,7 +93,7 @@ The database is added to the list of working environments.
 
 == Enabling and disabling compliance scans on database schemas
 
-You can stop or start scanning schemas at any time.
+You can stop or start full scanning of your schemas at any time. There is no option to select mapping-only scans for database schemas.
 
 . From the _Configuration_ page, click the *Configuration* button for the database you want to configure.
 +

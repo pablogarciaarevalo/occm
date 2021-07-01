@@ -81,9 +81,11 @@ NOTE: Following these steps for on-prem ONTAP systems scans the volumes directly
 +
 image:screenshot_cloud_compliance_we_scan_config.png[A screenshot of the Configuration tab immediately after deploying the Cloud Data Sense instance.]
 
-. To scan all volumes in a working environment, click *Activate Compliance for All Volumes*.
+. To scan all volumes in a working environment, click *Activate Scanning for All Volumes*.
 +
-To scan only certain volumes in a working environment, click *or select Volumes* and then choose the volumes you want to scan.
+When enabled in this manner, full "mapping and classification" scanning is performed on all volumes.
++
+If you want to enable scanning only for certain volumes, or if you only want to perform "mapping-only" scanning, click *or select Volumes* and then choose the volumes you want to scan.
 
 See <<Enabling and disabling compliance scans on volumes,Enabling and disabling compliance scans on volumes>> for details.
 
@@ -133,23 +135,24 @@ image:screenshot_compliance_volume_details.gif["A screenshot of the View Details
 
 == Enabling and disabling compliance scans on volumes
 
-You can stop or start scanning volumes in a working environment at any time from the Configuration page. We recommend that you scan all volumes.
+You can stop or start mapping-only scans, or mapping and classification scans, in a working environment at any time from the Configuration page. We recommend that you scan all volumes.
 
 image:screenshot_volume_compliance_selection.png[A screenshot of the Configuration page where you can enable or disable scanning of individual volumes.]
 
-[cols="40,50",options="header"]
+[cols="45,45",width=90%,options="header"]
 |===
 | To:
 | Do this:
 
-| Disable scanning for a volume | Move the volume slider to the left
-| Disable scanning for all volumes | Move the *Activate Compliance for all Volumes* slider to the left
-| Enable scanning for a volume | Move the volume slider to the right
-| Enable scanning for all volumes | Move the *Activate Compliance for all Volumes* slider to the right
+| Enable mapping-only scans on a volume | Click *Map*
+| Enable full scanning on a volume | Click *Map & Classify*
+| Enable full scanning on all volumes | Move the *Map & Classify All* slider to the right
+| Disable scanning on a volume | Click *Off*
+| Disable scanning on all volumes | Move the *Map & Classify All* slider to the left
 
 |===
 
-NOTE: New volumes added to the working environment are automatically scanned only when the *Activate Compliance for all Volumes* setting is enabled. When this setting is disabled, you'll need to activate scanning on each new volume you create in the working environment.
+NOTE: New volumes added to the working environment are automatically scanned only when the *Map & Classify All* setting is enabled. When this setting is disabled, you'll need to activate mapping and/or full scanning on each new volume you create in the working environment.
 
 == Scanning backup files from on-premises ONTAP systems
 
