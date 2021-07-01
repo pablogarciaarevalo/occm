@@ -147,13 +147,11 @@ After you prepare your Google Cloud environment, start tiering inactive data fro
 +
 image:screenshot_setup_tiering_onprem.png[A screenshot that shows the Enable option that appears on the right side of the screen after you select an on-prem ONTAP working environment.]
 
-. *Choose your provider*: Select *Google Cloud Platform*.
-
 . Complete the steps on the *Tiering Setup* page:
 
 .. *Bucket*: Add a new Google Cloud Storage bucket or select an existing bucket.
 
-.. *Storage Class Life Cycle Management*: Cloud Tiering manages the life cycle transitions of your tiered data. Data starts in the _Standard_ class, but you can create rules to move the data to other classes after a certain number of days.
+.. *Storage Class Life Cycle*: Cloud Tiering manages the life cycle transitions of your tiered data. Data starts in the _Standard_ class, but you can create rules to move the data to other classes after a certain number of days.
 +
 Select the Google Cloud storage class that you want to transition the tiered data to and the number of days before the data will be moved, and click *Continue*. For example, the screenshot below shows that tiered data is moved from the _Standard_ class to the _Nearline_ class after 30 days in object storage, and then to the _Coldline_ class after 60 days in object storage.
 +

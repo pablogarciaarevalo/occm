@@ -141,7 +141,7 @@ After you prepare your environment, start tiering inactive data from your first 
 +
 image:screenshot_setup_tiering_onprem.png[A screenshot that shows the Setup Tiering option that appears on the right side of the screen after you select an on-prem ONTAP working environment.]
 
-. *Choose your provider*: Select *StorageGRID*.
+. *Choose your provider*: Select *StorageGRID* and click *Continue*.
 
 . Complete the steps on the *Tiering Setup* page:
 
