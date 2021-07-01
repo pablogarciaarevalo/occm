@@ -96,6 +96,8 @@ This is available when configuring backups from an on-premises ONTAP system or f
 +
 See link:https://review.docs.netapp.com/us-en/occm_jul_2021_tier/task_tiering_onprem_s3_compat.html[how to tier data to S3-compatible object storage].
 
+* When tiering data to Azure Blob storage, now your Connector can be running on your premises. You are no longer required to use a Connector installed in an Azure VNet.
+
 === Cloud Data Sense enhancements
 
 * A new feature enables you to move any source files that Data Sense is scanning to any NFS share. This allows you to move sensitive or security-related files to a special area so you can do more analysis.
