@@ -93,10 +93,10 @@ The following questions relate to Connectors.
 
 === Where does the Connector need to be installed?
 
-* When tiering data to S3, a Connector can reside in an AWS VPC or on your premises.
-* When tiering data to Blob storage, a Connector can reside in an Azure VNet or on your premises.
-* When tiering data to Google Cloud Storage, a Connector must reside in a Google Cloud Platform VPC.
-* When tiering data to StorageGRID or other S3-Comatible storage providers, a Connector must reside on an on-premises Linux host.
+* When tiering data to S3, the Connector can reside in an AWS VPC or on your premises.
+* When tiering data to Blob storage, the Connector can reside in an Azure VNet or on your premises.
+* When tiering data to Google Cloud Storage, the Connector must reside in a Google Cloud Platform VPC.
+* When tiering data to StorageGRID or other S3-Compatible storage providers, the Connector must reside on your premises.
 
 == Networking
 
