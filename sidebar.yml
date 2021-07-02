@@ -175,12 +175,12 @@ entries:
         url: /task_protecting_ransomware.html
       - title: Administer
         entries:
+          - title: Manage licenses
+            url: /task_managing_licenses.html
           - title: Register pay-as-you-go systems
             url: /task_registering.html
           - title: Set up Cloud Volumes ONTAP
             url: /task_setting_up_ontap_cloud.html
-          - title: Manage BYOL licenses
-            url: /task_managing_licenses.html
           - title: Update software
             url: /task_updating_ontap_cloud.html
           - title: Modify system configurations
