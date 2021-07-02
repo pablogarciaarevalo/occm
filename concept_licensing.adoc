@@ -28,7 +28,7 @@ You can pay for Cloud Volumes ONTAP using the following licensing options.
 
 | PAYGO a|
 * Pay-as-you-go by the hour through a marketplace subscription from your cloud provider
-* Available in three licensing options: Explore, Standard, and Premium | Included, but you must https://docs.netapp.com/us-en/occm/task_registering.html[activate support^]
+* Available in three licensing options: Explore, Standard, and Premium | Included, but you must link:task_registering.html[activate support]
 a|
 * Explore: 2 TB
 * Standard: 10 TB
@@ -73,7 +73,7 @@ The following sections provide more details about each of these charging methods
 +
 Cloud Manager prompts you to subscribe to your cloud provider's marketplace when you create a Cloud Volumes ONTAP system.
 * Conversions to another licensing option isn't supported.
-* Basic technical support is offered, but you must https://docs.netapp.com/us-en/occm/task_registering.html[register and activate the NetApp serial number associated with your system^].
+* Basic technical support is offered, but you must link:task_registering.html[register and activate the NetApp serial number associated with your system].
 
 You can view pricing details from your cloud provider's marketplace:
 
