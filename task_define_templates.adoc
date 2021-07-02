@@ -192,6 +192,8 @@ For example, you could specify that "db" be a required prefix, suffix, or contai
 
 | Volume Size | You can specify a range of allowable values, or you can specify a fixed size. This value is in GB. For our example we can add a fixed value *100*.
 
+| Tags | Enter a name and value pair for a tag that you want to associate with this volume. For example, you could add "Cost Center" as the tag name and the cost center code "6655829" as the value. You can associate more than one tag with a volume by adding more tag name and value pairs.
+
 |===
 
 . *Protection:* Choose whether this volume will have Snapshot copies created by selecting "Default" or some other policy, or choose "None" if you do not want to create Snapshot copies.
@@ -326,6 +328,8 @@ For example, you could specify that "db" be a required prefix, suffix, or contai
 
 | Subnet | Enter the VNet and subnet. This value includes the full path, in a format similar to "/subscriptions/<subscription_id>/resourceGroups/<resource_group>/ providers/Microsoft.Network/virtualNetworks/<vpc_name>/subnets/<subhet_name>".
 
+| Tags | Enter a name and value pair for a tag that you want to associate with this volume. For example, you could add "Cost Center" as the tag name and the cost center code "6655829" as the value. You can associate more than one tag with a volume by adding more tag name and value pairs.
+
 |===
 
 . *Protocol:* Select *NFSv3*, *NFSv4.1*, or *SMB* to set the protocol of the volume. And then the provide the protocol details.
@@ -416,6 +420,8 @@ For example, you could specify that "db" be a required prefix, suffix, or contai
 
 | Volume Size | You can specify a range of allowable values, or you can specify a fixed size. This value is in GB. For our example we can add a fixed value *100*.
 
+| Tags | Enter a name and value pair for a tag that you want to associate with this volume. For example, you could add "Cost Center" as the tag name and the cost center code "6655829" as the value. You can associate more than one tag with a volume by adding more tag name and value pairs.
+
 |===
 
 . *Protection:* Choose whether this volume will have Snapshot copies created by selecting "Default" or some other policy, or choose "None" if you do not want to create Snapshot copies.
@@ -476,7 +482,7 @@ When creating a volume template, you can add in the template that you want to cr
 
 image:screenshot_template_backup.png[A screenshot of the page to enable backup functionality for your volumes.]
 
-. *Context:* You can enter a Working Environment Name and Storage VM name if you are using this action in a template without first creating a volume. Otherwise, leave these fields as "Editable."
+. *Context:* You can enter a working environment Name and storage VM name if you are using this action in a template without first creating a volume. Otherwise, leave these fields as "Editable."
 
 . *Policy:* Define the backup policy to create daily, weekly, or monthly backups with a specific number of backup copies to retain.
 
@@ -490,7 +496,7 @@ When creating a volume template, you can add in the template that you want to sc
 
 image:screenshot_template_data_sense.png[A screenshot of the page to enable scanning functionality for your volumes.]
 
-. *Context:* You can enter a Working Environment Name if you are using this action in a template without first creating a volume. Otherwise, leave this field as "Editable."
+. *Context:* You can enter a working environment Name if you are using this action in a template without first creating a volume. Otherwise, leave this field as "Editable."
 
 . *Volume Name:* Typically the volume is the one created prior to the Data Sense action in the same template. In this case, see how to <<Pass values between template actions,complete the fields>> within the volume name to indicate that volume.
 
@@ -500,7 +506,7 @@ image:screenshot_template_data_sense.png[A screenshot of the page to enable scan
 
 === Add Replication functionality to a volume
 
-When creating a volume template, you can add in the template that you want to replicate the data in the volume to another volume using the link:concept_replication.html[Replication] service.
+When creating a volume template, you can add in the template that you want to replicate the data in the volume to another volume using the link:concept_replication.html[Replication] service. You can replicate data to a Cloud Volumes ONTAP cluster or to an on-prem ONTAP cluster.
 
 TIP: This action is not applicable for Azure NetApp Files volumes.
 
@@ -517,7 +523,7 @@ image:screenshot_template_replication_source.png[A screenshot of the page to def
 +
 To get this information: double-click the working environment, click the menu icon, and click Information.
 
-. *Destination Details:* Enter the details about the destination volume that will be created by the replication process:
+. *Destination Details:* Enter the details about the destination volume that will be created by the replication operation:
 +
 image:screenshot_template_replication_dest.png[A screenshot of the page to define the replication destination volume location.]
 +
@@ -525,13 +531,16 @@ image:screenshot_template_replication_dest.png[A screenshot of the page to defin
 .. Select the storage VM on which the volume will reside.
 .. Select the aggregate on which the volume will reside.
 .. For the destination volume, click in the field and select one of the 5 options. You can let the admin enter any name by selecting *Free Text*, or you can specify that the volume name must have a certain prefix or suffix, that it _contains_ certain characters, or that it follows rules from a regular expression (regex) you enter.
-.. Replication requires that the source and destination working environments are connected through their intercluster LIFs. Enter the intercluster LIF IP address for the source working environment.
+.. Replication requires that the source and destination working environments are connected through their intercluster LIFs. Enter the intercluster LIF IP address for the destination working environment.
+.. When replicating a volume to a Cloud Volumes ONTAP cluster (not to an on-prem ONTAP cluster), you need to specify the Destination Provider (AWS, Azure, or GCP) and the type of disk that will be used for the new volume.
 
-. *Replication Details:* Enter the details about replication settings that will be used by the replication process:
+. *Replication Details:* Enter the details about the type and frequency of the replication operation:
 +
 image:screenshot_template_replication_policy.png[A screenshot of the page to define the replication settings for the relationship.]
 +
-. Policy: Define the backup policy to create daily, weekly, or monthly backups with a specific number of backup copies to retain.
+.. Enter the maximum rate (in kilobytes per second) at which data can be transferred. You can enter a fix value, or you can provide a minimum and maximum and let the storage admin select a value in that range.
+.. Select the link:concept_replication_policies.html#types-of-replication-policies[replication policy] that you want to use.
+.. Choose a one-time copy or a recurring replication schedule.
 
 . Click *Apply* to save your changes.
 
