@@ -75,10 +75,10 @@ entries:
                   url: /concept_ha_azure.html
                 - title: HA pairs in GCP
                   url: /concept_ha_google_cloud.html
+            - title: Licensing
+              url: /concept_licensing.html
             - title: Evaluating
               url: /concept_evaluating.html
-            - title: Licensing for BYOL
-              url: /concept_licensing.html
             - title: Security
               url: /concept_security.html
             - title: Performance
