@@ -90,6 +90,19 @@ A confirmation dialog displays the number of users who were added.
 +
 If the dialog lists any users who could not be added, capture this information so that you can resolve the issue. In some cases you can re-add the user with a corrected email address.
 
+. Enable mapping-only scans, or mapping and classification scans, on user files.
++
+[cols="45,45",width=90%,options="header"]
+|===
+| To:
+| Do this:
+
+| Enable mapping-only scans on user files | Click *Map*
+| Enable full scans on user files | Click *Map & Classify*
+| Disable scanning on user files | Click *Off*
+
+|===
+
 .Result
 
 Cloud Data Sense starts scanning the files for the users you added, and the results are displayed in the Dashboard and in other locations.

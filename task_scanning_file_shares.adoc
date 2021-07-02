@@ -105,6 +105,19 @@ A confirmation dialog displays the number of shares that were added.
 +
 If the dialog lists any shares that could not be added, capture this information so that you can resolve the issue. In some cases you can re-add the share with a corrected host name or share name.
 
+. Enable mapping-only scans, or mapping and classification scans, on user files.
++
+[cols="45,45",width=90%,options="header"]
+|===
+| To:
+| Do this:
+
+| Enable mapping-only scans on user files | Click *Map*
+| Enable full scans on user files | Click *Map & Classify*
+| Disable scanning on user files | Click *Off*
+
+|===
+
 .Result
 
 Cloud Data Sense starts scanning the files in the file shares you added, and the results are displayed in the Dashboard and in other locations.
