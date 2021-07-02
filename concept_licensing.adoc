@@ -21,13 +21,13 @@ You can pay for Cloud Volumes ONTAP using the following licensing options.
 
 [cols="22,40,16,22",width=100%,options="header"]
 |===
-| License
+| Charging method
 | Highlights
 | Support
 | Max system capacity
 
 | PAYGO a|
-* Pay-as-you-go by the hour through an AWS Marketplace subscription
+* Pay-as-you-go by the hour through a marketplace subscription from your cloud provider
 * Available in three licensing options: Explore, Standard, and Premium | Included, but you must https://docs.netapp.com/us-en/occm/task_registering.html[activate support^]
 a|
 * Explore: 2 TB
@@ -71,7 +71,7 @@ The following sections provide more details about each of these charging methods
 ** There are no hourly software charges, but cloud provider infrastructure charges still apply (compute, storage, and networking).
 ** When the free trial ends, you'll be charged hourly according to the selected license, as long as you subscribed. If you haven't subscribed, the system shuts down.
 +
-Cloud Manager prompts you to subscribe to the AWS Marketplace when you create a Cloud Volumes ONTAP system.
+Cloud Manager prompts you to subscribe to your cloud provider's marketplace when you create a Cloud Volumes ONTAP system.
 * Conversions to another licensing option isn't supported.
 * Basic technical support is offered, but you must https://docs.netapp.com/us-en/occm/task_registering.html[register and activate the NetApp serial number associated with your system^].
 
@@ -112,7 +112,7 @@ Essential package::
 * This package is available as a license (BYOL) purchased from NetApp.
 * Support is included for the length of the subscription term.
 * Conversions to another licensing option isn't supported.
-* Each individual Cloud Volumes ONTAP system supports up to 2 PB of capacity through EBS disks and tiering to object storage.
+* Each individual Cloud Volumes ONTAP system supports up to 2 PB of capacity through disks and tiering to object storage.
 
 https://cloud.netapp.com/ontap-cloud[View pricing details on Cloud Central^].
 
@@ -124,7 +124,7 @@ Professional package::
 If you have an AWS Marketplace contract, all Cloud Volumes ONTAP systems that you deploy are charged against that contract and not against BYOL.
 * Support is included for the length of the subscription term.
 * Conversions to another licensing option isn't supported.
-* Each individual Cloud Volumes ONTAP system supports up to 2 PB of capacity through EBS disks and tiering to object storage.
+* Each individual Cloud Volumes ONTAP system supports up to 2 PB of capacity through disks and tiering to object storage.
 
 https://cloud.netapp.com/ontap-cloud[View pricing details on Cloud Central^].
 
