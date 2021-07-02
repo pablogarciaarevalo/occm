@@ -15,6 +15,8 @@ summary: Gain control of your private data by viewing details about the personal
 [.lead]
 Gain control of your private data by viewing details about the personal data and sensitive personal data in your organization. You can also gain visibility by reviewing the categories and file types that Cloud Data Sense found in your data.
 
+NOTE: The capabilities described in this section are available only if you have chosen to perform a full classification scan on your data sources. Data sources that have had a mapping-only scan do not show file-level details.
+
 By default, the Cloud Data Sense dashboard displays compliance data for all working environments and databases.
 
 image:screenshot_compliance_dashboard.png[A screenshot of the Cloud Data Sense dashboard]

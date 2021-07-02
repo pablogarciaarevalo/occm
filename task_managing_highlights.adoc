@@ -21,6 +21,8 @@ Cloud Data Sense provides many ways for you to manage your private data. Some fu
 * If you are subscribed to link:https://azure.microsoft.com/en-us/services/information-protection/[Azure Information Protection (AIP)^] to classify and protect your files, you can use Cloud Data Sense to manage those AIP labels.
 * You can delete files that seem insecure or too risky to leave in your storage system, or that you have identified as a duplicate.
 
+NOTE: The capabilities described in this section are available only if you have chosen to perform a full classification scan on your data sources. Data sources that have had a mapping-only scan do not show file-level details.
+
 == Controlling your data using Policies
 
 Policies are like a favorites list of custom filters that provide search results in the Investigation page for commonly requested compliance queries. Cloud Data Sense provides a set of predefined Policies based on common customer requests. You can create custom Policies that provide results for searches specific to your organization.
