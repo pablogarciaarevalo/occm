@@ -45,6 +45,8 @@ The best practice is to use a new, dedicated resource group for Cloud Volumes ON
 
 . *Choose a Location*: Select *Microsoft Azure* and *Cloud Volumes ONTAP Single Node* or *Cloud Volumes ONTAP High Availability*.
 
+. If you're prompted, link:task_creating_connectors_aws.html[create a Connector].
+
 . *Details and Credentials*: Optionally change the Azure credentials and subscription, specify a cluster name, add tags if needed, and then specify credentials.
 +
 The following table describes fields for which you might need guidance:
@@ -62,7 +64,7 @@ You can add up to four tags from the user interface when creating a working envi
 
 For information about tags, refer to https://azure.microsoft.com/documentation/articles/resource-group-using-tags/[Microsoft Azure Documentation: Using tags to organize your Azure resources^].
 
-| User name and password |	These are the credentials for the Cloud Volumes ONTAP cluster admin account. You can use these credentials to connect to Cloud Volumes ONTAP through OnCommand System Manager or its CLI.
+| User name and password |	These are the credentials for the Cloud Volumes ONTAP cluster admin account. You can use these credentials to connect to Cloud Volumes ONTAP through System Manager or its CLI.
 
 | [[video]]Edit Credentials | You can choose different Azure credentials and a different Azure subscription to use with this Cloud Volumes ONTAP system. You need to associate an Azure Marketplace subscription with the selected Azure subscription in order to deploy a pay-as-you-go Cloud Volumes ONTAP system. link:task_adding_azure_accounts.html[Learn how to add credentials].
 
@@ -97,11 +99,9 @@ The best practice is to use a new, dedicated resource group for Cloud Volumes ON
 
 |===
 
-. *Charging Methods and NSS Account*: Specify whether you want to use pay-as-you-go or BYOL, and then specify a NetApp Support Site account.
+. *Charging Methods and NSS Account*: Specify which charging option would you like to use with this system, and then specify a NetApp Support Site account.
 +
-To understand how licenses work, see link:concept_licensing.html[Licensing].
-+
-A NetApp Support Site Account is optional for pay-as-you-go, but required for BYOL systems. link:task_adding_nss_accounts.html[Learn how to add NetApp Support Site accounts].
+link:concept_licensing.html[Learn about these charging methods].
 
 . *Preconfigured Packages*: Select one of the packages to quickly deploy a Cloud Volumes ONTAP system, or click *Create my own configuration*.
 +

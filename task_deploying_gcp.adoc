@@ -89,11 +89,9 @@ video::video_subscribing_gcp.mp4[width=848, height=480]
 +
 If you want to tier cold data to a Google Cloud Storage bucket, the subnet in which Cloud Volumes ONTAP resides must be configured for Private Google Access. For instructions, refer to https://cloud.google.com/vpc/docs/configure-private-google-access[Google Cloud Documentation: Configuring Private Google Access^].
 
-. *License & Support Site Account*: Specify whether you want to use pay-as-you-go or BYOL, and then specify a NetApp Support Site account.
+. *Charging Methods and NSS Account*: Specify which charging option would you like to use with this system, and then specify a NetApp Support Site account.
 +
-To understand how licenses work, see link:concept_licensing.html[Licensing].
-+
-A NetApp Support Site Account is optional for pay-as-you-go, but required for BYOL systems. link:task_adding_nss_accounts.html[Learn how to add NetApp Support Site accounts].
+link:concept_licensing.html[Learn about these charging methods].
 
 . *Preconfigured Packages*: Select one of the packages to quickly deploy a Cloud Volumes ONTAP system, or click *Create my own configuration*.
 +
@@ -279,11 +277,9 @@ link:concept_ha_google_cloud.html[Learn more about HA deployment models].
 +
 link:reference_networking_gcp.html[Learn more about networking requirements].
 
-. *License & Support Site Account*: Specify whether you want to use pay-as-you-go or BYOL, and then specify a NetApp Support Site account.
+. *Charging Methods and NSS Account*: Specify which charging option would you like to use with this system, and then specify a NetApp Support Site account.
 +
-To understand how licenses work, see link:concept_licensing.html[Licensing].
-+
-A NetApp Support Site Account is optional for pay-as-you-go, but required for BYOL systems. link:task_adding_nss_accounts.html[Learn how to add NetApp Support Site accounts].
+link:concept_licensing.html[Learn about these charging methods].
 
 . *Preconfigured Packages*: Select one of the packages to quickly deploy a Cloud Volumes ONTAP system, or click *Create my own configuration*.
 +

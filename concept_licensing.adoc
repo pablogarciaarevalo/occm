@@ -67,7 +67,7 @@ The following sections provide more details about each of these charging methods
 
 * Requires a subscription from a cloud provider's marketplace for pay-as-you-go pricing at an hourly rate.
 * Offers Cloud Volumes ONTAP in three different licensing options: Explore, Standard, and Premium. Each license provides support for different amounts of storage and compute.
-* A 30-day free trial is available for the first Cloud Volumes ONTAP system that you deploy in a cloud provider.
+* A 30-day free trial is available for the first Cloud Volumes ONTAP system that you deploy in a cloud provider. link:concept_evaluating.html[Learn more about 30-day free trials].
 ** There are no hourly software charges, but cloud provider infrastructure charges still apply (compute, storage, and networking).
 ** When the free trial ends, you'll be charged hourly according to the selected license, as long as you subscribed. If you haven't subscribed, the system shuts down.
 +

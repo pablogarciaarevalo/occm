@@ -18,7 +18,7 @@ The Digital Wallet page enables you to manage licenses for Cloud Volumes ONTAP a
 You can manage the following types of licenses for Cloud Volumes ONTAP:
 
 * Capacity-based licenses, which enable you to pay for Cloud Volumes ONTAP per TiB of capacity.
-* Pay as you go (PAYGO) licenses, which enables you to pay by the hour through a marketplace subscription from your cloud provider.
+* Pay as you go (PAYGO) licenses, which enable you to pay by the hour through a marketplace subscription from your cloud provider.
 * Node-based licenses, which are the previous generation BYOL for Cloud Volumes ONTAP. This includes Eval licenses that you can later convert to the node-based BYOL licensing model.
 
 link:concept_licensing.html[Learn more about Cloud Volumes ONTAP licenses].
