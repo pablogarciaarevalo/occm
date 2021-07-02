@@ -480,7 +480,7 @@ image:screenshot_template_backup.png[A screenshot of the page to enable backup f
 
 . *Policy:* Define the backup policy to create daily, weekly, or monthly backups with a specific number of backup copies to retain.
 
-. *Volume Name:* Typically the volume is the one created prior to the backup action in the same template. In this case, see how to <<Pass values between template actions,complete the three fields>> below the volume name to indicate that volume.
+. *Volume Name:* Typically the volume is the one created prior to the backup action in the same template. In this case, see how to <<Pass values between template actions,complete the fields>> within the volume name to indicate that volume.
 
 . Click *Apply* to save your changes.
 
@@ -492,7 +492,7 @@ image:screenshot_template_data_sense.png[A screenshot of the page to enable scan
 
 . *Context:* You can enter a Working Environment Name if you are using this action in a template without first creating a volume. Otherwise, leave this field as "Editable."
 
-. *Volume Name:* Typically the volume is the one created prior to the Data Sense action in the same template. In this case, see how to <<Pass values between template actions,complete the three fields>> below the volume name to indicate that volume.
+. *Volume Name:* Typically the volume is the one created prior to the Data Sense action in the same template. In this case, see how to <<Pass values between template actions,complete the fields>> within the volume name to indicate that volume.
 
 . *Volume UUID:* Data Sense needs the UUID of the volume before it can scan the volume. See how to <<Pass values between template actions,complete the three fields>> below the volume name to indicate that volume.
 
@@ -500,15 +500,38 @@ image:screenshot_template_data_sense.png[A screenshot of the page to enable scan
 
 === Add Replication functionality to a volume
 
-When creating a volume template, you can add in the template that you want to replicate the data in the volume to another volume using the link:concept_replication.html[Replication] service. This action is not applicable for Azure NetApp Files volumes.
+When creating a volume template, you can add in the template that you want to replicate the data in the volume to another volume using the link:concept_replication.html[Replication] service.
 
-image:screenshot_template_replication.png[A screenshot of the page to enable replication functionality for your volumes.]
+TIP: This action is not applicable for Azure NetApp Files volumes.
 
-. *Context:* You can enter a Working Environment Name and Storage VM name if you are using this action in a template without first creating a volume. Otherwise, leave these fields as "Editable."
+Replication functionality consists of three parts: selecting the source volume, selecting the destination volume, and defining the replication settings. Each section is described below.
 
+. *Source Details:* Enter the details about the source volume you want to replicate:
++
+image:screenshot_template_replication_source.png[A screenshot of the page to define the replication source volume location.]
++
+.. Select the working environment where the volume resides.
+.. Select the storage VM on which the volume resides.
+.. Typically the volume is the one created prior to the replication action in the same template. In this case, see how to <<Pass values between template actions,complete the fields>> within the Source Volume Name field to indicate that volume.
+.. Replication requires that the source and destination working environments are connected through their intercluster LIFs. Enter the intercluster LIF IP address for the source working environment.
++
+To get this information: double-click the working environment, click the menu icon, and click Information.
+
+. *Destination Details:* Enter the details about the destination volume that will be created by the replication process:
++
+image:screenshot_template_replication_dest.png[A screenshot of the page to define the replication destination volume location.]
++
+.. Select the working environment where the volume will be created.
+.. Select the storage VM on which the volume will reside.
+.. Select the aggregate on which the volume will reside.
+.. For the destination volume, click in the field and select one of the 5 options. You can let the admin enter any name by selecting *Free Text*, or you can specify that the volume name must have a certain prefix or suffix, that it _contains_ certain characters, or that it follows rules from a regular expression (regex) you enter.
+.. Replication requires that the source and destination working environments are connected through their intercluster LIFs. Enter the intercluster LIF IP address for the source working environment.
+
+. *Replication Details:* Enter the details about replication settings that will be used by the replication process:
++
+image:screenshot_template_replication_policy.png[A screenshot of the page to define the replication settings for the relationship.]
++
 . Policy: Define the backup policy to create daily, weekly, or monthly backups with a specific number of backup copies to retain.
-
-. Volume Name: Typically the volume is the one created prior to the backup action in the same template. In this case, see how to <<Pass values between template actions,complete the three fields>> below the volume name to indicate that volume.
 
 . Click *Apply* to save your changes.
 
