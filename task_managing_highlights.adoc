@@ -200,7 +200,7 @@ You can view and assign AIP labels from the results pane of the Investigation pa
 
 You can view the current AIP label that is assigned to a file.
 
-In the Data Investigation results pane, click image:button_subfolder.png[right-caret] for the file to expand the file metadata details.
+In the Data Investigation results pane, click image:button_down_caret.png[down-caret] for the file to expand the file metadata details.
 
 image:screenshot_compliance_show_label.png[A screenshot showing the metadata details for a single file; including the assigned AIP label.]
 
@@ -212,7 +212,7 @@ Follow these steps to assign an AIP label to a single file.
 
 .Steps
 
-. In the Data Investigation results pane, click image:button_subfolder.png[right-caret] for the file to expand the file metadata details.
+. In the Data Investigation results pane, click image:button_down_caret.png[down-caret] for the file to expand the file metadata details.
 +
 image:screenshot_compliance_add_label_manually.png[A screenshot showing the metadata details for a file in the Data Investigation page.]
 

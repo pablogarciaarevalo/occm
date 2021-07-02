@@ -142,7 +142,7 @@ You can enable and disable scans at the volume level, at the bucket level, at th
 
 Cloud Data Sense enables you to run a general "mapping" scan on selected working environments and data sources. Mapping provides only a high-level overview of your data, whereas Classification provides deep-level scanning of your data. Mapping can be done on your data sources very quickly because it does not access files to see the data inside.
 
-Some users like this functionality because they want to quickly scan their data to identify the areas that require more details - and then they can enable classification only on those required data sources.
+Many users like this functionality because they want to quickly scan their data to identify the data sources that require more research - and then they can enable classification scans only on those required data sources.
 
 The table below shows some of the differences:
 
