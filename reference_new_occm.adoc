@@ -136,7 +136,7 @@ link:task_sync_creating_relationships.html#settings[Learn more about the Copy fo
 +
 link:task_external_vault.html[Learn more about using a HashiCorp Vault with a data broker].
 
-* When setting up a sync relationship to an AWS S3 bucket, Cloud Sync now shows a *Tags/Metadata* page. This page enables you to define the tags or metadata that you want to save on the objects in the target S3 bucket.
+* When setting up a sync relationship to an AWS S3 bucket, the Sync Relationship wizard now enables you to define the tags or metadata that you want to save on the objects in the target S3 bucket.
 +
 The tagging option was previously part of the sync relationship's settings.
 
