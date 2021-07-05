@@ -86,7 +86,7 @@ Starting with the 3.8.1 release, the following permissions are required to use C
 
 === Azure
 
-* Starting with the 3.9.8 release, Cloud Manager can remove resources from a resource group that belong to Cloud Volumes ONTAP in case of deployment failure or deletion. Be sure to provide these permissions to each set of Azure credentials that you've added to Cloud Manager:
+* Starting with the 3.9.8 release, Cloud Manager can remove Cloud Volumes ONTAP resources from a resource group, in case of deployment failure or deletion. Be sure to provide these permissions to each set of Azure credentials that you've added to Cloud Manager:
 +
 [source,json]
 "Microsoft.Network/privateEndpoints/delete",

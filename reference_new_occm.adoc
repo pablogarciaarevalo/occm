@@ -60,7 +60,7 @@ Starting with the 9.9.1 release, Cloud Volumes ONTAP now supports the m5dn.24xla
 +
 image:screenshot_azure_resource_group.png[A screenshot of the Create Working Environment wizard where you can select an existing resource group.]
 +
-The following permissions enable Cloud Manager to remove resources from a resource group that belong to Cloud Volumes ONTAP in case of deployment failure or deletion:
+The following permissions enable Cloud Manager to remove Cloud Volumes ONTAP resources from a resource group, in case of deployment failure or deletion:
 +
 [source,json]
 "Microsoft.Network/privateEndpoints/delete",
