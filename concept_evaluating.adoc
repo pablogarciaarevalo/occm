@@ -35,7 +35,7 @@ Pay-as-you-go trials are awarded through a cloud provider and are not extendable
 
 == Evaluation licenses for node-based licensing
 
-Evaluation licenses were available as part of node-based licensing, which was the previous generation BYOL for Cloud Volumes ONTAP. These licenses are available for license renewals only now that capacity-based licensing is available.
+Evaluation licenses were available as part of node-based licensing, which was the previous generation BYOL for Cloud Volumes ONTAP. Node-based licenses are available for license renewals only now that capacity-based licensing is available.
 
 If you have an existing evaluation license, the evaluation key is good for 30 days, and can be used multiple times, each for 30 days (regardless of the creation day).
 
