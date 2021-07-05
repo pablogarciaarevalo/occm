@@ -109,6 +109,7 @@ You can't edit this option after you create the relationship.
 Copying tags is supported with sync relationships that include an S3-compatible endpoint (S3, StorageGRID, or IBM Cloud Object Storage).
 +
 Copying metadata is supported with "cloud-to-cloud" relationships between any of the following endpoints:
++
 * AWS S3
 * Azure Blob
 * Google Cloud Storage
