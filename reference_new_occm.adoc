@@ -59,6 +59,14 @@ Starting with the 9.9.1 release, Cloud Volumes ONTAP now supports the m5dn.24xla
 * When creating a Cloud Volumes ONTAP system in Azure, you now have the option to select an existing resource group for the VM and its associated resources.
 +
 image:screenshot_azure_resource_group.png[A screenshot of the Create Working Environment wizard where you can select an existing resource group.]
++
+The following permissions enable Cloud Manager to remove resources from a resource group that belong to Cloud Volumes ONTAP in case of deployment failure or deletion:
++
+[source,json]
+"Microsoft.Network/privateEndpoints/delete",
+"Microsoft.Compute/availabilitySets/delete",
++
+Be sure to provide these permissions to each set of Azure credentials that you've added to Cloud Manager. You can find the latest list of permissions on the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policies page^].
 
 * As a security enhancement, Cloud Manager now disables *Blob public access* when creating a storage account for Cloud Volumes ONTAP.
 
