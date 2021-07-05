@@ -67,7 +67,7 @@ link:reference_networking_cloud_manager.html[Learn more about networking require
 
 . Follow the steps in the wizard to create the Connector:
 
-. *Get Ready*: Review what you'll need.
+* *Get Ready*: Review what you'll need.
 
 * *AWS Credentials*: Specify the AWS access key and secret key that meet permissions requirements and then select your region.
 
