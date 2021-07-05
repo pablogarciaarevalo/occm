@@ -31,14 +31,6 @@ NOTE: You must be an Account Admin to create a Connector. When you create your f
 
 When Cloud Manager creates a Cloud Volumes ONTAP system in Azure, it creates several Azure objects, such as a resource group, network interfaces, and storage accounts. You can review a summary of the resources at the end of the wizard.
 
-[WARNING]
-.Potential for Data Loss
-====
-Deploying Cloud Volumes ONTAP in an existing, shared resource group is not recommended due to the risk of data loss. While rollback is currently disabled by default when using the API to deploy into an existing resource group, deleting Cloud Volumes ONTAP will potentially delete other resources from that shared group.
-
-The best practice is to use a new, dedicated resource group for Cloud Volumes ONTAP. This is the default and only recommended option when deploying Cloud Volumes ONTAP in Azure from Cloud Manager.
-====
-
 .Steps
 
 . On the Canvas page, click *Add Working Environment* and follow the prompts.
@@ -91,9 +83,11 @@ The following table describes fields for which you might need guidance:
 
 | Location | For single node systems, you can choose the Availability Zone in which you'd like to deploy Cloud Volumes ONTAP. If you don't select an AZ, Cloud Manager will select one for you.
 
-| Resource Group | Create a new resource group for Cloud Volumes ONTAP or use an existing resource group.
+| Resource Group
 
-The best practice is to use a new, dedicated resource group for Cloud Volumes ONTAP. While it is possible to deploy Cloud Volumes ONTAP in an existing, shared resource group, it's not recommended due to the risk of data loss. See the warning above for more details.
+a| Create a new resource group for Cloud Volumes ONTAP or use an existing resource group. The best practice is to use a new, dedicated resource group for Cloud Volumes ONTAP.
+
+TIP: If the Azure account that you're using has the https://mysupport.netapp.com/site/info/cloud-manager-policies[required permissions^], Cloud Manager removes Cloud Volumes ONTAP resources from a resource group, in case of deployment failure or deletion.
 
 | Security group | If you choose an existing security group, then it must meet Cloud Volumes ONTAP requirements. link:reference_networking_azure.html#security-group-rules-for-cloud-volumes-ontap[View the default security group].
 
