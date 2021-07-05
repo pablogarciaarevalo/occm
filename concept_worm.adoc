@@ -27,7 +27,7 @@ NOTE: You can't activate WORM storage on individual volumes--WORM must be activa
 
 The following image shows how to activate WORM storage when creating a working environment:
 
-image:screenshot_enable_worm.gif[Shows the WORM option that is available when creating a new working environment.]
+image:screenshot_enable_worm.png[Shows the WORM option that is available when creating a new working environment.]
 
 == Committing files to WORM
 
