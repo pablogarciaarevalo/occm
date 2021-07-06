@@ -400,8 +400,8 @@ entries:
             url: /task_tiering_onprem_gcp.html
           - title: Tier data to StorageGRID
             url: /task_tiering_onprem_storagegrid.html
-          - title: Tier data to S3 object storage
-            url: /task_tiering_onprem_s3_compat.html
+#          - title: Tier data to S3 object storage
+#            url: /task_tiering_onprem_s3_compat.html
       - title: Set up licensing
         url: /task_licensing_cloud_tiering.html
       - title: Test cloud performance
