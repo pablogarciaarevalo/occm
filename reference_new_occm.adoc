@@ -19,7 +19,7 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
-== Cloud Manager 3.9.8 (6 July 2021)
+== Cloud Manager 3.9.8 (7 July 2021)
 
 * <<Cloud Volumes ONTAP enhancements>>
 * <<Cloud Backup enhancements>>
@@ -37,12 +37,15 @@ This release of Cloud Manager includes enhancements to the management of Cloud V
 
 ==== Enhancements available in all cloud providers
 
-* New charging methods are available for Cloud Volumes ONTAP.
+* Capacity-based licensing is now available for Cloud Volumes ONTAP.
 +
-** *Capacity-based BYOL*: A capacity-based license enables you to pay for Cloud Volumes ONTAP per TiB of capacity. The license is associated with your NetApp account and enables you to create as many Cloud Volumes ONTAP systems as you need, as long as enough capacity is available through your license. Capacity-based licensing is available in the form of a package, either _Essential_ or _Professional_.
-** *Freemium*: Freemium enables you to use all Cloud Volumes ONTAP features free of charge from NetApp (cloud provider charges still apply). You're limited to 500 GB of allocated capacity per system and there's no support contract. You can have up to 10 Freemium systems.
+A capacity-based license enables you to pay for Cloud Volumes ONTAP per TiB of capacity. The license is associated with your NetApp account and enables you to create as many Cloud Volumes ONTAP systems as you need, as long as enough capacity is available through your license.
 +
-Learn more about these charging methods in the Cloud Volumes ONTAP Release Notes.
+Capacity-based licensing is available in the form of a package, either _Freemium_, _Essential_, or _Professional_.
++
+With the introduction of capacity-based BYOL, the traditional node-based BYOL is now available for license renewals only.
++
+link:concept_licensing.html[Learn more about these licensing options].
 +
 Here's an example of the charging methods that you can choose from when deploying a new Cloud Volumes ONTAP system in Azure:
 +
