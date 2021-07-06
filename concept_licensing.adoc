@@ -57,7 +57,7 @@ a|
 * Premium: 368 TB
 
 | Node-based license a|
-* Single node or HA license with term-based options 
+* Single node or HA license with term-based options
 * Available by bringing your own license (BYOL) purchased from NetApp
 | Included | 368 TB per license
 
@@ -75,6 +75,8 @@ The following sections provide more details about each of these options.
 * If the allocated capacity for a Cloud Volumes ONTAP system exceeds 500 GB, Cloud Manager automatically converts the system to the Essential package (which is a capacity-based license) and charging starts.
 +
 Any other systems that have less than 500 GB of allocated capacity stay on the Freemium offering (as long as they were deployed using the Freemium offering).
+
+To get started with the Freemium offering, create a new Cloud Volumes ONTAP working environment and select *Freemium* when prompted to choose a charging method.
 
 == Capacity-based licenses
 
@@ -107,6 +109,8 @@ If you have an AWS Marketplace contract, _all_ Cloud Volumes ONTAP systems that 
 * Conversions to another licensing option isn't supported.
 * Each individual Cloud Volumes ONTAP system supports up to 2 PB of capacity through disks and tiering to object storage.
 
+To get started with a capacity-based license, https://cloud.netapp.com/contact-cds[Contact NetApp Sales^] and then link:task_managing_licensing.html[add your license to Cloud Manager].
+
 == PAYGO by node
 
 * Requires a subscription from a cloud provider's marketplace for pay-as-you-go pricing at an hourly rate.
@@ -126,6 +130,8 @@ You can view pricing details from your cloud provider's marketplace:
 * https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=PlansAndPrice[Azure Marketplace^]
 * https://console.cloud.google.com/marketplace/product/netapp-cloudmanager/cloud-manager[Google Cloud Platform Marketplace^]
 
+To get started with PAYGO, create a Cloud Volumes ONTAP working environment and subscribe to your cloud provider's marketplace when prompted.
+
 == Node-based licenses
 
 * Single node or HA license with term-based subscription options like 12 months, 24 months, and more.
@@ -134,3 +140,5 @@ You can view pricing details from your cloud provider's marketplace:
 * Conversions to another licensing option isn't supported.
 
 If you want to transition to capacity-based licensing, you can purchase a license, deploy a new Cloud Volumes ONTAP system, and then replicate the data to that new system.
+
+To get started with a node-based license, https://cloud.netapp.com/contact-cds[Contact NetApp Sales^] and then link:task_managing_licensing.html[add your license to Cloud Manager].
