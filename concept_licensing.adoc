@@ -72,7 +72,7 @@ The following sections provide more details about each of these options.
 * Support is not included.
 * You're limited to 500 GB of allocated capacity per Cloud Volumes ONTAP system.
 * You can use up to 10 Cloud Volumes ONTAP systems with the Freemium offering per NetApp account.
-* If the allocated capacity for a Cloud Volumes ONTAP system exceeds 500 GB, Cloud Manager automatically converts the system to the Essential package (which is a capacity-based license) and charging starts.
+* If the allocated capacity for a Cloud Volumes ONTAP system exceeds 500 GB, Cloud Manager converts the system to the Essential package (which is a capacity-based license) and charging starts.
 +
 Any other systems that have less than 500 GB of allocated capacity stay on the Freemium offering (as long as they were deployed using the Freemium offering).
 
