@@ -76,7 +76,7 @@ See link:task_restore_backups.html[Restoring volume data from backup files^] for
 
 == Overview diagrams
 
-The following diagrams show each component when backing up an on-prem ONTAP system to object storage and the connections that you need to prepare between them.
+The following diagrams show each component when backing up an on-premises ONTAP cluster to object storage and the connections that you need to prepare between them.
 
 *Amazon S3 configuration:*
 
@@ -254,8 +254,8 @@ See the https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-k
 
 === Preparing Azure Blob storage for backups
 
-The Cloud Restore virtual machine requires outbound internet access. If your virtual or physical network uses a proxy server for internet access, ensure that the instance has outbound internet access to contact the following endpoints.
-
+. The Cloud Restore virtual machine requires outbound internet access. If your virtual or physical network uses a proxy server for internet access, ensure that the instance has outbound internet access to contact the following endpoints.
++
 [cols="43,57",options="header"]
 |===
 | Endpoints
@@ -274,6 +274,10 @@ The Cloud Restore virtual machine requires outbound internet access. If your vir
 | Cloud Restore virtual machine image repository.
 
 |===
+//
+//. If you want to have more secure connectivity on public internet from your on-prem data center to the VNet, there is an option to configure an Azure Private Endpoint in the activation wizard. In this case you will need to know the Resource Group, VNet, and Subnet for this connection. https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview[See details about using a Private Endpoint].
+
+. Additionally, you use choose your own customer-managed keys for data encryption in the activation wizard instead of using the default Microsoft-managed encryption keys. In this case you will need to have the Azure Subscription, Key Vault name, and the Key. https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview[See how to use your own keys].
 
 === Preparing Google Cloud Storage for backups
 
@@ -301,11 +305,15 @@ Enable Cloud Backup at any time directly from the on-premises working environmen
 +
 image:screenshot_backup_from_onprem_activate.png[A screenshot that shows the Backup & Compliance Enable button which is available after you select an on-prem working environment.]
 
-. Select the provider, click *Next*, and then enter the provider details:
+. Select the provider and click *Next*.
+
+. Enter the provider details. Note that you cannot change this information after the service has started.
 - For Azure, enter:
 .. The Azure subscription used for backups and the Azure region where the backups will be stored.
 .. The resource group - you can create a new resource group or select and existing resource group.
+.. Whether you will use the default Microsoft-managed encryption key or choose your own customer-managed keys (https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview[see how to use your own keys]).
 .. The IPspace in the ONTAP cluster where the volumes you want to back up reside.
+//.. Whether you will configure an Azure Private Endpoint (https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview[see details about using a Private Endpoint]).          Tom...   get new graphic for this in your Backup folder
 +
 image:screenshot_backup_onprem_to_azure.png[A screenshot that shows the cloud provider details when backing up volumes from an on-premises cluster to Azure Blob storage.]
 - For AWS, enter:
@@ -315,16 +323,14 @@ image:screenshot_backup_onprem_to_azure.png[A screenshot that shows the cloud pr
 +
 image:screenshot_backup_onprem_to_aws.png[A screenshot that shows the cloud provider details when backing up volumes from an on-premises cluster to AWS S3 storage.]
 - For Google, enter:
-.. The Google Cloud Project where you want the Google Cloud Storage bucket to be created for backups. This can be a different Project than where Cloud Manager resides. (The Project must have a Service Account that has the predefined Storage Admin role.)
+.. The Google Cloud Project where you want the Google Cloud Storage bucket to be created for backups. (The Project must have a Service Account that has the predefined Storage Admin role.)
 .. The Google Access Key and Secret Key used to store the backups.
-.. The Google region where the backups will be stored. This can be a different region than where Cloud Manager resides.
+.. The Google region where the backups will be stored.
 .. The IPspace in the ONTAP cluster where the volumes you want to back up reside.
 +
 image:screenshot_backup_onprem_to_google.png[A screenshot that shows the cloud provider details when backing up volumes from an on-premises cluster to Google Cloud Storage.]
 +
 - For StorageGRID, see how to link:task_backup_onprem_private_cloud.html[back up on-premises ONTAP data to the private cloud].
-+
-Note that you cannot change this information after the service has started.
 
 . Click *Next* after you've entered the provider details.
 

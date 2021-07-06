@@ -1,0 +1,19 @@
+---
+sidebar: sidebar
+permalink: reference_cross_account.html
+keywords: cross account, backup, aws, azure
+summary: These topics describe how to configure Cloud Backup for cross account configurations when using different cloud providers.
+---
+
+= Cross-account and cross-region configurations
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+These topics describe how to configure Cloud Backup for cross account configurations when using different cloud providers.
+
+* link:reference_backup_multi_account_aws.html[Configure Cloud Backup for multi-account access in AWS]
+* link:reference_backup_multi_account_azure.html[Configure Cloud Backup for multi-account access in Azure]
