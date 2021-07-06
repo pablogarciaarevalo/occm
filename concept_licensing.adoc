@@ -15,7 +15,11 @@ summary: Several licensing options are available for Cloud Volumes ONTAP. Each o
 [.lead]
 Several licensing options are available for Cloud Volumes ONTAP. Each option enables you to choose a configuration that meets your needs.
 
-== Overview
+== Licensing overview
+
+The following table provides an overview of the licensing options for Cloud Volumes ONTAP.
+
+Beyond these licensing options, you can also choose the _Freemium_ offering to get started with Cloud Volumes ONTAP without purchasing a license or contract.
 
 [cols="22,40,16,22",width=100%,options="header"]
 |===
@@ -24,46 +28,88 @@ Several licensing options are available for Cloud Volumes ONTAP. Each option ena
 | Support
 | Max system capacity
 
-| PAYGO a|
-* Pay-as-you-go by the hour through a marketplace subscription from your cloud provider
-* Available in three licensing options: Explore, Standard, and Premium | Technical support is included, but you must link:task_registering.html[activate support^]
-a|
-* Explore: 2 TB
-* Standard: 10 TB
-* Premium: 368 TB
-
-a|
-Capacity-based license:
-Freemium package a|
-* Use all Cloud Volumes ONTAP features free of charge from NetApp (cloud provider charges still apply)
-* If a system's allocated capacity exceeds 500 GB, it automatically converts to the Essential package
-* You can have up to 10 Freemium systems in your account | Community-based support only | 500 GB
-
 a|
 Capacity-based license:
 Essential package a|
 * Pay per TiB of capacity for one or more Cloud Volumes ONTAP systems
+* Provides a la carte licensing for Cloud Volumes ONTAP:
+** A single node or HA system
+** File and block storage or secondary data (DR)
 * Available by bringing your own license (BYOL) purchased from NetApp
-* Provides a la carte licensing for Cloud Volumes ONTAP (file storage, block storage, or disaster recovery) and your choice of add-on services | Technical support is included | 2 PB
+| Included | 2 PB
 
 a|
 Capacity-based license:
 Professional package a|
 * Pay per TiB of capacity for one or more Cloud Volumes ONTAP systems
-* Available through an annual contract from the AWS Marketplace or by bringing your own license (BYOL) purchased from NetApp
-* Provides licensing for both Cloud Volumes ONTAP and Cloud Backup Service | Technical support is included | 2 PB
+* Provides licensing for any Cloud Volumes ONTAP configuration (single node or HA with any storage type)
+* Includes volume backups using the Cloud Backup Service (only for volumes charged against this license)
+* Available through an AWS Marketplace annual contract or by bringing your own license (BYOL) purchased from NetApp
+| Included | 2 PB
 
+| PAYGO by node a|
+* Pay-as-you-go by the hour through a marketplace subscription from your cloud provider
+* Charging is per Cloud Volumes ONTAP node
+* Available in three licensing options: Explore, Standard, and Premium | Included, but you must link:task_registering.html[activate support^]
+a|
+* Explore: 2 TB
+* Standard: 10 TB
+* Premium: 368 TB
 | Node-based license a|
-* The previous generation BYOL for Cloud Volumes ONTAP
-* Available for license renewals only | Technical support is included | 368 TB per license
+* Pay per Cloud Volumes ONTAP node
+* Available by bringing your own license (BYOL) purchased from NetApp
+| Included | 368 TB per license
 
 |===
 
-The following sections provide more details about each of these charging methods.
+The following sections provide more details about each of these options.
 
-== PAYGO
+== Freemium offering
+
+* A new offering that provides all Cloud Volumes ONTAP features free of charge from NetApp (cloud provider charges still apply).
+* No license or contract is needed.
+* Support is not included.
+* You're limited to 500 GB of allocated capacity per Cloud Volumes ONTAP system.
+* You can use up to 10 Cloud Volumes ONTAP systems with the Freemium offering per NetApp account.
+* If the allocated capacity for a Cloud Volumes ONTAP system exceeds 500 GB, Cloud Manager automatically converts the system to the Essential package (which is a capacity-based license) and charging starts.
++
+Any other systems that have less than 500 GB of allocated capacity stay on the Freemium offering (as long as they were deployed using the Freemium offering).
+
+== Capacity-based licenses
+
+Capacity-based licensing enables you to pay for Cloud Volumes ONTAP per TiB of capacity, along with add-on cloud data services. The license is associated with your NetApp account and enables you to charge multiple systems against the license, as long as enough capacity is available through your license. This licensing method is available for Cloud Volumes ONTAP 9.7 and later.
+
+Cloud Manager aggregates the capacity of all data volumes for every Cloud Volumes ONTAP system in your NetApp account and charges based on the allocated capacity. Storage efficiency improves total cost of ownership (TCO) since less cloud resources are required, but it doesn't affect license calculations.
+
+Capacity-based licensing is available in the form of a _package_. When you deploy a Cloud Volumes ONTAP system, you can choose from the following packages: Essential or Professional.
+
+NOTE: For each package, there is a minimum allocated capacity charge of 4 TB. Any Cloud Volumes ONTAP instance that has less than 4 TB of allocated capacity will be charged at a rate of 4 TB.
+
+Essential package::
+
+* Provides a la carte licensing for Cloud Volumes ONTAP:
+** A single node or HA system
+** File and block storage or secondary data for disaster recovery (DR)
+* This package is available as a license (BYOL) purchased from NetApp.
+* Support is included for the length of the subscription term.
+* Conversions to another licensing option isn't supported.
+* Each individual Cloud Volumes ONTAP system supports up to 2 PB of capacity through disks and tiering to object storage.
+
+Professional package::
+
+* Provides licensing for any Cloud Volumes ONTAP configuration (single node or HA with any storage type).
+* Includes volume backups using the Cloud Backup Service (only for volumes charged against this license).
+* This package is available as an annual contract from the AWS Marketplace or as a license (BYOL) purchased from NetApp.
++
+If you have an AWS Marketplace contract, _all_ Cloud Volumes ONTAP systems that you deploy are charged against that contract. You can't mix and match a Marketplace contract with BYOL.
+* Support is included for the length of the subscription term.
+* Conversions to another licensing option isn't supported.
+* Each individual Cloud Volumes ONTAP system supports up to 2 PB of capacity through disks and tiering to object storage.
+
+== PAYGO by node
 
 * Requires a subscription from a cloud provider's marketplace for pay-as-you-go pricing at an hourly rate.
+* Charging is per Cloud Volumes ONTAP node.
 * Offers Cloud Volumes ONTAP in three different licensing options: Explore, Standard, and Premium. Each license provides support for different amounts of storage and compute.
 * A 30-day free trial is available for the first Cloud Volumes ONTAP system that you deploy in a cloud provider. link:concept_evaluating.html[Learn more about 30-day free trials].
 ** There are no hourly software charges, but cloud provider infrastructure charges still apply (compute, storage, and networking).
@@ -79,57 +125,10 @@ You can view pricing details from your cloud provider's marketplace:
 * https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=PlansAndPrice[Azure Marketplace^]
 * https://console.cloud.google.com/marketplace/product/netapp-cloudmanager/cloud-manager[Google Cloud Platform Marketplace^]
 
-== Capacity-based licensing
+== Node-based licenses
 
-Capacity-based licensing enables you to pay for Cloud Volumes ONTAP per TiB of capacity, along with add-on cloud data services. The license is associated with your NetApp account and enables you to create as many Cloud Volumes ONTAP systems as you need, as long as enough capacity is available through your license. This licensing method is available for Cloud Volumes ONTAP 9.7 and later.
-
-Cloud Manager aggregates the capacity of all data volumes for every Cloud Volumes ONTAP system in your NetApp account and charges based on the allocated capacity. Storage efficiency improves total cost of ownership (TCO) since less cloud resources are required, but it doesn't affect license calculations.
-
-Capacity-based licensing is available in the form of a _package_. When you deploy a Cloud Volumes ONTAP system, you can choose from the following packages: Freemium, Essential, and Professional.
-
-NOTE: For each package (other than Freemium), there is a minimum allocated capacity charge of 4 TB. Any Cloud Volumes ONTAP instance that has less than 4 TB of allocated capacity will be charged at a rate of 4 TB.
-
-Freemium package::
-
-* Provides all Cloud Volumes ONTAP features free of charge from NetApp (cloud provider charges still apply).
-* There is no time limit for the Freemium package.
-* Support is not included.
-* You're limited to 500 GB of allocated capacity per Cloud Volumes ONTAP system.
-* You can use up to 10 Cloud Volumes ONTAP systems with the Freemium package per NetApp account.
-* If the allocated capacity for a Cloud Volumes ONTAP system exceeds 500 GB, Cloud Manager automatically converts the system to the Essential package and charging starts.
-+
-Any other systems that have less than 500 GB of allocated capacity stay on the Freemium package.
-
-https://cloud.netapp.com/ontap-cloud[View pricing details on Cloud Central^].
-
-Essential package::
-
-* Provides a la carte licensing for Cloud Volumes ONTAP:
-** Cloud Volumes ONTAP single node or high availability with file storage, block storage, and/or secondary data (disaster recovery).
-** Your choice of add-on NetApp Cloud Services like Cloud Backup, Cloud Data Sense, and more.
-* This package is available as a license (BYOL) purchased from NetApp.
-* Support is included for the length of the subscription term.
-* Conversions to another licensing option isn't supported.
-* Each individual Cloud Volumes ONTAP system supports up to 2 PB of capacity through disks and tiering to object storage.
-
-https://cloud.netapp.com/ontap-cloud[View pricing details on Cloud Central^].
-
-Professional package::
-
-* Provides licensing for both Cloud Volumes ONTAP and Cloud Backup Service at a lower price than purchasing them separately.
-* This package is available as an annual contract from the AWS Marketplace or as a license (BYOL) purchased from NetApp.
-+
-If you have an AWS Marketplace contract, _all_ Cloud Volumes ONTAP systems that you deploy are charged against that contract. You can't mix and match a Marketplace contract with BYOL.
-* Support is included for the length of the subscription term.
-* Conversions to another licensing option isn't supported.
-* Each individual Cloud Volumes ONTAP system supports up to 2 PB of capacity through disks and tiering to object storage.
-
-https://cloud.netapp.com/ontap-cloud[View pricing details on Cloud Central^].
-
-== Node-based licensing
-
-* The previous generation BYOL for Cloud Volumes ONTAP.
-* A node-based license is available for license renewals only.
+* Pay per Cloud Volumes ONTAP node.
+* Available by bringing your own license (BYOL) purchased from NetApp.
 * Each Cloud Volumes ONTAP system supports up to 368 TB of capacity per license.
 * Conversions to another licensing option isn't supported.
 
