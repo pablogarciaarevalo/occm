@@ -1,0 +1,115 @@
+---
+sidebar: sidebar
+permalink: reference_backup_multi_account_azure.html
+keywords: microsoft azure, azure, regions, blob, multiple accounts, multiple regions, backup
+summary: Cloud Backup enables you to create backup files in an Azure account that is different than where your source volumes reside, and that is different than the account where the Cloud Manager Connector resides.
+---
+
+= Configure backup for multi-account access in Azure
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Cloud Backup enables you to create backup files in an Azure account that is different than where your source volumes reside. And both of those accounts can be different than the account where the Cloud Manager Connector resides.
+
+Just follow the steps below to set up your configuration in this manner.
+
+== Set up VNet peering between accounts
+
+Note that if you want Cloud Manager to manage your Cloud Volumes ONTAP system in a different account/region, then you need to setup VNet peering. VNet peering is not required for storage account connectivity.
+
+. Log in to the Azure portal and from home, select Virtual Networks.
+
+. Select the subscription you are using as subscription 1 and click on the VNet where you want to set up peering.
++
+image:screenshot_azure_peer1.png[]
+
+. Select *cbsnetwork* and from the left panel, click on *Peerings*, and then click *Add*.
++
+image:screenshot_azure_peer2.png[]
+
+. Enter the following information on the Peering page and then click *Add*.
+
+* Peering link name for this network: you can give any name to identify the peering connection.
+* Remote virtual network peering link name: enter a name to identify the remote VNet.
+* Keep all the selections as default values.
+* Under subscription, select the subscription 2.
+* Virtual network, select the virtual network in subscription 2 to which you want to set up the peering.
++
+image:screenshot_azure_peer3.png[]
+
+. Perform the same steps in subscription 2 VNet and specify the subscription and remote VNet details of subscription 1.
++
+image:screenshot_azure_peer4.png[]
++
+The peering settings are added.
++
+image:screenshot_azure_peer5.png[]
+
+== Create a private endpoint for the storage account
+
+Now you need to create a private endpoint for the storage account. In this example, the storage account is created in subscription 1 and the Cloud Volumes ONTAP system is running in subscription 2.
+
+NOTE: You need network contributor permission to perform the following action.
+
+[source,json]
+{
+  "id": "/subscriptions/d333af45-0d07-4154-943dc25fbbce1b18/providers/Microsoft.Authorization/roleDefinitions/4d97b98b-1d4f-4787-a291-c67834d212e7",
+  "properties": {
+    "roleName": "Network Contributor",
+    "description": "Lets you manage networks, but not access to them.",
+    "assignableScopes": [
+      "/"
+    ],
+    "permissions": [
+      {
+        "actions": [
+          "Microsoft.Authorization/*/read",
+          "Microsoft.Insights/alertRules/*",
+          "Microsoft.Network/*",
+          "Microsoft.ResourceHealth/availabilityStatuses/read",
+          "Microsoft.Resources/deployments/*",
+          "Microsoft.Resources/subscriptions/resourceGroups/read",
+          "Microsoft.Support/*"
+        ],
+        "notActions": [],
+        "dataActions": [],
+        "notDataActions": []
+      }
+    ]
+  }
+}
+
+. Go to the storage account > Networking > Private endpoint connections and click *+ Private endpoint*.
++
+image:screenshot_azure_networking1.png[]
+
+. In the Private Endpoint _Basics_ page:
+
+* Select subscription 2 (where the Cloud Manager Connector and Cloud Volumes ONTAP system are deployed) and the resource group.
+* Enter an endpoint name.
+* Select the region.
++
+image:screenshot_azure_networking2.png[]
+
+. In the _Resource_ page, select Target sub-resource as *blob*.
++
+image:screenshot_azure_networking3.png[]
+
+. In the Configuration page:
+
+* Select the virtual network and subnet.
+* Click the *Yes* radio button to "Integrate with private DNS zone".
++
+image:screenshot_azure_networking4.png[]
+
+. In the Private DNS zone list, ensure that the Private Zone is selected from the correct Region, and click *Review + Create*.
++
+image:screenshot_azure_networking5.png[]
++
+Now the storage account (in subscription 1) has access to the Cloud Volumes ONTAP system which is running in subscription 2.
+
+. Retry enabling Cloud Backup on the Cloud Volumes ONTAP system and this time it should be successful.
