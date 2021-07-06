@@ -55,6 +55,8 @@ image:screenshot_cvo_charging_methods.png[A screenshot of the Cloud Volumes ONTA
 
 Starting with the 9.9.1 release, Cloud Volumes ONTAP now supports the m5dn.24xlarge instance type with the following charging methods: PAYGO Premium, bring your own license (BYOL), and Freemium.
 
+https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_aws_991.html[View supported configurations for Cloud Volumes ONTAP in AWS^].
+
 ==== Enhancements available in Azure
 
 * When creating a Cloud Volumes ONTAP system in Azure, you now have the option to select an existing resource group for the VM and its associated resources.
@@ -86,6 +88,8 @@ These SSDs balance performance and cost by providing lower IOPS per GB.
 * The custom-4-16384 machine type is no longer supported with new Cloud Volumes ONTAP systems.
 +
 If you have an existing system running on this machine type, you can keep using it, but we recommend switching to the n2-standard-4 machine type.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_gcp_991.html[View supported configurations for Cloud Volumes ONTAP in GCP^].
 
 === Cloud Backup enhancements
 
@@ -149,6 +153,10 @@ The tagging option was previously part of the sync relationship's settings.
 
 We redesigned the *Add Connector* wizard to add new options and to make it easier to use. You can now add tags, specify a role (for AWS or Azure), upload a root certificate for a proxy server, view code for Terraform automation, view progress details, and more.
 
+* link:task_creating_connectors_aws.html[Create a Connector in AWS]
+* link:task_creating_connectors_azure.html[Create a Connector in Azure]
+* link:task_creating_connectors_gcp.html[Create a Connector in GCP]
+
 === Support Dashboard enhancement
 
 NetApp Support Site (NSS) accounts are now managed from the Support Dashboard, rather than from the Settings menu. This change makes it easier to find and manage all support-related information from a single location.
@@ -157,7 +165,7 @@ image:screenshot_nss_management.png[A screenshot of the NSS Management tab in th
 
 === Digital Wallet enhancement
 
-The Digital Wallet page is now located in its own tab under the Resources section.
+The Digital Wallet page is now located in its own tab under the Resources section. link:task_managing_licenses.html[Learn how to manage licenses from your Digital Wallet].
 
 image:screenshot_digital_wallet_menu.png[A screenshot of the Digital Wallet under the All Services option.]
 
