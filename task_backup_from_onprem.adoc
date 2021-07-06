@@ -76,7 +76,7 @@ See link:task_restore_backups.html[Restoring volume data from backup files^] for
 
 == Overview diagrams
 
-The following diagrams show each component when backing up an on-prem ONTAP system to object storage and the connections that you need to prepare between them.
+The following diagrams show each component when backing up an on-premises ONTAP cluster to object storage and the connections that you need to prepare between them.
 
 *Amazon S3 configuration:*
 
