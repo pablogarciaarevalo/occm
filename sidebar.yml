@@ -271,6 +271,13 @@ entries:
         url: /task_managing_backups.html
       - title: Restore from backups
         url: /task_restore_backups.html
+      - title: Cross-account and cross-region configurations
+        url: /reference_cross_account.html
+        entries:
+          - title: Configure Backup for multi-account access in AWS
+            url: /reference_backup_multi_account_aws.html
+          - title: Configure Backup for multi-account access in Azure
+            url: /reference_backup_multi_account_azure.html
   - title: Copy and synchronize data
     entries:
       - title: Learn about Cloud Sync
