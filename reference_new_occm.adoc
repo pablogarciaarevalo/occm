@@ -103,11 +103,7 @@ This is available when configuring backups from an on-premises ONTAP system or f
 
 === Cloud Tiering enhancements
 
-* Now you can tier inactive data from your on-prem ONTAP clusters to any Object Storage service which uses the Simple Storage Service (S3) protocol.
-+
-See link:https://review.docs.netapp.com/us-en/occm_jul_2021_tier/task_tiering_onprem_s3_compat.html[how to tier data to S3-compatible object storage].
-
-* When tiering data to Azure Blob storage, now your Connector can be running on your premises. You are no longer required to use a Connector installed in an Azure VNet.
+When tiering data to Azure Blob storage, now your Connector can be running on your premises. You are no longer required to use a Connector installed in an Azure VNet.
 
 === Cloud Data Sense enhancements
 
