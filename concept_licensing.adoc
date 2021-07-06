@@ -55,8 +55,9 @@ a|
 * Explore: 2 TB
 * Standard: 10 TB
 * Premium: 368 TB
+
 | Node-based license a|
-* Pay per Cloud Volumes ONTAP node
+* Single node or HA license with term-based options 
 * Available by bringing your own license (BYOL) purchased from NetApp
 | Included | 368 TB per license
 
@@ -77,7 +78,7 @@ Any other systems that have less than 500 GB of allocated capacity stay on the F
 
 == Capacity-based licenses
 
-Capacity-based licensing enables you to pay for Cloud Volumes ONTAP per TiB of capacity, along with add-on cloud data services. The license is associated with your NetApp account and enables you to charge multiple systems against the license, as long as enough capacity is available through your license. This licensing method is available for Cloud Volumes ONTAP 9.7 and later.
+Capacity-based licensing enables you to pay for Cloud Volumes ONTAP per TiB of capacity. The license is associated with your NetApp account and enables you to charge multiple systems against the license, as long as enough capacity is available through your license. This licensing method is available for Cloud Volumes ONTAP 9.7 and later.
 
 Cloud Manager aggregates the capacity of all data volumes for every Cloud Volumes ONTAP system in your NetApp account and charges based on the allocated capacity. Storage efficiency improves total cost of ownership (TCO) since less cloud resources are required, but it doesn't affect license calculations.
 
@@ -127,7 +128,7 @@ You can view pricing details from your cloud provider's marketplace:
 
 == Node-based licenses
 
-* Pay per Cloud Volumes ONTAP node.
+* Single node or HA license with term-based subscription options like 12 months, 24 months, and more.
 * Available by bringing your own license (BYOL) purchased from NetApp.
 * Each Cloud Volumes ONTAP system supports up to 368 TB of capacity per license.
 * Conversions to another licensing option isn't supported.
