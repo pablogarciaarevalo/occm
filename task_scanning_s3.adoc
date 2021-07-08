@@ -140,9 +140,20 @@ Cloud Data Sense can also <<Scanning buckets from additional AWS accounts,scan S
 +
 image:screenshot_s3_configure_buckets.gif[A screenshot of clicking Configure Buckets to choose the S3 buckets you want to scan]
 
-. Enable compliance on the buckets that you want to scan.
+. Enable mapping-only scans, or mapping and classification scans, on your buckets.
 +
-image:screenshot_s3_select_buckets.gif[A screenshot of selecting the S3 buckets you want to scan]
+image:screenshot_s3_select_buckets.png[A screenshot of selecting the S3 buckets you want to scan]
++
+[cols="45,45",width=90%,options="header"]
+|===
+| To:
+| Do this:
+
+| Enable mapping-only scans on a bucket | Click *Map*
+| Enable full scans on a bucket | Click *Map & Classify*
+| Disable scanning on a bucket | Click *Off*
+
+|===
 
 .Result
 
@@ -216,7 +227,7 @@ The Cloud Data Sense instance profile account now has access to the additional A
 +
 image:screenshot_activate_and_select_buckets.png[]
 
-. Click *Activate Compliance & Select Buckets* and select the buckets you want to scan.
+. Click *Activate Data Sense & Select Buckets* and select the buckets you want to scan.
 
 .Result
 

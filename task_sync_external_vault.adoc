@@ -94,13 +94,13 @@ Reject-unauthorized::
 * Default: false
 
 auth-method::
-* Your authentication method to the external vault
+* The authentication method that the data broker should use to access credentials from the external vault
 * Type: string
-* Valid values: “aws-iam” / “role-app”
+* Valid values: “aws-iam” / “role-app” / "gcp-iam"
 
 role-name::
 * Type: string
-* Your role name (in case you use aws-iam)
+* Your role name (in case you use aws-iam or gcp-iam)
 
 Secretid & rootid::
 * Type: string (in case you use app-role)
@@ -109,7 +109,7 @@ Namespace::
 * Type: string
 * Your namespace (X-Vault-Namespace header if needed)
 
-==== Example
+==== Example for aws-role authentication
 
 [source,json]
 {
@@ -125,6 +125,32 @@ Namespace::
                          }
                 }
        }
+}
+
+==== Example for gcp-iam authentication
+
+[source,json]
+{
+"external-integrations": {
+    "hashicorp": {
+      "enabled": true,
+      "url": http://ip-10-20-30-55.ec2.internal:8200,
+      "path": "v1/secret",
+      "namespace": "",
+      "reject-unauthorized": true,
+      "auth-method": "gcp-iam",
+      "aws-iam": {
+        "role-name": ""
+      },
+      "app-role": {
+        "root_id": "",
+        "secret_id": ""
+      },
+"gcp-iam": {
+          "role-name": "my-iam-role"
+      }
+    }
+  }
 }
 
 == Creating a new sync relationship using secrets from the vault

@@ -86,6 +86,12 @@ Starting with the 3.8.1 release, the following permissions are required to use C
 
 === Azure
 
+* Starting with the 3.9.8 release, Cloud Manager can remove Cloud Volumes ONTAP resources from a resource group, in case of deployment failure or deletion. Be sure to provide these permissions to each set of Azure credentials that you've added to Cloud Manager:
++
+[source,json]
+"Microsoft.Network/privateEndpoints/delete",
+"Microsoft.Compute/availabilitySets/delete",
+
 * Starting with the 3.9.7 release, Cloud Manager can now delete older cloud snapshots of root and boot disks that are created when a Cloud Volumes ONTAP system is deployed and every time its powered down. A Connector requires a new permission to delete Azure snapshots:
 +
 [source,json]

@@ -1,0 +1,114 @@
+---
+sidebar: sidebar
+permalink: reference_checklist_cm.html
+keywords: networking overview, networking requirements, endpoints, urls, get started, getting started, deployment
+summary: This checklist describes what's needed to get up and running with Cloud Manager.
+---
+
+= Getting started checklist
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+This checklist describes what's needed to get up and running with Cloud Manager.
+
+A NetApp Cloud Central login::
+You need to sign up to https://cloud.netapp.com[NetApp Cloud Central^] so you can access Cloud Manager and other cloud services.
+
+Network access from a web browser to several endpoints::
+Users need to access Cloud Manager from a web browser. The machine running the web browser must have connections to the following endpoints.
++
+[cols="43,57",options="header"]
+|===
+| Endpoints
+| Purpose
+| \https://cloudmanager.cloud.netapp.com
+| To connect you to the Cloud Manager SaaS interface.
+
+| \https://api.services.cloud.netapp.com
+| To contact Cloud Central APIs.
+
+|
+\https://auth0.com
+\https://cdn.auth0.com
+\https://netapp-cloud-account.auth0.com
+\https://services.cloud.netapp.com
+
+| Your web browser connects to these endpoints for centralized user authentication through NetApp Cloud Central.
+
+| \https://widget.intercom.io
+| For in-product chat that enables you to talk to NetApp cloud experts.
+
+|===
+
+A network location for a Connector::
+After logging in to Cloud Manager, an Account Admin will need to deploy a _Connector_ in a cloud provider or in your on-premises network. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment. A Connector isn't required for Azure NetApp Files, Cloud Volumes Service, or Cloud Sync, but it is required for all other services and features in Cloud Manager. link:concept_connectors.html[Learn more about Connectors and how they work].
++
+* The network location must have an outbound internet connection.
++
+The Connector requires outbound internet access to manage resources and processes within your public cloud environment. Outbound internet access is also required if you want to manually install the Connector on a Linux host or access the local UI running on the Connector.
++
+link:reference_networking_cloud_manager.html#outbound-internet-access[View the specific endpoints that the Connector contacts].
+
+* There's no incoming traffic to the Connector, unless you initiate it.
++
+HTTP (80) and HTTPS (443) provide access to the local UI, which you'll use in rare circumstances. SSH (22) is only needed if you need to connect to the host for troubleshooting.
+
+Cloud provider permissions::
+You need an account that has permissions to deploy the Connector in your cloud provider directly from Cloud Manager.
++
+NOTE: There are alternative ways to create a Connector. You also have the option to create a Connector from the link:task_launching_aws_mktp.html[AWS Marketplace], link:task_launching_azure_mktp.html[Azure Marketplace], or to link:task_installing_linux[manually install the software].
++
+[cols="15,55,30",options="header"]
+|===
+| Location
+| High-level steps
+| Detailed steps
+
+| AWS
+a|
+. Use a JSON file that includes the required permissions to create an IAM policy in AWS.
+. Attach the policy to the IAM user who will create the Connector from Cloud Manager.
+. When you create the Connector, provide Cloud Manager with the AWS access key and secret key for the IAM user that has the required permissions.
+| link:task_creating_connectors_aws.html[Click here to view detailed steps].
+
+| Azure
+a|
+. Use a JSON file that includes the required permissions to create a custom role in Azure.
+. Assign the role to the user who will create the Connector from Cloud Manager.
+. When you create the Connector, log in with the Microsoft account that has the required permissions (the login prompt that is owned and hosted by Microsoft).
+| link:task_creating_connectors_azure.html[Click here to view detailed steps].
+
+| Google Cloud
+a|
+. Use a YAML file that includes the required permissions to create a custom role in Google Cloud.
+. Attach that role to the user who will create the Connector from Cloud Manager.
+. If you plan to use Cloud Volumes ONTAP, set up a service account that has the required permissions.
+. Enable Google Cloud APIs.
+. When you create the Connector, log in with the Google account that has the required permissions (the login prompt is owned and hosted by Google).
+| link:task_creating_connectors_gcp.html[Click here to view detailed steps].
+
+|===
+
+Networking for individual services::
+Now that your setup is complete, you're ready to start using the services available from Cloud Manager. Note that each service has its own networking requirements. Refer to the following pages for more details.
++
+* link:reference_networking_aws.html[Cloud Volumes ONTAP for AWS]
+* link:reference_networking_azure.html[Cloud Volumes ONTAP for Azure]
+* link:reference_networking_gcp.html[Cloud Volumes ONTAP for GCP]
+* link:task_replicating_data.html[Data replication between ONTAP systems]
+* link:task_getting_started_compliance.html[Cloud Data Sense for Cloud Volumes ONTAP, on-premises ONTAP, or Azure NetApp Files]
+* link:task_scanning_s3.html[Cloud Data Sense for Amazon S3]
+* link:task_scanning_object_storage.html[Cloud Data Sense for generic S3 object storage]
+* link:task_scanning_file_shares.html[Cloud Data Sense for non-NetApp NFS or CIFS file shares]
+* link:task_scanning_databases.html[Cloud Data Sense for databases]
+* link:task_scanning_onedrive.html[Cloud Data Sense for OneDrive accounts]
+* link:task_discovering_ontap.html[On-prem ONTAP clusters]
+** link:task_tiering_onprem_aws.html[Data tiering from ONTAP clusters to Amazon S3]
+** link:task_tiering_onprem_azure.html[Data tiering from ONTAP clusters to Azure Blob storage]
+** link:task_tiering_onprem_gcp.html[Data tiering from ONTAP clusters to Google Cloud Storage]
+** link:task_tiering_onprem_storagegrid.html[Data tiering from ONTAP clusters to StorageGRID]
+** link:task_backup_from_onprem.html[Data backup from ONTAP clusters to Amazon S3 or Azure Blob storage]

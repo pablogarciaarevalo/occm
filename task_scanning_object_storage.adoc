@@ -85,9 +85,20 @@ After you enable Cloud Data Sense on your Object Storage Service, the next step 
 +
 image:screenshot_compliance_object_storage_config.png[A screenshot of clicking Configuration for the working environment so you can choose the buckets that you want to scan.]
 
-. Enable compliance on the buckets that you want to scan.
+. Enable mapping-only scans, or mapping and classification scans, on your buckets.
 +
 image:screenshot_compliance_object_storage_select_buckets.png[A screenshot of selecting the object storage buckets you want to scan.]
++
+[cols="45,45",width=90%,options="header"]
+|===
+| To:
+| Do this:
+
+| Enable mapping-only scans on a bucket | Click *Map*
+| Enable full scans on a bucket | Click *Map & Classify*
+| Disable scanning on a bucket | Click *Off*
+
+|===
 
 .Result
 
