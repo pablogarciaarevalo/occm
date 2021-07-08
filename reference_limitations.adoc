@@ -15,6 +15,17 @@ summary: Known limitations identify platforms, devices, or functions that are no
 [.lead]
 Known limitations identify platforms, devices, or functions that are not supported by this release of the product, or that do not interoperate correctly with it. Review these limitations carefully.
 
+== Pay-as-you-go not available for Azure and Google Cloud partners
+
+If you are a Microsoft Cloud Solution Provider (CSP) partner or a Google Cloud partner, NetApp pay-as-you-go subscriptions are not available. You must purchase a license and deploy NetApp cloud solutions with a BYOL license.
+
+Pay-as-you-go subscriptions are not available for the following NetApp cloud services:
+
+*	Cloud Volumes ONTAP Explore, Standard, or Premium
+*	Cloud Tiering Service
+*	Cloud Backup Service
+*	Cloud Data Sense
+
 == Only one HA pair in an Azure resource group
 
 You must use a dedicated resource group for each Cloud Volumes ONTAP HA pair that you deploy in Azure. Only one HA pair is supported in a resource group.

@@ -261,6 +261,13 @@ The Cloud Manager Azure policy includes the permissions that Cloud Manager needs
 | Manages Azure storage accounts and disks, and attaches the disks to Cloud Volumes ONTAP.
 
 |
+"Microsoft.Storage/storageAccounts/blobServices/containers/read",
+"Microsoft.KeyVault/vaults/read",
+"Microsoft.KeyVault/vaults/accessPolicies/write"
+
+| Enables backups to Azure Blob storage and encryption of storage accounts
+
+|
 "Microsoft.Network/networkInterfaces/read",
 "Microsoft.Network/networkInterfaces/write",
 "Microsoft.Network/networkInterfaces/join/action",
@@ -396,6 +403,12 @@ The Cloud Manager Azure policy includes the permissions that Cloud Manager needs
 
 | Enables Cloud Manager to encrypt Azure managed disks on single node Cloud Volumes ONTAP systems using external keys from another account. This feature is supported using APIs.
 
+|
+"Microsoft.Network/privateEndpoints/delete",
+"Microsoft.Compute/availabilitySets/delete",
+
+| Enables Cloud Manager to remove resources from a resource group that belong to Cloud Volumes ONTAP in case of deployment failure or deletion.
+ 
 |===
 
 == What Cloud Manager does with GCP permissions

@@ -19,6 +19,147 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.8 (7 July 2021)
+
+* <<Cloud Volumes ONTAP enhancements>>
+* <<Cloud Backup enhancements>>
+* <<Cloud Tiering enhancements>>
+* <<Cloud Data Sense enhancements>>
+* <<Cloud Sync enhancements>>
+* <<Connector enhancement>>
+* <<Support Dashboard enhancement>>
+* <<Digital Wallet enhancement>>
+
+=== Cloud Volumes ONTAP enhancements
+
+This release of Cloud Manager includes enhancements to the management of Cloud Volumes ONTAP.
+
+==== Enhancements available in all cloud providers
+
+* New charging methods are available for Cloud Volumes ONTAP.
+
+** *Capacity-based BYOL*: A capacity-based license enables you to pay for Cloud Volumes ONTAP per TiB of capacity. The license is associated with your NetApp account and enables you to create as multiple Cloud Volumes ONTAP systems, as long as enough capacity is available through your license. Capacity-based licensing is available in the form of a package, either _Essential_ or _Professional_.
+
+** *Freemium offering*: Freemium enables you to use all Cloud Volumes ONTAP features free of charge from NetApp (cloud provider charges still apply). You're limited to 500 GB of allocated capacity per system and there’s no support contract. You can have up to 10 Freemium systems.
++
+link:concept_licensing.html[Learn more about these licensing options].
++
+Here's an example of the charging methods that you can choose from when deploying a new Cloud Volumes ONTAP system in Azure:
++
+image:screenshot_cvo_charging_methods.png[A screenshot of the Cloud Volumes ONTAP working environment wizard where you can choose a charging method.]
+
+* Write once, read many (WORM) storage is no longer in Preview and is now available for general use with Cloud Volumes ONTAP. link:concept_worm.html[Learn more about WORM storage].
+
+==== Enhancements available in AWS
+
+Starting with the 9.9.1 release, Cloud Volumes ONTAP now supports the m5dn.24xlarge instance type with the following charging methods: PAYGO Premium, bring your own license (BYOL), and Freemium.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_aws_991.html[View supported configurations for Cloud Volumes ONTAP in AWS^].
+
+==== Enhancements available in Azure
+
+* When creating a Cloud Volumes ONTAP system in Azure, you now have the option to select an existing resource group for the VM and its associated resources.
++
+image:screenshot_azure_resource_group.png[A screenshot of the Create Working Environment wizard where you can select an existing resource group.]
++
+The following permissions enable Cloud Manager to remove Cloud Volumes ONTAP resources from a resource group, in case of deployment failure or deletion:
++
+[source,json]
+"Microsoft.Network/privateEndpoints/delete",
+"Microsoft.Compute/availabilitySets/delete",
++
+Be sure to provide these permissions to each set of Azure credentials that you've added to Cloud Manager. You can find the latest list of permissions on the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policies page^].
+
+* As a security enhancement, Cloud Manager now disables *Blob public access* when creating a storage account for Cloud Volumes ONTAP.
+
+* By default, Cloud Manager now enables an Azure Private Link connection on the boot diagnostics storage account for new Cloud Volumes ONTAP systems.
++
+This means _all_ storage accounts for Cloud Volumes ONTAP will now use a private link.
++
+link:task_enabling_private_link.html[Learn more about using an Azure Private Link with Cloud Volumes ONTAP].
+
+==== Enhancements available in Google Cloud
+
+* Starting with the 9.9.1 release, Cloud Volumes ONTAP now supports Balanced persistent disks (pd-balanced).
++
+These SSDs balance performance and cost by providing lower IOPS per GB.
+
+* The custom-4-16384 machine type is no longer supported with new Cloud Volumes ONTAP systems.
++
+If you have an existing system running on this machine type, you can keep using it, but we recommend switching to the n2-standard-4 machine type.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_gcp_991.html[View supported configurations for Cloud Volumes ONTAP in GCP^].
+
+=== Cloud Backup enhancements
+
+* Cloud Backup now allows you to create backups using a different account/subscription than that used for your Cloud Volumes ONTAP system. You can also create backup files in a different region than the one in which your Cloud Volumes ONTAP system is deployed.
++
+This capability is available when using when using AWS or Azure, and only when enabling backup on an existing working environment - it is not available when creating a new Cloud Volumes ONTAP working environment.
+
+* For additional security and control, you can choose your own customer-managed keys for data encryption in the activation wizard instead of using the default Microsoft-managed encryption keys.
++
+This is available when configuring backups from an on-premises ONTAP system or from a Cloud Volumes ONTAP system in Azure.
+
+* The restriction of restoring only 8 files at a time using single-file restore from your backup files has been removed. Now you can restore up to 100 files at a time.
+
+=== Cloud Tiering enhancements
+
+When tiering data to Azure Blob storage, now your Connector can be running on your premises. You are no longer required to use a Connector installed in an Azure VNet.
+
+=== Cloud Data Sense enhancements
+
+* A new feature enables you to move any source files that Data Sense is scanning to any NFS share. This allows you to move sensitive or security-related files to a special area so you can do more analysis.
+
+* You can now choose to quickly map data into categories instead of doing a full classification scan. This enables you to view the Data Mapping report from the Governance Dashboard to get an overview of your data when there are certain data sources that you do not need to run a complete scan on.
+
+* Now you can assign a file to a specific Cloud Manager user so that person can be responsible for any follow-up actions that need to be done on the file. This capability can be used with the existing feature to add custom Status tags to a file.
++
+A new Filter in the Investigation page enables you to easily view all files that have the same person in the "Assigned To" field.
+
+* Some users with smaller scanning requirements have asked to be able to use a smaller Cloud Data Sense instance. Now you can. There are some limitations when using these smaller instances, so link:https://review.docs.netapp.com/us-en/occm_jul_2021_cc/concept_cloud_compliance.html#using-a-smaller-instance-type[see what these restrictions are first].
+
+* Data scans have a negligible impact on your storage systems and on your data. However, if you are concerned with even a very small impact, you can configure Data Sense to perform "slow" scans now.
+
+* The Last Accessed Time value has been added to the File Details page and to reports that you output in CSV format so you can see when users have last accessed the file.
+
+=== Cloud Sync enhancements
+
+* Cloud Sync now supports sync relationships between ONTAP S3 Storage and a Google Cloud Storage bucket from the user interface.
++
+link:reference_sync_requirements.html[View supported sync relationships].
+
+* Cloud Sync can now copy object metadata and tags between object-based storage when you create a sync relationship and enable a setting.
++
+link:task_sync_creating_relationships.html#settings[Learn more about the Copy for Objects setting].
+
+* You can now set up the data broker to access credentials from an external HashiCorp Vault by authenticating with a Google Cloud service account.
++
+link:task_external_vault.html[Learn more about using a HashiCorp Vault with a data broker].
+
+* When setting up a sync relationship to an AWS S3 bucket, the Sync Relationship wizard now enables you to define the tags or metadata that you want to save on the objects in the target S3 bucket.
++
+The tagging option was previously part of the sync relationship's settings.
+
+=== Connector enhancement
+
+We redesigned the *Add Connector* wizard to add new options and to make it easier to use. You can now add tags, specify a role (for AWS or Azure), upload a root certificate for a proxy server, view code for Terraform automation, view progress details, and more.
+
+* link:task_creating_connectors_aws.html[Create a Connector in AWS]
+* link:task_creating_connectors_azure.html[Create a Connector in Azure]
+* link:task_creating_connectors_gcp.html[Create a Connector in GCP]
+
+=== Support Dashboard enhancement
+
+NetApp Support Site (NSS) accounts are now managed from the Support Dashboard, rather than from the Settings menu. This change makes it easier to find and manage all support-related information from a single location.
+
+image:screenshot_nss_management.png[A screenshot of the NSS Management tab in the Support Dashboard where you can add NSS accounts.]
+
+=== Digital Wallet enhancement
+
+The Digital Wallet page is now located in its own tab under the Resources section. link:task_managing_licenses.html[Learn how to manage licenses from your Digital Wallet].
+
+image:screenshot_digital_wallet_menu.png[A screenshot of the Digital Wallet under the All Services option.]
+
 == Cloud Manager 3.9.7 update (7 June 2021)
 
 * <<Cloud Sync support for storage classes in Google Cloud>>
