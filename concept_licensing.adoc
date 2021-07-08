@@ -80,11 +80,15 @@ To get started with the Freemium offering, create a new Cloud Volumes ONTAP work
 
 == Capacity-based licenses
 
-Capacity-based licensing enables you to pay for Cloud Volumes ONTAP per TiB of capacity. The license is associated with your NetApp account and enables you to charge multiple systems against the license, as long as enough capacity is available through your license. This licensing method is available for Cloud Volumes ONTAP 9.7 and later.
+Capacity-based licensing enables you to pay for Cloud Volumes ONTAP per TiB of capacity. The license is associated with your NetApp account and enables you to charge multiple systems against the license, as long as enough capacity is available through the license.
 
-Cloud Manager aggregates the capacity of all data volumes for every Cloud Volumes ONTAP system in your NetApp account and charges based on the allocated capacity. Storage efficiency improves total cost of ownership (TCO) since less cloud resources are required, but it doesn't affect license calculations.
+For example, you could purchase a single 20 TB license, deploy four Cloud Volumes ONTAP systems, and then allocate a 5 TB volume to each system, for a total of 20 TB.
+
+Unlike the by-node charging method where a license is purchased per Cloud Volumes ONTAP system, a capacity-based license is issued to a NetApp account. The capacity is then available to the volumes on each Cloud Volumes ONTAP system deployed in that account.
 
 Capacity-based licensing is available in the form of a _package_. When you deploy a Cloud Volumes ONTAP system, you can choose from the following packages: Essential or Professional.
+
+This licensing method is available for Cloud Volumes ONTAP 9.7 and later.
 
 NOTE: For each package, there is a minimum allocated capacity charge of 4 TB. Any Cloud Volumes ONTAP instance that has less than 4 TB of allocated capacity will be charged at a rate of 4 TB.
 
