@@ -25,7 +25,6 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 * <<Cloud Backup enhancements>>
 * <<Cloud Tiering enhancements>>
 * <<Cloud Data Sense enhancements>>
-* <<Application Template enhancements>>
 * <<Cloud Sync enhancements>>
 * <<Connector enhancement>>
 * <<Support Dashboard enhancement>>
@@ -122,14 +121,6 @@ A new Filter in the Investigation page enables you to easily view all files that
 * Data scans have a negligible impact on your storage systems and on your data. However, if you are concerned with even a very small impact, you can configure Data Sense to perform "slow" scans now.
 
 * The Last Accessed Time value has been added to the File Details page and to reports that you output in CSV format so you can see when users have last accessed the file.
-
-=== Application Template enhancements
-
-* A new feature enables you to add tags to a volume in a volume template. Tagging enables you to group different resources to identify applications, regions, or departments in order to perform automation or to allocate costs to certain departments or regions.
-
-* You can now add in the template that you want to replicate the data in the volume you are creating to another volume using the link:concept_replication.html[Replication service]. When you replicate data to other NetApp storage systems and continually update the secondary data, your data is kept current and remains available whenever you need it.
-
-* Now you can download a report that includes all the volumes that have "drifted" from your template settings instead of just viewing this information for a single volume in the Dashboard. In this manner you can identify these volumes and assign someone to bring the volumes back into compliance.
 
 === Cloud Sync enhancements
 
