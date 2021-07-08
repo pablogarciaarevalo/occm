@@ -113,7 +113,7 @@ If you have an AWS Marketplace contract, _all_ Cloud Volumes ONTAP systems that 
 * Conversions to another licensing option isn't supported.
 * Each individual Cloud Volumes ONTAP system supports up to 2 PB of capacity through disks and tiering to object storage.
 
-To get started with a capacity-based license, https://cloud.netapp.com/contact-cds[Contact NetApp Sales^] and then link:task_managing_licensing.html[add your license to Cloud Manager].
+To get started with a capacity-based license, https://cloud.netapp.com/contact-cds[Contact NetApp Sales^] and then link:task_managing_licenses.html[add your license to Cloud Manager].
 
 == PAYGO by node
 
@@ -145,4 +145,4 @@ To get started with PAYGO, create a Cloud Volumes ONTAP working environment and 
 
 If you want to transition to capacity-based licensing, you can purchase a license, deploy a new Cloud Volumes ONTAP system, and then replicate the data to that new system.
 
-To get started with a node-based license, https://cloud.netapp.com/contact-cds[Contact NetApp Sales^] and then link:task_managing_licensing.html[add your license to Cloud Manager].
+To get started with a node-based license, https://cloud.netapp.com/contact-cds[Contact NetApp Sales^] and then link:task_managing_licenses.html[add your license to Cloud Manager].
