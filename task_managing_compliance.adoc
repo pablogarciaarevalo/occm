@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_managing_compliance.html
 keywords: remove, delete, stop, stop scans, stop scanning, cloud compliance, stop cloud compliance, delete cloud compliance, terminate, deactivate, deactivating cloud compliance, Data Sense
-summary: If you need to, you can stop Cloud Data Sense from scanning one or more working environments, databases, file share groups, or OneDrive accounts. You can also delete the Cloud Data Sense instance if you no longer want to use Cloud Data Sense with your working environments.
+summary: If you need to, you can stop Cloud Data Sense from scanning one or more working environments, databases, file share groups, or OneDrive accounts. You can also delete the Cloud Data Sense instance if you no longer want to use Data Sense with your working environments.
 ---
 
 = Removing data sources from Cloud Data Sense
@@ -13,7 +13,7 @@ summary: If you need to, you can stop Cloud Data Sense from scanning one or more
 :imagesdir: ./media/
 
 [.lead]
-If you need to, you can stop Cloud Data Sense from scanning one or more working environments, databases, file share groups, or OneDrive accounts. You can also delete the Cloud Data Sense instance if you no longer want to use Cloud Data Sense with your working environments.
+If you need to, you can stop Cloud Data Sense from scanning one or more working environments, databases, file share groups, or OneDrive accounts. You can also delete the Cloud Data Sense instance if you no longer want to use Data Sense with your working environments.
 
 == Deactivating compliance scans for a working environment
 
@@ -56,6 +56,24 @@ If you no longer want to scan user files from a file shares group, you can delet
 image:screenshot_compliance_remove_fileshare_group.png[A screenshot of the Remove File Share Group button from the Scan Configuration page.]
 
 . Click *Delete Group of Shares* from the confirmation dialog.
+
+== Reducing the Data Sense scan speed
+
+Data scans have a negligible impact on your storage systems and on your data. However, if you are concerned with even a very small impact, you can configure Data Sense to perform "slow" scans. When enabled, slow scanning is used on all data sources - you can't configure slow scanning for a single working environment or data source.
+
+TIP: The scan speed can't be reduced when scanning databases.
+
+.Steps
+
+. From the bottom of the _Configuration_ page, move the slider to the right to activate slow scanning.
++
+image:screenshot_slow_scan_enable.png[A screenshot showing how to enable slow compliance scanning.]
++
+The top of the Configuration page indicates that slow scanning is enabled.
++
+image:screenshot_slow_scan_disable.png[A screenshot showing how to enable slow compliance scanning.]
+
+. You can disable slow scanning by clicking *Disable* from this message.
 
 == Deleting the Cloud Data Sense instance
 
