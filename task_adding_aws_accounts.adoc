@@ -93,6 +93,10 @@ The account now has the required permissions. <<Adding AWS credentials to Cloud 
 
 After you provide an AWS account with the required permissions, you can add the credentials for that account to Cloud Manager. This enables you to launch Cloud Volumes ONTAP systems in that account.
 
+.Before you get started
+
+If you just created these credentials in your cloud provider, it might take a few minutes until they are available for use. Wait a few minutes before you add the credentials to Cloud Manager.
+
 .Steps
 
 . In the upper right of the Cloud Manager console, click the Settings icon, and select *Credentials*.

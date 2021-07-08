@@ -15,6 +15,12 @@ summary: Known limitations identify platforms, devices, or functions that are no
 [.lead]
 Known limitations identify platforms, devices, or functions that are not supported by this release of the product, or that do not interoperate correctly with it. Review these limitations carefully.
 
+== Only one HA pair in an Azure resource group
+
+You must use a dedicated resource group for each Cloud Volumes ONTAP HA pair that you deploy in Azure. Only one HA pair is supported in a resource group.
+
+Cloud Manager experiences connection issues if you try to deploy a second Cloud Volumes ONTAP HA pair in an Azure resource group.
+
 == Connectors should remain running
 
 A Connector should remain running at all times. It's important for the continued health and operation of the services that you enable.
