@@ -1,0 +1,153 @@
+---
+sidebar: sidebar
+permalink: reference_backup_multi_account_aws.html
+keywords: aws, amazon, s3, multiple accounts, multiple regions, backup
+summary: Cloud Backup enables you to create backup files in an AWS account that is different than where your source volumes reside, and that is different than the account where the Cloud Manager Connector resides.
+---
+
+= Configure backup for multi-account access in AWS
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Cloud Backup enables you to create backup files in an AWS account that is different than where your source volumes reside. And both of those accounts can be different than the account where the Cloud Manager Connector resides.
+
+Just follow the steps below to set up your configuration in this manner.
+
+== Set up VPC peering between accounts
+
+. Log in to second account and Create Peering Connection:
+.. Select a local VPC: Select the VPC of the second account.
+.. Select another VPC: Enter the account ID of the first account.
+.. Select the Region where the Cloud Manager Connector is running. In this test setup both accounts are running in same region.
+.. VPC ID: Log into first account and enter the acceptor VPC ID. This is the VPC ID of the Cloud Manager Connector.
++
+image:screenshot_aws_peer1.png[]
++
+A Success dialog displays.
++
+image:screenshot_aws_peer2.png[]
++
+The status of the peering connection shows as Pending Acceptance.
++
+image:screenshot_aws_peer3.png[]
+
+. Log into the first account and accept the peering request:
++
+image:screenshot_aws_peer4.png[]
++
+image:screenshot_aws_peer5.png[]
+
+.. Click *Yes*.
++
+image:screenshot_aws_peer6.png[]
++
+The connection now shows as Active. We have also added a Name tag to identify the peering connection called `cbs-multi-account`.
++
+image:screenshot_aws_peer7.png[]
+
+.. Refresh the peering connection in the second account and notice that the status changes to Active.
++
+image:screenshot_aws_peer8.png[]
+
+== Add a route to the route tables in both accounts
+
+. Go to VPC > Subnet > Route table.
++
+image:screenshot_aws_route1.png[]
+
+. Click on the Routes tab.
++
+image:screenshot_aws_route2.png[]
+
+. Click *Edit routes*.
++
+image:screenshot_aws_route3.png[]
+
+. Click *Add route*, and from the Target drop-down list select *Peering Connection*, and then select the peering connection that you created.
++
+.. In the Destination, enter the other account's subnet CIDR.
++
+image:screenshot_aws_route4.png[]
++
+.. Click *Save routes* and a Success dialog displays.
++
+image:screenshot_aws_route5.png[]
+
+== Add the second AWS account credentials in Cloud Manager
+
+. Add the second AWS account, for example, _Saran-XCP-Dev_.
++
+image:screenshot_aws_second_account1.png[]
+
+. In the Discover Cloud Volumes ONTAP page, select the newly added credentials.
++
+image:screenshot_aws_second_account2.png[]
+
+. Select the Cloud Volumes ONTAP system you want to discover from second account. You can also deploy a new Cloud Volumes ONTAP system in the second account.
++
+image:screenshot_aws_second_account3.png[]
++
+The Cloud Volumes ONTAP system from the second account is now added to Cloud Manager which is running in a different account.
++
+image:screenshot_aws_second_account4.png[]
+
+== Enable backup in the other AWS account
+
+. In Cloud Manager, enable backup for the Cloud Volumes ONTAP system running in the first account, but select the second account as the location for creating the backup files.
++
+image:screenshot_aws_pick_second_account1.png[]
+
+. Then select a backup policy and the volumes you want to back up, and Cloud Backup attempts to create a new bucket in the selected account.
++
+However, adding the bucket to the Cloud Volumes ONTAP system will fail because Cloud Backup uses the instance profile to add the bucket and the Cloud Manager instance profile doesn't have access to the resources in the second account.
+
+. Get the working environment ID for the Cloud Volumes ONTAP system.
++
+image:screenshot_aws_onprem_we_id.png[]
++
+Cloud Backup creates every bucket with the prefix `Netapp-backup-` and will include the working environment ID; for example: `87ULeA10`
+
+. In the EC2 portal, go to S3 and search for the bucket with name ending with `87uLeA10` and you'll see the bucket name displayed as `Netapp-backup-vsa87uLeA10`.
++
+image:screenshot_aws_find_bucket.png[]
+
+. Click on the bucket, then click the Permissions tab, and then click *Edit* in the Bucket policy section.
++
+image:screenshot_aws_bucket_policy.png[]
+
+. Add a bucket policy for the newly created bucket to provide access to the Cloud Manager's AWS account, and then Save the changes.
++
+[source,json]
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PublicRead",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::464262061435:root"
+      },
+      "Action": [
+        "s3:ListBucket",
+        "s3:GetBucketLocation",
+        "s3:GetObject",
+        "s3:PutObject",
+        "s3:DeleteObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::netapp-backup-vsa87uleai0",
+        "arn:aws:s3:::netapp-backup-vsa87uleai0/*"
+      ]
+    }
+  ]
+}
++
+Note that "AWS": "arn:aws:iam::464262061435:root" gives complete access this bucket for all resources in account 464262061435. If you want to reduce it to specific role, level, you can update the policy with specific role(s). If you are adding individual roles, ensure that occm role also added, otherwise backups will not get updated in the Cloud Backup UI.
++
+For example: "AWS": "arn:aws:iam::464262061435:role/cvo-instance-profile-version10-d8e-IamInstanceRole-IKJPJ1HC2E7R"
+
+. Retry enabling Cloud Backup on the Cloud Volumes ONTAP system and this time it should be successful.
