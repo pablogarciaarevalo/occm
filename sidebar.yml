@@ -21,8 +21,8 @@ entries:
     entries:
       - title: Learn about Cloud Manager
         url: /concept_overview.html
-      - title: Networking overview
-        url: /reference_networking.html
+      - title: Getting started checklist
+        url: /reference_checklist_cm.html
       - title: Sign up to Cloud Central
         url: /task_signing_up.html
       - title: Log in to Cloud Manager
