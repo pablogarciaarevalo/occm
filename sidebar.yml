@@ -75,10 +75,12 @@ entries:
                   url: /concept_ha_azure.html
                 - title: HA pairs in GCP
                   url: /concept_ha_google_cloud.html
+            - title: Licensing
+              url: /concept_licensing.html
+            - title: Management of node-based BYOL
+              url: /concept_license_management.html
             - title: Evaluating
               url: /concept_evaluating.html
-            - title: Licensing for BYOL
-              url: /concept_licensing.html
             - title: Security
               url: /concept_security.html
             - title: Performance
@@ -175,12 +177,12 @@ entries:
         url: /task_protecting_ransomware.html
       - title: Administer
         entries:
+          - title: Manage licenses
+            url: /task_managing_licenses.html
           - title: Register pay-as-you-go systems
             url: /task_registering.html
           - title: Set up Cloud Volumes ONTAP
             url: /task_setting_up_ontap_cloud.html
-          - title: Manage BYOL licenses
-            url: /task_managing_licenses.html
           - title: Update software
             url: /task_updating_ontap_cloud.html
           - title: Modify system configurations
@@ -271,6 +273,13 @@ entries:
         url: /task_managing_backups.html
       - title: Restore from backups
         url: /task_restore_backups.html
+      - title: Cross-account and cross-region configurations
+        url: /reference_cross_account.html
+        entries:
+          - title: Configure Backup for multi-account access in AWS
+            url: /reference_backup_multi_account_aws.html
+          - title: Configure Backup for multi-account access in Azure
+            url: /reference_backup_multi_account_azure.html
   - title: Copy and synchronize data
     entries:
       - title: Learn about Cloud Sync
@@ -327,8 +336,10 @@ entries:
             url: /task_deploy_cloud_compliance.html
           - title: Activate scanning on your data sources
             entries:
-              - title: Cloud Volumes ONTAP, on-prem ONTAP, and Azure NetApp Files
+              - title: Cloud Volumes ONTAP and on-prem ONTAP
                 url: /task_getting_started_compliance.html
+              - title: Azure NetApp Files
+                url: /task_scanning_anf.html
               - title: Amazon S3 buckets
                 url: /task_scanning_s3.html
               - title: Database schemas
@@ -379,7 +390,7 @@ entries:
         url: /concept_compute.html
       - title: Get started
         url: /task_getting_started_compute.html
-  - title: Tier data to the cloud
+  - title: Tier on-premises data to the cloud
     entries:
       - title: Learn about Cloud Tiering
         url: /concept_cloud_tiering.html
@@ -393,6 +404,8 @@ entries:
             url: /task_tiering_onprem_gcp.html
           - title: Tier data to StorageGRID
             url: /task_tiering_onprem_storagegrid.html
+#          - title: Tier data to S3 object storage
+#            url: /task_tiering_onprem_s3_compat.html
       - title: Set up licensing
         url: /task_licensing_cloud_tiering.html
       - title: Test cloud performance

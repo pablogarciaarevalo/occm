@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_deploy_cloud_compliance.html
 keywords: cloud compliance, data sense, get started, deploy cloud compliance, outbound internet, endpoints, cloud compliance internet, web browser connectivity, cloud compliance access, privacy, compliance, on-premises,
-summary: Complete a few steps to deploy the Cloud Data Sense instance in your Cloud Manager workspace. You can deploy Data Sense in the cloud or on an on-premises system.
+summary: Complete a few steps to deploy Cloud Data Sense in your Cloud Manager workspace. You can deploy Data Sense in the cloud or on an on-premises system.
 ---
 
 = Deploy Cloud Data Sense
@@ -13,9 +13,9 @@ summary: Complete a few steps to deploy the Cloud Data Sense instance in your Cl
 :imagesdir: ./media/
 
 [.lead]
-Complete a few steps to deploy the Cloud Data Sense instance in your Cloud Manager workspace. You can deploy Data Sense in the cloud or on an on-premises system.
+Complete a few steps to deploy Cloud Data Sense in your Cloud Manager workspace. You can deploy Data Sense in the cloud or on an on-premises system.
 
-The on-prem installation may be a good option if you prefer to scan on-premises ONTAP working environments using a Data Sense instance that's also located on premises. But this this not a requirement. The software functions exactly the same way regardless of which installation method you choose.
+The on-prem installation may be a good option if you prefer to scan on-premises ONTAP working environments using a Data Sense instance that's also located on premises -- but this this not a requirement. The software functions exactly the same way regardless of which installation method you choose.
 
 == Quick start
 
@@ -35,8 +35,8 @@ You can also link:task_installing_linux.html[deploy the Connector on-premises^] 
 Ensure that your environment can meet the prerequisites. This includes outbound internet access for the instance, connectivity between the Connector and Cloud Data Sense over port 80, and more. <<Reviewing prerequisites,See the complete list>>.
 
 [role="quick-margin-list"]
-* When installed in the cloud, you need 16 vCPUs for the Cloud Data Sense instance. See link:concept_cloud_compliance.html#the-cloud-data-sense-instance[more details about the instance type^].
-* When installed on premises, you need a Linux system that meets the link:task_deploy_cloud_compliance.html#deploying-the-cloud-data-sense-instance-on-premises[following requirements^].
+* When installed in the cloud, the default configuration requires 16 vCPUs for the Cloud Data Sense instance. See link:concept_cloud_compliance.html#the-cloud-data-sense-instance[more details about the instance type^].
+* When installed on premises, you need a Linux system that meets the link:task_deploy_cloud_compliance.html#deploying-the-cloud-data-sense-instance-on-premises[following requirements].
 
 ==== image:number3.png[Number 3] Deploy Cloud Data Sense
 
@@ -68,7 +68,7 @@ Note that you can also link:task_installing_linux.html[deploy the Connector on-p
 
 As you can see, there may be some situations where you need to use link:concept_connectors.html#when-to-use-multiple-connectors[multiple Connectors].
 
-NOTE: If you're planning on scanning Azure NetApp Files, you need to make sure you're deploying in the same region as the volumes you wish to scan.
+NOTE: If you're planning on scanning Azure NetApp Files volumes, you need to make sure you're deploying in the same region as the volumes you wish to scan.
 
 == Reviewing prerequisites
 
@@ -172,6 +172,8 @@ See the following links for more details on vCPU limits:
 +
 * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html[AWS documentation: Amazon EC2 Service Limits^]
 * https://docs.microsoft.com/en-us/azure/virtual-machines/linux/quotas[Azure documentation: Virtual machine vCPU quotas^]
++
+Note that you can deploy Data Sense on a system with fewer CPUs and less RAM, but there are limitations when using these systems. See link:concept_cloud_compliance.html#using-a-smaller-instance-type[Using a smaller instance type] for details.
 
 Ensure that Cloud Manager can access Cloud Data Sense::
 Ensure connectivity between the Connector and the Cloud Data Sense instance. The security group for the Connector must allow inbound and outbound traffic over port 80 to and from the Data Sense instance.
@@ -235,6 +237,8 @@ NOTE: Cloud Data Sense is currently unable to scan S3 buckets and Azure NetApp F
 * RAM: 64 GB (swap memory must be disabled on the host)
 * CPU: 16 cores
 * Disk: 500 GB SSD
++
+Note that you can deploy Data Sense on a system with fewer CPUs and less RAM, but there are limitations when using these systems. See link:concept_cloud_compliance.html#using-a-smaller-instance-type[Using a smaller instance type] for details.
 
 * A Red Hat Enterprise Linux system must be registered with Red Hat Subscription Management. If it is not registered, the system cannot access repositories to update required 3rd party software during installation.
 
