@@ -26,6 +26,12 @@ Pay-as-you-go subscriptions are not available for the following NetApp cloud ser
 *	Cloud Backup Service
 *	Cloud Data Sense
 
+== Only one HA pair in an Azure resource group
+
+You must use a dedicated resource group for each Cloud Volumes ONTAP HA pair that you deploy in Azure. Only one HA pair is supported in a resource group.
+
+Cloud Manager experiences connection issues if you try to deploy a second Cloud Volumes ONTAP HA pair in an Azure resource group.
+
 == Connectors should remain running
 
 A Connector should remain running at all times. It's important for the continued health and operation of the services that you enable.

@@ -96,7 +96,7 @@ You should add the ID for each Azure subscription from which users will create C
 +
 The following example shows how to create a custom role using the Azure CLI 2.0:
 +
-`az role definition create --role-definition C:\Policy_for_cloud_Manager_Azure_3.8.7.json`
+`az role definition create --role-definition C:\Policy_for_cloud_Manager_Azure_3.9.8.json`
 +
 You should now have a custom role called _Cloud Manager Operator_.
 
@@ -184,6 +184,10 @@ Your service principal is now setup and you should have copied the application (
 == Adding Azure credentials to Cloud Manager
 
 After you provide an Azure account with the required permissions, you can add the credentials for that account to Cloud Manager. This enables you to launch Cloud Volumes ONTAP systems in that account.
+
+.Before you get started
+
+If you just created these credentials in your cloud provider, it might take a few minutes until they are available for use. Wait a few minutes before you add the credentials to Cloud Manager.
 
 .What you'll need
 

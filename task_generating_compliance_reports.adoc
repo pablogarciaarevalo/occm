@@ -17,6 +17,8 @@ Cloud Data Sense provides reports that you can use to better understand the stat
 
 By default, the Cloud Data Sense dashboards display compliance and governance data for all working environments and databases. If you want to view reports that contain data for only some of the working environments, <<Selecting the working environments for reports,select those working environments>>.
 
+NOTE: The reports described in this section are available only if you have chosen to perform a full classification scan on your data sources. Data sources that have had a mapping-only scan can only generate the Data Mapping Report.
+
 NOTE: NetApp can't guarantee 100% accuracy of the personal data and sensitive personal data that Cloud Data Sense identifies. You should always validate the information by reviewing the data.
 
 == Privacy Risk Assessment Report

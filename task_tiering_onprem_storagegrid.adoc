@@ -141,19 +141,19 @@ After you prepare your environment, start tiering inactive data from your first 
 +
 image:screenshot_setup_tiering_onprem.png[A screenshot that shows the Setup Tiering option that appears on the right side of the screen after you select an on-prem ONTAP working environment.]
 
+. *Choose your provider*: Select *StorageGRID* and click *Continue*.
+
 . Complete the steps on the *Tiering Setup* page:
 
-.. *Choose your provider*: Select StorageGRID.
+.. *Server*: Enter the FQDN of the StorageGRID server, the port that ONTAP should use for HTTPS communication with StorageGRID, and the access key and secret key for an account that has the required S3 permissions.
 
-.. *Server*: Enter the FQDN of the StorageGRID server, enter the port that ONTAP should use for HTTPS communication with StorageGRID, and enter the access key and secret key for an account that has the required S3 permissions.
-
-.. *Bucket*: Add a new bucket or select an existing bucket for the tiered data.
-
-.. *Cluster Network*: Select the IPspace that ONTAP should use to connect to object storage.
+.. *Bucket*: Add a new bucket or select an existing bucket that starts with the prefix _fabric-pool_ and click *Continue*.
 +
-Selecting the correct IPspace ensures that Cloud Tiering can set up a connection from ONTAP to your cloud provider's object storage.
+The _fabric-pool_ prefix is required because the IAM policy for the Connector enables the instance to perform S3 actions on buckets named with that exact prefix. For example, you could name the S3 bucket _fabric-pool-AFF1_, where AFF1 is the name of the cluster.
 
-. Click *Continue* to select the volumes that you want to tier.
+.. *Cluster Network*: Select the IPspace that ONTAP should use to connect to object storage and click *Continue*.
++
+Selecting the correct IPspace ensures that Cloud Tiering can set up a connection from ONTAP to StorageGRID object storage.
 
 . On the _Tier Volumes_ page, select the volumes that you want to configure tiering for and launch the Tiering Policy page:
 

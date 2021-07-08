@@ -88,7 +88,7 @@ You should add the ID for each Azure subscription from which users will create C
 +
 The following example shows how to create a custom role using the Azure CLI 2.0:
 +
-`az role definition create --role-definition C:\Policy_for_cloud_Manager_Azure_3.8.7.json`
+`az role definition create --role-definition C:\Policy_for_cloud_Manager_Azure_3.9.8.json`
 +
 You should now have a custom role called Cloud Manager Operator that you can assign to the Connector virtual machine.
 

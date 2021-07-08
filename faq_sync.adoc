@@ -221,7 +221,7 @@ Cloud Sync copies object storage metadata from the source to the target for the 
 * IBM Cloud Object Storage -> StorageGRID
 * IBM Cloud Object Storage -> IBM Cloud Object Storage
 
-^1^ For these sync relationships, you need to link:task_sync_managing_data_brokers.html#configure-the-data-broker-to-copy-object-storage-metadata[modify the data broker's configuration in order to copy metadata].
+^1^ For these sync relationships, you need to link:task_sync_creating_relationships.html[enable a setting when you create the sync relationship].
 
 == Performance
 

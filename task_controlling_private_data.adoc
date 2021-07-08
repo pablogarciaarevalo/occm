@@ -15,6 +15,8 @@ summary: Gain control of your private data by viewing details about the personal
 [.lead]
 Gain control of your private data by viewing details about the personal data and sensitive personal data in your organization. You can also gain visibility by reviewing the categories and file types that Cloud Data Sense found in your data.
 
+NOTE: The capabilities described in this section are available only if you have chosen to perform a full classification scan on your data sources. Data sources that have had a mapping-only scan do not show file-level details.
+
 By default, the Cloud Data Sense dashboard displays compliance data for all working environments and databases.
 
 image:screenshot_compliance_dashboard.png[A screenshot of the Cloud Data Sense dashboard]
@@ -107,7 +109,7 @@ image:screenshot_file_types.gif[A screenshot of the file types dialog box where 
 
 == Viewing file metadata
 
-In the Data Investigation results pane you can click image:button_subfolder.png[right-caret] for any single file to view the file metadata.
+In the Data Investigation results pane you can click image:button_down_caret.png[down-caret] for any single file to view the file metadata.
 
 image:screenshot_compliance_file_details.png[A screenshot showing the metadata details for a file in the Data Investigation page.]
 
@@ -117,9 +119,13 @@ Note that not all information is available for all data sources - just what is a
 
 When viewing the details for a single file there are a few actions you can take on the file:
 
-* You can delete the file. See link:task_managing_highlights.html#deleting-source-files[Deleting source files^] for details.
+* You can move the file to any NFS share. See link:task_managing_highlights.html#moving-source-files-to-an-nfs-share[Moving source files to an NFS share] for details.
 
-* You can assign a certain Status to the file. See link:task_managing_highlights.html#applying-status-codes-to-manage-your-scanned-files[applying Status tags] for details.
+* You can delete the file. See link:task_managing_highlights.html#deleting-source-files[Deleting source files] for details.
+
+* You can assign a certain Status to the file. See link:task_managing_highlights.html#applying-status-tags-to-manage-your-scanned-files[Applying Status tags] for details.
+
+* You can assign the file to a Cloud Manager user to be responsible for any follow-up actions that need to be done on the file. See link:task_managing_highlights.html#assigning-users-to-manage-certain-files[Assigning users to a file] for details.
 
 * If you have integrated AIP labels with Cloud Data Sense, you can assign a label to this file, or change to a different label if one already exists. See link:task_managing_highlights.html#assigning-aip-labels-manually[Assigning AIP labels manually^] for details.
 
@@ -145,7 +151,7 @@ All files with duplicates from all file types (not including databases), with a 
 
 === Viewing if a specific file is duplicated
 
-If you want to see if a single file has duplicates, in the Data Investigation results pane you can click image:button_subfolder.png[right-caret] for any single file to view the file metadata. If there are duplicates of a certain file, this information appears next to the _Duplicates_ field.
+If you want to see if a single file has duplicates, in the Data Investigation results pane you can click image:button_down_caret.png[down-caret] for any single file to view the file metadata. If there are duplicates of a certain file, this information appears next to the _Duplicates_ field.
 
 To view the list of duplicate files and where they are located, click *View Details*. In the next page click *View Duplicates* to view the files in the Investigation page.
 
@@ -167,7 +173,7 @@ image:screenshot_cloud_compliance_filter.gif[A screenshot showing how to filter 
 
 == Filtering data in the Data Investigation page
 
-You can filter the contents of the investigation page to display only the results you want to see. If you want to save a CSV version of the content as a report after you have refined it, click the image:button_download.png[down arrow button] button.
+You can filter the contents of the investigation page to display only the results you want to see. If you want to save a CSV version of the content as a report after you have refined it, click the image:button_download.png[download button] button.
 
 image:screenshot_compliance_investigation_filtered.png[A screenshot of the filters available when refining the results in the investigation page.]
 
@@ -191,17 +197,19 @@ image:screenshot_compliance_investigation_filtered.png[A screenshot of the filte
 ** Data Subject
 ** File Type
 ** File Size
-** Created Time
+** Created date
 ** Last Modified date
+** Last Accessed date (For the link:reference_private_data_categories.html#types-of-files[types of files that we scan for content] this is the last time Data Sense scanned the file.)
 ** Has Duplicates
 ** Status
+** Assigned To
 ** File Hash
 
 * The _Policies_ filter at the top of the Filters pane lists the custom filters that provide commonly requested combinations of filters; like a saved database query or Favorites list. Go link:task_managing_highlights.html#controlling-your-data-using-policies[here^] to view the list of predefined Policies and to see how you can create your own custom Policies.
 
 == What’s included in each file list report (CSV file)
 
-From each Investigation page you can click the image:button_download.png[] button to download file lists (in CSV format) that include details about the identified files. If Data Sense is scanning both Structured (database tables) and Unstructured (files) data, there are two reports contained in the downloaded ZIP file.
+From each Investigation page you can click the image:button_download.png[download button] button to download file lists (in CSV format) that include details about the identified files. If Data Sense is scanning both Structured (database tables) and Unstructured (files) data, there are two reports contained in the downloaded ZIP file.
 
 If there are more than 10,000 results, only the top 10,000 appear in the list.
 
@@ -216,6 +224,7 @@ The *Unstructured Data Report* includes the following information:
 * File type
 * Created time
 * Last modified
+* Last accessed
 * File size
 * File owner
 * Category

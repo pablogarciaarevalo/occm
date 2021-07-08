@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_restore_backups.html
 keywords: restoring, restore, restore volumes, restore files, Cloud Backup, cloud backup service, single file restore
-summary: Backups are stored in an object store in your cloud account so that you can restore data from a specific point in time. You can restore an entire volume from a saved backup file, or if you only need to restore a few files, you can restore up to 8 individual files (at one time) from a saved backup file.
+summary: Backups are stored in an object store in your cloud account so that you can restore data from a specific point in time. You can restore an entire volume from a saved backup file, or if you only need to restore a few files, you can restore individual files from a saved backup file.
 ---
 
 = Restoring data from backup files
@@ -13,7 +13,7 @@ summary: Backups are stored in an object store in your cloud account so that you
 :imagesdir: ./media/
 
 [.lead]
-Backups are stored in an object store in your cloud account so that you can restore data from a specific point in time. You can restore an entire volume from a saved backup file, or if you only need to restore a few files, you can restore up to 8 individual files (at one time) from a saved backup file.
+Backups are stored in an object store in your cloud account so that you can restore data from a specific point in time. You can restore an entire volume from a saved backup file, or if you only need to restore a few files, you can restore individual files from a saved backup file.
 
 You can restore an entire volume to the same working environment, to a different working environment that's using the same cloud account, or to an on-premises ONTAP system. See <<Restoring a volume from a backup file,Restoring a volume from a backup>>.
 
@@ -108,11 +108,15 @@ Cloud Manager creates a new volume based on the backup you selected. You can lin
 
 If you only need to restore a few files from a volume, you can choose to restore individual files instead of restoring the entire volume. You can restore files to a volume in the same working environment, or to a different working environment that's using the same cloud account. You can also restore files to an on-premises ONTAP system.
 
-You can restore up to 8 files at a time from a volume in a backup file. All the files are restored to the same destination volume that you choose. If you need to restore more than 8 files you can run the restore process a second time.
+All the files are restored to the same destination volume that you choose. If you want to restore files to different volumes, you need run the restore process a second time.
 
-Note that the ONTAP version must be 9.6 or greater in your Cloud Volumes ONTAP or on-premises ONTAP systems to perform file restore operations.
+=== Prerequisites
 
-NOTE: Restoring individual files from a backup file uses a separate Restore instance/virtual machine. See the link:task_backup_to_s3.html#requirements[AWS Requirements] or link:task_backup_to_azure.html#requirements[Azure Requirements] to make sure your environment is ready.
+* The ONTAP version must be 9.6 or greater in your Cloud Volumes ONTAP or on-premises ONTAP systems to perform file restore operations.
+
+* Restoring individual files from a backup file uses a separate Restore instance/virtual machine. See the link:task_backup_to_s3.html#requirements[AWS Requirements] or link:task_backup_to_azure.html#requirements[Azure Requirements] to make sure your environment is ready.
+
+* AWS cross-account restore requires manual action in the cloud provider console. See the AWS topic https://docs.aws.amazon.com/AmazonS3/latest/dev/example-walkthroughs-managing-access-example2.html[granting cross-account bucket permissions^] for details.
 
 === File Restore process
 
@@ -130,17 +134,15 @@ The process goes like this:
 
 . The file(s) are restored, and then the Restore instance is shut down to save costs after a period of inactivity.
 
-=== Restoring a single file from a backup file
+=== Restoring files from a backup file
 
-Follow these steps to restore up to 8 files from a volume backup to a volume. You should know the name of the volume and the date of the backup file that you want to use to restore the file, or files. This functionality uses Live Browsing so that you can view the list of directories and files within the backup file.
+Follow these steps to restore files from a volume backup to a volume. You should know the name of the volume and the date of the backup file that you want to use to restore the file, or files. This functionality uses Live Browsing so that you can view the list of directories and files within the backup file.
 
 Note that the wording in the UI calls each backup file a "snapshot" because backup files are created using NetApp Snapshot technology.
 
 The following video shows a quick walkthrough of restoring a single file:
 
 video::ROAY6gPL9N0[youtube, width=848, height=480]
-
-NOTE: The ONTAP version must be 9.6 or greater in your source and destination ONTAP systems.
 
 .Steps
 

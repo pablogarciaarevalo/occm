@@ -15,6 +15,8 @@ summary: Respond to a Data Subject Access Request (DSAR) by searching for a subj
 [.lead]
 Respond to a Data Subject Access Request (DSAR) by searching for a subject's full name or known identifier (such as an email address) and then downloading a report. The report is designed to aid in your organization's requirement to comply with GDPR or similar data privacy laws.
 
+NOTE: The DSAR capabilities are available only if you have chosen to perform a full classification scan on your data sources. Data sources that have had a mapping-only scan do not provide file-level details. 
+
 NOTE: NetApp can't guarantee 100% accuracy of the personal data and sensitive personal data that Cloud Data Sense identifies. You should always validate the information by reviewing the data.
 
 == What is a Data Subject Access Request?
