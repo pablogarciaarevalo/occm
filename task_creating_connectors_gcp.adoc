@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_creating_connectors_gcp.html
-keywords: create connector in GCP, create connector in azure, create connector in gcp, launch connector in GCP, launch connector in azure, launch connector in gcp, deploy connector in GCP, deploy connector in azure, deploy connector in gcp
+keywords: create connector in gcp, launch connector in gcp, deploy connector in gcp, gcp connector, connector gcp, connector permissions
 summary: An Account Admin needs to deploy a Connector before you can use most Cloud Manager features. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
 ---
 
@@ -67,11 +67,11 @@ Cloud Manager enables you to create a Connector in GCP directly from its user in
 
 .What you'll need
 
-* The https://mysupport.netapp.com/site/info/cloud-manager-policies[required permissions^] for your Google Cloud account.
+* The https://mysupport.netapp.com/site/info/cloud-manager-policies[required permissions^] for your Google Cloud account, as described in the first section of this page.
 
 * A Google Cloud project.
 
-* A service account that has the required permissions to create and manage Cloud Volumes ONTAP.
+* A service account that has the required permissions to create and manage Cloud Volumes ONTAP, as described in the first section of this page.
 
 * A VPC and subnet in your Google Cloud region of choice.
 
@@ -81,23 +81,21 @@ Cloud Manager enables you to create a Connector in GCP directly from its user in
 +
 image:screenshot_connector_add.gif[A screenshot that shows the Connector icon in the header and the Add Connector action.]
 
-. Click *Let's Start*.
-
 . Choose *Google Cloud Platform* as your cloud provider.
 +
 Remember that the Connector must have a network connection to the type of working environment that you're creating and the services that you're planning to enable.
 +
 link:reference_networking_cloud_manager.html[Learn more about networking requirements for the Connector].
 
-. Review what you'll need and click *Continue*.
+. Follow the steps in the wizard to create the Connector:
 
-. If you're prompted, log in to your Google account, which should have the required permissions to create the virtual machine instance.
+* *Get Ready*: Review what you'll need.
+
+* If you're prompted, log in to your Google account, which should have the required permissions to create the virtual machine instance.
 +
 The form is owned and hosted by Google. Your credentials are not provided to NetApp.
 
-. Provide the required information:
-
-* *Basic Settings*: Enter a name for the virtual machine instance and specify a project and service account that has the required permissions.
+* *Basic Settings*: Enter a name for the virtual machine instance, specify tags, select a project, and then select the service account that has the required permissions (refer to the section above for details).
 
 * *Location*: Specify a region, zone, VPC, and subnet for the instance.
 
@@ -107,7 +105,9 @@ The form is owned and hosted by Google. Your credentials are not provided to Net
 +
 NOTE: There's no incoming traffic to the Connector, unless you initiate it. HTTP and HTTPS provide access to the link:concept_connectors.html#the-local-user-interface[local UI], which you'll use in rare circumstances. SSH is only needed if you need to connect to the host for troubleshooting.
 
-. Click *Create*.
+* *Review*: Review your selections to verify that your set up is correct.
+
+. Click *Add*.
 +
 The instance should be ready in about 7 minutes. You should stay on the page until the process is complete.
 

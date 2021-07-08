@@ -66,13 +66,15 @@ The cost to use Cloud Data Sense depends on the amount of data that you're scann
 
 == What type of instance or VM is required for Cloud Data Sense?
 
-* In Azure, Cloud Data Sense runs on a Standard_D16s_v3 VM with a 512 GB disk.
+* In Azure, Cloud Data Sense runs by default on a Standard_D16s_v3 VM with a 512 GB disk.
 
-* In AWS, Cloud Data Sense runs on an m5.4xlarge instance with a 500 GB GP2 disk.
+* In AWS, Cloud Data Sense runs by default on an m5.4xlarge instance with a 500 GB GP2 disk.
 +
 In regions where m5.4xlarge isn't available, Data Sense runs on an m4.4xlarge instance instead.
 
 You can also download and install Data Sense software on a Linux host in your network or in the cloud. Everything works the same and you continue to manage your scan configuration and results through Cloud Manager. See link:task_deploy_cloud_compliance.html#deploying-the-cloud-data-sense-instance-on-premises[Deploying Cloud Data Sense on premises^] for system requirements and installation details.
+
+Note that you can deploy Data Sense on a system with fewer CPUs and less RAM, but there are limitations when using these systems. See link:concept_cloud_compliance.html#using-a-smaller-instance-type[Using a smaller instance type] for details.
 
 NOTE: Cloud Data Sense is currently unable to scan S3 buckets and ANF files when it is installed on premises.
 
@@ -83,6 +85,8 @@ link:concept_cloud_compliance.html[Learn more about how Cloud Data Sense works^]
 Data changes frequently, so Cloud Data Sense scans your data continuously with no impact to your data. While the initial scan of your data might take longer, subsequent scans only scan the incremental changes, which reduces system scan times.
 
 link:concept_cloud_compliance.html#how-scans-work[Learn how scans work^].
+
+Data scans have a negligible impact on your storage systems and on your data. However, if you are concerned with even a very small impact, you can configure Data Sense to perform "slow" scans. link:task_managing_compliance.html#reducing-the-data-sense-scan-speed[See how to reduce the scan speed].
 
 == Does Cloud Data Sense offer reports?
 

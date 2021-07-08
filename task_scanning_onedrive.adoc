@@ -34,10 +34,10 @@ link:task_deploy_cloud_compliance.html[Deploy Cloud Data Sense^] if there isn't 
 [role="quick-margin-para"]
 Using Admin user credentials, log into the OneDrive account that you want to access so that it is added as a new working environment.
 
-==== image:number4.png[Number 4] Add the users
+==== image:number4.png[Number 4] Add the users and select the users to scan
 
 [role="quick-margin-para"]
-Add the list of users from the OneDrive account that you want to scan. You can add up to 100 users at time.
+Add the list of users from the OneDrive account that you want to scan and select the type of scanning. You can add up to 100 users at time.
 
 == Reviewing OneDrive requirements
 
@@ -89,6 +89,19 @@ image:screenshot_compliance_onedrive_add_email_addresses.png[A screenshot of the
 A confirmation dialog displays the number of users who were added.
 +
 If the dialog lists any users who could not be added, capture this information so that you can resolve the issue. In some cases you can re-add the user with a corrected email address.
+
+. Enable mapping-only scans, or mapping and classification scans, on user files.
++
+[cols="45,45",width=90%,options="header"]
+|===
+| To:
+| Do this:
+
+| Enable mapping-only scans on user files | Click *Map*
+| Enable full scans on user files | Click *Map & Classify*
+| Disable scanning on user files | Click *Off*
+
+|===
 
 .Result
 

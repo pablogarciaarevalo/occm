@@ -126,6 +126,7 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 * IBM Cloud Object Storage
 * NFS server
 * On-premises ONTAP cluster
+* ONTAP S3 Storage
 * SMB Server
 * StorageGRID
 
@@ -176,6 +177,7 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 
 | ONTAP S3 Storage a|
 
+* Google Cloud Storage
 * SMB server
 * StorageGRID
 * ONTAP S3 Storage
