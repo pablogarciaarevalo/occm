@@ -107,7 +107,7 @@ container.*
 
 === Example setup
 
-The following image shows an example of a Kubernetes cluster running in Amazon Elastic Kubernetes Service (Amazon EKS) and its connections to the Connector and Cloud Volumes ONTAP.
+The following image shows an example of a Kubernetes cluster running in Amazon Elastic Kubernetes Service (Amazon EKS) and its connections to the Connector and Cloud Volumes ONTAP. In this example, VPC peering provides a connection between the VPC for the EKS cluster and the VPC for the Connector and Cloud Volumes ONTAP.
 
 image:diagram_kubernetes.png[A architectural diagram of a Kubernetes cluster running in AWS and its connection to a Connecter and Cloud Volumes ONTAP which are also running in AWS.]
 
