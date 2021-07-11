@@ -53,6 +53,9 @@ When you deploy the data broker, you need to select a service account that has t
 - storage.buckets.get
 - storage.buckets.list
 - storage.objects.*
+- iam.serviceAccounts.signJwt
+
+NOTE: The "iam.serviceAccounts.signJwt" permission is required only if you're planning to set up the data broker to use an external HashiCorp vault.
 
 == Installing the data broker
 

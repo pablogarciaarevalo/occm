@@ -446,7 +446,7 @@ entries:
                 url: /task_installing_linux.html
           - title: Default configuration
             url: /reference_connector_default_config.html
-      - title: Manage credentials
+      - title: Manage cloud provider credentials
         entries:
           - title: AWS
             entries:
@@ -466,8 +466,8 @@ entries:
                 url: /concept_accounts_gcp.html
               - title: Manage GCP credentials
                 url: /task_adding_gcp_accounts.html
-          - title: NetApp Support Site credentials
-            url: /task_adding_nss_accounts.html
+      - title: Manage NSS credentials
+        url: /task_adding_nss_accounts.html
       - title: Manage your account
         url: /task_managing_cloud_central_accounts.html
       - title: Install an HTTPS certificate
