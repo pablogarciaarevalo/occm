@@ -109,7 +109,7 @@ Namespace::
 * Type: string
 * Your namespace (X-Vault-Namespace header if needed)
 
-==== Example for aws-role authentication
+=== Example for aws-role authentication
 
 [source,json]
 {
@@ -127,7 +127,7 @@ Namespace::
        }
 }
 
-==== Example for gcp-iam authentication
+=== Example for gcp-iam authentication
 
 [source,json]
 {
@@ -153,6 +153,15 @@ Namespace::
   }
 }
 
+=== Setting up permissions when using gcp-iam authentication
+
+If you're using the _gcp-iam_ authentication method, then the data broker must have the following GCP permission:
+
+[source,yaml]
+- iam.serviceAccounts.signJwt
+
+link:task_sync_installing_gcp.html#permissions-required-for-the-service-account[Learn more about GCP permission requirements for the data broker].
+
 == Creating a new sync relationship using secrets from the vault
 
 Now that everything is set up, you can send an API call to create a sync relationship that uses your vault to get the secrets.
@@ -171,7 +180,7 @@ Post the relationship using the Cloud Sync REST API.
 
 * To build a body for your post relationship, https://api.cloudsync.netapp.com/docs/#/Relationships-v2/post_relationships_v2[refer to the relationships-v2 API call^].
 
-==== Example
+=== Example
 
 Example for the POST request:
 
