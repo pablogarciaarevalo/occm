@@ -211,7 +211,7 @@ image:screenshot_cloud_backup_license_step1.gif[A screenshot that shows a table 
 +
 image:screenshot_cloud_backup_license_step2.gif[A screenshot that shows the get license dialog box where you enter your tenant ID and then click Submit to download the license file.]
 +
-link:task_finding_system_id.html[Learn how to find your system ID].
+You can find your Account ID by selecting the *Account* drop-down from the top of Cloud Manager, and then clicking *Manage Account* next to your account. Your Account ID is in the Overview tab.
 
 === Add or update a Cloud Backup license
 
