@@ -156,9 +156,9 @@ image:screenshot_setup_tiering_onprem.png[A screenshot that shows the Enable opt
 
 .. *Azure Container*: Add a new Blob container to a storage account, or select an existing container, and click *Continue*.
 +
-The storage account and containers that appear in this step belong to the resource group that you selected in the previous step.
-+
 When using an on-prem Connector, you must enter the Azure Subscription that provides access to the existing container or new container that will be created.
++
+The storage account and containers that appear in this step belong to the resource group that you selected in the previous step.
 
 .. *Access Tier Life Cycle*: Cloud Tiering manages the life cycle transitions of your tiered data. Data starts in the _Hot_ class, but you can create a rule to move the data to the _Cool_ class after a certain number of days.
 +
