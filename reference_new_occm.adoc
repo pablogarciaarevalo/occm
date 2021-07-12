@@ -92,7 +92,7 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_gcp_991.html
 
 === Cloud Backup enhancements
 
-* Cloud Backup now allows you to create backups using a different account/subscription than that used for your Cloud Volumes ONTAP system. You can also create backup files in a different region than the one in which your Cloud Volumes ONTAP system is deployed.
+* Cloud Backup now allows you to create backups using a different account/subscription than the one you are using for your Cloud Volumes ONTAP system. You can also create backup files in a different region than the one in which your Cloud Volumes ONTAP system is deployed.
 +
 This capability is available when using when using AWS or Azure, and only when enabling backup on an existing working environment - it is not available when creating a new Cloud Volumes ONTAP working environment.
 
@@ -108,11 +108,11 @@ When tiering data to Azure Blob storage, now your Connector can be running on yo
 
 === Cloud Data Sense enhancements
 
-* A new feature enables you to move any source files that Data Sense is scanning to any NFS share. This allows you to move sensitive or security-related files to a special area so you can do more analysis.
+* A new feature enables you to link:https://docs.netapp.com/us-en/occm/task_managing_highlights.html#moving-source-files-to-an-nfs-share[move any source files that Data Sense is scanning to any NFS share]. This allows you to move sensitive or security-related files to a special area so you can do more analysis.
 
-* You can now choose to quickly map data into categories instead of doing a full classification scan. This enables you to view the Data Mapping report from the Governance Dashboard to get an overview of your data when there are certain data sources that you do not need to run a complete scan on.
+* You can now choose to quickly map data into categories instead of doing a full classification scan. This enables you to link:https://docs.netapp.com/us-en/occm/task_generating_compliance_reports.html#data-mapping-report[view the Data Mapping report] from the Governance Dashboard to get an overview of your data when there are certain data sources that you do not need to run a complete scan on.
 
-* Now you can assign a file to a specific Cloud Manager user so that person can be responsible for any follow-up actions that need to be done on the file. This capability can be used with the existing feature to add custom Status tags to a file.
+* Now you can link:https://docs.netapp.com/us-en/occm/task_managing_highlights.html#assigning-users-to-manage-certain-files[assign a file to a specific Cloud Manager user] so that person can be responsible for any follow-up actions that need to be done on the file. This capability can be used with the existing feature to add custom Status tags to a file.
 +
 A new Filter in the Investigation page enables you to easily view all files that have the same person in the "Assigned To" field.
 
