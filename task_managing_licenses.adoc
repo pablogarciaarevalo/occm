@@ -207,7 +207,7 @@ image:screenshot_cloud_backup_license_step1.gif[A screenshot that shows a table 
 
 . Under *License Key*, click *Get NetApp License File*.
 
-. Enter your Cloud Manager System ID (this is called a Tenant ID on the support site) and click *Submit*.
+. Enter your Cloud Manager Account ID (this is called a Tenant ID on the support site) and click *Submit*.
 +
 image:screenshot_cloud_backup_license_step2.gif[A screenshot that shows the get license dialog box where you enter your tenant ID and then click Submit to download the license file.]
 +
