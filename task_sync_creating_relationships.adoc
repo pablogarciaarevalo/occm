@@ -87,7 +87,7 @@ NOTE: If you want to sync more than one directory on the NFS server, then you mu
 +
 image:screenshot_bucket_setup.gif[This screenshot shows the Bucket Setup page which enables you to choose Yes or No for encryption and to select a specific S3 storage class for the synced data.]
 
-. On the *Settings* page, define how source files and folders are synced and maintained in the target location:
+. [[settings]]On the *Settings* page, define how source files and folders are synced and maintained in the target location:
 +
 Schedule:: Choose a recurring schedule for future syncs or turn off the sync schedule. You can schedule a relationship to sync data as often as every 1 minute.
 
@@ -102,6 +102,20 @@ You can choose to enable or disable Cloud Sync from comparing the following attr
 * *mtime*: The last modified time for a file. This attribute isn't valid for directories.
 * *uid*, *gid*, and *mode*: Permission flags for Linux.
 
+Copy for Objects:: Enable this option to copy object storage metadata and tags. If a user changes the metadata on the source, Cloud Sync copies this object in the next sync, but if a user changes the tags on the source (and not the data itself), Cloud Sync doesn't copy the object in the next sync.
++
+You can't edit this option after you create the relationship.
++
+Copying tags is supported with sync relationships that include an S3-compatible endpoint (S3, StorageGRID, or IBM Cloud Object Storage).
++
+Copying metadata is supported with "cloud-to-cloud" relationships between any of the following endpoints:
++
+* AWS S3
+* Azure Blob
+* Google Cloud Storage
+* IBM Cloud Object Storage
+* StorageGRID
+
 Recently Modified Files:: Choose to exclude files that were recently modified prior to the scheduled sync.
 
 Delete Files on Source:: Choose to delete files from the source location after Cloud Sync copies the files to the target location. This option includes the risk of data loss because the source files are deleted after they're copied.
@@ -109,8 +123,6 @@ Delete Files on Source:: Choose to delete files from the source location after C
 If you enable this option, you also need to change a parameter in the local.json file on the data broker. Open the file and change the parameter named _workers.transferrer.delete-on-source_ to *true*.
 
 Delete Files on Target:: Choose to delete files from the target location, if they were deleted from the source. The default is to never deletes files from the target location.
-
-Object tagging:: When AWS S3 is the target in a sync relationship, Cloud Sync tags S3 objects with metadata that’s relevant to the sync operation. You can disable tagging of S3 objects, if it’s not desired in your environment. There’s no impact to Cloud Sync if you disable tagging—Cloud Sync just stores the sync metadata in a different way.
 
 File Types:: Define the file types to include in each sync: files, directories, and symbolic links.
 

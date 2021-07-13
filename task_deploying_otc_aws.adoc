@@ -43,6 +43,8 @@ Immediately after you create the working environment, Cloud Manager launches a t
 
 . *Choose a Location*: Select *Amazon Web Services* and *Cloud Volumes ONTAP Single Node*.
 
+. If you're prompted, link:task_creating_connectors_aws.html[create a Connector].
+
 . *Details and Credentials*: Optionally change the AWS credentials and subscription, enter a working environment name, add tags if needed, and then enter a password.
 +
 Some of the fields in this page are self-explanatory. The following table describes fields for which you might need guidance:
@@ -62,7 +64,7 @@ For information about tags, refer to https://docs.aws.amazon.com/AWSEC2/latest/U
 
 | User name and password | These are the credentials for the Cloud Volumes ONTAP cluster admin account. You can use these credentials to connect to Cloud Volumes ONTAP through OnCommand System Manager or its CLI.
 
-| [[subscribe]]Edit Credentials | Choose the AWS credentials and marketplace subscription to use with this Cloud Volumes ONTAP system.
+| [[subscribe]]Edit Credentials | Choose the AWS credentials associated with the account where you want to deploy this system. You can also associate the AWS Marketplace subscription to use with this Cloud Volumes ONTAP system.
 
 Click *Add Subscription* to associate the selected credentials with a new AWS Marketplace subscription. The subscription can be for an annual contract or to pay for Cloud Volumes ONTAP at an hourly rate.
 
@@ -85,7 +87,7 @@ image:screenshot_aws_marketplace.gif["A screenshot that shows the subscription p
 * link:concept_backup_to_cloud.html[Learn more about Cloud Backup].
 * link:concept_monitoring.html[Learn more about Monitoring].
 
-. *Location & Connectivity*: Enter the network information that you recorded in the AWS worksheet.
+. *Location & Connectivity*: Enter the network information that you recorded in the link:task_planning_your_config.html#aws-network-information-worksheet[AWS worksheet].
 +
 If you have an AWS Outpost, you can deploy a single node Cloud Volumes ONTAP system in that Outpost by selecting the Outpost VPC. The experience is the same as any other VPC that resides in AWS.
 +
@@ -103,13 +105,11 @@ link:task_setting_up_kms.html[Learn how to set up the AWS KMS for Cloud Volumes 
 +
 link:concept_security.html#encryption-of-data-at-rest[Learn more about supported encryption technologies].
 
-. *License and NSS Account*: Specify which licensing option would you like to use with this system, and then specify a NetApp Support Site account.
+. *Charging Methods and NSS Account*: Specify which charging option would you like to use with this system, and then specify a NetApp Support Site account.
 +
-To understand how BYOL licenses work, see link:concept_licensing.html[Licensing].
-+
-A NetApp Support Site Account is required for BYOL systems. link:task_adding_nss_accounts.html[Learn how to add NetApp Support Site accounts].
+link:concept_licensing.html[Learn about these charging methods].
 
-. *Cloud Volumes ONTAP Configuration* (annual contract only): Review the default configuration and click *Continue* or click *Change Configuration* to select your own configuration.
+. *Cloud Volumes ONTAP Configuration* (annual AWS Marketplace contract only): Review the default configuration and click *Continue* or click *Change Configuration* to select your own configuration.
 +
 If you keep the default configuration, then you only need to specify a volume and then review and approve the configuration.
 
@@ -146,7 +146,7 @@ link:concept_data_tiering.html[Learn how data tiering works].
 +
 link:concept_write_speed.html[Learn more about write speed].
 +
-WORM can't be enabled if data tiering was enabled.
+WORM can't be enabled if Cloud Backup was enabled or if data tiering was enabled.
 +
 link:concept_worm.html[Learn more about WORM storage].
 
@@ -318,13 +318,11 @@ link:task_setting_up_kms.html[Learn how to set up the AWS KMS for Cloud Volumes 
 +
 link:concept_security.html#encryption-of-data-at-rest[Learn more about supported encryption technologies].
 
-. *License and NSS Account*: Specify which licensing option would you like to use with this system, and then specify a NetApp Support Site account.
+. *Charging Methods and NSS Account*: Specify which charging option would you like to use with this system, and then specify a NetApp Support Site account.
 +
-To understand how BYOL licenses work, see link:concept_licensing.html[Licensing].
-+
-A NetApp Support Site Account is required for BYOL systems. link:task_adding_nss_accounts.html[Learn how to add NetApp Support Site accounts].
+link:concept_licensing.html[Learn about these charging methods].
 
-. *Cloud Volumes ONTAP Configuration* (annual contract only): Review the default configuration and click *Continue* or click *Change Configuration* to select your own configuration.
+. *Cloud Volumes ONTAP Configuration* (annual AWS Marketplace contract only): Review the default configuration and click *Continue* or click *Change Configuration* to select your own configuration.
 +
 If you keep the default configuration, then you only need to specify a volume and then review and approve the configuration.
 
@@ -361,7 +359,7 @@ link:concept_data_tiering.html[Learn how data tiering works].
 +
 link:concept_write_speed.html[Learn more about write speed].
 +
-WORM can't be enabled if data tiering was enabled.
+WORM can't be enabled if Cloud Backup was enabled or if data tiering was enabled.
 +
 link:concept_worm.html[Learn more about WORM storage].
 

@@ -46,9 +46,13 @@ Refer to the following for more details:
 ** https://cloud.google.com/docs/compare/data-centers/networking#performance[Google Cloud documentation: Performance^]
 
 GCP disk type::
-When you create volumes for Cloud Volumes ONTAP, you need to choose the underlying cloud storage that Cloud Volumes ONTAP uses for a disk. The disk type can be either _Zonal SSD persistent disks_ or _Zonal standard persistent disks_.
+When you create volumes for Cloud Volumes ONTAP, you need to choose the underlying cloud storage that Cloud Volumes ONTAP uses for a disk. The disk type can be any of the following:
 +
-SSD persistent disks are best for workloads that require high rates of random IOPS, while Standard persistent disks are economical and can handle sequential read/write operations. For more details, see https://cloud.google.com/compute/docs/disks/#pdspecs[Google Cloud documentation: Zonal Persistent disks (Standard and SSD)^].
+* _Zonal SSD persistent disks_: SSD persistent disks are best for workloads that require high rates of random IOPS.
+* _Zonal Balanced persistent disks_: These SSDs balance performance and cost by providing lower IOPS per GB.
+* _Zonal Standard persistent disks_ : Standard persistent disks are economical and can handle sequential read/write operations.
++
+For more details, see https://cloud.google.com/compute/docs/disks/#pdspecs[Google Cloud documentation: Zonal Persistent disks (Standard and SSD)^].
 
 GCP disk size::
 You need to choose an initial disk size when you deploy a Cloud Volumes ONTAP system. After that you can let Cloud Manager manage a system's capacity for you, but if you want to build aggregates yourself, be aware of the following:

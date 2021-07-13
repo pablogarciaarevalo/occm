@@ -54,7 +54,7 @@ After you specify the proxy server, new Cloud Volumes ONTAP systems are automati
 
 == Enable direct API traffic
 
-If you configured a proxy server, you can send API calls directly to Cloud Manager without going through the proxy. This option is supported with Connectors that are running in AWS or in Google Cloud.
+If you configured a proxy server, you can send API calls directly to Cloud Manager without going through the proxy. This option is supported with Connectors that are running in AWS, in Azure, or in Google Cloud.
 
 .Steps
 

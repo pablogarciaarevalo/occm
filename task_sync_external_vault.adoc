@@ -94,13 +94,13 @@ Reject-unauthorized::
 * Default: false
 
 auth-method::
-* Your authentication method to the external vault
+* The authentication method that the data broker should use to access credentials from the external vault
 * Type: string
-* Valid values: “aws-iam” / “role-app”
+* Valid values: “aws-iam” / “role-app” / "gcp-iam"
 
 role-name::
 * Type: string
-* Your role name (in case you use aws-iam)
+* Your role name (in case you use aws-iam or gcp-iam)
 
 Secretid & rootid::
 * Type: string (in case you use app-role)
@@ -109,7 +109,7 @@ Namespace::
 * Type: string
 * Your namespace (X-Vault-Namespace header if needed)
 
-==== Example
+=== Example for aws-role authentication
 
 [source,json]
 {
@@ -126,6 +126,41 @@ Namespace::
                 }
        }
 }
+
+=== Example for gcp-iam authentication
+
+[source,json]
+{
+"external-integrations": {
+    "hashicorp": {
+      "enabled": true,
+      "url": http://ip-10-20-30-55.ec2.internal:8200,
+      "path": "v1/secret",
+      "namespace": "",
+      "reject-unauthorized": true,
+      "auth-method": "gcp-iam",
+      "aws-iam": {
+        "role-name": ""
+      },
+      "app-role": {
+        "root_id": "",
+        "secret_id": ""
+      },
+"gcp-iam": {
+          "role-name": "my-iam-role"
+      }
+    }
+  }
+}
+
+=== Setting up permissions when using gcp-iam authentication
+
+If you're using the _gcp-iam_ authentication method, then the data broker must have the following GCP permission:
+
+[source,yaml]
+- iam.serviceAccounts.signJwt
+
+link:task_sync_installing_gcp.html#permissions-required-for-the-service-account[Learn more about GCP permission requirements for the data broker].
 
 == Creating a new sync relationship using secrets from the vault
 
@@ -145,7 +180,7 @@ Post the relationship using the Cloud Sync REST API.
 
 * To build a body for your post relationship, https://api.cloudsync.netapp.com/docs/#/Relationships-v2/post_relationships_v2[refer to the relationships-v2 API call^].
 
-==== Example
+=== Example
 
 Example for the POST request:
 

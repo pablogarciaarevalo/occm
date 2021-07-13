@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_adding_nss_accounts.html
 keywords: adding, creating, netapp support site account, nss
-summary: Adding your NetApp Support Site account to Cloud Manager is required to deploy a BYOL system. It's also required to register pay-as-you-go systems and to upgrade ONTAP software.
+summary: Adding your NetApp Support Site account to Cloud Manager is required to deploy a node-based BYOL system. It's also required to register pay-as-you-go systems and to upgrade ONTAP software.
 ---
 
 = Adding NetApp Support Site accounts to Cloud Manager
@@ -13,34 +13,24 @@ summary: Adding your NetApp Support Site account to Cloud Manager is required to
 :imagesdir: ./media/
 
 [.lead]
-Adding your NetApp Support Site account to Cloud Manager is required to deploy a BYOL system. It's also required to register pay-as-you-go systems and to upgrade ONTAP software.
-
-Watch the following video to learn how to add NetApp Support Site accounts to Cloud Manager. Or scroll down to read the steps.
-
-video::V2fLTyztqYQ[youtube, width=848, height=480]
-
-.What you'll need
-
-You need to create a Connector before you can change Cloud Manager settings. link:concept_connectors.html#how-to-create-a-connector[Learn how].
+Adding your NetApp Support Site account to Cloud Manager is required to deploy a node-based BYOL system. It's also required to register pay-as-you-go systems and to upgrade ONTAP software.
 
 .Steps
 
-. If you don't have a NetApp Support Site account yet, http://now.netapp.com/newuser/[register for one^].
+. If you don't have a NetApp Support Site account yet, https://register.netapp.com/register/start[register for one^].
 
-. In the upper right of the Cloud Manager console, click the Settings icon, and select *Credentials*.
-+
-image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the Cloud Manager console.]
+. In the upper right of the Cloud Manager console, click the Help icon, and select *Support*.
 
-. Click *Add Credentials* and select *NetApp Support Site*.
+. Click *NSS Management > Add NSS Account*.
 
-. Specify a name for the account and then enter the user name and password.
+. Enter the user name and password for your account.
 +
 * The account must be a customer-level account (not a guest or temp account).
-* If you plan to deploy BYOL systems:
+* If you plan to deploy a node-based BYOL system:
 ** The account must be authorized to access the serial numbers of the BYOL systems.
 ** If you purchased a secure BYOL subscription, then a secure NSS account is required.
 
-. Click *Create Account.*
+. Click *Register*.
 
 .What's next?
 
