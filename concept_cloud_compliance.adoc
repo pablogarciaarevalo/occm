@@ -108,7 +108,7 @@ You can deploy Data Sense on a system with fewer CPUs and less RAM, but there ar
 | System size
 | Specs
 | Limitations
-| Large (default) | 16 CPUs, 64 GB RAM | None
+| Extra Large (default) | 16 CPUs, 64 GB RAM | None
 | Medium | 8 CPUs, 32 GB RAM | Slower scanning, and can only scan up to 1 million files.
 | Small | 8 CPUs, 16 GB RAM | Same limitations as "Medium", plus two features are disabled: contextual AI scanning for most of the link:reference_private_data_categories.html#types-of-sensitive-personal-data[sensitive personal] identifiers, and for identifying link:task_responding_to_dsar.html[data subject names] inside files.
 |===

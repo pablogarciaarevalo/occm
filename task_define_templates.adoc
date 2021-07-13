@@ -53,6 +53,8 @@ Read the following requirements to make sure that you have a supported configura
 
 * If you plan to enable Cloud Data Sense in the template, ensure that your environment has an active and licensed Cloud Data Sense service.
 
+* If you plan to enable Replication in the template, and the template is for an on-premises ONTAP volume, the ONTAP cluster must have an active SnapMirror license.
+
 == Template features
 
 There are certain features you can use when building a template to help your users to easily create resources from the template.
@@ -72,7 +74,7 @@ When unchecked, the user can't change the value and the hard-coded value in the 
 *Drift checkbox*
 
 Check this box so that Cloud Manager monitors the hard-coded value you entered for a parameter when a resource is created with the template. Later, you can run a Drift Report to see which fields configured with Drift are no longer compliant with the template settings.
-// If Cloud Manager later sees that an admin has changed the parameter value so that it no longer aligns with the template definition, you will receive an email notification about the change.
+// If Cloud Manager later sees that an admin has changed the parameter value so that it no longer aligns with the template definition, you will receive email notification about the change.
 
 When unchecked, the user can change the value to any value after the resource has been created.
 //
@@ -189,8 +191,11 @@ When users launch the template from the Templates Dashboard (not in a working en
 For example, you could specify that "db" be a required prefix, suffix, or contains; requiring the user to add volume names like "db_vol1", "vol1_db", or "vol_db_1".
 
 | Volume Size | You can specify a range of allowable values, or you can specify a fixed size. This value is in GB. For our example we can add a fixed value *100*.
+//
+// | Tags | Enter a name and value pair for a tag that you want to associate with this volume. For example, you could add "Cost Center" as the tag name and the cost center code "6655829" as the value. You can associate more than one tag with a volume by adding more tag name and value pairs.
 
 |===
+
 
 . *Protection:* Choose whether this volume will have Snapshot copies created by selecting "Default" or some other policy, or choose "None" if you do not want to create Snapshot copies.
 
@@ -323,6 +328,8 @@ For example, you could specify that "db" be a required prefix, suffix, or contai
 | Volume Size | You can specify a range of allowable values, or you can specify a fixed size. This value is in GB.
 
 | Subnet | Enter the VNet and subnet. This value includes the full path, in a format similar to "/subscriptions/<subscription_id>/resourceGroups/<resource_group>/ providers/Microsoft.Network/virtualNetworks/<vpc_name>/subnets/<subhet_name>".
+//
+// | Tags | Enter a name and value pair for a tag that you want to associate with this volume. For example, you could add "Cost Center" as the tag name and the cost center code "6655829" as the value. You can associate more than one tag with a volume by adding more tag name and value pairs.
 
 |===
 
@@ -413,6 +420,8 @@ When users launch the template from the Templates Dashboard (not in a working en
 For example, you could specify that "db" be a required prefix, suffix, or contains; requiring the user to add volume names like "db_vol1", "vol1_db", or "vol_db_1".
 
 | Volume Size | You can specify a range of allowable values, or you can specify a fixed size. This value is in GB. For our example we can add a fixed value *100*.
+//
+// | Tags | Enter a name and value pair for a tag that you want to associate with this volume. For example, you could add "Cost Center" as the tag name and the cost center code "6655829" as the value. You can associate more than one tag with a volume by adding more tag name and value pairs.
 
 |===
 
@@ -467,6 +476,74 @@ Drift allows Cloud Manager to monitor the hard-coded values you entered for para
 The template is created and you are returned to the Template Dashboard where your new template appears.
 
 See <<What to do after you have created the template,what you should tell your users about templates>>.
+
+=== Add Backup functionality to a volume
+
+When creating a volume template, you can add in the template that you want to create backups of the volume periodically using the link:concept_backup_to_cloud.html[Cloud Backup] service. This action is not applicable for Azure NetApp Files volumes.
+
+image:screenshot_template_backup.png[A screenshot of the page to enable backup functionality for your volumes.]
+
+. *Context:* You can enter a working environment Name and storage VM name if you are using this action in a template without first creating a volume. Otherwise, leave these fields as "Editable."
+
+. *Policy:* Define the backup policy to create daily, weekly, or monthly backups with a specific number of backup copies to retain.
+
+. *Volume Name:* Typically the volume is the one created prior to the backup action in the same template. In this case, see how to <<Pass values between template actions,complete the fields>> within the volume name to indicate that volume.
+
+. Click *Apply* to save your changes.
+
+=== Add Data Sense functionality to a volume
+
+When creating a volume template, you can add in the template that you want to scan the volume for compliance and classification using the link:concept_cloud_compliance.html[Cloud Data Sense] service.
+
+image:screenshot_template_data_sense.png[A screenshot of the page to enable scanning functionality for your volumes.]
+
+. *Context:* You can enter a working environment Name if you are using this action in a template without first creating a volume. Otherwise, leave this field as "Editable."
+
+. *Volume Name:* Typically the volume is the one created prior to the Data Sense action in the same template. In this case, see how to <<Pass values between template actions,complete the fields>> within the volume name to indicate that volume.
+
+. *Volume UUID:* Data Sense needs the UUID of the volume before it can scan the volume. See how to <<Pass values between template actions,complete the three fields>> below the volume name to indicate that volume.
+
+. Click *Apply* to save your changes.
+
+=== Add Replication functionality to a volume
+
+When creating a volume template, you can add in the template that you want to replicate the data in the volume to another volume using the link:concept_replication.html[Replication] service. You can replicate data to a Cloud Volumes ONTAP cluster or to an on-prem ONTAP cluster.
+
+TIP: This action is not applicable for Azure NetApp Files volumes.
+
+Replication functionality consists of three parts: selecting the source volume, selecting the destination volume, and defining the replication settings. Each section is described below.
+
+. *Source Details:* Enter the details about the source volume you want to replicate:
++
+image:screenshot_template_replication_source.png[A screenshot of the page to define the replication source volume location.]
++
+.. Select the working environment where the volume resides.
+.. Select the storage VM on which the volume resides.
+.. Typically the volume is the one created prior to the replication action in the same template. In this case, see how to <<Pass values between template actions,complete the fields>> within the Source Volume Name field to indicate that volume.
+.. Replication requires that the source and destination working environments are connected through their intercluster LIFs. Enter the intercluster LIF IP address for the source working environment.
++
+To get this information: double-click the working environment, click the menu icon, and click Information.
+
+. *Destination Details:* Enter the details about the destination volume that will be created by the replication operation:
++
+image:screenshot_template_replication_dest.png[A screenshot of the page to define the replication destination volume location.]
++
+.. Select the working environment where the volume will be created.
+.. Select the storage VM on which the volume will reside.
+.. Select the aggregate on which the volume will reside.
+.. For the destination volume, click in the field and select one of the 5 options. You can let the admin enter any name by selecting *Free Text*, or you can specify that the volume name must have a certain prefix or suffix, that it _contains_ certain characters, or that it follows rules from a regular expression (regex) you enter.
+.. Replication requires that the source and destination working environments are connected through their intercluster LIFs. Enter the intercluster LIF IP address for the destination working environment.
+.. When replicating a volume to a Cloud Volumes ONTAP cluster (not to an on-prem ONTAP cluster), you need to specify the Destination Provider (AWS, Azure, or GCP) and the type of disk that will be used for the new volume.
+
+. *Replication Details:* Enter the details about the type and frequency of the replication operation:
++
+image:screenshot_template_replication_policy.png[A screenshot of the page to define the replication settings for the relationship.]
++
+.. Enter the maximum rate (in kilobytes per second) at which data can be transferred. You can enter a fix value, or you can provide a minimum and maximum and let the storage admin select a value in that range.
+.. Select the link:concept_replication_policies.html#types-of-replication-policies[replication policy] that you want to use.
+.. Choose a one-time copy or a recurring replication schedule.
+
+. Click *Apply* to save your changes.
 
 == What to do after you have created the template
 

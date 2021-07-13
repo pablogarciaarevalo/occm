@@ -39,11 +39,19 @@ NOTE: Templates enable you to apply a cloud service onto a created resources, fo
 
 A template is a chain of "actions" that have some pre-defined values. You can build templates that include the following actions:
 
+*Primary actions:*
+
 * Create a Cloud Volumes ONTAP volume
 * Create an Azure NetApp Files volume
 * Create an on-premises ONTAP volume
-* Enable Cloud Backup on created volumes (not applicable for Azure NetApp Files)
-* Enable Cloud Data Sense on created volumes
+
+*Secondary actions:*
+
+* Activate link:concept_backup_to_cloud.html[Cloud Backup] on volumes (not applicable for Azure NetApp Files)
+* Activate link:concept_cloud_compliance.html[Cloud Data Sense] on volumes
+* Activate link:concept_replication.html[Replication] on volumes (not applicable for Azure NetApp Files)
+
+For example, you can create a template that creates a Cloud Volumes ONTAP volume. Or that that creates a Cloud Volumes ONTAP volume and then enables Cloud Backup on that volume. Or that that creates a Cloud Volumes ONTAP volume, and then enables Cloud Backup _and_ Cloud Data Sense on that volume.
 
 More actions will be added over time by NetApp.
 
