@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: task_using_tags.html
-keywords: templates, resource templates, application templates, volume templates
-summary: Select one of the application templates that your organization has built to create volumes that are optimized for specific workloads and applications. Templates enable you to create volumes for Cloud Volumes ONTAP, Azure NetApp Files, and on-premises ONTAP systems. They also enable you to activate Cloud Backup, Cloud Data Sense, and Replication (SnapMirror) for the volumes.
+keywords: tags, resource tags, volume tags, add tags, delete tags, view tags
+summary: You can view, add, modify, and delete the tags assigned to your existing resources using the Cloud Manager Tagging service. This allows you to organize and simplify the management of your resources.
 ---
 
 = Manage tags for your resources
@@ -13,77 +13,72 @@ summary: Select one of the application templates that your organization has buil
 :imagesdir: ./media/
 
 [.lead]
-Select one of the application templates that your organization has built to create volumes that are optimized for specific workloads and applications. Templates enable you to create volumes for Cloud Volumes ONTAP, Azure NetApp Files, and on-premises ONTAP systems. They also enable you to activate link:concept_backup_to_cloud.html[Cloud Backup], link:concept_cloud_compliance.html[Cloud Data Sense], and link:concept_replication.html[Replication (SnapMirror)] on the created volumes.
+You can view, add, modify, and delete the tags assigned to your existing resources using the Cloud Manager Tagging service. This allows you to organize and simplify the management of your resources.
 
-== Quick start
+== Search for resources that have certain tags
 
-Get started quickly by following these steps, or scroll down to the remaining sections for full details.
-
-==== image:number1.png[Number 1] Verify required prerequisites
-
-[role="quick-margin-list"]
-* Before you can create a volume for a Cloud Volumes ONTAP, on-premises ONTAP, or Azure NetApp Files system using a template, make sure you have access to an appropriate working environment where the volume will be deployed.
-
-[role="quick-margin-list"]
-* If the template activates a cloud service on the volume, such as link:concept_backup_to_cloud.html[Cloud Backup^] or link:concept_cloud_compliance.html[Cloud Data Sense^], ensure that the service is active and licensed in your environment.
-
-==== image:number2.png[Number 2] Launch the Application Templates service
-
-[role="quick-margin-para"]
-Select the *AppTemplate* service and click the *Templates* tab.
-
-==== image:number3.png[Number 3] Build the resource by running the template and defining parameters
-
-[role="quick-margin-para"]
-Select the template, click *Run Template*, and enter values in the editable fields to create the resource.
-
-== Requirements
-
-Read the following requirements to make sure that you have a supported configuration.
-
-* If you don't already have a Connector, link:concept_connectors.html[see how to create Connectors^] for AWS, Azure, and GCP.
-
-* When creating a Cloud Volumes ONTAP volume, make sure you have a Cloud Volumes ONTAP working environment available.
-
-* When creating an on-premises ONTAP volume, make sure you have an on-premises ONTAP working environment available.
-
-* When creating an Azure NetApp Files volume, make sure you have an Azure NetApp Files working environment available.
-
-* If the template activates a cloud service on the volume, such as link:concept_backup_to_cloud.html[Cloud Backup^], link:concept_cloud_compliance.html[Cloud Data Sense^], or link:concept_replication.html[Replication (SnapMirror)], ensure that the service is active and licensed in your environment.
-
-== Select and run the template
-
-There are multiple ways to select and run a template to create new volumes.
-
-Regardless of the method you choose, the details about the required volume parameters that you must define are available in these sections:
-
-* link:task_provisioning_storage.html#creating-volumes-from-templates[How to provision Cloud Volumes ONTAP volumes^]
-* link:task_manage_anf_volumes.html#creating-volumes-from-templates[How to provision Azure NetApp Files volumes^]
-* link:task_provisioning_ontap.html#creating-volumes-from-templates[How to provision on-premises ONTAP volumes^]
-
-=== Run a volume template from the working environment
-
-You can add a volume to an existing working environment from the _Working Environment_ page and from the _Volume Details_ page.
+If you want to see all the resources that have a certain tag, or a certain tag and tag key, you can search for those tags. You can search across all resources, or just within certain resource categories.
 
 .Steps
 
-. From the _Working Environment_ page or from the _Volume Details_ page, click *Add Volume From Template*.
-+
-image:screenshot_template_add_vol_from.png[Two screenshots showing how users can create new volumes from a template.]
-+
-The _Templates Dashboard_ is displayed and it lists only those templates that are applicable to the selected working environment -- for example, it only shows Cloud Volumes ONTAP templates.
+. Select the *AppTemplate* service and click the *Tags* tab.
 
-. Click the *View* button to view an outline of the template to make sure it is the one you want, and then click image:screenshot_horizontal_more_button.gif[More icon] and *Run Template*.
-+
-image:screenshot_template_run_from_dashboard.png[A screenshot showing how to run a template from the Templates Dashboard]
-+
-The _Add Volume from Template_ page appears.
+. In the _Resource Type_ field, select the resource, for example, *ONTAP:CVO:VOLUME* to search across all Cloud Volumes ONTAP volumes.
 
-. Enter values in the editable fields to create the volume and click *Run Template*.
-+
-image:screenshot_run_template_from_canvas.png[A screenshot showing the parameters you need to define to create the volume from a template.]
+. In the _Tag Key_ field, select the tag, for example, *Env* to restrict the search to volumes with the "Env" tag.
 
-=== Run a volume template from the Templates Dashboard
+. In the _Tag Value_ field, select the key value, for example, *production* to restrict the search to volumes with the tag name "Env" and the tag value "production".
++
+image:screenshot_tags_search_single_1.png[A screenshot of selecting a single set of search criteria to return resource with a specific tag key and tag value.]
+
+. Click the image:screenshot_plus_icon.gif[] to add this search criteria to the Search area.
++
+image:screenshot_tags_search_single_2.png[A screenshot of the tag search criteria added to the search line.]
+
+. If you are done with your search, click *Search* and the search results appear in the Resources section.
++
+image:screenshot_tags_search_single_result.png[A screenshot of the results for resources that meet the tag search criteria.]
++
+If you want to add additional search criteria, follow steps 2 through 5 again and then click *Search*.
+
+=== Search rules
+
+The following rules apply when defining your search:
+
+* After choosing a Resource Type, you can leave the Tag Key field and Tag Value fields empty if you want to list all the resources that have any key and any key value.
+
+* You can choose a single search, or you can define multiple searches to restrict the number of results in the Resource section.
+
+* If you have defined multiple search criteria and then decide you want to remove one, just click the "x" to remove it from the Search area.
+
+== Add tags to existing resources
+
+You can apply tags to a single resource or to multiple resources. The resources could have existing tags or have no current tags.
+
+.Steps
+
+. From the *Tags* tab, create your search criteria and click *Search*.
+
+. Select the resource, or resources, that you want to tag.
+
++
+* To select all resources on the page, check the box in the title row (image:button_select_all_resources.png[]).
+* To select multiple resources, check the box for each resource (image:button_backup_1_volume.png[]).
+* To select a single resource, click the image:button_select_1_resource.png[plus button] icon for the resource.
++
+image:screenshot_tags_how_2_select_resources.png["A screenshot that shows how to select a single resource, multiple resources, or all resources."]
+
+. Click *Manage Tags* and the _Resource Tags_ dialog appears.
++
+image:screenshot_tags_resource_tags_dialog.png[A screenshot that shows the resource tag dialog where you can view the currently assigned tags and add new tags.]
+
+. Click *Add New Tag* and a blank Tag Key and Tag Value row appear on the dialog.
+
+. Enter the tag key and tag value. Add more tags at this time if you want more tag on this resource.
+
+. Click *Review and Apply* and the new tag is added to the resource.
+
+== Change tag values for a resource
 
 You can add a volume to an existing working environment from the _Templates Dashboard_.
 
@@ -93,14 +88,12 @@ You can add a volume to an existing working environment from the _Templates Dash
 +
 The _Templates Dashboard_ is displayed.
 
-. For the template that you want to use, click the *View* button to view an outline of the template to make sure it is the one you want, and then click image:screenshot_horizontal_more_button.gif[More icon] and *Run Template*.
-+
-image:screenshot_template_run_from_dashboard2.png[A screenshot showing how to run a template from the Templates Dashboard]
-+
-The _Run Template_ page appears.
+. For the
 
-. Enter values in editable fields to create the volume and click *Run Template*.
+== Delete tags from resources
+
+.Steps
+
+. Select the *AppTemplate* service and click the *Templates* tab.
 +
-image:screenshot_run_template_from_dashboard.png[A screenshot showing the parameters you need to define to create the volume from a template.]
-+
-Note that when you run the template from the dashboard that you need to select the working environment and other variables (for example, the storage VM and/or aggregate). When you run the template from the working environment, the working environment gets filled in automatically.
+The _Templates Dashboard_ is displayed.

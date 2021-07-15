@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept_tagging.html
 keywords: tags, overview, conceptual, resource tags, volume tags
-summary: Cloud Manager enables you to apply tags to your _existing_ resources to help organize and manage those resources. Tags consists of a *tag key* and a *tag value*. For example, you can create a tag key called "Environment" and then tag values of "Production" and "Test". After they are applied to your resources, you can quickly sort and view only resources that match the key/value pair.
+summary: Cloud Manager enables you to apply tags to your _existing_ resources to help organize and manage those resources. Tags are metadata that you can use to group resources to identify applications, environments, regions, billing codes, cloud providers, and more.
 ---
 
 = Learn about tagging
@@ -13,9 +13,11 @@ summary: Cloud Manager enables you to apply tags to your _existing_ resources to
 :imagesdir: ./media/
 
 [.lead]
-Cloud Manager enables you to apply tags to your _existing_ resources to help organize and manage those resources. Tags consists of a *tag key* and a *tag value*. For example, you can create a tag key called "Environment" and then tag values of "Production" and "Test". After they are applied to your resources, you can quickly sort and view only resources that match the key/value pair.
+Cloud Manager enables you to apply tags to your _existing_ resources to help organize and manage those resources. Tags are metadata that you can use to group resources to identify applications, environments, regions, billing codes, cloud providers, and more.
 
-You can add tag key/value pairs to _new_ resources when you create a Cloud Volumes ONTAP working environment or when you create a new Azure NetApp Files volume. You can change or delete those tags using the tagging service, or add new tags.
+Tags consists of a *tag key* and a *tag value*. For example, you can create a tag key called "Environment" and then tag values of "Production" and "Test". After they are applied to your resources, you can quickly sort and view only resources that match the key/value pair.
+
+You can add tag key/value pairs to _new_ resources when you create a new Azure NetApp Files volume. You can change or delete those tags using the tagging service, or add new tags.
 
 == Features
 
@@ -31,9 +33,9 @@ The ability to tag your resources requires no licensing and is free to use by al
 
 == Resources that you can tag
 
-At this time you can apply tags to the following resources.
+You can apply tags to the following resources.
 
-[cols=2*,options="header",cols="50,50"]
+[cols=2*,options="header",cols="50,50",width="85%"]
 
 |===
 | Container
@@ -51,8 +53,35 @@ Volume
 
 |===
 
+NOTE: At this time you can't view or manage tags assigned to resources by the cloud provider. So you won't see tags applied from AWS or Azure, or labels assigned from GCP.
+
 == Tag rules and restrictions
 
 The following rules apply when creating tag keys and tag values:
 
-* 
+* Maximum key length: 128 characters
+* Maximum key value length: 256 characters
+* Valid tag and tag value characters: Letters, numbers, spaces, and special characters (_, @, &, *, etc.)
+* Tags are case upper/lower sensitive.
+* Maximum tags per resource: 30
+* Per resource, each tag key must be unique
+
+=== Tag examples
+
+[cols=2*,options="header",cols="50,50",width="60%"]
+
+|===
+| Key
+| Values
+
+| Env | Prod
+Test
+
+| Team | Finance
+Sales
+Eng
+
+| Owner | Admin
+Storage
+
+|===
