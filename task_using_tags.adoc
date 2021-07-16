@@ -17,7 +17,7 @@ You can view, add, modify, and delete the tags assigned to your existing resourc
 
 == Search for resources that have certain tags
 
-If you want to see all the resources that have a certain tag, or a certain tag and tag key, you can search for those tags. You can search across all resources, or just within certain resource categories.
+If you want to see all the resources that have a certain tag, or a certain tag and tag key value, you can search for those tags. You can search across all resources, or just within certain resource categories.
 
 .Steps
 
@@ -47,9 +47,18 @@ The following rules apply when defining your search:
 
 * After choosing a Resource Type, you can leave the Tag Key field and Tag Value fields empty if you want to list all the resources that have any key and any key value.
 
-* You can choose a single search, or you can define multiple searches to restrict the number of results in the Resource section.
+* You can choose a single search, or you can define multiple searches to refine the results in the Resource section.
 
-* If you have defined multiple search criteria and then decide you want to remove one, just click the "x" to remove it from the Search area.
+* When defining multiple sets of search criteria:
+** If the criteria for two searches are for different resource types, then this is treated as an "OR" operation and the result shows the resources from both searches. For example, the following search returns all Azure NetApp Files volumes that have the "Environment:demo" tag value and all Cloud Volumes ONTAP volumes that have the "Environment:demo" tag value.
++
+image:screenshot_tags_search_or.png[]
++
+** If the criteria for two searches are for the same resource type, then this is treated as an "AND" operation and the result shows only the resources that match *both* searches. For example, the following search returns Azure NetApp Files volumes that have both the "Environment:demo" tag value and "Group:Finance" tag value.
++
+image:screenshot_tags_search_and.png[]
+
+* If you have defined multiple search criteria and then decide you want to remove one, just click the image:button_delete_tag_search.png[] to remove it from the Search area.
 
 == Add tags to existing resources
 
@@ -68,32 +77,48 @@ You can apply tags to a single resource or to multiple resources. The resources 
 +
 image:screenshot_tags_how_2_select_resources.png["A screenshot that shows how to select a single resource, multiple resources, or all resources."]
 
-. Click *Manage Tags* and the _Resource Tags_ dialog appears.
+. Click *Manage Tags* and the _Resource Tags_ dialog appears. Any existing tags will appear in this dialog.
 +
 image:screenshot_tags_resource_tags_dialog.png[A screenshot that shows the resource tag dialog where you can view the currently assigned tags and add new tags.]
 
-. Click *Add New Tag* and a blank Tag Key and Tag Value row appear on the dialog.
+. Click *Add New Tag* and a blank Tag Key and Tag Value row appears in the dialog.
 
-. Enter the tag key and tag value. Add more tags at this time if you want more tag on this resource.
+. Enter the tag key and tag value. Add more tags at this time if you want more tags on this resource.
 
-. Click *Review and Apply* and the new tag is added to the resource.
+. Click *Save* and the new tag is added to the resource, or to all selected resources.
 
 == Change tag values for a resource
 
-You can add a volume to an existing working environment from the _Templates Dashboard_.
+You can change the tags that are assigned to resources, and you can change the tag value that is applied to an existing tag.
 
 .Steps
 
-. Select the *AppTemplate* service and click the *Templates* tab.
-+
-The _Templates Dashboard_ is displayed.
+. From the *Tags* tab, create your search criteria and click *Search*.
 
-. For the
+. Select the resource, or resources, on which you want to change tags.
+
+. Click *Manage Tags* and the _Resource Tags_ dialog appears.
++
+image:screenshot_tags_modify_tag.png[A screenshot showing how to modify a tag from a resource, or multiple resources.]
+
+. Enter a new value for the tag value and click *Save*.
++
+The tag value is changed for the resource, or for all selected resources.
 
 == Delete tags from resources
 
+You can delete a tag key/value pair from a single resource or from multiple resources.
+
 .Steps
 
-. Select the *AppTemplate* service and click the *Templates* tab.
+. From the *Tags* tab, create your search criteria and click *Search*.
+
+. Select the resource, or resources, from which you want to remove tags.
+
+. Click *Manage Tags* and the _Resource Tags_ dialog appears.
 +
-The _Templates Dashboard_ is displayed.
+image:screenshot_tags_delete_tag.png[A screenshot showing how to delete a tag from a resource, or multiple resources.]
+
+. Click the image:button_delete_tag_pair.png[] for the tag key/value pair you want to delete and the row is removed.
+
+. Click *Save* and the tag key/value pair is removed from the resource, or from all selected resources.

@@ -53,7 +53,7 @@ Volume
 
 |===
 
-NOTE: At this time you can't view or manage tags assigned to resources by the cloud provider. So you won't see tags applied from AWS or Azure, or labels assigned from GCP.
+NOTE: At this time you can't view or manage tags assigned to resources though a cloud provider. So you won't see tags applied from AWS or Azure, or labels assigned from Google Cloud.
 
 == Tag rules and restrictions
 
@@ -61,7 +61,7 @@ The following rules apply when creating tag keys and tag values:
 
 * Maximum key length: 128 characters
 * Maximum key value length: 256 characters
-* Valid tag and tag value characters: Letters, numbers, spaces, and special characters (_, @, &, *, etc.)
+* Valid tag and tag value characters: letters, numbers, spaces, and special characters (_, @, &, *, etc.)
 * Tags are case upper/lower sensitive.
 * Maximum tags per resource: 30
 * Per resource, each tag key must be unique
@@ -74,14 +74,14 @@ The following rules apply when creating tag keys and tag values:
 | Key
 | Values
 
-| Env | Prod
-Test
+| Env | production
+test
 
-| Team | Finance
-Sales
-Eng
+| Dept | finance
+sales
+eng
 
-| Owner | Admin
-Storage
+| Owner | admin
+storage
 
 |===

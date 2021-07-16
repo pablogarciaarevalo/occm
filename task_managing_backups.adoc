@@ -15,6 +15,8 @@ summary: You can manage backups for Cloud Volumes ONTAP and on-premises ONTAP sy
 [.lead]
 You can manage backups for Cloud Volumes ONTAP and on-premises ONTAP systems by changing the backup schedule, enabling/disabling volume backups, deleting backups, and more.
 
+CAUTION: Do not manage or change backup files directly from your cloud provider environment. This may corrupt the files and will result in an unsupported configuration.
+
 == Viewing the volumes that are being backed up
 
 You can view a list of all the volumes that are currently being backed up in the Backup Dashboard.
