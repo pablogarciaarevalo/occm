@@ -64,10 +64,10 @@ image:screenshot_template_drift_for_one.png[A screenshot showing how to run drif
 
 == Create a drift report for non-compliant resources
 
-You can view a drift report for a single resource, or run a report to download a report for all resources. Using this report you canassign actions to system admins to make changes that bring the resources back into compliance with the template.
+You can view a drift report for a single resource, or run a report to download a report for all resources. Using this report you can assign actions to system admins to make changes that bring the resources back into compliance with the template.
 
 You can click the Drift icon for a resource in the Drift Dashboard to view a list of the parameters in each resource that is non-compliant.
 
 image:screenshot_template_drift_report_one_resource.png[A screenshot of a drift report for a single resource.]
 
-To view a drift report for all resources that have been created from your templates, click image:button_download.png[] to download a .CSV file.
+To view a drift report for resources that have been created from your templates, click image:button_download.png[] to download a .CSV file. The drift report reflects what is currently filtered on the page - it does not show all resources unless you haven't applied any filters on the page.
