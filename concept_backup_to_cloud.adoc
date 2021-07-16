@@ -174,7 +174,7 @@ When you enable Cloud Backup on a Cloud Volumes ONTAP or on-premises ONTAP syste
 
 In most cases you will use Cloud Manager for all backup and restore operations. However, starting with ONTAP 9.9.1 you can initiate volume backup operations of your on-premises ONTAP clusters using ONTAP System Manager. https://docs.netapp.com/us-en/ontap/task_cloud_backup_data_using_cbs.html[See how to use System Manager to back up your volumes to the cloud using Cloud Backup.^]
 
-NOTE: Any actions taken directly from your cloud provider to manage backup files results in an unsupported configuration.
+CAUTION: Any actions taken directly from your cloud provider environment to manage or change backup files may corrupt the files and will result in an unsupported configuration.
 
 The following image shows the relationship between each component:
 

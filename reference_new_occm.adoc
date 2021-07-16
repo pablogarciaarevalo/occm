@@ -21,11 +21,20 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 == Cloud Manager 3.9.8 update (13 July 2021)
 
+* <<Application Template enhancements>>
+* <<New Resource Tagging feature>>
+
 === Application Template enhancements
 
 * Support has been added so you can add in the template that you want to link:task_define_templates.html#add-replication-functionality-to-a-volume[replicate the data in the volume you are creating] to another volume using the link:concept_replication.html[Replication service]. When you replicate data to other NetApp storage systems and continually update the secondary data, your data is kept current and remains available whenever you need it.
 
 * Now you can download a report that includes all the volumes that have "drifted" from your template settings instead of just viewing this information for a single volume in the Dashboard. In this manner you can identify these volumes and assign someone to bring the volumes back into compliance. See link:task_check_template_compliance.html#create-a-drift-report-for-non-compliant-resources[how to download your drift report].
+
+=== New Resource Tagging feature
+
+* A new Cloud Manager feature enables you to apply tags to your existing ONTAP resources to help organize and manage those resources. Tags are metadata that you can use to group resources to identify applications, environments, regions, billing codes, cloud providers, and more.
++
+link:concept_tagging.html[Learn more about tagging].
 
 == Cloud Manager 3.9.8 (7 July 2021)
 

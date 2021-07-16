@@ -368,6 +368,12 @@ entries:
         url: /task_managing_compliance.html
       - title: FAQ
         url: /faq_cloud_compliance.html
+  - title: Organize your resources using tags
+    entries:
+      - title: Learn about tagging
+        url: /concept_tagging.html
+      - title: Manage tags for your resources
+        url: /task_using_tags.html
   - title: Enable real-time global file sharing
     entries:
       - title: Learn about Global File Cache
