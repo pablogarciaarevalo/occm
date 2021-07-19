@@ -39,7 +39,7 @@ Immediately after you create the working environment, Cloud Manager launches a t
 
 .Steps
 
-. On the Canvas page, click *Add Working Environment* and follow the prompts.
+. [[subscribe]]On the Canvas page, click *Add Working Environment* and follow the prompts.
 
 . *Choose a Location*: Select *Amazon Web Services* and *Cloud Volumes ONTAP Single Node*.
 
@@ -64,7 +64,7 @@ For information about tags, refer to https://docs.aws.amazon.com/AWSEC2/latest/U
 
 | User name and password | These are the credentials for the Cloud Volumes ONTAP cluster admin account. You can use these credentials to connect to Cloud Volumes ONTAP through OnCommand System Manager or its CLI.
 
-| [[subscribe]]Edit Credentials | Choose the AWS credentials associated with the account where you want to deploy this system. You can also associate the AWS Marketplace subscription to use with this Cloud Volumes ONTAP system.
+| Edit Credentials | Choose the AWS credentials associated with the account where you want to deploy this system. You can also associate the AWS Marketplace subscription to use with this Cloud Volumes ONTAP system.
 
 Click *Add Subscription* to associate the selected credentials with a new AWS Marketplace subscription. The subscription can be for an annual contract or to pay for Cloud Volumes ONTAP at an hourly rate.
 

@@ -41,11 +41,11 @@ Deploying Cloud Volumes ONTAP in an existing, shared resource group is not recom
 
 .Steps
 
-. On the Canvas page, click *Add Working Environment* and follow the prompts.
+. [[subscribe]]On the Canvas page, click *Add Working Environment* and follow the prompts.
 
 . *Choose a Location*: Select *Microsoft Azure* and *Cloud Volumes ONTAP Single Node* or *Cloud Volumes ONTAP High Availability*.
 
-. If you're prompted, link:task_creating_connectors_aws.html[create a Connector].
+. If you're prompted, link:task_creating_connectors_azure.html[create a Connector].
 
 . *Details and Credentials*: Optionally change the Azure credentials and subscription, specify a cluster name, add tags if needed, and then specify credentials.
 +
