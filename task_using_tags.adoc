@@ -83,9 +83,9 @@ image:screenshot_tags_resource_tags_dialog.png[A screenshot that shows the resou
 
 . Click *Add New Tag* and a blank Tag Key and Tag Value row appears in the dialog.
 
-. Enter the tag key and tag value. Add more tags at this time if you want more tags on this resource.
+. Enter the tag key and tag value. Add more tags at this time if you want more tags on this resource, and then click *Review and Apply*.
 
-. Click *Save* and the new tag is added to the resource, or to all selected resources.
+. If your changes look correct in the _Reviewing_ page, click *Save* and the new tag is added to the resource, or to all selected resources.
 
 == Change tag values for a resource
 
@@ -101,9 +101,9 @@ You can change the tags that are assigned to resources, and you can change the t
 +
 image:screenshot_tags_modify_tag.png[A screenshot showing how to modify a tag from a resource, or multiple resources.]
 
-. Enter a new value for the tag value and click *Save*.
-+
-The tag value is changed for the resource, or for all selected resources.
+. Enter a new value for the tag value and click *Review and Apply*.
+
+. If your change looks correct in the _Reviewing_ page, click *Save* and the tag value is changed for the resource, or for all selected resources.
 
 == Delete tags from resources
 
@@ -119,6 +119,6 @@ You can delete a tag key/value pair from a single resource or from multiple reso
 +
 image:screenshot_tags_delete_tag.png[A screenshot showing how to delete a tag from a resource, or multiple resources.]
 
-. Click the image:button_delete_tag_pair.png[] for the tag key/value pair you want to delete and the row is removed.
+. Click the image:button_delete_tag_pair.png[] for the tag key/value pair you want to delete and the row is removed, and then click *Review and Apply*.
 
-. Click *Save* and the tag key/value pair is removed from the resource, or from all selected resources.
+. If your change looks correct in the _Reviewing_ page, click *Save* and the tag key/value pair is removed from the resource, or from all selected resources.
