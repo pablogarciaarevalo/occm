@@ -37,19 +37,14 @@ NOTE: You must be an Account Admin to create a Connector. When you create your f
 
 Immediately after you create the working environment, Cloud Manager launches a test instance in the specified VPC to verify connectivity. If successful, Cloud Manager immediately terminates the instance and then starts deploying the Cloud Volumes ONTAP system. If Cloud Manager cannot verify connectivity, creation of the working environment fails. The test instance is either a t2.nano (for default VPC tenancy) or m3.medium (for dedicated VPC tenancy).
 
-[[subscribe1]]
 .Steps
 
-[[subscribe2]]
-. On the Canvas page, click *Add Working Environment* and follow the prompts.
+. [[subscribe]]On the Canvas page, click *Add Working Environment* and follow the prompts.
 
-[[subscribe3]]
 . *Choose a Location*: Select *Amazon Web Services* and *Cloud Volumes ONTAP Single Node*.
 
-[[subscribe4]]
 . If you're prompted, link:task_creating_connectors_aws.html[create a Connector].
 
-[[subscribe5]]
 . *Details and Credentials*: Optionally change the AWS credentials and subscription, enter a working environment name, add tags if needed, and then enter a password.
 +
 Some of the fields in this page are self-explanatory. The following table describes fields for which you might need guidance:
@@ -61,7 +56,7 @@ Some of the fields in this page are self-explanatory. The following table descri
 
 | Working Environment Name | Cloud Manager uses the working environment name to name both the Cloud Volumes ONTAP system and the Amazon EC2 instance. It also uses the name as the prefix for the predefined security group, if you select that option.
 
-| [[subscribe6]]Add tags | AWS tags are metadata for your AWS resources. Cloud Manager adds the tags to the Cloud Volumes ONTAP instance and each AWS resource associated with the instance.
+| Add tags | AWS tags are metadata for your AWS resources. Cloud Manager adds the tags to the Cloud Volumes ONTAP instance and each AWS resource associated with the instance.
 
 You can add up to four tags from the user interface when creating a working environment, and then you can add more after its created. Note that the API does not limit you to four tags when creating a working environment.
 
@@ -69,7 +64,7 @@ For information about tags, refer to https://docs.aws.amazon.com/AWSEC2/latest/U
 
 | User name and password | These are the credentials for the Cloud Volumes ONTAP cluster admin account. You can use these credentials to connect to Cloud Volumes ONTAP through OnCommand System Manager or its CLI.
 
-| [[subscribe]]Edit Credentials | Choose the AWS credentials associated with the account where you want to deploy this system. You can also associate the AWS Marketplace subscription to use with this Cloud Volumes ONTAP system.
+| Edit Credentials | Choose the AWS credentials associated with the account where you want to deploy this system. You can also associate the AWS Marketplace subscription to use with this Cloud Volumes ONTAP system.
 
 Click *Add Subscription* to associate the selected credentials with a new AWS Marketplace subscription. The subscription can be for an annual contract or to pay for Cloud Volumes ONTAP at an hourly rate.
 
