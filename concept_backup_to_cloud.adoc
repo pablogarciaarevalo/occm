@@ -301,5 +301,5 @@ There are certain things you need to be aware of when the volume you are backing
 * The file being restored must be using the same language as the language on the destination volume. You will receive an error message if the languages are not the same.
 
 * Single file restore is not supported when using the same account with different Cloud Managers in different subnets.
-
-* Restore can browse a single directory with flat files up to a maximum of 30,000 files. Larger directories are currently not supported when using the UI.
+//
+// * Restore can browse a single directory with flat files up to a maximum of 30,000 files. Larger directories are currently not supported when using the UI.
