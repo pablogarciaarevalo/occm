@@ -58,7 +58,6 @@ If you use an HA pair, Cloud Volumes ONTAP supports high write speed with the fo
 * DS5_v2
 * DS14_v2
 * DS15_v2
-* E8s_v3
 * E48s_v3
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_azure_991.html[Learn more about the Azure VM types that Cloud Volumes ONTAP supports^].
