@@ -30,7 +30,7 @@ Get started quickly by following these steps, or scroll down to the remaining se
 [role="quick-margin-list"]
 * You have discovered the on-premises cluster and added it to a working environment in Cloud Manager. See link:task_discovering_ontap.html[Discovering ONTAP clusters^] for details.
 ** The cluster is running ONTAP 9.7P5 or later.
-** The cluster has a SnapMirror license -- it is included as part of the PREM or Data Protection bundle.
+** The cluster has a SnapMirror license -- it is included as part of the Premium Bundle or Data Protection Bundle.
 * You have subscribed to the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Azure^], the https://aws.amazon.com/marketplace/pp/B07QX2QLXX[AWS^], or the https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[Google^] Cloud Manager Marketplace Backup offering, or you have purchased link:task_managing_licenses.html#manage-cloud-backup-licenses[and activated^] a Cloud Backup BYOL license from NetApp.
 * You have a valid cloud provider subscription for the object storage space where your backups will be located.
 * For AWS and GCP, you need to have an account that has an access key and the required permissions so the ONTAP cluster can back up the data.
@@ -108,7 +108,9 @@ link:task_discovering_ontap.html[Learn how to discover a cluster].
 
 ONTAP requirements::
 * ONTAP 9.7P5 and later.
-* A SnapMirror license (included as part of the PREM or Data Protection bundle).
+* A SnapMirror license (included as part of the Premium Bundle or Data Protection Bundle).
++
+Note: The "Hybrid Cloud Bundle" is not required when using the Cloud Backup service.
 +
 See how to http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sag/GUID-76A429CC-56CF-4DC1-9DC5-A3E222892684.html[manage your cluster licenses].
 *	Time and time zone are set correctly.
