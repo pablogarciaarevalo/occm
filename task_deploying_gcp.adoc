@@ -45,6 +45,8 @@ NOTE: You must be an Account Admin to create a Connector. When you create your f
 
 . *Choose a Location*: Select *Google Cloud* and *Cloud Volumes ONTAP*.
 
+. If you're prompted, link:task_creating_connectors_gcp.html[create a Connector].
+
 . *Details & Credentials*: Select a project, specify a cluster name, optionally select a Service Account, optionally add labels, and then specify credentials.
 +
 The following table describes fields for which you might need guidance:
