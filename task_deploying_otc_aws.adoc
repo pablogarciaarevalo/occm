@@ -37,14 +37,19 @@ NOTE: You must be an Account Admin to create a Connector. When you create your f
 
 Immediately after you create the working environment, Cloud Manager launches a test instance in the specified VPC to verify connectivity. If successful, Cloud Manager immediately terminates the instance and then starts deploying the Cloud Volumes ONTAP system. If Cloud Manager cannot verify connectivity, creation of the working environment fails. The test instance is either a t2.nano (for default VPC tenancy) or m3.medium (for dedicated VPC tenancy).
 
+[[subscribe1]]
 .Steps
 
+[[subscribe2]]
 . On the Canvas page, click *Add Working Environment* and follow the prompts.
 
+[[subscribe3]]
 . *Choose a Location*: Select *Amazon Web Services* and *Cloud Volumes ONTAP Single Node*.
 
+[[subscribe4]]
 . If you're prompted, link:task_creating_connectors_aws.html[create a Connector].
 
+[[subscribe5]]
 . *Details and Credentials*: Optionally change the AWS credentials and subscription, enter a working environment name, add tags if needed, and then enter a password.
 +
 Some of the fields in this page are self-explanatory. The following table describes fields for which you might need guidance:
@@ -56,7 +61,7 @@ Some of the fields in this page are self-explanatory. The following table descri
 
 | Working Environment Name | Cloud Manager uses the working environment name to name both the Cloud Volumes ONTAP system and the Amazon EC2 instance. It also uses the name as the prefix for the predefined security group, if you select that option.
 
-| Add tags | AWS tags are metadata for your AWS resources. Cloud Manager adds the tags to the Cloud Volumes ONTAP instance and each AWS resource associated with the instance.
+| [[subscribe6]]Add tags | AWS tags are metadata for your AWS resources. Cloud Manager adds the tags to the Cloud Volumes ONTAP instance and each AWS resource associated with the instance.
 
 You can add up to four tags from the user interface when creating a working environment, and then you can add more after its created. Note that the API does not limit you to four tags when creating a working environment.
 
