@@ -41,9 +41,11 @@ NOTE: You must be an Account Admin to create a Connector. When you create your f
 
 .Steps
 
-. On the Canvas page, click *Add Working Environment* and follow the prompts.
+. [[subscribe]]On the Canvas page, click *Add Working Environment* and follow the prompts.
 
 . *Choose a Location*: Select *Google Cloud* and *Cloud Volumes ONTAP*.
+
+. If you're prompted, link:task_creating_connectors_gcp.html[create a Connector].
 
 . *Details & Credentials*: Select a project, specify a cluster name, optionally select a Service Account, optionally add labels, and then specify credentials.
 +
@@ -77,8 +79,7 @@ Click *Add Subscription* to associate the selected credentials with a subscripti
 To create a pay-as-you-go Cloud Volumes ONTAP system, you need to select a GCP project that's associated with a subscription to Cloud Volumes ONTAP from the GCP Marketplace.
 
 |===
-+
-[[subscribe]]
+
 The following video shows how to associate a pay-as-you-go Marketplace subscription to your GCP project:
 +
 video::video_subscribing_gcp.mp4[width=848, height=480]
