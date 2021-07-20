@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept_cloud_central_accounts.html
-keywords: accounts, workspaces, Connector, users, cloud central, admin, Account Admin, Workspace Admin, account settings, workspaces, users, connector, service connector, user accounts, what are users, what is a workspace, users and workspaces
+keywords: accounts, workspaces, Connector, users, cloud central, admin, Account Admin, Workspace Admin, account settings, workspaces, users, members, connector, service connector, user accounts, what are users, what is a workspace, users and workspaces
 summary: A Cloud Central account provides multi-tenancy and enables you to organize users and resources in isolated workspaces from within Cloud Manager.
 ---
 
@@ -21,25 +21,29 @@ When you first access Cloud Manager, you're prompted to select or create a Cloud
 
 image:screenshot_account_selection.gif[A screenshot of the Cloud Manager setup wizard that prompts you for the Cloud Central account in which you want to create Cloud Manager.]
 
-Account Admins can then modify the settings for this account by managing users, workspaces, Connectors, and subscriptions:
+Account Admins can then modify the settings for this account by managing users (members), workspaces, Connectors, and subscriptions:
 
-image:screenshot_account_settings.gif["A screenshot that shows the Account Settings widget from which you can manage users, workspaces, and Connectors."]
+image:screenshot_account_settings.gif["A screenshot that shows the Manage Account widget from which you can manage users, workspaces, and Connectors."]
 
 For step-by-step instructions, see link:task_setting_up_cloud_central_accounts.html[Setting up the Cloud Central account].
 
 == Account Settings
 
-The Account Settings widget in Cloud Manager enables Account Admins to manage a Cloud Central account. If you just created your account, then you'll start from scratch. But if you've already set up an account, then you'll see _all_ the users, workspaces, Connectors, and subscriptions that are associated with the account.
+The Manage Account widget in Cloud Manager enables Account Admins to manage a Cloud Central account. If you just created your account, then you'll start from scratch. But if you've already set up an account, then you'll see _all_ the users, workspaces, Connectors, and subscriptions that are associated with the account.
 
-== Users
+== Overview
 
-The users that display in the Account Settings are NetApp Cloud Central users that you associate with your Cloud Central account. Associating a user with an account and one or more workspaces in that account enables those users to create and manage working environments in Cloud Manager.
+The Overview page shows the Account Name and the Account ID. You may need to provide your Account ID when registering some services. This page also includes some Cloud Manager configuration options.
+
+== Members
+
+The members are NetApp Cloud Central users that you associate with your Cloud Central account. Associating a user with an account and one or more workspaces in that account enables those users to create and manage working environments in Cloud Manager.
 
 When you associate a user, you assign them a role:
 
 * _Account Admin_: Can perform any action in Cloud Manager.
 * _Workspace Admin_: Can create and manage resources in the assigned workspace.
-* _Cloud Compliance Viewer_: Can only view compliance information and generate reports for systems that they have permission to access.
+* _Compliance Viewer_: Can only view Cloud Data Sense compliance information and generate reports for systems that they have permission to access.
 * _SnapCenter Admin_: Can use the SnapCenter Service to create application consistent backups and restore data using those backups. _This service is currently in Beta._
 
 == Workspaces
@@ -60,11 +64,11 @@ You can use a Connector with more than one NetApp cloud data service. For exampl
 
 == Subscriptions
 
-The Account Settings widget shows the NetApp subscriptions associated with the selected account.
+These are the NetApp subscriptions associated with the selected account.
 
 When you subscribe to Cloud Manager from a cloud provider's marketplace, you're redirected to Cloud Central where you need to save your subscription and associate it with specific accounts.
 
-After you've subscribed, each subscription is available from the Account Settings widget. You'll only see the subscriptions that are associated with the account that you're currently viewing.
+After you've subscribed, each subscription is available from the Manage Account widget. You'll only see the subscriptions that are associated with the account that you're currently viewing.
 
 You have the option to rename a subscription and to disassociate the subscription from one or more accounts.
 

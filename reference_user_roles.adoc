@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: reference_user_roles.html
-keywords: user, users, roles, role, task, permission, permissions, tasks, admin, Account Admin, Workspace Admin, Cloud Compliance Viewer, SnapCenter Admin
+keywords: user, users, roles, role, task, permission, permissions, tasks, admin, Account Admin, Workspace Admin, Cloud Compliance Viewer, Cloud Data Sense, SnapCenter Admin
 summary: The Account Admin, Workspace Admin, Compliance Viewer, and SnapCenter Admin roles provide specific permissions to users.
 ---
 
@@ -15,13 +15,15 @@ summary: The Account Admin, Workspace Admin, Compliance Viewer, and SnapCenter A
 [.lead]
 The Account Admin, Workspace Admin, Compliance Viewer, and SnapCenter Admin roles provide specific permissions to users.
 
+The Compliance Viewer role is for read-only Cloud Data Sense access.
+
 [cols=5*,options="header",cols="24,19,19,19,19"]
 |===
 
 | Task
 | Account Admin
 | Workspace Admin
-| Cloud Compliance Viewer
+| Compliance Viewer
 | SnapCenter Admin
 
 | Manage working environments |	Yes |	Yes | No | No
@@ -34,7 +36,7 @@ The Account Admin, Workspace Admin, Compliance Viewer, and SnapCenter Admin role
 
 | Switch between workspaces | Yes | Yes | Yes | No
 
-| View Compliance scan results | Yes | Yes | Yes | No
+| View Data Sense scan results | Yes | Yes | Yes | No
 
 | Delete working environments | Yes | No | No | No
 
