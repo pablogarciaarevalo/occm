@@ -269,6 +269,8 @@ entries:
             url: /task_backup_from_onprem.html
           - title: Back up on-premises ONTAP data to private cloud
             url: /task_backup_onprem_private_cloud.html
+      - title: Set up licensing
+        url: /task_licensing_cloud_backup.html
       - title: Manage backups
         url: /task_managing_backups.html
       - title: Restore from backups
