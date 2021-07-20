@@ -27,7 +27,7 @@ It depends on where you tier the cold data. Refer to the following:
 * link:task_tiering_onprem_azure.html#preparing-your-ontap-clusters[Tiering data from on-premises ONTAP clusters to Azure Blob storage]
 * link:task_tiering_onprem_gcp.html#preparing-your-ontap-clusters[Tiering data from on-premises ONTAP clusters to Google Cloud Storage]
 * link:task_tiering_onprem_storagegrid.html#preparing-your-ontap-clusters[Tiering data from on-premises ONTAP clusters to StorageGRID]
-* link:task_tiering_onprem_s3_compat.html#preparing-your-ontap-clusters[Tiering data from on-premises ONTAP clusters to S3 object storage]
+// * link:task_tiering_onprem_s3_compat.html#preparing-your-ontap-clusters[Tiering data from on-premises ONTAP clusters to S3 object storage]
 
 === Does Cloud Tiering enable inactive data reporting?
 
