@@ -55,21 +55,20 @@ Associate Cloud Central users with the Cloud Central account so those users can 
 +
 image:screenshot_manage_account_settings.gif[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]
 
-. From the Users tab, click *Associate User*.
+. From the Members tab, click *Associate User*.
 
 . Enter the user's email address and select a role for the user:
 +
 * *Account Admin*: Can perform any action in Cloud Manager.
 * *Workspace Admin*: Can create and manage resources in assigned workspaces.
-* *Compliance Viewer*: Can only view governance and compliance information and generate reports for workspaces that they have permission to access.
+* *Compliance Viewer*: Can only view Cloud Data Sense governance and compliance information and generate reports for workspaces that they have permission to access.
 * *SnapCenter Admin*: Can use the SnapCenter Service to create application consistent backups and restore data using those backups. This service is currently in Beta.
-
 
 . If you selected an account other than Account Admin, select one or more workspaces to associate with that user.
 +
 image:screenshot_associate_user.gif[A screenshot that shows how to associate a user by selecting a role and the associated workspaces.]
 
-. Click *Associate User*.
+. Click *Associate*.
 
 .Result
 
