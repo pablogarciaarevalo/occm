@@ -118,13 +118,21 @@ Backup are not deleted when the service is disabled. You'll continue to be charg
 
 === Pay-as-you-go subscription
 
-For PAYGO you'll need to pay your cloud provider for object storage costs (as described earlier) and NetApp for backup licensing costs. The licensing costs are based on target backup capacity (before ONTAP storage efficiencies):
+Cloud Backup offers consumption-based licensing in a pay-as-you-go model. The licensing costs are based on target backup capacity (before ONTAP storage efficiencies). After subscribing through your cloud provider’s marketplace, you pay per GB for data that’s backed up—​there’s no up-front payment. You are billed by your cloud provider through your monthly bill.
 
-* AWS: https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Go to the Cloud Manager Marketplace offering for pricing details^].
+You should subscribe even if you have a free trial or if you bring your own license (BYOL):
 
-* Azure: https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Go to the Cloud Manager Marketplace offering for pricing details^].
+* Subscribing ensures that there’s no disruption of service after your free trial ends.
++
+When the trial ends, you’ll be charged hourly according to the amount of data that you back up.
 
-* GCP: https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[Go to the Cloud Manager Marketplace offering for pricing details^]
+* If you back up more data than allowed by your BYOL license, then data backup continues through your pay-as-you-go subscription.
++
+For example, if you have a 10 TB BYOL license, all capacity beyond the 10 TB is charged through the pay-as-you-go subscription.
+
+You won’t be charged from your pay-as-you-go subscription during your free trial or if you haven’t exceeded your BYOL license.
+
+link:task_licensing_cloud_backup.html#set-up-a-paygo-subscription[Learn how to set up a pay-as-you-go subscription].
 
 === Annual contract (AWS only)
 
@@ -142,13 +150,17 @@ Go to the https://aws.amazon.com/marketplace/pp/prodview-q7dg6zwszplri[AWS Marke
 +
 If you want to use this option, you can set up the annual contract when you create a Cloud Volumes ONTAP working environment and Cloud Manager prompts you to subscribe to the AWS Marketplace.
 
+link:task_licensing_cloud_backup.html#subscribe-to-yearly-contracts-through-AWS[Learn how to set up yearly AWS contracts].
+
 === Bring your own license
 
 BYOL is term-based (1YR/2YR/3YR) and capacity-based in 1 TB increments, based on the logical (before ONTAP storage efficiencies) backed up capacity. You pay NetApp to use the service for a period of time, say 1 year, and for a maximum amount backup capacity, say 10 TB, and you'll need to pay your cloud provider for object storage costs (as described earlier).
 
 NOTE: Backup to StorageGRID does require a BYOL license, but there is no cost for cloud provider storage space in this case.
 
-You'll receive a serial number that you enter in the Cloud Manager Digital Wallet page to enable the service. When either limit is reached you'll need to renew the license. See link:task_licensing_cloud_backup.html[how to manage your Cloud Backup licenses^]. The Backup BYOL license applies to all Cloud Volumes ONTAP and on-premises ONTAP systems associated with your link:concept_cloud_central_accounts.html[Cloud Central account^].
+You'll receive a serial number that you enter in the Cloud Manager Digital Wallet page to enable the service. When either limit is reached you'll need to renew the license.  The Backup BYOL license applies to all Cloud Volumes ONTAP and on-premises ONTAP systems associated with your link:concept_cloud_central_accounts.html[Cloud Central account^].
+
+link:task_licensing_cloud_backup.html#use-cloud-backup-byol-licenses[Learn how to manage your BYOL licenses].
 
 ==== BYOL license considerations
 
