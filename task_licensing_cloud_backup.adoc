@@ -17,19 +17,29 @@ As mentioned in the link:concept_backup_to_cloud.html#licensing[Licensing overvi
 
 == Set up a PAYGO subscription
 
-For pay-as-you-go you'll need to pay your cloud provider for object storage costs and NetApp for backup licensing costs. The licensing costs are based on target backup capacity (before ONTAP storage efficiencies). Use these links to subscribe to Cloud Backup from your cloud provider marketplace:
+For pay-as-you-go you'll need to pay your cloud provider for object storage costs and NetApp for backup licensing costs. The licensing costs are based on target backup capacity (_before_ ONTAP storage efficiencies). Use these links to subscribe to Cloud Backup from your cloud provider marketplace:
 
 * AWS: https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Go to the Cloud Manager Marketplace offering for pricing details^].
 
 * Azure: https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Go to the Cloud Manager Marketplace offering for pricing details^].
 
-* GCP: https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[Go to the Cloud Manager Marketplace offering for pricing details^]
+* GCP: https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[Go to the Cloud Manager Marketplace offering for pricing details^].
 
 == Subscribe to yearly contracts through AWS
 
-Annual contracts through the AWS Marketplace enable you to lock in a lower cost by subscribing to a 1-, 2-, or 3-year contract.
+There are two annual contracts available from the AWS Marketplace:
 
-Go to the https://aws.amazon.com/marketplace/pp/B086PDWSS8[AWS Marketplace page^] to view pricing details of the two contract offerings, set up your subscription, and then link:task_adding_aws_accounts.html#associating-an-aws-subscription-to-credentials[associate the subscription with your AWS credentials].
+*	An annual contract that enables you to back up Cloud Volumes ONTAP data and on-premises ONTAP data.
++
+Go to the https://aws.amazon.com/marketplace/pp/B086PDWSS8[AWS Marketplace page^] to view pricing details.
++
+If you want to use this option, set up your subscription from the Marketplace page and then link:task_adding_aws_accounts.html#associating-an-aws-subscription-to-credentials[associate the subscription with your AWS credentials^]. Note that you’ll also need to pay for Cloud Volumes ONTAP using this annual contract subscription since you can assign only one active subscription to your AWS credentials in Cloud Manager.
+
+* A Professional Package that enables you to bundle Cloud Volumes ONTAP and Cloud Backup service by using an annual contract for 1, 2, or 3 years. Payment is per TiB. This option doesn’t enable you to back up on-prem data.
++
+Go to the https://aws.amazon.com/marketplace/pp/prodview-q7dg6zwszplri[AWS Marketplace page^] to view pricing details and go to the https://docs.netapp.com/us-en/cloud-volumes-ontap[Cloud Volumes ONTAP Release Notes^] to learn more about this licensing option.
++
+If you want to use this option, you can set up the annual contract when you create a Cloud Volumes ONTAP working environment and Cloud Manager prompts you to subscribe to the AWS Marketplace.
 
 == Use Cloud Backup BYOL licenses
 
@@ -58,8 +68,6 @@ You can find your Account ID by selecting the *Account* drop-down from the top o
 === Add or update a Cloud Backup license
 
 Add or update your Cloud Backup license to Cloud Manager so that the Cloud Backup service is active.
-
-link:concept_backup_to_cloud.html#licensing[Learn more about Cloud Backup licensing].
 
 .Steps
 

@@ -140,17 +140,13 @@ Two annual contracts are available from the AWS Marketplace:
 
 *	An annual contract that enables you to back up Cloud Volumes ONTAP data and on-premises ONTAP data.
 +
-Go to the https://aws.amazon.com/marketplace/pp/B086PDWSS8[AWS Marketplace page^] to view pricing details.
-+
-If you want to use this option, set up your subscription from the Marketplace page and then link:task_adding_aws_accounts.html#associating-an-aws-subscription-to-credentials[associate the subscription with your AWS credentials]. Note that you’ll also need to pay for Cloud Volumes ONTAP using this annual contract subscription, since you can assign only one active subscription to your AWS credentials in Cloud Manager.
+You’ll also need to pay for Cloud Volumes ONTAP using this annual contract subscription, since you can assign only one active subscription to your AWS credentials in Cloud Manager.
 
-* A Professional Package that enables you to bundle Cloud Volumes ONTAP and Cloud Backup Service by using an annual contract for 12 months, 24 months, or 36 months. Payment is per TiB. This option doesn’t enable you to back up on-prem data.
+* A Professional Package that enables you to bundle Cloud Volumes ONTAP and Cloud Backup Service by using an annual contract for 12 months, 24 months, or 36 months. This option doesn’t enable you to back up on-prem data.
 +
-Go to the https://aws.amazon.com/marketplace/pp/prodview-q7dg6zwszplri[AWS Marketplace page^] to view pricing details and go to the https://docs.netapp.com/us-en/cloud-volumes-ontap[Cloud Volumes ONTAP Release Notes^] to learn more about this licensing option.
-+
-If you want to use this option, you can set up the annual contract when you create a Cloud Volumes ONTAP working environment and Cloud Manager prompts you to subscribe to the AWS Marketplace.
+You can set up the annual contract when you create a Cloud Volumes ONTAP working environment and Cloud Manager will prompt you to subscribe to the AWS Marketplace.
 
-link:task_licensing_cloud_backup.html#subscribe-to-yearly-contracts-through-AWS[Learn how to set up yearly AWS contracts].
+link:task_licensing_cloud_backup.html#subscribe-to-yearly-contracts-through-aws[Learn how to set up yearly AWS contracts].
 
 === Bring your own license
 
@@ -176,9 +172,9 @@ Two things can happen when your license expires:
 * If the account you are using for your ONTAP systems has a marketplace account, the backup service continues to run, but you are shifted over to a PAYGO licensing model. You are charged by your cloud provider for object storage costs, and by NetApp for backup licensing costs, for the capacity that your backups are using.
 * If the account you are using for your ONTAP systems does not have a marketplace account, the backup service continues to run, but you will continue to see the warnings.
 
-Once you renew your BYOL subscription, Cloud Manager automatically obtains the new license from NetApp and installs it. If Cloud Manager can't access the license file over the secure internet connection, you can obtain the file yourself and manually upload it to Cloud Manager. For instructions, see link:task_licensing_cloud_backup.html#add_or_update_a_cloud_backup_license[Managing Cloud Backup licenses^].
+Once you renew your BYOL subscription, Cloud Manager automatically obtains the new license from NetApp and installs it. If Cloud Manager can't access the license file over the secure internet connection, you can obtain the file yourself and manually upload it to Cloud Manager. For instructions, see link:task_licensing_cloud_backup.html#add-or-update-a-cloud-backup-license[how to update a Cloud Backup license].
 
-Systems that were shifted over to a PAYGO license are returned to the BYOL license automatically. And systems that were running without a license will stop seeing the warnings and will be charged for backups that occurred while the license was expired.
+Systems that were shifted over to a PAYGO license are returned to the BYOL license automatically. And systems that were running without a license will stop seeing the warnings and will be charged for backup activity that occurred while the license was expired.
 
 == How Cloud Backup works
 
