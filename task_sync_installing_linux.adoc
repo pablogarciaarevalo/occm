@@ -19,6 +19,8 @@ When you create a new data broker, choose the On-Prem Data Broker option to inst
 
 * *Operating system*:
 ** CentOS 7.0, 7.7, and 8.0
++
+CentOS Stream is not supported.
 ** Red Hat Enterprise Linux 7.7 and 8.0
 ** Ubuntu Server 20.04 LTS
 ** SUSE Linux Enterprise Server 15 SP1
