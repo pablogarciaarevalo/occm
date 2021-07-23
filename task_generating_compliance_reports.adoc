@@ -155,7 +155,7 @@ Usage Capacity:: For all working environments: Lists the number of files and the
 For single working environments: Lists the files that are using the most capacity.
 
 Age of Data:: For all working environments: Lists the number of files that have been modified based on certain date ranges.
-For single working environments: Lists the number of files that have been created, accessed, and modified based on certain date ranges.
+For single working environments: Lists the number of files based on their creation date, accessed date, and modified date for certain date ranges.
 
 Size of Data:: Lists the number of files that exist within certain size ranges in your working environments.
 

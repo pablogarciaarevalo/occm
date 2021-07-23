@@ -142,7 +142,7 @@ image:screenshot_compliance_tag_multi_files.png["A screenshot showing how to sel
 . From the button bar, click *Set Status* and assign a Status tag:
 
 * To assign an existing Status tag, click that tag.
-* To create a new Status tag and assign it to the file, click *Add New Status*, enter the name of the new Status, and click *Done*.
+* To create a new Status tag and assign it to the files, click *Add New Status*, enter the name of the new Status, and click *Done*.
 +
 image:screenshot_compliance_select_tags_multi.png[A screenshot showing how to assign a Status tag to multiple files in the Data Investigation page.]
 +
@@ -263,6 +263,24 @@ image:screenshot_compliance_add_label_manually.png[A screenshot showing the meta
 The label appears in the file metadata.
 
 // NOTE: You can't remove a label when modifying AIP labels manually.
+
+To assign an AIP label to multiple files:
+
+.Steps
+
+. In the Data Investigation results pane, select the file, or files, that you want to label.
++
+image:screenshot_compliance_tag_multi_files.png["A screenshot showing how to select the files you want to label, and the Label button, from the Data Investigation page."]
+
++
+* To select all files on the current page, check the box in the title row (image:button_select_all_files.png[]). (You can't select files from more than one page.)
+* To select individual files, check the box for each file (image:button_backup_1_volume.png[]).
+
+. From the button bar, click *Label* and select the AIP label:
++
+image:screenshot_compliance_select_aip_label_multi.png[A screenshot showing how to assign an AIP label to multiple files in the Data Investigation page.]
++
+The AIP label is added to the metadata for all selected files.
 
 === Assigning AIP labels automatically with Policies
 
@@ -399,8 +417,10 @@ image:screenshot_compliance_move_multi_files.png["A screenshot showing how to se
 * To select individual files, check the box for each file (image:button_backup_1_volume.png[]).
 
 . From the button bar, click *Move*.
++
+image:screenshot_compliance_move_files_dialog.png[A screenshot showing the Move Files dialog so you can specify the name of the NFS share where all selected files will be moved.]
 
-. In the _Move File_ dialog, enter the name of the NFS share where all selected files will be moved in the format `<host_name>:/<share_path>`, and click *Move File*.
+. In the _Move Files_ dialog, enter the name of the NFS share where all selected files will be moved in the format `<host_name>:/<share_path>`, and click *Move Files*.
 
 Note that you can also move an individual file when viewing the metadata details for a file. Just click *Move file*.
 

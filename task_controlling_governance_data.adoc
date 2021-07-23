@@ -80,7 +80,7 @@ You may want to investigate the items in the _Age_ and _Size_ graphs to see if t
 
 You can hover over a point in the charts to see details about the age or size of the data in that category. Click to view all the files filtered by that age or size range.
 
-* *Age of Data graph* - Categorizes data based on the last time it was modified.
+* *Age of Data graph* - Categorizes data based on the time it was created, the last time it was accessed, or the last time it was modified.
 * *Size of Data graph* - Categorizes data based on size.
 
 === Most identified data Classifications
