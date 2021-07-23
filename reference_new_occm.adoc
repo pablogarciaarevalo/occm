@@ -19,6 +19,39 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.9 (1 Aug 2021)
+
+* <<Cloud Backup enhancements>>
+* <<Cloud Data Sense enhancements>>
+* <<Application Template enhancements>>
+* <<Resource Tagging enhancements>>
+
+=== Cloud Backup enhancements
+
+* When configuring backups to Azure Blob from an on-premises ONTAP system, you can define a connection to an Azure Private Endpoint in the activation wizard. This allows you to use a network interface that connects you privately and securely to a service powered by Azure Private Link.
+
+* The restriction of being able to browse a single directory with flat files up to a maximum of 30,000 files has been removed. Now you can restore files from directories that have a larger number of files.
+
+=== Cloud Data Sense enhancements
+
+* Ability to manage file settings for multiple files at a time.
++
+In earlier versions of Cloud Data Sense you could perform the following actions on one file at a time: add a status tag, assign a user, and add an AIP label. Now you can select multiple files from the Data Investigation page and perform these actions on multiple files.
+
+* When viewing the Age of Data graph in the Governance dashboard, in addition to viewing data based on the last time it was modified, now you can view the data by when it was created or by when it was last accessed (when it was read).
++
+This information is provided in the Data Mapping Report as well.
+
+=== Application Template enhancements
+
+* You can now create a Cloud Volumes ONTAP working environment, and your first volume, using templates. This support is provided only for AWS environments at this time, and only for single-node clusters.
+
+* A new feature enables you to add tags to a volume in a volume template. Tagging enables you to group different resources to identify applications, regions, or departments in order to perform automation or to allocate costs to certain departments or regions.
+
+=== Resource Tagging enhancements
+
+* Now you can manage tags from your Azure resources. You can view Azure tags and tag values that have been applied to resources, and you can apply those tags to other Azure resources that you are managing.
+
 == Cloud Manager 3.9.8 update (13 July 2021)
 
 * <<Application Template enhancements>>
