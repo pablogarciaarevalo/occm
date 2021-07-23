@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_define_templates.html
-keywords: templates, resource templates, application templates, volume templates
+keywords: templates, resource templates, services templates, volume templates, cvo working environment template
 summary: Select one or more of the NetApp-provided "actions" and quickly build an application template that your organization can use to start optimizing the creation of resources.
 ---
 
@@ -191,11 +191,10 @@ When users launch the template from the Templates Dashboard (not in a working en
 For example, you could specify that "db" be a required prefix, suffix, or contains; requiring the user to add volume names like "db_vol1", "vol1_db", or "vol_db_1".
 
 | Volume Size | You can specify a range of allowable values, or you can specify a fixed size. This value is in GB. For our example we can add a fixed value *100*.
-//
-// | Tags | Enter a name and value pair for a tag that you want to associate with this volume. For example, you could add "Cost Center" as the tag name and the cost center code "6655829" as the value. You can associate more than one tag with a volume by adding more tag name and value pairs.
+
+| Tags | Enter a name and value pair for a tag that you want to associate with this volume. For example, you could add "Cost Center" as the tag name and the cost center code "6655829" as the value. You can associate more than one tag with a volume by adding more tag name and value pairs.
 
 |===
-
 
 . *Protection:* Choose whether this volume will have Snapshot copies created by selecting "Default" or some other policy, or choose "None" if you do not want to create Snapshot copies.
 
@@ -328,8 +327,8 @@ For example, you could specify that "db" be a required prefix, suffix, or contai
 | Volume Size | You can specify a range of allowable values, or you can specify a fixed size. This value is in GB.
 
 | Subnet | Enter the VNet and subnet. This value includes the full path, in a format similar to "/subscriptions/<subscription_id>/resourceGroups/<resource_group>/ providers/Microsoft.Network/virtualNetworks/<vpc_name>/subnets/<subhet_name>".
-//
-// | Tags | Enter a name and value pair for a tag that you want to associate with this volume. For example, you could add "Cost Center" as the tag name and the cost center code "6655829" as the value. You can associate more than one tag with a volume by adding more tag name and value pairs.
+
+| Tags | Enter a name and value pair for a tag that you want to associate with this volume. For example, you could add "Cost Center" as the tag name and the cost center code "6655829" as the value. You can associate more than one tag with a volume by adding more tag name and value pairs.
 
 |===
 
@@ -420,8 +419,8 @@ When users launch the template from the Templates Dashboard (not in a working en
 For example, you could specify that "db" be a required prefix, suffix, or contains; requiring the user to add volume names like "db_vol1", "vol1_db", or "vol_db_1".
 
 | Volume Size | You can specify a range of allowable values, or you can specify a fixed size. This value is in GB. For our example we can add a fixed value *100*.
-//
-// | Tags | Enter a name and value pair for a tag that you want to associate with this volume. For example, you could add "Cost Center" as the tag name and the cost center code "6655829" as the value. You can associate more than one tag with a volume by adding more tag name and value pairs.
+
+| Tags | Enter a name and value pair for a tag that you want to associate with this volume. For example, you could add "Cost Center" as the tag name and the cost center code "6655829" as the value. You can associate more than one tag with a volume by adding more tag name and value pairs.
 
 |===
 

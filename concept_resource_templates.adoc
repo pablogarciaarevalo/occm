@@ -29,6 +29,8 @@ Application Templates offer the following features and benefits:
 
 "Drift" allows Cloud Manager to monitor the parameter values used when a resource is created with the template. At this time, "drift" can identify when a resource has been changed so you can manually make adjustments to bring it back into compliance with the template. In the future we'll be able to send you notifications when a resource is out of compliance, or even reverse a user's change so that all resources created from a template are brought back into compliance automatically.
 
+link:task_check_template_compliance.html[Learn more about drift].
+
 == Pricing and licenses
 
 The Application Templates feature requires no licensing and is free to use by all Cloud Manager users.
@@ -39,13 +41,14 @@ NOTE: Templates enable you to apply a cloud service onto a created resources, fo
 
 A template is a chain of "actions" that have some pre-defined values. You can build templates that include the following actions:
 
-*Primary actions:*
+*Resource actions:*
 
 * Create a Cloud Volumes ONTAP volume
 * Create an Azure NetApp Files volume
 * Create an on-premises ONTAP volume
+* Create a Cloud Volumes ONTAP working environment (single node on AWS)
 
-*Secondary actions:*
+*Services actions:*
 
 * Activate link:concept_backup_to_cloud.html[Cloud Backup] on volumes (not applicable for Azure NetApp Files)
 * Activate link:concept_cloud_compliance.html[Cloud Data Sense] on volumes
