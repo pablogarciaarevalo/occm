@@ -277,7 +277,7 @@ See the https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-k
 
 |===
 
-. If you want to have more secure connectivity on public internet from your on-prem data center to the VNet, there is an option to configure an Azure Private Endpoint in the activation wizard. In this case you will need to know the Resource Group, VNet, and Subnet for this connection. https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview[See details about using a Private Endpoint].
+. If you want to have more secure connectivity on public internet from your on-prem data center to the VNet, there is an option to configure an Azure Private Endpoint in the activation wizard. In this case you will need to know the VNet and Subnet for this connection. https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview[See details about using a Private Endpoint].
 
 . Additionally, you use choose your own customer-managed keys for data encryption in the activation wizard instead of using the default Microsoft-managed encryption keys. In this case you will need to have the Azure Subscription, Key Vault name, and the Key. https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview[See how to use your own keys].
 
@@ -312,8 +312,8 @@ image:screenshot_backup_from_onprem_activate.png[A screenshot that shows the Bac
 . Enter the provider details. Note that you cannot change this information after the service has started.
 - For Azure, enter:
 .. The Azure subscription used for backups and the Azure region where the backups will be stored.
-.. The resource group - you can create a new resource group or select and existing resource group.
-.. Whether you will use the default Microsoft-managed encryption key or choose your own customer-managed keys (https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview[see how to use your own keys]).
+.. The resource group that manages the Blob container - you can create a new resource group or select an existing resource group.
+.. Whether you will use the default Microsoft-managed encryption key or choose your own customer-managed keys to manage encryption of your data. (https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview[See how to use your own keys]).
 .. The IPspace in the ONTAP cluster where the volumes you want to back up reside.
 .. Whether you will configure an Azure Private Endpoint (https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview[see details about using a Private Endpoint]).
 +
