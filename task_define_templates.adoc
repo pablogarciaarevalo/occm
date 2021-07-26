@@ -393,6 +393,46 @@ The template is created and you are returned to the Template Dashboard where you
 
 See <<What to do after you have created the template,what you should tell your users about templates>>.
 
+=== Create a template for a Cloud Volumes ONTAP working environment
+
+You can create a Cloud Volumes ONTAP working environment, and your first volume, using templates. This support is provided only for AWS environments at this time, and only for single-node clusters.
+
+See link:task_deploying_otc_aws.html#launching-a-single-node-cloud-volumes-ontap-system-in-aws[how to launching a single-node Cloud Volumes ONTAP system in AWS^] for details about all the parameters you need to complete in this template.
+
+.Steps
+
+. Select the *AppTemplate* service, click the *Templates* tab, and click *Add New Template*.
++
+The _Select_a Template_ page is displayed.
++
+image:screenshot_create_template_primary_action_blank.png[A screenshot showing how to select the primary action that will be performed using this template.]
+
+. Select *Blank template* and click *Get Started*.
++
+The _Add New Action_ page is displayed.
++
+image:screenshot_create_template_cvo_env_aws.png[A screenshot showing how to select the primary action from the Add New Action page.]
+
+. Select *Create Working Environment in AWS (single node)* as the type of resource you want to create, and click *Apply*.
++
+The _Create Working Environment in AWS (single node)_ page is displayed.
++
+image:screenshot_create_template_cvo_env_aws1.png[A screenshot showing a blank Cloud Volumes ONTAP working environment template that you need to fill in.]
+
+. *Action Name*: Optionally, enter a customized action name instead of the default value.
+
+
+START HERE TOM
+
+
+. Click *Save Template*.
+
+.Result
+
+The template is created and you are returned to the Template Dashboard where your new template appears.
+
+See <<What to do after you have created the template,what you should tell your users about templates>>.
+
 == Examples of enabling services using templates
 
 Service templates enable you to activate Cloud Backup, Cloud Data Sense, or Replication (SnapMirror) services on a newly created volume.
@@ -459,9 +499,10 @@ image:screenshot_template_replication_dest.png[A screenshot of the page to defin
 +
 image:screenshot_template_replication_policy.png[A screenshot of the page to define the replication settings for the relationship.]
 +
-.. Enter the maximum rate (in kilobytes per second) at which data can be transferred. You can enter a fix value, or you can provide a minimum and maximum and let the storage admin select a value in that range.
 .. Select the link:concept_replication_policies.html#types-of-replication-policies[replication policy] that you want to use.
 .. Choose a one-time copy or a recurring replication schedule.
+.. Enable replication health monitoring if you want the Drift dashboard to include the replication health of the SnapMirror relationship along with the lag time, status, and last transfer time.
+.. Select whether you want to set a transfer rate limit, and then enter the maximum rate (in kilobytes per second) at which data can be transferred. You can enter a fixed value, or you can provide a minimum and maximum and let the storage admin select a value in that range.
 
 . Click *Apply* to save your changes.
 
