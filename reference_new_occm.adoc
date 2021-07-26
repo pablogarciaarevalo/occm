@@ -44,7 +44,7 @@ You can now use your own self-managed encryption keys with Cloud Volumes ONTAP i
 
 * Cloud Sync now enables you to update the data broker with the latest credentials of the source or target in an existing sync relationship.
 +
-This enhancement can help if your security policies require you to update credentials on a periodic basis.
+This enhancement can help if your security policies require you to update credentials on a periodic basis. link:task_sync_managing_sync_relationships.html[Learn how to update credentials].
 +
 image:screenshot_sync_update_credentials.png[A screenshot that shows the Update Credentials option on the Sync Relationships page just under the name of the source or target.]
 
@@ -54,7 +54,13 @@ Adding tags is supported with Amazon S3, Azure Blob, Google Cloud Storage, IBM C
 +
 image:screenshot_sync_tags.png[A screenshot that shows the page in the working environment wizard that enables you to add relationship tags to the object storage target in the relationship.]
 
+* Cloud Sync now supports https://www.box.com/home[Box^] as the source in a sync relationship to Amazon S3, StorageGRID, and IBM Cloud Object Storage when using the Cloud Sync API.
++
+link:reference_sync_requirements.html[Learn about requirements for Box].
+
 * When you deploy a data broker in Google Cloud, you can now choose whether to enable or disable a public IP address for the virtual machine instance.
++
+link:task_sync_installing_gcp.html[Learn how to deploy a data broker in Google Cloud].
 
 * When you choose the source or target volume for Azure NetApp Files, Cloud Sync now displays a dual-protocol volume no matter which protocol you chose for the sync relationship.
 
@@ -76,7 +82,7 @@ This information is provided in the Data Mapping Report as well.
 
 === Resource Tagging enhancements
 
-* Now you can manage tags from your Azure resources. You can view Azure tags and tag values that have been applied to resources, and you can apply those tags to other Azure resources that you are managing.
+Now you can manage tags from your Azure resources. You can view Azure tags and tag values that have been applied to resources, and you can apply those tags to other Azure resources that you are managing.
 
 === Monitoring enhancement
 
@@ -84,9 +90,13 @@ We changed the default name of the Acquisition Unit instance to CloudInsights-AU
 
 Cloud Manager deploys this instance when you enable the Monitoring service on a Cloud Volumes ONTAP working environment. UUID is a generated hash (UUID).
 
+link:concept_monitoring.html[Learn more about the Monitoring service].
+
 === Connector enhancement
 
 Red Hat Enterprise Linux 7.9 is now supported with the Connector instance.
+
+link:reference_cloud_mgr_reqs.html[View system requirements for the Connector].
 
 == Cloud Manager 3.9.8 update (13 July 2021)
 
