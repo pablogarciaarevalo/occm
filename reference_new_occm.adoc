@@ -23,7 +23,7 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 * <<Cloud Volumes ONTAP enhancement>>
 * <<Cloud Backup enhancements>>
-* <<Cloud Sync enhancement>>
+* <<Cloud Sync enhancements>>
 * <<Cloud Data Sense enhancements>>
 * <<Application Template enhancements>>
 * <<Resource Tagging enhancements>>
