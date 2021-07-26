@@ -21,16 +21,42 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 == Cloud Manager 3.9.9 (1 Aug 2021)
 
+* <<Cloud Volumes ONTAP enhancement>>
 * <<Cloud Backup enhancements>>
+* <<Cloud Sync enhancement>>
 * <<Cloud Data Sense enhancements>>
 * <<Application Template enhancements>>
 * <<Resource Tagging enhancements>>
+* <<Monitoring enhancement>>
+* <<Connector enhancement>>
+
+=== Cloud Volumes ONTAP enhancement
+
+You can now use your own self-managed encryption keys with Cloud Volumes ONTAP in Microsoft Azure. This option is available when you create a new Cloud Volumes ONTAP system by using the API.
 
 === Cloud Backup enhancements
 
 * When configuring backups to Azure Blob from an on-premises ONTAP system, you can define a connection to an Azure Private Endpoint in the activation wizard. This allows you to use a network interface that connects you privately and securely to a service powered by Azure Private Link.
 
 * The restriction of being able to browse a single directory with flat files up to a maximum of 30,000 files has been removed. Now you can restore files from directories that have a larger number of files.
+
+=== Cloud Sync enhancements
+
+* Cloud Sync now enables you to update the data broker with the latest credentials of the source or target in an existing sync relationship.
++
+This enhancement can help if your security policies require you to update credentials on a periodic basis.
++
+image:screenshot_sync_update_credentials.png[A screenshot that shows the Update Credentials option on the Sync Relationships page just under the name of the source or target.]
+
+* When creating a sync relationship, you can now add tags to the object storage target in a sync relationship.
++
+Adding tags is supported with Amazon S3, Azure Blob, Google Cloud Storage, IBM Cloud Object Storage, and StorageGRID.
++
+image:screenshot_sync_tags.png[A screenshot that shows the page in the working environment wizard that enables you to add relationship tags to the object storage target in the relationship.]
+
+* When you deploy a data broker in Google Cloud, you can now choose whether to enable or disable a public IP address for the virtual machine instance.
+
+* When you choose the source or target volume for Azure NetApp Files, Cloud Sync now displays a dual-protocol volume no matter which protocol you chose for the sync relationship.
 
 === Cloud Data Sense enhancements
 
@@ -51,6 +77,16 @@ This information is provided in the Data Mapping Report as well.
 === Resource Tagging enhancements
 
 * Now you can manage tags from your Azure resources. You can view Azure tags and tag values that have been applied to resources, and you can apply those tags to other Azure resources that you are managing.
+
+=== Monitoring enhancement
+
+We changed the default name of the Acquisition Unit instance to CloudInsights-AU-_UUID_ so that the name is more descriptive.
+
+Cloud Manager deploys this instance when you enable the Monitoring service on a Cloud Volumes ONTAP working environment. UUID is a generated hash (UUID).
+
+=== Connector enhancement
+
+Red Hat Enterprise Linux 7.9 is now supported with the Connector instance.
 
 == Cloud Manager 3.9.8 update (13 July 2021)
 
