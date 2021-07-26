@@ -55,92 +55,9 @@ Read the following requirements to make sure that you have a supported configura
 
 * If you plan to enable Replication in the template, and the template is for an on-premises ONTAP volume, the ONTAP cluster must have an active SnapMirror license.
 
-== Template features
+== Examples of creating resources using templates
 
-There are certain features you can use when building a template to help your users to easily create resources from the template.
-
-=== Special template controls
-
-Before you start creating your template, you should understand some special options that you can set when pre-populating a value for a parameter in a template.
-
-image:screenshot_template_options.png[A screenshot of the editable and drift on options that you can set for parameter values.]
-
-*Editable checkbox*
-
-Check this box to let the storage admin override the pre-populated value you have entered in the template. This gives the storage admin a suggestion for what the value should be, but it allows them to customize the value when creating the resource.
-
-When unchecked, the user can't change the value and the hard-coded value in the template is always used when the admin deploys a resource.
-
-*Drift checkbox*
-
-Check this box so that Cloud Manager monitors the hard-coded value you entered for a parameter when a resource is created with the template. Later, you can run a Drift Report to see which fields configured with Drift are no longer compliant with the template settings.
-// If Cloud Manager later sees that an admin has changed the parameter value so that it no longer aligns with the template definition, you will receive email notification about the change.
-
-When unchecked, the user can change the value to any value after the resource has been created.
-//
-// By design, when drift is enabled (on) for a parameter value, the value is also not "editable" when the admin deploys a resource using the template.
-
-NOTE: For the drift feature to work, after you have defined drift for some parameters in the template, you must enable the drift feature for the template. This is the last step when creating a template. Drift doesn't work if it is enabled for a parameter but has not been enabled on the template.
-
-*Using a regular expression (regex) in fields*
-
-There are a few fields within templates that allow you to enter a regex to define the value that your admin can enter in the field; for example "Volume Name" and "Share Name".
-
-image:screenshot_template_regex.png[A screenshot of using a regex to define the allowed values for a volume name.]
-
-As an example, if you enter "^[a-zA-Z][0-9a-zA-Z_]{0,149}$" as the regex for the volume name, it means that "_the name should start with an alphabetic character, it can contain only numbers, letters, or the underscore, and it should be 150 or fewer characters in length_".
-
-=== Pass values between template actions
-
-Templates have the ability to use information from a previous action to populate a field in a future action. For example, when defining the name of the volume that will have Cloud Backup functionality enabled, you can instruct the Backup action to use the value the storage admin entered as the name of the volume from the Create Cloud Volumes ONTAP action.
-
-There are three types of information that the AppTemplate service can use:
-
-* Input value - This is the actual value the storage admin entered into a field in a previous template action.
-* Output value - This is the value Cloud Manager generates after creating a resource from a previous template action.
-* Enter your own value - This is a value that you enter; it is not accessed from a previous action in the template.
-
-For example, to enable compliance scanning on a volume, the Cloud Data Sense service needs both the "volume name" that the storage admin enters (the Input value), and the "volume uuid" that Cloud Manager generates when it creates the volume (the Output value).
-
-The following illustration shows how to enter this information in the Cloud Data Sense action section of the template.
-
-image:screenshot_template_variable_input_output.png[An illustration showing how to use a value entered in a previous action to populate a field in another action.]
-
-=== Use conditions to perform different actions based on logic statements
-
-Conditions tell the template to execute different actions depending on whether the condition is true or false when the storage admin runs the template.
-
-For example, you may have guideline that if a volume has a capacity larger than 50 GB then Cloud Backup is required to be enabled on that volume. If the volume has a smaller capacity, then Cloud Backup is not enabled. You can implement this in your template as shown below.
-
-image:screenshot_template_condition_example.png[A screenshot showing how conditions may be used in your template to conditionally enable Cloud Backup.]
-
-Conditions consist of two parts:
-
-* Rules - The item you are checking for being either true or false.
-* And/Or statement - Allows you to use multiple rules to further refine whether additional actions are added.
-
-A Rule is made up of three parts:
-
-*Source field* - The location from which you will get the value to compare.
-
-* Get input value from action - The actual value the storage admin entered into a field in a previous template action.
-* Get output value from action - The value Cloud Manager generated after creating a resource from a previous template action.
-* Enter value - This is a value that you enter; it is not accessed from a previous action in the template. This can be a value from a resource that already exists; for example an existing volume.
-
-*Operator* - The operator used for the comparison. The options are *Equal*, *Not Equal*, *Greater Than*, *Less Than*, *Greater Than or Equal*, *Less Than or Equal*.
-
-*Field value* - The actual value you are comparing. The options are the same as those for the _Source field_.
-
-An And/Or statement enables you to conditionally add more actions for users when they run the template based on whether multiple rules are evaluated as True or False. *And* requires all rules to be true or false, and *Or* requires just one of the rules needs to be true or false.
-
-When using both an And and Or statement with your rules, the evaluation process follows standard mathematical order where “AND” precedes “OR”. For example:
-
-* <Rule1> OR <Rule2> AND <Rule3>
-+
-This statement is evaluated in the following order:
-<Rule1> OR (<Rule2> AND <Rule3>)
-
-== Examples of creating different types of templates
+Resource templates enable you to create new volumes or a new Cloud Volumes ONTAP working environment.
 
 === Create a template for a Cloud Volumes ONTAP volume
 
@@ -475,6 +392,10 @@ Drift allows Cloud Manager to monitor the hard-coded values you entered for para
 The template is created and you are returned to the Template Dashboard where your new template appears.
 
 See <<What to do after you have created the template,what you should tell your users about templates>>.
+
+== Examples of enabling services using templates
+
+Service templates enable you to activate Cloud Backup, Cloud Data Sense, or Replication (SnapMirror) services on a newly created volume.
 
 === Add Backup functionality to a volume
 
