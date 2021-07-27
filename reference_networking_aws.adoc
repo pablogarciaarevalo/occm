@@ -61,7 +61,7 @@ Cloud Manager allocates 15 IP addresses to HA pairs deployed in a single Availab
 
 The following table provides details about these LIFs.
 
-[cols=4,options="header"]
+[cols="20,20,20,40",options="header"]
 |===
 | LIF
 | Interface
@@ -77,14 +77,14 @@ The following table provides details about these LIFs.
 | Cluster connectivity | eth1	| node 1 and node 2 | Enables the nodes to communicate with each other and to move data within the cluster.
 | HA connectivity	| eth2 | node 1 and node 2 | Communication between the two nodes in case of failover.
 | RSM iSCSI traffic	| eth3 | node 1 and node 2 | RAID SyncMirror iSCSI traffic, as well as communication between the two Cloud Volumes ONTAP nodes and the mediator.
-| Mediator | eth0	| Mediator |
+| Mediator | eth0	| Mediator | A communication channel between the nodes and the mediator to assist in storage takeover and giveback processes.
 |===
+
+NOTE: Cloud Manager doesn't create a storage VM management LIF on HA pairs in a single AZ. You can choose whether to create a management LIF on HA pairs in multiple AZs.
 
 The following image shows these interfaces on a Cloud Volumes ONTAP HA pair.
 
 image:diagram_cvo_aws_networking_ha.png["A diagram that shows eth0, eth1, eth2 on a Cloud Volumes ONTAP HA configuration in AWS."]
-
-Note that Cloud Manager doesn't create a storage VM management LIF on HA pairs in a single AZ. You can choose whether to create a management LIF on HA pairs in multiple AZs.
 
 === Security groups
 You do not need to create security groups because Cloud Manager does that for you. If you need to use your own, refer to link:reference_security_groups.html[Security group rules].
