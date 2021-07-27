@@ -501,7 +501,7 @@ image:screenshot_template_replication_policy.png[A screenshot of the page to def
 +
 .. Select the link:concept_replication_policies.html#types-of-replication-policies[replication policy] that you want to use.
 .. Choose a one-time copy or a recurring replication schedule.
-.. Enable replication health monitoring if you want the Drift dashboard to include the replication health of the SnapMirror relationship along with the lag time, status, and last transfer time.
+.. Enable replication health monitoring if you want the drift report to include the replication health of the SnapMirror relationship along with the lag time, status, and last transfer time. link:task_check_template_compliance.html#replication-health-details-in-the-drift-report[See what this looks like in the drift report].
 .. Select whether you want to set a transfer rate limit, and then enter the maximum rate (in kilobytes per second) at which data can be transferred. You can enter a fixed value, or you can provide a minimum and maximum and let the storage admin select a value in that range.
 
 . Click *Apply* to save your changes.

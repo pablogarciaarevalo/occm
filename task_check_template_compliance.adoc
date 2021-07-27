@@ -71,3 +71,11 @@ You can click the Drift icon for a resource in the Drift Dashboard to view a lis
 image:screenshot_template_drift_report_one_resource.png[A screenshot of a drift report for a single resource.]
 
 To view a drift report for resources that have been created from your templates, click image:button_download.png[] to download a .CSV file. The drift report reflects what is currently filtered on the page - it does not show all resources unless you haven't applied any filters on the page.
+
+=== Replication health details in the drift report
+
+When link:task_define_templates.html#add-replication-functionality-to-a-volume[enabling Replication on a volume using templates], you can decide to show more detailed replication information in the drift report by enabling drift on the "Enable replication health monitoring" field. When enabled, the report shows whether the health of the Replication relationship is healthy or unhealthy (drifted), along with the SnapMirror lag time, status, and last transfer time.
+
+This screenshot shows the replication details for a SnapMirror relationship that is unhealthy in the drift report.
+
+image:screenshot_template_drift_snapmirror_details.png[A screenshot of the Drift report showing the replication details for a SnapMirror relationship that is unhealthy.]
