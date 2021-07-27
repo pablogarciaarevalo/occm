@@ -30,9 +30,15 @@ The operating system does not include a GUI. You must use a terminal to access t
 +
 /opt/application/netapp/cloudmanager
 
-* Log files are contained in the following folder:
+* Log files are contained in the following folders:
 +
-/opt/application/netapp/cloudmanager/log
+** /opt/application/netapp/cloudmanager/log
++
+The logs in this folder provide details about the Connector and docker images.
+
+** /opt/application/netapp/cloudmanager/docker_occm/data/log
++
+The logs in this folder provide details about cloud services and the Cloud Manager service that runs on the Connector.
 
 * The Cloud Manager service is named occm.
 
