@@ -220,9 +220,9 @@ When you enable Cloud Backup, all the volumes you identify on the system are bac
 
 The schedule and number of backups to retain are defined at the system level. The backup settings affect all volumes on the system.
 
-=== The schedule is daily, weekly, monthly, or a combination
+=== The schedule is hourly, daily, weekly, monthly, or a combination
 
-You can choose a combination of daily, weekly, and monthly backups of all volumes. You can also select one of the system-defined policies that provide backups and retention for 3 months, 1 year, and 7 years. These policies are:
+You can choose a combination of hourly, daily, weekly, and monthly backups of all volumes. You can also select one of the system-defined policies that provide backups and retention for 3 months, 1 year, and 7 years. These policies are:
 
 [cols=5*,options="header",cols="30,20,20,20,30",width="80%"]
 |===
@@ -248,11 +248,13 @@ Note that the retention period for backups of data protection volumes is the sam
 
 === Backups are taken at midnight
 
+* Hourly backups start 5 minutes past the hour, every hour.
+
 * Daily backups start just after midnight each day.
 
 * Weekly backups start just after midnight on Sunday mornings.
 
-* Monthly backups start just after midnight on the first of each month.
+* Monthly backups start just after midnight on the first day of each month.
 
 The start time is based on the time zone set on each source ONTAP system. For now you can’t schedule backup operations at a user specified time.
 
@@ -309,5 +311,5 @@ There are certain things you need to be aware of when the volume you are backing
 * The file being restored must be using the same language as the language on the destination volume. You will receive an error message if the languages are not the same.
 
 * Single file restore is not supported when using the same account with different Cloud Managers in different subnets.
-//
-// * Restore can browse a single directory with flat files up to a maximum of 30,000 files. Larger directories are currently not supported when using the UI.
+
+* Restore can browse a single directory with flat files up to a maximum of 30,000 files. Larger directories are currently not supported when using the UI.
