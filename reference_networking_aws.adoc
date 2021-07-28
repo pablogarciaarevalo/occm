@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: reference_networking_aws.html
 keywords: networking, network, requirements, connection, connections, vpc, security group, security groups, subnets, vpn, internet, nat, s3, dns, ad, active directory, az, availability zone, floating IP, floating, SVM, management LIF, route, route tables, proxy, HTTP, private, tier, s3 endpoint, tiering, storage tier, storage tiering, proxy server, nat device, vpn, snapmanager, snapcenter, iscsi, nfs, cifs, nas, san, outbound, inbound, connections, autosupport, ha, ha pair, high availability
-summary: Set up your AWS networking so Cloud Volumes ONTAP systems can operate properly.
+summary: Cloud Manager handles the set up of networking components for Cloud Volumes ONTAP, such as IP addresses, netmasks, and routes. You need to make sure that outbound internet access is available, that enough private IP addresses are available, that the right connections are in place, and more.
 ---
 
 = Networking requirements for Cloud Volumes ONTAP in AWS
@@ -13,7 +13,7 @@ summary: Set up your AWS networking so Cloud Volumes ONTAP systems can operate p
 :imagesdir: ./media/
 
 [.lead]
-Set up your AWS networking so Cloud Volumes ONTAP systems can operate properly.
+Cloud Manager handles the set up of networking components for Cloud Volumes ONTAP, such as IP addresses, netmasks, and routes. You need to make sure that outbound internet access is available, that enough private IP addresses are available, that the right connections are in place, and more.
 
 == General requirements
 
@@ -39,6 +39,8 @@ The HA mediator instance must have an outbound connection to the AWS EC2 service
 The manual option can be a NAT gateway or an interface VPC endpoint from the target subnet to the AWS EC2 service. For details about VPC endpoints, refer to http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-interface.html[AWS Documentation: Interface VPC Endpoints (AWS PrivateLink)^].
 
 === Private IP addresses
+
+Cloud Manager automatically allocates the required number of private IP addresses to Cloud Volumes ONTAP. You need to ensure that your networking has enough private IP addresses available.
 
 The number of LIFs that Cloud Manager allocates for Cloud Volumes ONTAP depends on whether you deploy a single node system or an HA pair. A LIF is an IP address associated with a physical port.
 
@@ -132,12 +134,14 @@ For instructions, refer to https://docs.aws.amazon.com/quickstart/latest/active-
 
 == Requirements for HA pairs in multiple AZs
 
-Additional AWS networking requirements apply to Cloud Volumes ONTAP HA configurations that use multiple Availability Zones (AZs). You should review these requirements before you launch an HA pair because you must enter the networking details in Cloud Manager.
+Additional AWS networking requirements apply to Cloud Volumes ONTAP HA configurations that use multiple Availability Zones (AZs). You should review these requirements before you launch an HA pair because you must enter the networking details in Cloud Manager when you create the working environment.
 
 To understand how HA pairs work, see link:concept_ha.html[High-availability pairs].
 
 Availability Zones::
 This HA deployment model uses multiple AZs to ensure high availability of your data. You should use a dedicated AZ for each Cloud Volumes ONTAP instance and the mediator instance, which provides a communication channel between the HA pair.
+
+A subnet should be available in each Availability Zone.
 
 [[floatingips]]
 Floating IP addresses for NAS data and cluster/SVM management::
@@ -158,10 +162,10 @@ image:diagram_ha_floating_ips.png[A conceptual image showing the CIDR blocks for
 NOTE: Cloud Manager automatically creates static IP addresses for iSCSI access and for NAS access from clients outside the VPC. You don't need to meet any requirements for these types of IP addresses.
 
 Transit gateway to enable floating IP access from outside the VPC::
-link:task_setting_up_transit_gateway.html[Set up an AWS transit gateway] to enable access to an HA pair's floating IP addresses from outside the VPC where the HA pair resides.
+If needed, link:task_setting_up_transit_gateway.html[set up an AWS transit gateway] to enable access to an HA pair's floating IP addresses from outside the VPC where the HA pair resides.
 
 Route tables::
-After you specify the floating IP addresses in Cloud Manager, you need to select the route tables that should include routes to the floating IP addresses. This enables client access to the HA pair.
+After you specify the floating IP addresses in Cloud Manager, you are then prompted to select the route tables that should include routes to the floating IP addresses. This enables client access to the HA pair.
 +
 If you have just one route table for the subnets in your VPC (the main route table), then Cloud Manager automatically adds the floating IP addresses to that route table. If you have more than one route table, it's very important to select the correct route tables when launching the HA pair. Otherwise, some clients might not have access to Cloud Volumes ONTAP.
 +
@@ -178,7 +182,7 @@ To use NetApp management tools with HA configurations that are in multiple AZs, 
 
 === Example HA configuration
 
-The following image illustrates the networking requirements specific to an HA pair in multiple AZs: three Availability Zones, three subnets, floating IP addresses, and a route table.
+The following image illustrates the networking components specific to an HA pair in multiple AZs: three Availability Zones, three subnets, floating IP addresses, and a route table.
 
 image:diagram_ha_networking.png["Conceptual image showing components in a Cloud Volumes ONTAP HA architecture: two Cloud Volumes ONTAP nodes and a mediator instance, each in separate availability zones."]
 
