@@ -21,17 +21,38 @@ Create a working environment in Cloud Manager to launch Cloud Volumes ONTAP in G
 
 .What you'll need
 
-* You should have a link:task_creating_connectors_aws.html[Connector that is associated with your workspace].
+[[licensing]]
+* A Connector.
+
+** You should have a link:task_creating_connectors_gcp.html[Connector that is associated with your workspace].
 +
 NOTE: You must be an Account Admin to create a Connector. When you create your first Cloud Volumes ONTAP working environment, Cloud Manager prompts you to create a Connector if you don’t have one yet.
 
-* link:concept_connectors.html[You should be prepared to leave the Connector running at all times].
+** link:concept_connectors.html[You should be prepared to leave the Connector running at all times].
 
-* You should have chosen a configuration and obtained GCP networking information from your administrator. For details, see link:task_planning_your_config_gcp.html[Planning your Cloud Volumes ONTAP configuration].
+* An understanding of the configuration that you want to use.
++
+You should have chosen a configuration and obtained GCP networking information from your administrator. For details, see link:task_planning_your_config_gcp.html[Planning your Cloud Volumes ONTAP configuration].
 
-* To deploy a BYOL system, you need the 20-digit serial number (license key).
+* An understanding of what's required in the Add Working Environment wizard for the licensing method that you want to use.
 
-* The following Google Cloud APIs should be https://cloud.google.com/apis/docs/getting-started#enabling_apis[enabled in your project^]:
+** *PAYGO free trial*: A Marketplace subscription is required.
++
+Subscribe to your cloud provider's marketplace from the *Details & Credentials* page.
+
+** *Freemium*: A Marketplace subscription or NetApp Support Site (NSS) account is required.
++
+Subscribe to your cloud provider's marketplace from the *Details & Credentials* page or enter your NSS account on the *Charging Methods and NSS Account* page.
+
+** *Capacity-based BYOL*: A Marketplace subscription or NetApp Support Site (NSS) account is required. A Marketplace subscription is recommended for capacity-based charging in the event your account doesn't have a valid capacity-based license, or in the event that your allocated capacity exceeds the licensed capacity.
++
+Subscribe to your cloud provider's marketplace from the *Details & Credentials* page or enter your NSS account on the *Charging Methods and NSS Account* page.
+
+** *Node-based BYOL*: The 20-digit serial number (license key) is required.
++
+You'll enter the serial number on the *Charging Methods and NSS Account* page.
+
+* Google Cloud APIs https://cloud.google.com/apis/docs/getting-started#enabling_apis[enabled in your project^]:
 +
 ** Cloud Deployment Manager V2 API
 ** Cloud Logging API
@@ -92,7 +113,8 @@ If you want to tier cold data to a Google Cloud Storage bucket, the subnet in wh
 
 . *Charging Methods and NSS Account*: Specify which charging option would you like to use with this system, and then specify a NetApp Support Site account.
 +
-link:concept_licensing.html[Learn about these charging methods].
+* link:concept_licensing.html[Learn about these charging methods].
+* link:task_deploying_gcp.html#licensing[Learn what's required in the wizard for the licensing method that you want to use].
 
 . *Preconfigured Packages*: Select one of the packages to quickly deploy a Cloud Volumes ONTAP system, or click *Create my own configuration*.
 +
@@ -214,7 +236,7 @@ NOTE: You must be an Account Admin to create a Connector. When you create your f
 
 * You should have chosen a configuration and obtained GCP networking information from your administrator. For details, see link:task_planning_your_config_gcp.html[Planning your Cloud Volumes ONTAP configuration].
 
-* To deploy a BYOL system, you need the 20-digit serial number (license key) for each node.
+* If you have a node-based license (BYOL), you'll need the 20-digit serial number (license key) for each node.
 
 * The following Google Cloud APIs should be https://cloud.google.com/apis/docs/getting-started#enabling_apis[enabled in your project^]:
 +
@@ -263,7 +285,6 @@ To create a pay-as-you-go Cloud Volumes ONTAP system, you need to select a GCP p
 
 |===
 +
-[[subscribe]]
 The following video shows how to associate a pay-as-you-go Marketplace subscription to your GCP project:
 +
 video::video_subscribing_gcp.mp4[width=848, height=480]
@@ -280,7 +301,8 @@ link:reference_networking_gcp.html[Learn more about networking requirements].
 
 . *Charging Methods and NSS Account*: Specify which charging option would you like to use with this system, and then specify a NetApp Support Site account.
 +
-link:concept_licensing.html[Learn about these charging methods].
+* link:concept_licensing.html[Learn about these charging methods].
+* link:task_deploying_gcp.html#licensing[Learn what's required in the wizard for the licensing method that you want to use].
 
 . *Preconfigured Packages*: Select one of the packages to quickly deploy a Cloud Volumes ONTAP system, or click *Create my own configuration*.
 +

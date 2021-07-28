@@ -21,33 +21,40 @@ If you want to launch Cloud Volumes ONTAP in AWS, you need to create a new worki
 
 .What you'll need
 
-* You should have a link:task_creating_connectors_aws.html[Connector that is associated with your workspace].
+[[licensing]]
+* A Connector.
+
+** You should have a link:task_creating_connectors_aws.html[Connector that is associated with your workspace].
 +
 NOTE: You must be an Account Admin to create a Connector. When you create your first Cloud Volumes ONTAP working environment, Cloud Manager prompts you to create a Connector if you don’t have one yet.
 
-* link:concept_connectors.html[You should be prepared to leave the Connector running at all times].
+** link:concept_connectors.html[You should be prepared to leave the Connector running at all times].
 
-* You should have prepared by choosing a configuration and by obtaining AWS networking information from your administrator. For details, see link:task_planning_your_config.html[Planning your Cloud Volumes ONTAP configuration].
+* An understanding of the configuration that you want to use.
++
+You should have prepared by choosing a configuration and by obtaining AWS networking information from your administrator. For details, see link:task_planning_your_config.html[Planning your Cloud Volumes ONTAP configuration].
 
-* You should be prepared to do the following based on the licensing method that you want to use:
+* An understanding of what's required in the Add Working Environment wizard for the licensing method that you want to use.
 
 ** *PAYGO free trial*: A Marketplace subscription is required.
 +
-You'll be prompted to subscribe on the *Details & Credentials* page.
+Subscribe to your cloud provider's marketplace from the *Details & Credentials* page.
 
-** *Freemium*: A Marketplace subscription or NetApp Support Site account is required.
+** *Freemium*: A Marketplace subscription or NetApp Support Site (NSS) account is required.
 +
-You can subscribe from the *Details & Credentials* page or enter the NetApp Support Site account on the *Charging Methods and NSS Account* page.
+Subscribe to your cloud provider's marketplace from the *Details & Credentials* page or enter your NSS account on the *Charging Methods and NSS Account* page.
 
-** *Capacity-based BYOL*: A Marketplace subscription or NetApp Support Site account is required. A Marketplace subscription is recommended for capacity-based charging in the event your account doesn't have a valid capacity-based license, or in the event that your allocated capacity exceeds the licensed capacity.
+** *Capacity-based BYOL*: A Marketplace subscription or NetApp Support Site (NSS) account is required. A Marketplace subscription is recommended for capacity-based charging in the event your account doesn't have a valid capacity-based license, or in the event that your allocated capacity exceeds the licensed capacity.
 +
-You can subscribe from the *Details & Credentials* page or enter the NetApp Support Site account on the *Charging Methods and NSS Account* page.
+Subscribe to your cloud provider's marketplace from the *Details & Credentials* page or enter your NSS account on the *Charging Methods and NSS Account* page.
 
 ** *Node-based BYOL*: The 20-digit serial number (license key) is required.
 +
 You'll enter the serial number on the *Charging Methods and NSS Account* page.
 
-* If you want to use CIFS, you must have set up DNS and Active Directory. For details, see link:reference_networking_aws.html[Networking requirements for Cloud Volumes ONTAP in AWS].
+* DNS and Active Directory for CIFS.
++
+For details, see link:reference_networking_aws.html[Networking requirements for Cloud Volumes ONTAP in AWS].
 
 .About this task
 
@@ -121,7 +128,8 @@ link:concept_security.html#encryption-of-data-at-rest[Learn more about supported
 
 . *Charging Methods and NSS Account*: Specify which charging option would you like to use with this system, and then specify a NetApp Support Site account.
 +
-link:concept_licensing.html[Learn about these charging methods].
+* link:concept_licensing.html[Learn about these charging methods].
+* link:task_deploying_otc_aws.html#licensing[Learn what's required in the wizard for the licensing method that you want to use.]
 
 . *Cloud Volumes ONTAP Configuration* (annual AWS Marketplace contract only): Review the default configuration and click *Continue* or click *Change Configuration* to select your own configuration.
 +
@@ -232,19 +240,42 @@ Quotas enable you to restrict or track the disk space and number of files used b
 
 If you want to launch a Cloud Volumes ONTAP HA pair in AWS, you need to create an HA working environment in Cloud Manager.
 
-.Before you begin
+.What you'll need
 
-* You should have a link:task_creating_connectors_aws.html[Connector that is associated with your workspace].
+[[licensing-ha]]
+* A Connector.
+
+** You should have a link:task_creating_connectors_aws.html[Connector that is associated with your workspace].
 +
 NOTE: You must be an Account Admin to create a Connector. When you create your first Cloud Volumes ONTAP working environment, Cloud Manager prompts you to create a Connector if you don’t have one yet.
 
-* link:concept_connectors.html[You should be prepared to leave the Connector running at all times].
+** link:concept_connectors.html[You should be prepared to leave the Connector running at all times].
 
-* You should have prepared by choosing a configuration and by obtaining AWS networking information from your administrator. For details, see link:task_planning_your_config.html[Planning your Cloud Volumes ONTAP configuration].
+* An understanding of the configuration that you want to use.
++
+You should have prepared by choosing a configuration and by obtaining AWS networking information from your administrator. For details, see link:task_planning_your_config.html[Planning your Cloud Volumes ONTAP configuration].
 
-* If you have a node-based license (BYOL), you'll need the 20-digit serial number (license key) for each node
+* An understanding of what's required in the Add Working Environment wizard for the licensing method that you want to use.
 
-* If you want to use CIFS, you must have set up DNS and Active Directory. For details, see link:reference_networking_aws.html[Networking requirements for Cloud Volumes ONTAP in AWS].
+** *PAYGO free trial*: A Marketplace subscription is required.
++
+Subscribe to your cloud provider's marketplace from the *Details & Credentials* page.
+
+** *Freemium*: A Marketplace subscription or NetApp Support Site (NSS) account is required.
++
+Subscribe to your cloud provider's marketplace from the *Details & Credentials* page or enter your NSS account on the *Charging Methods and NSS Account* page.
+
+** *Capacity-based BYOL*: A Marketplace subscription or NetApp Support Site (NSS) account is required. A Marketplace subscription is recommended for capacity-based charging in the event your account doesn't have a valid capacity-based license, or in the event that your allocated capacity exceeds the licensed capacity.
++
+Subscribe to your cloud provider's marketplace from the *Details & Credentials* page or enter your NSS account on the *Charging Methods and NSS Account* page.
+
+** *Node-based BYOL*: The 20-digit serial number (license key) is required for each node.
++
+You'll enter the serial number on the *Charging Methods and NSS Account* page.
+
+* DNS and Active Directory for CIFS.
++
+For details, see link:reference_networking_aws.html[Networking requirements for Cloud Volumes ONTAP in AWS].
 
 .Limitation
 
@@ -334,7 +365,8 @@ link:concept_security.html#encryption-of-data-at-rest[Learn more about supported
 
 . *Charging Methods and NSS Account*: Specify which charging option would you like to use with this system, and then specify a NetApp Support Site account.
 +
-link:concept_licensing.html[Learn about these charging methods].
+* link:concept_licensing.html[Learn about these charging methods].
+* link:task_deploying_otc_aws.html#licensing-ha[Learn what's required in the wizard for the licensing method that you want to use.]
 
 . *Cloud Volumes ONTAP Configuration* (annual AWS Marketplace contract only): Review the default configuration and click *Continue* or click *Change Configuration* to select your own configuration.
 +
