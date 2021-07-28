@@ -21,7 +21,6 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 == Cloud Manager 3.9.9 (1 Aug 2021)
 
-* <<Cloud Volumes ONTAP enhancement>>
 * <<Cloud Backup enhancements>>
 * <<Cloud Sync enhancements>>
 * <<Cloud Data Sense enhancements>>
@@ -30,15 +29,11 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 * <<Monitoring enhancement>>
 * <<Connector enhancement>>
 
-=== Cloud Volumes ONTAP enhancement
-
-You can now use your own self-managed encryption keys with Cloud Volumes ONTAP in Microsoft Azure. This option is available when you create a new Cloud Volumes ONTAP system by using the API.
-
 === Cloud Backup enhancements
 
 * When configuring backups to Azure Blob from an on-premises ONTAP system, you can define a connection to an Azure Private Endpoint in the activation wizard. This allows you to use a network interface that connects you privately and securely to a service powered by Azure Private Link.
 
-* The restriction of being able to browse a single directory with flat files up to a maximum of 30,000 files has been removed. Now you can restore files from directories that have a larger number of files.
+* An Hourly backup policy is now supported in addition to the existing Daily, Weekly, and Monthly policies. The Hourly backup policy provides a minimal Recovery Point Objective (RPO).
 
 === Cloud Sync enhancements
 
