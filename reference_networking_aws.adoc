@@ -42,7 +42,7 @@ The manual option can be a NAT gateway or an interface VPC endpoint from the tar
 
 The number of LIFs that Cloud Manager allocates for Cloud Volumes ONTAP depends on whether you deploy a single node system or an HA pair. A LIF is an IP address associated with a physical port.
 
-==== Single node
+==== IP addresses for a single node system
 
 Cloud Manager allocates 6 IP addresses to a single node system:
 
@@ -53,14 +53,19 @@ Cloud Manager allocates 6 IP addresses to a single node system:
 * iSCSI data LIF
 * Storage VM management LIF
 +
-A storage VM management LIF is required for management tools like SnapCenter.
+A storage VM management LIF is used with management tools like SnapCenter.
 
-==== HA pairs
+==== IP addresses for HA pairs
 
-Cloud Manager allocates 15 IP addresses to HA pairs deployed in a single Availability Zone (AZ) and 17 IP addresses to an HA pair deployed in multiple AZs.
+HA pairs require more IP addresses than a single node system does. These IP addresses are spread across different ethernet interfaces, as shown in the following image:
 
-The following table provides details about these LIFs.
+image:diagram_cvo_aws_networking_ha.png["A diagram that shows eth0, eth1, eth2 on a Cloud Volumes ONTAP HA configuration in AWS."]
 
+The number of private IP addresses required for an HA pair depends on which deployment model you choose. An HA pair deployed in a _single_ AWS Availability Zone (AZ) requires 15 private IP addresses, while an HA pair deployed in _multiple_ AZs requires 13 private IP addresses.
+
+The following tables provide details about the LIFs that are associated with each private IP address.
+
+.LIFs for HA pairs in a single AZ
 [cols="20,20,20,40",options="header"]
 |===
 | LIF
@@ -73,20 +78,34 @@ The following table provides details about these LIFs.
 | Intercluster | eth0	| node 1 and node 2 | Cross-cluster communication, backup, and replication.
 | NAS data | eth0	| node 1 | Client access over NAS protocols.
 | iSCSI data | eth0 | node 1 and node 2 | Client access over the iSCSI protocol.
-| Floating IP LIF (multi-AZs only) | eth0 | node 1 and node 2 | An iSCSI LIF that manages the migration of floating IPs when Cloud Volumes ONTAP is deployed in multiple Availability Zones.
 | Cluster connectivity | eth1	| node 1 and node 2 | Enables the nodes to communicate with each other and to move data within the cluster.
 | HA connectivity	| eth2 | node 1 and node 2 | Communication between the two nodes in case of failover.
 | RSM iSCSI traffic	| eth3 | node 1 and node 2 | RAID SyncMirror iSCSI traffic, as well as communication between the two Cloud Volumes ONTAP nodes and the mediator.
 | Mediator | eth0	| Mediator | A communication channel between the nodes and the mediator to assist in storage takeover and giveback processes.
 |===
 
-NOTE: Cloud Manager doesn't create a storage VM management LIF on HA pairs in a single AZ. You can choose whether to create a management LIF on HA pairs in multiple AZs.
+.LIFs for HA pairs in multiple AZs
+[cols="20,20,20,40",options="header"]
+|===
+| LIF
+| Interface
+| Node
+| Purpose
 
-The following image shows these interfaces on a Cloud Volumes ONTAP HA pair.
+| Node management	| eth0 | node 1 and node 2 | Administrative management of a node.
+| Intercluster | eth0	| node 1 and node 2 | Cross-cluster communication, backup, and replication.
+| iSCSI data | eth0 | node 1 and node 2 | Client access over the iSCSI protocol.
+This LIF also manages the migration of floating IP addresses between nodes.
+| Cluster connectivity | eth1	| node 1 and node 2 | Enables the nodes to communicate with each other and to move data within the cluster.
+| HA connectivity	| eth2 | node 1 and node 2 | Communication between the two nodes in case of failover.
+| RSM iSCSI traffic	| eth3 | node 1 and node 2 | RAID SyncMirror iSCSI traffic, as well as communication between the two Cloud Volumes ONTAP nodes and the mediator.
+| Mediator | eth0	| Mediator | A communication channel between the nodes and the mediator to assist in storage takeover and giveback processes.
+|===
 
-image:diagram_cvo_aws_networking_ha.png["A diagram that shows eth0, eth1, eth2 on a Cloud Volumes ONTAP HA configuration in AWS."]
+TIP: When deployed in multiple Availability Zones, several LIFs are associated with link:reference_networking_aws.html#floatingips[floating IP addresses], which don't count against the AWS private IP limit.
 
 === Security groups
+
 You do not need to create security groups because Cloud Manager does that for you. If you need to use your own, refer to link:reference_security_groups.html[Security group rules].
 
 === Connection from Cloud Volumes ONTAP to AWS S3 for data tiering
@@ -118,6 +137,7 @@ To understand how HA pairs work, see link:concept_ha.html[High-availability pair
 Availability Zones::
 This HA deployment model uses multiple AZs to ensure high availability of your data. You should use a dedicated AZ for each Cloud Volumes ONTAP instance and the mediator instance, which provides a communication channel between the HA pair.
 
+[[floatingips]]
 Floating IP addresses for NAS data and cluster/SVM management::
 HA configurations in multiple AZs use floating IP addresses that migrate between nodes if failures occur. They are not natively accessible from outside the VPC, unless you link:task_setting_up_transit_gateway.html[set up an AWS transit gateway].
 +
