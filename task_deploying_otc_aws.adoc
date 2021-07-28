@@ -19,7 +19,7 @@ You can launch Cloud Volumes ONTAP in a single-system configuration or as an HA 
 
 If you want to launch Cloud Volumes ONTAP in AWS, you need to create a new working environment in Cloud Manager.
 
-.Before you begin
+.What you'll need
 
 * You should have a link:task_creating_connectors_aws.html[Connector that is associated with your workspace].
 +
@@ -29,7 +29,23 @@ NOTE: You must be an Account Admin to create a Connector. When you create your f
 
 * You should have prepared by choosing a configuration and by obtaining AWS networking information from your administrator. For details, see link:task_planning_your_config.html[Planning your Cloud Volumes ONTAP configuration].
 
-* If you want to launch a BYOL system, you must have the 20-digit serial number (license key).
+* You should be prepared to do the following based on the licensing method that you want to use:
+
+** *PAYGO free trial*: A Marketplace subscription is required.
++
+You'll be prompted to subscribe on the *Details & Credentials* page.
+
+** *Freemium*: A Marketplace subscription or NetApp Support Site account is required.
++
+You can subscribe from the *Details & Credentials* page or enter the NetApp Support Site account on the *Charging Methods and NSS Account* page.
+
+** *Capacity-based BYOL*: A Marketplace subscription or NetApp Support Site account is required. A Marketplace subscription is recommended for capacity-based charging in the event your account doesn't have a valid capacity-based license, or in the event that your allocated capacity exceeds the licensed capacity.
++
+You can subscribe from the *Details & Credentials* page or enter the NetApp Support Site account on the *Charging Methods and NSS Account* page.
+
+** *Node-based BYOL*: The 20-digit serial number (license key) is required.
++
+You'll enter the serial number on the *Charging Methods and NSS Account* page.
 
 * If you want to use CIFS, you must have set up DNS and Active Directory. For details, see link:reference_networking_aws.html[Networking requirements for Cloud Volumes ONTAP in AWS].
 
@@ -67,8 +83,6 @@ For information about tags, refer to https://docs.aws.amazon.com/AWSEC2/latest/U
 | Edit Credentials | Choose the AWS credentials associated with the account where you want to deploy this system. You can also associate the AWS Marketplace subscription to use with this Cloud Volumes ONTAP system.
 
 Click *Add Subscription* to associate the selected credentials with a new AWS Marketplace subscription. The subscription can be for an annual contract or to pay for Cloud Volumes ONTAP at an hourly rate.
-
-If purchased a license directly from NetApp (BYOL), then an AWS subscription isn't required.
 
 link:task_adding_aws_accounts.html[Learn how to add additional AWS credentials to Cloud Manager].
 
@@ -228,7 +242,7 @@ NOTE: You must be an Account Admin to create a Connector. When you create your f
 
 * You should have prepared by choosing a configuration and by obtaining AWS networking information from your administrator. For details, see link:task_planning_your_config.html[Planning your Cloud Volumes ONTAP configuration].
 
-* If you purchased BYOL licenses, you must have a 20-digit serial number (license key) for each node.
+* If you have a node-based license (BYOL), you'll need the 20-digit serial number (license key) for each node
 
 * If you want to use CIFS, you must have set up DNS and Active Directory. For details, see link:reference_networking_aws.html[Networking requirements for Cloud Volumes ONTAP in AWS].
 
