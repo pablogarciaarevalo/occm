@@ -75,7 +75,7 @@ You should know the name of the volume you want to restore and the date of the b
 +
 image:screenshot_restore_volume_selection.png[A screenshot of selecting the Restore Volumes button from the Restore Dashboard.]
 
-. In the _Select Source_ page, navigate to the backup file (snapshot) for the volume you want to restore. Select the *Working Environment*, the *Volume*, and the *Snapshot* that has the date/time stamp that you want to restore.
+. In the _Select Source_ page, navigate to the backup file (snapshot) for the volume you want to restore. Select the *Working Environment*, the *Volume*, and the *Backup* that has the date/time stamp that you want to restore.
 +
 image:screenshot_restore_select_volume_snapshot.png["A screenshot of selecting the working environment, volume, and volume snapshot that you want to restore."]
 
@@ -138,8 +138,6 @@ The process goes like this:
 
 Follow these steps to restore files from a volume backup to a volume. You should know the name of the volume and the date of the backup file that you want to use to restore the file, or files. This functionality uses Live Browsing so that you can view the list of directories and files within the backup file.
 
-Note that the wording in the UI calls each backup file a "snapshot" because backup files are created using NetApp Snapshot technology.
-
 The following video shows a quick walkthrough of restoring a single file:
 
 video::ROAY6gPL9N0[youtube, width=848, height=480]
@@ -154,11 +152,11 @@ video::ROAY6gPL9N0[youtube, width=848, height=480]
 +
 image:screenshot_restore_files_selection.png[A screenshot of selecting the Restore Volumes button from the Restore Dashboard.]
 
-. In the _Select Source_ page, navigate to the backup file (snapshot) for the volume that contains the files you want to restore. Select the *Working Environment*, the *Volume*, and the *Snapshot* that has the date/time stamp from which you want to restore files.
+. In the _Select Source_ page, navigate to the backup file for the volume that contains the files you want to restore. Select the *Working Environment*, the *Volume*, and the *Backup* that has the date/time stamp from which you want to restore files.
 +
-image:screenshot_restore_select_source.png[A screenshot of selecting the volume and snapshot for the files you want to restore.]
+image:screenshot_restore_select_source.png[A screenshot of selecting the volume and backup for the files you want to restore.]
 
-. Click *Continue* and the Restore instance is started. After a few minutes the Restore instance displays the list of folders and files from the volume snapshot.
+. Click *Continue* and the Restore instance is started. After a few minutes the Restore instance displays the list of folders and files from the volume backup.
 +
 *Note:* The Restore instance is deployed in your cloud providers' environment the first time you restore a file, so this step could take a few minutes longer the first time.
 +

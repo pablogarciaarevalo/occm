@@ -265,9 +265,13 @@ entries:
             url: /task_backup_to_azure.html
           - title: Back up Cloud Volumes ONTAP data to Google Cloud
             url: /task_backup_to_gcp.html
-          - title: Back up on-premises ONTAP data to public cloud
-            url: /task_backup_from_onprem.html
-          - title: Back up on-premises ONTAP data to private cloud
+          - title: Back up on-premises ONTAP data to Amazon S3
+            url: /task_backup_onprem_to_aws.html
+          - title: Back up on-premises ONTAP data to Azure Blob
+            url: /task_backup_onprem_to_azure.html
+          - title: Back up on-premises ONTAP data to Google Cloud
+            url: /task_backup_onprem_to_gcp.html
+          - title: Back up on-premises ONTAP data to StorageGRID
             url: /task_backup_onprem_private_cloud.html
       - title: Set up licensing
         url: /task_licensing_cloud_backup.html

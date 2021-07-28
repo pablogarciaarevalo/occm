@@ -5,7 +5,7 @@ keywords: backing up, back up, backup, backup on-prem ontap, on-prem, on-premise
 summary: Complete a few steps to get started backing up data from your on-premises ONTAP systems to object storage in your NetApp StorageGRID systems.
 ---
 
-= Backing up on-premises ONTAP data to the private cloud
+= Backing up on-premises ONTAP data to StorageGRID
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -113,7 +113,7 @@ link:task_discovering_ontap.html[Learn how to discover a cluster^].
 
 === Preparing StorageGRID
 
-StorageGRID must meet the following requirements. See the https://docs.netapp.com/sgws-114/index.jsp[StorageGRID documentation^] for more information.
+StorageGRID must meet the following requirements. See the https://docs.netapp.com/sgws-115/index.jsp[StorageGRID documentation^] for more information.
 
 Supported StorageGRID versions::
 StorageGRID 10.3 and later is supported.
