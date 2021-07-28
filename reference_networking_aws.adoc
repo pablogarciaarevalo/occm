@@ -65,7 +65,7 @@ The number of private IP addresses required for an HA pair depends on which depl
 
 The following tables provide details about the LIFs that are associated with each private IP address.
 
-.LIFs for HA pairs in a single AZ
+===== LIFs for HA pairs in a single AZ
 
 [cols="20,20,20,40",options="header"]
 |===
@@ -85,7 +85,7 @@ The following tables provide details about the LIFs that are associated with eac
 | Mediator | eth0	| Mediator | A communication channel between the nodes and the mediator to assist in storage takeover and giveback processes.
 |===
 
-.LIFs for HA pairs in multiple AZs
+===== LIFs for HA pairs in multiple AZs
 
 [cols="20,20,20,40",options="header"]
 |===
