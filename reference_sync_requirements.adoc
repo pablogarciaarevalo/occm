@@ -24,10 +24,10 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 | Source location
 | Supported target locations
 
-| AWS EFS a|
+| Amazon EFS a|
 
-* AWS EFS
-* AWS S3
+* Amazon EFS
+* Amazon S3
 * Azure Blob
 * Azure NetApp Files
 * Cloud Volumes ONTAP
@@ -39,10 +39,10 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 * SMB server
 * StorageGRID
 
-| AWS S3 a|
+| Amazon S3 a|
 
-* AWS EFS
-* AWS S3
+* Amazon EFS
+* Amazon S3
 * Azure Blob
 * Azure NetApp Files
 * Cloud Volumes ONTAP
@@ -56,8 +56,8 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 
 | Azure Blob a|
 
-* AWS EFS
-* AWS S3
+* Amazon EFS
+* Amazon S3
 * Azure Blob
 * Azure NetApp Files
 * Cloud Volumes ONTAP
@@ -71,8 +71,8 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 
 | Azure NetApp Files a|
 
-* AWS EFS
-* AWS S3
+* Amazon EFS
+* Amazon S3
 * Azure Blob
 * Azure NetApp Files
 * Cloud Volumes ONTAP
@@ -92,8 +92,8 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 
 | Cloud Volumes ONTAP a|
 
-* AWS EFS
-* AWS S3
+* Amazon EFS
+* Amazon S3
 * Azure Blob
 * Azure NetApp Files
 * Cloud Volumes ONTAP
@@ -107,8 +107,8 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 
 | Cloud Volumes Service a|
 
-* AWS EFS
-* AWS S3
+* Amazon EFS
+* Amazon S3
 * Azure Blob
 * Azure NetApp Files
 * Cloud Volumes ONTAP
@@ -122,8 +122,8 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 
 | Google Cloud Storage a|
 
-* AWS EFS
-* AWS S3
+* Amazon EFS
+* Amazon S3
 * Azure Blob
 * Azure NetApp Files
 * Cloud Volumes ONTAP
@@ -138,8 +138,8 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 
 | IBM Cloud Object Storage a|
 
-* AWS EFS
-* AWS S3
+* Amazon EFS
+* Amazon S3
 * Azure Blob
 * Azure NetApp Files
 * Cloud Volumes ONTAP
@@ -153,8 +153,8 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 
 | NFS server a|
 
-* AWS EFS
-* AWS S3
+* Amazon EFS
+* Amazon S3
 * Azure Blob
 * Azure NetApp Files
 * Cloud Volumes ONTAP
@@ -168,8 +168,8 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 
 | On-prem ONTAP cluster a|
 
-* AWS EFS
-* AWS S3
+* Amazon EFS
+* Amazon S3
 * Azure Blob
 * Azure NetApp Files
 * Cloud Volumes ONTAP
@@ -192,8 +192,8 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 
 | SMB server a|
 
-* AWS EFS
-* AWS S3
+* Amazon EFS
+* Amazon S3
 * Azure Blob
 * Azure NetApp Files
 * Cloud Volumes ONTAP
@@ -208,8 +208,8 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 
 | StorageGRID a|
 
-* AWS EFS
-* AWS S3
+* Amazon EFS
+* Amazon S3
 * Azure Blob
 * Azure NetApp Files
 * Cloud Volumes ONTAP
@@ -233,7 +233,7 @@ Notes:
 * Hot storage
 * Cool storage
 
-. [[storage-classes]]You can choose a specific S3 storage class when AWS S3 is the target:
+. [[storage-classes]]You can choose a specific S3 storage class when Amazon S3 is the target:
 +
 * Standard (this is the default class)
 * Intelligent-Tiering
@@ -279,11 +279,11 @@ SMB:: The SMB credentials that you enter when setting up a sync relationship mus
 
 NOTE: The data broker ignores the following directories by default: .snapshot, ~snapshot, .copy-offload
 
-=== [[s3]]AWS S3 bucket requirements
+=== [[s3]]Amazon S3 bucket requirements
 
-Make sure that your AWS S3 bucket meets the following requirements.
+Make sure that your Amazon S3 bucket meets the following requirements.
 
-==== Supported data broker locations for AWS S3
+==== Supported data broker locations for Amazon S3
 
 Sync relationships that include S3 storage require a data broker deployed in AWS or on your premises. In either case, Cloud Sync prompts you to associate the data broker with an AWS account during installation.
 
