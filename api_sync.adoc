@@ -167,7 +167,7 @@ The result is an array of messages. Inside each message is a payload object, whi
 
 == Using the API to create a sync relationship from Box
 
-Cloud Sync supports https://www.box.com/home[Box^] as the source in a sync relationship when using the Cloud Sync API.
+Cloud Sync supports https://www.box.com/home[Box^] as the source in a sync relationship when using the Cloud Sync API. link:reference_sync_requirements.html[View supported sync relationships for Box].
 
 In order to copy from Box, you'll need to provide the following credentials:
 
@@ -183,7 +183,7 @@ In order to copy from Box, you'll need to provide the following credentials:
 . Create a private key configuration file on the Box dev console.
 +
 The json file should look like this:
-
++
 [source,json]
 {
   "boxAppSettings": {
