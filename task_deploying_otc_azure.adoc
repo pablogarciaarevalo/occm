@@ -17,12 +17,12 @@ You can launch a single node system or an HA pair in Azure by creating a Cloud V
 
 .What you'll need
 
+You need the following to create a working environment.
+
 [[licensing]]
-* A Connector.
+* A Connector that's up and running.
 
 ** You should have a link:task_creating_connectors_azure.html[Connector that is associated with your workspace].
-+
-NOTE: You must be an Account Admin to create a Connector. When you create your first Cloud Volumes ONTAP working environment, Cloud Manager prompts you to create a Connector if you don’t have one yet.
 
 ** link:concept_connectors.html[You should be prepared to leave the Connector running at all times].
 
@@ -31,22 +31,36 @@ NOTE: You must be an Account Admin to create a Connector. When you create your f
 You should have chose a configuration and obtained Azure networking information from your administrator. For details, see link:task_planning_your_config_azure.html[Planning your Cloud Volumes ONTAP configuration].
 
 * An understanding of what's required in the Add Working Environment wizard for the licensing method that you want to use.
-
-** *PAYGO free trial*: A Marketplace subscription is required.
 +
-Subscribe to your cloud provider's marketplace from the *Details & Credentials* page.
+[cols="20,40,40",options="header"]
+|===
+| Licensing option
+| Requirement
+| How to provide the info
 
-** *Freemium*: A Marketplace subscription or NetApp Support Site (NSS) account is required.
-+
-Subscribe to your cloud provider's marketplace from the *Details & Credentials* page or enter your NSS account on the *Charging Methods and NSS Account* page.
+| PAYGO free trial
+| A Marketplace subscription is required.
+| You'll have the option to subscribe to your cloud provider's marketplace from the *Details & Credentials* page.
 
-** *Capacity-based BYOL*: A Marketplace subscription or NetApp Support Site (NSS) account is required. A Marketplace subscription is recommended for capacity-based charging in the event your account doesn't have a valid capacity-based license, or in the event that your allocated capacity exceeds the licensed capacity.
-+
-Subscribe to your cloud provider's marketplace from the *Details & Credentials* page or enter your NSS account on the *Charging Methods and NSS Account* page.
+| Freemium
+| A Marketplace subscription or NetApp Support Site (NSS) account is required.
+| You'll have the option to subscribe to your cloud provider's marketplace from the *Details & Credentials* page
 
-** *Node-based BYOL*: The 20-digit serial number (license key) is required.
-+
-You'll enter the serial number on the *Charging Methods and NSS Account* page.
+You can enter your NSS account on the *Charging Methods and NSS Account* page.
+
+| Capacity-based BYOL
+| A Marketplace subscription or NetApp Support Site (NSS) account is required.
+
+A Marketplace subscription is recommended for capacity-based charging in the event that your account doesn't have a valid capacity-based license, or in the event that your allocated capacity exceeds the licensed capacity.
+| You'll have the option to subscribe to your cloud provider's marketplace from the *Details & Credentials* page
+
+You can enter your NSS account on the *Charging Methods and NSS Account* page.
+
+| Node-based BYOL
+| The 20-digit serial number (license key) is required.
+| You'll enter the serial number on the *Charging Methods and NSS Account* page.
+
+|===
 
 .About this task
 
