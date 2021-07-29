@@ -188,7 +188,7 @@ The json file should look like this:
 {
   "boxAppSettings": {
     "clientID": "<clientId>",
-    "clientSecret": "<clientSecret>,
+    "clientSecret": "<clientSecret>",
     "appAuth": {
       "publicKeyID": "<publicKeyID>",
       "privateKey": "<privatkey>",
