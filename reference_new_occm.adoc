@@ -39,7 +39,7 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 * Cloud Sync now enables you to update the data broker with the latest credentials of the source or target in an existing sync relationship.
 +
-This enhancement can help if your security policies require you to update credentials on a periodic basis. link:task_sync_managing_sync_relationships.html[Learn how to update credentials].
+This enhancement can help if your security policies require you to update credentials on a periodic basis. link:task_sync_managing_relationships.html[Learn how to update credentials].
 +
 image:screenshot_sync_update_credentials.png[A screenshot that shows the Update Credentials option on the Sync Relationships page just under the name of the source or target.]
 
@@ -81,15 +81,15 @@ Now you can manage tags from your Azure resources. You can view Azure tags and t
 
 === Monitoring enhancement
 
-We changed the default name of the Acquisition Unit instance to CloudInsights-AU-_UUID_ so that the name is more descriptive.
+We changed the default name of the Acquisition Unit instance to CloudInsights-AU-_UUID_ so that the name is more descriptive (the UUID is a generated hash).
 
-Cloud Manager deploys this instance when you enable the Monitoring service on a Cloud Volumes ONTAP working environment. UUID is a generated hash (UUID).
+Cloud Manager deploys this instance when you enable the Monitoring service on a Cloud Volumes ONTAP working environment.
 
 link:concept_monitoring.html[Learn more about the Monitoring service].
 
 === Connector enhancement
 
-Red Hat Enterprise Linux 7.9 is now supported with the Connector instance.
+The Connector is now supported on a host that's running Red Hat Enterprise Linux 7.9.
 
 link:reference_cloud_mgr_reqs.html[View system requirements for the Connector].
 
