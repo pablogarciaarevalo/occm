@@ -51,7 +51,7 @@ image:screenshot_sync_tags.png[A screenshot that shows the page in the working e
 
 * Cloud Sync now supports https://www.box.com/home[Box^] as the source in a sync relationship to Amazon S3, StorageGRID, and IBM Cloud Object Storage when using the Cloud Sync API.
 +
-link:reference_sync_requirements.html[Learn about requirements for Box].
+link:api_sync.html[Learn how to set up a sync relationship using the API].
 
 * When you deploy a data broker in Google Cloud, you can now choose whether to enable or disable a public IP address for the virtual machine instance.
 +
