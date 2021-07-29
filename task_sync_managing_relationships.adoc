@@ -66,6 +66,26 @@ image:screenshot_accelerate.gif[A screenshot of Cloud Sync that shows the action
 
 Cloud Sync adds the new data broker to the sync relationships. The performance of the next data sync should be accelerated.
 
+== Updating credentials
+
+You can update the data broker with the latest credentials of the source or target in an existing sync relationship. Updating the credentials can help if your security policies require you to update credentials on a periodic basis.
+
+Updating credentials is supported with any source or target that Cloud Sync requires credentials for: Azure Blob, IBM Cloud Object Storage, StorageGRID, ONTAP S3 Storage, SFTP, and SMB servers.
+
+.Steps
+
+. From the *Sync Dashboard*, go to a sync relationship that requires credentials and then click *Update Credentials*.
++
+image:screenshot_sync_update_credentials.png[A screenshot that shows the Update Credentials option on the Sync Relationships page just under the name of the source or target.]
+
+. Enter the credentials and click *Update*.
++
+A note about SMB servers: if you have a new domain, then you'll need to specify it when you update the credentials. If you entered a domain when you created the sync relationship, but you don't enter a new domain when you update the credentials, then Cloud Sync will keep using the original domain that you provided.
+
+.Result
+
+Cloud Sync updates the credentials on the data broker. It can take up 10 minutes until the data broker starts using the updated credentials for data syncs.
+
 == Changing the settings for a sync relationship
 
 Modify settings that define how source files and folders are synced and maintained in the target location.
