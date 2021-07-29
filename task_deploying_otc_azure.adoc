@@ -36,7 +36,7 @@ You should have chose a configuration and obtained Azure networking information 
 |===
 | Licensing option
 | Requirement
-| How to provide the info
+| How to meet the requirement
 
 | PAYGO free trial
 | A Marketplace subscription is required.

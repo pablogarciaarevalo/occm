@@ -38,7 +38,7 @@ You should have prepared by choosing a configuration and by obtaining GCP networ
 |===
 | Licensing option
 | Requirement
-| How to provide the info
+| How to meet the requirement
 
 | PAYGO free trial
 | A Marketplace subscription is required.
@@ -116,7 +116,7 @@ Click *Add Subscription* to associate the selected credentials with a subscripti
 To create a pay-as-you-go Cloud Volumes ONTAP system, you need to select a GCP project that's associated with a subscription to Cloud Volumes ONTAP from the GCP Marketplace.
 
 |===
-
++
 The following video shows how to associate a pay-as-you-go Marketplace subscription to your GCP project:
 +
 video::video_subscribing_gcp.mp4[width=848, height=480]

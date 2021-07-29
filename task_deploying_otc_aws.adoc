@@ -40,7 +40,7 @@ For details, see link:reference_networking_aws.html[Networking requirements for 
 |===
 | Licensing option
 | Requirement
-| How to provide the info
+| How to meet the requirement
 
 | PAYGO free trial
 | A Marketplace subscription is required.
