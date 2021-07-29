@@ -80,7 +80,9 @@ image:screenshot_sync_update_credentials.png[A screenshot that shows the Update 
 
 . Enter the credentials and click *Update*.
 +
-A note about SMB servers: if you have a new domain, then you'll need to specify it when you update the credentials. If you entered a domain when you created the sync relationship, but you don't enter a new domain when you update the credentials, then Cloud Sync will keep using the original domain that you provided.
+A note about SMB servers: if the domain is new, then you'll need to specify it when you update the credentials. If the domain hasn't changed, then you don't need to enter it again.
++
+If you entered a domain when you created the sync relationship, but you don't enter a new domain when you update the credentials, then Cloud Sync will keep using the original domain that you provided.
 
 .Result
 
