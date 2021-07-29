@@ -89,12 +89,6 @@ image:screenshot_create_template_define_action_cvo.png[A screenshot showing a bl
 
 . *Action Name*: Optionally, enter a customized action name instead of the default value.
 
-. *Context:* Enter the Cloud Volumes ONTAP working environment context; if required.
-+
-When users launch the template from an existing working environment, this information gets filled in automatically.
-+
-When users launch the template from the Templates Dashboard (not in a working environment context), then they need to select the working environment and the SVM where the volume will be created. That's why these fields are marked as "Editable".
-
 . *Details:* Enter the volume name and size.
 +
 [cols=2*,options="header",cols="25,75"]
@@ -153,6 +147,12 @@ For example, you could specify that "db" be a required prefix, suffix, or contai
 +
 See link:concept_data_tiering.html#volume-tiering-policies[volume tiering policies^] for an overview, and see link:task_tiering.html[Tiering inactive data to object storage^] to make sure your environment is set up for tiering.
 
+. *Context:* Enter the Cloud Volumes ONTAP working environment context; if required.
++
+When users launch the template from an existing working environment, this information gets filled in automatically.
++
+When users launch the template from the Templates Dashboard (not in a working environment context), then they need to select the working environment and the SVM where the volume will be created. That's why these fields are marked as "Editable".
+
 . Click *Apply* after you have defined the parameters needed for this action.
 +
 If the template values are correctly completed, a green checkmark is added to the "Create Volume in Cloud Volumes ONTAP" box.
@@ -203,33 +203,7 @@ image:screenshot_create_template_define_action_anf.png[A screenshot showing a bl
 
 . *Action Name*: Optionally, enter a customized action name instead of the default value.
 
-. *Context:* Enter the Cloud Volumes ONTAP working environment context; if required.
-+
-When users launch the template from an existing working environment, this information gets filled in automatically.
-+
-When users launch the template from the Templates Dashboard (not in a working environment context), then they need to select the working environment where the volume will be created. That's why these fields are marked as "Editable".
-
-. *Details:* Enter the details for a new or an existing Azure NetApp Files account.
-+
-[cols=2*,options="header",cols="25,75"]
-
-|===
-| Field
-| Description
-
-| NetApp Account Name | Enter the name you want to use for the account.
-
-| Azure Subscription ID | Enter the Azure Subscription ID. This is the full ID in a format similar to "2b04f26-7de6-42eb-9234-e2903d7s327".
-
-| Region | Enter the region using the https://docs.microsoft.com/en-us/dotnet/api/microsoft.azure.documents.locationnames?view=azure-dotnet#fields[internal region name^].
-
-| Resource Group Name | Enter the name of the Resource Group you want to use.
-
-| Capacity Pool Name | Enter the name of an existing capacity pool.
-
-|===
-
-. *Volume Details:* Enter a volume name and size, the VNet and subnet where the volume should reside, and optionally specify tags for the volume.
+. *Volume Details:* Enter a volume name and size, and optionally specify tags for the volume.
 +
 [cols=2*,options="header",cols="25,75"]
 
@@ -242,8 +216,6 @@ When users launch the template from the Templates Dashboard (not in a working en
 For example, you could specify that "db" be a required prefix, suffix, or contains; requiring the user to add volume names like "db_vol1", "vol1_db", or "vol_db_1".
 
 | Volume Size | You can specify a range of allowable values, or you can specify a fixed size. This value is in GB.
-
-| Subnet | Enter the VNet and subnet. This value includes the full path, in a format similar to "/subscriptions/<subscription_id>/resourceGroups/<resource_group>/ providers/Microsoft.Network/virtualNetworks/<vpc_name>/subnets/<subhet_name>".
 
 | Tags | Enter a name and value pair for a tag that you want to associate with this volume. For example, you could add "Cost Center" as the tag name and the cost center code "6655829" as the value. You can associate more than one tag with a volume by adding more tag name and value pairs.
 
@@ -270,6 +242,32 @@ For example, you could specify that "db" be a required prefix, suffix, or contai
 | Description
 
 | Volume Path | Select one of the 5 options. You can let the admin enter any path by selecting *Free Text*, or you can specify that the path name must have a certain prefix or suffix, that it _contains_ certain characters, or that it follows rules from a regular expression (regex) you enter.
+
+|===
+
+. *Context:* Enter the Azure NetApp Files working environment, details for a new or an existing Azure NetApp Files account, and other details.
++
+[cols=2*,options="header",cols="25,75"]
+
+|===
+| Field
+| Description
+
+| Working Environment | When storage admin users launch the template from an existing working environment, this information gets filled in automatically.
+
+When users launch the template from the Templates Dashboard (not in a working environment context), then they need to select the working environment where the volume will be created.
+
+| NetApp Account Name | Enter the name you want to use for the account.
+
+| Azure Subscription ID | Enter the Azure Subscription ID. This is the full ID in a format similar to "2b04f26-7de6-42eb-9234-e2903d7s327".
+
+| Region | Enter the region using the https://docs.microsoft.com/en-us/dotnet/api/microsoft.azure.documents.locationnames?view=azure-dotnet#fields[internal region name^].
+
+| Resource Group Name | Enter the name of the Resource Group you want to use.
+
+| Capacity Pool Name | Enter the name of an existing capacity pool.
+
+| Subnet | Enter the VNet and subnet. This value includes the full path, in a format similar to "/subscriptions/<subscription_id>/resourceGroups/<resource_group>/ providers/Microsoft.Network/virtualNetworks/<vpc_name>/subnets/<subhet_name>".
 
 |===
 
@@ -317,12 +315,6 @@ image:screenshot_create_template_define_action_onprem.png[A screenshot showing a
 
 . *Action Name*: Optionally, enter a customized action name instead of the default value.
 
-. *Context:* Enter the on-premises ONTAP working environment context; if required.
-+
-When users launch the template from an existing working environment, this information gets filled in automatically.
-+
-When users launch the template from the Templates Dashboard (not in a working environment context), then they need to select the working environment, the SVM, and the aggregate where the volume will be created.
-
 . *Details:* Enter the volume name and size.
 +
 [cols=2*,options="header",cols="25,75"]
@@ -343,7 +335,7 @@ For example, you could specify that "db" be a required prefix, suffix, or contai
 
 . *Protection:* Choose whether this volume will have Snapshot copies created by selecting "Default" or some other policy, or choose "None" if you do not want to create Snapshot copies.
 
-. *Usage Profile:* Choose whether or not NetApp storage efficiency features are applied to the volume. This includes Thin Provisioning, Deduplication, and Compression. For our example, keep storage efficiency enabled.
+. *Usage Profile:* Choose whether or not NetApp storage efficiency features are applied to the volume. This includes Thin Provisioning, Deduplication, and Compression.
 
 . *Protocol Options:* Select *NFS* or *SMB* to set the protocol of the volume. And then the provide the protocol details.
 +
@@ -375,6 +367,12 @@ For example, you could specify that "db" be a required prefix, suffix, or contai
 
 |===
 
+. *Context:* Enter the on-premises ONTAP working environment context; if required.
++
+When users launch the template from an existing working environment, this information gets filled in automatically.
++
+When users launch the template from the Templates Dashboard (not in a working environment context), then they need to select the working environment, the SVM, and the aggregate where the volume will be created.
+
 . Click *Apply* after you have defined the parameters needed for this action.
 +
 If the template values are correctly completed, a green checkmark is added to the "Create Volume in On-Premises ONTAP" box.
@@ -395,7 +393,9 @@ See <<What to do after you have created the template,what you should tell your u
 
 === Create a template for a Cloud Volumes ONTAP working environment
 
-You can create a Cloud Volumes ONTAP working environment, and your first volume, using templates. This support is provided only for AWS environments at this time, and only for single-node clusters.
+You can create a Cloud Volumes ONTAP working environment using templates. This support is provided only for AWS environments at this time, and only for single-node clusters.
+
+This template does not create the first volume in the working environment. You must add a "Create Volume in Cloud Volumes ONTAP" action in the template to create the volume.
 
 See link:task_deploying_otc_aws.html#launching-a-single-node-cloud-volumes-ontap-system-in-aws[how to launching a single-node Cloud Volumes ONTAP system in AWS^] for details about all the parameters you need to complete in this template.
 
@@ -421,9 +421,46 @@ image:screenshot_create_template_cvo_env_aws1.png[A screenshot showing a blank C
 
 . *Action Name*: Optionally, enter a customized action name instead of the default value.
 
+. *Details and Credentials*: Enter the AWS credentials and subscription, enter a working environment name, add tags if needed.
++
+Some of the fields in this page are self-explanatory. The following table describes fields for which you might need guidance:
++
+[cols=2*,options="header",cols="25,75"]
+|===
+| Field
+| Description
 
-START HERE TOM
+| Working Environment Name | Cloud Manager uses the working environment name to name both the Cloud Volumes ONTAP system and the Amazon EC2 instance. It also uses the name as the prefix for the predefined security group, if you select that option.
 
+| Tags | AWS tags are metadata for your AWS resources. Cloud Manager adds the tags to the Cloud Volumes ONTAP instance and each AWS resource associated with the instance.
+
+For information about tags, refer to https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html[AWS Documentation: Tagging your Amazon EC2 Resources^].
+
+| User name and password | These are the credentials for the Cloud Volumes ONTAP cluster admin account. You can use these credentials to connect to Cloud Volumes ONTAP through OnCommand System Manager or its CLI.
+
+|===
+
+. *Location & Connectivity*: Enter the network information that you recorded in the link:task_planning_your_config.html#aws-network-information-worksheet[AWS worksheet]. This includes the AWS Region, VPC, Subnet, and Security Group.
++
+If you have an AWS Outpost, you can deploy a single node Cloud Volumes ONTAP system in that Outpost by selecting the Outpost VPC. The experience is the same as any other VPC that resides in AWS.
+
+. *Authentication Method*: Select the SSH authentication method you want to use; either a password or a key pair.
+
+. *Data Encryption*: Choose no data encryption or AWS-managed encryption.
++
+For AWS-managed encryption, you can choose a different Customer Master Key (CMK) from your account or another AWS account.
++
+link:task_setting_up_kms.html[Learn how to set up the AWS KMS for Cloud Volumes ONTAP].
+
+. *Charging Method*: Specify which charging option would you like to use with this system.
++
+link:concept_licensing.html[Learn about these charging methods].
+
+. *NSS Account*: Select a NetApp Support Site account.
+
+. *Preconfigured Packages*: Select one of the four preconfigured packages that will determine several factors for volumes created in the working environment.
+
+. *SMB Configuration*: If you plan to deploy volumes using SMB on this working environment, you can set up a CIFS server and related configuration elements.
 
 . Click *Save Template*.
 
@@ -443,11 +480,11 @@ When creating a volume template, you can add in the template that you want to cr
 
 image:screenshot_template_backup.png[A screenshot of the page to enable backup functionality for your volumes.]
 
-. *Context:* You can enter a working environment Name and storage VM name if you are using this action in a template without first creating a volume. Otherwise, leave these fields as "Editable."
+. *Context*: You can enter a working environment Name and storage VM name if you are using this action in a template without first creating a volume. Otherwise, leave these fields as "Editable."
 
-. *Policy:* Define the backup policy to create daily, weekly, or monthly backups with a specific number of backup copies to retain.
+. *Policy*: Define the backup policy to create daily, weekly, or monthly backups with a specific number of backup copies to retain.
 
-. *Volume Name:* Typically the volume is the one created prior to the backup action in the same template. In this case, see how to <<Pass values between template actions,complete the fields>> within the volume name to indicate that volume.
+. *Volume Name*: Typically the volume is the one created prior to the backup action in the same template. In this case, see how to <<Pass values between template actions,complete the fields>> within the volume name to indicate that volume.
 
 . Click *Apply* to save your changes.
 
@@ -457,11 +494,15 @@ When creating a volume template, you can add in the template that you want to sc
 
 image:screenshot_template_data_sense.png[A screenshot of the page to enable scanning functionality for your volumes.]
 
-. *Context:* You can enter a working environment Name if you are using this action in a template without first creating a volume. Otherwise, leave this field as "Editable."
+. *Working Environment*: You can enter a working environment Name if you are using this action in a template without first creating a volume. Otherwise, leave this field as "Editable."
 
-. *Volume Name:* Typically the volume is the one created prior to the Data Sense action in the same template. In this case, see how to <<Pass values between template actions,complete the fields>> within the volume name to indicate that volume.
+. *Volume Name*: Typically the volume is the one created prior to the Data Sense action in the same template. In this case, see how to <<Pass values between template actions,complete the fields>> within the volume name to indicate that volume.
 
-. *Volume UUID:* Data Sense needs the UUID of the volume before it can scan the volume. See how to <<Pass values between template actions,complete the three fields>> below the volume name to indicate that volume.
+. *Volume UUID*: Data Sense needs the UUID of the volume before it can scan the volume. See how to <<Pass values between template actions,complete the three fields>> below the volume name to indicate that volume.
+
+. *Volume Path*: Typically this is the mount point from the volume you are creating in the template. So you can get the "mountpoint" value from the output of that volume.
+
+. *Protocol*: Data Sense needs to know the protocol so it can scan the data. So you can get the "Protocol" value from the output of that volume.
 
 . Click *Apply* to save your changes.
 
@@ -473,7 +514,7 @@ TIP: This action is not applicable for Azure NetApp Files volumes.
 
 Replication functionality consists of three parts: selecting the source volume, selecting the destination volume, and defining the replication settings. Each section is described below.
 
-. *Source Details:* Enter the details about the source volume you want to replicate:
+. *Source Details*: Enter the details about the source volume you want to replicate:
 +
 image:screenshot_template_replication_source.png[A screenshot of the page to define the replication source volume location.]
 +
@@ -484,7 +525,7 @@ image:screenshot_template_replication_source.png[A screenshot of the page to def
 +
 To get this information: double-click the working environment, click the menu icon, and click Information.
 
-. *Destination Details:* Enter the details about the destination volume that will be created by the replication operation:
+. *Destination Details*: Enter the details about the destination volume that will be created by the replication operation:
 +
 image:screenshot_template_replication_dest.png[A screenshot of the page to define the replication destination volume location.]
 +
@@ -495,7 +536,7 @@ image:screenshot_template_replication_dest.png[A screenshot of the page to defin
 .. Replication requires that the source and destination working environments are connected through their intercluster LIFs. Enter the intercluster LIF IP address for the destination working environment.
 .. When replicating a volume to a Cloud Volumes ONTAP cluster (not to an on-prem ONTAP cluster), you need to specify the Destination Provider (AWS, Azure, or GCP) and the type of disk that will be used for the new volume.
 
-. *Replication Details:* Enter the details about the type and frequency of the replication operation:
+. *Replication Details*: Enter the details about the type and frequency of the replication operation:
 +
 image:screenshot_template_replication_policy.png[A screenshot of the page to define the replication settings for the relationship.]
 +
@@ -508,7 +549,7 @@ image:screenshot_template_replication_policy.png[A screenshot of the page to def
 
 == What to do after you have created the template
 
-After you have created a template, you should inform your storage administrators to use the template when creating new volumes.
+After you have created a template, you should inform your storage administrators to use the template when creating new working environments and volumes.
 
 You can point them to link:task_run_templates.html[Creating resources using templates] for details.
 

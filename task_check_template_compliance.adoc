@@ -74,8 +74,10 @@ To view a drift report for resources that have been created from your templates,
 
 === Replication health details in the drift report
 
-When link:task_define_templates.html#add-replication-functionality-to-a-volume[enabling Replication on a volume using templates], you can decide to show more detailed replication information in the drift report by enabling drift on the "Enable replication health monitoring" field. When enabled, the report shows whether the health of the Replication relationship is healthy or unhealthy (drifted), along with the SnapMirror lag time, status, and last transfer time.
+When link:task_define_templates.html#add-replication-functionality-to-a-volume[enabling Replication on a volume using templates], you can choose to show more detailed replication information in the drift report by enabling drift in the "Enable replication health monitoring" field. When enabled, the drift report shows whether the health of the Replication relationship is healthy or unhealthy (drifted), along with the SnapMirror lag time, status, and last transfer time.
 
 This screenshot shows the replication details for a SnapMirror relationship that is unhealthy in the drift report.
 
 image:screenshot_template_drift_snapmirror_details.png[A screenshot of the Drift report showing the replication details for a SnapMirror relationship that is unhealthy.]
+
+*Note:* As replication is initially being applied to the volume the health will be returned as "False", meaning it is unhealthy. After a few minutes the real replication status will be displayed.
