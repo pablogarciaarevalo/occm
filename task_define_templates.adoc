@@ -393,11 +393,15 @@ See <<What to do after you have created the template,what you should tell your u
 
 === Create a template for a Cloud Volumes ONTAP working environment
 
-You can create a Cloud Volumes ONTAP working environment using templates. This support is provided only for AWS environments at this time, and only for single-node clusters.
+You can create a Cloud Volumes ONTAP working environment using templates.
 
-This template does not create the first volume in the working environment. You must add a "Create Volume in Cloud Volumes ONTAP" action in the template to create the volume.
+[NOTE]
+====
+* This support is provided only for AWS environments at this time, and only for single-node clusters.
+* This template doesn't create the first volume in the working environment. You must add a "Create Volume in Cloud Volumes ONTAP" action in the template to create the volume.
+====
 
-See link:task_deploying_otc_aws.html#launching-a-single-node-cloud-volumes-ontap-system-in-aws[how to launching a single-node Cloud Volumes ONTAP system in AWS^] for details about all the parameters you need to complete in this template.
+See link:task_deploying_otc_aws.html#launching-a-single-node-cloud-volumes-ontap-system-in-aws[how to launch a single-node Cloud Volumes ONTAP system in AWS^] for the prerequisites that must be in place, and for details about all the parameters you need to complete in this template.
 
 .Steps
 
@@ -421,7 +425,7 @@ image:screenshot_create_template_cvo_env_aws1.png[A screenshot showing a blank C
 
 . *Action Name*: Optionally, enter a customized action name instead of the default value.
 
-. *Details and Credentials*: Enter the AWS credentials and subscription, enter a working environment name, add tags if needed.
+. *Details and Credentials*: Enter the AWS credentials and subscription, enter a working environment name, and add tags, if needed.
 +
 Some of the fields in this page are self-explanatory. The following table describes fields for which you might need guidance:
 +
@@ -461,6 +465,16 @@ link:concept_licensing.html[Learn about these charging methods].
 . *Preconfigured Packages*: Select one of the four preconfigured packages that will determine several factors for volumes created in the working environment.
 
 . *SMB Configuration*: If you plan to deploy volumes using SMB on this working environment, you can set up a CIFS server and related configuration elements.
+
+. Click *Apply* after you have defined the parameters needed for this action.
++
+If the template values are correctly completed, a green checkmark is added to the "Create Working Environment in AWS (single node)" box.
+
+. Enter the template name in the top left.
+
+. Click *Settings & Drift* to provide a more detailed description so that this template can be distinguished from other similar templates, and so you can enable Drift for the overall template, and then click *Apply*.
++
+Drift allows Cloud Manager to monitor the hard-coded values you entered for parameters when creating this template.
 
 . Click *Save Template*.
 

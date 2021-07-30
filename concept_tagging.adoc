@@ -51,9 +51,13 @@ Volume
 
 | Azure NetApp Files | Volume
 
+| AWS | EC2 Instance
+
 |===
 
-NOTE: At this time you can't view or manage tags assigned to resources though a cloud provider. So you won't see tags applied from AWS or Azure, or labels assigned from Google Cloud.
+For information about AWS EC2 tags, refer to https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html[AWS Documentation: Tagging your Amazon EC2 Resources^].
+
+NOTE: At this time you can't view or manage tags assigned to resources though Azure, or labels assigned to resources though Google Cloud.
 
 == Tag rules and restrictions
 
