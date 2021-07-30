@@ -28,8 +28,8 @@ Cloud Data Sense provides several tools that can help you with your compliance e
 * Respond to Data Subject Access Requests (DSAR)
 * Notify Cloud Manager users through email when files contain certain PII (you define this criteria using link:task_managing_highlights.html#controlling-your-data-using-policies[Policies^])
 * View and modify link:https://azure.microsoft.com/en-us/services/information-protection/[Azure Information Protection (AIP) labels^] in your files
-* Add a custom status to a file (for example, "needs to be moved") and assign a Cloud Manager user so that person can own the change to the file
-* Move and delete individual files
+* Add a custom status to files (for example, "needs to be moved") and assign a Cloud Manager user so that person can own the change to the files
+* Move and delete files
 
 Cloud Data Sense also provides tools that can help with your governance efforts. You can use Cloud Data Sense to:
 
