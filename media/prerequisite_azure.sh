@@ -29,11 +29,12 @@ EOF
 }
 
 createUserMSI() {
+
+  echo "The script takes around 4 to 5 minutes as role creation and assignments take time to reflect."
+
   #prepare msi name
   userMSIName="SnapCenter-MSI-"${ConnectorName}
 
-  #echo "user assigned managed identity name is: " $userMSIName
-  echo "user assigned managed identity name is: " "$userMSIName"
 
   #set az account
   az account set --subscription "${SubscriptionID}"
@@ -46,7 +47,7 @@ createUserMSI() {
     exit 1
   fi
 
-  echo "user managed identity created, principalId: " "${userMSIPrincipleID}"
+  echo "User managed identity created, User MSI Name: " "${userMSIName}"
 
 }
 
@@ -172,6 +173,56 @@ createNetworkManagementRole() {
   echo "custom role '$NetworkManagementRoleName' created, RoleDefinitionID:" "$NetworkRoleDefID"
 }
 
+createUDRRole(){
+
+  #get network vnet name
+  subnetName=$(echo "$subnetScope" | cut -d'/' -f 11)
+  routeTableScope=$(az network vnet subnet show -g "$networkResourceGroup" -n "$subnetName" --vnet-name "$virtualNetworkName" --query 'routeTable.id' -o tsv)
+
+  if [ -z "$routeTableScope" ]; then
+    return
+  fi
+
+  # check if role already exists
+  echo "Started creating SnapCenter AKS UDR management role"
+  sleep 30
+  routeTableName=$(echo "$routeTableScope" | cut -d'/' -f 9)
+  routeTableSubscriptionID=$(echo "$routeTableScope" | cut -d'/' -f 3)
+  #prepare route route table management role name
+  routTableManagementRoleName="SnapCenter-UDR-Management-"${ResourceGroup}${strhypen}${ConnectorName}
+
+  RouteTableRoleDefID=$(az role definition list --custom-role-only true -n "$routTableManagementRoleName" --scope "$routeTableScope" --subscription "$routeTableSubscriptionID" --query [0].id -o tsv)
+
+  if [ ! -z "$RouteTableRoleDefID" ]; then
+    echo "custom role '$routTableManagementRoleName' already exists, RoleDefinitionID:" "$RouteTableRoleDefID"
+    return
+  fi
+
+  #create snapcenter udr management custom role at udr scope
+  RouteTableRoleDefID=$(az role definition create --role-definition '{
+  "Name": "'"$routTableManagementRoleName"'",
+  "IsCustom": true,
+  "Description": "SnapCenter AKS UDR management role",
+  "Actions": [
+     "Microsoft.Network/routeTables/*",
+     "Microsoft.Network/networkInterfaces/effectiveRouteTable/action",
+     "Microsoft.Network/networkWatchers/nextHop/action"
+  ],
+  "NotActions": [
+  ],
+  "AssignableScopes": [
+    "'"$routeTableScope"'"
+  ]
+}' --query 'id' -o tsv)
+
+  if [ -z "$RouteTableRoleDefID" ]; then
+    echo "Failed to create the custom role: '$routTableManagementRoleName'"
+    exit 1
+  fi
+
+  echo "custom role '$routTableManagementRoleName' created, RoleDefinitionID:" "$routeTableSubscriptionID"
+}
+
 roleAssignments() {
   #sleep for few seconds, because sometimes user msi wont be created, adding sleep for 45 seconds
   echo "adding sleep for 45 seconds, to ensure MSI is already created before role assignment, even after that if role assignment fails then re-execute the script."
@@ -200,6 +251,18 @@ roleAssignments() {
   fi
 
   echo "Successfully assigned the role '$NetworkManagementRoleName' to user managed identity and the Role AssignmentId is '$networkRoleAssignmentID'"
+
+  if [ ! -z "$RouteTableRoleDefID" ]; then
+  #Assign route table Contributor role to user msi
+  routeTableRoleAssignmentID=$(az role assignment create --assignee "$userMSIPrincipleID" --role "$RouteTableRoleDefID" --scope "$routeTableScope" --query 'id' -o tsv)
+
+  if [ -z "$routeTableRoleAssignmentID" ]; then
+    echo "Failed to assign the role: '$routTableManagementRoleName' to user managed identity."
+    exit 1
+  fi
+
+  echo "Successfully assigned the role '$routTableManagementRoleName' to user managed identity and the Role AssignmentId is '$routeTableRoleAssignmentID'"
+  fi
 }
 
 assignUserMSI() {
@@ -246,9 +309,9 @@ done
 shift "$((OPTIND - 1))" # Discard the options and sentinel --
 
 validate
-echo "The script takes around 4 to 5 minutes as role creation and assignments take time to reflect."
 createUserMSI
 createManagedClusterRole
 createNetworkManagementRole
+createUDRRole
 roleAssignments
 assignUserMSI
