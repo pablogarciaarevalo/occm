@@ -37,7 +37,7 @@ Note that the DNS name must match Azure DNS naming requirements https://docs.mic
 
 . SSH to the Connector host and log in.
 
-. Navigate to the following directory: /opt/application/netapp/cloudmanager
+. Navigate to the following directory: /opt/application/netapp/cloudmanager/docker_occm/data
 
 . Edit app.conf by modifying the following parameter as shown:
 +

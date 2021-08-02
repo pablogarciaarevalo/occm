@@ -93,6 +93,10 @@ The Connector is now supported on a host that's running Red Hat Enterprise Linux
 
 link:reference_cloud_mgr_reqs.html[View system requirements for the Connector].
 
+== Cloud Manager 3.9.8 build 3 (25 July 2021)
+
+This patch update includes bug fixes and security improvements.
+
 == Cloud Manager 3.9.8 update (13 July 2021)
 
 * <<Application Template enhancements>>
