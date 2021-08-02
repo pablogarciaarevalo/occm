@@ -36,6 +36,8 @@ Supported operating systems::
 * CentOS 7.7
 * Red Hat Enterprise Linux 7.6
 * Red Hat Enterprise Linux 7.7
+* Red Hat Enterprise Linux 7.8
+* Red Hat Enterprise Linux 7.9
 +
 The Red Hat Enterprise Linux system must be registered with Red Hat Subscription Management. If it is not registered, the system cannot access repositories to update required 3rd party software during Connector installation.
 +
