@@ -28,8 +28,8 @@ Cloud Data Sense provides several tools that can help you with your compliance e
 * Respond to Data Subject Access Requests (DSAR)
 * Notify Cloud Manager users through email when files contain certain PII (you define this criteria using link:task_managing_highlights.html#controlling-your-data-using-policies[Policies^])
 * View and modify link:https://azure.microsoft.com/en-us/services/information-protection/[Azure Information Protection (AIP) labels^] in your files
-* Add a custom status to a file (for example, "needs to be moved") and assign a Cloud Manager user so that person can own the change to the file
-* Move and delete individual files
+* Add a custom status to files (for example, "needs to be moved") and assign a Cloud Manager user so that person can own the change to the files
+* Move and delete files
 
 Cloud Data Sense also provides tools that can help with your governance efforts. You can use Cloud Data Sense to:
 
@@ -110,7 +110,7 @@ You can deploy Data Sense on a system with fewer CPUs and less RAM, but there ar
 | Limitations
 | Extra Large (default) | 16 CPUs, 64 GB RAM | None
 | Medium | 8 CPUs, 32 GB RAM | Slower scanning, and can only scan up to 1 million files.
-| Small | 8 CPUs, 16 GB RAM | Same limitations as "Medium", plus two features are disabled: contextual AI scanning for most of the link:reference_private_data_categories.html#types-of-sensitive-personal-data[sensitive personal] identifiers, and for identifying link:task_responding_to_dsar.html[data subject names] inside files.
+| Small | 8 CPUs, 16 GB RAM | Same limitations as "Medium", plus the ability to identify link:task_responding_to_dsar.html[data subject names] inside files is disabled.
 |===
 
 When deploying Data Sense in the cloud, email ng-contact-data-sense@netapp.com for assistance if you want to use one of these smaller systems.

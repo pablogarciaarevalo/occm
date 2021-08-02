@@ -154,8 +154,7 @@ The report includes the following information:
 Usage Capacity:: For all working environments: Lists the number of files and the used capacity for each working environment.
 For single working environments: Lists the files that are using the most capacity.
 
-Age of Data:: For all working environments: Lists the number of files that have been modified based on certain date ranges.
-For single working environments: Lists the number of files that have been created, accessed, and modified based on certain date ranges.
+Age of Data:: Provides three charts and graphs for when files were created, last modified, or last accessed. Lists the number of files, and their used capacity, based on certain date ranges.
 
 Size of Data:: Lists the number of files that exist within certain size ranges in your working environments.
 
