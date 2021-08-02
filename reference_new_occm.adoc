@@ -21,20 +21,20 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 == Cloud Manager 3.9.9 (1 Aug 2021)
 
-* <<Cloud Backup enhancements>>
+// * <<Cloud Backup enhancements>>
 * <<Cloud Sync enhancements>>
 * <<Cloud Data Sense enhancements>>
-* <<Application Template enhancements>>
-* <<Resource Tagging enhancements>>
+// * <<Application Template enhancements>>
+// * <<Resource Tagging enhancements>>
 * <<Monitoring enhancement>>
 * <<Connector enhancement>>
 
-=== Cloud Backup enhancements
-
-* When configuring backups to Azure Blob from an on-premises ONTAP system, you can define a connection to an Azure Private Endpoint in the activation wizard. This allows you to use a network interface that connects you privately and securely to a service powered by Azure Private Link.
-
-* An Hourly backup policy is now supported in addition to the existing Daily, Weekly, and Monthly policies. The Hourly backup policy provides a minimal Recovery Point Objective (RPO).
-
+// === Cloud Backup enhancements
+//
+// * When configuring backups to Azure Blob from an on-premises ONTAP system, you can define a connection to an Azure Private Endpoint in the activation wizard. This allows you to use a network interface that connects you privately and securely to a service powered by Azure Private Link.
+//
+// * An Hourly backup policy is now supported in addition to the existing Daily, Weekly, and Monthly policies. The Hourly backup policy provides a minimal Recovery Point Objective (RPO).
+//
 === Cloud Sync enhancements
 
 * Cloud Sync now enables you to update the data broker with the latest credentials of the source or target in an existing sync relationship.
@@ -69,16 +69,16 @@ In earlier versions of Cloud Data Sense you could perform the following actions 
 +
 This information is provided in the Data Mapping Report as well.
 
-=== Application Template enhancements
-
-* You can now create a Cloud Volumes ONTAP working environment, and your first volume, using templates. This support is provided only for AWS environments at this time, and only for single-node clusters.
-
-* A new feature enables you to add tags to a volume in a volume template. Tagging enables you to group different resources to identify applications, regions, or departments in order to perform automation or to allocate costs to certain departments or regions.
-
-=== Resource Tagging enhancements
-
-Now you can manage tags from your Azure resources. You can view Azure tags and tag values that have been applied to resources, and you can apply those tags to other Azure resources that you are managing.
-
+// === Application Template enhancements
+//
+// * You can now create a Cloud Volumes ONTAP working environment, and your first volume, using templates. This support is provided only for AWS environments at this time, and only for single-node clusters.
+//
+// * A new feature enables you to add tags to a volume in a volume template. Tagging enables you to group different resources to identify applications, regions, or departments in order to perform automation or to allocate costs to certain departments or regions.
+//
+// === Resource Tagging enhancements
+//
+// Now you can manage tags from your Azure resources. You can view Azure tags and tag values that have been applied to resources, and you can apply those tags to other Azure resources that you are managing.
+//
 === Monitoring enhancement
 
 We changed the default name of the Acquisition Unit instance to CloudInsights-AU-_UUID_ so that the name is more descriptive (the UUID is a generated hash).
