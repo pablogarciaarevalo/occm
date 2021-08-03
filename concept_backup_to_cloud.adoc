@@ -104,7 +104,7 @@ The instance is named _Cloud-Restore-Instance_ with your Account ID concatenated
 
 Backup service charges are paid to NetApp and cover both the cost to _create_ backups and to _restore_ volumes, or files, from those backups. You pay only for the data that you protect, calculated by the target backup capacity _before_ ONTAP efficiencies.
 
-There are two ways to pay for the Backup service. The first option is to subscribe from the service provider, which enables you to pay per month based on the amount of backed up data. The second option is to purchase licenses directly from NetApp. Read the <<Licensing,Licensing>> section for details.
+There are three ways to pay for the Backup service. The first option is to subscribe from your cloud provider, which enables you to pay per month based on the amount of backed up data. The second option is to get an annual contract - this is only available through AWS. The third option is to purchase licenses directly from NetApp. Read the <<Licensing,Licensing>> section for details.
 
 == Licensing
 
@@ -118,13 +118,21 @@ Backup are not deleted when the service is disabled. You'll continue to be charg
 
 === Pay-as-you-go subscription
 
-For PAYGO you'll need to pay your cloud provider for object storage costs (as described earlier) and NetApp for backup licensing costs. The licensing costs are based on target backup capacity (before ONTAP storage efficiencies):
+Cloud Backup offers consumption-based licensing in a pay-as-you-go model. The licensing costs are based on target backup capacity (before ONTAP storage efficiencies). After subscribing through your cloud provider’s marketplace, you pay per GB for data that’s backed up—​there’s no up-front payment. You are billed by your cloud provider through your monthly bill.
 
-* AWS: https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Go to the Cloud Manager Marketplace offering for pricing details^].
+You should subscribe even if you have a free trial or if you bring your own license (BYOL):
 
-* Azure: https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Go to the Cloud Manager Marketplace offering for pricing details^].
+* Subscribing ensures that there’s no disruption of service after your free trial ends.
++
+When the trial ends, you’ll be charged hourly according to the amount of data that you back up.
 
-* GCP: https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[Go to the Cloud Manager Marketplace offering for pricing details^]
+* If you back up more data than allowed by your BYOL license, then data backup continues through your pay-as-you-go subscription.
++
+For example, if you have a 10 TB BYOL license, all capacity beyond the 10 TB is charged through the pay-as-you-go subscription.
+
+You won’t be charged from your pay-as-you-go subscription during your free trial or if you haven’t exceeded your BYOL license.
+
+link:task_licensing_cloud_backup.html#set-up-a-paygo-subscription[Learn how to set up a pay-as-you-go subscription].
 
 === Annual contract (AWS only)
 
@@ -132,15 +140,13 @@ Two annual contracts are available from the AWS Marketplace:
 
 *	An annual contract that enables you to back up Cloud Volumes ONTAP data and on-premises ONTAP data.
 +
-Go to the https://aws.amazon.com/marketplace/pp/B086PDWSS8[AWS Marketplace page^] to view pricing details.
-+
-If you want to use this option, set up your subscription from the Marketplace page and then link:task_adding_aws_accounts.html#associating-an-aws-subscription-to-credentials[associate the subscription with your AWS credentials]. Note that you’ll also need to pay for Cloud Volumes ONTAP using this annual contract subscription, since you can assign only one active subscription to your AWS credentials in Cloud Manager.
+You’ll also need to pay for Cloud Volumes ONTAP using this annual contract subscription, since you can assign only one active subscription to your AWS credentials in Cloud Manager.
 
-* A Professional Package that enables you to bundle Cloud Volumes ONTAP and Cloud Backup Service by using an annual contract for 12 months, 24 months, or 36 months. Payment is per TiB. This option doesn’t enable you to back up on-prem data.
+* A Professional Package that enables you to bundle Cloud Volumes ONTAP and Cloud Backup Service by using an annual contract for 12 months, 24 months, or 36 months. This option doesn’t enable you to back up on-prem data.
 +
-Go to the https://aws.amazon.com/marketplace/pp/prodview-q7dg6zwszplri[AWS Marketplace page^] to view pricing details and go to the https://docs.netapp.com/us-en/cloud-volumes-ontap[Cloud Volumes ONTAP Release Notes^] to learn more about this licensing option.
-+
-If you want to use this option, you can set up the annual contract when you create a Cloud Volumes ONTAP working environment and Cloud Manager prompts you to subscribe to the AWS Marketplace.
+You can set up the annual contract when you create a Cloud Volumes ONTAP working environment and Cloud Manager will prompt you to subscribe to the AWS Marketplace.
+
+link:task_licensing_cloud_backup.html#subscribe-to-yearly-contracts-through-aws[Learn how to set up yearly AWS contracts].
 
 === Bring your own license
 
@@ -148,7 +154,9 @@ BYOL is term-based (1YR/2YR/3YR) and capacity-based in 1 TB increments, based on
 
 NOTE: Backup to StorageGRID does require a BYOL license, but there is no cost for cloud provider storage space in this case.
 
-You'll receive a serial number that you enter in the Cloud Manager Digital Wallet page to enable the service. When either limit is reached you'll need to renew the license. See link:task_managing_licenses.html#manage-cloud-backup-licenses[Managing Cloud Backup licenses^]. The Backup BYOL license applies to all Cloud Volumes ONTAP and on-premises ONTAP systems associated with your link:concept_cloud_central_accounts.html[Cloud Central account^].
+You'll receive a serial number that you enter in the Cloud Manager Digital Wallet page to enable the service. When either limit is reached you'll need to renew the license.  The Backup BYOL license applies to all Cloud Volumes ONTAP and on-premises ONTAP systems associated with your link:concept_cloud_central_accounts.html[Cloud Central account^].
+
+link:task_licensing_cloud_backup.html#use-cloud-backup-byol-licenses[Learn how to manage your BYOL licenses].
 
 ==== BYOL license considerations
 
@@ -164,9 +172,9 @@ Two things can happen when your license expires:
 * If the account you are using for your ONTAP systems has a marketplace account, the backup service continues to run, but you are shifted over to a PAYGO licensing model. You are charged by your cloud provider for object storage costs, and by NetApp for backup licensing costs, for the capacity that your backups are using.
 * If the account you are using for your ONTAP systems does not have a marketplace account, the backup service continues to run, but you will continue to see the warnings.
 
-Once you renew your BYOL subscription, Cloud Manager automatically obtains the new license from NetApp and installs it. If Cloud Manager can't access the license file over the secure internet connection, you can obtain the file yourself and manually upload it to Cloud Manager. For instructions, see link:task_managing_licenses.html#manage-cloud-backup-licenses[Managing Cloud Backup licenses^].
+Once you renew your BYOL subscription, Cloud Manager automatically obtains the new license from NetApp and installs it. If Cloud Manager can't access the license file over the secure internet connection, you can obtain the file yourself and manually upload it to Cloud Manager. For instructions, see link:task_licensing_cloud_backup.html#add-or-update-a-cloud-backup-license[how to update a Cloud Backup license].
 
-Systems that were shifted over to a PAYGO license are returned to the BYOL license automatically. And systems that were running without a license will stop seeing the warnings and will be charged for backups that occurred while the license was expired.
+Systems that were shifted over to a PAYGO license are returned to the BYOL license automatically. And systems that were running without a license will stop seeing the warnings and will be charged for backup activity that occurred while the license was expired.
 
 == How Cloud Backup works
 
@@ -212,9 +220,9 @@ When you enable Cloud Backup, all the volumes you identify on the system are bac
 
 The schedule and number of backups to retain are defined at the system level. The backup settings affect all volumes on the system.
 
-=== The schedule is daily, weekly, monthly, or a combination
+=== The schedule is hourly, daily, weekly, monthly, or a combination
 
-You can choose a combination of daily, weekly, and monthly backups of all volumes. You can also select one of the system-defined policies that provide backups and retention for 3 months, 1 year, and 7 years. These policies are:
+You can choose a combination of hourly, daily, weekly, and monthly backups of all volumes. You can also select one of the system-defined policies that provide backups and retention for 3 months, 1 year, and 7 years. These policies are:
 
 [cols=5*,options="header",cols="30,20,20,20,30",width="80%"]
 |===
@@ -240,11 +248,13 @@ Note that the retention period for backups of data protection volumes is the sam
 
 === Backups are taken at midnight
 
+* Hourly backups start 5 minutes past the hour, every hour.
+
 * Daily backups start just after midnight each day.
 
 * Weekly backups start just after midnight on Sunday mornings.
 
-* Monthly backups start just after midnight on the first of each month.
+* Monthly backups start just after midnight on the first day of each month.
 
 The start time is based on the time zone set on each source ONTAP system. For now you can’t schedule backup operations at a user specified time.
 

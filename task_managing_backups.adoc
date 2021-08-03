@@ -33,7 +33,7 @@ If you are looking for specific volumes in certain working environments, you can
 
 == Changing the schedule and backup retention
 
-The default policy backs up volumes every day and retains the most recent 30 backup copies of each volume. You can change to a combination of daily, weekly, or monthly backups and you can change the number of backup copies to retain. You can also select one of the system-defined policies that provide scheduled backups for 3 months, 1 year, and 7 years.
+The default policy backs up volumes every day and retains the most recent 30 backup copies of each volume. You can change to a combination of hourly, daily, weekly, or monthly backups and you can change the number of backup copies to retain. You can also select one of the system-defined policies that provide scheduled backups for 3 months, 1 year, and 7 years.
 
 Changing the backup policy affects both new volumes created after you change the schedule, and any existing volumes that were using the original policy.
 
@@ -89,7 +89,7 @@ This page also enables you perform the following tasks:
 +
 image:screenshot_backup_view_backups_button.png[A screenshot that shows the Details & Backup List button which is available for a single volume.]
 +
-The list of all backup files (snapshots) is displayed along with details about the source volume, destination location, and backup details.
+The list of all backup files is displayed along with details about the source volume, destination location, and backup details.
 +
 image:screenshot_backup_view_backups.png[A screenshot that shows the List of all backup files for a single volume.]
 
@@ -123,11 +123,11 @@ image:screenshot_delete_all_backups.png[A screenshot of selecting the Delete All
 +
 image:screenshot_backup_view_backups_button.png[A screenshot that shows the Details & Backup List button which is available for a single volume.]
 +
-The list of all backup files (snapshots) is displayed.
+The list of all backup files is displayed.
 +
 image:screenshot_backup_view_backups.png[A screenshot that shows the List of all backup files for a single volume.]
 
-. Click *Actions* > *Delete all Snapshots*.
+. Click *Actions* > *Delete all Backups*.
 +
 image:screenshot_delete_we_backups.png[A screenshot showing how to delete all backup files for a volume.]
 
@@ -143,11 +143,11 @@ You can delete a single backup file. This feature is available only if the volum
 +
 image:screenshot_backup_view_backups_button.png[A screenshot that shows the Details & Backup List button which is available for a single volume.]
 +
-The list of all backup files (snapshots) is displayed.
+The list of all backup files is displayed.
 +
 image:screenshot_backup_view_backups.png[A screenshot that shows the List of all backup files for a single volume.]
 
-. Click image:screenshot_horizontal_more_button.gif[More icon] for the volume snapshot you want to delete and click *Delete Snapshot*.
+. Click image:screenshot_horizontal_more_button.gif[More icon] for the volume backup file you want to delete and click *Delete*.
 +
 image:screenshot_delete_one_backup.png[A screenshot showing how to delete a single backup file.]
 
