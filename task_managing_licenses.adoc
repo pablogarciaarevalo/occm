@@ -45,7 +45,7 @@ View the licensed capacity and allocated capacity by package to ensure that you 
 
 . View the licensed capacity and allocated capacity for each package.
 +
-image:screenshot_capacity-based-licenses.png[A screenshot that shows the amount of allocated capacity versus licensed capacity for the professional package and essential package.]
+image:screenshot_capacity-based-licenses.png[A screenshot that shows the amount of allocated capacity versus licensed capacity for the professional package and essentials package.]
 
 . If needed, purchase additional licensed capacity and then add the license to your account.
 

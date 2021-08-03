@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: reference_sync_requirements.html
-keywords: networking, nfs, cifs, smb, version, connection, google, gcp, azure, blob, service account, resource, permissions, networking, version, ntp, network, protocol, aws efs requirements, efs requirements, s3 requirements, azure blob requirements, blob requirements, azure netapp files, cifs requirements, smb requirements, cloud volumes service, google cloud storage, gcp, ibm cloud object storage, storagegrid, storage tier, blob storage tier, storage class, s3 storage class, nfs versions, smb versions
+keywords: networking, nfs, cifs, smb, version, connection, google, gcp, azure, blob, service account, resource, permissions, networking, version, ntp, network, protocol, aws efs requirements, efs requirements, s3 requirements, azure blob requirements, blob requirements, azure netapp files, cifs requirements, smb requirements, cloud volumes service, google cloud storage, gcp, ibm cloud object storage, storagegrid, storage tier, blob storage tier, storage class, s3 storage class, nfs versions, smb versions, box
 summary: Prepare to sync data by verifying that your source and target are supported and setup.
 ---
 
@@ -24,10 +24,10 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 | Source location
 | Supported target locations
 
-| AWS EFS a|
+| Amazon EFS a|
 
-* AWS EFS
-* AWS S3
+* Amazon EFS
+* Amazon S3
 * Azure Blob
 * Azure NetApp Files
 * Cloud Volumes ONTAP
@@ -39,10 +39,10 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 * SMB server
 * StorageGRID
 
-| AWS S3 a|
+| Amazon S3 a|
 
-* AWS EFS
-* AWS S3
+* Amazon EFS
+* Amazon S3
 * Azure Blob
 * Azure NetApp Files
 * Cloud Volumes ONTAP
@@ -56,8 +56,8 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 
 | Azure Blob a|
 
-* AWS EFS
-* AWS S3
+* Amazon EFS
+* Amazon S3
 * Azure Blob
 * Azure NetApp Files
 * Cloud Volumes ONTAP
@@ -71,8 +71,8 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 
 | Azure NetApp Files a|
 
-* AWS EFS
-* AWS S3
+* Amazon EFS
+* Amazon S3
 * Azure Blob
 * Azure NetApp Files
 * Cloud Volumes ONTAP
@@ -84,10 +84,16 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 * SMB Server
 * StorageGRID
 
+| Box ^1^ a|
+
+* Amazon S3
+* IBM Cloud Object Storage
+* StorageGRID
+
 | Cloud Volumes ONTAP a|
 
-* AWS EFS
-* AWS S3
+* Amazon EFS
+* Amazon S3
 * Azure Blob
 * Azure NetApp Files
 * Cloud Volumes ONTAP
@@ -101,8 +107,8 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 
 | Cloud Volumes Service a|
 
-* AWS EFS
-* AWS S3
+* Amazon EFS
+* Amazon S3
 * Azure Blob
 * Azure NetApp Files
 * Cloud Volumes ONTAP
@@ -116,8 +122,8 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 
 | Google Cloud Storage a|
 
-* AWS EFS
-* AWS S3
+* Amazon EFS
+* Amazon S3
 * Azure Blob
 * Azure NetApp Files
 * Cloud Volumes ONTAP
@@ -132,8 +138,8 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 
 | IBM Cloud Object Storage a|
 
-* AWS EFS
-* AWS S3
+* Amazon EFS
+* Amazon S3
 * Azure Blob
 * Azure NetApp Files
 * Cloud Volumes ONTAP
@@ -147,8 +153,8 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 
 | NFS server a|
 
-* AWS EFS
-* AWS S3
+* Amazon EFS
+* Amazon S3
 * Azure Blob
 * Azure NetApp Files
 * Cloud Volumes ONTAP
@@ -162,8 +168,8 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 
 | On-prem ONTAP cluster a|
 
-* AWS EFS
-* AWS S3
+* Amazon EFS
+* Amazon S3
 * Azure Blob
 * Azure NetApp Files
 * Cloud Volumes ONTAP
@@ -186,8 +192,8 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 
 | SMB server a|
 
-* AWS EFS
-* AWS S3
+* Amazon EFS
+* Amazon S3
 * Azure Blob
 * Azure NetApp Files
 * Cloud Volumes ONTAP
@@ -202,8 +208,8 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 
 | StorageGRID a|
 
-* AWS EFS
-* AWS S3
+* Amazon EFS
+* Amazon S3
 * Azure Blob
 * Azure NetApp Files
 * Cloud Volumes ONTAP
@@ -220,14 +226,14 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 
 Notes:
 
-. Cloud Sync supports sync relationships from SFTP to S3 by using the API only.
+. Sync relationships with this source are supported by using the Cloud Sync API only.
 
 . You can choose a specific Azure Blob storage tier when a Blob container is the target:
 +
 * Hot storage
 * Cool storage
 
-. [[storage-classes]]You can choose a specific S3 storage class when AWS S3 is the target:
+. [[storage-classes]]You can choose a specific S3 storage class when Amazon S3 is the target:
 +
 * Standard (this is the default class)
 * Intelligent-Tiering
@@ -273,11 +279,11 @@ SMB:: The SMB credentials that you enter when setting up a sync relationship mus
 
 NOTE: The data broker ignores the following directories by default: .snapshot, ~snapshot, .copy-offload
 
-=== [[s3]]AWS S3 bucket requirements
+=== [[s3]]Amazon S3 bucket requirements
 
-Make sure that your AWS S3 bucket meets the following requirements.
+Make sure that your Amazon S3 bucket meets the following requirements.
 
-==== Supported data broker locations for AWS S3
+==== Supported data broker locations for Amazon S3
 
 Sync relationships that include S3 storage require a data broker deployed in AWS or on your premises. In either case, Cloud Sync prompts you to associate the data broker with an AWS account during installation.
 
@@ -341,6 +347,21 @@ Use the Premium or Ultra service level when you sync data to or from Azure NetAp
 TIP: Consult a solutions architect if you need help determining the right service level. The volume size and volume tier determines the throughput that you can get.
 
 https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-service-levels#throughput-limits[Learn more about Azure NetApp Files service levels and throughput].
+
+=== Box requirements
+
+Cloud Sync supports https://www.box.com/home[Box^] as the source in a sync relationship when using the Cloud Sync API.
+
+In order to copy from Box, you'll need to provide the following credentials:
+
+*	clientId
+*	cliendSecret
+*	publicKeyId
+*	privateKey
+*	passphrase
+*	enterpriseId
+
+link:api_sync.html[Learn more about using the API to create a sync relationship from Box].
 
 === [[google]]Google Cloud Storage bucket requirements
 
