@@ -425,7 +425,7 @@ image:screenshot_create_template_cvo_env_aws1.png[A screenshot showing a blank C
 
 . *Action Name*: Optionally, enter a customized action name instead of the default value.
 
-. *Details and Credentials*: Enter the AWS credentials and subscription, enter a working environment name, and add tags, if needed.
+. *Details and Credentials*: Select the AWS credentials to use, enter a working environment name, and add tags, if needed.
 +
 Some of the fields in this page are self-explanatory. The following table describes fields for which you might need guidance:
 +
@@ -434,13 +434,15 @@ Some of the fields in this page are self-explanatory. The following table descri
 | Field
 | Description
 
+| Credentials | These are the credentials for the Cloud Volumes ONTAP cluster admin account. You can use these credentials to connect to Cloud Volumes ONTAP through ONTAP System Manager or its CLI.
+
 | Working Environment Name | Cloud Manager uses the working environment name to name both the Cloud Volumes ONTAP system and the Amazon EC2 instance. It also uses the name as the prefix for the predefined security group, if you select that option.
+
+Click in the field and select one of the 5 options. You can let the admin enter any name by selecting *Free Text*, or you can specify that the working environment name must have a certain prefix or suffix, that it _contains_ certain characters, or that it follows rules from a regular expression (regex) you enter.
 
 | Tags | AWS tags are metadata for your AWS resources. Cloud Manager adds the tags to the Cloud Volumes ONTAP instance and each AWS resource associated with the instance.
 
 For information about tags, refer to https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html[AWS Documentation: Tagging your Amazon EC2 Resources^].
-
-| User name and password | These are the credentials for the Cloud Volumes ONTAP cluster admin account. You can use these credentials to connect to Cloud Volumes ONTAP through OnCommand System Manager or its CLI.
 
 |===
 
@@ -469,6 +471,8 @@ link:concept_licensing.html[Learn about these charging methods].
 . Click *Apply* after you have defined the parameters needed for this action.
 +
 If the template values are correctly completed, a green checkmark is added to the "Create Working Environment in AWS (single node)" box.
+
+. You may want to add another action in this template to create a volume for this working environment. If so, click image:button_plus_sign_round.png[] and add that action. See how to <<Create a template for a Cloud Volumes ONTAP volume,Create a template for a Cloud Volumes ONTAP volume>> for details.
 
 . Enter the template name in the top left.
 
