@@ -69,7 +69,7 @@ You can install a data broker in GCP when you create a sync relationship.
 +
 Complete the steps until you reach the *Data Broker* page.
 
-. On the *Data Broker* page, click *Create Data Broker* and then select *Google Cloud Platform*.
+. On the *Select a Data Broker* page, click the *Create Data Broker* and then select *Google Cloud Platform*.
 +
 If you already have a data broker, you'll need to click the image:screenshot_plus_icon.gif[A screenshot if the plus icon] icon first.
 +
@@ -81,9 +81,11 @@ image:screenshot_create_data_broker.gif["A screenshot of the Data Broker page th
 +
 The form is owned and hosted by Google. Your credentials are not provided to NetApp.
 
-. Select a project and service account and then choose a location for the data broker.
+. Select a project and service account and then choose a location for the data broker, including whether you want to enable or disable a public IP address.
 +
-image:screenshot_data_broker_gcp.gif[A screenshot that shows the information required to deploy a data broker in Google Cloud.]
+If you don't enable a public IP address, then you'll need to define a proxy server in the next step.
++
+image:screenshot_data_broker_gcp.png[A screenshot that shows the information required to deploy a data broker in Google Cloud.]
 
 . Specify a proxy configuration, if a proxy is required for internet access in the VPC.
 +

@@ -19,6 +19,80 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.9 (1 Aug 2021)
+
+* <<Cloud Backup enhancements>>
+* <<Cloud Sync enhancements>>
+* <<Cloud Data Sense enhancements>>
+// * <<Application Template enhancements>>
+// * <<Resource Tagging enhancements>>
+* <<Monitoring enhancement>>
+* <<Connector enhancement>>
+
+=== Cloud Backup enhancements
+
+* When configuring backups to Azure Blob from an on-premises ONTAP system, you can define a connection to an Azure Private Endpoint in the activation wizard. This allows you to use a network interface that connects you privately and securely to a service powered by Azure Private Link.
+
+* An Hourly backup policy is now supported in addition to the existing Daily, Weekly, and Monthly policies. The Hourly backup policy provides a minimal Recovery Point Objective (RPO).
+
+=== Cloud Sync enhancements
+
+* Cloud Sync now enables you to update the data broker with the latest credentials of the source or target in an existing sync relationship.
++
+This enhancement can help if your security policies require you to update credentials on a periodic basis. link:task_sync_managing_relationships.html[Learn how to update credentials].
++
+image:screenshot_sync_update_credentials.png[A screenshot that shows the Update Credentials option on the Sync Relationships page just under the name of the source or target.]
+
+* When creating a sync relationship, you can now add tags to the object storage target in a sync relationship.
++
+Adding tags is supported with Amazon S3, Azure Blob, Google Cloud Storage, IBM Cloud Object Storage, and StorageGRID.
++
+image:screenshot_sync_tags.png[A screenshot that shows the page in the working environment wizard that enables you to add relationship tags to the object storage target in the relationship.]
+
+* Cloud Sync now supports https://www.box.com/home[Box^] as the source in a sync relationship to Amazon S3, StorageGRID, and IBM Cloud Object Storage when using the Cloud Sync API.
++
+link:api_sync.html[Learn how to set up a sync relationship using the API].
+
+* When you deploy a data broker in Google Cloud, you can now choose whether to enable or disable a public IP address for the virtual machine instance.
++
+link:task_sync_installing_gcp.html[Learn how to deploy a data broker in Google Cloud].
+
+* When you choose the source or target volume for Azure NetApp Files, Cloud Sync now displays a dual-protocol volume no matter which protocol you chose for the sync relationship.
+
+=== Cloud Data Sense enhancements
+
+* Ability to manage file settings for multiple files at a time.
++
+In earlier versions of Cloud Data Sense you could perform the following actions on one file at a time: add a status tag, assign a user, and add an AIP label. Now you can select multiple files from the Data Investigation page and perform these actions on multiple files.
+
+* When viewing the Age of Data graph in the Governance dashboard, in addition to viewing data based on the last time it was modified, now you can view the data by when it was created or by when it was last accessed (when it was read).
++
+This information is provided in the Data Mapping Report as well.
+
+// === Application Template enhancements
+//
+// * You can now create a Cloud Volumes ONTAP working environment, and your first volume, using templates. This support is provided only for AWS environments at this time, and only for single-node clusters.
+//
+// * A new feature enables you to add tags to a volume in a volume template. Tagging enables you to group different resources to identify applications, regions, or departments in order to perform automation or to allocate costs to certain departments or regions.
+//
+// === Resource Tagging enhancements
+//
+// Now you can manage tags from your Azure resources. You can view Azure tags and tag values that have been applied to resources, and you can apply those tags to other Azure resources that you are managing.
+//
+=== Monitoring enhancement
+
+We changed the default name of the Acquisition Unit instance to CloudInsights-AU-_UUID_ so that the name is more descriptive (the UUID is a generated hash).
+
+Cloud Manager deploys this instance when you enable the Monitoring service on a Cloud Volumes ONTAP working environment.
+
+link:concept_monitoring.html[Learn more about the Monitoring service].
+
+=== Connector enhancement
+
+The Connector is now supported on a host that's running Red Hat Enterprise Linux 7.9.
+
+link:reference_cloud_mgr_reqs.html[View system requirements for the Connector].
+
 == Cloud Manager 3.9.8 build 3 (25 July 2021)
 
 This patch update includes bug fixes and security improvements.
@@ -59,7 +133,7 @@ This release of Cloud Manager includes enhancements to the management of Cloud V
 
 * New charging methods are available for Cloud Volumes ONTAP.
 
-** *Capacity-based BYOL*: A capacity-based license enables you to pay for Cloud Volumes ONTAP per TiB of capacity. The license is associated with your NetApp account and enables you to create as multiple Cloud Volumes ONTAP systems, as long as enough capacity is available through your license. Capacity-based licensing is available in the form of a package, either _Essential_ or _Professional_.
+** *Capacity-based BYOL*: A capacity-based license enables you to pay for Cloud Volumes ONTAP per TiB of capacity. The license is associated with your NetApp account and enables you to create as multiple Cloud Volumes ONTAP systems, as long as enough capacity is available through your license. Capacity-based licensing is available in the form of a package, either _Essentials_ or _Professional_.
 
 ** *Freemium offering*: Freemium enables you to use all Cloud Volumes ONTAP features free of charge from NetApp (cloud provider charges still apply). You're limited to 500 GB of allocated capacity per system and there’s no support contract. You can have up to 10 Freemium systems.
 +
