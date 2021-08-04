@@ -69,6 +69,10 @@ In earlier versions of Cloud Data Sense you could perform the following actions 
 +
 This information is provided in the Data Mapping Report as well.
 
+* When deploying Data Sense on-premises, now you can install scanning software on additional on-prem hosts when you plan to scan configurations that include petabytes of data. These additional _scanner nodes_ provide increased processing power when scanning very large configurations.
++
+See how to link:task_deploy_cloud_compliance.html#multi-host-installation-for-large-configurations[deploy Data Sense software on multiple hosts].
+
 // === Application Template enhancements
 //
 // * You can now create a Cloud Volumes ONTAP working environment, and your first volume, using templates. This support is provided only for AWS environments at this time, and only for single-node clusters.
