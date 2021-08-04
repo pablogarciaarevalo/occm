@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_deploy_cloud_compliance.html
-keywords: cloud compliance, data sense, get started, deploy cloud data sense, outbound internet, endpoints, cloud compliance internet, web browser connectivity, cloud compliance access, privacy, compliance, on-premises,
+keywords: cloud compliance, data sense, get started, deploy cloud data sense, outbound internet, endpoints, cloud compliance internet, web browser connectivity, cloud compliance access, privacy, compliance, on-premises
 summary: Complete a few steps to deploy Cloud Data Sense in your Cloud Manager workspace. You can deploy Data Sense in the cloud or on an on-premises system.
 ---
 
@@ -252,7 +252,7 @@ See <<Reviewing prerequisites,Reviewing prerequisites>> for the full list of req
 
 === Single-host installation for typical configurations
 
-Follow these steps when installing Data Sense software on a single on-prem host system.
+Follow these steps when installing Data Sense software on a single on-premises host.
 
 .Steps
 
@@ -323,7 +323,7 @@ You can also <<Subscribing to the Cloud Data Sense service,subscribe to the Clou
 
 === Multi-host installation for large configurations
 
-Follow these steps when installing Data Sense software on multiple host systems.
+Follow these steps when installing Data Sense software on multiple on-premises hosts.
 
 When using multiple host systems, the primary system is called the _Manager node_ and the additional systems that provide extra processing power are call _Scanner nodes_.
 
@@ -348,6 +348,8 @@ The following ports and protocols must be enabled on all hosts:
 
 |===
 
+See <<Reviewing prerequisites,Reviewing prerequisites>> for the full list of requirements and endpoints that Cloud Data Sense must be able to reach over the internet.
+
 .Steps
 
 . Follow steps 1 through 7 from the <<Single-host installation for typical configurations,Single-host installation>> on the manager node.
@@ -357,15 +359,19 @@ The following ports and protocols must be enabled on all hosts:
 In addition to the variables available for a single-host installation, a new option *-n <node_ip>* is used to specify the IP addresses of the scanner nodes. Multiple node IPs are separated by a comma.
 +
 For example, this command adds 3 scanner nodes:
-`sudo ./install.sh -a <account_id> -c <agent_id> -t <token> --host <ds_host> --cm-host <cm_host> -n <node_ip1><node_ip2>,<node_ip3> --proxy-host <proxy_host> --proxy-port <proxy_port> --proxy-scheme <proxy_scheme> --proxy-user <proxy_user> --proxy-password <proxy_password>`
+`sudo ./install.sh -a <account_id> -c <agent_id> -t <token> --host <ds_host> --cm-host <cm_host> -n <node_ip1>,<node_ip2>,<node_ip3> --proxy-host <proxy_host> --proxy-port <proxy_port> --proxy-scheme <proxy_scheme> --proxy-user <proxy_user> --proxy-password <proxy_password>`
 
-. After the manager node installation completes, a dialog displays the installation command needed for the scanner nodes (starting with "sudo ./node_install.sh"). Copy the command and save it in a text file.
+. Before the manager node installation completes, a dialog displays the installation command needed for the scanner nodes. Copy the command and save it in a text file. For example:
++
+sudo ./node_install.sh -m 10.11.12.13 -t ABCDEF-1-3u69m1-1s35212
 
 . On each scanner node, paste and execute the command.
++
+When the installation finishes on all scanner nodes and they have been joined to the manager node, the manager node installation finishes as well.
 
 .Result
 
-The Cloud Data Sense installer installs packages, installs docker, registers the installation, installs Data Sense, and connects the manager and scanner nodes. Installation can take 10 to 20 minutes.
+The Cloud Data Sense installer finishes installing packages, docker, and registers the installation. Installation can take 10 to 20 minutes.
 
 .What's Next
 From the Configuration page you can select the data sources that you want to scan.

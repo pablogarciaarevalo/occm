@@ -108,7 +108,9 @@ Reports on a specific information type:: Reports are available that include deta
 
 == Does scan performance vary?
 
-Scan performance can vary based on the network bandwidth and the average file size in your cloud environment.
+Scan performance can vary based on the network bandwidth and the average file size in your cloud environment. It can also depend on the size characteristics of the host system (either in the cloud or on-premises).  See link:concept_cloud_compliance.html#the-cloud-data-sense-instance[The Cloud Data Sense instance] and link:task_deploy_cloud_compliance.html[Deploying Cloud Data Sense] for more information.
+
+When initially adding new data sources you can also choose to only perform a "mapping" scan instead of a full "classification" scan. Mapping can be done on your data sources very quickly because it does not access files to see the data inside.  link:concept_cloud_compliance.html#whats-the-difference-between-mapping-and-classification-scans[See the difference between a mapping and classification scan.]
 
 == Which file types are supported?
 
