@@ -40,7 +40,7 @@ You can tier inactive data from an on-premises ONTAP cluster to the following ob
 * Microsoft Azure Blob
 * Google Cloud Storage
 * NetApp StorageGRID
-// * S3-compatible object storage
+* S3-compatible object storage
 
 === Object storage tiers
 
@@ -52,9 +52,7 @@ Each ONTAP cluster tiers inactive data to a single object store. When you set up
 
 Cloud Tiering uses the cloud provider default storage class/access tier for your inactive data. However, you can apply a lifecycle rule so that the data automatically transitions from the default storage class to another storage class after a certain number of days. This can help keep your costs down by moving very cold data to less expensive storage.
 
-NOTE: You can't select lifecycle rules for data tiered to StorageGRID.
-
-// You can't select lifecycle rules for data tiered to StorageGRID or S3-compatible storage.
+NOTE: You can't select lifecycle rules for data tiered to StorageGRID or S3-compatible storage.
 
 == Pricing and licenses
 
