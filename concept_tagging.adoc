@@ -35,7 +35,7 @@ The ability to tag your resources requires no licensing and is free to use by al
 
 You can apply tags to the following resources.
 
-[cols=2*,options="header",cols="50,50",width="85%"]
+[cols=2*,options="header",cols="50,40",width="75%"]
 
 |===
 | Container
@@ -51,9 +51,33 @@ Volume
 
 | Azure NetApp Files | Volume
 
+| AWS | EC2 Instance
+
 |===
 
-NOTE: At this time you can't view or manage tags assigned to resources though a cloud provider. So you won't see tags applied from AWS or Azure, or labels assigned from Google Cloud.
+NOTE: At this time you can't view or manage tags assigned to resources though Azure, or labels assigned to resources though Google Cloud.
+
+For information about AWS EC2 tags, refer to https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html[AWS Documentation: Tagging your Amazon EC2 Resources^].
+
+=== Verify your AWS Connector permissions
+
+If you just created the Connector using Cloud Manager version 3.9.9 or greater, then you're all set. If you created the Connector using an earlier version of Cloud Manager, then you'll need to add some newly required permissions for the Cloud Manager IAM role to tag AWS EC2 instances:
+
+[source,json]
+{
+  "Action": [
+    "ec2:CreateTags",
+    "ec2:DeleteTags",
+    "ec2:DescribeTags",
+    "tag:getResources",
+    "tag:getTagKeys",
+    "tag:getTagValues",
+    "tag:TagResources",
+    "tag:UntagResources"
+  ],
+  "Resource": "*",
+  "Effect": "Allow"
+}
 
 == Tag rules and restrictions
 

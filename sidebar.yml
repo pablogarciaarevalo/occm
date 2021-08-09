@@ -247,6 +247,8 @@ entries:
     entries:
       - title: Learn about Application Templates
         url: /concept_resource_templates.html
+      - title: Template building blocks
+        url: /reference_template_building_blocks.html
       - title: Build templates for your organization
         url: /task_define_templates.html
       - title: Check resources for template compliance

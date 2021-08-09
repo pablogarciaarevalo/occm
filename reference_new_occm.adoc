@@ -19,13 +19,26 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.9 update (8 Aug 2021)
+
+* <<Application Template enhancements>>
+* <<Resource Tagging enhancements>>
+
+=== Application Template enhancements
+
+* Now you can create a Cloud Volumes ONTAP working environment, and your first volume, using templates. This support is provided only for AWS environments at this time, and only for single-node clusters. See how to link:task_define_templates.html#create-a-template-for-a-cloud-volumes-ontap-working-environment[create a template for a Cloud Volumes ONTAP working environment].
+
+* A new feature enables you to add tags to a volume in a volume template. Tagging enables you to group different resources to identify applications, regions, or departments in order to perform automation or to allocate costs to certain departments or regions.
+
+=== Resource Tagging enhancements
+
+Now you can manage tags from your AWS EC2 Instances in Cloud Manager. You can view AWS tags and tag values that have been applied to EC2 Instances, and you can apply those tags to other EC2 Instances that you are managing. link:concept_tagging.html[Learn more about tagging].
+
 == Cloud Manager 3.9.9 (1 Aug 2021)
 
 * <<Cloud Backup enhancements>>
 * <<Cloud Sync enhancements>>
 * <<Cloud Data Sense enhancements>>
-// * <<Application Template enhancements>>
-// * <<Resource Tagging enhancements>>
 * <<Monitoring enhancement>>
 * <<Connector enhancement>>
 
@@ -73,16 +86,6 @@ This information is provided in the Data Mapping Report as well.
 +
 See how to link:task_deploy_cloud_compliance.html#multi-host-installation-for-large-configurations[deploy Data Sense software on multiple hosts].
 
-// === Application Template enhancements
-//
-// * You can now create a Cloud Volumes ONTAP working environment, and your first volume, using templates. This support is provided only for AWS environments at this time, and only for single-node clusters.
-//
-// * A new feature enables you to add tags to a volume in a volume template. Tagging enables you to group different resources to identify applications, regions, or departments in order to perform automation or to allocate costs to certain departments or regions.
-//
-// === Resource Tagging enhancements
-//
-// Now you can manage tags from your Azure resources. You can view Azure tags and tag values that have been applied to resources, and you can apply those tags to other Azure resources that you are managing.
-//
 === Monitoring enhancement
 
 We changed the default name of the Acquisition Unit instance to CloudInsights-AU-_UUID_ so that the name is more descriptive (the UUID is a generated hash).
