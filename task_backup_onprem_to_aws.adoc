@@ -54,6 +54,9 @@ image:screenshot_backup_provider_settings_aws.png[A screenshot that shows the cl
 [role="quick-margin-para"]
 Select the IPspace in the ONTAP cluster where the volumes reside. You can also choose to use an existing private VPC endpoint.
 
+[role="quick-margin-para"]
+image:screenshot_backup_onprem_aws_networking.png[A screenshot that shows the networking details when backing up volumes from an ONTAP system to AWS S3.]
+
 ==== image:number5.png[Number 5] Define the backup policy
 
 [role="quick-margin-para"]
@@ -236,6 +239,10 @@ Cloud Backup passes the access key on to the ONTAP cluster. The credentials are 
 +
 See the https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html[AWS Documentation: Managing Access Keys for IAM Users^] for details.
 
+. If you want to have more secure connectivity over the public internet from your on-prem data center to the VPC, there is an option to select a private VPC endpoint in the activation wizard. In this case you'll need to have created an endpoint service configuration using the Amazon VPC console or the command line. https://docs.aws.amazon.com/vpc/latest/privatelink/endpoint-service.html[See details about using a Private Endpoint].
+
+. Additionally, you can choose your own customer-managed keys for data encryption in the activation wizard instead of using the default Amazon S3 encryption keys. In this case you'll need to have the encryption managed keys already set up. link:task_setting_up_kms.html[See how to use your own keys].
+
 == Enabling Cloud Backup
 
 Enable Cloud Backup at any time directly from the on-premises working environment.
@@ -252,13 +259,20 @@ image:screenshot_backup_from_onprem_activate.png[A screenshot that shows the Bac
 
 .. The AWS Account, the AWS Access Key, and the Secret Key used to store the backups.
 .. The AWS region where the backups will be stored.
-.. The IPspace in the ONTAP cluster where the volumes you want to back up reside.
+.. Whether you'll use the default Amazon S3 encryption keys or choose your own customer-managed keys to manage encryption of your data. (link:task_setting_up_kms.html[See how to use your own keys]).
 +
-image:screenshot_backup_onprem_to_aws.png[A screenshot that shows the cloud provider details when backing up volumes from an on-premises cluster to AWS S3 storage.]
+image:screenshot_backup_provider_settings_aws.png[A screenshot that shows the cloud provider details when backing up volumes from an ONTAP system to AWS S3.]
 
 . Click *Next* after you've entered the provider details.
 
-. In the _Define Policy_ page, select an existing backup schedule and retention value, or define a new backup policy, and click *Next*.
+. Enter the networking details and click *Next*.
+
+.. The IPspace in the ONTAP cluster where the volumes you want to back up reside.
+.. Whether you'll use a private VPC endpoint. https://docs.aws.amazon.com/vpc/latest/privatelink/endpoint-service.html[See details about using a Private Endpoint].
++
+image:screenshot_backup_onprem_aws_networking.png[A screenshot that shows the networking details when backing up volumes from an ONTAP system to AWS S3.]
+
+. Select an existing backup schedule and retention value, or define a new backup policy, and click *Next*.
 +
 image:screenshot_backup_onprem_policy.png[A screenshot that shows the Cloud Backup settings where you can choose your backup schedule and retention period.]
 +
