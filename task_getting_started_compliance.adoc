@@ -217,3 +217,5 @@ image:screenshot_compliance_dp_cifs_volumes.png[A screenshot of the two options 
 Once enabled, Cloud Data Sense creates an NFS share from each DP volume that was activated for scanning. The share export policies only allow access from the Data Sense instance.
 
 *Note:* If you had no CIFS data protection volumes when you initially enabled access to DP volumes, and later add some, the button *Enable Access to CIFS DP* appears at the top of the Configuration page. Click this button and add CIFS credentials to enable access to these CIFS DP volumes.
+
+NOTE: Active Directory credentials are only registered in the storage VM of the first CIFS DP volume, so all DP volumes on that SVM will be scanned. Any volumes that reside on other SVMs will not have the Active Directory credentials registered, so those DP volumes won't be scanned.
