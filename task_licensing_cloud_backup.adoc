@@ -35,19 +35,19 @@ Go to the https://aws.amazon.com/marketplace/pp/B086PDWSS8[AWS Marketplace page^
 +
 If you want to use this option, set up your subscription from the Marketplace page and then link:task_adding_aws_accounts.html#associating-an-aws-subscription-to-credentials[associate the subscription with your AWS credentials^]. Note that you’ll also need to pay for Cloud Volumes ONTAP using this annual contract subscription since you can assign only one active subscription to your AWS credentials in Cloud Manager.
 
-* A Professional Package that enables you to bundle Cloud Volumes ONTAP and Cloud Backup service by using an annual contract for 1, 2, or 3 years. Payment is per TiB. This option doesn’t enable you to back up on-prem data.
+* A Professional Package that enables you to bundle Cloud Volumes ONTAP and Cloud Backup service by using an annual contract for 1, 2, or 3 years. Payment is per TiB. This option doesn’t enable you to back up on-premises ONTAP data.
 +
 Go to the https://aws.amazon.com/marketplace/pp/prodview-q7dg6zwszplri[AWS Marketplace page^] to view pricing details and go to the https://docs.netapp.com/us-en/cloud-volumes-ontap[Cloud Volumes ONTAP Release Notes^] to learn more about this licensing option.
 +
 If you want to use this option, you can set up the annual contract when you create a Cloud Volumes ONTAP working environment and Cloud Manager prompts you to subscribe to the AWS Marketplace.
 
-== Use Cloud Backup BYOL licenses
+== Use a Cloud Backup BYOL license
 
 Bring-your-own licenses also provide 1-, 2-, or 3-year term licenses from NetApp. You use the Digital Wallet page in Cloud Manager to manage BYOL licenses for the Cloud Backup service. You can add new licenses and update existing licenses.
 
 === Obtain your Cloud Backup license file
 
-When you add your license to Cloud Manager, you can enter the serial number or upload the NLF license file. The steps below show how to get the NLF license file.
+When you license Cloud Backup in Cloud Manager, you can enter the Cloud Backup serial number or you can upload the NLF license file. The steps below show how to get the NLF license file if you plan to use that method.
 
 .Steps
 
@@ -96,7 +96,7 @@ You can update your Cloud Backup license before it expires so that there is no i
 
 .Steps
 
-. Click the chat icon in the lower-right of Cloud Manager to request an extension to your license for the particular service serial number.
+. Click the chat icon in the lower-right of Cloud Manager to request an extension to your Cloud Backup license for the particular serial number.
 +
 In most cases, Cloud Manager can automatically obtain your updated license file and the Data Services Licenses page will reflect the change in 5 to 10 minutes.
 
