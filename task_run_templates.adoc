@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: task_run_templates.html
-keywords: templates, resource templates, application templates, volume templates
-summary: Select one of the application templates that your organization has built to create volumes that are optimized for specific workloads and applications. Templates enable you to create volumes for Cloud Volumes ONTAP, Azure NetApp Files, and on-premises ONTAP systems. They also enable you to activate Cloud Backup, Cloud Data Sense, and Replication (SnapMirror) for the volumes.
+keywords: templates, resource templates, services templates, volume templates, working environment templates
+summary: Select one of the application templates that your organization has built to create working environments or volumes that are optimized for specific workloads and applications. Templates also enable you to activate Cloud Backup, Cloud Data Sense, and Replication (SnapMirror) for the volumes.
 ---
 
 = Create resources using templates
@@ -13,7 +13,9 @@ summary: Select one of the application templates that your organization has buil
 :imagesdir: ./media/
 
 [.lead]
-Select one of the application templates that your organization has built to create volumes that are optimized for specific workloads and applications. Templates enable you to create volumes for Cloud Volumes ONTAP, Azure NetApp Files, and on-premises ONTAP systems. They also enable you to activate link:concept_backup_to_cloud.html[Cloud Backup], link:concept_cloud_compliance.html[Cloud Data Sense], and link:concept_replication.html[Replication (SnapMirror)] on the created volumes.
+Select one of the application templates that your organization has built to create working environments or volumes that are optimized for specific workloads and applications. Templates also enable you to activate link:concept_backup_to_cloud.html[Cloud Backup], link:concept_cloud_compliance.html[Cloud Data Sense], and link:concept_replication.html[Replication (SnapMirror)] on the created volumes.
+
+Templates enable you to create volumes for Cloud Volumes ONTAP, Azure NetApp Files, and on-premises ONTAP systems.
 
 == Quick start
 
@@ -51,9 +53,12 @@ Read the following requirements to make sure that you have a supported configura
 
 * If the template activates a cloud service on the volume, such as link:concept_backup_to_cloud.html[Cloud Backup^], link:concept_cloud_compliance.html[Cloud Data Sense^], or link:concept_replication.html[Replication (SnapMirror)], ensure that the service is active and licensed in your environment.
 
-== Select and run the template
+== Select and run the volume template
 
-There are multiple ways to select and run a template to create new volumes.
+There are multiple ways to select and run a template to create new volumes:
+
+* Run the volume template from the working environment
+* Run the volume template from the Templates dashboard
 
 Regardless of the method you choose, the details about the required volume parameters that you must define are available in these sections:
 
@@ -73,9 +78,9 @@ image:screenshot_template_add_vol_from.png[Two screenshots showing how users can
 +
 The _Templates Dashboard_ is displayed and it lists only those templates that are applicable to the selected working environment -- for example, it only shows Cloud Volumes ONTAP templates.
 
-. Click the *View* button to view an outline of the template to make sure it is the one you want, and then click image:screenshot_horizontal_more_button.gif[More icon] and *Run Template*.
+. Click image:screenshot_horizontal_more_button.gif[More icon] and *Run Template*.
 +
-image:screenshot_template_run_from_dashboard.png[A screenshot showing how to run a template from the Templates Dashboard]
+image:screenshot_template_run_from_dashboard.png[A screenshot showing how to run a template from the Templates Dashboard.]
 +
 The _Add Volume from Template_ page appears.
 
@@ -93,9 +98,9 @@ You can add a volume to an existing working environment from the _Templates Dash
 +
 The _Templates Dashboard_ is displayed.
 
-. For the template that you want to use, click the *View* button to view an outline of the template to make sure it is the one you want, and then click image:screenshot_horizontal_more_button.gif[More icon] and *Run Template*.
+. For the template that you want to use, click image:screenshot_horizontal_more_button.gif[More icon] and *Run Template*.
 +
-image:screenshot_template_run_from_dashboard2.png[A screenshot showing how to run a template from the Templates Dashboard]
+image:screenshot_template_run_from_dashboard2.png[A screenshot showing how to run a template from the Templates Dashboard.]
 +
 The _Run Template_ page appears.
 
@@ -104,3 +109,25 @@ The _Run Template_ page appears.
 image:screenshot_run_template_from_dashboard.png[A screenshot showing the parameters you need to define to create the volume from a template.]
 +
 Note that when you run the template from the dashboard that you need to select the working environment and other variables (for example, the storage VM and/or aggregate). When you run the template from the working environment, the working environment gets filled in automatically.
+
+== Select and run a working environment template
+
+You can create a new working environment from the _Templates Dashboard_ if your company has created a template for this functionality.
+
+If you have any questions about the details required to create the working environment, see link:task_deploying_otc_aws.htmls[Launching Cloud Volumes ONTAP in AWS^].
+
+.Steps
+
+. Select the *AppTemplate* service and click the *Templates* tab.
++
+The _Templates Dashboard_ is displayed.
+
+. For the template that you want to use, click image:screenshot_horizontal_more_button.gif[More icon] and *Run Template*.
++
+image:screenshot_template_run_from_dashboard3.png[A screenshot showing how to run a template from the Templates Dashboard.]
++
+The _Run Template_ page appears.
+
+. Enter values in editable fields to create the volume and click *Run Template*.
++
+image:screenshot_template_run_from_dashboard_we.png[A screenshot showing the parameters you need to define to create the working environment from a template.]

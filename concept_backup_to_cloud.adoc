@@ -29,7 +29,8 @@ link:https://cloud.netapp.com/cloud-backup-service[Learn more about Cloud Backup
 * Restore data from a specific point in time.
 * Restore a volume, or individual files, to the source system or to a different system.
 * Restore data to a working environment using a different subscription/account or that is in a different region.
-* Browsable file catalog for single file restore.
+* Restores data on a block level, placing the data directly in the location you specify, all while preserving the original ACLs.
+* Browsable file catalog for selecting individual files for single file restore.
 
 == Supported working environments and object storage providers
 
@@ -256,7 +257,7 @@ Note that the retention period for backups of data protection volumes is the sam
 
 * Monthly backups start just after midnight on the first day of each month.
 
-The start time is based on the time zone set on each source ONTAP system. For now you can’t schedule backup operations at a user specified time.
+The start time is based on the time zone set on each source ONTAP system. You can’t schedule backup operations at a user-specified time from the UI. For more information, contact your System Engineer.
 
 === Backup copies are associated with your Cloud Central account
 
