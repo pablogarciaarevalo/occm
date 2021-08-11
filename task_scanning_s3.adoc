@@ -58,7 +58,6 @@ Cloud Data Sense needs permissions to connect to the S3 buckets in your account 
               "s3:Get*",
               "s3:List*",
               "s3:PutObject",
-              "s3:HeadBucket"
           ],
           "Resource": "*"
       },
