@@ -27,7 +27,7 @@ Azure Standard Load Balancer::
 The load balancer manages incoming traffic to the Cloud Volumes ONTAP HA pair.
 
 Availability Set::
-The Availability Set ensures that the nodes are in different fault and update domains.
+The Azure Availability Set is a logical grouping of the Cloud Volumes ONTAP nodes. The Availability Set ensures that the nodes are in different fault and update domains to provide redundancy and availability. https://docs.microsoft.com/en-us/azure/virtual-machines/availability-set-overview[Learn more about Availability Sets in the Azure docs^].
 
 Disks::
 Customer data resides on Premium Storage page blobs. Each node has access to the other node's storage. Additional storage is also required for link:reference_default_configs.html#boot-and-root-data-for-cloud-volumes-ontap[boot, root, and core data].
