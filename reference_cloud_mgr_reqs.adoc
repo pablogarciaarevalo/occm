@@ -34,6 +34,8 @@ An instance type that meets the CPU and RAM requirements above. We recommend n1-
 Supported operating systems::
 * CentOS 7.6
 * CentOS 7.7
+* CentOS 7.8
+* CentOS 7.9
 * Red Hat Enterprise Linux 7.6
 * Red Hat Enterprise Linux 7.7
 * Red Hat Enterprise Linux 7.8
