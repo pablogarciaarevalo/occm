@@ -79,7 +79,7 @@ video::video_subscribing_gcp_tiering.mp4[width=848, height=480]
 
 == Use a Cloud Tiering BYOL license
 
-Bring-your-own licenses provide 2-, 12-, 24-, or 36-month term licenses from NetApp. The BYOL Cloud Tiering license is a _floating_ license that you can use across multiple on-premises ONTAP clusters in your customer account. The total tiering capacity that you define in your Cloud Tiering license can be used by all of your on-prem clusters, making initial licensing and renewal licensing easy.
+Bring-your-own licenses from NetApp provide 2-, 12-, 24-, or 36-month term licenses. The BYOL Cloud Tiering license is a _floating_ license that you can use across multiple on-premises ONTAP clusters in your customer account. The total tiering capacity that you define in your Cloud Tiering license can be shared among all of your on-prem clusters, making initial licensing and renewal licensing easy.
 
 If you don't have a Cloud Tiering license, contact us to purchase one:
 * mailto:ng-cloud-tiering@netapp.com?subject=Licensing[Send email to purchase a license].
@@ -89,17 +89,17 @@ You use the Digital Wallet page in Cloud Manager to manage BYOL licenses for the
 
 === New Cloud Tiering BYOL licensing starting August 21, 2021
 
-The *FabricPool* license that you may have used in the past to tier data to the cloud is being retired on August 20, 2021. It is being replaced by the *Cloud Tiering* license. Here are some thing you need to know about the new license:
+The *FabricPool* license that you may have used in the past to tier on-premises ONTAP data to the cloud is being retired on August 20, 2021. It is being replaced by the *Cloud Tiering* license. Here are some thing you need to know about the new license:
 
-* The Cloud Tiering license is a _floating_ license that you can use across multiple on-premises ONTAP clusters. This is different than in the past where you needed to purchase a _FabricPool_ license for _every_ cluster.
-* The Cloud Tiering license must be registered in Cloud Manager in the Digital Wallet. It is not applied on each cluster.
-* Existing tiering users are not affected until your FabricPool license expires - then you'll have to start using the new floating license.
+* The Cloud Tiering license is a _floating_ license that you can use across multiple on-premises ONTAP clusters. This is different than in the past where you needed to purchase a FabricPool license for _every_ cluster.
+* The Cloud Tiering license must be registered in Cloud Manager in the Digital Wallet. It is not applied to individual clusters.
+* If you are currently using FabricPool licensing, you are not affected until your FabricPool license expires - then you'll have to start using the new floating license.
 * There is a free trial so you can use the tiering service without a license for 30 days. This replaces the old feature where you could tier the first 10 TB of data for free.
 * The following configurations do not currently support the new Cloud Tiering licensing. If you have one of these configurations, you must install the Cloud Tiering license on each cluster using System Manager (or the CLI) like you did with your FabricPool license - one license per system:
 
 ** ONTAP installations in the GovCloud or in Dark Sites
 ** ONTAP clusters in a MetroCluster configuration
-** Users who are tiering data to IBM Cloud Object Storage or Alibaba Cloud Object Storage
+** Users who are tiering data to IBM Cloud Object Storage or Alibaba Cloud Object Storage (Cloud Manager supports tiering to Amazon S3, Azure Blob storage, and Google Cloud Storage.)
 
 === Obtain your Cloud Tiering license file
 

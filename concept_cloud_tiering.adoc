@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept_cloud_tiering.html
-keywords: cloud tiering, overview, conceptual, value, features, cost, charging, tiering policies, cooling period
+keywords: cloud tiering, overview, conceptual, value, features, cost, charging, tiering policies, cooling period, fabricpool
 summary: NetApp's Cloud Tiering service extends your data center to the cloud by automatically tiering inactive data from on-premises ONTAP clusters to object storage. This frees valuable space on the cluster for more workloads, without making changes to the application layer. Cloud Tiering can reduce costs in your data center and enables you to switch from a CAPEX model to an OPEX model.
 ---
 
