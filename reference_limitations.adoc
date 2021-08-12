@@ -15,6 +15,12 @@ summary: Known limitations identify platforms, devices, or functions that are no
 [.lead]
 Known limitations identify platforms, devices, or functions that are not supported by this release of the product, or that do not interoperate correctly with it. Review these limitations carefully.
 
+== Blank page when loading the local UI
+
+If you load the local user interface for a Connector, the UI might fail to display sometimes, and you just get a blank page.
+
+This issue is related to a caching problem. The workaround is to use an incognito or private web browser session.
+
 == Pay-as-you-go not available for Azure and Google Cloud partners
 
 If you are a Microsoft Cloud Solution Provider (CSP) partner or a Google Cloud partner, NetApp pay-as-you-go subscriptions are not available. You must purchase a license and deploy NetApp cloud solutions with a BYOL license.
