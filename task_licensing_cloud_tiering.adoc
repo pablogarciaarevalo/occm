@@ -117,7 +117,7 @@ Here are some thing you need to know about the two different licenses:
 If you are currently using FabricPool licensing, you are not affected until your FabricPool license expires.
 
 * If you are using one of the configurations that is supported in Cloud Manager, then you'll start using the new Cloud Tiering license when your license expires.
-* If you are using one of the configurations that is not supported in Cloud Manager, then you'll continue using a FabricPool license.
+* If you are using one of the configurations that is not supported in Cloud Manager, then you'll continue using a FabricPool license. http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mgng-stor-tier-fp/GUID-C3C125BF-44DA-409D-9F93-B73545FB336B.html[See how to license tiering using System Manager].
 
 === Obtain your Cloud Tiering license file
 
