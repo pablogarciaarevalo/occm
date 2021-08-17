@@ -43,11 +43,11 @@ If you want to use this option, you can set up the annual contract when you crea
 
 == Use a Cloud Backup BYOL license
 
-Bring-your-own licenses also provide 1-, 2-, or 3-year term licenses from NetApp. You use the Digital Wallet page in Cloud Manager to manage BYOL licenses for the Cloud Backup service. You can add new licenses and update existing licenses.
+Bring-your-own licenses from NetApp provide 1-, 2-, or 3-year terms. You use the Digital Wallet page in Cloud Manager to manage BYOL licenses for the Cloud Backup service. You can add new licenses and update existing licenses.
 
 === Obtain your Cloud Backup license file
 
-When you license Cloud Backup in Cloud Manager, you can enter the Cloud Backup serial number or you can upload the NLF license file. The steps below show how to get the NLF license file if you plan to use that method.
+When you license Cloud Backup in Cloud Manager, you can enter the Cloud Backup serial number and NSS account, or you can upload the NLF license file. The steps below show how to get the NLF license file if you plan to use that method.
 
 .Steps
 
@@ -77,10 +77,12 @@ After you purchase a Cloud Backup license for your NetApp account, you need to a
 
 . In the _Add License_ dialog, enter the license information and click *Add License*:
 +
-* If you have the serial number, select the *Enter Serial Number* option and enter the serial number.
+* If you have the backup serial number and know your NSS account, select the *Enter Serial Number* option and enter that information.
++
+If your NetApp Support Site account isn't available from the drop-down list, link:task_adding_nss_accounts.html[add the NSS account to Cloud Manager].
 * If you have the backup license file, select the *Upload License File* option and follow the prompts to attach the file.
 +
-image:screenshot_services_license_add2.png[A screenshot that shows the page to add the Backup BYOL license.]
+image:screenshot_services_license_add2.png[A screenshot that shows the page to add the Cloud Backup BYOL license.]
 
 .Result
 
