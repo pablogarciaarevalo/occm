@@ -88,13 +88,13 @@ link:task_licensing_cloud_tiering.html#Use-a-cloud-tiering-paygo-subscription[Le
 
 === Bring your own license
 
-Bring your own license by purchasing a Cloud Tiering license from NetApp. You can purchase 2-, 12-, 24-, or 36-month term licenses and specify any amount of tiering capacity. The BYOL Cloud Tiering license is a _floating_ license that you can use across multiple on-premises ONTAP clusters. The total tiering capacity that you define in your Cloud Tiering license can be used by all of your on-prem clusters.
+Bring your own license by purchasing a *Cloud Tiering* license from NetApp. You can purchase 2-, 12-, 24-, or 36-month term licenses and specify any amount of tiering capacity. The BYOL Cloud Tiering license is a _floating_ license that you can use across multiple on-premises ONTAP clusters. The total tiering capacity that you define in your Cloud Tiering license can be used by all of your on-prem clusters.
 
 After you purchase a Cloud Tiering license, you'll need use the Digital Wallet page in Cloud Manager to add the license.  link:task_licensing_cloud_tiering.html#use-a-cloud-tiering-byol-license[See how to use a Cloud Tiering BYOL license].
 
-As noted above, we recommend that you set up a pay-as-you-go subscription, even if your cluster has a BYOL license.
+As noted above, we recommend that you set up a pay-as-you-go subscription, even if you have purchased a BYOL license.
 
-mailto:ng-cloud-tiering@netapp.com?subject=Licensing[Contact us to purchase a license].
+NOTE: Starting August 21, 2021 the old *FabricPool* license is being replaced by the *Cloud Tiering* license. link:task_licensing_cloud_tiering.html#new-cloud-tiering-byol-licensing-starting-august-21-2021[Read more about how the Cloud Tiering license is different than the FabricPool license].
 
 == How Cloud Tiering works
 
