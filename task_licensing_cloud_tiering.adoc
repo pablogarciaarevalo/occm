@@ -152,11 +152,11 @@ After you purchase a Cloud Tiering license for your NetApp account, you need to 
 . In the _Add License_ dialog, enter the license information and click *Add License*:
 +
 * If you have the tiering serial number and know your NSS account, select the *Enter Serial Number* option and enter that information.
++
+If your NetApp Support Site account isn't available from the drop-down list, link:task_adding_nss_accounts.html[add the NSS account to Cloud Manager].
 * If you have the tiering license file, select the *Upload License File* option and follow the prompts to attach the file.
 +
-image:screenshot_services_license_add.png[A screenshot that shows the page to add the BYOL license.]
-+
-If your NetApp Support Site account is not available from the drop-down list, link:task_registering.html[register the NSS account with Cloud Manager].
+image:screenshot_services_license_add.png[A screenshot that shows the page to add the Cloud Tiering BYOL license.]
 
 .Result
 
