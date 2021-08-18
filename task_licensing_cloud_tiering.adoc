@@ -17,9 +17,9 @@ Pay for Cloud Tiering through a pay-as-you-go subscription, a bring-your-own Clo
 
 A few notes before you read any further:
 
-* If you've already subscribed to the Cloud Manager subscription in your cloud provider's marketplace, then you're automatically subscribed to Cloud Tiering as well. You'll see an active subscription in the Digital Wallet. You won't need to subscribe again.
+* If you've already subscribed to the Cloud Manager subscription (PAYGO) in your cloud provider's marketplace, then you're automatically subscribed to Cloud Tiering from on-premises ONTAP systems as well. You'll see an active subscription in the Digital Wallet. You won't need to subscribe again.
 
-* The BYOL Cloud Tiering license is a _floating_ license that can be used across multiple on-premises ONTAP clusters in your workspace. This is different than in the past where you purchased a _FabricPool_ license for each cluster.
+* The BYOL Cloud Tiering license is a _floating_ license that you can use across multiple on-premises ONTAP clusters in your workspace. This is different than in the past where you purchased a _FabricPool_ license for each cluster.
 
 * There are no charges when tiering data to StorageGRID or to ONTAP S3, so neither a BYOL license or PAYGO registration is required.
 
@@ -35,7 +35,7 @@ Subscribe to Cloud Tiering from the AWS Marketplace to set up a pay-as-you-go su
 
 .Steps
 [[subscribe-aws]]
-. In Cloud Manager, click *Tiering > Licensing*.
+. https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Go to the Cloud Manager Marketplace offering^].
 
 . Click *Subscribe* under AWS Marketplace and then click *Continue*.
 
@@ -51,7 +51,7 @@ Subscribe to Cloud Tiering from the Azure Marketplace to set up a pay-as-you-go 
 
 .Steps
 [[subscribe-azure]]
-. In Cloud Manager, click *Tiering > Licensing*.
+. https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Go to the Cloud Manager Marketplace offering^].
 
 . Click *Subscribe* under Azure Marketplace and then click *Continue*.
 
@@ -67,7 +67,7 @@ Subscribe to Cloud Tiering from the GCP Marketplace to set up a pay-as-you-go su
 
 .Steps
 
-. In Cloud Manager, click *Tiering > Licensing*.
+. https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[Go to the Cloud Manager Marketplace offering^].
 
 . Click *Subscribe* under GCP Marketplace and then click *Continue*.
 
@@ -92,12 +92,14 @@ You use the Digital Wallet page in Cloud Manager to manage Cloud Tiering BYOL li
 
 The new *Cloud Tiering* license was introduced on August 21, 2021 for tiering configurations that are supported within Cloud Manager using the Cloud Tiering service. The *FabricPool* license that you may have used in the past to tier on-premises ONTAP data to the cloud is being retained only for configurations that aren't support within Cloud Manager.
 
-The following configurations aren't currently supported by the new Cloud Tiering licensing. If you have one of these configurations, you'll continue to use a FabricPool license on each cluster (managed using System Manager or the CLI):
+If you have one of these configurations, you'll continue to use a FabricPool license on each cluster (managed using System Manager or the CLI):
 
 ** ONTAP installations in the GovCloud or in Dark Sites
 ** ONTAP clusters in a MetroCluster configuration
 ** ONTAP clusters using FabricPool Mirror functionality
-** ONTAP clusters that are tiering data to IBM Cloud Object Storage or Alibaba Cloud Object Storage (Cloud Manager supports tiering to Amazon S3, Azure Blob storage, and Google Cloud Storage.)
+** ONTAP clusters that are tiering data to IBM Cloud Object Storage or Alibaba Cloud Object Storage
++
+Cloud Manager currently supports tiering to the following cloud storage: Amazon S3, Azure Blob storage, and Google Cloud Storage.
 
 Note that tiering to StorageGRID or to ONTAP S3 does not require a FabricPool or Cloud Tiering license.
 
@@ -116,8 +118,8 @@ Here are some thing you need to know about the two different licenses:
 
 If you are currently using FabricPool licensing, you're not affected until your FabricPool license expires. Contact NetApp when you need to update your license, or before.
 
-* If you are using one of the configurations that is supported in Cloud Manager, then you'll start using the new Cloud Tiering license when your license expires.
-* If you are using one of the configurations that is not supported in Cloud Manager, then you'll continue using a FabricPool license. http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mgng-stor-tier-fp/GUID-C3C125BF-44DA-409D-9F93-B73545FB336B.html[See how to license tiering using System Manager].
+* If you are using a configuration that is supported in Cloud Manager, then you'll start using the new Cloud Tiering license when your license expires.
+* If you are using a configuration that is not supported in Cloud Manager, then you'll continue using a FabricPool license. http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mgng-stor-tier-fp/GUID-C3C125BF-44DA-409D-9F93-B73545FB336B.html[See how to license tiering using System Manager].
 
 === Obtain your Cloud Tiering license file
 
