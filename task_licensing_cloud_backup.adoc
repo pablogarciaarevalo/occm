@@ -71,11 +71,11 @@ After you purchase a Cloud Backup license for your NetApp account, you need to a
 
 .Steps
 
-. Click *All Services > Digital Wallet > Data Services Licenses*.
+. Click *All Services > Digital Wallet > Cloud Backup Licenses*.
 
-. Click *Add License*.
+. Click *Add Backup License*.
 
-. In the _Add License_ dialog, enter the license information and click *Add License*:
+. In the _Add Cloud Backup License_ dialog, enter the license information and click *Add Backup License*:
 +
 * If you have the backup serial number and know your NSS account, select the *Enter Serial Number* option and enter that information.
 +
@@ -91,8 +91,8 @@ Cloud Manager adds the license so that your Cloud Backup service is active.
 === Update a Cloud Backup BYOL license
 
 If your licensed term is nearing the expiration date, or if your licensed capacity is reaching the limit, you will be notified. This status also appears in the Digital Wallet page.
-
-image:screenshot_services_license_expire.png[A screenshot that shows an expiring license in the Digital Wallet page.]
+//
+//image:screenshot_services_license_expire.png[A screenshot that shows an expiring license in the Digital Wallet page.]
 
 You can update your Cloud Backup license before it expires so that there is no interruption in your ability to back up and restore your data.
 
@@ -100,14 +100,16 @@ You can update your Cloud Backup license before it expires so that there is no i
 
 . Click the chat icon in the lower-right of Cloud Manager to request an extension to your Cloud Backup license for the particular serial number.
 +
-In most cases, Cloud Manager can automatically obtain your updated license file and the Data Services Licenses page will reflect the change in 5 to 10 minutes.
+In most cases, Cloud Manager can automatically obtain your updated license file and the Cloud Backup Licenses page will reflect the change in 5 to 10 minutes.
 
 . If Cloud Manager can't automatically update the license, then you’ll need to manually upload the license file.
 .. You can <<Obtain your Cloud Backup license file,obtain the license file from the NetApp Support Site>>.
-.. On the _Data Services Licenses_ page, click image:screenshot_horizontal_more_button.gif[More icon] for the service serial number you are updating, and click *Update License*.
-+
-image:screenshot_services_license_update1.png[A screenshot of selecting the Update License button for a particular service.]
-.. In the _Update License_ page, upload the license file and click *Update License*.
+.. On the _Cloud Backup Licenses_ page, click *Update Backup License*.
+.. In the _Update Cloud Backup License_ dialog, enter the license information and click *Update Backup License*.
+//.. On the _Cloud Backup Licenses_ page, click image:screenshot_horizontal_more_button.gif[More icon] for the service serial number you are updating, and click *Update License*.
+//+
+//image:screenshot_services_license_update1.png[A screenshot of selecting the Update License button for a particular service.]
+//.. In the _Update License_ page, upload the license file and click *Update License*.
 
 .Result
 
