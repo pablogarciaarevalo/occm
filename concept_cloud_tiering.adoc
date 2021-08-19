@@ -15,7 +15,7 @@ summary: NetApp's Cloud Tiering service extends your data center to the cloud by
 [.lead]
 NetApp's Cloud Tiering service extends your data center to the cloud by automatically tiering inactive data from on-premises ONTAP clusters to object storage. This frees valuable space on the cluster for more workloads, without making changes to the application layer. Cloud Tiering can reduce costs in your data center and enables you to switch from a CAPEX model to an OPEX model.
 
-The Cloud Tiering service leverages the capabilities of _FabricPool_. FabricPool is a NetApp Data Fabric technology that enables automated tiering of data to low-cost object storage. Active data remains on high-performance SSDs, while inactive data is tiered to low-cost object storage while preserving ONTAP data efficiencies.
+The Cloud Tiering service leverages the capabilities of _FabricPool_. FabricPool is a NetApp Data Fabric technology that enables automated tiering of data to low-cost object storage. Active data remains on high-performance SSDs (an AFF system or a FAS system with all-SSD aggregates), while inactive data is tiered to low-cost object storage while preserving ONTAP data efficiencies.
 
 == Features
 
@@ -46,7 +46,7 @@ You can tier inactive data from an on-premises ONTAP cluster to the following ob
 
 Each ONTAP cluster tiers inactive data to a single object store. When you set up data tiering, you have the choice to add a new bucket/container or to select an existing bucket/container, along with a storage class or access tier.
 
-* link:reference_aws_support.html[Learn about supported S3 storage classes]
+* link:reference_aws_support.html[Learn about supported AWS S3 storage classes]
 * link:reference_azure_support.html[Learn about supported Azure Blob access tiers]
 * link:reference_google_support.html[Learn about supported Google Cloud storage classes]
 

@@ -37,11 +37,11 @@ In Cloud Manager, select an on-prem working environment, click *Enable*, and fol
 ==== image:number3.png[number 3] Set up licensing
 
 [role="quick-margin-para"]
-After your free trial ends, pay for Cloud Tiering through a pay-as-you-go subscription, an ONTAP tiering license, or a combination of both:
+After your free trial ends, pay for Cloud Tiering through a pay-as-you-go subscription, an ONTAP Cloud Tiering BYOL license, or a combination of both:
 
 [role="quick-margin-list"]
-* To subscribe from the Azure Marketplace, click *Tiering > Licensing*, click *Subscribe*, and then follow the prompts.
-* To add a tiering license, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[contact us if you need to purchase one], and then link:task_licensing_cloud_tiering.html[add it to your cluster from Cloud Tiering].
+* To subscribe from the Azure Marketplace, https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[go to the Cloud Manager Marketplace offering^], click *Subscribe*, and then follow the prompts.
+* To pay using a Cloud Tiering BYOL license, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[contact us if you need to purchase one], and then link:task_licensing_cloud_tiering.html#add-cloud-tiering-byol-licenses-to-your-account[add it to your account from the Cloud Manager Digital Wallet].
 
 == Requirements
 
@@ -102,7 +102,7 @@ A Connector is required to tier data to the cloud. When tiering data to Azure Bl
 
 If you just created the Connector using Cloud Manager version 3.9.7 or greater, then you're all set.
 
-If you created the Connector using an earlier version of Cloud Manager, then you'll need to edit the permission list to add 2 newly required permissions:
+If you created the Connector using an earlier version of Cloud Manager, then you'll need to edit the permission list to add 2 required permissions:
 
 [source,json]
 Microsoft.Storage/storageAccounts/managementPolicies/read
@@ -196,6 +196,6 @@ image:screenshot_tiering_policy_settings.png[A screenshot that shows the configu
 You've successfully set up data tiering from volumes on the cluster to Azure Blob object storage.
 
 .What's next?
-link:task_licensing_cloud_tiering.html[Be sure to subscribe from the Cloud Tiering service].
+link:task_licensing_cloud_tiering.html[Be sure to subscribe to the Cloud Tiering service].
 
 You can also add additional clusters or review information about the active and inactive data on the cluster. For details, see link:task_managing_tiering.html[Managing data tiering from your clusters].

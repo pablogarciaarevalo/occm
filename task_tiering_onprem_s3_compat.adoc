@@ -35,6 +35,11 @@ You need the following:
 [role="quick-margin-para"]
 In Cloud Manager, select an on-prem working environment, click *Enable*, and follow the prompts to tier data to S3-compatible object storage.
 
+==== image:number3.png[number 3] Set up licensing
+
+[role="quick-margin-para"]
+A Cloud Tiering BYOL license is required when tiering data to S3-compatible object storage. If you don't currently have a Cloud Tiering license, link:task_licensing_cloud_tiering.html#use-a-cloud-tiering-byol-license[see how to add a tiering license now].
+
 == Requirements
 
 Verify support for your ONTAP cluster, set up your networking, and prepare your object storage.
@@ -56,7 +61,7 @@ Supported ONTAP version::
 ONTAP 9.4 or later
 
 Licensing::
-A FabricPool BYOL license is required on the ONTAP cluster when tiering data to S3-compatible object storage. If you don't currently have a FabricPool license, link:task_licensing_cloud_tiering.html#adding-a-tiering-license-to-ontap[see how to add a tiering license now].
+A Cloud Tiering BYOL license is required when tiering data to S3-compatible object storage. If you don't currently have a Cloud Tiering license, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[contact us if you need to purchase one], and then link:task_licensing_cloud_tiering.html#add-cloud-tiering-byol-licenses-to-your-account[add it to your account from the Cloud Manager Digital Wallet].
 
 Cluster networking requirements::
 * The ONTAP cluster initiates an HTTPS connection over a user-specified port to S3-compatible object storage (the port is configurable during tiering setup).

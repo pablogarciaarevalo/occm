@@ -79,7 +79,7 @@ video::video_subscribing_gcp_tiering.mp4[width=848, height=480]
 
 == Use a Cloud Tiering BYOL license
 
-Bring-your-own licenses from NetApp provide 2-, 12-, 24-, or 36-month terms. The BYOL *Cloud Tiering* license is a _floating_ license that you can use across multiple on-premises ONTAP clusters in your account. The total tiering capacity defined in your Cloud Tiering license can be shared among all of your on-prem clusters, making initial licensing and renewal easy.
+Bring-your-own licenses from NetApp provide 2-, 12-, 24-, or 36-month terms. The BYOL *Cloud Tiering* license is a _floating_ license that you can use across multiple on-premises ONTAP clusters in your account. The total tiering capacity defined in your Cloud Tiering license can be shared among *all* of your on-prem clusters, making initial licensing and renewal easy.
 
 If you don't have a Cloud Tiering license, contact us to purchase one:
 
