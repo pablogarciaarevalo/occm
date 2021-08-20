@@ -39,8 +39,8 @@ You can tier inactive data from an on-premises ONTAP cluster to the following ob
 * Amazon S3
 * Microsoft Azure Blob
 * Google Cloud Storage
-* NetApp StorageGRID
 * S3-compatible object storage
+* NetApp StorageGRID
 
 === Object storage tiers
 
