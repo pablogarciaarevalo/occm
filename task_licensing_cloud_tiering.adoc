@@ -101,9 +101,9 @@ If you have one of these configurations, you'll continue to use a FabricPool lic
 +
 Cloud Manager currently supports tiering to the following cloud storage: Amazon S3, Azure Blob storage, Google Cloud Storage, and S3-compatible object storage.
 
-Note that tiering to StorageGRID or to ONTAP S3 does not require a FabricPool or Cloud Tiering license.
+Note that tiering to StorageGRID does not require a FabricPool or Cloud Tiering license.
 
-Here are some thing you need to know about the two licenses:
+Here are some things you need to know about the two licenses:
 
 [cols="50,50",width=95%,options="header"]
 |===
@@ -113,7 +113,7 @@ Here are some thing you need to know about the two licenses:
 | It is a _floating_ license that you can use across multiple on-premises ONTAP clusters. | It is a per-cluster license that you purchase and license for _every_ cluster.
 | It is registered in Cloud Manager in the Digital Wallet. | It is applied to individual clusters using System Manager or the ONTAP CLI.
 | Tiering configuration and management is done through the Cloud Tiering service in Cloud Manager. | Tiering configuration and management is done through System Manager/ONTAP CLI.
-| Once configures, you can use the tiering service without a license for 30 days with the free trial. | Once configured, you can tier the first 10 TB of data for free.
+| Once configured, you can use the tiering service without a license for 30 days with the free trial. | Once configured, you can tier the first 10 TB of data for free.
 |===
 
 If you are currently using FabricPool licensing, you're not affected until your FabricPool license expires. Contact NetApp when you need to update your license, or earlier to make sure there is no interruption in your ability to tier data to the cloud.
