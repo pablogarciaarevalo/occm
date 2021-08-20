@@ -1,0 +1,92 @@
+---
+sidebar: sidebar
+permalink: concept_fsx_aws.html
+keywords: amazon fsx for ontap, cloud volumes, aws, access key, secret key
+summary: Amazon FSx for ONTAP is a fully managed service allowing customers to launch and run file systems powered by NetApp’s ONTAP storage operating system. FSx for ONTAP provides the same features, performance, and administrative capabilities NetApp customers use on premises today, with the simplicity, agility, security, and scalability of a native AWS service.
+---
+
+= Learn about Amazon FSx for ONTAP
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Amazon FSx for ONTAP is a fully managed service allowing customers to launch and run file systems powered by NetApp’s ONTAP storage operating system. FSx for ONTAP provides the same features, performance, and administrative capabilities NetApp customers use on premises, with the simplicity, agility, security, and scalability of a native AWS service.
+
+== Features
+
+* Fully managed service means no need to configure or manage storage devices, software, or backups.
+* Support for NFSv3, NFSv4.0, NFSv4.1, and SMB v2.0 - v3.1.1 protocols.
+* Low cost, virtually unlimited data storage capacity using available Infrequently Accessed (IA) storage tier.
+* Certified to run on latency-sensitive applications including SAP HANA and Oracle RAC
+* Choice of bundled and pay-as-you-go pricing
+
+== Additional features in Cloud Manager
+
+* Using an AWS connector and Cloud Manager, you can configure replication and snapshots and perform advanced workflow configurations.
+
+//* Migrate NFS or SMB data to FSx for ONTAP directly from Cloud Manager. Data migrations are powered by NetApp's Cloud Sync service. link:concept_cloud_sync.html[Learn more].
+
+* Using Artificial Intelligence (AI) driven technology, Cloud Data Sense can help you understand data context and identify sensitive data that resides in your FSx for ONTAP accounts. link:concept_cloud_compliance.html[Learn more^].
+
+== Cost
+
+*_===> NEED LINK_*
+
+Note that your subscription and charging are maintained by the Amazon FSx for ONTAP service and not by Cloud Manager.
+
+== Supported regions
+
+https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/[View supported Amazon regions.^]
+
+== Before you get started
+
+//* Cloud Manager can discover existing Cloud Volumes Service for AWS subscriptions and volumes. See the https://docs.netapp.com/us-en/cloud_volumes/aws/media/cvs_aws_account_setup.pdf[NetApp Cloud Volumes Service for AWS Account Setup Guide^] if you haven't set up your subscription yet. You must follow this setup process for each region before you can add the AWS subscriptions and volumes in Cloud Manager.
+
+//* You need to obtain the Cloud Volumes API key and secret key so you can provide them to Cloud Manager. https://docs.netapp.com/us-en/cloud_volumes/aws/reference_cloud_volume_apis.html#finding-the-api-url-api-key-and-secret-key[For instructions, refer to Cloud Volumes Service for AWS documentation^].
+
+== Quick start
+
+Get started with FSx for ONTAP in a few steps.
+
+==== image:number1.png[Number 1] Create a Connector
+
+[role="quick-margin-para"]
+If you don't have a link:concept_connectors.html[Connector] yet, an Account Admin needs to create one. link:task_creating_connectors_aws.html[Learn how to create a Connector in AWS^].
+
+==== image:number2.png[Number 2] Create an FSx for ONTAP working environment
+
+[role="quick-margin-para"]
+You must create a working environment for the volumes based on your Amazon FSx for ONTAP subscription.
+
+==== image:number3.png[Number 3] Add or discover volumes
+
+[role="quick-margin-para"]
+Cloud volumes that already exist for this subscription appear in the new working environment. Otherwise you create new volumes from Cloud Manager.
+
+==== image:number4.png[Number 4] Manage your cloud volumes
+
+[role="quick-margin-para"]
+Use Cloud Manager to manage your volumes, create advanced workflows, and configure additional services such as replication, sync, and Data Sense.
+
+== Getting help
+
+*_WHAT IS PRIMARY SUPPORT PATH??_*
+//Use the Cloud Manager chat for general service questions.
+
+For technical support issues associated with your cloud volumes, use your 20 digit “930” serial number located in the "Support" tab of the Cloud Volumes Service user interface. Use this support ID when opening a web ticket or calling for support. Be sure to activate your Cloud Volumes Service serial number for support from the Cloud Volumes Service user interface. https://docs.netapp.com/us-en/cloud_volumes/aws/task_activating_support_entitlement.html[Those steps are explained here^].
+
+== Limitations
+
+*_ARE THERE LIMIATIONS  WE NEED TO DOCUMENT? I DON'T THINK THE FOLLOWING APPLY FOR FSX_*
+
+* Cloud Manager doesn't support data replication between working environments when using Cloud Volumes Service volumes.
+
+* Removing your Amazon FSx for ONTAP subscription from Cloud Manager isn't supported. You can do this only through the AWS Management Console.
+
+== Related links
+
+* https://docs.netapp.com/us-en/occm/task_getting_started_aws.html[Getting started with Cloud Volumes ONTAP for AWS^]
+* *_===> NEED LINK TO AWS FSX MAIN PAGE_*
