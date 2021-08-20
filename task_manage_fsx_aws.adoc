@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
-permalink: task_manage_cvs_aws.html
-keywords: cloud volumes service for aws, cloud volumes, create cloud volumes, discover cloud volumes service for aws, delete cloud volumes, cloud volumes service subscription, discover cloud volumes service subscription, access key, secret key, discover region, service level, allowed clients, create snapshots
-summary: Cloud Manager enables you to create cloud volumes based on your Cloud Volumes Service for AWS subscription. You can also discover cloud volumes that you have already created from the Cloud Volumes Service interface and add them to a working environment.
+permalink: task_manage_fsx_aws.html
+keywords: amazon fsx for ontap, fsx, cloud volumes, create cloud volumes, discover cloud volumes service for fsx, delete cloud volumes, cloud volumes service subscription, access key, secret key, region, create snapshots
+summary: Cloud Manager enables you to create cloud volumes based on your Amazon FSx for ONTAP subscription. You can also discover cloud volumes that you have already created from the AWS Management Console and add them to a working environment.
 ---
 
-= Managing Cloud Volumes Service for AWS
+= Managing Amazon FSx for ONTAP cloud volumes
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,8 @@ summary: Cloud Manager enables you to create cloud volumes based on your Cloud V
 :imagesdir: ./media/
 
 [.lead]
-Cloud Manager enables you to create cloud volumes based on your https://cloud.netapp.com/cloud-volumes-service-for-aws[Cloud Volumes Service for AWS^] subscription. You can also discover cloud volumes that you have already created from the Cloud Volumes Service interface and add them to a working environment.
+Cloud Manager enables you to create cloud volumes based on your _==> NEED LINK TO AWS_
+subscription. You can also discover cloud volumes that you have already created from the AWS Management Console.
 
 == Add your Cloud Volumes Service for AWS subscription
 
