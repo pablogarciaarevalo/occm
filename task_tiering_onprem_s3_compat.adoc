@@ -38,7 +38,12 @@ In Cloud Manager, select an on-prem working environment, click *Enable*, and fol
 ==== image:number3.png[number 3] Set up licensing
 
 [role="quick-margin-para"]
-A Cloud Tiering BYOL license is required when tiering data to S3-compatible object storage. If you don't currently have a Cloud Tiering license, link:task_licensing_cloud_tiering.html#use-a-cloud-tiering-byol-license[see how to add a tiering license now].
+After your free trial ends, pay for Cloud Tiering through a pay-as-you-go subscription from your cloud provider, a NetApp Cloud Tiering bring-your-own-license, or a combination of both:
+
+[role="quick-margin-list"]
+* To subscribe to the Cloud Manager PAYGO offering from the https://aws.amazon.com/marketplace/pp/B07QX2QLXX[AWS Marketplace^], https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Azure Marketplace^], or https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[GCP Marketplace^], click *Subscribe* and follow the prompts.
+
+* To pay using a Cloud Tiering BYOL license, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[contact us if you need to purchase one], and then link:task_licensing_cloud_tiering.html#add-cloud-tiering-byol-licenses-to-your-account[add it to your account from the Cloud Manager Digital Wallet].
 
 == Requirements
 
@@ -59,9 +64,6 @@ Cloud Tiering supports AFF systems and all-SSD aggregates on FAS systems.
 
 Supported ONTAP version::
 ONTAP 9.4 or later
-
-Licensing::
-A Cloud Tiering BYOL license is required when tiering data to S3-compatible object storage. If you don't currently have a Cloud Tiering license, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[contact us if you need to purchase one], and then link:task_licensing_cloud_tiering.html#add-cloud-tiering-byol-licenses-to-your-account[add it to your account from the Cloud Manager Digital Wallet].
 
 Cluster networking requirements::
 * The ONTAP cluster initiates an HTTPS connection over a user-specified port to S3-compatible object storage (the port is configurable during tiering setup).
@@ -176,4 +178,6 @@ image:screenshot_tiering_policy_settings.png[A screenshot that shows the configu
 You've successfully set up data tiering from volumes on the cluster to S3-compatible object storage.
 
 .What's next?
+link:task_licensing_cloud_tiering.html[Be sure to subscribe to the Cloud Tiering service].
+
 You can add additional clusters or review information about the active and inactive data on the cluster. For details, see link:task_managing_tiering.html[Managing data tiering from your clusters].

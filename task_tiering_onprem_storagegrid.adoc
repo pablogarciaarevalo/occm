@@ -56,7 +56,7 @@ Supported ONTAP version::
 ONTAP 9.4 or later
 
 Licensing::
-A Cloud Tiering (or FabricPool) license isn’t required on the ONTAP cluster when tiering data to StorageGRID.
+A Cloud Tiering (or FabricPool) license isn’t required in your Cloud Manager account (or on the ONTAP cluster) or when tiering data to StorageGRID.
 
 Cluster networking requirements::
 * The ONTAP cluster initiates an HTTPS connection over a user-specified port to StorageGRID (the port is configurable during tiering setup).
