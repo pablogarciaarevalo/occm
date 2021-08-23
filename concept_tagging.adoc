@@ -62,10 +62,10 @@ VPC
 
 | Azure | Compute | Snapshot
 Virtual Machine
-Network | Security Group
+| | Network | Security Group
 Subnet
 Virtual Network
-Storage | Blob Service
+| | Storage | Blob Service
 Storage Account
 
 |===
@@ -74,7 +74,7 @@ NOTE: At this time you can't view or manage labels (tags) assigned to resources 
 
 For information about AWS EC2 tags, refer to https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html[AWS Documentation: Tagging your Amazon EC2 Resources^].
 
-For information about Azure virtual machine tags, refer to https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources?tabs=json[Azure Documentation: Tagging your Azure resources^].
+For information about Azure tags, refer to https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources?tabs=json[Azure Documentation: Tagging your Azure resources^].
 
 == Prerequisites
 
