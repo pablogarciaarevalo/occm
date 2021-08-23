@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept_tagging.html
-keywords: tags, overview, conceptual, resource tags, volume tags
+keywords: tags, overview, conceptual, resource tags, volume tags, AWS tags, Azure tags
 summary: Cloud Manager enables you to apply tags to your _existing_ resources to help organize and manage those resources. Tags are metadata that you can use to group resources to identify applications, environments, regions, billing codes, cloud providers, and more.
 ---
 
@@ -37,25 +37,36 @@ The ability to tag your resources requires no licensing and is free to use by al
 
 You can apply tags to the following resources.
 
-[cols=2*,options="header",cols="50,40",width="75%"]
+[cols=3*,options="header",cols="25,35,40",width="85%"]
 
 |===
+| Technology
 | Container
 | Resource
 
-| Cloud Volumes ONTAP | Storage VM
-Aggregate
+| ONTAP | Cloud Volumes ONTAP | Aggregate
+Storage VM
 Volume
 
-| On-premise ONTAP | Storage VM
-Aggregate
+| ONTAP | On-premise ONTAP | Aggregate
+Storage VM
 Volume
 
-| Azure NetApp Files | Volume
+| ONTAP | Azure NetApp Files | Volume
 
-| AWS | EC2 Instance
+| AWS | EC2 | Instance
+Security Group
+Subnet
+Volume
+VPC
 
-| Azure | Virtual machine
+| Azure | Compute | Snapshot
+Virtual Machine
+Network | Security Group
+Subnet
+Virtual Network
+Storage | Blob Service
+Storage Account
 
 |===
 
@@ -85,6 +96,35 @@ If you just created the Connector using Cloud Manager version 3.9.9 or greater, 
   ],
   "Resource": "*",
   "Effect": "Allow"
+}
+
+=== Verify your Azure Connector permissions
+
+If you just created the Connector using Cloud Manager version 3.9.10 or greater, then you're all set. If you created the Connector using an earlier version of Cloud Manager, then you'll need to add some required permissions for the Cloud Manager Operator IAM role to tag Azure resources:
+
+[source,json]
+{
+  "id": "<ID>",
+  "properties": {
+    "roleName": "Cloud Manager Operator-<ID>",
+    "description": "Cloud Manager Operator",
+    "assignableScopes": [
+      "/subscriptions/<SUBSCRIPTION-ID>"
+    ],
+    "permissions": [
+      {
+        "actions": [
+          "Microsoft.Resources/tags/read",
+          "Microsoft.Resources/tags/write",
+          "Microsoft.Resources/tags/delete",
+          "Microsoft.ClassicCompute/virtualMachines/read"
+        ],
+        "notActions": [],
+        "dataActions": [],
+        "notDataActions": []
+      }
+    ]
+  }
 }
 
 == Tag rules and restrictions
