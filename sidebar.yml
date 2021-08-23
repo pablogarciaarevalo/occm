@@ -356,6 +356,8 @@ entries:
                 url: /task_getting_started_compliance.html
               - title: Azure NetApp Files
                 url: /task_scanning_anf.html
+              - title: Amazon FSx for ONTAP
+                url: /task_scanning_fsx.html
               - title: Amazon S3 buckets
                 url: /task_scanning_s3.html
               - title: Database schemas

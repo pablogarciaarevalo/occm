@@ -17,9 +17,9 @@ After you set up your working environment, you can create and manage Amazon FSx 
 
 == Creating volumes
 
-You can create NFS or SMB volumes in a new or existing Azure NetApp Files account.
+You can create NFS or SMB volumes in a new or existing FSx for ONTAP working environment.
 
-A Cloud Manager feature called "templates" enables you to create volumes that are optimized for the workload requirements for certain applications; such as databases or streaming services. If your organization has created volume templates that you should use, follow <<Creating volumes from templates,these steps>>.
+//A Cloud Manager feature called "templates" enables you to create volumes that are optimized for the workload requirements for certain applications; such as databases or streaming services. If your organization has created volume templates that you should use, follow <<Creating volumes from templates,these steps>>.
 
 .Before you begin
 
