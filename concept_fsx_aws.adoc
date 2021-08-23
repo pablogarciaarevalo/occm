@@ -25,7 +25,7 @@ Amazon FSx for ONTAP is a fully managed service allowing customers to launch and
 
 == Additional features in Cloud Manager
 
-* Using an AWS connector and Cloud Manager, you can configure replication and snapshots and perform advanced workflow configurations.
+* Using an AWS Connector and Cloud Manager, you can create and manage volumes, replicate, enable data services, and perform advanced workflow configurations.
 
 //* Migrate NFS or SMB data to FSx for ONTAP directly from Cloud Manager. Data migrations are powered by NetApp's Cloud Sync service. link:concept_cloud_sync.html[Learn more].
 
@@ -51,15 +51,15 @@ https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services
 
 Get started with FSx for ONTAP in a few steps.
 
-==== image:number1.png[Number 1] Create a Connector
-
-[role="quick-margin-para"]
-If you don't have a link:concept_connectors.html[Connector] yet, an Account Admin needs to create one. link:task_creating_connectors_aws.html[Learn how to create a Connector in AWS^].
-
-==== image:number2.png[Number 2] Create an FSx for ONTAP working environment
+==== image:number1.png[Number 1] Create an FSx for ONTAP working environment
 
 [role="quick-margin-para"]
 You must create a working environment for the volumes based on your Amazon FSx for ONTAP subscription.
+
+==== image:number2.png[Number 2] Create a Connector
+
+[role="quick-margin-para"]
+If you don't have a link:concept_connectors.html[Connector], an Account Admin needs to create one. If you already have an AWS Connector, you can add FSx for ONTAP permissions to the IAM role for the Connector or create a new IAM role.  link:task_creating_connectors_aws.html[Learn how to create a Connector in AWS^].
 
 ==== image:number3.png[Number 3] Add or discover volumes
 

@@ -18,7 +18,7 @@ subscription. You can also discover cloud volumes that you have already created 
 
 == Create your Amazon FSx for ONTAP working environment
 
-Regardless of whether you have already created volumes from the AWS Management Console, or if you just signed up for Amazon FSx for ONTAP and have no volumes yet, the first step is to create a working environment for the volumes based on your FSx for ONTAP subscription.
+Regardless of whether you have already created volumes from the AWS Management Console, or if you just signed up for Amazon FSx for ONTAP and have no volumes, the first step is to create a working environment for the volumes based on your FSx for ONTAP subscription.
 
 If cloud volumes already exist for this subscription, then the volumes are automatically added to the new working environment. If you haven't added any cloud volumes yet, then you'll do that after you create the new working environment.
 
@@ -26,23 +26,21 @@ If cloud volumes already exist for this subscription, then the volumes are autom
 
 .Before you begin
 
-* You need to maintin an active AWS Connector connection while working with FSx for ONTAP in Cloud Manager.
+You must have the following information available when adding a subscription in each region:
 
-* You must have the following information available when adding a subscription in each region:
+* Your AWS Access Key and AWS Secret Key: *_NEED LINK TO AWS FSX DOC_* [See the Cloud Volumes Service for AWS documentation to get this information^].
 
-** Your AWS Access Key and AWS Secret Key: *_NEED LINK TO AWS FSX DOC_* [See the Cloud Volumes Service for AWS documentation to get this information^].
-
-** The AWS region where the subscription was created.
+* The AWS region where the subscription was created.
 
 .Steps
 
 . In Cloud Manager, add a new Working Environment, select the location *Amazon Web Services*, and click *Next*.
 
-. To create a new FSx for ONTAp environment, select *Amazon FSx for ONTAP* and click *Next*.
+. To create a new FSx for ONTAP environment, select *Amazon FSx for ONTAP* and click *Next*.
 +
 image:screenshot_add_fsx_working_env.png[A screenshot of adding a working environment for Amazon FSx for ONTAP]
 +
-TIP: To have Cloud Manager discover an exisiting FSx for ONTAP environment, click *Click Here* to enter your credentials and select the AWS region and working environment.
+TIP: To have Cloud Manager discover an existing FSx for ONTAP environment, click *Click Here* to enter your credentials and select the AWS region and working environment.
 
 . Provide information about your FSx for ONTAP subscription:
 
@@ -59,7 +57,7 @@ image:screenshot_add_fsx_credentials.png[A screenshot of adding credentials for 
 
 .. Select a region and VPC with subnets in at least two availability zones so each cluster is in a dedicated availability zone.
 .. Accept the default security group or select a different one.
-.. Select an availabilty zone and subnet for each node.
+.. Select an availability zone and subnet for each node.
 .. Click *Next*.
 +
 image:screenshot_add_fsx_region.png[A screenshot of adding region and VPC for FSx for ONTAP]
@@ -100,7 +98,7 @@ image:screenshot_add_fsx_cloud.png[A screenshot of Amazon FSx for ONTAP on the w
 
 If cloud volumes already exist for this subscription, then the volumes are automatically added to the new working environment, as shown in the screenshot. You can add additional cloud volumes from Cloud Manager.
 
-If no cloud volumes exist for this subscription, then you can create them now.
+If no cloud volumes exist for this subscription, you can create them now.
 
 // == Create cloud volumes
 //

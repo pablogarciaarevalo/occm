@@ -23,15 +23,21 @@ A Cloud Manager feature called "templates" enables you to create volumes that ar
 
 .Before you begin
 
+* You need to have an active AWS Connector connection with FSx for ONTAP permissions to create and manage volumes, replicate, or enable data services.
+
 * If you want to use SMB, you must have set up DNS and Active Directory.
 
-* You need to maintin an active AWS Connector connection while working with FSx for ONTAP in Cloud Manager.
+* You need to maintain an active AWS Connector connection while working with FSx for ONTAP in Cloud Manager.
 
 * You must have the password for the FSx admin user on the FSx for ONTAP instance.
 
 .Steps
 
 . Open the Amazon FSx for ONTAP working environment.
+
+. If you already have an active Connector with FSx for ONTAP permissions, enter the user name and password. If you don't have a Connector enabled, you'll be prompted to add one.
++
+image:screenshot_fsx_connector_prompt.png[A screenshot of the FSx for ONTAP Connector prompt.]
 
 . Click the *Volumes* tab
 
@@ -70,7 +76,7 @@ TIP: If the CIFS server was not already configured in the working environment, y
 
 .. *Usage Profile and Tiering*:
 
-... By default, the *Storage Efficiency* is disabled. You can change this setting to enable depulication and compression. Enter a volume name and size, the VNet and subnet where the volume should reside, and optionally specify tags for the volume.
+... By default, the *Storage Efficiency* is disabled. You can change this setting to enable deduplication and compression. Enter a volume name and size, the VNet and subnet where the volume should reside, and optionally specify tags for the volume.
 ... Be default, *Tiering Policy* is set to *Snapshot Only*. You can select a different tiering policy based on your  needs.
 ... Click *Next*.
 +
@@ -90,9 +96,9 @@ Access mounting instructions from within Cloud Manager so you can mount the volu
 
 . Open the working environment.
 
-. Hover over the volume and select *Mount the volume*.
+. Hover over the volume and select *Mount the volume* (for NFS and CIFS volumes) or *Target iQN* (for iSCSI).
 +
-image:screenshot_anf_hover.png[A screenshot of available operations available when you hover the cursor over a volume.]
+image:screenshot_fsx_volume_actions.png[A screenshot of available operations available when you hover the cursor over a volume.]
 
 . Follow the instructions to mount the volume.
 
@@ -110,23 +116,23 @@ After you create a volume, you can modify its size and tags at any time.
 
 . Click *Apply*.
 
-== Changing the volume's service level
+== Cloning the volume
 
-After you create a volume, you can change the service level at any time as long as the destination capacity pool already exists.
+After you create a volume, you can create a new read-write volume from a new Snapshot.
 
 .Steps
 
 . Open the working environment.
 
-. Hover over the volume and select *Change service level*.
+. Hover over the volume and select *Clone*.
 
-. Select the capacity pool that provides the service level that you want.
+. Enter a name for the cloned volume.
 
-. Click *Change*.
+. Click *Clone*.
 
-.Result
-
-The volume is moved to the other capacity pool with no impact to the volume.
+// .Result
+//
+// The volume is moved to the other capacity pool with no impact to the volume.
 
 == Managing Snapshot copies
 
@@ -139,10 +145,19 @@ Snapshot copies provide a point-in-time copy of your volume. Create Snapshot cop
 . Hover over the volume and choose one of the available options to manage Snapshot copies:
 
 * *Create a Snapshot copy*
-* *Revert volume to Snapshot*
-* *Delete a Snapshot copy*
+* *Restore from a Snapshot copy*
 
 . Follow the prompts to complete the selected action.
+
+== Changing the tiering policy
+
+.Steps
+
+. Open the working environment.
+
+. Hover over the volume and select *Change Tiering policy*.
+
+. Select a new tiering policy and click *Change*. 
 
 == Deleting volumes
 
