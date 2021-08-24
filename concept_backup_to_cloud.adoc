@@ -92,7 +92,7 @@ Since Cloud Backup preserves the storage efficiencies of the source volume, you 
 
 * For File Restore, you pay your cloud provider for compute costs only when the Restore instance is running.
 +
-The instance runs only when browsing a backup file to locate the individual files you want to restore. The instance is turned off when not in use to save costs.
+The instance resides in the same subnet as the Connector, and it runs only when browsing a backup file to locate the individual files you want to restore. The instance is turned off when not in use to save costs.
 +
 ** In AWS, the Restore instance runs on an https://aws.amazon.com/ec2/instance-types/m5/[m5n.xlarge instance^] with 4 CPUs, 16 GiB memory, and EBS Only instance storage. The operating system image is Amazon Linux 2.
 +
