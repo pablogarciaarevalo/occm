@@ -84,7 +84,7 @@ NOTE: Cloud Tiering supports FlexGroup volumes, starting with ONTAP 9.5. Setup w
 
 === Discovering an ONTAP cluster
 
-You need to create an on-prem ONTAP working environment in Cloud Manager before you can start tiering cold data.
+You need to create an on-prem ONTAP working environment in the Cloud Manager Canvas before you can start tiering cold data.
 
 link:task_discovering_ontap.html[Learn how to discover a cluster].
 
