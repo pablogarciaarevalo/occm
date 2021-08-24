@@ -184,3 +184,5 @@ image:screenshot_backup_settings_button.png[A screenshot that shows the Backup S
 image:screenshot_disable_backups.png[A screenshot of the Deactivate Backup button for a working environment.]
 
 . In the confirmation dialog box, click *Deactivate*.
+
+NOTE: The "Deactivate Backup" button changes to "Activate Backup" while backup is disabled on that working environment. You can click *Activate Backup* if you want to enable all backup functionality for that working environment.
