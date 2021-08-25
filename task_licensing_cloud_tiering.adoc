@@ -104,9 +104,9 @@ Cloud Manager currently supports tiering to the following cloud storage: Amazon 
 
 Note that tiering to StorageGRID does not require a FabricPool or Cloud Tiering license.
 
-If you are currently using FabricPool licensing, you're not affected until your FabricPool license expires. Contact NetApp when you need to update your license, or earlier to make sure there is no interruption in your ability to tier data to the cloud.
+If you are currently using FabricPool licensing, you're not affected until your FabricPool license reaches its expiration date or maximum capacity. Contact NetApp when you need to update your license, or earlier to make sure there is no interruption in your ability to tier data to the cloud.
 
-* If you're using a configuration that is supported in Cloud Manager, your FabricPool licenses will be converted to Cloud Tiering licenses and they'll appear in the Digital Wallet. When those initial licenses reach their expiration, you'll need to update the Cloud Tiering licenses.
+* If you're using a configuration that is supported in Cloud Manager, your FabricPool licenses will be converted to Cloud Tiering licenses and they'll appear in the Digital Wallet. When those initial licenses expire, you'll need to update the Cloud Tiering licenses.
 * If you're using a configuration that is not supported in Cloud Manager, then you'll continue using a FabricPool license. http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mgng-stor-tier-fp/GUID-C3C125BF-44DA-409D-9F93-B73545FB336B.html[See how to license tiering using System Manager^].
 
 Here are some things you need to know about the two licenses:
@@ -124,13 +124,13 @@ Here are some things you need to know about the two licenses:
 
 === Obtain your Cloud Tiering license file
 
-When you license Cloud Tiering in Cloud Manager, you can enter the Cloud Tiering serial number and NSS account, or you can upload the NLF license file. The steps below show how to get the NLF license file if you plan to use that method.
+After you have purchased your Cloud Tiering license, you activate the license in Cloud Manager by entering the Cloud Tiering serial number and NSS account, or by uploading the NLF license file. The steps below show how to get the NLF license file if you plan to use that method.
 
 .Steps
 
 . Sign in to the https://mysupport.netapp.com[NetApp Support Site^] and click *Systems > Software Licenses*.
 
-. Enter your Cloud Tiering serial number.
+. Enter your Cloud Tiering license serial number.
 +
 image:screenshot_cloud_tiering_license_step1.gif[A screenshot that shows a table of licenses after searching by serial number.]
 
@@ -140,11 +140,11 @@ image:screenshot_cloud_tiering_license_step1.gif[A screenshot that shows a table
 +
 image:screenshot_cloud_tiering_license_step2.gif[A screenshot that shows the get license dialog box where you enter your tenant ID and then click Submit to download the license file.]
 +
-You can find your Account ID by selecting the *Account* drop-down from the top of Cloud Manager, and then clicking *Manage Account* next to your account. Your Account ID is in the Overview tab.
+You can find your Cloud Manager Account ID by selecting the *Account* drop-down from the top of Cloud Manager, and then clicking *Manage Account* next to your account. Your Account ID is in the Overview tab.
 
 === Add Cloud Tiering BYOL licenses to your account
 
-After you purchase a Cloud Tiering license for your Cloud Manager account, you need to add the license to Cloud Manager to activate the Cloud Tiering service.
+After you purchase a Cloud Tiering license for your Cloud Manager account, you need to add the license to Cloud Manager to use the Cloud Tiering service.
 
 .Steps
 
@@ -154,7 +154,7 @@ After you purchase a Cloud Tiering license for your Cloud Manager account, you n
 
 . In the _Add License_ dialog, enter the license information and click *Add License*:
 +
-* If you have the tiering serial number and know your NSS account, select the *Enter Serial Number* option and enter that information.
+* If you have the tiering license serial number and know your NSS account, select the *Enter Serial Number* option and enter that information.
 +
 If your NetApp Support Site account isn't available from the drop-down list, link:task_adding_nss_accounts.html[add the NSS account to Cloud Manager^].
 * If you have the tiering license file, select the *Upload License File* option and follow the prompts to attach the file.
@@ -167,7 +167,7 @@ Cloud Manager adds the license so that your Cloud Tiering service is active.
 
 === Update a Cloud Tiering BYOL license
 
-If your licensed term is nearing the expiration date, or if your licensed capacity is reaching the limit, you will be notified. This status also appears in the Digital Wallet page.
+If your licensed term is nearing the expiration date, or if your licensed capacity is reaching the limit, you'll be notified. This status also appears in the Digital Wallet page.
 
 image:screenshot_services_license_expire1.png[A screenshot that shows an expiring license in the Digital Wallet page.]
 
@@ -175,9 +175,9 @@ You can update your Cloud Tiering license before it expires so that there is no 
 
 .Steps
 
-. Click the chat icon in the lower-right of Cloud Manager to request an extension to your Cloud Tiering license for the particular serial number.
+. Click the chat icon in the lower-right of Cloud Manager to request an extension or capacity add-on to your Cloud Tiering license for the particular serial number.
 +
-In most cases, Cloud Manager can automatically obtain your updated license file and the Data Services Licenses page will reflect the change in 5 to 10 minutes.
+After you pay for the license and it is registered with the NetApp Support Site, in most cases, Cloud Manager can automatically obtain your updated license file and the Data Services Licenses page will reflect the change in 5 to 10 minutes.
 
 . If Cloud Manager can't automatically update the license, then you’ll need to manually upload the license file.
 .. You can <<Obtain your Cloud Tiering license file,obtain the license file from the NetApp Support Site>>.
