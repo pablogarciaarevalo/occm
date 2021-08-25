@@ -23,7 +23,7 @@ You can create NFS or SMB volumes in a new or existing FSx for ONTAP working env
 
 .Before you begin
 
-* You need to have an active AWS Connector connection with FSx for ONTAP permissions to create and manage volumes, replicate, or enable data services.
+* You need to have an active Connector in AWS with FSx for ONTAP permissions to create and manage volumes, replicate, or enable data services.
 
 * If you want to use SMB, you must have set up DNS and Active Directory.
 
@@ -169,7 +169,7 @@ You can replicate data between storage environments using Cloud Manager. To conf
 
 You can create sync relationships using Cloud Sync in Cloud Manager. To configure sync relationships, see link:https://docs.netapp.com/us-en/occm/task_sync_quick_start.html[create sync relationships.^]
 
-TIP: Drag-and-drop sync is not available in FSx for ONTAP at this time. You can manually configure sync relationships using the *Sync* menu.
+//TIP: Drag-and-drop sync is not available in FSx for ONTAP at this time. You can manually configure sync relationships using the *Sync* menu.
 
 == Deleting volumes
 

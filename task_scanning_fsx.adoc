@@ -64,11 +64,11 @@ For FSx for ONTAP, link:task_manage_fsx_volumes.html[Cloud Manager must be set u
 
 link:task_deploy_cloud_compliance.html[Deploy Cloud Data Sense^] if there isn't already an instance deployed.
 
-Data Sense must be deployed in the cloud when scanning FSx for ONTAP volumes, and it must be deployed in the same region as the volumes you wish to scan.
+Data Sense must be deployed in AWS when scanning FSx for ONTAP volumes, and it must be deployed in the same region as the volumes you wish to scan.
 
 == Enabling Cloud Data Sense in your working environments
 
-You can enable Cloud Data Sense on your FSx for ONTAP volumes.
+You can enable Cloud Data Sense for FSx for ONTAP volumes.
 
 . At the top of Cloud Manager, click *Data Sense* and then select the *Configuration* tab.
 +
