@@ -19,6 +19,97 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.10 (2 September 2021)
+
+* <<Amazon FSx for ONTAP is now supported>>
+* <<Cloud Backup enhancements>>
+* <<Cloud Data Sense enhancements>>
+* <<Cloud Sync enhancements>>
+* <<Cloud Tiering enhancements>>
+* <<Replication enhancements>>
+* <<Resource Tagging enhancements>>
+* <<A new Notification Service has been added>>
+
+== Amazon FSx for ONTAP is now supported
+
+* link:https://www.docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html[Amazon FSx for ONTAP] is a fully managed service allowing customers to launch and run file systems powered by NetApp’s ONTAP storage operating system. FSx for ONTAP provides the same features, performance, and administrative capabilities NetApp customers use on premises, with the simplicity, agility, security, and scalability of a native AWS service.
++
+link:https://docs.netapp.com/us-en/occm/concept_fsx_aws.html[Learn about Amazon FSx for ONTAP]
+
+* You can configure an FSx for ONTAP working environment in Cloud Manager.
++
+link:https://docs.netapp.com/us-en/occm/task_manage_fsx_aws.html[Create an Amazon FSx for ONTAP working environment]
+
+* Using a Connector in AWS and Cloud Manager, you can create and manage volumes, replicate data, and integrate FSx for ONTAP with NetApp cloud services, such as Data Sense and Cloud Sync.
++
+link:https://review.docs.netapp.com/us-en/occm_sep-2021-fsx/task_scanning_fsx.html#quick-start[Getting started with Cloud Data Sense for Amazon FSx for ONTAP]
+
+=== Cloud Backup enhancements
+
+* Now you can create an on-demand backup at any time to capture the current state of a volume. This is useful if important changes have been made to a volume and you don’t want to wait for the next scheduled backup to protect that data.
++
+link:https://review.docs.netapp.com/us-en/occm_sep_2021_backup/task_managing_backups.html#creating-a-manual-volume-backup-at-any-time[See how to create an on-demand backup].
+
+* When configuring backups to Amazon S3 from an on-premises ONTAP system, now you can define a connection to a Private VPC Endpoint in the activation wizard. This allows you to use a network interface that connects you privately and securely to a service powered by AWS PrivateLink.
+
+* For additional security and control, you can choose your own customer-managed keys for data encryption in the activation wizard instead of using the default Amazon S3 encryption keys.
++
+This is available when configuring backups from an on-premises ONTAP system or from a Cloud Volumes ONTAP system in AWS.
+
+* The restriction of being able to browse a single directory with flat files up to a maximum of 30,000 files has been removed. Now you can restore files from directories that have a larger number of files.
+
+=== Cloud Data Sense enhancements
+
+* Support for the Google Cloud Platform.
++
+Now Cloud Data Sense can scan data from your Cloud Volumes ONTAP systems that are deployed on GCP. Data Sense must be deployed on GCP, and the Connector must be deployed on GCP or on-premises.
++
+The GCP service account associated with the Connector needs the latest permissions to deploy Cloud Data Sense to GCP. link:https://review.docs.netapp.com/us-en/occm_sep_2021_cc/task_deploy_cloud_compliance.html#reviewing-prerequisites[See the 3 new permissions that are required].
+
+* Added support for scanning data on NFS volumes on Amazon FSx for ONTAP systems. link:task_scanning_fsx.html[See how to configure scanning for your FSx for ONTAP systems].
+
+* The capability to add "Status" information to your files using Data Sense has changed terminology to use "Tags". These are file level tags - not to be confused with resource level tagging that can be applied to volumes, EC2 instances, virtual machines, etc.
+
+=== Cloud Sync enhancements
+
+You can now sync data to or from an Amazon FSx for ONTAP file system.
+
+* link:concept_fsx_aws.html[Learn about Amazon FSx for ONTAP].
+* link:reference_sync_requirements.html[View supported sync relationships].
+* link:task_sync_creating_relationships.html[Learn how to create a sync relationship for Amazon FSx for ONTAP].
+
+=== Cloud Tiering enhancements
+
+* New Cloud Tiering BYOL license replaces FabricPool license
++
+A new *Cloud Tiering* license is now available for tiering configurations that are supported within Cloud Manager using the Cloud Tiering service. It is a floating license that you can use across multiple on-premises ONTAP clusters. The *FabricPool* license that you may have used in the past is retained only for configurations that aren’t supported within Cloud Manager.
++
+link:https://review.docs.netapp.com/us-en/occm_sep_2021_tiering/task_licensing_cloud_tiering.html#use-a-cloud-tiering-byol-license[Learn more about the new Cloud Tiering license].
+
+* Now you can tier inactive data from your on-prem ONTAP clusters to any Object Storage service which uses the Simple Storage Service (S3) protocol.
++
+link:https://review.docs.netapp.com/us-en/occm_sep_2021_tiering/task_tiering_onprem_s3_compat.html[See how to tier data to S3-compatible object storage].
+
+=== Replication enhancements
+
+You can now replicate data from a Cloud Volumes ONTAP system or an on-premises ONTAP cluster to an Amazon FSx for ONTAP file system.
+
+link:concept_replication.html[Learn about the Replication service].
+
+=== Resource Tagging enhancements
+
+* Now you can manage tags on your Azure resources using the Cloud Manager Tagging service. You can view Azure tags and tag values that have been applied to resources, and you can apply those tags to other Azure resources that you are managing.
++
+link:https://review.docs.netapp.com/us-en/occm_sep_2021_template/concept_tagging.html#resources-that-you-can-tag[See the Azure resources that you can tag].
++
+The Cloud Manager Operator IAM role associated with the Connector needs the latest permissions to tag Azure resources. link:https://review.docs.netapp.com/us-en/occm_sep_2021_template/concept_tagging.html#verify-your-azure-connector-permissions[see the new permissions that are required].
+
+* Some additional AWS EC2 resources can now be tagged. link:https://review.docs.netapp.com/us-en/occm_sep_2021_template/concept_tagging.html#resources-that-you-can-tag[See the AWS resources that you can tag].
+
+=== A new Notification Service has been added
+
+A new Notification service has been added that shows high level events, actions, and notifications for operations being performed in Cloud Manager.
+
 == Cloud Manager 3.9.9 build 2 (18 Aug 2021)
 
 This patch update includes bug fixes.
