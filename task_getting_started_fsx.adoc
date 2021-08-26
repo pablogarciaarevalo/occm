@@ -15,20 +15,29 @@ summary: Get started with Amazon FSx for ONTAP in a few steps.
 [.lead]
 Get started with Amazon FSx for ONTAP in a few steps.
 
-==== image:number1.png[Number 1] Create a Connector
+== Quick start
+
+Get started with FSx for ONTAP in a few steps.
+
+==== image:number1.png[Number 1] Create an FSx for ONTAP working environment
 
 [role="quick-margin-para"]
-If you don't have a link:concept_connectors.html[Connector] yet, an Account Admin needs to create one. link:task_creating_connectors_aws.html[Learn how to create a Connector in AWS].
+You must create an Amazon FSx for ONTAP working environment before adding volumes.
+
+==== image:number2.png[Number 2] Create a Connector
 
 [role="quick-margin-para"]
-When you create your first Cloud Volumes ONTAP working environment, Cloud Manager prompts you to deploy a Connector if you don't have one yet.
+Create a Connector for AWS using an AWS access key and secret key for an IAM user with the required FSx for ONTAP permissions.  If you don't have a link:concept_connectors.html[Connector], an Account Admin needs to create one. If you already have a Connector in AWS, you can attach FSx for ONTAP permissions to the IAM role for the Connector or create a new IAM role with required permissions.  link:task_creating_connectors_aws.html[Learn how to create a Connector in AWS^].
 
-==== image:number2.png[Number 2] Plan your configuration
+==== image:number3.png[Number 3] Add or discover volumes
 
 [role="quick-margin-para"]
-Cloud Manager offers preconfigured packages that match your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you. link:task_planning_your_config.html[Learn more].
+Volumes that already exist in the FSx for ONTAP file system appear in the new working environment. Otherwise you can create new volumes from Cloud Manager.
 
-==== image:number3.png[Number 3] Set up your networking
+==== image:number4.png[Number 4] Manage your volumes
+
+[role="quick-margin-para"]
+Use Cloud Manager to manage your volumes and configure additional services such as replication, Cloud Sync, and Data Sense.
 
 [role="quick-margin-list"]
 .. Ensure that your VPC and subnets will support connectivity between the Connector and Cloud Volumes ONTAP.

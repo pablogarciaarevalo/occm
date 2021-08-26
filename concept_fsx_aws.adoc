@@ -25,8 +25,7 @@ link:https://www.docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.htm
 
 == Additional features in Cloud Manager
 
-* Using an AWS Connector and Cloud Manager, you can create and manage volumes, replicate data, integrate FSx with NetApp cloud services, and perform advanced workflow configurations.
-
+* Using a Connector in AWS and Cloud Manager, you can create and manage volumes, replicate data, and integrate FSx for ONTAP with NetApp cloud services, such as Data Sense and Cloud Sync.
 //* Migrate NFS or SMB data to FSx for ONTAP directly from Cloud Manager. Data migrations are powered by NetApp's Cloud Sync service. link:concept_cloud_sync.html[Learn more].
 
 * Using Artificial Intelligence (AI) driven technology, Cloud Data Sense can help you understand data context and identify sensitive data that resides in your FSx for ONTAP accounts. link:concept_cloud_compliance.html[Learn more^].
@@ -35,12 +34,11 @@ link:https://www.docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.htm
 
 == Cost
 
-Note that your subscription and charging are maintained by the Amazon FSx for ONTAP service and not by Cloud Manager. https://www.docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html[Amazon FSx for ONTAP getting started guide^]
+Note that your account is maintained by the Amazon FSx for ONTAP service and not by Cloud Manager. https://www.docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html[Amazon FSx for ONTAP getting started guide^]
 
 == Supported regions
 
 https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/[View supported Amazon regions.^]
-
 //== Before you get started
 
 //* Cloud Manager can discover existing Cloud Volumes Service for AWS subscriptions and volumes. See the https://docs.netapp.com/us-en/cloud_volumes/aws/media/cvs_aws_account_setup.pdf[NetApp Cloud Volumes Service for AWS Account Setup Guide^] if you haven't set up your subscription yet. You must follow this setup process for each region before you can add the AWS subscriptions and volumes in Cloud Manager.
@@ -56,11 +54,14 @@ For technical support issues associated with your volumes, use your 20 digit “
 
 == Limitations
 
-*_ARE THERE LIMIATIONS  WE NEED TO DOCUMENT? I DON'T THINK THE FOLLOWING APPLY FOR FSX_*
+* Cloud Manager can replicate only from on-premises or Cloud Volumes ONTAP to FSx for ONTAP.
 
-* Cloud Manager doesn't support data replication between working environments when using Cloud Volumes Service volumes.
+* Currently, you cannot edit volumes on FSx for ONTAP using Cloud Manager.
 
-* Removing your Amazon FSx for ONTAP subscription from Cloud Manager isn't supported. You can do this only through the AWS Management Console.
+* At this time:
+** NFS volumes can be created using Cloud Manager.
+** CIFS volumes must be created using the ONTAP CLI.
+** iSCSI volumes are not available. 
 
 == Related links
 

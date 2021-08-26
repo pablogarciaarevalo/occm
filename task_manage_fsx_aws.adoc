@@ -5,7 +5,7 @@ keywords: amazon fsx for ontap, fsx, volumes, create volumes, discover volumes s
 summary: Cloud Manager enables you to create volumes in Amazon FSx for ONTAP. You can also discover  volumes that you have already created from the AWS Management Console and add them to a working environment.
 ---
 
-= Creating an Amazon FSx for ONTAP working environment
+= Create an Amazon FSx for ONTAP working environment
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -15,31 +15,7 @@ summary: Cloud Manager enables you to create volumes in Amazon FSx for ONTAP. Yo
 [.lead]
 Cloud Manager enables you to create volumes for link:https://www.docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html[Amazon FSx for ONTAP]. You can also discover volumes that you have already created from the AWS Management Console and add them to a working environment.
 
-== Quick start
-
-Get started with FSx for ONTAP in a few steps.
-
-==== image:number1.png[Number 1] Create an FSx for ONTAP working environment
-
-[role="quick-margin-para"]
-You must create an Amazon FSx for ONTAP working environment before adding volumes. These steps are covered in detail on this page.
-
-==== image:number2.png[Number 2] Create a Connector
-
-[role="quick-margin-para"]
-If you don't have a link:concept_connectors.html[Connector], an Account Admin needs to create one. If you already have a Connector in AWS, you can add FSx for ONTAP permissions to the IAM role for the Connector or create a new IAM role.  link:task_creating_connectors_aws.html[Learn how to create a Connector in AWS^].
-
-==== image:number3.png[Number 3] Add or discover volumes
-
-[role="quick-margin-para"]
-Volumes that already exist in the FSx for ONTAP file system appear in the new working environment. Otherwise you can create new volumes from Cloud Manager. 
-
-==== image:number4.png[Number 4] Manage your volumes
-
-[role="quick-margin-para"]
-Use Cloud Manager to manage your volumes and configure additional services such as replication, Cloud Sync, and Data Sense.
-
-== Create your Amazon FSx for ONTAP working environment
+== Create an Amazon FSx for ONTAP working environment
 
 Regardless of whether you have already created volumes from the AWS Management Console, or if you just signed up for Amazon FSx for ONTAP and have no volumes, the first step is to create a working environment for the FSx for ONTAP volumes.
 
@@ -49,9 +25,17 @@ If you already have volumes in FSx for ONTAP, the volumes are automatically adde
 
 .Before you begin
 
-You must have the following information available:
+Before creating your FSx for ONTAP working environment in Cloud Manager, you will need:
 
-* Your AWS Access Key and AWS Secret Key: *_NEED LINK TO AWS FSX DOC_* [See the Cloud Volumes Service for AWS documentation to get this information^].
+* An AWS access key and secret key with IAM user permissions for FSx for ONTAP or existing FSx for ONTAP credentials created by the AWS IAM administrator.
++
+https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html[AWS security credentials]
++
+https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html[AWS Documentation: Creating a Role to Delegate Permissions to an IAM User^]
+
+* An link:task_setting_up_kms_fsx[active Customer Master Key (CMK) for FSx for ONTAP] configured
+
+* link:task_setting_up_transit_gateway_fsx.html[An AWS transit gateway for FSx for ONTAP] to enable access to the floating IPs from outside the VPC where FSx for ONTAP resides. Floating IP addresses are required for cluster, SVM, and protocol access.
 
 * The AWS region where the FSx for ONTAP instance was created.
 
@@ -67,7 +51,7 @@ TIP: To have Cloud Manager discover an existing FSx for ONTAP environment, click
 
 . Provide information about your FSx for ONTAP instance:
 
-.. You can select existing FSx for ONTAP credentials or add new credentials to Cloud Manager. To create new credentials, you need to know your AWS Access Key and AWS Secret Key.
+.. You can select existing FSx for ONTAP credentials or add new credentials to Cloud Manager. To create new credentials, you need to know the AWS access key and secret key
 .. Enter the Working Environment name you want to use.
 .. Optionally, you can create tags by clicking the plus sign and entering a tag name and value.
 .. Enter and confirm the ONTAP Cluster password you want to use.
@@ -85,10 +69,7 @@ image:screenshot_add_fsx_credentials.png[A screenshot of adding credentials for 
 +
 image:screenshot_add_fsx_region.png[A screenshot of adding region and VPC for FSx for ONTAP]
 
-. Floating IP addresses are required for cluster and SVM access and for NFS and CIFS access. You will need to link:task_setting_up_transit_gateway.html[set up an AWS transit gateway] to enable access to the floating IPs.
-
-+
-Enter the floating IP range or click *Next* to continue.
+. Enter the range you configured when you link:task_setting_up_transit_gateway_fsx.html[set up an AWS transit gateway^] to enable access to the floating IPs from outside the VPC where FSx for ONTAP resides. Click *Next* to continue.
 +
 image:screenshot_add_fsx_floatingIP.png[A screenshot of adding region and VPC for FSx for ONTAP]
 

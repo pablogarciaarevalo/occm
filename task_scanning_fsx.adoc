@@ -15,6 +15,10 @@ summary: Complete a few steps to get started with Cloud Data Sense for Amazon FS
 [.lead]
 Complete a few steps to get started with Cloud Data Sense for FSx for ONTAP.
 
+== Before you begin
+
+You need an active Connector in AWS to deploy and manage Data Sense.
+
 == Quick start
 
 Get started quickly by following these steps, or scroll down to the remaining sections for full details.
@@ -22,7 +26,7 @@ Get started quickly by following these steps, or scroll down to the remaining se
 ==== image:number1.png[Number 1] Discover the data sources that contain the data you want to scan
 
 [role="quick-margin-para"]
-Before you can scan FSx for ONTAP volumes, link:concept_fsx_aws.html[you must have an FSx working environment with volumes configured.^].
+Before you can scan FSx for ONTAP volumes, link:concept_fsx_aws.html[you must have an FSx working environment with volumes configured^].
 
 ==== image:number2.png[Number 2] Deploy the Cloud Data Sense instance
 
@@ -64,7 +68,7 @@ For FSx for ONTAP, link:task_manage_fsx_volumes.html[Cloud Manager must be set u
 
 link:task_deploy_cloud_compliance.html[Deploy Cloud Data Sense^] if there isn't already an instance deployed.
 
-Data Sense must be deployed in AWS when scanning FSx for ONTAP volumes, and it must be deployed in the same region as the volumes you wish to scan.
+Data Sense should be deployed in the same AWS network as the Connector for AWS and the FSx volumes you wish to scan.
 
 == Enabling Cloud Data Sense in your working environments
 
@@ -88,7 +92,9 @@ Cloud Data Sense starts scanning the volumes you selected in the working environ
 
 == Verifying that Cloud Data Sense has access to volumes
 
-Make sure that Cloud Data Sense can access volumes by checking your networking, security groups, and export policies. You'll need to provide Data Sense with CIFS credentials so it can access CIFS volumes.
+Make sure that Cloud Data Sense can access volumes by checking your networking, security groups, and export policies.
+
+//You'll need to provide Data Sense with CIFS credentials so it can access CIFS volumes.
 
 .Steps
 
