@@ -35,17 +35,17 @@ link:concept_licensing.html[Learn more about Cloud Volumes ONTAP licenses].
 
 Manage your capacity-based licenses to ensure that your NetApp account has enough capacity for your Cloud Volumes ONTAP systems.
 
-=== View your account's licensed capacity and allocated capacity
+=== View your account's licensed capacity and provisioned capacity
 
-View the licensed capacity and allocated capacity by package to ensure that you have enough room for your data volumes.
+View the licensed capacity and provisioned capacity by package to ensure that you have enough room for your data volumes.
 
 .Steps
 
 . Click *All Services > Digital Wallet > Capacity-Based Licenses*.
 
-. View the licensed capacity and allocated capacity for each package.
+. View the licensed capacity and provisioned capacity for each package.
 +
-image:screenshot_capacity-based-licenses.png[A screenshot that shows the amount of allocated capacity versus licensed capacity for the professional package and essentials package.]
+image:screenshot_capacity-based-licenses.png[A screenshot that shows the amount of provisioned capacity versus licensed capacity for the professional package and essentials package.]
 
 . If needed, purchase additional licensed capacity and then add the license to your account.
 
