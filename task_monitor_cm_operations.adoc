@@ -1,0 +1,39 @@
+---
+sidebar: sidebar
+permalink: task_monitor_cm_operations.html
+keywords: administer, monitor, account, timeline, notifications, alerts, notification center
+summary: You can monitor the status of all operations that Cloud Manager is performing to see if there are any issues that you need to address. You can view the status in the Notification Center or in the Timeline.
+---
+
+= Monitoring operations in your account
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+You can monitor the status of all operations that Cloud Manager is performing to see if there are any issues that you need to address. You can view the status in the Notification Center or in the Timeline.
+
+The
+
+== Monitoring operations status using the Notification Center
+
+Notifications are like events where they track the progress of operations that you have initiated in Cloud Manager so you can verify whether the operation was successful or if it failed.
+
+The notification bell (image:icon_bell.png[notification bell]) in the menu bar provides a fast way to view the status for all Cloud Manager and cloud services operations that have been initiated during the current login session.
+
+
+== Auditing user activity in your account
+
+The Timeline in Cloud Manager shows the actions that users completed to manage your account. This includes management actions such as associating users, creating workspaces, creating Connectors, and more. Checking the Timeline can be helpful if you need to identify who performed a specific action, or if you need to identify the status of an action.
+
+.Steps
+
+. Click *All Services > Timeline*.
+
+. Under the Filters, click *Service*, enable *Tenancy*, and click *Apply*.
+
+.Result
+
+The Timeline updates to show you account management actions.

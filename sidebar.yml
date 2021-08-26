@@ -484,6 +484,8 @@ entries:
         url: /task_adding_nss_accounts.html
       - title: Manage your account
         url: /task_managing_cloud_central_accounts.html
+      - title: Monitor operations in your account
+        url: /task_monitor_cm_operations.html
       - title: Install an HTTPS certificate
         url: /task_installing_https_cert.html
       - title: Remove working environments
