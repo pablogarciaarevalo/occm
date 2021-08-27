@@ -1,0 +1,107 @@
+---
+sidebar: sidebar
+permalink: vpc_service_controls_gcp.html
+keywords: vpc, service controls, vpc-sc, google, psc, private service connect
+summary: When choosing to lock down your Google environment with VPC Service Controls, you should understand how Cloud Manager and Cloud Volumes ONTAP interact with the Google APIs as well as how to configure your service parameter to deploy Cloud Manager and Cloud Volumes ONTAP.
+---
+
+= Planning for VPC Service Controls in GCP
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+VPC Service Controls (VPC-SC) lets you to define security policies that prevent access to Google-managed services outside of a trusted perimeter, block access to data from untrusted locations, and mitigate data exfiltration risks. You can use VPC Service Controls for the following use cases:
++
+* Isolate Google Cloud resources and VPC networks into service perimeters.
+* Extend perimeters to on-premises networks to authorized VPN or Cloud Interconnect.
+* Control access to Google Cloud resources from the internet.
+* Protect data exchange across perimeters and organizations by using ingress and egress rules.
+* Allow context-aware access to resources based on client attributes by using ingress rules.
++
+For more information, please visit the https://cloud.google.com/vpc-service-controls/docs[Google VPC Service Controls Documentation^].
+
+== How NetApp Services Communicate With VPC-SC
+
+NetApp services such as Cloud Central (if deploying cloud manager through cloud central) and Cloud Manager (via the connector instance) communicate directly with the Google Cloud APIs. This is either triggered from an external IP address outside of GCP, such as from api.services.cloud.netapp.com or within GCP from an internal address held by the cloud manager connector.
+
+Depending on the deployment style of the connector, certain exceptions may have to be made for your service perimeter.
+
+== Images
+
+Both Cloud Volumes ONTAP and Cloud Manager use images from a project within GCP that is managed by NetApp. This can affect the deployment of Cloud Manager and Cloud Volumes ONTAP if your organization has a policy that blocks the use of images that are not hosted within the organization.
+
+You can deploy Cloud Manager manually using the manual installation method; however, Cloud Volumes ONTAP will also need to pull images from the NetApp project. You must provide a whitelist in order to deploy Cloud Volumes ONTAP and Cloud Manager.
+
+To deploy Cloud Manager:
++
+* The user who deploys Cloud Manager will need to be able to reference an image hosted in the projectId "netapp-cloudmanager", project number "14190056516".
++
+To deploy Cloud Volumes ONTAP:
++
+* The Cloud Manager service account will need to be able to reference an image hosted in the projectId "netapp-cloudmanager", project number "14190056516" from the service project.
+*The default Google APIs Service Agent service account will need to be able to reference an image hosted in the projectId "netapp-cloudmanager", project number "14190056516" from the service project.
++
+Examples of the rules needed for pulling these images with VPC-SC are defined below.
+
+== VPC-SC and Private Service Connect
+
+As referenced in other parts of the documentation, Google Private Service Connect is not supported with Cloud Tiering or Cloud Backup service currently.
+
+== Policies
+
+=== Ingress
+
+From:
+	Identities:
+		[User Email Address]
+	Source > All sources allowed
+To:
+	Projects =
+		[Service Project]
+	Services =
+		Service name: iam.googleapis.com
+		  Service methods: All actions
+		Service name: compute.googleapis.com
+		  Service methods:All actions
+OR
+
+From:
+	Identities:
+		[User Email Address]
+	Source > All sources allowed
+To:
+	Projects =
+		[Host Project]
+	Services =
+		Service name: compute.googleapis.com
+		  Service methods: All actions
+OR
+
+From:
+	Identities:
+		[Service Project Number]@cloudservices.gserviceaccount.com
+	Source > All sources allowed
+To:
+	Projects =
+		[Service Project]
+		[Host Project]
+	Services =
+		Service name: compute.googleapis.com
+  		Service methods: All actions
+		
+=== Egress
+
+From:
+	Identities:
+		[Service Project Number]@cloudservices.gserviceaccount.com
+To:
+	Projects =
+		14190056516
+	Service =
+		Service name: compute.googleapis.com
+  		Service methods: All actions
+      
+TIP: The project number outlined above is the project netapp-cloudmanager used by NetApp to store images for Cloud Manager and Cloud Volumes ONTAP.
