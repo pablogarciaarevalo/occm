@@ -53,13 +53,23 @@ image:screenshot_capacity-based-licenses.png[A screenshot that shows the amount 
 
 After you purchase licenses for your NetApp account, you need to add the licenses to Cloud Manager so that the capacity is available for Cloud Volumes ONTAP.
 
+.What you'll need
+
+* You need to provide Cloud Manager the serial number of the license or the license file.
+
+* If you want to enter the serial number, you first need to link:task_adding_nss_accounts[add your NetApp Support Site account to Cloud Manager]. This is the NetApp Support Site account that's authorized to access the serial number.
+
 .Steps
 
 . Click *All Services > Digital Wallet > Capacity-Based Licenses*.
 
 . Click *Add License*.
 
-. Enter the serial number for your capacity-based license and then click *Add License*.
+. Enter the serial number for your capacity-based license or upload the license file.
++
+If you entered a serial number, you also need to select the NetApp Support Site account that's authorized to access the serial number.
+
+. Click *Add License*.
 
 == Manage PAYGO licenses for Cloud Volumes ONTAP
 
