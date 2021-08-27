@@ -157,16 +157,6 @@ entries:
             url: /task_managing_svms_aws.html
           - title: Create storage VMs in Azure
             url: /task_managing_svms_azure.html
-      - title: Replicate data
-        entries:
-          - title: Learn about Replication
-            url: /concept_replication.html
-          - title: Get started
-            url: /task_replicating_data.html
-          - title: Manage schedules and relationships
-            url: /task_managing_replication.html
-          - title: Learn about replication policies
-            url: /concept_replication_policies.html
       - title: Monitor performance
         entries:
           - title: Learn about Monitoring
@@ -243,6 +233,16 @@ entries:
         url: /task_managing_ontap.html
       - title: Manage ONTAP volumes
         url: /task_provisioning_ontap.html
+  - title: Replicate ONTAP data
+    entries:
+      - title: Learn about the Replication service
+        url: /concept_replication.html
+      - title: Get started
+        url: /task_replicating_data.html
+      - title: Manage schedules and relationships
+        url: /task_managing_replication.html
+      - title: Learn more about replication policies
+        url: /concept_replication_policies.html
   - title: Use templates to standardize resource creation
     entries:
       - title: Learn about Application Templates
