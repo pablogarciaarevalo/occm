@@ -217,10 +217,12 @@ entries:
             url: /concept_fsx_aws.html
           - title: Quick Start
             url: /task_getting_started_fsx.html
+          - title: Creating a Connector in AWS for FSx for ONTAP
+            url: /task_creating_connectors_fsx.html
           - title: Set up KMS for FSx
-            url: /task_setting_up_kms_fsx
+            url: /task_setting_up_kms_fsx.html
           - title: Set up AWS transit gateway for FSx
-            url: /task_setting_up_transit_gateway_fsx
+            url: /task_setting_up_transit_gateway_fsx.html
           - title: Create a working environment
             url: /task_manage_fsx_aws.html
           - title: Create and manage volumes
