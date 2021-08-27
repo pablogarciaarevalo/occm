@@ -17,11 +17,11 @@ While Google Cloud Storage always encrypts your data before it’s written to di
 
 .Steps
 
-. Give the Connector service account permission to use the encryption key.
-+
-image:screenshot_gcp_key.gif[]
+. Ensure the Connector service account has the correct permissions for the key provided by the Cloud Manager yaml file by checking the permissions on the key.
 
-. Obtain the "id" of the key by invoking the get command for the /gcp/vsa/metadata/gcp-encryption-keys API.
+. Ensure the Google Compute Service Agent service account has Cloud KMS Encrypter/Decrypter on the key. The service account will have the format: "service-[service_project_number]@compute-system.iam.gserviceaccount.com".
+
+. Obtain the "id" of the key by invoking the get command for the /gcp/vsa/metadata/gcp-encryption-keys API or by choosing "Copy Resource Name" on the key in the GCP console.
 
 . Use the "GcpEncryption" parameter with your API request when creating a working environment.
 +
