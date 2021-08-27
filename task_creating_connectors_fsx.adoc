@@ -52,10 +52,9 @@ Cloud Manager enables you to create a Connector in AWS directly from its user in
 * An AWS access key and secret key for an IAM user who has the https://mysupport.netapp.com/site/info/cloud-manager-policies[required permissions^] to create a Connector.
 
 * A VPC, subnet, and keypair in your AWS region of choice.
-
-// * If you don't want Cloud Manager to automatically create an IAM role for the Connector, then you'll need to create your own https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.8.7.json[using this policy^].
 +
 These permissions are for the Connector instance. It's a different set of permissions than what's provided in the first bullet above.
+// * If you don't want Cloud Manager to automatically create an IAM role for the Connector, then you'll need to create your own https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.8.7.json[using this policy^].
 
 .Steps
 
