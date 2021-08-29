@@ -28,9 +28,9 @@ You must create an Amazon FSx for ONTAP working environment before adding volume
 
 [role="quick-margin-para"]
 Create a Connector for AWS using an AWS access key and secret key for an IAM user with FSx for ONTAP permissions.
-+
+
 If you don't have a link:concept_connectors.html[Connector], an AWS account admin needs to create one. If you already have a Connector in AWS, you can add FSx for ONTAP permissions to the IAM role for the Connector or create a new IAM role with required permissions.
-+
+
 link:task_creating_connectors_fsx.html[Learn how to create a Connector in AWS for FSx for ONTAP^].
 
 ==== image:number3.png[Number 3] Add or discover volumes
@@ -45,7 +45,6 @@ Use Cloud Manager to manage your volumes and configure additional services such 
 
 .Related links
 
-* link:concept_evaluating.html[Evaluating]
 * link:task_creating_connectors_aws.html[Creating a Connector from Cloud Manager]
 * link:task_launching_aws_mktp.html[Launching a Connector from the AWS Marketplace]
 * link:task_installing_linux.html[Installing the Connector software on a Linux host]

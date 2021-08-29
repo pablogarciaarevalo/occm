@@ -34,7 +34,9 @@ link:https://www.docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.htm
 
 == Cost
 
-Note that your account is maintained by the Amazon FSx for ONTAP service and not by Cloud Manager. https://www.docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html[Amazon FSx for ONTAP getting started guide^]
+Note that your FSx for ONTAP account is maintained by AWs and not by Cloud Manager. https://www.docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html[Amazon FSx for ONTAP getting started guide^]
+
+There is an additional cost associated with using the Connector in AWS and the optional data service, Data Sense.
 
 == Supported regions
 
@@ -61,9 +63,8 @@ For technical support issues associated with your volumes, use your 20 digit “
 * At this time:
 ** NFS volumes can be created using Cloud Manager.
 ** CIFS volumes must be created using the ONTAP CLI.
-** iSCSI volumes are not available. 
+** iSCSI volumes are not available.
 
 == Related links
 
-* https://docs.netapp.com/us-en/occm/task_getting_started_aws.html[Getting started with Cloud Volumes ONTAP for AWS^]
 * https://www.docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html[Amazon FSx for ONTAP getting started guide^]

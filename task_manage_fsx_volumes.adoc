@@ -5,7 +5,7 @@ keywords: fsx for ontap, fsx, aws, create volumes, delete volumes, create nfs vo
 summary: After you set up your working environment, you can create and manage Amazon FSx for ONTAP volumes, clones and snapshots, change tiering policies, and remove or delete FSx for ONTAP.
 ---
 
-= Creating and managing volumes for Amazon FSx for ONTAP
+= Create and manage volumes for Amazon FSx for ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -45,44 +45,42 @@ image:screenshot_fsx_connector_prompt.png[A screenshot of the FSx for ONTAP Conn
 +
 image:screenshot_fsx_volume_new.png[A screenshot of the FSx for ONTAP volume tab.]
 
-. Provide the required information on each page:
+. *Volume Details and Protection*:
 
-.. *Volume Details and Protection*:
-
-... Enter a name for your new volume.
-... Enter the volume size. Note that the volume size will grow with usage.
-... Select a snapshot policy. By default, a snapshot is taken every hour (keeping the last six copies), every day (keeping the last two copies), and every week (keeping the last two copies).
-... Click *Next*.
+.. Enter a name for your new volume.
+.. Enter the volume size. Note that the volume size will grow with usage.
+.. Select a snapshot policy. By default, a snapshot is taken every hour (keeping the last six copies), every day (keeping the last two copies), and every week (keeping the last two copies).
+.. Click *Next*.
 +
 image:screenshot_fsx_volume_details.png[A screenshot of the volume details and protection fields for FSx for ONTAP volume creation.]
 
-.. *Protocol*: Select an NFS or CIFS volume protocol.
-... For NFS:
+. *Protocol*: Select an NFS or CIFS volume protocol.
+.. For NFS:
 * Select an Access Control policy.
 * Select the NFS versions.
 * Select a Custom Export Policy. Click the information icon for valid value criteria.
 +
 image:screenshot_fsx_volume_protocol_nfs.png[A screenshot of the NFS configuration FSx for ONTAP volume creation.]
-... For CIFS:
+.. For CIFS:
 * Enter a Share Name.
 * Enter users or groups separated by a semicolon.
 * Select the permission level for the volume.
 +
 image:screenshot_fsx_volume_protocol_cifs.png[A screenshot of the NFS configuration FSx for ONTAP volume creation.]
 
-... Click *Next*.
+.. Click *Next*.
 
 TIP: If the CIFS server was not already configured in the working environment, you will be prompted to configure CIFS connectivity.
 
-.. *Usage Profile and Tiering*:
+. *Usage Profile and Tiering*:
 
-... By default, the *Storage Efficiency* is disabled. You can change this setting to enable deduplication and compression. Enter a volume name and size, the VNet and subnet where the volume should reside, and optionally specify tags for the volume.
-... Be default, *Tiering Policy* is set to *Snapshot Only*. You can select a different tiering policy based on your  needs.
-... Click *Next*.
+.. By default, the *Storage Efficiency* is disabled. You can change this setting to enable deduplication and compression.
+.. By default, *Tiering Policy* is set to *Snapshot Only*. You can select a different tiering policy based on your  needs.
+.. Click *Next*.
 +
 image:screenshot_fsx_volume_usage_tiering.png[A screenshot of the Usage Profile and Tiering Configuration for FSx for ONTAP volume creation.]
 
-.. *Review*: Review your volume configuration. Click *Previous* to change settings or click *Add* to create the volume.
+. *Review*: Review your volume configuration. Click *Previous* to change settings or click *Add* to create the volume.
 
 .Result
 
@@ -96,25 +94,25 @@ Access mounting instructions from within Cloud Manager so you can mount the volu
 
 . Open the working environment.
 
-. Hover over the volume and select *Mount the volume* (for NFS and CIFS volumes) or *Target iQN* (for iSCSI).
+. Open the volume menu and select *Mount the volume*.
 +
 image:screenshot_fsx_volume_actions.png[A screenshot of available operations available when you hover the cursor over a volume.]
 
 . Follow the instructions to mount the volume.
 
-== Editing a volume's size and tags
-
-After you create a volume, you can modify its size and tags at any time.
-
-.Steps
-
-. Open the working environment.
-
-. Hover over the volume and select *Edit*.
-
-. Modify the size and tags as needed.
-
-. Click *Apply*.
+// == Edit a volume's size and tags
+//
+// After you create a volume, you can modify its size and tags at any time.
+//
+// .Steps
+//
+// . Open the working environment.
+//
+// . Hover over the volume and select *Edit*.
+//
+// . Modify the size and tags as needed.
+//
+// . Click *Apply*.
 
 == Cloning the volume
 
@@ -124,7 +122,7 @@ After you create a volume, you can create a new read-write volume from a new Sna
 
 . Open the working environment.
 
-. Hover over the volume and select *Clone*.
+. Open the volume menu and select *Clone*.
 
 . Enter a name for the cloned volume.
 
@@ -136,13 +134,13 @@ After you create a volume, you can create a new read-write volume from a new Sna
 
 == Managing Snapshot copies
 
-Snapshot copies provide a point-in-time copy of your volume. Create Snapshot copies, restore the data to a new volume, and delete Snapshot copies.
+Snapshot copies provide a point-in-time copy of your volume. Create Snapshot copies and restore the data to a new volume.
 
 .Steps
 
 . Open the working environment.
 
-. Hover over the volume and choose one of the available options to manage Snapshot copies:
+. Open the volume menu and choose one of the available options to manage Snapshot copies:
 
 * *Create a Snapshot copy*
 * *Restore from a Snapshot copy*
@@ -157,7 +155,7 @@ Change the tiering policy for the volume.
 
 . Open the working environment.
 
-. Hover over the volume and select *Change Tiering policy*.
+. Open the volume menu and select *Change Tiering policy*.
 
 . Select a new volume tiering policy and click *Change*.
 
