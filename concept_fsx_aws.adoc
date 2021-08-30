@@ -34,7 +34,7 @@ link:https://www.docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.htm
 
 == Cost
 
-Note that your FSx for ONTAP account is maintained by AWs and not by Cloud Manager. https://www.docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html[Amazon FSx for ONTAP getting started guide^]
+Your FSx for ONTAP account is maintained by AWs and not by Cloud Manager. https://www.docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html[Amazon FSx for ONTAP getting started guide^]
 
 There is an additional cost associated with using the Connector in AWS and the optional data service, Data Sense.
 
@@ -49,10 +49,9 @@ https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services
 
 == Getting help
 
-*_WHAT IS PRIMARY SUPPORT PATH?? WORKING WITH TRENT WEAVER ON THIS SECTION_*
-//Use the Cloud Manager chat for general service questions.
+Amazon FSx for ONTAP is an AWS first-party solution. For questions or technical support issues associated with your AWS FSx file system, infrastructure or any AWS solution using this service, use the Support Center in your AWS console to open a support case to AWS. Select the “FSx for ONTAP” service and appropriate category. Provide the remaining information required to create your AWS support case.
 
-For technical support issues associated with your volumes, use your 20 digit “930” serial number located in the "Support" tab of the Cloud Volumes Service user interface. Use this support ID when opening a web ticket or calling for support. Be sure to activate your Cloud Volumes Service serial number for support from the Cloud Volumes Service user interface. https://docs.netapp.com/us-en/cloud_volumes/aws/task_activating_support_entitlement.html[Those steps are explained here^].
+For general questions specific to Cloud Manager or Cloud Manager micro-services, you can start with the in-line Cloud Manager chat. For technical support issues specific to Cloud Manager or micro-services within,  you can open a NetApp support ticket using your Cloud Manager account level serial number. You will need to register your Cloud Manager serial number to activate support.
 
 == Limitations
 
@@ -64,7 +63,3 @@ For technical support issues associated with your volumes, use your 20 digit “
 ** NFS volumes can be created using Cloud Manager.
 ** CIFS volumes must be created using the ONTAP CLI.
 ** iSCSI volumes are not available.
-
-== Related links
-
-* https://www.docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html[Amazon FSx for ONTAP getting started guide^]

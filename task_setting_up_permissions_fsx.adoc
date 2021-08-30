@@ -19,7 +19,7 @@ NOTE: You can create a new IAM user role with FSx for ONTAP permissions or edit 
 
 .Steps
 
-To create a new Connector for AWS that includes required permissions for FSx for ONTAP:
+To grant FSx for ONTAP permissions to an IAM user role:
 
 . From the AWS IAM console, create a new policy or edit an existing policy to include the following actions for FSx for ONTAP:
 +
@@ -33,7 +33,7 @@ To create a new Connector for AWS that includes required permissions for FSx for
 +
 https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html[AWS Documentation: Creating IAM Policies^]
 
-. Attach the policy that you created in the previous step to the IAM user who will create the Connector from Cloud Manager.
+. Attach the policy that you created in the previous step to the IAM user role.
 +
 https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html[AWS Documentation: Creating IAM Roles^]
 +
@@ -45,5 +45,7 @@ The AWS user now has the permissions required for FSx for ONTAP in Cloud Manager
 
 == Related links
 
-link:task_creating_connectors_aws[Create a Connecter in AWS]
-link:task_adding_aws_accounts[Managing AWS credentials for Cloud Manager]
+* link:concept_accounts_aws[AWS credentials and permissions]
+* link:task_creating_connectors_aws[Create a Connecter in AWS]
+* link:task_adding_aws_accounts[Managing AWS credentials for Cloud Manager]
+* link:reference_permissions.html#what-cloud-manager-does-with-aws-permissions[What Cloud Manager does with AWS permissions]
