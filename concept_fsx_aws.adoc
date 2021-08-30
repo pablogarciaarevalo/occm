@@ -36,7 +36,7 @@ link:https://www.docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.htm
 
 Your FSx for ONTAP account is maintained by AWs and not by Cloud Manager. https://www.docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html[Amazon FSx for ONTAP getting started guide^]
 
-There is an additional cost associated with using the Connector in AWS and the optional data service, Data Sense.
+There is an additional cost associated with using the Connector in AWS and the optional data services such as Cloud Sync and Data Sense.
 
 == Supported regions
 
