@@ -217,8 +217,8 @@ entries:
             url: /concept_fsx_aws.html
           - title: Quick Start
             url: /task_getting_started_fsx.html
-          - title: Create a Connector in AWS for FSx for ONTAP
-            url: /task_creating_connectors_fsx.html
+          - title: Set up permissions for FSx for ONTAP
+            url: /task_setting_up_permissions_fsx.html
           - title: Set up KMS for FSx
             url: /task_setting_up_kms_fsx.html
           - title: Set up AWS transit gateway for FSx

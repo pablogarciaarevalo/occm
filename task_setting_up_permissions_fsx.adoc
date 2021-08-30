@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: task_setting_up_permissions_fsx.html
-keywords: fsx for ontap, iam, user role, create connector in aws, launch connector in aws, deploy connector in aws, aws connector, connector aws, connector permissions
-summary: An Account Admin needs to deploy a Connector before you can use most Cloud Manager features. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
+keywords: fsx for ontap, iam, user role, permissions
+summary: In order to create or manage your Amazon FSx for ONTAP working environment, you need to have an AWS access key and secret key for an IAM user role with FSx for ONTAP permissions.
 ---
 
-= Setting up permissions for for FSx for ONTAP
+= Setting up permissions for FSx for ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,29 +13,15 @@ summary: An Account Admin needs to deploy a Connector before you can use most Cl
 :imagesdir: ./media/
 
 [.lead]
-An Account Admin needs to deploy a _Connector_ before you can manage your FSx for ONTAP working environment.  The Connector enables Cloud Manager to manage resources and processes within your public cloud environment. For actions requiring a Connector, Cloud Manager will prompt you to create a Connector if you don't have one yet.
+To create or manage your Amazon FSx for ONTAP working environment, you need an AWS access key and secret key for an IAM user role with FSx for ONTAP permissions. These permissions are different from the permissions required to create a Connector in AWS.
 
-link:concept_connectors.html[Learn when a Connector is required]
-
-This page describes how to create a Connector in AWS directly from Cloud Manager. You also have the option to link:task_launching_aws_mktp.html[create the Connector from the AWS Marketplace].
-
-These steps must be completed by a user who has the Account Admin role. A Workspace Admin can't create a Connector.
-
-== Set up AWS permissions to create a Connector
-
-Before you can deploy a Connector from Cloud Manager, you need to ensure your AWS account has the correct permissions.
-
-The IAM user role for FSx for ONTAP requires additional permissions. You can create a new IAM user role with the additional permissions or edit an existing IAM user role.
+NOTE: You can create a new IAM user role with FSx for ONTAP permissions or edit an existing IAM user role to include the additional FSx for ONTAP permissions to avoid having to use multiple keys for Connectors and FSx for ONTAP.
 
 .Steps
 
 To create a new Connector for AWS that includes required permissions for FSx for ONTAP:
 
-. Download the Connector IAM policy from the following location:
-+
-https://mysupport.netapp.com/site/info/cloud-manager-policies[NetApp Cloud Manager: AWS, Azure, and GCP Policies^].
-
-. From the AWS IAM console, create your own policy by copying and pasting the text from the Connector IAM policy and including the following additional actions for FSx for ONTAP:
+. From the AWS IAM console, create a new policy or edit an existing policy to include the following actions for FSx for ONTAP:
 +
 [source,json]
 "ec2:Describe*"
@@ -44,51 +30,20 @@ https://mysupport.netapp.com/site/info/cloud-manager-policies[NetApp Cloud Manag
 "fsx:*"
 "iam:CreateServiceLinkedRole"
 "ec2:CreateTags"
++
+https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html[AWS Documentation: Creating IAM Policies^]
 
 . Attach the policy that you created in the previous step to the IAM user who will create the Connector from Cloud Manager.
++
+https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html[AWS Documentation: Creating IAM Roles^]
++
+https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html[AWS Documentation: Adding and Removing IAM Policies^]
 
 .Result
 
-The AWS user now has the permissions required to create the Connector from Cloud Manager. You'll need to generate an AWS access key and secret key for this user to enter in Cloud Manager.
+The AWS user now has the permissions required for FSx for ONTAP in Cloud Manager.
 
-== Create a Connector in AWS
+== Related links
 
-Cloud Manager enables you to create a Connector in AWS directly from its user interface.
-
-.What you'll need
-
-* An AWS access key and secret key for an IAM user who has the permissions described above.
-
-* A VPC, subnet, and keypair in your AWS region of choice.
-
-.Steps
-
-. Click the *Connector* drop-down and select *Add Connector*.
-+
-image:screenshot_connector_add.gif[A screenshot that shows the Connector icon in the header and the Add Connector action.]
-
-. Choose *Amazon Web Services* as your cloud provider and click *Continue*.
-+
-The Connector must have a network connection to the type of working environment you're creating and the services you plan to enable.
-+
-link:reference_networking_cloud_manager.html[Learn more about networking requirements for the Connector].
-
-. Follow the steps in the wizard to create the Connector:
-
-* *Get Ready*: Review what you'll need.
-
-* *AWS Credentials*: Enter a valid AWS access key and secret key for an IAM user with the required FSx for ONTAP permissions. Alternatively, you can link:https://aws.amazon.com/marketplace/pp/B018REK8QG?qid=1507515215588&sr=0-5&ref_=srh_res_product_title[manually launch a Connector in AWS Marketplace^].
-
-* *Details*: Enter a name for the instance, specify tags, and choose whether you want Cloud Manager to create a new role for this Connector or select an existing role created by the account admin.
-
-* *Network*: Specify a VPC, subnet, and key pair for the instance, choose whether to enable a public IP address, and optionally specify a proxy configuration.
-
-* *Security Group*: Choose whether to create a new security group or whether to select an existing security group that allows inbound HTTP, HTTPS, and SSH access.
-+
-NOTE: There's no incoming traffic to the Connector, unless you initiate it. HTTP and HTTPS provide access to the link:concept_connectors.html#the-local-user-interface[local UI], which you'll use in rare circumstances. SSH is only needed if you need to connect to the host for troubleshooting.
-
-* *Review*: Review your selections to verify that your setup is correct.
-
-. Click *Add*.
-+
-The instance should be ready in about 7 minutes. You should stay on the page until the process is complete.
+link:task_creating_connectors_aws[Create a Connecter in AWS]
+link:task_adding_aws_accounts[Managing AWS credentials for Cloud Manager]
