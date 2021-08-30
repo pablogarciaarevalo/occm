@@ -21,11 +21,15 @@ You can manage the following types of licenses for Cloud Volumes ONTAP:
 +
 https://cloud.netapp.com/contact-cds[Contact NetApp Sales^] to purchase a capacity-based license.
 
-* _Node-based licenses_, which are either BYOL licenses purchased from NetApp or hourly pay-as-you-go (PAYGO) subscriptions from your cloud provider's marketplace.
+* _Node-based licenses_, which are any of the following:
+** BYOL licenses purchased from NetApp.
 +
-Node-based licenses also include Eval licenses and free trials. link:concept_evaluating.html[Learn more about these options].
+This includes Eval licenses that you can later convert to BYOL licenses.
 +
-https://cloud.netapp.com/contact-cds[Contact NetApp Sales^] to purchase a node-based BYOL license.
+To get started with a node-based BYOL, https://cloud.netapp.com/contact-cds[contact NetApp Sales^].
+** Hourly pay-as-you-go (PAYGO) subscriptions from your cloud provider's marketplace.
++
+This includes 30-day free trials.
 +
 To get started with PAYGO, create a Cloud Volumes ONTAP working environment and subscribe to your cloud provider's marketplace when prompted.
 
