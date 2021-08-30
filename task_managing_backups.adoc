@@ -77,7 +77,8 @@ image:screenshot_backup_manage_volumes_page.png[The Manage Volumes page where yo
 
 You can create an on-demand backup at any time to capture the current state of the volume. This can be useful if very important changes have been made to a volume and you don't want to wait for the next scheduled backup to protect that data, or if the volume is not currently being backed up and you want to capture its current state.
 
-A manual backup is always a full backup of the volume. The backup name includes the timestamp so you can identify your on-demand backup from other scheduled backups.
+The backup name includes the timestamp so you can identify your on-demand backup from other scheduled backups.
+// A manual backup is always a full backup of the volume. 
 
 .Steps
 
