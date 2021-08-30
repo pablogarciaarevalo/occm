@@ -22,7 +22,6 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 == Cloud Manager 3.9.10 (2 September 2021)
 
 * <<Support for Amazon FSx for ONTAP>>
-* <<Cloud Backup enhancements>>
 * <<Cloud Data Sense enhancements>>
 * <<Cloud Sync enhancements>>
 * <<Cloud Tiering enhancements>>
@@ -43,20 +42,6 @@ link:https://review.docs.netapp.com/us-en/occm_sep_2021_fsx/task_manage_fsx_aws.
 * Using a Connector in AWS and Cloud Manager, you can create and manage volumes, replicate data, and integrate FSx for ONTAP with NetApp cloud services, such as Data Sense and Cloud Sync.
 +
 link:https://review.docs.netapp.com/us-en/occm_sep-2021-fsx/task_scanning_fsx.html#quick-start[Get started with Cloud Data Sense for Amazon FSx for ONTAP].
-
-=== Cloud Backup enhancements
-
-* Now you can create an on-demand backup at any time to capture the current state of a volume. This is useful if important changes have been made to a volume and you don’t want to wait for the next scheduled backup to protect that data.
-+
-link:https://review.docs.netapp.com/us-en/occm_sep_2021_backup/task_managing_backups.html#creating-a-manual-volume-backup-at-any-time[See how to create an on-demand backup].
-
-* When configuring backups to Amazon S3 from an on-premises ONTAP system, now you can define a connection to a Private VPC Endpoint in the activation wizard. This allows you to use a network interface that connects you privately and securely to a service powered by AWS PrivateLink.
-
-* For additional security and control, you can choose your own customer-managed keys for data encryption in the activation wizard instead of using the default Amazon S3 encryption keys.
-+
-This is available when configuring backups from an on-premises ONTAP system or from a Cloud Volumes ONTAP system in AWS.
-
-* The restriction of being able to browse a single directory with flat files up to a maximum of 30,000 files has been removed. Now you can restore files from directories that have a larger number of files.
 
 === Cloud Data Sense enhancements
 
