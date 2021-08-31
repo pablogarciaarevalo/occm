@@ -61,5 +61,5 @@ For general questions specific to Cloud Manager or Cloud Manager micro-services,
 
 * At this time:
 ** NFS volumes can be created using Cloud Manager.
-** CIFS volumes must be created using the ONTAP CLI.
-** iSCSI volumes are not available.
+** CIFS volumes can be created using the ONTAP CLI, ONTAP REST, ZAPI.
+** iSCSI volumes can be configured from ONTAP CLI, ONTAP REST, ZAPI.

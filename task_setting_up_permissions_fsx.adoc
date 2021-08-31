@@ -15,7 +15,7 @@ summary: In order to create or manage your Amazon FSx for ONTAP working environm
 [.lead]
 To create or manage your Amazon FSx for ONTAP working environment, you need an AWS access key and secret key for an IAM user role with FSx for ONTAP permissions. These permissions are different from the permissions required to create a Connector in AWS.
 
-NOTE: You can create a new IAM user role with FSx for ONTAP permissions or edit an existing IAM user role to include the additional FSx for ONTAP permissions to avoid having to use multiple keys for Connectors and FSx for ONTAP.
+NOTE: You can create a new IAM user role with FSx for ONTAP permissions or edit an existing IAM user role to include the additional FSx for ONTAP permissions. We recommend the latter to avoid having to use multiple keys for your Connector and for FSx for ONTAP access.
 
 .Steps
 
