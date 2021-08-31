@@ -239,7 +239,7 @@ Cloud Backup passes the access key on to the ONTAP cluster. The credentials are 
 +
 See the https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html[AWS Documentation: Managing Access Keys for IAM Users^] for details.
 
-. If you want to have more secure connectivity over the public internet from your on-prem data center to the VPC, there is an option to select an AWS PrivateLink in the activation wizard. In this case you'll need to have created an endpoint service configuration using the Amazon VPC console or the command line. https://docs.aws.amazon.com/vpc/latest/privatelink/endpoint-service.html[See details about using AWS PrivateLink^].
+. If you want to have more secure connectivity over the public internet from your on-prem data center to the VPC, there is an option to select an AWS PrivateLink in the activation wizard. It is required if you are connecting your on-premises system via VPN/DirectConnect. In this case you'll need to have created an endpoint service configuration using the Amazon VPC console or the command line. https://docs.aws.amazon.com/vpc/latest/privatelink/endpoint-service.html[See details about using AWS PrivateLink^].
 
 . Additionally, you can choose your own customer-managed keys for data encryption in the activation wizard instead of using the default Amazon S3 encryption keys. In this case you'll need to have the encryption managed keys already set up. link:task_setting_up_kms.html[See how to use your own keys].
 
