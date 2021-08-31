@@ -30,6 +30,7 @@ Cloud Manager enables IT experts and cloud architects to centrally manage their 
 * link:task_getting_started_azure.html[Cloud Volumes ONTAP for Azure]
 * link:task_getting_started_gcp.html[Cloud Volumes ONTAP for Google Cloud]
 * link:task_manage_anf.html[Azure NetApp Files]
+* link:task_getting_started_fsx[Amazon FSx for ONTAP]
 * link:task_manage_cvs_aws.html[Cloud Volumes Service for AWS]
 * link:task_manage_cvs_gcp.html[Cloud Volumes Service for Google Cloud]
 

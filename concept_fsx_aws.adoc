@@ -51,7 +51,9 @@ https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services
 
 Amazon FSx for ONTAP is an AWS first-party solution. For questions or technical support issues associated with your AWS FSx file system, infrastructure or any AWS solution using this service, use the Support Center in your AWS console to open a support case to AWS. Select the “FSx for ONTAP” service and appropriate category. Provide the remaining information required to create your AWS support case.
 
-For general questions specific to Cloud Manager or Cloud Manager micro-services, you can start with the in-line Cloud Manager chat. For technical support issues specific to Cloud Manager or micro-services within,  you can open a NetApp support ticket using your Cloud Manager account level serial number. You will need to register your Cloud Manager serial number to activate support.
+For general questions specific to Cloud Manager or Cloud Manager micro-services, you can start with the in-line Cloud Manager chat.
+
+For technical support issues specific to Cloud Manager or micro-services within,  you can open a NetApp support ticket using your Cloud Manager account level serial number. You will need to register your Cloud Manager serial number to activate support.
 
 == Limitations
 
