@@ -5,7 +5,7 @@ keywords: fsx for ontap, iam, user role, permissions
 summary: In order to create or manage your Amazon FSx for ONTAP working environment, you need to have an AWS access key and secret key for an IAM user role with FSx for ONTAP permissions.
 ---
 
-= Setting up permissions for FSx for ONTAP
+= Set up permissions for FSx for ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -33,7 +33,7 @@ To grant FSx for ONTAP permissions to an IAM user role:
 +
 https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html[AWS Documentation: Creating IAM Policies^]
 
-. Attach the policy that you created in the previous step to the IAM user role.
+. Attach the policy you created in the previous step to the IAM user role.
 +
 https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html[AWS Documentation: Creating IAM Roles^]
 +
@@ -41,7 +41,7 @@ https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-d
 
 .Result
 
-The AWS user now has the permissions required for FSx for ONTAP in Cloud Manager.
+The AWS user now has permissions required for FSx for ONTAP in Cloud Manager.
 
 == Related links
 

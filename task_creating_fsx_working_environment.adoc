@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
-permalink: task_manage_fsx_aws.html
-keywords: amazon fsx for ontap, fsx, volumes, create volumes, delete volumes, access key, secret key, region, working environment, aws transit gateway, cmk
-summary: Cloud Manager enables you to create volumes in Amazon FSx for ONTAP.
+permalink: task_creating_fsx_working_environment.html
+keywords: amazon fsx for ontap, fsx, volumes, create working environment, access key, secret key, region, working environment
+summary: Cloud Manager enables you to create an FSx for ONTAP working environment to add volumes and manage additional data services.
 ---
 
 = Create an Amazon FSx for ONTAP working environment
@@ -56,7 +56,7 @@ image:screenshot_add_fsx_credentials.png[A screenshot of adding credentials for 
 +
 image:screenshot_add_fsx_region.png[A screenshot of adding region and VPC for FSx for ONTAP]
 
-. Leave _CIDR Range_ empty and click *Next* to automatically set an available range. Optionally, you can use AWS Transit Gateway to manually configure a range.
+. Leave _CIDR Range_ empty and click *Next* to automatically set an available range. Optionally, you can use link:task_setting_up_transit_gateway[AWS Transit Gateway] to manually configure a range.
 +
 image:screenshot_add_fsx_floatingIP.png[A screenshot of adding region and VPC for FSx for ONTAP]
 
@@ -72,12 +72,12 @@ image:screenshot_add_fsx_encryption.png[A screenshot of setting the default mast
 
 .. Select the throughput, capacity, and unit.
 .. You can optionally specify an IOPS value. If you don't specify and IOPS value, Cloud Manager will set a default value based on 3 IOPS per GiB of the total capacity entered. For example, if you enter 2000 GiB for the total capacity and no value for the IOPS, the effective IOPS value will be set to 6000.
-.. Click *Next*.
 +
-image:screenshot_add_fsx_storage_config.png[A screenshot of setting storage configuration for FSx for ONTAP]
-
 WARNING: If you specify an IOPS value that does not meet the minimum requirements, you'll receive an error when adding the working environment.
 image:screenshot_fsx_working_environment_failed_iops.png[A screenshot of error message if incorrect IOPS value is set.]
+
+.. Click *Next*.
+image:screenshot_add_fsx_storage_config.png[A screenshot of setting storage configuration for FSx for ONTAP]
 
 . Review your configuration:
 
@@ -93,17 +93,15 @@ Cloud Manager displays your FSx for ONTAP configuration on the Canvas page.
 
 image:screenshot_add_fsx_cloud.png[A screenshot of Amazon FSx for ONTAP on the working environments page.]
 
-If volumes already exist, the volumes are automatically added to the new working environment, as shown in the screenshot. You can add additional volumes from Cloud Manager.
-
-If no volumes exist, you can create them now.
+You can now add volumes from to your FSx for ONTAP working environment using Cloud Manager.
 
 == Discover an existing FSx for ONTAP file system
 
-If you created an FSx for ONTAP file system using the AWS Management Console or if you want to restore a working environment you removed from the Cloud Manager, you can discover it using Cloud Manager.
+If you created an FSx for ONTAP file system using the AWS Management Console or if you want to restore a working environment you previously removed, you can discover it using Cloud Manager.
 
 .Steps
 
-. In Cloud Manager, click *Add Working Environment*, select *Amazon Web Services*, and click *Next*.
+. In Cloud Manager, click *Add Working Environment*, select *Amazon Web Services*.
 
 . Select *Amazon FSx for ONTAP* and click *Click Here*.
 +

@@ -5,7 +5,7 @@ keywords: cloud compliance, get started, enable cloud compliance, cloud complian
 summary: Complete a few steps to get started with Cloud Data Sense for Amazon FSx for ONTAP.
 ---
 
-= Getting started with Cloud Data Sense for Amazon FSx for ONTAP
+= Get started with Cloud Data Sense for Amazon FSx for ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font

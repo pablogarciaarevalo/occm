@@ -13,7 +13,7 @@ summary: After you set up your working environment, you can create and manage Am
 :imagesdir: ./media/
 
 [.lead]
-After you set up your working environment, you can create and manage FSx for ONTAP volumes, clones and snapshots, change tiering policies, and remove or delete FSx for ONTAP.
+After you set up your working environment, you can create and manage FSx for ONTAP volumes, clones, and snapshots, change tiering policies, and remove or delete FSx for ONTAP.
 
 == Creating volumes
 
@@ -32,8 +32,6 @@ NOTE: You do not need a Connector in AWS to remove or delete a working environme
 * An AWS access key and secret key for an IAM user with the link:task_setting_up_permissions_fsx[required FSx for ONTAP permissions].
 
 * If you want to use SMB, you must have set up DNS and Active Directory.
-
-* You must have the password for the FSx admin user on the FSx for ONTAP instance.
 
 .Steps
 
@@ -54,6 +52,7 @@ image:screenshot_fsx_volume_new.png[A screenshot of the FSx for ONTAP volume tab
 .. Enter a name for your new volume.
 .. Enter the volume size. Note that the volume size will grow with usage.
 .. Select a snapshot policy. By default, a snapshot is taken every hour (keeping the last six copies), every day (keeping the last two copies), and every week (keeping the last two copies).
+
 .. Click *Next*.
 +
 image:screenshot_fsx_volume_details.png[A screenshot of the volume details and protection fields for FSx for ONTAP volume creation.]
@@ -189,11 +188,11 @@ NOTE: If you try to delete a cloned volume, you will receive an error.
 
 == Removing FSx for ONTAP from the workspace
 
-You can remove FSx for ONTAP from Cloud Manager. It doesn't delete your FSx for ONTAP account or volumes. You can add FSx for ONTAP back to Cloud Manager at any time.
+You can remove FSx for ONTAP from Cloud Manager without deleting your FSx for ONTAP account or volumes. You can add the FSx for ONTAP working environment back to Cloud Manager at any time.
 
 .Steps
 
-. Open the working environment. If you don't have a Connector in AWS, you will see the prompt screen. You can ignore this and proceed to removing the working environment.
+. Open the working environment. If you don't have a Connector in AWS, you will see the prompt screen. You can ignore this and proceed with removing the working environment.
 
 . At the top right of the page, select the actions menu and click *Remove from workspace*.
 +
@@ -209,7 +208,7 @@ You can delete the FSx for ONTAP from Cloud Manager.
 
 * You must delete all volumes associated with the file system.
 
-* You cannot delete a working environment that contains failed volumes. Failed volumes must be deleted using the AWS Management Console or CLI prior to deleting the FSx for ONTAP. 
+* You cannot delete a working environment that contains failed volumes. Failed volumes must be deleted using the AWS Management Console or CLI prior to deleting FSx for ONTAP files system.
 
 WARNING: This action will delete all resources associated with the working environment. This action cannot be undone.
 
