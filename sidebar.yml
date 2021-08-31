@@ -220,7 +220,7 @@ entries:
           - title: Set up permissions for FSx for ONTAP
             url: /task_setting_up_permissions_fsx.html
           - title: Create a working environment
-            url: /task_manage_fsx_aws.html
+            url: /task_creating_fsx_working_environment.html
           - title: Create and manage volumes
             url: /task_manage_fsx_volumes.html
       - title: Cloud Volumes Service for AWS
