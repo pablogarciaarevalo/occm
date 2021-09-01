@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_monitor_cm_operations.html
-keywords: administer, monitor, account, timeline, notifications, alerts, notification center
+keywords: administer, monitor, account, timeline, notifications, alerts, events, notification center
 summary: You can monitor the status of the operations that Cloud Manager is performing to see if there are any issues that you need to address. You can view the status in the Notification Center or in the Timeline.
 ---
 
