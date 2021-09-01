@@ -112,7 +112,6 @@ link:api_ref_resources.html#azure-hametadata[Learn more about this API call].
 +
 [role="tabbed-block"]
 ====
-
 .HA pair
 --
 `POST /azure/ha/working-environments`
@@ -126,10 +125,9 @@ The request body must include the following fields:
 ----
 link:api_ref_resources.html#azure-haworking-environments[Learn more about this API call].
 --
-
 .Single node
 --
-POST /azure/vsa/working-environments
+`POST /azure/vsa/working-environments`
 The request body must include the following fields:
 [source, json, indent=0]
 ----
@@ -140,5 +138,18 @@ The request body must include the following fields:
 ----
 link:api_ref_resources.html#azure-vsaworking-environments[Learn more about this API call].
 --
+====
 
+. Create a Cloud Volumes ONTAP system by using the Cloud Manager API.
++
+[role="tabbed-block"]
+====
+.HA pair
+--
+test
+--
+.Single node
+--
+test
+--
 ====
