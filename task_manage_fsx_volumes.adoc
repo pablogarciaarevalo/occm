@@ -103,7 +103,6 @@ Access mounting instructions from within Cloud Manager so you can mount the volu
 image:screenshot_fsx_volume_actions.png[A screenshot of available operations available when you open the volume menu.]
 
 . Follow the instructions to mount the volume.
-
 // == Edit a volume's size and tags
 //
 // After you create a volume, you can modify its size and tags at any time.
@@ -173,7 +172,9 @@ You can create sync relationships using Cloud Sync in Cloud Manager. To configur
 
 Delete the volumes that you no longer need.
 
-NOTE: You cannot delete a volume that was previously part of a SnapMirror relationship using Cloud Manager. You need to use the AWS Management Console or CLI to delete these volumes. 
+.Before you begin
+
+You cannot delete a volume that was previously part of a SnapMirror relationship using Cloud Manager. SnapMirror volumes must be deleted using the AWS Management Console or CLI.
 
 .Steps
 
