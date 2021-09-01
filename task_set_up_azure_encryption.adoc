@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: task_set_up_azure_encryption.html
 keywords: customer-managed key, customer key, azure storage service encryption, azure encryption, encryption key, azure encryption key
-summary: Rather than using a Microsoft-managed key with Cloud Volumes ONTAP in Azure, you can encrypt data using your own encryption key. To use a customer-managed key with Cloud Volumes ONTAP, you need to create a key vault in Azure, create a key in the vault, and then create a working environment by using the Cloud Manager API.
+summary: Data is automatically encrypted on Cloud Volumes ONTAP in Azure using Azure Storage Service Encryption with Microsoft-managed keys. But you can use your own encryption keys instead by following the steps on this page.
 ---
 
-= Set up Azure Storage Service Encryption with a customer-managed key
+= Set up Cloud Volumes ONTAP to use a customer-managed key in Azure
 :hardbreaks:
 :nofooter:
 :icons: font
