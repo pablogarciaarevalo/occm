@@ -34,15 +34,15 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 * link:https://www.docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html[Amazon FSx for ONTAP] is a fully managed service allowing customers to launch and run file systems powered by NetApp’s ONTAP storage operating system. FSx for ONTAP provides the same features, performance, and administrative capabilities NetApp customers use on premises, with the simplicity, agility, security, and scalability of a native AWS service.
 +
-link:https://review.docs.netapp.com/us-en/occm_sep_2021_fsx/concept_fsx_aws.html[Learn about Amazon FSx for ONTAP].
+link:concept_fsx_aws.html[Learn about Amazon FSx for ONTAP].
 
 * You can configure an FSx for ONTAP working environment in Cloud Manager.
 +
-link:https://review.docs.netapp.com/us-en/occm_sep_2021_fsx/task_manage_fsx_aws.html[Create an Amazon FSx for ONTAP working environment].
+link:task_creating_fsx_working_environment.html[Create an Amazon FSx for ONTAP working environment].
 
 * Using a Connector in AWS and Cloud Manager, you can create and manage volumes, replicate data, and integrate FSx for ONTAP with NetApp cloud services, such as Data Sense and Cloud Sync.
 +
-link:https://review.docs.netapp.com/us-en/occm_sep-2021-fsx/task_scanning_fsx.html#quick-start[Get started with Cloud Data Sense for Amazon FSx for ONTAP].
+link:task_scanning_fsx.html#quick-start[Get started with Cloud Data Sense for Amazon FSx for ONTAP].
 
 === Cloud Volumes ONTAP enhancement
 
@@ -60,7 +60,7 @@ link:task_set_up_azure_encryption.html[Learn more about these steps].
 +
 Now Cloud Data Sense can scan data from your Cloud Volumes ONTAP systems that are deployed on GCP. Data Sense must be deployed on GCP, and the Connector must be deployed on GCP or on-premises.
 +
-The GCP service account associated with the Connector needs the latest permissions to deploy Cloud Data Sense to GCP. link:https://review.docs.netapp.com/us-en/occm_sep_2021_cc/task_deploy_cloud_compliance.html#reviewing-prerequisites[See the 3 new permissions that are required].
+The GCP service account associated with the Connector needs the latest permissions to deploy Cloud Data Sense to GCP. link:task_deploy_cloud_compliance.html#reviewing-prerequisites[See the 3 new permissions that are required].
 
 * Added support for scanning data on NFS volumes on Amazon FSx for ONTAP systems. link:task_scanning_fsx.html[See how to configure scanning for your FSx for ONTAP systems].
 
@@ -80,11 +80,11 @@ You can now sync data to or from an Amazon FSx for ONTAP file system.
 +
 A new *Cloud Tiering* license is now available for tiering configurations that are supported within Cloud Manager using the Cloud Tiering service. It is a floating license that you can use across multiple on-premises ONTAP clusters. The *FabricPool* license that you may have used in the past is retained only for configurations that aren’t supported within Cloud Manager.
 +
-link:https://review.docs.netapp.com/us-en/occm_sep_2021_tiering/task_licensing_cloud_tiering.html#use-a-cloud-tiering-byol-license[Learn more about the new Cloud Tiering license].
+link:task_licensing_cloud_tiering.html#use-a-cloud-tiering-byol-license[Learn more about the new Cloud Tiering license].
 
 * Now you can tier inactive data from your on-prem ONTAP clusters to any Object Storage service which uses the Simple Storage Service (S3) protocol.
 +
-link:https://review.docs.netapp.com/us-en/occm_sep_2021_tiering/task_tiering_onprem_s3_compat.html[See how to tier data to S3-compatible object storage].
+link:task_tiering_onprem_s3_compat.html[See how to tier data to S3-compatible object storage].
 
 === Replication enhancements
 
@@ -96,15 +96,17 @@ link:concept_replication.html[Learn about the Replication service].
 
 * Now you can manage tags on your Azure resources using the Cloud Manager Tagging service. You can view Azure tags and tag values that have been applied to resources, and you can apply those tags to other Azure resources that you are managing.
 +
-link:https://review.docs.netapp.com/us-en/occm_sep_2021_template/concept_tagging.html#resources-that-you-can-tag[See the Azure resources that you can tag].
+link:concept_tagging.html#resources-that-you-can-tag[See the Azure resources that you can tag].
 +
-The Cloud Manager Operator IAM role associated with the Connector needs the latest permissions to tag Azure resources. link:https://review.docs.netapp.com/us-en/occm_sep_2021_template/concept_tagging.html#verify-your-azure-connector-permissions[See the new permissions that are required].
+The Cloud Manager Operator IAM role associated with the Connector needs the latest permissions to tag Azure resources. link:concept_tagging.html#verify-your-azure-connector-permissions[See the new permissions that are required].
 
-* Some additional AWS EC2 resources can now be tagged. link:https://review.docs.netapp.com/us-en/occm_sep_2021_template/concept_tagging.html#resources-that-you-can-tag[See the AWS resources that you can tag].
+* Some additional AWS EC2 resources can now be tagged. link:concept_tagging.html#resources-that-you-can-tag[See the AWS resources that you can tag].
++
+The Cloud Manager IAM role associated with the Connector needs the latest permissions to tag AWS EC2 instances. link:concept_tagging.html#verify-your-aws-connector-permissions[See the new permissions that are required].
 
 === A new Notification Service has been added
 
-A new Notification service has been added that shows high level events, actions, and notifications for operations being performed in Cloud Manager.
+The Notification service has been introduced so you can view the status of Cloud Manager operations that you have initiated during your current login session. You can verify whether the operation was successful, or if it failed. link:task_monitor_cm_operations.html[See how to monitor operations in your account].
 
 == Cloud Manager 3.9.9 build 2 (18 Aug 2021)
 
