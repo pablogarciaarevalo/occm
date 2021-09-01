@@ -29,8 +29,6 @@ You need:
 
 NOTE: You do not need a Connector in AWS to remove or delete a working environment.
 
-* An AWS access key and secret key for an IAM user with the link:task_setting_up_permissions_fsx.html[required FSx for ONTAP permissions].
-
 * If you want to use SMB, you must have set up DNS and Active Directory.
 
 .Steps
@@ -61,6 +59,15 @@ image:screenshot_fsx_volume_details.png[A screenshot of the volume details and p
 +
 image:screenshot_fsx_volume_nfs_only.png[A screenshot of volume protocol fields for NFS.]
 
+. *Usage Profile and Tiering*:
+
+.. By default, *Storage Efficiency* is disabled. You can change this setting to enable deduplication and compression.
+.. By default, *Tiering Policy* is set to *Snapshot Only*. You can select a different tiering policy based on your needs.
+.. Click *Next*.
++
+image:screenshot_fsx_volume_usage_tiering.png[A screenshot of the Usage Profile and Tiering Configuration for FSx for ONTAP volume creation.]
+
+. *Review*: Review your volume configuration. Click *Previous* to change settings or click *Add* to create the volume.
 // . *Protocol*: Select the an NFS or CIFS volume protocol.
 // .. For NFS:
 // * Select an Access Control policy.
@@ -78,16 +85,6 @@ image:screenshot_fsx_volume_nfs_only.png[A screenshot of volume protocol fields 
 // .. Click *Next*.
 
 // TIP: If the CIFS server was not already configured in the working environment, you will be prompted to configure CIFS connectivity.
-
-. *Usage Profile and Tiering*:
-
-.. By default, *Storage Efficiency* is disabled. You can change this setting to enable deduplication and compression.
-.. By default, *Tiering Policy* is set to *Snapshot Only*. You can select a different tiering policy based on your needs.
-.. Click *Next*.
-+
-image:screenshot_fsx_volume_usage_tiering.png[A screenshot of the Usage Profile and Tiering Configuration for FSx for ONTAP volume creation.]
-
-. *Review*: Review your volume configuration. Click *Previous* to change settings or click *Add* to create the volume.
 
 .Result
 
@@ -175,6 +172,8 @@ You can create sync relationships using Cloud Sync in Cloud Manager. To configur
 == Deleting volumes
 
 Delete the volumes that you no longer need.
+
+NOTE: You cannot delete a volume that was previously part of a SnapMirror relationship using Cloud Manager. You need to use the AWS Management Console or CLI to delete these volumes. 
 
 .Steps
 

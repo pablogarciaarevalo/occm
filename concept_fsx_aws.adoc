@@ -34,7 +34,7 @@ link:https://www.docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.htm
 
 == Cost
 
-Your FSx for ONTAP account is maintained by AWs and not by Cloud Manager. https://www.docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html[Amazon FSx for ONTAP getting started guide^]
+Your FSx for ONTAP account is maintained by AWS and not by Cloud Manager. https://www.docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html[Amazon FSx for ONTAP getting started guide^]
 
 There is an additional cost associated with using the Connector in AWS and the optional data services such as Cloud Sync and Data Sense.
 
@@ -63,5 +63,5 @@ For technical support issues specific to Cloud Manager or micro-services within,
 
 * At this time:
 ** NFS volumes can be created using Cloud Manager.
-** CIFS volumes can be created using the ONTAP CLI, ONTAP REST, ZAPI.
-** iSCSI volumes can be configured from ONTAP CLI, ONTAP REST, ZAPI.
+** CIFS volumes can be created using the ONTAP CLI or ONTAP API.
+** iSCSI volumes can be created using the ONTAP CLI or ONTAP API.

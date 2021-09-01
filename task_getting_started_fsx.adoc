@@ -15,14 +15,14 @@ summary: Get started with Amazon FSx for ONTAP in a few steps.
 [.lead]
 Get started with Amazon FSx for ONTAP in a few steps.
 
-== Quick start
+
 
 You can get started with FSx for ONTAP in just a few steps.
 
 ==== image:number1.png[Number 1] Create an FSx for ONTAP working environment
 
 [role="quick-margin-para"]
-You must create an Amazon FSx for ONTAP working environment before adding volumes. You will need and AWS access key and secret key for an link:task_setting_up_permissions_fsx.html[IAM user with FSx for ONTAP permissions].
+You must create an Amazon FSx for ONTAP working environment before adding volumes. You will need an AWS access key and secret key for an link:task_setting_up_permissions_fsx.html[IAM user with FSx for ONTAP permissions].
 
 ==== image:number2.png[Number 2] Create a Connector
 

@@ -25,7 +25,7 @@ Before creating your FSx for ONTAP working environment in Cloud Manager, you wil
 
 * An AWS access key and secret key for an IAM user with the link:task_setting_up_permissions_fsx.html[required FSx for ONTAP permissions].
 
-* The AWS region where the FSx for ONTAP instance was created.
+* The region and VPN information for where you will create the FSx for ONTAP instance.
 
 .Steps
 
@@ -50,7 +50,7 @@ image:screenshot_add_fsx_credentials.png[A screenshot of adding credentials for 
 . Provide region and VPC information:
 
 .. Select a region and VPC with subnets in at least two Availability Zones so each node is in a dedicated Availability Zone.
-.. Accept the default security group or select a different one. link:https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules.html[AWS security groups] control inbound and outbound traffic. These are configured by your AWS admin and are associated with your link:https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html[AWS elastic network interface (ENI)].
+.. Accept the default security group or select a different one. link:https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules.html[AWS security groups^] control inbound and outbound traffic. These are configured by your AWS admin and are associated with your link:https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html[AWS elastic network interface (ENI)^].
 .. Select an Availability Zone and subnet for each node.
 .. Click *Next*.
 +
@@ -71,7 +71,7 @@ image:screenshot_add_fsx_encryption.png[A screenshot of setting the default mast
 . Configure your storage:
 
 .. Select the throughput, capacity, and unit.
-.. You can optionally specify an IOPS value. If you don't specify and IOPS value, Cloud Manager will set a default value based on 3 IOPS per GiB of the total capacity entered. For example, if you enter 2000 GiB for the total capacity and no value for the IOPS, the effective IOPS value will be set to 6000.
+.. You can optionally specify an IOPS value. If you don't specify an IOPS value, Cloud Manager will set a default value based on 3 IOPS per GiB of the total capacity entered. For example, if you enter 2000 GiB for the total capacity and no value for the IOPS, the effective IOPS value will be set to 6000.
 +
 WARNING: If you specify an IOPS value that does not meet the minimum requirements, you'll receive an error when adding the working environment.
 image:screenshot_fsx_working_environment_failed_iops.png[A screenshot of error message if incorrect IOPS value is set.]
@@ -109,7 +109,7 @@ image:screenshot_fsx_working_environment_discover.png[A screenshot of discoverin
 
 . Select existing credentials or create new credentials. Click *Next*.
 
-. Select the AWs region and the working environment you want to add.
+. Select the AWS region and the working environment you want to add.
 +
 image:screenshot_fsx_working_environment_select.png[A screenshot of selecting the AWS region and working environment]
 
