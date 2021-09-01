@@ -57,7 +57,7 @@ For technical support issues specific to Cloud Manager or micro-services within,
 
 == Limitations
 
-* Cloud Manager can replicate only from on-premises or Cloud Volumes ONTAP to FSx for ONTAP.
+* Cloud Manager can replicate data only from on-premises or Cloud Volumes ONTAP to FSx for ONTAP.
 
 * Currently, you cannot edit volumes on FSx for ONTAP using Cloud Manager.
 
