@@ -17,13 +17,13 @@ Cloud Manager enables you to create an FSx for ONTAP working environment to add 
 
 == Create an Amazon FSx for ONTAP working environment
 
-The first step is to create an FSx for ONTAP working environment. If you already created an FSx for ONTAP file system in the AWS Management Console, you can link:task_manage_fsx_aws#discover_existing_fsx_ontap_file_system[discover it using Cloud Manager].
+The first step is to create an FSx for ONTAP working environment. If you already created an FSx for ONTAP file system in the AWS Management Console, you can link:task_manage_fsx_aws#discover_existing_fsx_ontap_file_system.html[discover it using Cloud Manager].
 
 .Before you begin
 
 Before creating your FSx for ONTAP working environment in Cloud Manager, you will need:
 
-* An AWS access key and secret key for an IAM user with the link:task_setting_up_permissions_fsx[required FSx for ONTAP permissions].
+* An AWS access key and secret key for an IAM user with the link:task_setting_up_permissions_fsx.html[required FSx for ONTAP permissions].
 
 * The AWS region where the FSx for ONTAP instance was created.
 
@@ -35,7 +35,7 @@ Before creating your FSx for ONTAP working environment in Cloud Manager, you wil
 +
 image:screenshot_add_fsx_working_env.png[A screenshot of adding a working environment for Amazon FSx for ONTAP]
 
-. You can select existing FSx for ONTAP credentials or create new credentials using your AWS access key and secret key. Click to verify your IAM user policy adheres to link:task_setting_up_permissions_fsx[FSx for ONTAP requirements].
+. You can select existing FSx for ONTAP credentials or create new credentials using your AWS access key and secret key. Click to verify your IAM user policy adheres to link:task_setting_up_permissions_fsx.html[FSx for ONTAP requirements].
 
 . Provide information about your FSx for ONTAP instance:
 
@@ -56,7 +56,7 @@ image:screenshot_add_fsx_credentials.png[A screenshot of adding credentials for 
 +
 image:screenshot_add_fsx_region.png[A screenshot of adding region and VPC for FSx for ONTAP]
 
-. Leave _CIDR Range_ empty and click *Next* to automatically set an available range. Optionally, you can use link:task_setting_up_transit_gateway[AWS Transit Gateway] to manually configure a range.
+. Leave _CIDR Range_ empty and click *Next* to automatically set an available range. Optionally, you can use link:task_setting_up_transit_gateway.html[AWS Transit Gateway] to manually configure a range.
 +
 image:screenshot_add_fsx_floatingIP.png[A screenshot of adding region and VPC for FSx for ONTAP]
 

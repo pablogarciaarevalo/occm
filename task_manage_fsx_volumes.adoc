@@ -25,11 +25,11 @@ At this time, you cannot edit FSx for ONTAP volumes from Cloud Manager.
 
 You need:
 
-* An active link:task_creating_connectors_aws[Connector in AWS].
+* An active link:task_creating_connectors_aws.html[Connector in AWS].
 
 NOTE: You do not need a Connector in AWS to remove or delete a working environment.
 
-* An AWS access key and secret key for an IAM user with the link:task_setting_up_permissions_fsx[required FSx for ONTAP permissions].
+* An AWS access key and secret key for an IAM user with the link:task_setting_up_permissions_fsx.html[required FSx for ONTAP permissions].
 
 * If you want to use SMB, you must have set up DNS and Active Directory.
 

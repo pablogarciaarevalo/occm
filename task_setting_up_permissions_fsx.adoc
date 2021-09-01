@@ -45,7 +45,7 @@ The AWS user now has permissions required for FSx for ONTAP in Cloud Manager.
 
 == Related links
 
-* link:concept_accounts_aws[AWS credentials and permissions]
-* link:task_creating_connectors_aws[Create a Connecter in AWS]
-* link:task_adding_aws_accounts[Managing AWS credentials for Cloud Manager]
+* link:concept_accounts_aws.html[AWS credentials and permissions]
+* link:task_creating_connectors_aws.html[Create a Connecter in AWS]
+* link:task_adding_aws_accounts.html[Managing AWS credentials for Cloud Manager]
 * link:reference_permissions.html#what-cloud-manager-does-with-aws-permissions[What Cloud Manager does with AWS permissions]
