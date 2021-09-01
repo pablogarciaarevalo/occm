@@ -22,6 +22,7 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 == Cloud Manager 3.9.10 (2 September 2021)
 
 * <<Support for Amazon FSx for ONTAP>>
+* <<Cloud Volumes ONTAP enhancement>>
 * <<Cloud Data Sense enhancements>>
 * <<Cloud Sync enhancements>>
 * <<Cloud Tiering enhancements>>
@@ -42,6 +43,16 @@ link:https://review.docs.netapp.com/us-en/occm_sep_2021_fsx/task_manage_fsx_aws.
 * Using a Connector in AWS and Cloud Manager, you can create and manage volumes, replicate data, and integrate FSx for ONTAP with NetApp cloud services, such as Data Sense and Cloud Sync.
 +
 link:https://review.docs.netapp.com/us-en/occm_sep-2021-fsx/task_scanning_fsx.html#quick-start[Get started with Cloud Data Sense for Amazon FSx for ONTAP].
+
+=== Cloud Volumes ONTAP enhancement
+
+Data is automatically encrypted on Cloud Volumes ONTAP in Azure using https://azure.microsoft.com/en-us/documentation/articles/storage-service-encryption/[Azure Storage Service Encryption^] with a Microsoft-managed key. But you can now use your own customer-managed encryption key instead by completing the following steps:
+
+. From Azure, create a key vault and then generate a key in that vault.
+
+. From Cloud Manager, use the API to create a Cloud Volumes ONTAP working environment that uses the key.
+
+link:task_set_up_azure_encryption.html[Learn more about these steps].
 
 === Cloud Data Sense enhancements
 
