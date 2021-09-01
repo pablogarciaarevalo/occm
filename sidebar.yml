@@ -121,6 +121,8 @@ entries:
             url: /task_planning_your_config_azure.html
           - title: Set up your networking
             url: /reference_networking_azure.html
+          - title: Set up encryption using your key
+            url: /task_set_up_azure_encryption.html
           - title: Launch a system in Azure
             url: /task_deploying_otc_azure.html
       - title: Get started in GCP
