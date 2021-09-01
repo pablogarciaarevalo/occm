@@ -116,9 +116,7 @@ link:api_ref_resources.html#azure-hametadata[Learn more about this API call].
 .HA pair
 --
 `POST /azure/ha/working-environments`
-
 The request body must include the following fields:
-
 [source, json, indent=0]
 ----
 "azureEncryptionParameters": {
@@ -126,16 +124,13 @@ The request body must include the following fields:
        "vaultName": "vaultName"
 }
 ----
-
 link:api_ref_resources.html#azure-haworking-environments[Learn more about this API call].
 --
 
 .Single node
 --
-`POST /azure/vsa/working-environments`
-
+POST /azure/vsa/working-environments
 The request body must include the following fields:
-
 [source, json, indent=0]
 ----
 "azureEncryptionParameters": {
