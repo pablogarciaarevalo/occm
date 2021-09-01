@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: task_set_up_azure_encryption.html
 keywords: customer-managed key, customer key, azure storage service encryption, azure encryption, encryption key, azure encryption key
-summary: To encrypt data on Cloud Volumes ONTAP in Azure using your own encryption keys, you need to create a key vault in Azure, create a key in the vault, and then create a working environment by using the Cloud Manager API.
+summary: Rather than using a Microsoft-managed key with Cloud Volumes ONTAP in Azure, you can encrypt data using your own encryption key. To use a customer-managed key with Cloud Volumes ONTAP, you need to create a key vault in Azure, create a key in the vault, and then create a working environment by using the Cloud Manager API.
 ---
 
-= Set up Azure Storage Service Encryption with customer-managed keys
+= Set up Azure Storage Service Encryption with a customer-managed key
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,40 +13,40 @@ summary: To encrypt data on Cloud Volumes ONTAP in Azure using your own encrypti
 :imagesdir: ./media/
 
 [.lead]
-Rather than using Microsoft-managed keys with Cloud Volumes ONTAP in Azure, you can encrypt data using your own encryption keys. To use customer-managed keys with Cloud Volumes ONTAP, you need to create a key vault in Azure, create a key in the vault, and then create a working environment by using the Cloud Manager API.
+Rather than using a Microsoft-managed key with Cloud Volumes ONTAP in Azure, you can encrypt data using your own encryption key. To use a customer-managed key with Cloud Volumes ONTAP, you need to create a key vault in Azure, create a key in the vault, and then create a working environment by using the Cloud Manager API.
 
 == Data encryption overview in Azure
 
-Cloud Volumes ONTAP data is automatically encrypted in Azure using https://azure.microsoft.com/en-us/documentation/articles/storage-service-encryption/[Azure Storage Service Encryption^]. The default implementation uses Microsoft-managed keys. No setup is required.
+Cloud Volumes ONTAP data is automatically encrypted in Azure using https://azure.microsoft.com/en-us/documentation/articles/storage-service-encryption/[Azure Storage Service Encryption^]. The default implementation uses a Microsoft-managed key. No setup is required.
 
-If you want to use customer-managed keys, then you need to complete the following steps:
+If you want to use a customer-managed key, then you need to complete the following steps:
 
 . From Azure, create a key vault and then generate a key in that vault
 . From Cloud Manager, use the API to create a Cloud Volumes ONTAP working environment that uses the key
 
-=== What data gets encrypted?
+=== Key rotation
 
-After you create a Cloud Volumes ONTAP working environment that is configured to use customer-managed keys, Cloud Volumes ONTAP data is encrypted as follows.
+If you create a new version of your key, Cloud Volumes ONTAP automatically uses the latest key version.
+
+=== How data is encrypted
+
+After you create a Cloud Volumes ONTAP working environment that is configured to use a customer-managed key, Cloud Volumes ONTAP data is encrypted as follows.
 
 HA pairs::
 
-* All Azure storage accounts for Cloud Volumes ONTAP are encrypted using customer-managed keys. This includes data storage accounts, the root storage account, the boot diagnostic storage account, and the data tiering (FabricPool) storage account.
+* All Azure storage accounts for Cloud Volumes ONTAP are encrypted using a customer-managed key.
 
-* Any new storage accounts (for example, when you add disks or aggregates) also use the same keys.
+* Any new storage accounts (for example, when you add disks or aggregates) also use the same key.
 
 Single node::
 
-* The boot diagnostic storage account and the data tiering (FabricPool) storage account are encrypted using customer-managed keys.
+* All Azure storage accounts for Cloud Volumes ONTAP are encrypted using a customer-managed key.
 
 * For root disks and data disks, Cloud Manager uses a https://docs.microsoft.com/en-us/azure/virtual-machines/disk-encryption[disk encryption set^], which enables management of encryption keys for use with managed disks.
 
 * Any new data disks (for example, when you add disks or aggregates) also use the same disk encryption set.
 
-* Data on a few disks are not encrypted: NVRAM, the core disk, and the boot disk.
-
-=== Key rotation
-
-If you create a new version of your key, Cloud Volumes ONTAP automatically uses the latest key version.
+* NVRAM and the core disk are encrypted using a Microsoft-managed key.
 
 == Create a key vault and generate a key
 
@@ -79,7 +79,7 @@ The Cloud Volumes ONTAP system must be in the same region as the key vault.
 
 .Required permissions
 
-If you want to use customer-managed keys with a single node Cloud Volumes ONTAP system, ensure that the Connector has the following permissions:
+If you want to use a customer-managed key with a single node Cloud Volumes ONTAP system, ensure that the Connector has the following permissions:
 
 [source,json]
 "Microsoft.Compute/diskEncryptionSets/write",
@@ -115,11 +115,13 @@ Make note of the *keyName*. You'll need to specify that value (along with the va
 
 The request body must include the following fields:
 
-[source,json]
+[source, json, indent=0]
+----
 "azureEncryptionParameters": {
        "key": "keyName",
        "vaultName": "vaultName"
 }
+----
 --
 
 .Single node
@@ -128,11 +130,13 @@ The request body must include the following fields:
 
 The request body must include the following fields:
 
-[source,json]
+[source, json, indent=0]
+----
 "azureEncryptionParameters": {
        "key": "keyName",
        "vaultName": "vaultName"
 }
+----
 --
 
 ====
