@@ -81,7 +81,7 @@ For information about Azure tags, refer to https://docs.microsoft.com/en-us/azur
 
 === Verify your AWS Connector permissions
 
-If you created the Connector using Cloud Manager version 3.9.9 or greater, then you're all set. If you created the Connector using an earlier version of Cloud Manager, then you'll need to add some required permissions for the Cloud Manager IAM role to tag AWS EC2 instances:
+If you created the Connector using Cloud Manager version 3.9.10 or greater, then you're all set. If you created the Connector using an earlier version of Cloud Manager, then you'll need to add some required permissions for the Cloud Manager IAM role to tag AWS EC2 instances:
 
 [source,json]
 {
@@ -96,7 +96,8 @@ If you created the Connector using Cloud Manager version 3.9.9 or greater, then 
     "tag:UntagResources"
   ],
   "Resource": "*",
-  "Effect": "Allow"
+  "Effect": "Allow",
+  "Sid": "tagServicePolicy"
 }
 
 === Verify your Azure Connector permissions
