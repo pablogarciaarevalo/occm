@@ -17,7 +17,7 @@ Free space on your on-prem ONTAP clusters by tiering inactive data to Amazon S3.
 
 == Quick start
 
-Get started quickly by following these steps or scroll down to the remaining sections for full details.
+Get started quickly by following these steps, or scroll down to the remaining sections for full details.
 
 ==== image:number1.png[number 1] Prepare to tier data to Amazon S3
 
@@ -25,7 +25,7 @@ Get started quickly by following these steps or scroll down to the remaining sec
 You need the following:
 
 [role="quick-margin-list"]
-* An AFF or FAS system with all-SSD aggregates that's running ONTAP 9.2 or later and has an HTTPS connection to Amazon S3. link:task_discovering_ontap.html[Learn how to discover a cluster].
+* An AFF, or FAS system with all-SSD aggregates, that's running ONTAP 9.2 or later and has an HTTPS connection to Amazon S3. link:task_discovering_ontap.html[Learn how to discover a cluster].
 * An AWS account that has an access key and <<Preparing Amazon S3,the required permissions>> so the ONTAP cluster can tier inactive data in and out of S3.
 * A Connector installed in an AWS VPC or on your premises.
 * Networking for the Connector that enables an outbound HTTPS connection to the ONTAP cluster, to S3 storage, and to the Cloud Tiering service.
@@ -33,7 +33,7 @@ You need the following:
 ==== image:number2.png[number 2] Set up tiering
 
 [role="quick-margin-para"]
-In Cloud Manager, select an on-prem working environment, click *Enable*, and follow the prompts to tier data to Amazon S3.
+In Cloud Manager, select an on-prem working environment, click *Enable* for the Tiering service, and follow the prompts to tier data to Amazon S3.
 
 ==== image:number3.png[number 3] Set up licensing
 
@@ -59,7 +59,7 @@ NOTE: Communication between a Connector and S3 is for object storage setup only.
 Your ONTAP clusters must meet the following requirements when tiering data to Amazon S3.
 
 Supported ONTAP platforms::
-Cloud Tiering supports AFF systems and all-SSD aggregates on FAS systems.
+Cloud Tiering supports AFF systems and FAS systems with all-SSD aggregates.
 
 Supported ONTAP version::
 ONTAP 9.2 or later
@@ -69,7 +69,7 @@ Cluster networking requirements::
 +
 ONTAP reads and writes data to and from object storage. The object storage never initiates, it just responds.
 +
-Although AWS Direct Connect provides better performance and lower data transfer charges, it's not required between the ONTAP cluster and S3. Because performance is significantly better when using AWS Direct Connect, doing so is the recommended best practice.
+Although AWS Direct Connect provides better performance and lower data transfer charges, it's not required between the ONTAP cluster and S3. But doing so is the recommended best practice.
 
 * An inbound connection is required from the Connector, which can reside in an AWS VPC or on your premises.
 +
@@ -192,7 +192,7 @@ Selecting the correct IPspace ensures that Cloud Tiering can set up a connection
 * To select multiple volumes, check the box for each volume (image:button_backup_1_volume.png[]) and click *Configure volumes*.
 * To select a single volume, click the row (or image:screenshot_edit_icon.gif[edit pencil icon] icon) for the volume.
 +
-image:screenshot_tiering_modify_volumes.gif["A screenshot that shows how to select a single volume, multiple volume, or all volumes, and the modify selected volumes button.""]
+image:screenshot_tiering_modify_volumes.gif["A screenshot that shows how to select a single volume, multiple volumes, or all volumes, and the modify selected volumes button.""]
 
 . In the _Tiering Policy_ dialog, select a tiering policy, optionally adjust the cooling days for the selected volumes, and click *Apply*.
 +
