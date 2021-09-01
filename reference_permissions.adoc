@@ -411,10 +411,6 @@ The Cloud Manager Azure policy includes the permissions that Cloud Manager needs
 
 | Enables you to use Global File Cache.
 
-| "Microsoft.Compute/diskEncryptionSets/read"
-
-| Enables Cloud Manager to encrypt Azure managed disks on single node Cloud Volumes ONTAP systems using external keys from another account. This feature is supported using APIs.
-
 |
 "Microsoft.Network/privateEndpoints/delete",
 "Microsoft.Compute/availabilitySets/delete",
@@ -422,11 +418,12 @@ The Cloud Manager Azure policy includes the permissions that Cloud Manager needs
 | Enables Cloud Manager to remove resources from a resource group that belong to Cloud Volumes ONTAP in case of deployment failure or deletion.
 
 |
+"Microsoft.Compute/diskEncryptionSets/read"
 "Microsoft.Compute/diskEncryptionSets/write",
 "Microsoft.KeyVault/vaults/deploy/action",
 "Microsoft.Compute/diskEncryptionSets/delete"
 
-| Enables use of customer-managed encryption keys with Cloud Volumes ONTAP.
+| Enables use of customer-managed encryption keys with Cloud Volumes ONTAP. This feature is supported using APIs.
 
 |
 "Microsoft.Resources/tags/read",
