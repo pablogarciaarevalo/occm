@@ -82,8 +82,10 @@ If you want to use a customer-managed key with a single node Cloud Volumes ONTAP
 [source,json]
 "Microsoft.Compute/diskEncryptionSets/read"
 "Microsoft.Compute/diskEncryptionSets/write",
-"Microsoft.KeyVault/vaults/deploy/action",
 "Microsoft.Compute/diskEncryptionSets/delete"
+"Microsoft.KeyVault/vaults/deploy/action",
+"Microsoft.KeyVault/vaults/read",
+"Microsoft.KeyVault/vaults/accessPolicies/write"
 
 You can find the latest list of permissions on the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policies page^].
 
