@@ -211,6 +211,18 @@ entries:
             url: /task_manage_anf.html
           - title: Create and manage volumes
             url: /task_manage_anf_volumes.html
+      - title: Amazon FSx for ONTAP
+        entries:
+          - title: Learn about FSx for ONTAP
+            url: /concept_fsx_aws.html
+          - title: Quick Start
+            url: /task_getting_started_fsx.html
+          - title: Set up permissions for FSx for ONTAP
+            url: /task_setting_up_permissions_fsx.html
+          - title: Create a working environment
+            url: /task_creating_fsx_working_environment.html
+          - title: Create and manage volumes
+            url: /task_manage_fsx_volumes.html
       - title: Cloud Volumes Service for AWS
         entries:
           - title: Learn about Cloud Volumes Service for AWS
@@ -348,6 +360,8 @@ entries:
                 url: /task_getting_started_compliance.html
               - title: Azure NetApp Files
                 url: /task_scanning_anf.html
+              - title: Amazon FSx for ONTAP
+                url: /task_scanning_fsx.html
               - title: Amazon S3 buckets
                 url: /task_scanning_s3.html
               - title: Database schemas
