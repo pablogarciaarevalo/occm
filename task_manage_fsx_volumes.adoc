@@ -37,13 +37,13 @@ NOTE: You do not need a Connector in AWS to remove or delete a working environme
 
 . If you don't have a Connector enabled, you'll be prompted to add one.
 +
-image:screenshot_fsx_connector_prompt.pn[A screenshot of the FSx for ONTAP Connector prompt.]
+image:screenshot_fsx_connector_prompt.png[A screenshot of the FSx for ONTAP Connector prompt.]
 
 . Click the *Volumes* tab
 
 . Click *Add Volume*.
 +
-image:screenshot_fsx_volume_new.pn[A screenshot of the FSx for ONTAP volume tab.]
+image:screenshot_fsx_volume_new.png[A screenshot of the FSx for ONTAP volume tab.]
 
 . *Volume Details and Protection*:
 
@@ -53,11 +53,11 @@ image:screenshot_fsx_volume_new.pn[A screenshot of the FSx for ONTAP volume tab.
 
 .. Click *Next*.
 +
-image:screenshot_fsx_volume_details.pn[A screenshot of the volume details and protection fields for FSx for ONTAP volume creation.]
+image:screenshot_fsx_volume_details.png[A screenshot of the volume details and protection fields for FSx for ONTAP volume creation.]
 
 . *Protocol*: Select the NFS versions and Access Control policy. Optionally, specify a custom export policy. Click *Next*.
 +
-image:screenshot_fsx_volume_nfs_only.pn[A screenshot of volume protocol fields for NFS.]
+image:screenshot_fsx_volume_nfs_only.png[A screenshot of volume protocol fields for NFS.]
 
 . *Usage Profile and Tiering*:
 
@@ -65,7 +65,7 @@ image:screenshot_fsx_volume_nfs_only.pn[A screenshot of volume protocol fields f
 .. By default, *Tiering Policy* is set to *Snapshot Only*. You can select a different tiering policy based on your needs.
 .. Click *Next*.
 +
-image:screenshot_fsx_volume_usage_tiering.pn[A screenshot of the Usage Profile and Tiering Configuration for FSx for ONTAP volume creation.]
+image:screenshot_fsx_volume_usage_tiering.png[A screenshot of the Usage Profile and Tiering Configuration for FSx for ONTAP volume creation.]
 
 . *Review*: Review your volume configuration. Click *Previous* to change settings or click *Add* to create the volume.
 // . *Protocol*: Select the an NFS or CIFS volume protocol.
