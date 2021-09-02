@@ -64,10 +64,9 @@ VPC
 | Azure | Compute | Snapshot
 Virtual Machine
 | | Network | Security Group
-Subnet
 Virtual Network
-| | Storage | Blob Service
-Storage Account
+| | Resource | Resource Group
+| | Storage | Storage Account
 
 |===
 
