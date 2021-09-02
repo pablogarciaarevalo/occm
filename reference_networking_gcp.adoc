@@ -73,7 +73,11 @@ One Virtual Private Cloud for single node systems::
 One VPC is required for a single node system.
 
 Shared VPCs::
-Cloud Volumes ONTAP and the Connector are supported in a Google Cloud shared VPC and also in standalone VPCs. For HA pairs, all VPCs can be either shared or non-shared VPCs.
+Cloud Volumes ONTAP and the Connector are supported in a Google Cloud shared VPC and also in standalone VPCs.
++
+For a single node system, the VPC can be either a shared VPC or a standalone VPC.
++
+For an HA pair, four VPCs are required. Each of those VPCs can be either shared or standalone. For example, VPC-0 could be a shared VPC, while VPC-1, VPC-2, and VPC-3 could be standalone VPCs.
 +
 A shared VPC enables you to configure and centrally manage virtual networks across multiple projects. You can set up shared VPC networks in the _host project_ and deploy the Connector and Cloud Volumes ONTAP virtual machine instances in a _service project_. https://cloud.google.com/vpc/docs/shared-vpc[Google Cloud documentation: Shared VPC overview^].
 +
