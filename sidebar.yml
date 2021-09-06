@@ -121,6 +121,8 @@ entries:
             url: /task_planning_your_config_azure.html
           - title: Set up your networking
             url: /reference_networking_azure.html
+          - title: Set up encryption using your key
+            url: /task_set_up_azure_encryption.html
           - title: Launch a system in Azure
             url: /task_deploying_otc_azure.html
       - title: Get started in GCP
@@ -157,16 +159,6 @@ entries:
             url: /task_managing_svms_aws.html
           - title: Create storage VMs in Azure
             url: /task_managing_svms_azure.html
-      - title: Replicate data
-        entries:
-          - title: Learn about Replication
-            url: /concept_replication.html
-          - title: Get started
-            url: /task_replicating_data.html
-          - title: Manage schedules and relationships
-            url: /task_managing_replication.html
-          - title: Learn about replication policies
-            url: /concept_replication_policies.html
       - title: Monitor performance
         entries:
           - title: Learn about Monitoring
@@ -211,6 +203,18 @@ entries:
             url: /task_manage_anf.html
           - title: Create and manage volumes
             url: /task_manage_anf_volumes.html
+      - title: Amazon FSx for ONTAP
+        entries:
+          - title: Learn about FSx for ONTAP
+            url: /concept_fsx_aws.html
+          - title: Quick Start
+            url: /task_getting_started_fsx.html
+          - title: Set up permissions for FSx for ONTAP
+            url: /task_setting_up_permissions_fsx.html
+          - title: Create a working environment
+            url: /task_creating_fsx_working_environment.html
+          - title: Create and manage volumes
+            url: /task_manage_fsx_volumes.html
       - title: Cloud Volumes Service for AWS
         entries:
           - title: Learn about Cloud Volumes Service for AWS
@@ -243,6 +247,16 @@ entries:
         url: /task_managing_ontap.html
       - title: Manage ONTAP volumes
         url: /task_provisioning_ontap.html
+  - title: Replicate ONTAP data
+    entries:
+      - title: Learn about the Replication service
+        url: /concept_replication.html
+      - title: Get started
+        url: /task_replicating_data.html
+      - title: Manage schedules and relationships
+        url: /task_managing_replication.html
+      - title: Learn more about replication policies
+        url: /concept_replication_policies.html
   - title: Use templates to standardize resource creation
     entries:
       - title: Learn about Application Templates
@@ -348,6 +362,8 @@ entries:
                 url: /task_getting_started_compliance.html
               - title: Azure NetApp Files
                 url: /task_scanning_anf.html
+              - title: Amazon FSx for ONTAP
+                url: /task_scanning_fsx.html
               - title: Amazon S3 buckets
                 url: /task_scanning_s3.html
               - title: Database schemas
@@ -418,8 +434,8 @@ entries:
             url: /task_tiering_onprem_gcp.html
           - title: Tier data to StorageGRID
             url: /task_tiering_onprem_storagegrid.html
-#          - title: Tier data to S3 object storage
-#            url: /task_tiering_onprem_s3_compat.html
+          - title: Tier data to S3 object storage
+            url: /task_tiering_onprem_s3_compat.html
       - title: Set up licensing
         url: /task_licensing_cloud_tiering.html
       - title: Test cloud performance
@@ -484,6 +500,8 @@ entries:
         url: /task_adding_nss_accounts.html
       - title: Manage your account
         url: /task_managing_cloud_central_accounts.html
+      - title: Monitor operations in your account
+        url: /task_monitor_cm_operations.html
       - title: Install an HTTPS certificate
         url: /task_installing_https_cert.html
       - title: Remove working environments
