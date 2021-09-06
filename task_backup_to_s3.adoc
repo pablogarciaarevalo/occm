@@ -132,7 +132,7 @@ Here are the specific permissions from the policy:
         },
 
 AWS Restore permissions required::
-The following permissions are needed in the policy for the Cloud Restore instance:
+The following EC2 permissions are needed for the IAM role that provides Cloud Manager with permissions so that it can start, stop, and terminate the Cloud Restore instance:
 +
 [source,json]
           "Action": [
