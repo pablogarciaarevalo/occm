@@ -27,6 +27,7 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 * <<Cloud Sync enhancements>>
 * <<Cloud Tiering enhancements>>
 * <<Replication enhancements>>
+* <<Cloud Backup enhancements>>
 * <<Resource Tagging enhancements>>
 * <<A new Notification Service has been added>>
 
@@ -91,6 +92,20 @@ link:task_tiering_onprem_s3_compat.html[See how to tier data to S3-compatible ob
 You can now replicate data from a Cloud Volumes ONTAP system or an on-premises ONTAP cluster to an Amazon FSx for ONTAP file system.
 
 link:concept_replication.html[Learn about the Replication service].
+
+=== Cloud Backup enhancements
+
+* Now you can create an on-demand backup at any time to capture the current state of a volume. This is useful if important changes have been made to a volume and you don’t want to wait for the next scheduled backup to protect that data.
++
+link:task_managing_backups.html#creating-a-manual-volume-backup-at-any-time[See how to create an on-demand backup].
+
+* When configuring backups to Amazon S3 from an on-premises ONTAP system, now you can define a connection to a Private Interface Endpoint in the activation wizard. This allows you to use a network interface that connects your on-prem system privately and securely to a service powered by AWS PrivateLink. link:task_backup_onprem_to_aws.html#preparing-amazon-s3-for-backups[See details about this option].
+
+* For additional security and control, you can choose your own customer-managed keys for data encryption in the activation wizard instead of using the default Amazon S3 encryption keys.
++
+This is available when configuring backups from an on-premises ONTAP system or from a Cloud Volumes ONTAP system in AWS.
+
+* The restriction of being able to browse a single directory with flat files up to a maximum of 30,000 files has been removed. Now you can restore files from directories that have a larger number of files.
 
 === Resource Tagging enhancements
 

@@ -97,12 +97,12 @@ ONTAP reads and writes data to and from object storage. The object storage never
 +
 * An inbound connection is required from the Connector, which must reside on your premises.
 
-* An intercluster LIF is required on each ONTAP node that hosts the volumes you want to back up. The LIF must be associated with the _IPspace_ that ONTAP should use to connect to object storage. http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-69120CF0-F188-434F-913E-33ACB8751A5D.html[Learn more about IPspaces^].
+* An intercluster LIF is required on each ONTAP node that hosts the volumes you want to back up. The LIF must be associated with the _IPspace_ that ONTAP should use to connect to object storage. https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html[Learn more about IPspaces^].
 +
 When you set up Cloud Backup, you are prompted for the IPspace to use. You should choose the IPspace that each LIF is associated with. That might be the "Default" IPspace or a custom IPspace that you created.
 *	DNS servers have been configured for the storage VM where the volumes are located.
 +
-See how to http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-D4A9F825-77F0-407F-BFBD-D94372D6AAC1.html[configure DNS services for the SVM^].
+See how to https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html[configure DNS services for the SVM^].
 * Update firewall rules, if necessary, to allow Cloud Backup service connections from ONTAP to object storage through the port you specified (typically port 443) and name resolution traffic from the storage VM to the DNS server over port 53 (TCP/UDP).
 
 === Discovering an ONTAP cluster
@@ -175,7 +175,7 @@ image:screenshot_backup_from_onprem_activate.png[A screenshot that shows the Bac
 
 .. The FQDN of the StorageGRID server and the port that ONTAP should use for HTTPS communication with StorageGRID; for example: `s3.eng.company.com:8082`
 .. The Access Key and the Secret Key used to access the bucket to store backups.
-.. The IPspace in the ONTAP cluster where the volumes you want to back up reside.
+.. The IPspace in the ONTAP cluster where the volumes you want to back up reside. The intercluster LIFs for this IPspace must have outbound internet access.
 +
 Selecting the correct IPspace ensures that Cloud Backup can set up a connection from ONTAP to your StorageGRID object storage.
 +
