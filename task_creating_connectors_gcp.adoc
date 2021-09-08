@@ -44,11 +44,14 @@ The permissions contained in this YAML file are different than the permissions i
 .. If you want to deploy Cloud Volumes ONTAP in other projects, https://cloud.google.com/iam/docs/granting-changing-revoking-access#granting-console[grant access by adding the service account with the Cloud Manager role to that project^]. You'll need to repeat this step for each project.
 +
 
+
 .Result
 
 The GCP user now has the permissions required to create the Connector from Cloud Manager and the service account for the Connector VM is set up.
 
-TIP: If you are using a shared VPC to deploy resources into a service project, then the following permissions table applies:
+=== Shared VPC Permissions
+
+If you are using a shared VPC to deploy resources into a service project, then the following permissions table applies. This table is for reference and your environment should reflect the permissions table when IAM configuration is complete:
 [cols="10,10,10,20,20,30",width=100%,options="header"]
 |===
 
@@ -59,44 +62,34 @@ TIP: If you are using a shared VPC to deploy resources into a service project, t
 | Host Project Permissions
 | Purpose
 
-| Cloud Manager Service Account | Custom | Service Project |
-+
-* https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.0_GCP.yaml[Permissions Here^] 
-Note: firewall.create and firewall.delete are only required if you are not passing firewall rules to the deployment and are choosing to let Cloud Manager create them for you.
-+
-| 
-+
-* Compute.networkUser
-* Deploymentmanager.editor
-+
-Note: deploymentmanager.editor is only required if you are not passing firewall rules to the deployment and are choosing to let Cloud Manager create them for you. | Deploying and maintaining Cloud Volumes ONTAP and services in service project
-| Cloud Volumes ONTAP Service Account | Custom | Service Project |
-+
-* storage.Admin
-* Member: Cloud Manager Service Account as service account user
-+
+| Cloud Manager Service Account | Custom | Service Project a|
+* https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.0_GCP.yaml[Permissions here in .yaml file^]
+a| 
+* compute.networkUser
+* deploymentmanager.editor
+| Deploying and maintaining Cloud Volumes ONTAP and services in service project
+| Cloud Volumes ONTAP Service Account | Custom | Service Project a|
+* storage.admin
+* member: Cloud Manager Service Account as serviceAccount.user
 | N/A | (Optional) For Cloud Tiering and Cloud Backup
-| Google APIs Service Agent | GCP | Service Project |
-+
+| Google APIs Service Agent | GCP | Service Project a|
 * (Default) Editor
-+
-|
-+
+a|
 * compute.networkUser
-+
 | Interacts with GCP APIs on behalf of Deployment. Allows Cloud Manager to use shared network
-| Google Compute Engine default service account | GCP | Service Project |
-+
+| Google Compute Engine default service account | GCP | Service Project a|
 * (Default) Editor
-+
-|
-+
+a|
 * compute.networkUser
-+
 | Deploys GCP instances and compute infrastructure on behalf of Deployment. Allows Cloud Manager to use shared network
 
 |===
 
+NOTE: deploymentmanager.editor is only required at the host project if you are not passing firewall rules to the deployment and are choosing to let Cloud Manager create them for you.
+
+NOTE: firewall.create and firewall.delete are only required if you are not passing firewall rules to the deployment and are choosing to let Cloud Manager create them for you.
+
+NOTE: For tiering, the tiering service account must have the serviceAccount.user role on the service account, not just at the project. Currently if you assign serviceAccount.user at the project level, the permissions do not show when you query the service account with getIAMPolicy.
 
 == Enabling Google Cloud APIs
 
