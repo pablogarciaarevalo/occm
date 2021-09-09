@@ -139,6 +139,8 @@ entries:
             url: /task_setting_up_gcp_encryption.html
           - title: Launch a system in GCP
             url: /task_deploying_gcp.html
+          - title: Work with VPC-Service Controls
+            url: /reference_vpc_service_controls_gcp.html
       - title: Provision and manage storage
         entries:
           - title: Create volumes, aggregates, and LUNs
